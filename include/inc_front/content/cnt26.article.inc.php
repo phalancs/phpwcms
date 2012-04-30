@@ -45,7 +45,7 @@ if(file_exists(PHPWCMS_TEMPLATE.'inc_cntpart/recipe/'.$crow["acontent_form"]['te
 	<p>{CALORIES} kJ / {KCAL} kcal[CALORIESADD] ({CALORIESADD})[/CALORIESADD]</p>[/CALORIES][PREPARATION]
 	<p>{PREPARATION}</p>[/PREPARATION][TIME]
 	<div class="time">{TIME} Minuten[TIMEADD], {TIMEADD}[/TIMEADD]</div>[/TIME]
-	<div class="severity"><img src="img/severity_{SEVERITY}.gif" alt="" /></div>[CAT]
+	<div class="severity"><img src="include/img/severity_{SEVERITY}.gif" alt="" /></div>[CAT]
 	<div class="cat">{CAT}</div>[/CAT]</div>';
 }
 

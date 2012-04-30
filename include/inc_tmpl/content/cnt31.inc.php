@@ -31,7 +31,7 @@ if (!defined('PHPWCMS_ROOT')) {
 //images special
 
 initMootools();
-$BE['HEADER']['imagespecial.css']	= '	<link href="include/inc_css/imagespecial.css" rel="stylesheet" type="text/css">';
+$BE['HEADER']['imagespecial.css']	= '	<link href="include/css/imagespecial.css" rel="stylesheet" type="text/css">';
 
 
 // some predefinitions
@@ -78,7 +78,7 @@ $content['image_special'] = isset($content['image_special']) ? array_merge($cont
 
 ?>
 
-<tr><td colspan="2" class="rowspacer0x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer0x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_admin_struct_template']; ?>:&nbsp;</td>
@@ -120,7 +120,7 @@ $content['image_special'] = isset($content['image_special']) ? array_merge($cont
 		
 </tr>
 
-<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_flashplayer_thumbnail'] ?>:&nbsp;</td>
@@ -140,7 +140,7 @@ $content['image_special'] = isset($content['image_special']) ? array_merge($cont
 	</table></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist">&nbsp;</td>
@@ -169,7 +169,7 @@ for($max_image_col = 1; $max_image_col <= 25; $max_image_col++) {
 		</table></td>
 </tr>
 
-<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_cnt_reference_zoom'] ?>:&nbsp;</td>
@@ -189,7 +189,7 @@ for($max_image_col = 1; $max_image_col <= 25; $max_image_col++) {
 	</table></td>
 </tr>
 
-<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist tdtop3"><?php echo $BL['be_cnt_behavior'] ?>:&nbsp;</td>
@@ -227,7 +227,7 @@ for($max_image_col = 1; $max_image_col <= 25; $max_image_col++) {
 </tr>
 
 
-<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr>
 	<td class="chatlist tdtop5" align="right"><?php echo $BL['be_ctype_images'] ?>:&nbsp;</td>
@@ -265,8 +265,8 @@ for($max_image_col = 1; $max_image_col <= 25; $max_image_col++) {
 			<input name="cimage_sort[<?php echo $key ?>]" id="cimage_sort_<?php echo $key ?>" type="hidden" value="<?php echo $value['sort'] ?>" />
 			<?php echo $BL['be_flashplayer_thumbnail'] ?>:&nbsp;</td>
 		<td><input name="cimage_name_thumb[<?php echo $key ?>]" type="text" id="cimage_name_thumb_<?php echo $key ?>" class="f11b imagename" value="<?php echo html_specialchars($value['thumb_name']) ?>" size="30" onfocus="this.blur();" /></td>
-		<td><a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="return openImageFileBrowser('thumb_<?php echo $key ?>');"><img src="img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a></td>
-		<td><a href="#" title="<?php echo $BL['be_cnt_delimage'] ?>" onclick="return deleteImageData('thumb_<?php echo $key ?>', this);"><img src="img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a></td>
+		<td><a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="return openImageFileBrowser('thumb_<?php echo $key ?>');"><img src="include/img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a></td>
+		<td><a href="#" title="<?php echo $BL['be_cnt_delimage'] ?>" onclick="return deleteImageData('thumb_<?php echo $key ?>', this);"><img src="include/img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a></td>
 	</tr>
 	
 	<tr><td colspan="3" class="spacerrow"></td></tr>
@@ -276,8 +276,8 @@ for($max_image_col = 1; $max_image_col <= 25; $max_image_col++) {
 			<input name="cimage_id_zoom[<?php echo $key ?>]" id="cimage_id_zoom_<?php echo $key ?>" type="hidden" value="<?php echo $value['zoom_id'] ?>" />
 			<?php echo $BL['be_image_zoom'] ?>:&nbsp;</td>
 		<td><input name="cimage_name_zoom[<?php echo $key ?>]" type="text" id="cimage_name_zoom_<?php echo $key ?>" class="f11b imagename" value="<?php echo html_specialchars($value['zoom_name']) ?>" size="30" onfocus="this.blur();" /></td>
-		<td><a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="return openImageFileBrowser('zoom_<?php echo $key ?>');"><img src="img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a></td>
-		<td><a href="#" title="<?php echo $BL['be_cnt_delimage'] ?>" onclick="return deleteImageData('zoom_<?php echo $key ?>', this);"><img src="img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a></td>
+		<td><a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="return openImageFileBrowser('zoom_<?php echo $key ?>');"><img src="include/img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a></td>
+		<td><a href="#" title="<?php echo $BL['be_cnt_delimage'] ?>" onclick="return deleteImageData('zoom_<?php echo $key ?>', this);"><img src="include/img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a></td>
 	</tr>
 	
 	<tr>
@@ -303,7 +303,7 @@ for($max_image_col = 1; $max_image_col <= 25; $max_image_col++) {
 		<td class="chatlist right"><?php echo $BL['be_profile_label_website'] ?>:&nbsp;</td>
 		<td><input type="text" name="cimage_url[<?php echo $key ?>]" id="cimage_url_<?php echo $key ?>" class="v11 w300" size="30" value="<?php echo html_entities($value['url']) ?>" /></td>
 		<td><em title="<?php echo $sort_up_down; ?>" class="handle">&nbsp;</em></td>
-		<td><a href="#" onclick="return deleteImgElement('image_<?php echo $key ?>');"><img src="img/famfamfam/image_delete.gif" alt="" border="" /></a></td>
+		<td><a href="#" onclick="return deleteImgElement('image_<?php echo $key ?>');"><img src="include/img/famfamfam/image_delete.gif" alt="" border="" /></a></td>
 	</tr>
 	
 	
@@ -340,7 +340,7 @@ for($max_image_col = 1; $max_image_col <= 25; $max_image_col++) {
 <?php
 	}
 ?>
-<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr><td colspan="2" align="center"><?php
 
@@ -444,7 +444,7 @@ include(PHPWCMS_ROOT.'/include/inc_lib/wysiwyg.editor.inc.php');
 	function getBackendImgSrc(image_file_id) {
 		var image_file_id = parseInt(image_file_id);
 		if(image_file_id) {
-			return '<'+'img src="'+site_url+'img/cmsimage.php/'+max_img_w+'x'+max_img_h+'/'+image_file_id+'" border="0" alt="" /'+'> ';
+			return '<'+'img src="'+site_url+'include/img/cmsimage.php/'+max_img_w+'x'+max_img_h+'/'+image_file_id+'" border="0" alt="" /'+'> ';
 		}
 		return '';
 	}
@@ -477,8 +477,8 @@ include(PHPWCMS_ROOT.'/include/inc_lib/wysiwyg.editor.inc.php');
 		new_entry += '<'+'input name="cimage_sort['+entry_number+']" id="cimage_sort_'+entry_number+'" type="hidden" value="'+entry_number+'" /'+'>';
 		new_entry += '<?php echo $BL['be_flashplayer_thumbnail'] ?>:&nbsp;<'+'/td'+'>';
 		new_entry += '<'+'td><input name="cimage_name_thumb['+entry_number+']" type="text" id="cimage_name_thumb_'+entry_number+'" class="f11b imagename" value="" size="30" onfocus="this.blur();" /><'+'/td>';
-		new_entry += '<'+'td><a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="return openImageFileBrowser(\'thumb_'+entry_number+'\');"><img src="img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /'+'><'+'/a><'+'/td>';
-		new_entry += '<'+'td><a href="#" title="<?php echo $BL['be_cnt_delimage'] ?>" onclick="return deleteImageData(\'thumb_'+entry_number+'\', this);"><img src="img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /><'+'/a><'+'/td>';
+		new_entry += '<'+'td><a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="return openImageFileBrowser(\'thumb_'+entry_number+'\');"><img src="include/img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /'+'><'+'/a><'+'/td>';
+		new_entry += '<'+'td><a href="#" title="<?php echo $BL['be_cnt_delimage'] ?>" onclick="return deleteImageData(\'thumb_'+entry_number+'\', this);"><img src="include/img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /><'+'/a><'+'/td>';
 		new_entry += '<'+'/tr>';
 		new_entry += '<'+'tr><td colspan="3" class="spacerrow"><'+'/td><'+'/tr>';
 		new_entry += '<'+'tr>';
@@ -486,8 +486,8 @@ include(PHPWCMS_ROOT.'/include/inc_lib/wysiwyg.editor.inc.php');
 		new_entry += '<'+'input name="cimage_id_zoom['+entry_number+']" id="cimage_id_zoom_'+entry_number+'" type="hidden" value="" /'+'>';
 		new_entry += '<?php echo $BL['be_image_zoom'] ?>:&nbsp;<'+'/td>';
 		new_entry += '<'+'td><input name="cimage_name_zoom['+entry_number+']" type="text" id="cimage_name_zoom_'+entry_number+'" class="f11b imagename" value="" size="30" onfocus="this.blur();" /><'+'/td>';
-		new_entry += '<'+'td><a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="return openImageFileBrowser(\'zoom_'+entry_number+'\');"><img src="img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /><'+'/a><'+'/td>';
-		new_entry += '<'+'td><a href="#" title="<?php echo $BL['be_cnt_delimage'] ?>" onclick="return deleteImageData(\'zoom_'+entry_number+'\', this);"><img src="img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /><'+'/a><'+'/td>';
+		new_entry += '<'+'td><a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="return openImageFileBrowser(\'zoom_'+entry_number+'\');"><img src="include/img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /><'+'/a><'+'/td>';
+		new_entry += '<'+'td><a href="#" title="<?php echo $BL['be_cnt_delimage'] ?>" onclick="return deleteImageData(\'zoom_'+entry_number+'\', this);"><img src="include/img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /><'+'/a><'+'/td>';
 		new_entry += '<'+'/tr>';
 		new_entry += '<'+'tr>';
 		new_entry += '<'+'td class="spacerrow"><'+'/td>';
@@ -507,7 +507,7 @@ include(PHPWCMS_ROOT.'/include/inc_lib/wysiwyg.editor.inc.php');
 		new_entry += '<'+'td class="chatlist right"><?php echo $BL['be_profile_label_website'] ?>:&nbsp;<'+'/td>';
 		new_entry += '<'+'td><input type="text" name="cimage_url['+entry_number+']" id="cimage_url_'+entry_number+'" class="v11 w300" size="30" value="" /><'+'/td>';
 		new_entry += '<'+'td>&nbsp;<'+'/td>';
-		new_entry += '<'+'td><a href="#" onclick="return deleteImgElement(\'image_'+entry_number+'\');"><img src="img/famfamfam/image_delete.gif" alt="" border="" /'+'><'+'/a></'+'td>';
+		new_entry += '<'+'td><a href="#" onclick="return deleteImgElement(\'image_'+entry_number+'\');"><img src="include/img/famfamfam/image_delete.gif" alt="" border="" /'+'><'+'/a></'+'td>';
 		new_entry += '<'+'/tr>';
 		new_entry += '<'+'/table>';
 

@@ -60,7 +60,7 @@ if(empty($content["image_caption"])) {
 
 ?>
 
-<tr><td colspan="2" class="rowspacer0x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer0x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_admin_struct_template']; ?>:&nbsp;</td>
@@ -83,7 +83,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	</select></td>
 </tr>
 
-<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 
 
@@ -97,11 +97,11 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	      <td bgcolor="#E7E8EB" class="v10">Audio</td>
 	      <td bgcolor="#E7E8EB"><input name="cmedia_type" type="radio" value="2" <?php is_checked(2, $content["media_type"]); ?> onchange="cmedia_player[3].click();" /></td>
 	      <td bgcolor="#E7E8EB" class="v10">Flash</td>
-	      <td colspan="2"><img src="img/leer.gif" alt="" width="1" height="1" /></td>
+	      <td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td>
 	      </tr>
 	    <tr>
-	      <td><img src="img/leer.gif" alt="" width="80" height="1" /></td>
-	      <td colspan="8"><img src="img/leer.gif" alt="" width="1" height="3" /></td>
+	      <td><img src="include/img/leer.gif" alt="" width="80" height="1" /></td>
+	      <td colspan="8"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td>
 	      </tr>
 	    <tr>
 	      <td align="right" class="chatlist">&nbsp;</td>
@@ -114,7 +114,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	      <td bgcolor="#E7E8EB"><input name="cmedia_player" type="radio" value="3" <?php is_checked(3, $content["media_player"]); ?> onchange="cmedia_type[2].click();" /></td>
 	      <td bgcolor="#E7E8EB" class="v10">Flash&nbsp;Plugin&nbsp;&nbsp;</td>
 	      </tr>
-	   <tr><td colspan="9"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	   <tr><td colspan="9"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	    <tr>
 	      <td align="right" class="chatlist"><?php echo $BL['be_cnt_control']  ?>:&nbsp;</td>
 	      <td bgcolor="#E7E8EB"><input name="cmedia_control" type="checkbox" id="cmedia_control" value="1" <?php is_checked(1, $content["media_control"]); ?> /></td>
@@ -127,34 +127,34 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	    </table>
 	</td>
 	</tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 <tr>
   <td colspan="2"><table border="0" cellpadding="0" cellspacing="0" summary="">
     <tr>
       <td align="right" class="chatlist"><?php echo $BL['be_cnt_source'] ?>:&nbsp;</td>
       <td bgcolor="#E7E8EB"><input name="cmedia_src" type="radio" value="0" <?php is_checked(0, $content["media_src"]); ?> /></td>
       <td bgcolor="#E7E8EB" class="v10"><?php echo $BL['be_cnt_internal'] ?>&nbsp;&nbsp;</td>
-	  <td><img src="img/leer.gif" alt="" width="6" height="1" /></td>
+	  <td><img src="include/img/leer.gif" alt="" width="6" height="1" /></td>
       <td><input name="cmedia_name" type="text" id="cmedia_name" class="f11b" style="width: 300px; color: #727889;" value="<?php echo  isset($content["media_name"]) ? html_specialchars($content["media_name"]) : '' ?>" size="40" onfocus="this.blur()" /></td>
                                                                                                                                                  
-	  <td><img src="img/leer.gif" alt="" width="3" height="1" /><a href="javascript:;" title="<?php echo $BL['be_cnt_openmediabrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=2&amp;target=nolist')"><img src="img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a></td>
-      <td><img src="img/leer.gif" alt="" width="3" height="1" /><a href="javascript:;" title="<?php echo $BL['be_cnt_delmedia'] ?>" onclick="document.articlecontent.cmedia_name.value='';document.articlecontent.cmedia_id.value='0';this.blur();return false;"><img src="img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a></td>
+	  <td><img src="include/img/leer.gif" alt="" width="3" height="1" /><a href="javascript:;" title="<?php echo $BL['be_cnt_openmediabrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=2&amp;target=nolist')"><img src="include/img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a></td>
+      <td><img src="include/img/leer.gif" alt="" width="3" height="1" /><a href="javascript:;" title="<?php echo $BL['be_cnt_delmedia'] ?>" onclick="document.articlecontent.cmedia_name.value='';document.articlecontent.cmedia_id.value='0';this.blur();return false;"><img src="include/img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a></td>
       <td><input name="cmedia_id" type="hidden" id="cmedia_id2" value="<?php echo  isset($content["media_id"]) ? $content["media_id"] : '' ?>" /></td>
     </tr>
     <tr>
-      <td><img src="img/leer.gif" alt="" width="80" height="1" /></td>
-      <td colspan="7"><img src="img/leer.gif" alt="" width="1" height="3" /></td>
+      <td><img src="include/img/leer.gif" alt="" width="80" height="1" /></td>
+      <td colspan="7"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td>
     </tr>
     <tr>
       <td align="right" class="chatlist">&nbsp;</td>
       <td bgcolor="#E7E8EB"><input name="cmedia_src" type="radio" value="1" <?php is_checked(1, $content["media_src"]); ?> /></td>
       <td bgcolor="#E7E8EB" class="v10"><?php echo $BL['be_cnt_external'] ?>&nbsp;&nbsp;</td>
-	  <td><img src="img/leer.gif" alt="" width="6" height="1" /></td>
+	  <td><img src="include/img/leer.gif" alt="" width="6" height="1" /></td>
       <td colspan="4"><input name="cmedia_extern" type="text" id="cmedia_extern" class="f11b" style="width: 300px; color: #727889;" value="<?php echo  isset($content["media_extern"]) ? html_specialchars($content["media_extern"]) : '' ?>" size="40" /></td>
       </tr>
   </table></td>
   </tr>
-  <tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+  <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 			<tr>
 			  <td align="right" class="chatlist"><?php echo $BL['be_cnt_position'] ?>:&nbsp;</td>
 			  <td valign="top"><table border="0" cellpadding="0" cellspacing="0" summary="">
@@ -166,21 +166,21 @@ if(is_array($tmpllist) && count($tmpllist)) {
 			    <option value="3" <?php is_selected(3, $content["media_pos"]) ?>><?php echo $BL['be_cnt_mediapos3'] ?></option>
 			    <option value="4" <?php is_selected(4, $content["media_pos"]) ?>><?php echo $BL['be_cnt_mediapos4'] ?></option>
 		      </select></td>
-			      <td><img src="img/leer.gif" alt="" width="3" height="1" /></td>
-			      <td><img src="img/symbole/content_selected.gif" alt="" name="imgpos0" width="7" height="10" id="imgpos0" /></td>
-			      <td><a href="javascript:;" onclick="changeImagePos(0);this.blur();return false;" title="<?php echo $BL['be_cnt_mediapos0i'] ?>"><img src="img/button/image_pos0.gif" alt="" width="15" height="15" border="0" /></a></td>
-			      <td><img src="img/leer.gif" alt="" name="imgpos1" width="7" height="10" id="imgpos1" /></td>
-			      <td><a href="javascript:;" onclick="changeImagePos(1);this.blur();return false;" title="<?php echo $BL['be_cnt_mediapos1i'] ?>"><img src="img/button/image_pos1.gif" alt="" width="15" height="15" border="0" /></a></td>
-			      <td><img src="img/leer.gif" alt="" name="imgpos2" width="7" height="10" id="imgpos2" /></td>
-			      <td><a href="javascript:;" onclick="changeImagePos(2);this.blur();return false;" title="<?php echo $BL['be_cnt_mediapos2i'] ?>"><img src="img/button/image_pos2.gif" alt="" width="15" height="15" border="0" /></a></td>
-			      <td><img src="img/leer.gif" alt="" name="imgpos3" width="7" height="10" id="imgpos3" /></td>
-		          <td><a href="javascript:;" onclick="changeImagePos(3);this.blur();return false;" title="<?php echo $BL['be_cnt_mediapos3i'] ?>"><img src="img/button/image_pos6.gif" alt="" width="15" height="15" border="0" /></a></td>
-			      <td><img src="img/leer.gif" alt="" name="imgpos4" width="7" height="10" id="imgpos4" /></td>
-			      <td><a href="javascript:;" onclick="changeImagePos(4);this.blur();return false;" title="<?php echo $BL['be_cnt_mediapos4i'] ?>"><img src="img/button/image_pos7.gif" alt="" width="15" height="15" border="0" /></a></td>
+			      <td><img src="include/img/leer.gif" alt="" width="3" height="1" /></td>
+			      <td><img src="include/img/symbole/content_selected.gif" alt="" name="imgpos0" width="7" height="10" id="imgpos0" /></td>
+			      <td><a href="javascript:;" onclick="changeImagePos(0);this.blur();return false;" title="<?php echo $BL['be_cnt_mediapos0i'] ?>"><img src="include/img/button/image_pos0.gif" alt="" width="15" height="15" border="0" /></a></td>
+			      <td><img src="include/img/leer.gif" alt="" name="imgpos1" width="7" height="10" id="imgpos1" /></td>
+			      <td><a href="javascript:;" onclick="changeImagePos(1);this.blur();return false;" title="<?php echo $BL['be_cnt_mediapos1i'] ?>"><img src="include/img/button/image_pos1.gif" alt="" width="15" height="15" border="0" /></a></td>
+			      <td><img src="include/img/leer.gif" alt="" name="imgpos2" width="7" height="10" id="imgpos2" /></td>
+			      <td><a href="javascript:;" onclick="changeImagePos(2);this.blur();return false;" title="<?php echo $BL['be_cnt_mediapos2i'] ?>"><img src="include/img/button/image_pos2.gif" alt="" width="15" height="15" border="0" /></a></td>
+			      <td><img src="include/img/leer.gif" alt="" name="imgpos3" width="7" height="10" id="imgpos3" /></td>
+		          <td><a href="javascript:;" onclick="changeImagePos(3);this.blur();return false;" title="<?php echo $BL['be_cnt_mediapos3i'] ?>"><img src="include/img/button/image_pos6.gif" alt="" width="15" height="15" border="0" /></a></td>
+			      <td><img src="include/img/leer.gif" alt="" name="imgpos4" width="7" height="10" id="imgpos4" /></td>
+			      <td><a href="javascript:;" onclick="changeImagePos(4);this.blur();return false;" title="<?php echo $BL['be_cnt_mediapos4i'] ?>"><img src="include/img/button/image_pos7.gif" alt="" width="15" height="15" border="0" /></a></td>
 			    </tr>
 		      </table></td>
 			  </tr>
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 			<tr>
 			  <td align="right" class="chatlist"><?php echo $BL['be_admin_page_width'] ?>:&nbsp;</td>
 			  <td valign="top"><table border="0" cellpadding="0" cellspacing="0" summary="">
@@ -189,17 +189,17 @@ if(is_array($tmpllist) && count($tmpllist)) {
 			      <td class="chatlist">&nbsp;&nbsp;<?php echo $BL['be_admin_page_height'] ?>:&nbsp;</td>
 			      <td><input name="cmedia_height" type="text" class="f11b" id="cmedia_height" style="width: 50px;" size="3" maxlength="5" onkeyup="if(!parseInt(this.value)) this.value='';" value="<?php echo  isset($content["media_height"]) ? $content["media_height"] : '' ?>" /></td>
 			      <td class="chatlist">&nbsp;px</td>
-		          <td><img src="img/leer.gif" alt="" width="30" height="1" /></td>
+		          <td><img src="include/img/leer.gif" alt="" width="30" height="1" /></td>
 				  <td class="chatlist"><?php echo $BL['be_cnt_setsize'] ?>:&nbsp;</td>
-		          <td><a href="javascript:;" title="<?php echo $BL['be_cnt_set1'] ?>" onclick="document.articlecontent.cmedia_width.value='160';document.articlecontent.cmedia_height.value='120';this.blur();return false;"><img src="img/button/video_160x120.gif" alt="" width="27" height="15" border="0" /></a></td>
-				  <td><img src="img/leer.gif" alt="" width="3" height="1" /></td>
-		          <td><a href="javascript:;" title="<?php echo $BL['be_cnt_set2'] ?>" onclick="document.articlecontent.cmedia_width.value='240';document.articlecontent.cmedia_height.value='180';this.blur();return false;"><img src="img/button/video_240x180.gif" alt="" width="27" height="15" border="0" /></a></td>
-				  <td><img src="img/leer.gif" alt="" width="3" height="1" /></td>
-		          <td><a href="javascript:;" title="<?php echo $BL['be_cnt_set3'] ?>" onclick="document.articlecontent.cmedia_width.value='320';document.articlecontent.cmedia_height.value='240';this.blur();return false;"><img src="img/button/video_320x240.gif" alt="" width="27" height="15" border="0" /></a></td>
-				  <td><img src="img/leer.gif" alt="" width="3" height="1" /></td>
-		          <td><a href="javascript:;" title="<?php echo $BL['be_cnt_set4'] ?>" onclick="document.articlecontent.cmedia_width.value='480';document.articlecontent.cmedia_height.value='360';this.blur();return false;"><img src="img/button/video_480x360.gif" alt="" width="27" height="15" border="0" /></a></td>
-				  <td><img src="img/leer.gif" alt="" width="6" height="1" /></td>
-				  <td><a href="javascript:;" title="<?php echo $BL['be_cnt_set5'] ?>" onclick="document.articlecontent.cmedia_width.value='';document.articlecontent.cmedia_height.value='';this.blur();return false;"><img src="img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a></td>
+		          <td><a href="javascript:;" title="<?php echo $BL['be_cnt_set1'] ?>" onclick="document.articlecontent.cmedia_width.value='160';document.articlecontent.cmedia_height.value='120';this.blur();return false;"><img src="include/img/button/video_160x120.gif" alt="" width="27" height="15" border="0" /></a></td>
+				  <td><img src="include/img/leer.gif" alt="" width="3" height="1" /></td>
+		          <td><a href="javascript:;" title="<?php echo $BL['be_cnt_set2'] ?>" onclick="document.articlecontent.cmedia_width.value='240';document.articlecontent.cmedia_height.value='180';this.blur();return false;"><img src="include/img/button/video_240x180.gif" alt="" width="27" height="15" border="0" /></a></td>
+				  <td><img src="include/img/leer.gif" alt="" width="3" height="1" /></td>
+		          <td><a href="javascript:;" title="<?php echo $BL['be_cnt_set3'] ?>" onclick="document.articlecontent.cmedia_width.value='320';document.articlecontent.cmedia_height.value='240';this.blur();return false;"><img src="include/img/button/video_320x240.gif" alt="" width="27" height="15" border="0" /></a></td>
+				  <td><img src="include/img/leer.gif" alt="" width="3" height="1" /></td>
+		          <td><a href="javascript:;" title="<?php echo $BL['be_cnt_set4'] ?>" onclick="document.articlecontent.cmedia_width.value='480';document.articlecontent.cmedia_height.value='360';this.blur();return false;"><img src="include/img/button/video_480x360.gif" alt="" width="27" height="15" border="0" /></a></td>
+				  <td><img src="include/img/leer.gif" alt="" width="6" height="1" /></td>
+				  <td><a href="javascript:;" title="<?php echo $BL['be_cnt_set5'] ?>" onclick="document.articlecontent.cmedia_width.value='';document.articlecontent.cmedia_height.value='';this.blur();return false;"><img src="include/img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a></td>
 			    </tr>
 </table><script language="JavaScript" type="text/javascript">
 <!--
@@ -207,31 +207,31 @@ changeImagePos(<?php echo intval($content["media_pos"]) ?>);
 //-->
 </script></td></tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 
 <tr>
 	  <td align="right" class="chatlist"><?php echo $BL['alt_image'] ?>:&nbsp;</td>
 	  <td valign="top"><table border="0" cellpadding="0" cellspacing="0" summary="">
 		<tr>
 		  <td><input name="cimage_name" type="text" id="cimage_name" class="f11b" style="width: 300px; color: #727889;" value="<?php echo html_specialchars($content["image_name"]) ?>" size="40" maxlength="250" onfocus="this.blur()" /></td>
-		  <td><img src="img/leer.gif" alt="" width="3" height="1" /><a href="javascript:;" title="<?php echo  $BL['be_cnt_openimagebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=0&amp;target=nolist')"><img src="img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a></td>
-		  <td><img src="img/leer.gif" alt="" width="3" height="1" /><a href="javascript:;" title="<?php echo  $BL['be_cnt_delimage'] ?>" onclick="document.articlecontent.cimage_name.value='';document.articlecontent.cimage_id.value='0';this.blur();return false;"><img src="img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a>
+		  <td><img src="include/img/leer.gif" alt="" width="3" height="1" /><a href="javascript:;" title="<?php echo  $BL['be_cnt_openimagebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=0&amp;target=nolist')"><img src="include/img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a></td>
+		  <td><img src="include/img/leer.gif" alt="" width="3" height="1" /><a href="javascript:;" title="<?php echo  $BL['be_cnt_delimage'] ?>" onclick="document.articlecontent.cimage_name.value='';document.articlecontent.cimage_id.value='0';this.blur();return false;"><img src="include/img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a>
 			<input name="cimage_id" type="hidden" value="<?php echo $content["image_id"] ?>" /></td>
 		</tr>
 	  </table></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 <tr>
   <td align="right" valign="top" class="chatlist tdtop4"><?php echo $BL['alt_text'] ?>:&nbsp;</td>
   <td valign="top"><table border="0" cellpadding="0" cellspacing="0" summary="">
 	  <tr>
 		<td valign="top"><textarea name="cimage_caption" cols="30" rows="4" class="f11" id="cimage_caption" style="width: 300px;"><?php echo html_specialchars($content["image_caption"]) ?></textarea></td>
-		<td valign="top"><img src="img/leer.gif" alt="" width="10" height="1" /></td>
-		<td valign="top"><?php if($content["image_id"]): ?><img src="img/cmsimage.php/<?= $phpwcms["img_list_width"].'x'.$phpwcms["img_list_height"].'/'.$content["image_id"] ?>" border="0" /><?php endif; ?>&nbsp;</td>
+		<td valign="top"><img src="include/img/leer.gif" alt="" width="10" height="1" /></td>
+		<td valign="top"><?php if($content["image_id"]): ?><img src="include/img/cmsimage.php/<?= $phpwcms["img_list_width"].'x'.$phpwcms["img_list_height"].'/'.$content["image_id"] ?>" border="0" /><?php endif; ?>&nbsp;</td>
 	  </tr>
   </table></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>

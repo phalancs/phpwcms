@@ -34,7 +34,7 @@ if(!isset($content["html"])) $content["html"] = '';
 
 ?>
 
-<tr><td colspan="2" class="rowspacer0x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer0x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_admin_struct_template']; ?>:&nbsp;</td>
@@ -57,9 +57,9 @@ if(is_array($tmpllist) && count($tmpllist)) {
 		</select></td>
 </tr>
 
-<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr>
-	<td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="13" /><?php echo $BL['be_cnt_plainhtml'] ?>:&nbsp;</td>
+	<td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="13" /><?php echo $BL['be_cnt_plainhtml'] ?>:&nbsp;</td>
 	<td valign="top"><textarea name="chtml" rows="30" class="msgtext width440" id="chtml"><?php echo html_entities($content["html"]) ?></textarea></td>
 </tr>

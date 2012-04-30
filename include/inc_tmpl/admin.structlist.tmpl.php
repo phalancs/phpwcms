@@ -30,10 +30,10 @@ if (!defined('PHPWCMS_ROOT')) {
 
 ?><table width="538" border="0" cellpadding="0" cellspacing="0" summary="">
 <tr><td colspan="2" class="title"><?php echo $BL['be_admin_struct_title'] ?></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4"></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>
 <?php
 //echo "<tr onMouseOver=\"this.bgColor='#CCFF00';\" onMouseOut=\"this.bgColor='#FFFFFF';\">\n";
 
@@ -64,10 +64,10 @@ $a .= "<td width=\"450\">";
 $a .= "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" summary=\"\">\n<tr>\n";
 $a .= '<td nowrap="nowrap">';
 $a .= ($child_count) ? "<a href=\"phpwcms.php?do=admin&amp;p=6&amp;open=0:".(($_SESSION["structure"][0])?0:1)."\">" : "";
-$a .= "<img src=\"img/symbole/plus_".(($child_count) ? (($_SESSION["structure"][0]) ? "close" : "open") : "empty");
+$a .= "<img src=\"include/img/symbole/plus_".(($child_count) ? (($_SESSION["structure"][0]) ? "close" : "open") : "empty");
 $a .= ".gif\" width=\"15\" height=\"15\" border=\"0\" alt=\"\" />".(($child_count) ? "</a>" : "");
-$a .= "<img src=\"img/symbole/page_1.gif\" width=\"11\" height=\"15\" alt=\"ID:0\"></td>\n";
-$a .= "<td><img src=\"img/leer.gif\" width=\"2\" height=\"15\" alt=\"\" /></td>\n";
+$a .= "<img src=\"include/img/symbole/page_1.gif\" width=\"11\" height=\"15\" alt=\"ID:0\"></td>\n";
+$a .= "<td><img src=\"include/img/leer.gif\" width=\"2\" height=\"15\" alt=\"\" /></td>\n";
 $a .= "<td class=\"dir\"><strong>".$an."</strong></td>\n</tr>\n</table></td>\n";
 
 echo $a;
@@ -99,7 +99,7 @@ if($_SESSION["structure"][0]) {
 
 
 ?>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5"></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4"></td></tr>
 </table>

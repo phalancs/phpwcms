@@ -1105,7 +1105,7 @@ if(isset($cnt_form["fields"]) && is_array($cnt_form["fields"]) && count($cnt_for
 								} else {
 									$form_field .= '{CAPTCHA}';
 								}
-								$form_field = str_replace('{CAPTCHA}', '<img src="img/captcha.php?regen=y&amp;'.time().'" alt="Captcha" border="0" />', $form_field);
+								$form_field = str_replace('{CAPTCHA}', '<img src="include/img/captcha.php?regen=y&amp;'.time().'" alt="Captcha" border="0" />', $form_field);
 								break;
 								
 			case 'mathspam':	/*

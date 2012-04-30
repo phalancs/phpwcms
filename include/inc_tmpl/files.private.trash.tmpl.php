@@ -38,14 +38,14 @@ if($result = mysql_query($sql, $db) or die ("error while counting user files")) 
 if(isset($count_user_files) && $count_user_files) {
 	//Beginn Tabelle für Dateilisting
 	echo "<table width=\"538\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n";
-	echo "<tr><td colspan=\"2\"><img src=\"img/leer.gif\" width=\"1\" height=\"1\"></td></tr>\n";
+	echo "<tr><td colspan=\"2\"><img src=\"include/img/leer.gif\" width=\"1\" height=\"1\"></td></tr>\n";
 	include_once (PHPWCMS_ROOT."/include/inc_lib/files.private-delfilelist.inc.php");
 	echo "</table>\n";
 	?><table width="538" border="0" cellpadding="0" cellspacing="0" summary="">
-	<tr><td colspan="2" bgcolor="#9BBECA"><img src="img/leer.gif" width="1" height="1" alt=""></td><tr>
-	<tr><td colspan="2"><img src="img/leer.gif" width="1" height="3" alt=""></td><tr>
+	<tr><td colspan="2" bgcolor="#9BBECA"><img src="include/img/leer.gif" width="1" height="1" alt=""></td><tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" width="1" height="3" alt=""></td><tr>
 	<tr>
-		<td width="19"><img src="img/leer.gif" width="6" height="1" alt=""><img src="img/button/trash_13x13_1.gif" width="13" height="13" alt=""></td>
+		<td width="19"><img src="include/img/leer.gif" width="6" height="1" alt=""><img src="include/img/button/trash_13x13_1.gif" width="13" height="13" alt=""></td>
 		<td width="519" class="msglist">&nbsp;<strong><?php
 		
 		echo "<a href=\"include/inc_act/act_file.php?trash=0|9".
@@ -54,14 +54,14 @@ if(isset($count_user_files) && $count_user_files) {
 			 
 		?></strong></td>
 	<tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2"></td><tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2"></td><tr>
 	</table>
 <?php
 	
 	//Ende Tabelle
 } else { //Wenn keinerlei Datensatz innerhalb Files durchlaufen wurde, dann
-	echo "<img src=\"img/leer.gif\" width=\"1\" height=\"6\"><br />".$BL['be_ftrash_nofiles']."&nbsp;&nbsp;";
+	echo "<img src=\"include/img/leer.gif\" width=\"1\" height=\"6\"><br />".$BL['be_ftrash_nofiles']."&nbsp;&nbsp;";
 	echo "[<a href=\"phpwcms.php?do=files&f=0\">".$BL['be_ftrash_show']."</a>]";
-	echo "<br /><img src=\"img/leer.gif\" width=\"1\" height=\"6\">";
+	echo "<br /><img src=\"include/img/leer.gif\" width=\"1\" height=\"6\">";
 }
 ?>

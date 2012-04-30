@@ -43,7 +43,7 @@ if (!defined('PHPWCMS_ROOT')) {
 			if(SHOP_FELANG_SUPPORT) {
 				$plugin['data']['order_data']['lang'] = html_specialchars(strtolower($plugin['data']['order_data']['lang']));
 				echo '&nbsp;&nbsp;&nbsp;<span class="chatlist">'.$BL['be_profile_label_lang'].':</span> ';
-				echo '<img src="img/famfamfam/lang/';
+				echo '<img src="include/img/famfamfam/lang/';
 				echo $plugin['data']['order_data']['lang'] ? $plugin['data']['order_data']['lang'] : 'all';
 				echo '.png" alt="'.$plugin['data']['order_data']['lang'].'" style="position:relative;top:1px;" />';
 			}	
@@ -51,7 +51,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		?></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 	
 	<tr> 
 		<td class="chatlist"><?php echo $BLM['shopprod_ordernumber'] ?>:&nbsp;</td>
@@ -84,7 +84,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		</td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15" /></td></tr>
 	
 	<tr> 
 		<td class="chatlist"><?php echo $BL['be_profile_label_firstname'] ?>:&nbsp;</td>
@@ -115,7 +115,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		<td class="v12 tdbottom3"><?php echo html_specialchars($plugin['data']['order_data']['address']['INV_COUNTRY']) ?>&nbsp;</td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 
 	<tr> 
 		<td class="chatlist"><?php echo $BL['be_profile_label_email'] ?>:&nbsp;</td>
@@ -151,7 +151,7 @@ if (!defined('PHPWCMS_ROOT')) {
 	
 	if(count($plugin['custom'])) {
 
-?>	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr><?php
+?>	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr><?php
 
 		foreach($plugin['custom'] as $custom_key => $custom_field) {
 
@@ -170,7 +170,7 @@ if (!defined('PHPWCMS_ROOT')) {
 
 ?>
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 	
 	<tr> 
 		<td class="chatlist"><?php echo $BLM['shopprod_ordered'] ?>:&nbsp;</td>
@@ -299,7 +299,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		</table></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="20" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="20" /></td></tr>
 	
 	<tr> 
 		<td class="chatlist" style="padding-top:7px;"><?php echo $BLM['shopprod_email_customer'] ?>:&nbsp;</td>

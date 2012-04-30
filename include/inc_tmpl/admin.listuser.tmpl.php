@@ -115,7 +115,7 @@ if($_SESSION['list_user_page'] > $_userInfo['pages_total']) {
 
 ?><table width="538" border="0" cellpadding="0" cellspacing="0" summary="">
         <tr><td colspan="3" class="title"><?php echo $BL['be_admin_usr_ltitle'] ?></td></tr>
-		<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="5"></td></tr>		
+		<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>		
 		<tr><td colspan="3"><form action="phpwcms.php?do=admin" method="post" name="paginate" id="paginate"><input type="hidden" name="do_pagination" value="1" />
 	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="paginate" summary="">
 		<tr>
@@ -123,13 +123,13 @@ if($_SESSION['list_user_page'] > $_userInfo['pages_total']) {
 				<tr>
 					
 					<td><input type="checkbox" name="showadmin" id="showadmin" value="1" onclick="this.form.submit();"<?php is_checked(1, $_userInfo['list_admin'], 1) ?> /></td>
-					<td><label for="showadmin"><img src="img/usricon/usr_admin.gif" alt="" /></label></td>
+					<td><label for="showadmin"><img src="include/img/usricon/usr_admin.gif" alt="" /></label></td>
 					<td><input type="checkbox" name="showbefe" id="showbefe" value="1" onclick="this.form.submit();"<?php is_checked(1, $_userInfo['list_befe'], 1) ?> /></td>
-					<td><label for="showbefe"><img src="img/usricon/usr_befe.gif" alt="" /></label></td>
+					<td><label for="showbefe"><img src="include/img/usricon/usr_befe.gif" alt="" /></label></td>
 					<td><input type="checkbox" name="shownorm" id="shownorm" value="1" onclick="this.form.submit();"<?php is_checked(1, $_userInfo['list_norm'], 1) ?> /></td>
-					<td><label for="shownorm"><img src="img/usricon/usr_norm.gif" alt="" /></label></td>
+					<td><label for="shownorm"><img src="include/img/usricon/usr_norm.gif" alt="" /></label></td>
 					<td><input type="checkbox" name="showfe" id="showfe" value="1" onclick="this.form.submit();"<?php is_checked(1, $_userInfo['list_fe'], 1) ?> /></td>
-					<td><label for="showfe"><img src="img/usricon/usr_16.gif" alt="" /></label></td>
+					<td><label for="showfe"><img src="include/img/usricon/usr_16.gif" alt="" /></label></td>
 					
 <?php 
 if($_userInfo['pages_total'] > 1) {
@@ -138,9 +138,9 @@ if($_userInfo['pages_total'] > 1) {
 	echo '<td>';
 	if($_SESSION['list_user_page'] > 1) {
 		echo '<a href="phpwcms.php?do=admin&amp;page='.($_SESSION['list_user_page']-1).'">';
-		echo '<img src="img/famfamfam/action_back.gif" alt="" border="0" /></a>';
+		echo '<img src="include/img/famfamfam/action_back.gif" alt="" border="0" /></a>';
 	} else {
-		echo '<img src="img/famfamfam/action_back.gif" alt="" border="0" class="inactive" />';
+		echo '<img src="include/img/famfamfam/action_back.gif" alt="" border="0" class="inactive" />';
 	}
 	echo '</td>';
 	echo '<td><input type="text" name="page" id="page" maxlength="4" size="4" value="'.$_SESSION['list_user_page'];
@@ -149,9 +149,9 @@ if($_userInfo['pages_total'] > 1) {
 	echo '<td>';
 	if($_SESSION['list_user_page'] < $_userInfo['pages_total']) {
 		echo '<a href="phpwcms.php?do=admin&amp;page='.($_SESSION['list_user_page']+1).'">';
-		echo '<img src="img/famfamfam/action_forward.gif" alt="" border="0" /></a>';
+		echo '<img src="include/img/famfamfam/action_forward.gif" alt="" border="0" /></a>';
 	} else {
-		echo '<img src="img/famfamfam/action_forward.gif" alt="" border="0" class="inactive" />';
+		echo '<img src="include/img/famfamfam/action_forward.gif" alt="" border="0" class="inactive" />';
 	}
 	echo '</td><td class="chatlist">&nbsp;|&nbsp;</td>';
 
@@ -169,7 +169,7 @@ if($_userInfo['pages_total'] > 1) {
 	}
 	
 	?>" class="textinput" style="margin:0 2px 0 0;width:110px;text-align:left;" title="filter results by username, name or email" /></td>
-	<td><input type="image" name="gofilter" src="img/famfamfam/action_go.gif" /></td>
+	<td><input type="image" name="gofilter" src="include/img/famfamfam/action_go.gif" /></td>
 			</table></td>
 			<td class="chatlist" align="right">
 				<a href="phpwcms.php?do=admin&amp;c=10">10</a>
@@ -184,9 +184,9 @@ if($_userInfo['pages_total'] > 1) {
 	</table>
 	</form></td></tr>
 		
-		<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
+		<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
 		
-		<tr><td colspan="3" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>
+		<tr><td colspan="3" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>
         <?php
 	$bg_color1 = "#FFFFFF";
 	$bg_color2 = "#F3F5F8";
@@ -204,9 +204,9 @@ if($_userInfo['pages_total'] > 1) {
 			}
 			$goto = "phpwcms.php?do=admin&amp;s=2&amp;u=".$userlist["usr_id"];
 ?>
-        <tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>
+        <tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>
         <tr bgcolor="<?php echo  $bg_color ?>" onmouseover="bgColor='#DBFF48'" onmouseout="bgColor='<?php echo  $bg_color ?>'">
-          <td width="19" align="center"><img src="img/usricon/usr_<?php
+          <td width="19" align="center"><img src="include/img/usricon/usr_<?php
 		
 		if($userlist["usr_aktiv"] == 1) { 
 		  	if(!$userlist["usr_admin"]) {
@@ -240,11 +240,11 @@ if($_userInfo['pages_total'] > 1) {
 			} else {
 				echo "1";
 			} 
-			?>"><img src="img/button/<?php 
+			?>"><img src="include/img/button/<?php 
 			if(!$userlist["usr_aktiv"]) echo "in";
-			?>aktiv_mini.gif" alt="" width="14" height="15" border="0"></a><a href="<?php echo $goto ?>"><img src="img/button/edit.gif" alt="" width="24" height="15" border="0" title="<?php echo $BL['be_admin_usr_editusr'].": ".html_specialchars($userlist["usr_login"]) ?>"></a><a href="include/inc_act/act_user.php?del=<?php 
+			?>aktiv_mini.gif" alt="" width="14" height="15" border="0"></a><a href="<?php echo $goto ?>"><img src="include/img/button/edit.gif" alt="" width="24" height="15" border="0" title="<?php echo $BL['be_admin_usr_editusr'].": ".html_specialchars($userlist["usr_login"]) ?>"></a><a href="include/inc_act/act_user.php?del=<?php 
 		  echo urlencode($userlist["usr_id"].":".$userlist["usr_email"]);
-		  ?>" onclick="return confirm('Delete user <?php echo js_singlequote($userlist["usr_name"]) ?>');"><img src="img/button/del_message_final.gif" alt="" width="22" height="15" border="0" title="<?php echo $BL['be_admin_usr_ldel']." ".html_specialchars($userlist["usr_login"]) ?>"></a></td>
+		  ?>" onclick="return confirm('Delete user <?php echo js_singlequote($userlist["usr_name"]) ?>');"><img src="include/img/button/del_message_final.gif" alt="" width="22" height="15" border="0" title="<?php echo $BL['be_admin_usr_ldel']." ".html_specialchars($userlist["usr_login"]) ?>"></a></td>
         </tr>
         <?php
 				$zaehler++;
@@ -253,24 +253,24 @@ if($_userInfo['pages_total'] > 1) {
 		} //Ende Schleife Anzeige User
 		
 		if($zaehler) {
-			echo '<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>';
-        	echo '<tr><td colspan="3" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>';
+			echo '<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>';
+        	echo '<tr><td colspan="3" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>';
 		}
 		
 		?>
         <tr> 
-          <td><img src="img/leer.gif" alt="" width="19" height="5"></td>
-          <td><img src="img/leer.gif" alt="" width="458" height="1"></td>
-          <td><img src="img/leer.gif" alt="" width="61" height="1"></td>
+          <td><img src="include/img/leer.gif" alt="" width="19" height="5"></td>
+          <td><img src="include/img/leer.gif" alt="" width="458" height="1"></td>
+          <td><img src="include/img/leer.gif" alt="" width="61" height="1"></td>
         </tr>
         <tr> 
           <td colspan="3"><table width="538" border="0" cellpadding="0" cellspacing="0" summary="">
               <tr>
 			    <td><form action="phpwcms.php?do=admin&amp;s=1" method="post"><input type="submit" value="<?php echo $BL['be_admin_usr_create'] ?>" class="button10" title="<?php echo $BL['be_admin_usr_create'] ?>"></form></td>
                 <td>&nbsp;&nbsp;</td>
-				<td align="right"><img src="img/symbols/userlegende1.gif" alt="" width="225" height="13"></td>
+				<td align="right"><img src="include/img/symbols/userlegende1.gif" alt="" width="225" height="13"></td>
               </tr>
             </table></td>
         </tr>
-        <tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="7"></td></tr>
+        <tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="7"></td></tr>
 </table>

@@ -76,7 +76,7 @@ if($_userInfo['subscriptions']) {
 	if(!empty($_userInfo['csvError'])) {
 	
 		echo '	<tr> 
-		<td align="right" valign="top"><img src="img/famfamfam/icon_alert.gif" alt="Error" />&nbsp;</td>
+		<td align="right" valign="top"><img src="include/img/famfamfam/icon_alert.gif" alt="Error" />&nbsp;</td>
 		<td class="error1" style="padding: 2px 0 10px 0">'.html_specialchars($_userInfo['csvError']).'</td>
 	</tr>';
 	
@@ -89,7 +89,7 @@ if($_userInfo['subscriptions']) {
 		<td><?php echo $BL['be_newsletter_shouldbe1'] ?><div class="csv">emailA;nameA<br />&quot;emailB&quot;;&quot;nameB&quot;</div></td>
 	</tr>
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 
 	<tr> 
 		<td align="right" class="chatlist" nowrap="nowrap"><?php 
@@ -101,7 +101,7 @@ if($_userInfo['subscriptions']) {
 		<td><input name="cvsfile" type="file" class="f11" style="width:300px;" size="35" /></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr>
 	  <td align="right" class="chatlist"><?php echo $BL['be_newsletter_delimeter'] ?>:&nbsp;</td>
@@ -117,7 +117,7 @@ if($_userInfo['subscriptions']) {
 	
 if($_userInfo['select_subscr']) {
 	
-	echo '<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>'.LF;
+	echo '<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>'.LF;
 	echo '<tr>'.LF.'<td class="chatlist" align="right" valign="top" style="padding-top:3px;">'.$BL['be_cnt_subscription'].':&nbsp;</td>'.LF;
 	echo '<td>'.$_userInfo['select_subscr'].'</td>'.LF.'</tr>';
 
@@ -125,7 +125,7 @@ if($_userInfo['select_subscr']) {
 	
 ?>
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 	
 	<tr>
 		<td align="right" class="chatlist"><?php echo $BL['be_ftptakeover_status'] ?>:&nbsp;</td>
@@ -138,7 +138,7 @@ if($_userInfo['select_subscr']) {
 	</tr>
 	
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="12" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="12" /></td></tr>
 	<tr> 
 		<td>&nbsp;</td>
 		<td>

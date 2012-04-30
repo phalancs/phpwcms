@@ -40,7 +40,7 @@ if($check = mysql_query($sql, $db)) {
 if($wcs_msg_waiting) {
 
 	$wcsnav["navspace1"] = "<a href=\"phpwcms.php?do=messages\" title=\"".$wcs_msg_waiting." new messages waiting!\">".
-						   "<img src=\"img/symbole/new_mail.gif\" border=\"0\"></a>";
+						   "<img src=\"include/img/symbole/new_mail.gif\" border=\"0\"></a>";
 	$new_mail_waiting = 1;	
 }
 ?>

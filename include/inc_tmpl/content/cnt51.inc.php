@@ -55,11 +55,11 @@ if(is_array($tmpllist) && count($tmpllist)) {
 ?>				  
 		</select></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10"></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10"></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4"></td></tr>
 <tr>
-	<td valign="top" align="right" class="chatlist"><img src="img/leer.gif" width="1" height="14" alt=""><?php echo $BL['be_ctype_map'] ?>:&nbsp;</td>
+	<td valign="top" align="right" class="chatlist"><img src="include/img/leer.gif" width="1" height="14" alt=""><?php echo $BL['be_ctype_map'] ?>:&nbsp;</td>
 	<td valign="top"><?php
 
 // select the map image	
@@ -82,15 +82,15 @@ if(is_array($imglist) && count($imglist)) {
 		$g .= '</td><td class="f11b">'.$val.'&nbsp;&nbsp;</td><td>';
 		$g .= '<a href="javascript:void(0);" onmouseover="this.T_WIDTH=150;this.T_DELAY=100;this.T_PADDING=6;this.T_BGCOLOR=\'#ffffff\';';
 		$gp = substr($phpwcms["templates"],1).'inc_cntpart/map/map_img/'.$val;
-		$g .= 'Tip(\'<img src=image_resized.php?imgfile='.$gp.'&format=jpg&q=80&w=250&h=250>\');">';
-		$g .= '<img src="img/button/button_img_mouseover.gif" alt="" width="11" height="11" border="0">';
+		$g .= 'Tip(\'<img src=include/img/image_resized.php?imgfile='.$gp.'&format=jpg&q=80&w=250&h=250>\');">';
+		$g .= '<img src="include/img/button/button_img_mouseover.gif" alt="" width="11" height="11" border="0">';
 		$g .= "</a></td></tr>\n";
 	}
 }
 if($g) {
 	echo '<table cellspacing="0" cellpadding="0" border="0">'."\n".$g.'</table>';
 } else {
-	echo '<img src="img/leer.gif" width="1" height="13" alt=""><span class="error">no map available. upload one first.</span>';
+	echo '<img src="include/img/leer.gif" width="1" height="13" alt=""><span class="error">no map available. upload one first.</span>';
 }
 				  
 ?></td>
@@ -132,13 +132,13 @@ if($map_selected) {
 			$map_list .= '<td class="v09" width="90%"><strong>'.$map_row['map_title']."</strong></td>\n";
 			$map_list .= '<td align="right" class="v09"><a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=2&amp;';
 			$map_list .= 'id='.$content["aid"].'&amp;acid='.$content["id"].'&amp;locid='.$map_row['map_id'].'">';
-			$map_list .= '<img src="img/button/edit_11x11.gif" width="11" height="11" border="0" alt=""></a>';
-			$map_list .= '<img src="img/leer.gif" width="1" height="1" alt="" border="0">';	
+			$map_list .= '<img src="include/img/button/edit_11x11.gif" width="11" height="11" border="0" alt=""></a>';
+			$map_list .= '<img src="include/img/leer.gif" width="1" height="1" alt="" border="0">';	
 			$map_list .= '<a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=2&amp;';
 			$map_list .= 'id='.$content["aid"].'&amp;acid='.$content["id"].'&amp;dellocid='.$map_row['map_id'];
 			$map_list .= '" onclick="return confirm(\''.$BL['be_btn_delete'].' \n';
 			$map_list .= $map_row['map_title'].'\');">';
-			$map_list .= '<img src="img/button/del_11x11.gif" width="11" height="11" alt="" border="0">';
+			$map_list .= '<img src="include/img/button/del_11x11.gif" width="11" height="11" alt="" border="0">';
 			$map_list .= "</a></td>\n</tr>\n";
 			$map_xy[] = $map_row['map_x'].':::'.$map_row['map_y'].':::'.$map_row['map_title'];
 		
@@ -149,11 +149,11 @@ if($map_selected) {
 
 
 ?>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5"></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>
 <tr>
-  <td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="15"><?php echo ($map_current) ? $BL['be_cnt_map_edit'] : $BL['be_cnt_map_add']; ?>:&nbsp;</td>
+  <td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="15"><?php echo ($map_current) ? $BL['be_cnt_map_edit'] : $BL['be_cnt_map_add']; ?>:&nbsp;</td>
   <td valign="top"><table border="0" cellpadding="0" cellspacing="0" bgcolor="#E7E8EB" summary="">
 			    <tr>
 				  <td class="v10">&nbsp;&nbsp;X:&nbsp; </td>
@@ -169,16 +169,16 @@ if($map_selected) {
 				  ?>','map','<?php 
 				  echo 'scrollbars=yes,resizable=yes,width='.($map_info[0]+12).',height='.($map_info[1]+15) 
 				  ?>',1);return document.MM_returnValue;"></td>
-				  <td><img src="img/leer.gif" alt="" width="5" height="22"></td>
+				  <td><img src="include/img/leer.gif" alt="" width="5" height="22"></td>
 		        </tr>
 		      </table></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
 <tr>
   <td align="right" class="chatlist"><?php echo $BL['be_cnt_map_title'] ?>:&nbsp;</td>
   <td><input name="cmap_location_title" type="text" class="f11" style="width: 440px" value="<?php echo  empty($content['location']["title"]) ? '' : html_specialchars($content['location']["title"]) ?>" size="40" onChange="doMapChange();"></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 <tr>
   <td align="right" class="chatlist"><?php echo $BL['be_profile_label_zip'] ?>:&nbsp;</td>
   <td><table border="0" cellpadding="0" cellspacing="0" summary="">
@@ -189,9 +189,9 @@ if($map_selected) {
   </tr>
   </table></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 <tr>
-  <td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_cnt_map_info'] ?>:&nbsp;</td>
+  <td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_cnt_map_info'] ?>:&nbsp;</td>
   <td valign="top"><?php
 
 $wysiwyg_editor = array(
@@ -208,7 +208,7 @@ include(PHPWCMS_ROOT.'/include/inc_lib/wysiwyg.editor.inc.php');
   ?></td>
 </tr>
 <tr>
-  <td valign="bottom"><img src="img/leer.gif" alt="" width="1" height="22"><input type="hidden" name="cmap_location_id" value="<?php echo  empty($content['location']["id"]) ? 0 : intval($content['location']["id"]) ?>"><input type="hidden" id="cmap_location_edited" name="cmap_location_edited" value="1"></td>
+  <td valign="bottom"><img src="include/img/leer.gif" alt="" width="1" height="22"><input type="hidden" name="cmap_location_id" value="<?php echo  empty($content['location']["id"]) ? 0 : intval($content['location']["id"]) ?>"><input type="hidden" id="cmap_location_edited" name="cmap_location_edited" value="1"></td>
   <td valign="bottom"><input name="Submit" type="submit" class="v09" value="<?php echo $BL['be_save_btn'] ?>"></td>
 </tr>
 <?php
@@ -216,9 +216,9 @@ include(PHPWCMS_ROOT.'/include/inc_lib/wysiwyg.editor.inc.php');
 	if($map_list) {
 		$ck = ($ck > 10) ? 'height:200px;' : '';
 ?>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>
 <tr>
-  <td valign="top" align="right" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="14"><?php echo $BL['be_cnt_map_list'] ?>:&nbsp;</td>
+  <td valign="top" align="right" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="14"><?php echo $BL['be_cnt_map_list'] ?>:&nbsp;</td>
   <td><div style="overflow:auto;border:1px solid #7F9DB9;padding:0px;width:440px;<?php echo $ck ?>margin:0;background-color:#F3F3F5;">
   <table width="100%" border="0" cellpadding="3" cellspacing="0" summary="">
   <?php echo $map_list; ?>
@@ -230,10 +230,10 @@ include(PHPWCMS_ROOT.'/include/inc_lib/wysiwyg.editor.inc.php');
 
 }
 ?>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5"></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="7"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="7"></td></tr>
 <tr>
-  <td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_admin_page_text'] ?>:&nbsp;</td>
+  <td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_admin_page_text'] ?>:&nbsp;</td>
   <td valign="top"><textarea name="cmap_text" cols="40" rows="8" class="f11" style="width:440px"><?php echo  empty($content["map"]["text"]) ? '' : html_specialchars($content["map"]["text"]) ?></textarea></td>
 </tr>

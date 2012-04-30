@@ -22,11 +22,11 @@
 
 
 $phpwcms	= array();
-$root		= rtrim(str_replace('\\', '/', realpath(dirname(__FILE__).'/../') ), '/').'/';
-require($root.'/include/config/conf.inc.php');
-require($root.'/include/inc_lib/default.inc.php');
-require($root.'/include/inc_lib/general.inc.php');
-require($root.'/include/inc_lib/imagick.convert.inc.php');
+$DOC_ROOT	= rtrim(str_replace('\\', '/', dirname(dirname(__FILE__)) ), '/');
+require($DOC_ROOT.'/config/conf.inc.php');
+require($DOC_ROOT.'/inc_lib/default.inc.php');
+require(PHPWCMS_ROOT.'/include/inc_lib/general.inc.php');
+require(PHPWCMS_ROOT.'/include/inc_lib/imagick.convert.inc.php');
 
 // get segments: cmsimage.php/%WIDTH%x%HEIGHT%x%CROP%x%QUALITY%/%HASH%.%EXT%
 // by default this should be enough: cmsimage.php/%WIDTH%x%HEIGHT/%HASH%.%EXT%
@@ -142,7 +142,7 @@ if(isset($data[1]) && !preg_match('/[^a-fgijpnxA-FGIJPN0-9\/\.]/', $data[1])) {
 }
 
 // something did not work - redirect to transparent pixel image
-headerRedirect(PHPWCMS_URL.'img/leer.gif', 301);
+headerRedirect(PHPWCMS_URL.'include/img/leer.gif', 301);
 
 
 ?>

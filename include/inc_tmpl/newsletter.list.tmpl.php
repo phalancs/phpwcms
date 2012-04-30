@@ -85,7 +85,7 @@ if($_SESSION['newsletter_page'] < 1) {
 
 <div class="navBarLeft imgButton chatlist">
 	&nbsp;&nbsp;
-	<a href="phpwcms.php?do=messages&amp;p=3&amp;s=0&amp;edit=1"><img src="img/famfamfam/email_add.gif" alt="Add" border="0" /><span><?php echo $BL['be_newsletter_new'] ?></span></a>
+	<a href="phpwcms.php?do=messages&amp;p=3&amp;s=0&amp;edit=1"><img src="include/img/famfamfam/email_add.gif" alt="Add" border="0" /><span><?php echo $BL['be_newsletter_new'] ?></span></a>
 </div>
 
 
@@ -98,9 +98,9 @@ if($_newsletter['pages_total'] > 1) {
 	echo '<table border="0" cellpadding="0" cellspacing="0" summary=""><tr><td>';
 	if($_SESSION['newsletter_page'] > 1) {
 		echo '<a href="phpwcms.php?do=messages&amp;p=3&amp;page='.($_SESSION['newsletter_page']-1).'">';
-		echo '<img src="img/famfamfam/action_back.gif" alt="" border="0" /></a>';
+		echo '<img src="include/img/famfamfam/action_back.gif" alt="" border="0" /></a>';
 	} else {
-		echo '<img src="img/famfamfam/action_back.gif" alt="" border="0" class="inactive" />';
+		echo '<img src="include/img/famfamfam/action_back.gif" alt="" border="0" class="inactive" />';
 	}
 	echo '</td>';
 	echo '<td><input type="text" name="page" id="page" maxlength="4" size="4" value="'.$_SESSION['newsletter_page'];
@@ -109,9 +109,9 @@ if($_newsletter['pages_total'] > 1) {
 	echo '<td>';
 	if($_SESSION['newsletter_page'] < $_newsletter['pages_total']) {
 		echo '<a href="phpwcms.php?do=messages&amp;p=3&amp;page='.($_SESSION['newsletter_page']+1).'">';
-		echo '<img src="img/famfamfam/action_forward.gif" alt="" border="0" /></a>';
+		echo '<img src="include/img/famfamfam/action_forward.gif" alt="" border="0" /></a>';
 	} else {
-		echo '<img src="img/famfamfam/action_forward.gif" alt="" border="0" class="inactive" />';
+		echo '<img src="include/img/famfamfam/action_forward.gif" alt="" border="0" class="inactive" />';
 	}
 	echo '</td></tr></table>';
 } else {
@@ -143,7 +143,7 @@ if($_newsletter['pages_total'] > 1) {
 		<th>&nbsp;</th>
 	</tr>
 	
-	<tr><td colspan="6" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr><td colspan="6" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 	
 <?php
 
@@ -170,10 +170,10 @@ if($_newsletter['pages_total'] > 1) {
 			$count_recipient	= countNewsletterRecipients($row['newsletter_vars']['subscription']);
 			
 			if(empty($row["newsletter_active"]) || !$count_queue) {
-				echo '<img src="img/famfamfam/email.gif" alt="NL" title="ID:'.$row["newsletter_id"].'" />';
+				echo '<img src="include/img/famfamfam/email.gif" alt="NL" title="ID:'.$row["newsletter_id"].'" />';
 			} else {
 				echo '<a href="phpwcms.php?do=messages&amp;p=3&amp;s='.$row["newsletter_id"];
-				echo '&amp;send=1"><img src="img/famfamfam/email_go.gif" alt="Send" border="0" title="ID:'.$row["newsletter_id"].'"></a>';
+				echo '&amp;send=1"><img src="include/img/famfamfam/email_go.gif" alt="Send" border="0" title="ID:'.$row["newsletter_id"].'"></a>';
 			}
 			
 			echo '</td>'.LF;
@@ -195,7 +195,7 @@ if($_newsletter['pages_total'] > 1) {
 			
 			echo '<td nowrap="nowrap" class="v10" align="center">'.$count_recipient.'/'.$count_queue.'/'.$count_sent;
 			if($count_sent && !$count_queue && $row["newsletter_active"]) {
-				echo '<img src="img/symbole/valid.gif" border="0" alt="valid" style="margin: 0 0 0 3px" />';
+				echo '<img src="include/img/symbole/valid.gif" border="0" alt="valid" style="margin: 0 0 0 3px" />';
 			}
 			echo '&nbsp;</td>';
 			
@@ -204,17 +204,17 @@ if($_newsletter['pages_total'] > 1) {
 			
 			// duplicate
 			echo '<a href="phpwcms.php?do=messages&amp;p=3&amp;duplicate_nl='.$row["newsletter_id"];
-			echo '"><img src="img/button/copy_11x11_0.gif" alt="Duplicate" border="0" style="margin:1px 3px 1px 0" /></a>';
+			echo '"><img src="include/img/button/copy_11x11_0.gif" alt="Duplicate" border="0" style="margin:1px 3px 1px 0" /></a>';
 			
 			// edit
 			echo '<a href="phpwcms.php?do=messages&amp;p=3&amp;s='.$row["newsletter_id"];
-			echo '&amp;edit=1"><img src="img/button/edit_22x13.gif" alt="Edit" border="0" /></a>';
+			echo '&amp;edit=1"><img src="include/img/button/edit_22x13.gif" alt="Edit" border="0" /></a>';
 			
 			// delete
 			echo '<a href="phpwcms.php?do=messages&amp;p=3&amp;s='.$row["newsletter_id"].'&amp;del='.$row["newsletter_id"];
 			echo '" title="delete: '.html_specialchars($row["newsletter_subject"]);			
 			echo '" onclick="return confirm(\'Delete newsletter: '.js_singlequote(html_specialchars($row["newsletter_subject"])).'\');">';
-			echo '<img src="img/button/trash_13x13_1.gif" border="0" alt="Delete" /></a>';
+			echo '<img src="include/img/button/trash_13x13_1.gif" border="0" alt="Delete" /></a>';
 			
 			echo "</td>\n</tr>\n";
 
@@ -229,8 +229,8 @@ if($_newsletter['pages_total'] > 1) {
 	}
 		
 ?>
-	<tr><td colspan="6" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
-	<tr><td colspan="6"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+	<tr><td colspan="6" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr><td colspan="6"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 </table>
 <?php
 

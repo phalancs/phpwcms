@@ -45,7 +45,7 @@ if (!defined('PHPWCMS_ROOT')) {
 	
 	</tr>
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['shopprod_currency'] ?>:&nbsp;</td>
@@ -59,7 +59,7 @@ if (!defined('PHPWCMS_ROOT')) {
 			</table></td>
 	</tr>
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>	
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>	
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['shopprod_unit'] . ' - ' . $BLM['shopprod_weight'] ?>:&nbsp;</td>
@@ -73,7 +73,7 @@ if (!defined('PHPWCMS_ROOT')) {
 			</table></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>	
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>	
 	
 	<tr> 
 		<td align="right" class="chatlist tdtop4"><?php echo $BLM['shopprod_vat_rates'] ?>:&nbsp;</td>
@@ -94,28 +94,28 @@ if (!defined('PHPWCMS_ROOT')) {
 	
 	
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>	
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>	
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['shopprod_email_to'] ?>:&nbsp;</td>
 		<td><input name="pref_email_to" type="text" id="pref_email_to" class="v12 width375" value="<?php echo html_specialchars(str_replace(';', '; ', $plugin['data']['shop_pref_email_to'])) ?>" size="30" maxlength="200" onchange="enableSubmit();" /></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>	
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>	
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['shopprod_email_from'] ?>:&nbsp;</td>
 		<td><input name="pref_email_from" type="text" id="pref_email_from" class="v12 width375" value="<?php echo html_specialchars($plugin['data']['shop_pref_email_from']) ?>" size="30" maxlength="200" onchange="enableSubmit();" /></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>	
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>	
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['shopprod_id_shop'] ?>:&nbsp;</td>
 		<td><input name="pref_shop_id" type="text" id="pref_shop_id" class="v12 width375" value="<?php echo html_specialchars($plugin['data']['shop_pref_id_shop']) ?>" size="30" maxlength="200" onchange="enableSubmit();" /></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>	
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>	
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['shopprod_id_cart'] ?>:&nbsp;</td>
@@ -123,7 +123,7 @@ if (!defined('PHPWCMS_ROOT')) {
 	</tr>
 	
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 
 	<tr> 
 		<td align="right" class="chatlist" valign="top"><?php echo $BLM['shopprod_shipping'] ?>:&nbsp;</td>
@@ -152,7 +152,7 @@ if (!defined('PHPWCMS_ROOT')) {
 	</tr>
 
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 	
 	<!-- Low order surcharge -->
 	<tr>
@@ -172,7 +172,7 @@ if (!defined('PHPWCMS_ROOT')) {
 	
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 	
 	<!-- Discount -->
 	<tr>
@@ -190,7 +190,7 @@ if (!defined('PHPWCMS_ROOT')) {
 
 
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>	
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>	
 
 	<tr> 
 		<td align="right" class="chatlist tdtop4"><?php echo $BLM['shopprod_payment_method'] ?>:&nbsp;</td>
@@ -203,7 +203,7 @@ if (!defined('PHPWCMS_ROOT')) {
 				<td><input name="pref_email_paypal" type="text" id="pref_email_paypal" class="v12 width175" value="<?php echo html_specialchars($plugin['data']['shop_pref_email_paypal']) ?>" size="30" maxlength="200" onchange="enableSubmit();" /></td>
 			</tr>
 			
-			<tr><td colspan="4"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+			<tr><td colspan="4"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 			
 			<tr>
 				<td valign="top"><input type="checkbox" name="pref_payment_ccard" id="pref_payment_ccard" value="1"<?php is_checked(1, $plugin['data']['shop_pref_payment']['ccard']) ?> onchange="enableSubmit();" /></td>
@@ -218,7 +218,7 @@ if (!defined('PHPWCMS_ROOT')) {
 				</select></td>
 			</tr>
 			
-			<tr><td colspan="4"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+			<tr><td colspan="4"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 			
 			<tr>
 				<td><input type="checkbox" name="pref_payment_prepay" id="pref_payment_prepay" value="1"<?php is_checked(1, $plugin['data']['shop_pref_payment']['prepay']) ?> onchange="enableSubmit();" /></td>
@@ -227,7 +227,7 @@ if (!defined('PHPWCMS_ROOT')) {
 				<td>&nbsp;</td>
 			</tr>
 			
-			<tr><td colspan="4"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+			<tr><td colspan="4"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 			
 			<tr>
 				<td><input type="checkbox" name="pref_payment_pod" id="pref_payment_pod" value="1"<?php is_checked(1, $plugin['data']['shop_pref_payment']['pod']) ?> onchange="enableSubmit();" /></td>
@@ -236,7 +236,7 @@ if (!defined('PHPWCMS_ROOT')) {
 				<td>&nbsp;</td>
 			</tr>
 			
-			<tr><td colspan="4"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+			<tr><td colspan="4"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 			
 			<tr>
 				<td><input type="checkbox" name="pref_payment_onbill" id="pref_payment_onbill" value="1"<?php is_checked(1, $plugin['data']['shop_pref_payment']['onbill']) ?> onchange="enableSubmit();" /></td>
@@ -249,7 +249,7 @@ if (!defined('PHPWCMS_ROOT')) {
 	</tr>
 	
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 	
 	<tr>
 		<td>&nbsp;</td>
@@ -274,7 +274,7 @@ if (!defined('PHPWCMS_ROOT')) {
 	</tr>
 	
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="18" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="18" /></td></tr>
 
 	<tr> 
 		<td>&nbsp;</td>

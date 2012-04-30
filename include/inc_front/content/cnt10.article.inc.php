@@ -215,7 +215,7 @@ if(trim($cform[0])) {
 						$CNT_TMP .= "<input type=\"text\" name=\"".$cfield[1]."\" value=\"".trimhtml($cfield[5])."\" size=\"".$cfield_length."\" ";
 						$CNT_TMP .= ($cfield_max_height) ? "maxlength=\"".$cfield_max_height."\" " : "";
 						$CNT_TMP .= "id=\"".$cfield[1]."\" class=\"inputText\"".(($cfield[6])?" style=\"width:".$cfield[6]."px\"":"")." />";
-						$CNT_TMP .= "</td><td>&nbsp;&nbsp;</td><td>".'<img src="img/captcha.php?regen=y&amp;'.time().'" alt="Captcha" border="0" />'."</tr></table></td></tr>\n";
+						$CNT_TMP .= "</td><td>&nbsp;&nbsp;</td><td>".'<img src="include/img/captcha.php?regen=y&amp;'.time().'" alt="Captcha" border="0" />'."</tr></table></td></tr>\n";
 						break;
 		}
 	}										

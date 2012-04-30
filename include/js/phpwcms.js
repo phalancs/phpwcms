@@ -145,9 +145,9 @@ function changeImagePos(x,f) {
 	}
 	for(i=0; i<=9; i++)	{
 		if(i==x) {
-			MM_swapImage('imgpos'+i,'','img/symbole/content_selected.gif',0);
+			MM_swapImage('imgpos'+i,'','include/img/symbole/content_selected.gif',0);
 		} else {
-			MM_swapImage('imgpos'+i,'','img/leer.gif',0);
+			MM_swapImage('imgpos'+i,'','include/img/leer.gif',0);
 		}
 	}
 }
@@ -160,9 +160,9 @@ function changeImagePosMenu(f) {
 	}
 	for(i=0; i<=9; i++)	{
 		if(i==x) {
-			MM_swapImage('imgpos'+i,'','img/symbole/content_selected.gif',0);
+			MM_swapImage('imgpos'+i,'','include/img/symbole/content_selected.gif',0);
 		} else {
-			MM_swapImage('imgpos'+i,'','img/leer.gif',0);
+			MM_swapImage('imgpos'+i,'','include/img/leer.gif',0);
 		}
 	}
 	if(!f) {

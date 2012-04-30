@@ -115,9 +115,9 @@ if($_entry['pages_total'] > 1) {
 	echo '<td>';
 	if($_SESSION['seolog_page'] > 1) {
 		echo '<a href="'.MODULE_HREF.'&amp;page='.($_SESSION['seolog_page']-1).'">';
-		echo '<img src="img/famfamfam/action_back.gif" alt="" border="0" /></a>';
+		echo '<img src="include/img/famfamfam/action_back.gif" alt="" border="0" /></a>';
 	} else {
-		echo '<img src="img/famfamfam/action_back.gif" alt="" border="0" class="inactive" />';
+		echo '<img src="include/img/famfamfam/action_back.gif" alt="" border="0" class="inactive" />';
 	}
 	echo '</td>';
 	echo '<td><input type="text" name="page" id="page" maxlength="4" size="4" value="'.$_SESSION['seolog_page'];
@@ -126,9 +126,9 @@ if($_entry['pages_total'] > 1) {
 	echo '<td>';
 	if($_SESSION['seolog_page'] < $_entry['pages_total']) {
 		echo '<a href="'.MODULE_HREF.'&amp;page='.($_SESSION['seolog_page']+1).'">';
-		echo '<img src="img/famfamfam/action_forward.gif" alt="" border="0" /></a>';
+		echo '<img src="include/img/famfamfam/action_forward.gif" alt="" border="0" /></a>';
 	} else {
-		echo '<img src="img/famfamfam/action_forward.gif" alt="" border="0" class="inactive" />';
+		echo '<img src="include/img/famfamfam/action_forward.gif" alt="" border="0" class="inactive" />';
 	}
 	echo '</td><td class="chatlist">&nbsp;|&nbsp;</td>';
 
@@ -145,7 +145,7 @@ if($_entry['pages_total'] > 1) {
 				}
 				
 				?>" class="textinput" style="margin:0 2px 0 0;width:110px;text-align:left;" title="filter results" /></td>
-				<td><input type="image" name="gofilter" src="img/famfamfam/action_go.gif" style="margin-right:3px;" /></td>
+				<td><input type="image" name="gofilter" src="include/img/famfamfam/action_go.gif" style="margin-right:3px;" /></td>
 			
 			</tr>
 		</table></td>
@@ -165,8 +165,8 @@ if($_entry['pages_total'] > 1) {
 
 <table width="100%" border="0" cellpadding="0" cellspacing="0" summary="">
 		
-	<tr><td colspan="4"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
-	<tr><td colspan="4" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>
+	<tr><td colspan="4"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
+	<tr><td colspan="4" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>
 	
 <?php
 // loop listing available newsletters
@@ -205,10 +205,10 @@ foreach($data as $row) {
 }
 
 if($row_count) {
-	echo '<tr><td colspan="4" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>';
+	echo '<tr><td colspan="4" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>';
 }
 
 ?>	
 
-	<tr><td colspan="4"><img src="img/leer.gif" alt="" width="1" height="15"></td></tr>
+	<tr><td colspan="4"><img src="include/img/leer.gif" alt="" width="1" height="15"></td></tr>
 </table>

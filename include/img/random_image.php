@@ -20,9 +20,10 @@
    This copyright notice MUST APPEAR in all copies of the script!
 *************************************************************************************/
 
-$phpwcms = array();
-require_once ('../include/config/conf.inc.php');
-require_once ('../include/inc_lib/default.inc.php');
+$phpwcms	= array();
+$DOC_ROOT	= rtrim(str_replace('\\', '/', dirname(dirname(__FILE__)) ), '/');
+require_once ($DOC_ROOT.'/config/conf.inc.php');
+require_once ($DOC_ROOT.'/inc_lib/default.inc.php');
 
 
 //Random Pic send to browser
@@ -53,7 +54,7 @@ if($imgpath) {
 	}
 }
 
-$file = dirname(__FILE__)."/leer.gif";
+$file = $DOC_ROOT."/img/leer.gif";
 if(is_array($imgArray) && sizeof($imgArray)) {
 	mt_srand( (double)microtime( ) * 1000000 );
 	$randval = mt_rand( 0, sizeof( $imgArray ) - 1 );

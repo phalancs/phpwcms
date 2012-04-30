@@ -31,7 +31,7 @@ if (!defined('PHPWCMS_ROOT')) {
 
 function spacer($width=1, $height=1) {
 	//creates a placeholder image (transparent gif)
-	return '<img src="img/leer.gif" width="'.intval($width).'" height="'.intval($height).'" border="0" alt="" />';
+	return '<img src="include/img/leer.gif" width="'.intval($width).'" height="'.intval($height).'" border="0" alt="" />';
 }
 
 function headline(& $head, & $subhead, & $layout) {
@@ -89,7 +89,7 @@ function plugin_size($mediatype, $player, $width, $height) {
 function must_filled($c) {
 	//spaceholder for form fields that have to be filled
 	//with some content or has to be marked or like that
-	return intval($c) ? '<img src="img/article/fill_in_here.gif" border="0" alt="" />' : '';
+	return intval($c) ? '<img src="include/img/article/fill_in_here.gif" border="0" alt="" />' : '';
 }
 
 function add_attribute($baseval, $attribute, $val, $space=" ") {
@@ -615,7 +615,7 @@ function nav_table_simple_struct(&$struct, $act_cat_id, $link_to="index.php") {
 	//returns a simple table based navigation menu of possible
 	//structure levels based on current structure level
 	$nav_table  = "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" summary=\"\">\n<tr>\n";
-	$nav_table .= "<td width=\"10\"><img src=\"img/leer.gif\" width=\"10\" height=\"1\" alt=\"\" /></td>\n";
+	$nav_table .= "<td width=\"10\"><img src=\"include/img/leer.gif\" width=\"10\" height=\"1\" alt=\"\" /></td>\n";
 	$nav_table .= '<td width="100%"'.(empty($struct[$act_cat_id]["acat_class"]) ? '' : ' class="'.$struct[$act_cat_id]["acat_class"].'"').'><strong>';
 	$nav_table .= html_specialchars($struct[$act_cat_id]["acat_name"]);
 	$nav_table .= "</strong></td>\n<tr>";
@@ -624,7 +624,7 @@ function nav_table_simple_struct(&$struct, $act_cat_id, $link_to="index.php") {
 		if($key != $act_cat_id && _getStructureLevelDisplayStatus($key, $act_cat_id) ) {
 			
 			$nav_table .= "<tr>\n";
-			$nav_table .= "<td width=\"10\"><img src=\"img/leer.gif\" width=\"10\" height=\"1\" alt=\"\" /></td>\n";
+			$nav_table .= "<td width=\"10\"><img src=\"include/img/leer.gif\" width=\"10\" height=\"1\" alt=\"\" /></td>\n";
 			$nav_table .= '<td width="100%"'.(empty($struct[$key]["acat_class"]) ? '' : ' class="'.$struct[$key]["acat_class"].'"').'>';
 
 			if(!$struct[$key]["acat_redirect"]) {
@@ -1527,15 +1527,15 @@ function html_parser($string) {
 
 	// random GIF Image
 	$search[4]		= '/\{RANDOM_GIF:(.*?)\}/';
-	$replace[4]		= '<img src="img/random_image.php?type=0&imgdir=$1" border="0" alt="" />';
+	$replace[4]		= '<img src="include/img/random_image.php?type=0&imgdir=$1" border="0" alt="" />';
 
 	// random JPEG Image
 	$search[5]		= '/\{RANDOM_JPEG:(.*?)\}/';
-	$replace[5]		= '<img src="img/random_image.php?type=1&amp;imgdir=$1" border="0" alt="" />';
+	$replace[5]		= '<img src="include/img/random_image.php?type=1&amp;imgdir=$1" border="0" alt="" />';
 
 	// random PNG Image
 	$search[6]		= '/\{RANDOM_PNG:(.*?)\}/';
-	$replace[6]		= '<img src="img/random_image.php?type=2&amp;imgdir=$1" border="0" alt="" />';
+	$replace[6]		= '<img src="include/img/random_image.php?type=2&amp;imgdir=$1" border="0" alt="" />';
 
 	// insert non db image standard
 	$search[7]		= '/\{IMAGE:(.*?)\}/';
@@ -1555,7 +1555,7 @@ function html_parser($string) {
 
 	// insert non db image right
 	$search[11]	 	= '/\{SPACER:(\d+)x(\d+)\}/';
-	$replace[11] 	= '<img src="img/leer.gif" border="0" width="$1" height="$2" alt="" />';
+	$replace[11] 	= '<img src="include/img/leer.gif" border="0" width="$1" height="$2" alt="" />';
 
 	// RSS feed link 
 	$search[13]		= '/\[RSS (.*?)\](.*?)\[\/RSS\]/s';
@@ -3840,7 +3840,7 @@ function render_CKEDitor_resized_images($match) {
 		return $match[0];
 	}
 	
-	$src = 'img/cmsimage.php/'.$width.'x'.$height.'/'.$src[1];
+	$src = 'include/img/cmsimage.php/'.$width.'x'.$height.'/'.$src[1];
 	if(strpos($match[0], 'alt="')) {
 		preg_match('/alt="(.*?)"/', $match[0], $alt);
 		$alt = empty($alt[1]) ? '' : ' alt="'.$alt[1].'"';

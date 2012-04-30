@@ -46,32 +46,32 @@ $buttonAction .= '</tr></table>';
 <form action="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=2&amp;id=<?php echo $article["article_id"] ?>" method="post" name="addcontent" id="addcontent">
 <table width="538" border="0" cellpadding="0" cellspacing="0" summary="">
 	<tr><td colspan="3" class="title"><?php echo $BL['be_article_cnt_ltitle'] ?></td></tr>
-	<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="8" /></td>
+	<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td>
 	</tr>
-	<tr bgcolor="#92A1AF"><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="1" /></td>
+	<tr bgcolor="#92A1AF"><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td>
 	</tr>
-	<tr bgcolor="#F3F5F8"><td><img src="img/leer.gif" alt="" width="23" height="4" /></td>
-		<td><img src="img/leer.gif" alt="" width="453" height="1" /></td>
-		<td><img src="img/leer.gif" alt="" width="62" height="1" /></td>
+	<tr bgcolor="#F3F5F8"><td><img src="include/img/leer.gif" alt="" width="23" height="4" /></td>
+		<td><img src="include/img/leer.gif" alt="" width="453" height="1" /></td>
+		<td><img src="include/img/leer.gif" alt="" width="62" height="1" /></td>
 	</tr>
 	<tr bgcolor="#F3F5F8">
-		<td width="23" align="right"><img src="img/symbole/article_text.gif" alt="" width="9" height="11" border="0" /><img src="img/leer.gif" alt="" width="5" height="1" /></td>
+		<td width="23" align="right"><img src="include/img/symbole/article_text.gif" alt="" width="9" height="11" border="0" /><img src="include/img/leer.gif" alt="" width="5" height="1" /></td>
 		<td width="453" class="dir"><a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=1&amp;id=<?php echo $article["article_id"] ?>"><strong><?php echo html_specialchars($article["article_title"]) ?></strong></a></td>
-		<td width="62" align="right" class="h13" style="padding-right:1px"><a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=1&amp;id=<?php echo $article["article_id"] ?>"><img src="img/button/edit_22x13.gif" alt="<?php echo $BL['be_article_cnt_ledit'] ?>" width="22" height="13" border="0" /></a><a href="include/inc_act/act_articlecontent.php?do=<?php echo "3,".$article["article_id"].",0,".switch_on_off($article["article_aktiv"]) ?>" title="<?php echo $BL['be_article_cnt_lvisible'] ?>"><img src="img/button/visible_12x13_<?php echo $article["article_aktiv"] ?>.gif" alt="" width="12" height="13" border="0" /></a><a href="include/inc_act/act_articlecontent.php?do=<?php echo "1,".$article["article_id"]; ?>" title="<?php echo $BL['be_article_cnt_ldel'] ?>" onclick="return confirm('<?php echo $BL['be_article_cnt_ldeljs'].'\n'.html_specialchars($article["article_title"]); ?>  \n ');"><img src="img/button/trash_13x13_1.gif" alt="" width="13" height="13" border="0" /></a></td>
+		<td width="62" align="right" class="h13" style="padding-right:1px"><a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=1&amp;id=<?php echo $article["article_id"] ?>"><img src="include/img/button/edit_22x13.gif" alt="<?php echo $BL['be_article_cnt_ledit'] ?>" width="22" height="13" border="0" /></a><a href="include/inc_act/act_articlecontent.php?do=<?php echo "3,".$article["article_id"].",0,".switch_on_off($article["article_aktiv"]) ?>" title="<?php echo $BL['be_article_cnt_lvisible'] ?>"><img src="include/img/button/visible_12x13_<?php echo $article["article_aktiv"] ?>.gif" alt="" width="12" height="13" border="0" /></a><a href="include/inc_act/act_articlecontent.php?do=<?php echo "1,".$article["article_id"]; ?>" title="<?php echo $BL['be_article_cnt_ldel'] ?>" onclick="return confirm('<?php echo $BL['be_article_cnt_ldeljs'].'\n'.html_specialchars($article["article_title"]); ?>  \n ');"><img src="include/img/button/trash_13x13_1.gif" alt="" width="13" height="13" border="0" /></a></td>
 	</tr>
-	<tr bgcolor="#F3F5F8"><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="3" /></td>
+	<tr bgcolor="#F3F5F8"><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td>
 	</tr>
 		<tr bgcolor="#F3F5F8">
-		  <td><img src="img/leer.gif" alt="" width="23" height="1" /></td>
+		  <td><img src="include/img/leer.gif" alt="" width="23" height="1" /></td>
 		  <td><table border="0" cellpadding="0" cellspacing="0" summary="" class="tdMorepace">
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2" /></td>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td>
 			</tr>
 			<?php	if($article["article_subtitle"]) { ?>
 			<tr>
 			  <td valign="top" class="v10" style="color:#727889"><?php echo $BL['be_article_asubtitle'] ?>:&nbsp;</td>
 			  <td valign="top" class="v10"><strong><?php echo html_specialchars($article["article_subtitle"]); ?></strong></td>
 			</tr>
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="1" /></td>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td>
 			</tr>
 			<?php } ?>
 			
@@ -80,7 +80,7 @@ $buttonAction .= '</tr></table>';
 			  <td valign="top" class="v10" style="color:#727889"><?php echo $BL['be_article_asummary'] ?>:&nbsp;</td>
 			  <td valign="top" class="v10"><?php echo html_specialchars(getCleanSubString(strip_tags($article["article_summary"]), 250, '&#8230;')); ?></td>
 			</tr>
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="1" /></td>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td>
 			</tr>
 			<?php 	} ?>			
 
@@ -88,7 +88,7 @@ $buttonAction .= '</tr></table>';
 			  <td valign="top" class="v10" style="color:#727889"><?php echo $BL['be_article_cat'] ?>:&nbsp;</td>
 			  <td valign="top" class="v10"><?php echo html_specialchars($article["article_cat"]) ?></td>
 			</tr>
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="1" /></td>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td>
 			</tr>
 			<tr>
 			  <td valign="top" class="v10" style="color:#727889"><?php echo $BL['be_article_akeywords'] ?>:&nbsp;</td>
@@ -98,7 +98,7 @@ $buttonAction .= '</tr></table>';
 
 			if($article["article_redirect"]) {
 			?>
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="1" /></td>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td>
 			</tr>
 			<tr>
 			  <td valign="top" class="v10" style="color:#727889"><?php echo $BL['be_article_cnt_redirect'] ?>:&nbsp;</td>
@@ -131,7 +131,7 @@ $buttonAction .= '</tr></table>';
 			if($thumb_image != false || $thumb_list_image != false) {
 
 			?>
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="1" /></td>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td>
 			</tr>
 			<tr>
 			  <td valign="top" class="v10" style="color:#727889"><?php echo $BL['be_cnt_image'] ?>:&nbsp;</td>
@@ -156,7 +156,7 @@ $buttonAction .= '</tr></table>';
 
 			?>
 			
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 			<tr>
 			  <td class="v10" style="color:#727889"><?php echo $BL['be_article_username']; ?>:&nbsp;</td>
 			  <td class="v10"><?php echo $article["article_username"] ?></td>
@@ -183,20 +183,20 @@ $buttonAction .= '</tr></table>';
 		  </table></td>
 			<td>&nbsp;</td>
 		</tr>
-		<tr bgcolor="#F3F5F8"><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
-        <tr><td colspan="3" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
-		<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+		<tr bgcolor="#F3F5F8"><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
+        <tr><td colspan="3" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
+		<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 
 		<tr><td colspan="3"><?php echo $buttonAction; ?></td></tr>
 			
-			<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+			<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 			
-			<tr bgcolor="#92A1AF"><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
-			<tr bgcolor="#D9DEE3"><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="4" /></td></tr>
+			<tr bgcolor="#92A1AF"><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
+			<tr bgcolor="#D9DEE3"><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
 			<tr bgcolor="#D9DEE3"><td colspan="3"><table border="0" cellpadding="0" cellspacing="0" summary="">
                 <tr>
-				  <td><img src="img/leer.gif" alt="" width="7" height="1" /></td>
-                  <td><img src="img/symbole/add_content.gif" alt="" width="11" height="9" /><img src="img/leer.gif" alt="" width="5" height="1" /></td>
+				  <td><img src="include/img/leer.gif" alt="" width="7" height="1" /></td>
+                  <td><img src="include/img/symbole/add_content.gif" alt="" width="11" height="9" /><img src="include/img/leer.gif" alt="" width="5" height="1" /></td>
                   <td><select name="ctype" class="v12" id="ctype" onchange="this.form.submit();">
                     <?php
 
@@ -229,12 +229,12 @@ if(!$temp_count) {
 }
 					?>
                     </select></td>
-                  <td><img src="img/leer.gif" alt="" width="5" height="1" /></td>
+                  <td><img src="include/img/leer.gif" alt="" width="5" height="1" /></td>
 				  <td><input type="submit" name="image" value="<?php echo  $BL['be_article_cnt_add'] ?>" class="v12" title="<?php echo  $BL['be_article_cnt_addtitle'] ?>" /></td>
                 </tr>
               </table></td></tr>
-			<tr bgcolor="#D9DEE3"><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
-			<tr bgcolor="#92A1AF"><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+			<tr bgcolor="#D9DEE3"><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
+			<tr bgcolor="#92A1AF"><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 			<?php 
 			//Auslesen der Content Daten zum Zusammenstellen der Sortier-Informationen
 
@@ -258,34 +258,34 @@ if(!$temp_count) {
 				foreach($sbutton as $key => $value) {
 					if($key == 1) {
 						// if 1st content part in list
-						$sbutton[$key]["top"] = '<img src="img/button/sort_top_0.gif" border="0" alt="" />';
+						$sbutton[$key]["top"] = '<img src="include/img/button/sort_top_0.gif" border="0" alt="" />';
 						
 					} elseif(isset($sbutton[$key-1]["block"]) && $sbutton[$key-1]["block"] != $sbutton[$key]["block"]) {
 						// if this content part is selected for different block than previous
-						$sbutton[$key]["top"] = '<img src="img/button/sort_top_0.gif" border="0" alt="" />';
+						$sbutton[$key]["top"] = '<img src="include/img/button/sort_top_0.gif" border="0" alt="" />';
 						
 					} else {
 						$sbutton[$key]["top"] = "<a href=\"include/inc_act/act_articlecontent.php?sort=".
 						$sbutton[$key]["id"].":".$sbutton[$key-1]["sort"]."|".
 						$sbutton[$key-1]["id"].":".$sbutton[$key]["sort"].
-						"\" title=\"".$BL['be_article_cnt_up']."\"><img src=\"img/button/sort_top_1.gif\" border=\"0\" alt=\"\" /></a>";
+						"\" title=\"".$BL['be_article_cnt_up']."\"><img src=\"include/img/button/sort_top_1.gif\" border=\"0\" alt=\"\" /></a>";
 					}
 					if($key == $sc) {
 						// if this is the last content part in list
-						$sbutton[$key]["bottom"] = "<img src=\"img/button/sort_bottom_0.gif\" border=\"0\" alt=\"\" />";
+						$sbutton[$key]["bottom"] = "<img src=\"include/img/button/sort_bottom_0.gif\" border=\"0\" alt=\"\" />";
 					
 					} elseif(isset($sbutton[$key+1]["block"]) && $sbutton[$key+1]["block"] != $sbutton[$key]["block"]) {
 						// if this is the last content part in current block and next is different
-						$sbutton[$key]["bottom"] = "<img src=\"img/button/sort_bottom_0.gif\" border=\"0\" alt=\"\" />";
+						$sbutton[$key]["bottom"] = "<img src=\"include/img/button/sort_bottom_0.gif\" border=\"0\" alt=\"\" />";
 					
 					} else {
 						$sbutton[$key]["bottom"] = "<a href=\"include/inc_act/act_articlecontent.php?sort=".
 						$sbutton[$key]["id"].":".$sbutton[$key+1]["sort"]."|".
 						$sbutton[$key+1]["id"].":".$sbutton[$key]["sort"].
-						"\" title=\"".$BL['be_article_cnt_down']."\"><img src=\"img/button/sort_bottom_1.gif\" border=\"0\" alt=\"\" /></a>";
+						"\" title=\"".$BL['be_article_cnt_down']."\"><img src=\"include/img/button/sort_bottom_1.gif\" border=\"0\" alt=\"\" /></a>";
 					}
 					$sbutton_string[$sbutton[$key]["id"]] = $sbutton[$key]["top"].
-					"<img src=\"img/leer.gif\" width=\"1\" height=\"1\" alt=\"\" />".
+					"<img src=\"include/img/leer.gif\" width=\"1\" height=\"1\" alt=\"\" />".
 					$sbutton[$key]["bottom"];
 				}
 				unset($sbutton);
@@ -320,7 +320,7 @@ if(!$temp_count) {
 												break;
 							case 'CONTENT'	:	$contentpart_block_name = $BL['be_main_content'].$contentpart_block_name;
 												if($article['article_paginate']) {
-													$contentpart_block_name .= ' / <img src="img/symbole/content_cppaginate.gif" alt="" style="margin-right:2px;" />';
+													$contentpart_block_name .= ' / <img src="include/img/symbole/content_cppaginate.gif" alt="" style="margin-right:2px;" />';
 													$contentpart_block_name .= $BL['be_cnt_pagination'];
 												}
 												$contentpart_block_color = ' bgcolor="#F5CCCC"';
@@ -341,11 +341,11 @@ if(!$temp_count) {
 				
 			?>
 			<tr<?php echo $contentpart_block_color ?>>
-				<td align="right" style="padding-right:5px;"><img src="img/symbole/block.gif" alt="" width="9" height="11" border="0" /></td>
+				<td align="right" style="padding-right:5px;"><img src="include/img/symbole/block.gif" alt="" width="9" height="11" border="0" /></td>
 				<td style="font-size:9px;font-weight:bold;"><?php echo  $contentpart_block_name ?></td>
-				<td><img src="img/leer.gif" alt="" width="1" height="15" /></td>
+				<td><img src="include/img/leer.gif" alt="" width="1" height="15" /></td>
 			</tr>
-			<tr><td colspan="3" bgcolor="#D9DEE3"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+			<tr><td colspan="3" bgcolor="#D9DEE3"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 			<?php
 					}
 					
@@ -361,16 +361,16 @@ if(!$temp_count) {
 			
 			?>
 			<tr<?php echo $contentpart_block_color ?>>
-				<td align="right" style="padding-right:5px;"><img src="img/symbole/tabbed.gif" alt="" width="9" height="11" border="0" /></td>
+				<td align="right" style="padding-right:5px;"><img src="include/img/symbole/tabbed.gif" alt="" width="9" height="11" border="0" /></td>
 				<td style="font-size:9px;"><?php 
 					echo html_specialchars($contentpart_tab_title);
 					if(empty($contentpart_tab_title)) {
 						echo ' [' . $contentpart_tab_number . ']';
 					}
 				 ?>&nbsp;</td>
-				<td><img src="img/leer.gif" alt="" width="1" height="15" /></td>
+				<td><img src="include/img/leer.gif" alt="" width="1" height="15" /></td>
 			</tr>
-			<tr><td colspan="3" bgcolor="#D9DEE3"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+			<tr><td colspan="3" bgcolor="#D9DEE3"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 			<?php
 						
 					} elseif($contentpart_tab && empty($row['acontent_tab'])) {
@@ -378,17 +378,17 @@ if(!$temp_count) {
 					// not the same tab but following cp is not tabbed
 					$contentpart_tab = '';
 			?>
-			<tr<?php echo $contentpart_block_color ?>><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
-			<tr><td colspan="3" bgcolor="#D9DEE3"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+			<tr<?php echo $contentpart_block_color ?>><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
+			<tr><td colspan="3" bgcolor="#D9DEE3"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 			<?php
 						
 					}
 			
 			
 			?>
-			<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+			<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 			<tr>
-			  <td align="right" style="padding-right:5px;"><img src="img/symbole/content_9x11<?php if($row["acontent_granted"]) echo '_granted'; ?>.gif" alt="" width="9" height="11" border="0" /></td>
+			  <td align="right" style="padding-right:5px;"><img src="include/img/symbole/content_9x11<?php if($row["acontent_granted"]) echo '_granted'; ?>.gif" alt="" width="9" height="11" border="0" /></td>
 	          <td><table border="0" cellpadding="0" cellspacing="0" summary="" width="100%">
 	            <tr>
 	              <td width="180" style="font-size:9px;font-weight:bold;text-transform:uppercase;"><?php 				  
@@ -412,51 +412,51 @@ if(!$temp_count) {
 				  //Display cp paginate page number
 				  if($article["article_paginate"]) {
 
-					echo '<img src="img/symbole/content_cppaginate.gif" alt="subsection" title="subsection" />';
+					echo '<img src="include/img/symbole/content_cppaginate.gif" alt="subsection" title="subsection" />';
 					echo $row["acontent_paginate_page"] == 0 ? 1 : $row["acontent_paginate_page"];
 				  }
 				  
 				  				  
 				  //Anzeigen der Space Before/After Info
 				  if(intval($row["acontent_before"])) {
-				  	//echo "<td><img src=\"img/symbole/content_space_before.gif\" width=\"12\" height=\"6\"></td>";
+				  	//echo "<td><img src=\"include/img/symbole/content_space_before.gif\" width=\"12\" height=\"6\"></td>";
 				  	//echo "<td class=\"v09\">".$row["acontent_before"]."</td>";
-					echo '<img src="img/symbole/content_space_before.gif" alt="" />'.$row["acontent_before"];
+					echo '<img src="include/img/symbole/content_space_before.gif" alt="" />'.$row["acontent_before"];
 				  }
 				  if(intval($row["acontent_after"])) {
-				  	//echo "<td><img src=\"img/symbole/content_space_after.gif\" width=\"12\" height=\"6\"></td>";
+				  	//echo "<td><img src=\"include/img/symbole/content_space_after.gif\" width=\"12\" height=\"6\"></td>";
 				  	//echo "<td class=\"v09\">".$row["acontent_after"]."</td>";
-					echo '<img src="img/symbole/content_space_after.gif" alt="" />'.$row["acontent_after"];
+					echo '<img src="include/img/symbole/content_space_after.gif" alt="" />'.$row["acontent_after"];
 				  }
 				  if($row["acontent_top"]) {
-				  	echo '<img src="img/symbole/content_top.gif" alt="TOP" title="TOP" />';
+				  	echo '<img src="include/img/symbole/content_top.gif" alt="TOP" title="TOP" />';
 				  }
 		 		 if($row["acontent_anchor"]) {
-				  	echo '<img src="img/symbole/content_anchor.gif" alt="Anchor" title="Anchor" />';
+				  	echo '<img src="include/img/symbole/content_anchor.gif" alt="Anchor" title="Anchor" />';
 				  }
 				  ?></td>
                 </tr>
               </table></td>
 	          <td align="right" style="padding-right:1px;"><a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=2&amp;id=<?php 
 	          echo $article["article_id"]."&amp;acid=".$row["acontent_id"];
-	          ?>" title="<?php echo $BL['be_article_cnt_edit'] ?>"><img src="img/button/edit_22x13.gif" alt="" border="0" /></a><?php
+	          ?>" title="<?php echo $BL['be_article_cnt_edit'] ?>"><img src="include/img/button/edit_22x13.gif" alt="" border="0" /></a><?php
 				// duplicate content part
 			  	echo '<a href="include/inc_act/act_structure.php?do=8%7C'.$row["acontent_id"].'%7C'.$article["article_id"].'%7C'.($row["acontent_sorting"]+5).'" ';
 				echo 'title="'.$BL['be_func_content_copy'].' [ID:'.$row["acontent_id"].']" ';
 				echo 'onclick="return confirm(\''.js_singlequote($BL['be_func_content_copy']).': \n'.js_singlequote($cntpart_title.' [ID:'.$row["acontent_id"].']').'\');">';
-				echo '<img src="img/button/copy_13x13.gif" border="0" alt="" width="13" height="13" /></a>';
+				echo '<img src="include/img/button/copy_13x13.gif" border="0" alt="" width="13" height="13" /></a>';
 			  
 			  ?><a href="include/inc_act/act_articlecontent.php?do=<?php
 	          echo "2,".$article["article_id"].",".$row["acontent_id"].",".switch_on_off($row["acontent_visible"])
 	          ?>" title="<?php
 	          echo $BL['be_article_cnt_lvisible']
-	          ?>"><img src="img/button/visible_12x13_<?php
+	          ?>"><img src="include/img/button/visible_12x13_<?php
 	          echo $row["acontent_visible"]
 	          ?>.gif" alt="" width="12" height="13" border="0" /></a><a href="include/inc_act/act_articlecontent.php?do=<?php
 	          echo "9,".$article["article_id"].",".$row["acontent_id"]
 	          ?>" title="<?php echo $BL['be_article_cnt_delpart'] ?>" onclick="return confirm('<?php
 	          echo $BL['be_article_cnt_delpartjs'] ?> \n[ID: <?php echo $row["acontent_id"]
-			  ?>]\n ');"><img src="img/button/trash_13x13_1.gif" alt="" width="13" height="13" border="0" /></a></td>
+			  ?>]\n ');"><img src="include/img/button/trash_13x13_1.gif" alt="" width="13" height="13" border="0" /></a></td>
 			</tr>
 <?php
 
@@ -484,13 +484,13 @@ if(!$temp_count) {
 	// end list
 
 ?>
-			<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="4" /></td></tr>
-			<tr><td colspan="3" bgcolor="#D9DEE3"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+			<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
+			<tr><td colspan="3" bgcolor="#D9DEE3"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 <?php
 	}
 } //Ende Listing Artikel Content Teile
 ?>
-			<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+			<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 			
 </table>
 <input name="csorting" type="hidden" id="csorting" value="<?php echo ($scc*10); ?>" />

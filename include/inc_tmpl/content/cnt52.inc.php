@@ -31,6 +31,6 @@ if (!defined('PHPWCMS_ROOT')) {
 // PHP variables
 
 ?><tr>
-<td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_cnt_vars'] ?>:&nbsp;</td>
+<td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_cnt_vars'] ?>:&nbsp;</td>
 <td valign="top"><textarea name="cvar" rows="30" wrap="VIRTUAL" class="code" id="cvar" style="width: 440px"><?php echo  isset($content["var"]) ? html_specialchars($content["var"]) : '' ?></textarea></td>
 </tr>

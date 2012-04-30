@@ -32,7 +32,7 @@ if (!defined('PHPWCMS_ROOT')) {
 
 ?>
 
-<tr><td colspan="2" class="rowspacer0x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer0x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_admin_struct_template']; ?>:&nbsp;</td>
@@ -55,14 +55,14 @@ if(is_array($tmpllist) && count($tmpllist)) {
 		</select></td>
 </tr>
 
-<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 
 <tr>
             	<td align="right" class="chatlist"><?php echo $BL['be_cnt_directlink'] ?>:&nbsp;</td>
             	<td valign="top"><input name="clink" type="text" id="clink" class="f11b" style="width:440px" value="<?php echo  isset($content["link"]) ? html_specialchars($content["link"]) : '' ?>" size="40"></td>
 			</tr>
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 			<tr>
 			  <td align="right" class="chatlist"><?php echo $BL['be_cnt_target'] ?>:&nbsp;</td>
 			  <td valign="top"><select name="ctarget" class="f11" id="ctarget">

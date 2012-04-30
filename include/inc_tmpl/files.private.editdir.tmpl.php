@@ -99,37 +99,37 @@ if(!empty($ja)) {
 <form action="phpwcms.php?do=files&amp;f=0" method="post" name="editdir" id="editdir">
 <table width="538" border="0" cellpadding="0" cellspacing="0" bgcolor='#EBF2F4' summary="">
 	<tr>
-		<td width="67" rowspan="2" valign="top"><a href="phpwcms.php?do=files&amp;f=0"><img src="img/button/close_reiter.gif" alt="" width="45" height="12" border="0" /></a></td>
-		<td width="471"><img src="img/leer.gif" alt="" width="1" height="6" /></td>
+		<td width="67" rowspan="2" valign="top"><a href="phpwcms.php?do=files&amp;f=0"><img src="include/img/button/close_reiter.gif" alt="" width="45" height="12" border="0" /></a></td>
+		<td width="471"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td>
 	</tr>
 	<tr><td class="title"><?php echo $BL['be_fpriv_edittitle'] ?></td></tr>
-	<tr><td colspan="2" valign="top"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2" valign="top"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	<tr>
 		<td width="67" align="right" class="v09"><?php echo $BL['be_fpriv_name'] ?>:&nbsp;</td>
 		<td class="v10"><strong><?php echo $dir_oldname ?></strong></td>
 	</tr>
-	<tr><td colspan="2" valign="top"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
-	<tr><td colspan="2" valign="top"><img src="img/lines/line-bluelight.gif" alt="" width="538" height="1" /></td>
+	<tr><td colspan="2" valign="top"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
+	<tr><td colspan="2" valign="top"><img src="include/img/lines/line-bluelight.gif" alt="" width="538" height="1" /></td>
 	</tr>
-	<tr><td colspan="2" valign="top"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+	<tr><td colspan="2" valign="top"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 	<?php if(isset($dir_error)) { ?>
 	<tr>
-	  <td align="right" class="v09"><img src="img/leer.gif" alt="" width="1" height="1" /></td>
+	  <td align="right" class="v09"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td>
 	  <td class="v10"><strong style="color:#FF3300;"><?php echo $BL['be_fpriv_error'] ?></strong></td>
 	</tr>
-	<tr><td colspan="2" valign="top"><img src="img/leer.gif" alt="" width="1" height="2" /></td></tr>
+	<tr><td colspan="2" valign="top"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td></tr>
 	<?php } ?>
 	<tr>
 		<td align="right" class="v09"><?php echo $BL['be_fpriv_newname'] ?>:&nbsp;</td>
 		<td><input name="dir_newname" type="text" class="width440" id="dir_newname" value="<?php echo html_specialchars($dir_newname) ?>" size="40" maxlength="250" /></td>
 	</tr>
-	<tr><td colspan="2" valign="top"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr><td colspan="2" valign="top"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 	<tr>
 		<td align="right" valign="top" class="v09 tdtop4"><?php echo $BL['be_ftptakeover_longinfo'] ?>:&nbsp;</td>
 		<td valign="top"><textarea name="dir_longinfo" cols="40" rows="6" class="v12 width440" id="dir_longinfo"><?php echo html_specialchars($dir_longinfo) ?></textarea></td>
 	</tr>	
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr>
 		<td align="right" class="v09"><?php echo $BL['be_gallery'] ?>:&nbsp;</td>
@@ -141,14 +141,14 @@ if(!empty($ja)) {
 	</tr>
 	
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8"></td></tr>
 	
 	<tr>
 		<td align="right" class="v09">&nbsp;<?php echo $BL['be_cnt_sorting'] ?>:&nbsp;</td>
 		<td><input name="dir_sort" type="text" id="dir_sort" size="10" class="width50" maxlength="10" value="<?php echo intval($dir_sort) ?>" /></td>
 	</tr>	
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr>
 		<td align="right" class="v09"><?php echo $BL['be_fpriv_status'] ?>:&nbsp;</td>
@@ -161,12 +161,12 @@ if(!empty($ja)) {
 		</tr>
 		</table></td>
 	</tr>
-	<tr><td colspan="2" align="right" class="v09"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2" align="right" class="v09"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	<tr>
 		<td width="67" valign="top"><input name="dir_id" type="hidden" id="dir_id" value="<?php echo $dir_id ?>" />
 		<input name="dir_aktion" type="hidden" id="dir_aktion" value="2" /></td>
 		<td><input name="Submit" type="submit" class="button10" value="<?php echo $BL['be_fpriv_updatebutton'] ?>" /></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
-	<tr><td colspan="2" bgcolor="#9BBECA"><img src="img/leer.gif" alt="" width="1" height="4" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
+	<tr><td colspan="2" bgcolor="#9BBECA"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
 </table></form><?php } ?>

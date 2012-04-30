@@ -125,14 +125,14 @@ switch($acat_hidden) {
 			}		  
 		  ?></strong></td>
           </tr>
-		  <tr><td><img src="img/leer.gif" width="1" height="4" alt="" /></td></tr>
-          <tr><td><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-		  <tr><td><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+		  <tr><td><img src="include/img/leer.gif" width="1" height="4" alt="" /></td></tr>
+          <tr><td><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+		  <tr><td><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
          
 		  <tr><td class="v09"><?php echo $BL['be_admin_struct_cat'] ?>:</td></tr>
           <tr><td><input name="acat_name" type="text" id="acat_name" class="f11b" style="width: 450px" onchange="this.value=Trim(this.value);" value="<?php echo html_specialchars($acat_title) ?>" size="50" maxlength="95" /></td></tr>
 
-		  <tr><td><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+		  <tr><td><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 		  
 		  <tr>
 		  	<td>
@@ -154,21 +154,21 @@ switch($acat_hidden) {
 		  </tr>
   
 		  
-		  <tr><td><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+		  <tr><td><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 		  
 		  <tr><td class="v09"><?php echo $BL['be_admin_page_pagetitle'] ?>:</td></tr>
 		  <tr><td><input name="acat_pagetitle" type="text" id="acat_pagetitle" class="f11b" style="width: 450px" value="<?php echo html_specialchars($acat_pagetitle) ?>" size="50" maxlength="150" /></td></tr>
  
-		  <tr><td><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+		  <tr><td><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 
 		  <tr><td class="v09"><?php echo $BL['be_article_aredirect'] ?>:</td></tr>
 		  <tr><td><input name="acat_redirect" type="text" id="acat_redirect" class="f11b" style="width: 450px" value="<?php echo html_specialchars($acat_redirect) ?>" size="50" maxlength="255" /></td></tr>
-		  <tr><td><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+		  <tr><td><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 
 		<tr><td class="v09"><?php echo $BL['be_article_akeywords'] ?>:</td></tr>
           <tr><td><textarea name="acat_keywords" cols="50" rows="3" id="acat_keywords" class="f11 width540"><?php echo html_specialchars($acat_keywords) ?></textarea></td></tr>
 		
-		<tr><td><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+		<tr><td><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 
 		  <tr><td class="v09"><?php echo $BL['be_admin_struct_info'] ?>:</td></tr>
           <tr><td><textarea name="acat_info" cols="50" rows="4" id="acat_info" class="f11 width540"><?php echo html_specialchars($acat_info) ?></textarea></td></tr>
@@ -176,9 +176,9 @@ switch($acat_hidden) {
 		 
 		 
 		 
-		  <tr><td><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+		  <tr><td><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 		  <tr><td class="v09"><?php echo $BL['be_admin_struct_template'] ?>:</td></tr>
-		  <tr><td><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+		  <tr><td><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 		  <tr>
 		  	<td><select name="acat_template" id="acat_template" class="f11b width300">
 <?php
@@ -207,9 +207,9 @@ if($result = mysql_query($sql, $db) or die("error while listing templates")) {
 		  
 		  
 		  
-          <tr><td><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+          <tr><td><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 		  <tr><td class="v09"><?php echo $BL['be_settings'] ?>:&nbsp;<i><?php echo $BL['be_overwrite_default'] ?></i></td></tr>
-		  <tr><td><img src="img/leer.gif" alt="" width="1" height="2" /></td></tr>
+		  <tr><td><img src="include/img/leer.gif" alt="" width="1" height="2" /></td></tr>
 		  <tr>
 		  	<td><select name="acat_overwrite" id="acat_overwrite" class="f11b width300">
 			<option value="" style="font-weight:normal;font-style:italic;"><?php echo $BL['be_admin_tmpl_default']; ?></option>
@@ -229,7 +229,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 		</select></td>
 		  </tr>
 
-		  <tr><td><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+		  <tr><td><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 		  
 	<tr>
 		<td><table border="0" cellpadding="0" cellspacing="0" summary="">
@@ -249,7 +249,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 
 	  	  </tr>
 		 
-		  <tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+		  <tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 		 
 		  <tr>
 		  	<td><input name="acat_topcount" type="text" id="acat_topcount" class="f11b width125" value="<?php echo  intval($acat_topcount) ?>" size="10" maxlength="10" /></td>
@@ -270,10 +270,10 @@ if(is_array($tmpllist) && count($tmpllist)) {
 		  </table></td>
 	</tr>
 		  
-		  <tr><td><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+		  <tr><td><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 		  
 		  <tr><td class="v09"><?php echo  $BL['be_admin_struct_orderarticle'] ?>:</td></tr>
-		  <tr><td><img src="img/leer.gif" alt="" width="1" height="2" /></td></tr>
+		  <tr><td><img src="include/img/leer.gif" alt="" width="1" height="2" /></td></tr>
           <tr>
             <td valign="top">
 			<div style="margin:0;border:1px solid #D9DEE3;padding:5px;float:left;">
@@ -316,7 +316,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
           </tr>
 		  
 		  
-		  <tr><td><img src="img/leer.gif" alt="" width="1" height="7" /></td></tr>
+		  <tr><td><img src="include/img/leer.gif" alt="" width="1" height="7" /></td></tr>
 		  
 		  
 <!-- Content Part Selection -->
@@ -335,7 +335,7 @@ foreach($wcs_content_type as $key => $value) {
 				</select></td>
 			</tr>
 			</table></td></tr>
-		  <tr><td><img src="img/leer.gif" width="1" height="2" alt="" /></td></tr>
+		  <tr><td><img src="include/img/leer.gif" width="1" height="2" alt="" /></td></tr>
           <tr>
             <td valign="top"><table border="0" cellpadding="0" cellspacing="0" summary="">
               <tr>
@@ -360,17 +360,17 @@ foreach($acat_cntpart as $value) {
 ?>
 						</select></td>
 <td valign="top" style="padding-left:5px;padding-right:5px;">
-<img src="img/button/put_left.gif" width="15" height="15" title="<?php echo $BL['be_admin_struct_adduser_all']?>" onclick="moveAllOptions(document.editsitestructure.acat_cpa,document.editsitestructure.acat_cp);" alt="" /><br />
-<img src="img/leer.gif" width="1" height="3" alt="" /><br />
-<img src="img/button/put_left_a.gif" width="15" height="15" title="<?php echo $BL['be_admin_struct_adduser_this']?>" onclick="moveSelectedOptions(document.editsitestructure.acat_cpa,document.editsitestructure.acat_cp,false);" alt="" /><br />
-<img src="img/leer.gif" width="1" height="6" alt="" /><br />
-<img src="img/button/put_right_a.gif" width="15" height="15" title="<?php echo $BL['be_admin_struct_remove_this']?>" onclick="moveSelectedOptions(document.editsitestructure.acat_cp,document.editsitestructure.acat_cpa,false);" alt="" /><br />
-<img src="img/leer.gif" width="1" height="3" alt="" /><br />
-<img src="img/button/put_right.gif" width="15" height="15" title="<?php echo $BL['be_admin_struct_remove_all']?>" alt="" onclick="moveAllOptions(document.editsitestructure.acat_cp,document.editsitestructure.acat_cpa);" /><br />
-<img src="img/leer.gif" alt="" width="1" height="6" /><br />
-<img src="img/button/list_pos_up.gif" alt="" width="15" height="15" border="0" onclick="moveOptionUp(document.editsitestructure.acat_cp);" /><br />
-<img src="img/leer.gif" width="1" height="3" alt="" /><br />
-<img src="img/button/list_pos_down.gif" alt="" width="15" height="15" border="0" onclick="moveOptionDown(document.editsitestructure.acat_cp);" /></td>
+<img src="include/img/button/put_left.gif" width="15" height="15" title="<?php echo $BL['be_admin_struct_adduser_all']?>" onclick="moveAllOptions(document.editsitestructure.acat_cpa,document.editsitestructure.acat_cp);" alt="" /><br />
+<img src="include/img/leer.gif" width="1" height="3" alt="" /><br />
+<img src="include/img/button/put_left_a.gif" width="15" height="15" title="<?php echo $BL['be_admin_struct_adduser_this']?>" onclick="moveSelectedOptions(document.editsitestructure.acat_cpa,document.editsitestructure.acat_cp,false);" alt="" /><br />
+<img src="include/img/leer.gif" width="1" height="6" alt="" /><br />
+<img src="include/img/button/put_right_a.gif" width="15" height="15" title="<?php echo $BL['be_admin_struct_remove_this']?>" onclick="moveSelectedOptions(document.editsitestructure.acat_cp,document.editsitestructure.acat_cpa,false);" alt="" /><br />
+<img src="include/img/leer.gif" width="1" height="3" alt="" /><br />
+<img src="include/img/button/put_right.gif" width="15" height="15" title="<?php echo $BL['be_admin_struct_remove_all']?>" alt="" onclick="moveAllOptions(document.editsitestructure.acat_cp,document.editsitestructure.acat_cpa);" /><br />
+<img src="include/img/leer.gif" alt="" width="1" height="6" /><br />
+<img src="include/img/button/list_pos_up.gif" alt="" width="15" height="15" border="0" onclick="moveOptionUp(document.editsitestructure.acat_cp);" /><br />
+<img src="include/img/leer.gif" width="1" height="3" alt="" /><br />
+<img src="include/img/button/list_pos_down.gif" alt="" width="15" height="15" border="0" onclick="moveOptionDown(document.editsitestructure.acat_cp);" /></td>
 <td><select name="acat_cpa" size="9" multiple="multiple" id="acat_cpa" style="width: 255px" class="f10" ondblclick="moveSelectedOptions(document.editsitestructure.acat_cpa,document.editsitestructure.acat_cp,false);">
 
 <?php
@@ -390,10 +390,10 @@ foreach($BL['be_admin_optgroup_label'] as $key => $value) {
           </tr>
 	  
 		  
-          <tr><td><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+          <tr><td><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
           <tr><td><table border="0" cellpadding="0" cellspacing="0" summary="">
             <tr><td colspan="4" class="v09"><?php echo $BL['be_admin_struct_status'] ?>:</td></tr>
-			<tr><td colspan="4"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+			<tr><td colspan="4"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
             <tr>
               <td bgcolor="#D9DEE3"><input name="acat_hidden" type="checkbox" id="acat_hidden" value="1" <?php is_checked($acat_hidden, 1); ?> /></td>
               <td bgcolor="#D9DEE3">&nbsp;<label for="acat_hidden"><?php echo $BL['be_admin_struct_hide1'] ?></label>&nbsp;&nbsp;</td>
@@ -409,7 +409,7 @@ foreach($BL['be_admin_optgroup_label'] as $key => $value) {
 			
           </table></td></tr>		  
 		  
-		 <tr><td><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+		 <tr><td><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 
           <tr>
             <td><table border="0" cellpadding="0" cellspacing="0" summary="">
@@ -418,7 +418,7 @@ foreach($BL['be_admin_optgroup_label'] as $key => $value) {
 				  <td class="v09 inactive" colspan="5"><?php echo  $BL['be_cache'] ?>:</td>
 				  <td class="v09" colspan="2"><?php echo  $BL['be_ctype_search'] ?>:</td>
 				</tr>
-		 		<tr><td colspan="7"><img src="img/leer.gif" alt="" width="1" height="1" /></td>
+		 		<tr><td colspan="7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td>
 		 		</tr>
 			
 			
@@ -450,13 +450,13 @@ echo '<option value="2592000"'.is_selected($acat_timeout, '2592000', 0, 0).'>&nb
               </table></td>
           </tr>
 		  
-		  <tr><td><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+		  <tr><td><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 		  
           <tr>
             <td><table border="0" cellpadding="0" cellspacing="0" summary="" class="nowrap">
 			
 				<tr><td class="v09" colspan="8"><?php echo  $BL['be_ftptakeover_status'] ?>:</td></tr>
-		 		<tr><td colspan="8"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+		 		<tr><td colspan="8"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 			
 			
                 <tr bgcolor="#D9DEE3">
@@ -476,7 +476,7 @@ echo '<option value="2592000"'.is_selected($acat_timeout, '2592000', 0, 0).'>&nb
                 </tr>
               </table></td>
           </tr>
-          <tr><td><img src="img/leer.gif" alt="" width="1" height="20" />
+          <tr><td><img src="include/img/leer.gif" alt="" width="1" height="20" />
 		  		<input name="acat_sort_temp" type="hidden" value="<?php echo $acat_sort; ?>" />
 				<input name="acat_struct" type="hidden" id="acat_struct" value="<?php echo $acat_struct; ?>" />
 				<input name="acat_new" type="hidden" id="acat_new" value="<?php echo $acat_new; ?>" />
@@ -486,8 +486,8 @@ echo '<option value="2592000"'.is_selected($acat_timeout, '2592000', 0, 0).'>&nb
 		  		<input name="SubmitClose" type="submit" class="button10" value="<?php echo $BL['be_article_cnt_button3'] ?>" />
 		  &nbsp;&nbsp;&nbsp;&nbsp;
 		  <input name="donotsubmit" type="button" class="button10" value="<?php echo $BL['be_newsletter_button_cancel'] ?>" onclick="location.href='phpwcms.php?do=admin&amp;p=6';" /></td></tr>
-          <tr><td><img src="img/leer.gif" alt="" width="1" height="15" /></td></tr>
-		  <tr><td><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-          <tr><td><img src="img/leer.gif" alt="" width="1" height="15" /></td></tr>
+          <tr><td><img src="include/img/leer.gif" alt="" width="1" height="15" /></td></tr>
+		  <tr><td><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+          <tr><td><img src="include/img/leer.gif" alt="" width="1" height="15" /></td></tr>
 </table>
 </form>

@@ -54,8 +54,8 @@ initMootoolsAutocompleter();
 
 
 ?>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_admin_struct_template'] ?>:&nbsp;</td>
@@ -77,9 +77,9 @@ initMootoolsAutocompleter();
 			</select></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_cnt_sorting'] ?>:&nbsp;</td>
@@ -106,7 +106,7 @@ initMootoolsAutocompleter();
 		</table></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_tags'] ?>:&nbsp;</td>
@@ -125,16 +125,16 @@ initMootoolsAutocompleter();
 		</table></td>		
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_profile_label_lang'] ?>:&nbsp;</td>
 	<td><input type="text" name="news_lang" id="news_lang" value="<?php echo html_specialchars(implode(', ', $content['news']['news_lang'])) ?>" class="width200" /></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_show_content'] ?>:&nbsp;</td>
@@ -148,7 +148,7 @@ initMootoolsAutocompleter();
 		</select></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_cnt_rssfeed_item'] ?>:&nbsp;</td>
@@ -163,7 +163,7 @@ initMootoolsAutocompleter();
 </tr>
 
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 <tr>
 	<td>&nbsp;</td>
@@ -187,9 +187,9 @@ initMootoolsAutocompleter();
 		</table></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_archive'] ?>:&nbsp;</td>
@@ -202,7 +202,7 @@ initMootoolsAutocompleter();
 	</td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_news_detail_link'] ?>:&nbsp;</td>
@@ -216,7 +216,7 @@ initMootoolsAutocompleter();
 </tr>
 
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /><script type="text/javascript">
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /><script type="text/javascript">
 <!--
 
 window.addEvent('domready', function(){
@@ -274,5 +274,5 @@ function setPaginateBasis() {
 
 //-->
 </script></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
 

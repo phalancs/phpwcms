@@ -736,7 +736,7 @@ function parse_images($matches) {
 		$crop		= isset($value[ 3 ]) && intval($value[ 3 ]) === 1 ? 1 : 0;
 		$quality	= isset($value[ 4 ]) ? intval($value[ 4 ]) : 0;
 		
-		$image		= '<img src="'.PHPWCMS_URL.'img/cmsimage.php/'.$width.'x'.$height.'x'.$crop;
+		$image		= '<img src="'.PHPWCMS_URL.'include/img/cmsimage.php/'.$width.'x'.$height.'x'.$crop;
 		if($quality <= 100 && $quality >= 10) {
 			$image .= 'x'.$quality;
 		}
@@ -754,7 +754,7 @@ function parse_images($matches) {
 		
 	}
 
-	return '<img src="'.PHPWCMS_URL.'img/leer.gif" alt="" border="0" />';
+	return '<img src="'.PHPWCMS_URL.'include/img/leer.gif" alt="" border="0" />';
 
 }
 

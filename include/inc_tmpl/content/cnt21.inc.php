@@ -48,14 +48,14 @@ if(!isset($content["page_file"])) {
 	<td><?php echo $BL['be_cnt_pages_manually'] ?>&nbsp;&nbsp;&nbsp;</td>
   </tr></table></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>
 <tr>
   <td align="right" class="chatlist"><?php echo $BL['be_cnt_pages_cust'] ?>:&nbsp;</td>
   <td><input name="cpage_custom" type="text" class="f11" id="cpage_custom" style="width: 440px" value="<?php echo  html_specialchars($content["page_file"]["pfile"]) ?>" size="40"></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
 <tr>
-	<td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="15" /><?php echo $BL['be_cnt_pages_select'] ?>:&nbsp;</td>
+	<td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="15" /><?php echo $BL['be_cnt_pages_select'] ?>:&nbsp;</td>
 	<td valign="top"><div style="width:440px;height:200px;overflow:auto;border: 1px solid #7F9DB9;"><?php
 
 echo '<table cellspacing="0" cellpadding="0" border="0" width="100%">';
@@ -97,7 +97,7 @@ function browse_pages_dir($dir) {
 					echo "\n<tr bgcolor=\"#E7E8EB\" style=\"height:19px;\"><td colspan=\"2\" class=\"chatlist\">";
 					echo '&nbsp;&nbsp;<strong>'.html_specialchars($dir);
 					echo "</strong></td></tr>\n";
-					echo '<tr><td colspan="2"><img src="img/leer.gif" width="1" height="2" alt="" /></td></tr>';
+					echo '<tr><td colspan="2"><img src="include/img/leer.gif" width="1" height="2" alt="" /></td></tr>';
 				}
 				echo "\n<tr><td align=\"center\">";
 				echo '<input name="cpage_file" type="radio" value="'.html_specialchars($dir.'/'.$value).'" ';
@@ -111,7 +111,7 @@ function browse_pages_dir($dir) {
 				echo '</strong></td></tr>';
 				$x++;
 			}
-			echo '<tr><td colspan="2"><img src="img/leer.gif" width="1" height="2" alt="" /></td></tr>';
+			echo '<tr><td colspan="2"><img src="include/img/leer.gif" width="1" height="2" alt="" /></td></tr>';
 		}
 		
 		// check all subdirs
@@ -123,7 +123,7 @@ function browse_pages_dir($dir) {
 }
 
 echo "\n<tr><td width=\"25\">";
-echo '<img src="img/leer.gif" width="26" height="1" alt="" /></td><td width="99%"><img src="img/leer.gif" width="1" height="1" alt="" /></td></tr>';
+echo '<img src="include/img/leer.gif" width="26" height="1" alt="" /></td><td width="99%"><img src="include/img/leer.gif" width="1" height="1" alt="" /></td></tr>';
 echo "\n</table>";
 
 ?></div></td>

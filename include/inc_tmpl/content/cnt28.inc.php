@@ -83,7 +83,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 		</select></td>
 </tr>
 
-<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr>
   <td align="right" class="chatlist tdtop3"><?php echo $BL['be_settings'] ?>:&nbsp;</td>
@@ -93,19 +93,19 @@ if(is_array($tmpllist) && count($tmpllist)) {
 		<td><input name="cookie_expire" type="text" class="f11b width150" id="cookie_expire" size="10" maxlength="10" onkeyup="if(!parseInt(this.value*1))this.value='0';" value="<?php echo $content['felogin']['felogin_cookie_expire']; ?>" /></td>
 		<td class="f10">&nbsp;<?php echo $BL['be_cnt_guestbook_seconds'] ?></td>
 	</tr>
-	<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	<tr>
 		<td align="right" class="chatlist"><?php echo $BL['be_date_format'] ?>:&nbsp;</td>
 		<td><input name="date_format" type="text" class="f11b width150" id="date_format" value="<?php echo $content['felogin']['felogin_date_format']; ?>" /></td>
-		<td>&nbsp;<a href="http://www.php.net/strftime" target="_blank" title="PHP strftime"><img src="img/famfamfam/icon_info.gif" alt="Info" border="0" align="absmiddle" /></a></td>
+		<td>&nbsp;<a href="http://www.php.net/strftime" target="_blank" title="PHP strftime"><img src="include/img/famfamfam/icon_info.gif" alt="Info" border="0" align="absmiddle" /></a></td>
 	</tr>
-	<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	<tr>
 		<td align="right" class="chatlist"><?php echo $BL['be_locale'] ?>:&nbsp;</td>
 		<td><input name="locale" type="text" class="f11b width150" id="locale" value="<?php echo $content['felogin']['felogin_locale']; ?>" /></td>
-		<td>&nbsp;<a href="http://www.php.net/setlocale" target="_blank" title="PHP setlocale"><img src="img/famfamfam/icon_info.gif" alt="Info" border="0" align="absmiddle" /></a> (en, de_DE)</td>
+		<td>&nbsp;<a href="http://www.php.net/setlocale" target="_blank" title="PHP setlocale"><img src="include/img/famfamfam/icon_info.gif" alt="Info" border="0" align="absmiddle" /></a> (en, de_DE)</td>
 	</tr>
-	<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+	<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 	
 	<tr>
 		<td align="right" class="chatlist tdtop4"><?php echo $BL['be_check_login_against'] ?>:&nbsp;</td>
@@ -118,7 +118,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 		<label for="validate_backenduser"><?php echo $BL['be_backenduser_db']?></label></td>
 	  </tr>
 
-	 <tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+	 <tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 	<tr>
 		<td align="right" class="chatlist tdtop4 right"><?php echo $BL['be_check_feuser_profile'] ?>:&nbsp;</td>
@@ -140,6 +140,6 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	</table></td>
 </tr>
 
-<tr><td colspan="2" class="rowspacer7x0"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x0"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 

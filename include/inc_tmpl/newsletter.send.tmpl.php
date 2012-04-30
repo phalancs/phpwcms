@@ -37,28 +37,28 @@ $count_queue = _dbQuery('SELECT COUNT(*) FROM '.DB_PREPEND.'phpwcms_newsletterqu
   <input type="hidden" name="newsletter_id" value="<?php echo intval($newsletter['newsletter_id']) ?>" />
 <table border="0" cellpadding="0" cellspacing="0" summary="">
 	<tr><td colspan="2" class="title" style="padding-bottom:5px"><?php echo $BL['be_newsletter_sendnow'] ?></td></tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-	<tr bgcolor="#DEF9AC"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+	<tr bgcolor="#DEF9AC"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr bgcolor="#DEF9AC">
 		<td align="right" class="chatlist" style="padding-top: 1px;"><?php echo $BL['be_msg_subject'] ?>:&nbsp;</td>
 		<td class="title"><?php echo html_specialchars($newsletter['newsletter_subject']); ?></td>
 	</tr>
 
-	<tr bgcolor="#DEF9AC"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+	<tr bgcolor="#DEF9AC"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
 	<tr><td bgcolor="#E6EAED" colspan="2" style="padding:8px"><?php echo $BL['be_newsletter_attention'] ?><br />
-				  <img src="img/leer.gif" alt="" width="1" height="4" /><br />
+				  <img src="include/img/leer.gif" alt="" width="1" height="4" /><br />
 				    <?php echo $BL['be_newsletter_attention1'] ?></td></tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-	<tr bgcolor="#DEF9AC"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+	<tr bgcolor="#DEF9AC"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	<tr bgcolor="#DEF9AC">
 		<td align="right" class="chatlist">&nbsp;<?php echo $BL['be_newsletter_testemail'] ?>:&nbsp;</td>
 		<td><input name="send_testemail" type="text" class="f11b" id="send_testemail" style="width:350px" size="50" maxlength="250" /></td>
 	</tr>
-	<tr bgcolor="#DEF9AC"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr bgcolor="#DEF9AC"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<?php
 	//ini_get('max_execution_time');
@@ -111,9 +111,9 @@ $count_queue = _dbQuery('SELECT COUNT(*) FROM '.DB_PREPEND.'phpwcms_newsletterqu
 	
 	?>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-	<tr bgcolor="#FCD1CD"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+	<tr bgcolor="#FCD1CD"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td>
 	</tr>
 	<tr bgcolor="#FCD1CD">
 		<td align="right" class="chatlist"><?php echo $BL['be_confirm_sending'] ?>:&nbsp;</td>
@@ -125,9 +125,9 @@ $count_queue = _dbQuery('SELECT COUNT(*) FROM '.DB_PREPEND.'phpwcms_newsletterqu
 	</table></td>
 	</tr>
 	
-	<tr bgcolor="#FCD1CD"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-	<tr><td colspan="2" bgcolor="#E6EAED"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+	<tr bgcolor="#FCD1CD"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+	<tr><td colspan="2" bgcolor="#E6EAED"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 	<tr bgcolor="#E6EAED">
 		<td>&nbsp;</td>
 		<td><input name="sendit" type="submit" class="button10" style="color:#CC3300;font-weight:bold;" value="<?php echo $BL['be_newsletter_sendnlbutton'] ?>" />
@@ -135,38 +135,38 @@ $count_queue = _dbQuery('SELECT COUNT(*) FROM '.DB_PREPEND.'phpwcms_newsletterqu
 	    	<input type="button" class="button10" value="<?php echo $BL['be_newsletter_button_cancel'] ?>" onclick="location.href='phpwcms.php?do=messages&amp;p=3';" />
 		</td>
 	</tr>
-	<tr><td colspan="2" bgcolor="#E6EAED"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2" bgcolor="#E6EAED"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 </table>
 </form>
 </div>
 <div id="sendjobnow" style="display:none;">
 <table border="0" cellpadding="0" cellspacing="0" summary="">
 	<tr><td class="title" style="padding-bottom:5px" colspan="2"><?php echo $BL['be_newsletter_sendprocess'] ?></td></tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-	<tr bgcolor="#DEF9AC"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+	<tr bgcolor="#DEF9AC"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 
 	<tr bgcolor="#DEF9AC">
 		<td align="right" class="chatlist" style="padding-top: 1px;width:100px;"><?php echo $BL['be_msg_subject'] ?>:&nbsp;</td>
 		<td class="title"><?php echo html_specialchars($newsletter['newsletter_subject']); ?></td>
 	</tr>
 
-	<tr bgcolor="#DEF9AC"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+	<tr bgcolor="#DEF9AC"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
 	<tr><td bgcolor="#E6EAED" colspan="2" style="padding:8px"><?php echo $BL['be_newsletter_attention2'] ?></td></tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
 	<tr>
 		<td colspan="2"><iframe name="sendframe" width="100%" height="300" scrolling="auto" frameborder="0" id="sendframe"></iframe></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-	<tr><td bgcolor="#E6EAED" colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+	<tr><td bgcolor="#E6EAED" colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 	<tr bgcolor="#E6EAED">
 		<td align="center" colspan="2">
 			<input type="button" class="button10" value="<?php echo $BL['be_newsletter_button_cancel'] ?>" onclick="location.href='phpwcms.php?do=messages&amp;p=3';" />
 		</td>
 	</tr>
-	<tr><td bgcolor="#E6EAED" colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+	<tr><td bgcolor="#E6EAED" colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
 </table>
 </div>

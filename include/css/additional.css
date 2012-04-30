@@ -3,7 +3,7 @@ tr.tableHeadRow {
 }
 
 .grey_button {
-	background: #DDDDDD url(../../img/button/bg_button_grey.gif) repeat-x 0 center;
+	background: #DDDDDD url(../img/button/bg_button_grey.gif) repeat-x 0 center;
 	border: 1px solid #707070;
 	color: #000000;
 	-moz-border-radius: 3px;
@@ -12,7 +12,7 @@ tr.tableHeadRow {
 	text-decoration: none;
 }
 .grey_button:hover {
-	background-image: url(../../img/button/bg_button_blue.gif);
+	background-image: url(../img/button/bg_button_blue.gif);
 	border-color: #3C7FB1;
 	color: #000000;
 	text-decoration: none;
@@ -151,68 +151,68 @@ table.tdMorepace td {
 }
 
 .rowspacer1x0 {
-	background-image:		url(../../img/lines/be_dotted_line.gif);
+	background-image:		url(../img/lines/be_dotted_line.gif);
 	background-position:	left top;
 	background-repeat:		repeat-x;
 	padding:				1px 0 0 0;
 }
 
 .rowspacer10x10 {
-	background-image:		url(../../img/lines/be_dotted_line.gif);
+	background-image:		url(../img/lines/be_dotted_line.gif);
 	background-position:	left;
 	background-repeat:		repeat-x;
 	padding:				10px 0 10px 0;
 }
 
 .rowspacer7x7 {
-	background-image:		url(../../img/lines/be_dotted_line.gif);
+	background-image:		url(../img/lines/be_dotted_line.gif);
 	background-position:	left;
 	background-repeat:		repeat-x;
 	padding:				7px 0 7px 0;
 }
 .rowspacer0x7 {
-	background-image:		url(../../img/lines/be_dotted_line.gif);
+	background-image:		url(../img/lines/be_dotted_line.gif);
 	background-position:	left top;
 	background-repeat:		repeat-x;
 	padding:				1px 0 7px 0;
 }
 .rowspacer7x0 {
-	background-image:		url(../../img/lines/be_dotted_line.gif);
+	background-image:		url(../img/lines/be_dotted_line.gif);
 	background-position:	left bottom;
 	background-repeat:		repeat-x;
 	padding:				7px 0 1px 0;
 }
 .rowspacer0x5 {
-	background-image:		url(../../img/lines/be_dotted_line.gif);
+	background-image:		url(../img/lines/be_dotted_line.gif);
 	background-position:	left top;
 	background-repeat:		repeat-x;
 	padding:				1px 0 5px 0;
 }
 .rowspacer5x0 {
-	background-image:		url(../../img/lines/be_dotted_line.gif);
+	background-image:		url(../img/lines/be_dotted_line.gif);
 	background-position:	left bottom;
 	background-repeat:		repeat-x;
 	padding:				5px 0 1px 0;
 }
 .rowspacer10x0 {
-	background-image:		url(../../img/lines/be_dotted_line.gif);
+	background-image:		url(../img/lines/be_dotted_line.gif);
 	background-position:	left bottom;
 	background-repeat:		repeat-x;
 	padding:				10px 0 1px 0;
 }
 .rowspacer0x10 {
-	background-image:		url(../../img/lines/be_dotted_line.gif);
+	background-image:		url(../img/lines/be_dotted_line.gif);
 	background-position:	left top;
 	background-repeat:		repeat-x;
 	padding:				1px 0 10px 0;
 }
 .rowspacer {
-	background-image:		url(../../img/lines/be_dotted_line.gif);
+	background-image:		url(../img/lines/be_dotted_line.gif);
 	background-position:	left bottom;
 	background-repeat:		repeat-x;
 }
 .rowspacer0x0 {
-	background-image:		url(../../img/lines/be_dotted_line.gif);
+	background-image:		url(../img/lines/be_dotted_line.gif);
 	background-position:	left bottom;
 	background-repeat:		repeat-x;
 	padding:				0 0 1px 0;
@@ -254,7 +254,7 @@ td.inlineCheckbox label {
 }
 #tabsG a {
 	float:						left;
-	background:					url(../../img/tab/tableftG.gif) no-repeat left top;
+	background:					url(../img/tab/tableftG.gif) no-repeat left top;
 	margin:						0;
 	padding:					0 0 0 4px;
 	text-decoration:			none;
@@ -262,7 +262,7 @@ td.inlineCheckbox label {
 #tabsG a span {
 	float:						left;
 	display:					block;
-	background:					url(../../img/tab/tabrightG.gif) no-repeat right top;
+	background:					url(../img/tab/tabrightG.gif) no-repeat right top;
 	padding:					5px 12px 4px 6px;
 	color: 						#6288ad;
 }
@@ -309,8 +309,8 @@ div.status_message_info {
 	background-color:			#FEE16C;
 	color:						#363C47;
 	padding:					5px 5px 5px 25px;
-	background-image:			url(../../img/famfamfam/information.png) !important;
-	background-image:			url(../../img/famfamfam/information.gif);
+	background-image:			url(../img/famfamfam/information.png) !important;
+	background-image:			url(../img/famfamfam/information.gif);
 	background-repeat:			no-repeat;
 	background-position:		4px 4px;
 	font-size:					12px;
@@ -322,8 +322,8 @@ div.status_message_success {
 	background-color:			#DEF9AC;
 	color:						#006600;
 	padding:					5px 5px 5px 25px;
-	background-image:			url(../../img/famfamfam/accept.png) !important;
-	background-image:			url(../../img/famfamfam/accept.gif);
+	background-image:			url(../img/famfamfam/accept.png) !important;
+	background-image:			url(../img/famfamfam/accept.gif);
 	background-repeat:			no-repeat;
 	background-position:		4px 4px;
 	font-size:					12px;
@@ -335,8 +335,8 @@ div.status_message_warning {
 	background-color:			#FFC6C6;
 	color:						#CC0033;
 	padding:					5px 5px 5px 25px;
-	background-image:			url(../../img/famfamfam/exclamation.png) !important;
-	background-image:			url(../../img/famfamfam/exclamation.gif);
+	background-image:			url(../img/famfamfam/exclamation.png) !important;
+	background-image:			url(../img/famfamfam/exclamation.gif);
 	background-repeat:			no-repeat;
 	background-position:		4px 4px;
 	font-size:					12px;
@@ -390,7 +390,7 @@ table.listing td.colfirst {
 	white-space: nowrap;
 }
 table.listing td.colfirst {
-	background: url(../../img/famfamfam/page_white.gif) no-repeat 1px center;
+	background: url(../img/famfamfam/page_white.gif) no-repeat 1px center;
 }
 
 form.free p {
@@ -511,7 +511,7 @@ form.free input.checkbox_left {
 }
 
 span.autocompleter-loading {
-	background: transparent url(../../img/indicator/indicator_arrows_green.gif) no-repeat center center;
+	background: transparent url(../img/indicator/indicator_arrows_green.gif) no-repeat center center;
 	padding: 0 10px 0 10px;
 	line-height: 16px;
 	font-size: 16px;
@@ -520,7 +520,7 @@ span.autocompleter-loading {
 }
 
 textarea.ajax-loading, input.ajax-loading {
-	background-image: url(../../img/indicator/indicator_arrows_green_19x19.gif);
+	background-image: url(../img/indicator/indicator_arrows_green_19x19.gif);
 	background-repeat: no-repeat;
 	background-position: right top;
 	padding: 1px;
@@ -570,7 +570,7 @@ ul.autocompleter-choices li.autocompleter-selected span.autocompleter-queried {
 
 /* Fancy Upload */
 #upload-buttons .progress {
-	background: transparent url(../../img/ajax/progress.gif) no-repeat center 0;
+	background: transparent url(../img/ajax/progress.gif) no-repeat center 0;
 	margin-right: 0.5em;
 	vertical-align: middle;
 	position: relative;
@@ -593,7 +593,7 @@ ul.autocompleter-choices li.autocompleter-selected span.autocompleter-queried {
 	text-decoration: none;
 }
 #upload-buttons a.hover {
-	background-image: url(../../img/button/bg_button_blue.gif);
+	background-image: url(../img/button/bg_button_blue.gif);
 	border-color: #3C7FB1;
 	color: #000000;
 	text-decoration: none;
@@ -612,7 +612,7 @@ ul.autocompleter-choices li.autocompleter-selected span.autocompleter-queried {
 #upload-queue li {
 	position: relative;
 	font-size: 11px;
-	background: #F5F9FA url(../../img/famfamfam/drive_go.gif) no-repeat 5px 4px;
+	background: #F5F9FA url(../img/famfamfam/drive_go.gif) no-repeat 5px 4px;
 	padding: 5px 22px 6px 28px;
 	list-style: none;
 	border-bottom: 1px solid #fff;
@@ -626,7 +626,7 @@ ul.autocompleter-choices li.autocompleter-selected span.autocompleter-queried {
 	color: #8a1f11;
 	cursor: pointer;
 	border-bottom: 1px solid #fff;
-	background: #fcc url(../../img/famfamfam/exclamation.gif) no-repeat 5px 5px;
+	background: #fcc url(../img/famfamfam/exclamation.gif) no-repeat 5px 5px;
 }
 #upload-queue li.validation-error em {
 	font-style: normal;
@@ -634,13 +634,13 @@ ul.autocompleter-choices li.autocompleter-selected span.autocompleter-queried {
 }
 
 #upload-queue li.file.file-uploading {
-	background: #C1D2E2 url(../../img/ajax/ajax-indicator-16x16.gif) no-repeat 5px 5px;
+	background: #C1D2E2 url(../img/ajax/ajax-indicator-16x16.gif) no-repeat 5px 5px;
 }
 #upload-queue li.file.file-success {
-	background: #cfc url(../../img/famfamfam/accept.gif) no-repeat 5px 5px;
+	background: #cfc url(../img/famfamfam/accept.gif) no-repeat 5px 5px;
 }
 #upload-queue li.file.file-failed {
-	background: #fcc url(../../img/famfamfam/exclamation.gif) no-repeat 5px 5px;
+	background: #fcc url(../img/famfamfam/exclamation.gif) no-repeat 5px 5px;
 }
 
 #upload-queue li.file .file-name {
@@ -670,7 +670,7 @@ ul.autocompleter-choices li.autocompleter-selected span.autocompleter-queried {
 	text-decoration: none;
 	border: none;
 	overflow: hidden;
-	background: transparent url(../../img/famfamfam/delete.gif) no-repeat 0 0;
+	background: transparent url(../img/famfamfam/delete.gif) no-repeat 0 0;
 	text-indent: -100em;
 	right: 5px;
 	top: 3px;

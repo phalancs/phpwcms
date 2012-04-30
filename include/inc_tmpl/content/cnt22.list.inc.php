@@ -47,7 +47,7 @@ if($cinfo["result"]) { //Zeige Inhaltinfo
 $rssfeed = unserialize($row["acontent_form"]);
 if($rssfeed['rssurl']) {
 	echo ' <a href="'.html_specialchars($rssfeed['rssurl']).'" target="_blank">';
-	echo '<img src="img/symbole/xml.gif" width="36" height="14" border="0" style="vertical-align:middle;"></a>';
+	echo '<img src="include/img/symbole/xml.gif" width="36" height="14" border="0" style="vertical-align:middle;"></a>';
 }
 echo "</td><td>&nbsp;</td></tr>";
 

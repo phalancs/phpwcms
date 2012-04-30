@@ -87,7 +87,7 @@ way to fit your requirements.
 	top:				-10px;
 	left:				106px;
 	padding:			10px 15px 15px 15px;
-	background:			transparent url(img/leer.gif);
+	background:			transparent url(include/img/leer.gif);
 	width:				120px;
 }
 /* Position the first sub level beneath the top level liinks */
@@ -139,7 +139,7 @@ way to fit your requirements.
 	top:				-11px;
 	left:				105px;
 	padding:			10px 15px 15px 15px;
-	background:			transparent url(img/leer.gif);
+	background:			transparent url(include/img/leer.gif);
 }
 
 /* keep the third level+ hidden when you hover on first level link */

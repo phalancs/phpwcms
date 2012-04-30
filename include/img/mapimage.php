@@ -20,9 +20,10 @@
    This copyright notice MUST APPEAR in all copies of the script!
 *************************************************************************************/
 
-$phpwcms = array();
-require_once('../include/config/conf.inc.php');
-require_once('../include/inc_lib/default.inc.php');
+$phpwcms	= array();
+$DOC_ROOT	= rtrim(str_replace('\\', '/', dirname(dirname(__FILE__)) ), '/');
+require_once($DOC_ROOT.'/config/conf.inc.php');
+require_once($DOC_ROOT.'/inc_lib/default.inc.php');
 
 $img_file		= (isset($_GET['i'])) ? rawurldecode($_GET['i']) : '';
 $img_quality	= 87;

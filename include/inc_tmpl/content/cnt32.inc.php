@@ -31,7 +31,7 @@ if (!defined('PHPWCMS_ROOT')) {
 // Tabs
 
 initMootools();
-$BE['HEADER']['tabs.css']	= '	<link href="include/inc_css/tabs.css" rel="stylesheet" type="text/css" />';
+$BE['HEADER']['tabs.css']	= '	<link href="include/css/tabs.css" rel="stylesheet" type="text/css" />';
 
 // set default values
 if(empty($content['tabs']) || !is_array($content['tabs'])) {
@@ -60,7 +60,7 @@ if(!empty($_SESSION["WYSIWYG_EDITOR"]) && !$content['tabwysiwygoff']) {
 
 ?>
 
-<tr><td colspan="2" class="rowspacer0x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer0x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_admin_struct_template']; ?>:&nbsp;</td>
@@ -89,7 +89,7 @@ if(!empty($_SESSION["WYSIWYG_EDITOR"]) && !$content['tabwysiwygoff']) {
 		
 </tr>
 
-<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr>
 	<td id="col_1_width">&nbsp;</td>
@@ -123,7 +123,7 @@ if(!empty($_SESSION["WYSIWYG_EDITOR"]) && !$content['tabwysiwygoff']) {
 				<tr>
 					<td class="chatlist col1w" align="right"><em class="handle" title="<?php echo $sort_up_down; ?>">&nbsp;</em><?php echo $BL['be_tab_name'] ?>:&nbsp;</td>
 					<td class="tdbottom2"><input type="text" name="tabtitle[<?php echo $key ?>]" id="tabtitle<?php echo $key ?>" value="<?php echo html_specialchars($value['tabtitle']) ?>" class="f11b width400" /></td>			
-					<td><a href="#" onclick="return deleteTab('tab<?php echo $key ?>');"><img src="img/famfamfam/tab_delete.gif" alt="" border="" /></a></td>
+					<td><a href="#" onclick="return deleteTab('tab<?php echo $key ?>');"><img src="include/img/famfamfam/tab_delete.gif" alt="" border="" /></a></td>
 				</tr>				
 				<tr>
 					<td class="chatlist col1w" align="right"><?php echo $BL['be_headline'] ?>:&nbsp;</td>
@@ -168,7 +168,7 @@ if(!empty($_SESSION["WYSIWYG_EDITOR"]) && !$content['tabwysiwygoff']) {
 			var entry = '<table cellpadding="0" cellspacing="0" border="0" summary="">';
 			entry    +=	'<tr><td class="chatlist col1w" align="right"><?php echo $BL['be_tab_name'] ?>:&nbsp;<'+'/td>';
 			entry    +=	'<td class="tdbottom2"><input type="text" name="tabtitle[' + entries + ']" id="tabtitle' + entries + '" value="" class="f11b width400" /'+'><'+'/td>';
-			entry    +=	'<td><a href="#" onclick="return deleteTab(\'tab' + entries + '\');"><img src="img/famfamfam/tab_delete.gif" alt="" border="" /><'+'/a><'+'/td><'+'/tr>';
+			entry    +=	'<td><a href="#" onclick="return deleteTab(\'tab' + entries + '\');"><img src="include/img/famfamfam/tab_delete.gif" alt="" border="" /><'+'/a><'+'/td><'+'/tr>';
 			entry    +=	'<tr><td class="chatlist col1w" align="right"><?php echo $BL['be_headline'] ?>:&nbsp;<'+'/td>';
 			entry    +=	'<td colspan="2"><input type="text" name="tabheadline[' + entries + ']" id="tabheadline' + entries + '" value="" class="v11 width400" /'+'><'+'/td><'+'/tr>';
 			entry    +=	'<tr><td colspan="3" class="tdtop5"><textarea name="tabtext[' + entries + ']" id="tabtext' + entries + '" rows="10" class="v12" ';

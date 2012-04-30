@@ -71,17 +71,17 @@ if(is_array($tmpllist) && count($tmpllist)) {
 				  
 ?>				  
 	  </select></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10"></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="7"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10"></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="7"></td></tr>
 
 <tr>
-<td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_cnt_plaintext'] ?>:&nbsp;</td>
+<td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_cnt_plaintext'] ?>:&nbsp;</td>
 <td valign="top"><textarea name="creference_text" rows="15" wrap="VIRTUAL" class="f11" id="creference_text" style="width: 440px"><?php echo  $content['reference']["text"] ?></textarea></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8"></td></tr>
 <tr>
-  <td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_cnt_image'] ?>:&nbsp;</td>
+  <td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_cnt_image'] ?>:&nbsp;</td>
   <td valign="top"><table border="0" cellpadding="0" cellspacing="0" summary="">
       <tr>
         <td valign="top"><select name="cimage_list[]" size="<?php echo (count($content['reference']["select"]))?(count($content['reference']["select"])+5):5; ?>" multiple class="f11" id="cimage_list" style="width: 300px;">
@@ -106,11 +106,11 @@ if(is_array($tmpllist) && count($tmpllist)) {
 								echo $img_name."</option>\n";
 								
 								if($imgx == 4) {
-									$img_thumbs .= '<br><img src="img/leer.gif" alt="" border="0" width="1" height="2"><br>';
+									$img_thumbs .= '<br><img src="include/img/leer.gif" alt="" border="0" width="1" height="2"><br>';
 									$imgx = 0;
 								}
 								if($imgx) {
-									$img_thumbs .= '<img src="img/leer.gif" alt="" border="0" width="2" height="1">';
+									$img_thumbs .= '<img src="include/img/leer.gif" alt="" border="0" width="2" height="1">';
 								}
 								$img_thumbs .= '<img src="'.PHPWCMS_IMAGES . $thumb_image[0] .'" border="0" '.$thumb_image[3].' alt="'.$img_name.'" title="'.$img_name.'">';
 
@@ -123,29 +123,29 @@ if(is_array($tmpllist) && count($tmpllist)) {
 				    }
 					?>
           </select></td>
-        <td valign="top"><img src="img/leer.gif" alt="" width="5" height="1"></td>                                          <!-- browser_image.php //-->
-        <td valign="top"><a href="javascript:;" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=3&amp;target=nolist')"><img src="img/button/open_image_button.gif" alt="" width="20" height="15" border="0"></a><br />
-          <img src="img/leer.gif" alt="" width="1" height="4"><br />
-          <a href="javascript:;" title="<?php echo $BL['be_cnt_sortup'] ?>" onclick="moveOptionUp(document.articlecontent.cimage_list);"><img src="img/button/image_pos_up.gif" alt="" width="10" height="9" border="0"></a><a href="javascript:;" title="<?php echo $BL['be_cnt_sortdown'] ?>" onclick="moveOptionDown(document.articlecontent.cimage_list);"><img src="img/button/image_pos_down.gif" alt="" width="10" height="9" border="0"></a><br />
-          <img src="img/leer.gif" alt="" width="1" height="4"><br />
-          <a href="javascript:;" onclick="removeSelectedOptions(document.articlecontent.cimage_list);" title="<?php echo $BL['be_cnt_delimage'] ?>"><img src="img/button/del_image_button1.gif" alt="" width="20" height="15" border="0"></a></td>
+        <td valign="top"><img src="include/img/leer.gif" alt="" width="5" height="1"></td>                                          <!-- browser_image.php //-->
+        <td valign="top"><a href="javascript:;" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=3&amp;target=nolist')"><img src="include/img/button/open_image_button.gif" alt="" width="20" height="15" border="0"></a><br />
+          <img src="include/img/leer.gif" alt="" width="1" height="4"><br />
+          <a href="javascript:;" title="<?php echo $BL['be_cnt_sortup'] ?>" onclick="moveOptionUp(document.articlecontent.cimage_list);"><img src="include/img/button/image_pos_up.gif" alt="" width="10" height="9" border="0"></a><a href="javascript:;" title="<?php echo $BL['be_cnt_sortdown'] ?>" onclick="moveOptionDown(document.articlecontent.cimage_list);"><img src="include/img/button/image_pos_down.gif" alt="" width="10" height="9" border="0"></a><br />
+          <img src="include/img/leer.gif" alt="" width="1" height="4"><br />
+          <a href="javascript:;" onclick="removeSelectedOptions(document.articlecontent.cimage_list);" title="<?php echo $BL['be_cnt_delimage'] ?>"><img src="include/img/button/del_image_button1.gif" alt="" width="20" height="15" border="0"></a></td>
       </tr>
     </table><?php
 
 if($img_thumbs) { 
 	echo '<table border="0" cellspacing="0" cellpadding="0">
-		<tr><td style="padding-bottom:3px;"><img src="img/leer.gif" width="1" height="5"><br>'.$img_thumbs.'</td></tr>
+		<tr><td style="padding-bottom:3px;"><img src="include/img/leer.gif" width="1" height="5"><br>'.$img_thumbs.'</td></tr>
 		</table>';
 }
 
 ?></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>
 <tr>
-  <td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_cnt_caption'] ?>:&nbsp;</td>
+  <td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_cnt_caption'] ?>:&nbsp;</td>
   <td valign="top"><textarea name="creference_caption" cols="40" rows="<?php echo (count($content['reference']["list"])) ? (count($content['reference']["list"]) + 4) : 5 ?>" wrap="off" class="f11" id="creference_caption" style="width:440px"><?php echo html_specialchars($content['reference']["caption"]) ?></textarea></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>
 <tr>
   <td align="right" class="chatlist"><?php echo $BL['be_cnt_reference_zoom'] ?>:&nbsp;</td>
   <td valign="top"><table border="0" cellpadding="0" cellspacing="0" bgcolor="#E7E8EB" summary="">
@@ -156,9 +156,9 @@ if($img_thumbs) {
     </table></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8"></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-<tr><td><img src="img/leer.gif" alt="" width="1" height="22"></td><td class="chatlist"><strong><?php echo $BL['be_cnt_reference_largetext']; ?>:</strong></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8"></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+<tr><td><img src="include/img/leer.gif" alt="" width="1" height="22"></td><td class="chatlist"><strong><?php echo $BL['be_cnt_reference_largetext']; ?>:</strong></td></tr>
 <tr>
   <td align="right" class="chatlist"><?php echo $BL['be_cnt_maxw'] ?>:&nbsp;</td>
   <td valign="top"><table border="0" cellpadding="0" cellspacing="0" summary="">
@@ -171,9 +171,9 @@ if($img_thumbs) {
       </tr>
     </table></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8"></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-<tr><td><img src="img/leer.gif" alt="" width="1" height="22"></td><td class="chatlist"><strong><?php echo $BL['be_cnt_reference_aligntext'] ?>:</strong></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8"></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+<tr><td><img src="include/img/leer.gif" alt="" width="1" height="22"></td><td class="chatlist"><strong><?php echo $BL['be_cnt_reference_aligntext'] ?>:</strong></td></tr>
 <tr>
   <td align="right" class="chatlist"><?php echo $BL['be_cnt_reference_basis'] ?>:&nbsp;</td>
   <td valign="top"><table border="0" cellpadding="0" cellspacing="0" summary="">
@@ -199,7 +199,7 @@ if($img_thumbs) {
   </table></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>
 <tr>
   <td align="right" class="chatlist"><?php echo $BL['be_cnt_reference_block'] ?>:&nbsp;</td>
   <td valign="top"><table border="0" cellpadding="0" cellspacing="0" summary="">
@@ -215,6 +215,6 @@ if($img_thumbs) {
       </tr>
     </table></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10"></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10"></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>

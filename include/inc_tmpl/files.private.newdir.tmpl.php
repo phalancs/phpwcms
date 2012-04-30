@@ -96,36 +96,36 @@ if (!defined('PHPWCMS_ROOT')) {
 <form action="phpwcms.php?do=files&amp;f=0" method="post" name="createnewdir" id="createnewdir">
 <table width="538" border="0" cellpadding="0" cellspacing="0" bgcolor='#EBF2F4' summary="">
 	<tr>
-		<td width="67" rowspan="2" valign="top"><a href="phpwcms.php?do=files&amp;f=0"><img src="img/button/close_reiter.gif" alt="" width="45" height="12" border="0" /></a></td>
-		<td width="471"><img src="img/leer.gif" alt="" width="1" height="6" /></td>
+		<td width="67" rowspan="2" valign="top"><a href="phpwcms.php?do=files&amp;f=0"><img src="include/img/button/close_reiter.gif" alt="" width="45" height="12" border="0" /></a></td>
+		<td width="471"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td>
 	</tr>
 	<tr><td class="title"><?php echo $BL['be_fpriv_title'] ?></td></tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	<tr>
 		<td width="67" align="right" class="v09"><?php echo $BL['be_fpriv_inside'] ?>:&nbsp;</td>
 		<td class="v10"><strong><?php echo $dir_parent_name ?></strong></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
-	<tr><td colspan="2"><img src="img/lines/line-bluelight.gif" alt="" width="538" height="1" /></td></tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/line-bluelight.gif" alt="" width="538" height="1" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 	<?php if(isset($dir_error)) { ?>
 	<tr>
-	  <td><img src="img/leer.gif" alt="" width="1" height="1" /></td>
+	  <td><img src="include/img/leer.gif" alt="" width="1" height="1" /></td>
 	  <td class="v10"><strong style="color:#FF3300;"><?php echo $BL['be_fpriv_error'] ?></strong></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td></tr>
 	<?php } ?>
 	<tr>
 		<td align="right" class="v09"><?php echo $BL['be_fpriv_name'] ?>:&nbsp;</td>
 		<td><input name="dir_newname" type="text" class="width440" id="dir_newname" value="<?php echo html_specialchars($dir_newname) ?>" size="40" maxlength="250" /></td>
 	</tr>
-	<tr><td colspan="2" valign="top"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr><td colspan="2" valign="top"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 	<tr>
 		<td align="right" valign="top" class="v09 tdtop4"><?php echo $BL['be_ftptakeover_longinfo'] ?>:&nbsp;</td>
 		<td valign="top"><textarea name="dir_longinfo" cols="40" rows="6" class="v12 width440" id="dir_longinfo"><?php echo html_specialchars($dir_longinfo) ?></textarea></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr>
 		<td align="right" class="v09"><?php echo $BL['be_gallery'] ?>:&nbsp;</td>
@@ -136,14 +136,14 @@ if (!defined('PHPWCMS_ROOT')) {
 		</select></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8"></td></tr>
 	
 	<tr>
 		<td align="right" class="v09">&nbsp;<?php echo $BL['be_cnt_sorting'] ?>:&nbsp;</td>
 		<td><input name="dir_sort" type="text" id="dir_sort" size="10" class="width50" maxlength="10" value="<?php echo intval($dir_sort) ?>" /></td>
 	</tr>	
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	
 	<tr>
@@ -158,13 +158,13 @@ if (!defined('PHPWCMS_ROOT')) {
 		</tr>
 		</table></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	<tr>
 		<td width="67" valign="top"><input name="dir_pid" type="hidden" id="dir_pid" value="<?php echo $dir_pid ?>" />
 		<input name="dir_aktion" type="hidden" id="dir_aktion" value="1" /></td>
 		<td><input name="Submit" type="submit" class="button10" value="<?php echo $BL['be_fpriv_button'] ?>" /></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
-	<tr><td colspan="2" bgcolor="#9BBECA"><img src="img/leer.gif" alt="" width="1" height="4" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
+	<tr><td colspan="2" bgcolor="#9BBECA"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
 </table>
 </form>

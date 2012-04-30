@@ -97,7 +97,7 @@ if(!$ftp["error"]) {
 	}
 	
 	
-?><p><img src="../../img/symbole/rotation.gif" alt="" width="15" height="15"><strong class="title">&nbsp;selected files uploaded via ftp will be taken over!</strong></p><?php
+?><p><img src="../img/symbole/rotation.gif" alt="" width="15" height="15"><strong class="title">&nbsp;selected files uploaded via ftp will be taken over!</strong></p><?php
 
 	echo "<p class=\"v10\">";	  
 	flush();

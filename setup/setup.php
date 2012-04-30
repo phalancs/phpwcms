@@ -54,7 +54,7 @@ if($do) {
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $phpwcms['charset'] ?>" />
 <title>phpwcms Install</title>
-<link href="../include/inc_css/install.css" rel="stylesheet" type="text/css" />
+<link href="../include/css/install.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>

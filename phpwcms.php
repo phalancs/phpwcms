@@ -89,7 +89,7 @@ switch ($do) {
 						include(PHPWCMS_ROOT.'/include/inc_lib/article.functions.inc.php'); //load article funtions
 						$subnav .= subnavtext($BL['be_subnav_article_center'], "phpwcms.php?do=articles", $p, "", 0);
 						$subnav .= subnavtext($BL['be_subnav_article_new'], "phpwcms.php?do=articles&amp;p=1&amp;struct=0", $p, "1", 0);
-						$subnav .= '<tr><td colspan="2"><img src="img/leer.gif" height="5" width="1" alt="" /></td></tr>'."\n";
+						$subnav .= '<tr><td colspan="2"><img src="include/img/leer.gif" height="5" width="1" alt="" /></td></tr>'."\n";
 						$subnav .= subnavtext($BL['be_news'], "phpwcms.php?do=articles&amp;p=3", $p, "3", 0);
 						break;
 
@@ -119,7 +119,7 @@ switch ($do) {
 							$subnav .= subnavtext($BL['be_subnav_msg_newsletter'], "phpwcms.php?do=messages&amp;p=2", $p, "2", 0);
 							
 							if(!empty($phpwcms['enable_messages'])) {
-								$subnav .= '<tr><td colspan="2"><img src="img/leer.gif" height="5" width="1" alt="" /></td></tr>'."\n";
+								$subnav .= '<tr><td colspan="2"><img src="include/img/leer.gif" height="5" width="1" alt="" /></td></tr>'."\n";
 							}
 						}
 						if(!empty($phpwcms['enable_messages'])) {
@@ -167,27 +167,24 @@ switch ($do) {
 						if(isset($_SESSION["wcs_user_admin"]) && $_SESSION["wcs_user_admin"] == 1) {
 							include(PHPWCMS_ROOT.'/include/inc_lib/admin.functions.inc.php');
 							$subnav .= subnavtext($BL['be_subnav_admin_sitestructure'], "phpwcms.php?do=admin&amp;p=6", $p, "6", 0);
-							$subnav .= '<tr><td colspan="2"><img src="img/leer.gif" height="5" width="1" alt="" /></td></tr>'."\n";
+							$subnav .= '<tr><td colspan="2"><img src="include/img/leer.gif" height="5" width="1" alt="" /></td></tr>'."\n";
 							$subnav .= subnavtext($BL['be_subnav_admin_pagelayout'], "phpwcms.php?do=admin&amp;p=8", $p, "8", 0);
 							$subnav .= subnavtext($BL['be_subnav_admin_templates'], "phpwcms.php?do=admin&amp;p=11", $p, "11", 0);
 							$subnav .= subnavtext($BL['be_subnav_admin_css'], "phpwcms.php?do=admin&amp;p=10", $p, "10", 0);
-							$subnav .= '<tr><td colspan="2"><img src="img/leer.gif" height="5" width="1" alt="" /></td></tr>'."\n";
+							$subnav .= '<tr><td colspan="2"><img src="include/img/leer.gif" height="5" width="1" alt="" /></td></tr>'."\n";
 							$subnav .= subnavtext($BL['be_subnav_admin_users'], "phpwcms.php?do=admin", $p, "", 0);
 							//$subnav .= subnavtext($BL['be_subnav_admin_groups'], "phpwcms.php?do=admin&amp;p=1", $p, "1", 0);
-							$subnav .= '<tr><td colspan="2"><img src="img/leer.gif" height="15" width="1" alt="" /></td></tr>'."\n";
+							$subnav .= '<tr><td colspan="2"><img src="include/img/leer.gif" height="15" width="1" alt="" /></td></tr>'."\n";
 							//$subnav .= subnavtext($BL['be_admin_keywords'], "phpwcms.php?do=admin&amp;p=5", $p, "5", 0);
 							$subnav .= subnavtext($BL['be_subnav_admin_filecat'], "phpwcms.php?do=admin&amp;p=7", $p, "7", 0);
 							$subnav .= subnavtext($BL['be_subnav_admin_starttext'], "phpwcms.php?do=admin&amp;p=12", $p, "12", 0);
 							$subnav .= subnavtext($BL['be_article_urlalias'].' ('.$BL['be_ftptakeover_active'].')', 'phpwcms.php?do=admin&amp;p=13', $p, "4", 0);
-							$subnav .= '<tr><td colspan="2"><img src="img/leer.gif" height="15" width="1" alt="" /></td></tr>'."\n";
+							$subnav .= '<tr><td colspan="2"><img src="include/img/leer.gif" height="15" width="1" alt="" /></td></tr>'."\n";
 							//$subnav .= subnavtext($BL['be_cnt_cache_update'], 'include/inc_act/act_cache.php', 1, 0, 0);
 							//$subnav .= subnavtext($BL['be_cnt_cache_delete'], 'include/inc_act/act_cache.php?do=9', 1, 0, 0, 'onclick="return confirm(\''.$BL['be_cnt_cache_delete_msg'].'\');" ');
 							$subnav .= subnavtext($BL['be_cnt_move_deleted'], 'include/inc_act/act_file.php?movedeletedfiles='. $_SESSION["wcs_user_id"], 1, 0, 0, 'onclick="return confirm(\''.$BL['be_cnt_move_deleted_msg'].'\');" ');
-							$subnav .= '<tr><td colspan="2"><img src="img/leer.gif" height="15" width="1" alt="" /></td></tr>'."\n";
+							$subnav .= '<tr><td colspan="2"><img src="include/img/leer.gif" height="15" width="1" alt="" /></td></tr>'."\n";
 							$subnav .= subnavtextext('phpinfo()', 'include/inc_act/act_phpinfo.php', '_blank', 0);
-							if($phpwcms["phpmyadmin"]) {
-								$subnav .= subnavtextext('phpMyAdmin', 'include/inc_ext/phpMyAdmin/', '_blank', 0);
-							}
 						}
 						break;
 						
@@ -199,7 +196,7 @@ switch ($do) {
 //Subnav Wrap Text Tabelle
 if($subnav) {
 	$subnav  = '<table border="0" cellpadding="0" cellspacing="0" summary="">'.LF.$subnav;
-	$subnav .= "<tr><td colspan=\"2\"><img src=\"img/leer.gif\" width=\"1\" height=\"15\" alt=\"\" /></td></tr>\n</table>";
+	$subnav .= "<tr><td colspan=\"2\"><img src=\"include/img/leer.gif\" width=\"1\" height=\"15\" alt=\"\" /></td></tr>\n</table>";
 }
 
 //Wenn der User kein Admin ist, anderenfalls
@@ -221,15 +218,15 @@ header('Content-Type: text/html; charset='.PHPWCMS_CHARSET);
 <head>
 	<title><?php echo $BL['be_page_title'].' - '.PHPWCMS_HOST ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=<?php echo PHPWCMS_CHARSET ?>">
-	<link href="include/inc_css/phpwcms.css" rel="stylesheet" type="text/css">
-	<link href="include/inc_css/additional.css" rel="stylesheet" type="text/css">
+	<link href="include/css/phpwcms.css" rel="stylesheet" type="text/css">
+	<link href="include/css/additional.css" rel="stylesheet" type="text/css">
 	<meta name="robots" content="noindex, nofollow">
 <?php
 
 $BE['HEADER']['alias_slah_var'] = '	<script type="text/javascript"> ' . LF . '		var aliasAllowSlashes = ' . (PHPWCMS_ALIAS_WSLASH ? 'true' : 'false') . ';' . LF . '	</script>';
 
 initMootools();
-$BE['HEADER']['phpwcms.js'] = getJavaScriptSourceLink('include/inc_js/phpwcms.js');
+$BE['HEADER']['phpwcms.js'] = getJavaScriptSourceLink('include/js/phpwcms.js');
 
 
 if($do == "messages" && $p == 1) {
@@ -263,24 +260,24 @@ if($BE['LANG'] == 'ar') {
 <body<?php echo $body_onload ?>><!-- phpwcms BODY_OPEN -->
 <table width="770" border="0" align="center" cellpadding="0" cellspacing="0" summary="main layout structure">
 	<tr>
-	  <td colspan="6"><img src="img/leer.gif" alt="" width="1" height="7"></td>
+	  <td colspan="6"><img src="include/img/leer.gif" alt="" width="1" height="7"></td>
   </tr>
 	<tr>
 		<td colspan="6">
 		<div style="position:relative">
-	  		<a href="phpwcms.php" target="_top"><img src="img/backend/backend_r1_c3.jpg" alt="phpwcms v<?php echo  html_specialchars(PHPWCMS_VERSION); ?>" width="95" height="24" border="0" hspace="15"></a>
+	  		<a href="phpwcms.php" target="_top"><img src="include/img/backend/backend_r1_c3.jpg" alt="phpwcms v<?php echo  html_specialchars(PHPWCMS_VERSION); ?>" width="95" height="24" border="0" hspace="15"></a>
 			<a href="<?php echo PHPWCMS_URL ?>" class="v10" style="position:absolute;right:15px;bottom:4px;color:#FFFFFF" target="_blank"><?php echo PHPWCMS_HOST ?></a>
 		</div>
 		</td>
     </tr>
 	<tr>
-	  <td colspan="6"><img src="img/leer.gif" alt="" width="1" height="7"></td>
+	  <td colspan="6"><img src="include/img/leer.gif" alt="" width="1" height="7"></td>
   </tr>
 	<tr bgcolor="#FFFFFF">
-	 <td valign="top" style="background-image:url(img/backend/backend_r3_c4.jpg); background-repeat:repeat-x; "><img src="img/backend/backend_r3_c1.jpg" alt="" width="15" height="40"></td>
-	  <td colspan="4" valign="top" style="background-image:url(img/backend/backend_r3_c4.jpg); background-repeat:repeat-x; "><table width="740" border="0" cellpadding="0" cellspacing="0" summary="sub structure">
+	 <td valign="top" style="background-image:url(include/img/backend/backend_r3_c4.jpg); background-repeat:repeat-x; "><img src="include/img/backend/backend_r3_c1.jpg" alt="" width="15" height="40"></td>
+	  <td colspan="4" valign="top" style="background-image:url(include/img/backend/backend_r3_c4.jpg); background-repeat:repeat-x; "><table width="740" border="0" cellpadding="0" cellspacing="0" summary="sub structure">
         <tr>
-          <td colspan="2"><img src="img/leer.gif" alt="" width="1" height="9"></td>
+          <td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="9"></td>
         </tr>
         <tr>
           <td valign="top" class="navtext"><?php 
@@ -298,21 +295,21 @@ if($BE['LANG'] == 'ar') {
           <td align="right" valign="top" class="navtext"><a href="phpwcms.php?do=logout" target="_top"><?php echo $BL['be_nav_logout'] ?></a></td>
         </tr>
       </table></td>
-	  <td valign="top" style="background-image:url(img/backend/backend_r3_c4.jpg); background-repeat:repeat-x; "><img src="img/backend/backend_r3_c7.jpg" alt="" width="15" height="40"></td>
+	  <td valign="top" style="background-image:url(include/img/backend/backend_r3_c4.jpg); background-repeat:repeat-x; "><img src="include/img/backend/backend_r3_c7.jpg" alt="" width="15" height="40"></td>
   </tr>
 	<tr bgcolor="#FFFFFF">
-	  <td width="15" bgcolor="#FFFFFF" style="background-image:url(img/backend/preinfo2_r7_c2.gif);background-repeat:repeat-y;"><img src="img/leer.gif" alt="" width="15" height="1"></td>
+	  <td width="15" bgcolor="#FFFFFF" style="background-image:url(include/img/backend/preinfo2_r7_c2.gif);background-repeat:repeat-y;"><img src="include/img/leer.gif" alt="" width="15" height="1"></td>
 		<td width="175" valign="top" bgcolor="#FFFFFF"><?php 
 
 		echo $subnav . LF;
-		echo '<img src="img/leer.gif" width="1" height="5" alt="" /><br /><span class="title">';
+		echo '<img src="include/img/leer.gif" width="1" height="5" alt="" /><br /><span class="title">';
 		echo $BL['usr_online'];
-		echo '</span><br /><img src="img/leer.gif" width="1" height="3" alt="" /><br />';
+		echo '</span><br /><img src="include/img/leer.gif" width="1" height="3" alt="" /><br />';
 		echo online_users($db, "<br />", "<span class=\"subnavinactive\">|</span>");
 
-		?><img src="img/leer.gif" alt="" width="175" height="1"></td>
-      <td width="10" bgcolor="#FFFFFF"><img src="img/leer.gif" alt="" width="10" height="1"></td>
-      <td width="15" bgcolor="#FFFFFF" style="background-image:url(img/backend/dividerA.gif);background-repeat:repeat-y;"><img src="img/leer.gif" alt="" width="15" height="200"></td>
+		?><img src="include/img/leer.gif" alt="" width="175" height="1"></td>
+      <td width="10" bgcolor="#FFFFFF"><img src="include/img/leer.gif" alt="" width="10" height="1"></td>
+      <td width="15" bgcolor="#FFFFFF" style="background-image:url(include/img/backend/dividerA.gif);background-repeat:repeat-y;"><img src="include/img/leer.gif" alt="" width="15" height="200"></td>
       <td width="540" valign="top" bgcolor="#FFFFFF" class="v11b width540" id="be_main_content">{STATUS_MESSAGE}{BE_PARSE_LANG}<!--BE_MAIN_CONTENT_START//-->
 <?php
 		 
@@ -521,15 +518,15 @@ if($BE['LANG'] == 'ar') {
 ?>
 	
 	<!--BE_MAIN_CONTENT_END//--></td>
-      <td width="15" bgcolor="#FFFFFF" style="background-image:url(img/backend/preinfo2_r7_c7.gif);background-repeat:repeat-y;background-position:right;"><img src="img/leer.gif" alt="" width="15" height="1"></td>
+      <td width="15" bgcolor="#FFFFFF" style="background-image:url(include/img/backend/preinfo2_r7_c7.gif);background-repeat:repeat-y;background-position:right;"><img src="include/img/leer.gif" alt="" width="15" height="1"></td>
 	</tr>
 	<tr>
-	  <td><img src="img/backend/backend_a_r1_c1.gif" alt="" width="15" height="15" border="0"></td>
-	  <td colspan="4" valign="bottom" bgcolor="#FFFFFF" class="navtext"><img src="img/backend/backend_r6_c2.jpg" alt="" width="740" height="15" border="0"></td>
-      <td valign="bottom" class="navtext"><img src="img/backend/backend_a_r1_c7.gif" alt="" width="15" height="15" border="0"></td>
+	  <td><img src="include/img/backend/backend_a_r1_c1.gif" alt="" width="15" height="15" border="0"></td>
+	  <td colspan="4" valign="bottom" bgcolor="#FFFFFF" class="navtext"><img src="include/img/backend/backend_r6_c2.jpg" alt="" width="740" height="15" border="0"></td>
+      <td valign="bottom" class="navtext"><img src="include/img/backend/backend_a_r1_c7.gif" alt="" width="15" height="15" border="0"></td>
   </tr>
 	<tr>
-	  <td width="15"><img src="img/leer.gif" alt="" width="14" height="17"></td>
+	  <td width="15"><img src="include/img/leer.gif" alt="" width="14" height="17"></td>
 	  <td colspan="5" valign="bottom" class="navtext" style="padding: 8px 0 15px 0;">
 	  	<a href="phpwcms.php?do=about" title="<?php echo $BL['be_aboutlink_title'] ?>">phpwcms <?php echo PHPWCMS_VERSION ?> 
 			&copy; 2002&#8212;<?php echo date('Y'); ?> Oliver Georgi. Licensed under GPL. Extensions are copyright
@@ -544,7 +541,7 @@ set_chat_focus($do, $p);
 //If new message was sent -> automatic forwarding to message center
 forward_to($forward_to_message_center, PHPWCMS_URL."phpwcms.php?do=messages", 2500);
 
-$BE['BODY_CLOSE']['wz_tooltip.js'] = getJavaScriptSourceLink('include/inc_js/wz_tooltip.js', '');
+$BE['BODY_CLOSE']['wz_tooltip.js'] = getJavaScriptSourceLink('include/js/wz_tooltip.js', '');
 
 ?>
 <!-- phpwcms BODY_CLOSE -->

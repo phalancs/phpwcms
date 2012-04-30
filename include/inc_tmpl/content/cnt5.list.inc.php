@@ -43,7 +43,7 @@ if(count($clink)) {
 	 $clink_link = $clink_link[0];
 	 $clink_liste .= "<a href=\"".$clink_link."\" target=\"_blank\" ".
 					 "title=\"Link: ".html_specialchars($clink_link.trim(' '.$clink_target))."\">".
-					 "<img src=\"img/symbole/link_to_1.gif\" border=\"0\" alt=\"\" />";
+					 "<img src=\"include/img/symbole/link_to_1.gif\" border=\"0\" alt=\"\" />";
 	 if(isEmpty($clink_name)) {
 		$clink_liste .= html_specialchars($clink_link)."</a>\n";
 	 } else {

@@ -52,7 +52,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		?></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['adplace_title'] ?>:&nbsp;</td>
@@ -64,7 +64,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		?>" style="width:400px;" value="<?php echo html_specialchars($plugin['data']['adplace_title']) ?>" size="30" maxlength="200" /></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>	
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>	
 
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['ad_format'] ?>:&nbsp;</td>
@@ -100,7 +100,7 @@ if (!defined('PHPWCMS_ROOT')) {
 				
 				</select></td>				
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	<tr>
 	
 		<td>&nbsp;</td>
@@ -134,14 +134,14 @@ if(empty($plugin['data']['adplace_format']) && count($plugin['ad_formats_js'])) 
 		</script></td>
 	</tr>
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist" style="padding-top:4px;vertical-align:top;"><?php echo $BLM['adplace_prefix'] ?>:&nbsp;</td>
 		<td colspan="2"><textarea name="adplace_prefix" id="adplace_prefix" rows="3" class="code width400"><?php echo html_entities($plugin['data']['adplace_prefix']) ?></textarea></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist" style="padding-top:4px;vertical-align:top;"><?php echo $BLM['adplace_suffix'] ?>:&nbsp;</td>
@@ -153,7 +153,7 @@ if(empty($plugin['data']['adplace_format']) && count($plugin['ad_formats_js'])) 
 if(!empty($plugin['data']['adplace_id'])) {
 
 ?>	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 	
 	<tr>
 		<td align="right" class="chatlist tdtop5"><?php echo $BLM['ad_template_code'] ?>:&nbsp;</td>
@@ -170,7 +170,7 @@ if(!empty($plugin['data']['adplace_id'])) {
 
 ?>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="18" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="18" /></td></tr>
 	
 	<tr>
 		<td align="right" class="chatlist"><?php echo $BL['be_ftptakeover_status'] ?>:&nbsp;</td>
@@ -182,7 +182,7 @@ if(!empty($plugin['data']['adplace_id'])) {
 		</table></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td>
 	</tr>
 	<tr> 
 		<td>&nbsp;</td>

@@ -20,10 +20,10 @@
    This copyright notice MUST APPEAR in all copies of the script!
 *************************************************************************************/
 
-// <img src="image_resized.php?format=jpg&w=100&h=200&q=85&imgfile=test.jpg" alt="" border="0">
+// <img src="include/img/image_resized.php?format=jpg&w=100&h=200&q=85&imgfile=test.jpg" alt="" border="0">
 
 $img_target	= (isset($_GET['format'])) ? strtolower(trim($_GET['format'])) : 'jpg';
-$img_file	= (isset($_GET['imgfile'])) ? trim($_GET['imgfile']) : 'img/leer.gif';
+$img_file	= (isset($_GET['imgfile'])) ? trim($_GET['imgfile']) : 'include/img/leer.gif';
 $img_width	= (isset($_GET['w'])) ? intval($_GET['w']) : 0;
 $img_height	= (isset($_GET['h'])) ? intval($_GET['h']) : 0;
 $img_quality= (isset($_GET['q']) && intval($_GET['q']) <= 100 && intval($_GET['q'])) ? intval($_GET['q']) : 75;

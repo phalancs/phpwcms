@@ -29,7 +29,7 @@ if (!defined('PHPWCMS_ROOT')) {
 
 // keyword specific functions
 
-$BE['HEADER'][]  = getJavaScriptSourceLink('include/inc_js/lib.keyword.js');
+$BE['HEADER'][]  = getJavaScriptSourceLink('include/js/lib.keyword.js');
 
 function backend_list_keywords() {
 

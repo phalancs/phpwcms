@@ -166,9 +166,9 @@ if($result = mysql_query($sql, $db) or die ("error while counting private files"
 	<meta http-equiv="Expires" content="0" />
 	<meta http-equiv="Pragma" content="no-cache" />
 	<meta http-equiv="cache-control" content="no-cache" />
-	<script src="include/inc_js/phpwcms.js" type="text/javascript"></script>
-	<script src="include/inc_js/filebrowser.js" type="text/javascript"></script>
-	<link href="include/inc_css/phpwcms.css" rel="stylesheet" type="text/css" />
+	<script src="include/js/phpwcms.js" type="text/javascript"></script>
+	<script src="include/js/filebrowser.js" type="text/javascript"></script>
+	<link href="include/css/phpwcms.css" rel="stylesheet" type="text/css" />
 	<style type="text/css">body{margin:5px;}</style>
 
 </head>
@@ -176,17 +176,17 @@ if($result = mysql_query($sql, $db) or die ("error while counting private files"
 <body>
 <table summary="" border="0" cellspacing="0" cellpadding="0">
   <tr>
-		<td bgcolor="#7C98A2"><img src="img/leer.gif" alt="" width="1" height="1" border="0" /></td>
-		<td rowspan="4"><img src="img/leer.gif" alt="" width="5" height="1" border="0" /></td>
-		<td bgcolor="#7C98A2"><img src="img/leer.gif" alt="" width="1" height="1" border="0" /></td>
+		<td bgcolor="#7C98A2"><img src="include/img/leer.gif" alt="" width="1" height="1" border="0" /></td>
+		<td rowspan="4"><img src="include/img/leer.gif" alt="" width="5" height="1" border="0" /></td>
+		<td bgcolor="#7C98A2"><img src="include/img/leer.gif" alt="" width="1" height="1" border="0" /></td>
   </tr>
   <tr>
     <td bgcolor="#7C98A2" class="msgreiter">&nbsp;<?php echo $BL['FOLDER_LIST'] ?>&nbsp;</td>
     <td bgcolor="#7C98A2" class="msgreiter">&nbsp;<?php echo $filetype ?>&nbsp;</td>
   </tr>
   <tr>
-    <td bgcolor="#7C98A2"><img src="img/leer.gif" alt="" width="1" height="1" border="0" /></td>
-	<td bgcolor="#7C98A2"><img src="img/leer.gif" alt="" width="1" height="1" border="0" /></td>
+    <td bgcolor="#7C98A2"><img src="include/img/leer.gif" alt="" width="1" height="1" border="0" /></td>
+	<td bgcolor="#7C98A2"><img src="include/img/leer.gif" alt="" width="1" height="1" border="0" /></td>
   </tr>
   <tr>
     <td valign="top"><?php
@@ -206,7 +206,7 @@ if(!empty($count_user_files)) { //Listing in case of user files/folders
 
 	if($count_result = mysql_query($count_sql, $db)) {
 		if($count_row = mysql_fetch_row($count_result)) {
-			$count = '<img src="img/leer.gif" height="1" width="2" alt="" border="0" /><a href="filebrowser.php?opt='.$js_aktion.'&amp;folder=0'.
+			$count = '<img src="include/img/leer.gif" height="1" width="2" alt="" border="0" /><a href="filebrowser.php?opt='.$js_aktion.'&amp;folder=0'.
 					 '%7C'.$folder_status.'">'.on_off($folder_status, $dirname, 0).'</a>';
 			$count_wert = $count_row[0];
 		}
@@ -219,13 +219,13 @@ if(!empty($count_user_files)) { //Listing in case of user files/folders
 	$dirname	=  "<a href=\"filebrowser.php?opt=".$js_aktion."&amp;files=0\" title=\"".$BL['SHOW_FILES']."\">".$dirname."</a>";
 	$bgcol		= (isset($row["f_id"]) && $row["f_id"] == $_SESSION["imgdir"]) ? ' bgcolor="#FED83F"' : '';
 	
-	echo '<tr'.$bgcol.'><td colspan="2"><img src="img/leer.gif" height="2" width="1" border="0" alt="" /></td></tr>'.LF; //Abstand vor
+	echo '<tr'.$bgcol.'><td colspan="2"><img src="include/img/leer.gif" height="2" width="1" border="0" alt="" /></td></tr>'.LF; //Abstand vor
 	echo '<tr'.$bgcol.'><td class="msglist" nowrap="nowrap">';
-	echo $count.'<img src="img/leer.gif" height="1" width="4" border="0" alt="" /><img src="img/icons/harddisk_16x11.gif" border="0" alt="" />'; //Zellinhalt 1. Spalte
-	echo '<img src="img/leer.gif" height="1" width="4" alt="" border="0" />'.$dirname.'</td><td><img src="img/leer.gif" height="1" width="5" border="0" alt="" /></td></tr>'.LF;
+	echo $count.'<img src="include/img/leer.gif" height="1" width="4" border="0" alt="" /><img src="include/img/icons/harddisk_16x11.gif" border="0" alt="" />'; //Zellinhalt 1. Spalte
+	echo '<img src="include/img/leer.gif" height="1" width="4" alt="" border="0" />'.$dirname.'</td><td><img src="include/img/leer.gif" height="1" width="5" border="0" alt="" /></td></tr>'.LF;
 	//Aufbau trennende Tabellen-Zeile
-	echo '<tr'.$bgcol.'><td colspan="2"><img src="img/leer.gif" height="1" width="1" border="0" alt="" /></td></tr>'.LF; //Abstand nach
-	echo '<tr bgcolor="#CDDEE4"><td colspan="2"><img src="img/leer.gif" height="1" width="1" border="0" alt="" /></td></tr>'.LF;
+	echo '<tr'.$bgcol.'><td colspan="2"><img src="include/img/leer.gif" height="1" width="1" border="0" alt="" /></td></tr>'.LF; //Abstand nach
+	echo '<tr bgcolor="#CDDEE4"><td colspan="2"><img src="include/img/leer.gif" height="1" width="1" border="0" alt="" /></td></tr>'.LF;
 		
 	//Wenn überhaupt Ordner für User vorhanden, dann Listing
 	if(!$folder_status && $count_wert) {
@@ -368,14 +368,14 @@ if(!empty($count_user_files)) { //Listing in case of user files/folders
 					case 10: $js  = "window.opener.SetUrl('download.php?f=".$file_row["f_hash"] . "&target=0');";
 							 break;
 		
-					case 11: $js  = "window.opener.SetUrl('image_resized.php?format=" . $file_row["f_ext"]. "&q=85&imgfile=".$phpwcms_filestorage.$file_row["f_hash"] . '.' . $file_row["f_ext"]. "');";
+					case 11: $js  = "window.opener.SetUrl('include/img/cmsimage.php/0x0/".$file_row["f_hash"] . '.' . $file_row["f_ext"]. "');";
 							 break;
 							 
 					//CKEditor
 					case 16: $js  = "window.opener.CKEDITOR.tools.callFunction(2, 'download.php?f=".$file_row["f_hash"] . "&target=0');";
 							 break;
 					
-					case 17: $js  = "window.opener.CKEDITOR.tools.callFunction(2,'image_resized.php?format=" . $file_row["f_ext"]. "&q=85&imgfile=".$phpwcms_filestorage.$file_row["f_hash"] . '.' . $file_row["f_ext"]. "');";
+					case 17: $js  = "window.opener.CKEDITOR.tools.callFunction(2,'include/img/cmsimage.php/0x0/".$file_row["f_hash"] . '.' . $file_row["f_ext"]. "');";
 							 break;
 						
 						 
@@ -391,45 +391,45 @@ if(!empty($count_user_files)) { //Listing in case of user files/folders
 						<tr id="addAllFilesLink">
 							<td colspan="4" class="add_all_files"><a href="#" onclick="addAllFiles();return false;" title="' . $BL['ADD_ALL_FILES'] . '">' . 
 								$BL['ADD_ALL_FILES'] .	'
-								<img src="img/button/add_9x9a.gif" alt="" border="0" />
+								<img src="include/img/button/add_9x9a.gif" alt="" border="0" />
 								</a></td>
 						</tr>
 						<tr>
-							<td colspan="4" bgcolor="#CDDEE4"><img src="img/leer.gif" alt="" border="0" /></td>
+							<td colspan="4" bgcolor="#CDDEE4"><img src="include/img/leer.gif" alt="" border="0" /></td>
 						</tr>
 						  ';
 				
 				}
 			
-				echo '<tr><td colspan="4"><img src="img/leer.gif" width="1" height="2" border="0" alt="" /></td></tr>'.LF;
-				echo "<tr>\n<td><img src=\"img/icons/small_".extimg($file_row["f_ext"])."\" border=\"0\" alt=\"\" hspace=\"3\" vspace=\"1\" /></td>\n";
+				echo '<tr><td colspan="4"><img src="include/img/leer.gif" width="1" height="2" border="0" alt="" /></td></tr>'.LF;
+				echo "<tr>\n<td><img src=\"include/img/icons/small_".extimg($file_row["f_ext"])."\" border=\"0\" alt=\"\" hspace=\"3\" vspace=\"1\" /></td>\n";
         	
         		if($js_aktion != 4 && $js_aktion != 10 && $js_aktion != 16) {
-        			echo "<td class=\"msglist\">".$filename."</td>\n<td><img src=\"img/leer.gif\" width=\"5\" height=\"1\" alt=\"\" border=\"0\" />";
+        			echo "<td class=\"msglist\">".$filename."</td>\n<td><img src=\"include/img/leer.gif\" width=\"5\" height=\"1\" alt=\"\" border=\"0\" />";
 				} else {
 					echo "<td class=\"msglist\"><a href=\"#\" onclick=\"".$js."tmt_winControl('self','close()');\">".$filename."</a></td>\n<td>";
 				}
 			
 				echo "<a href=\"#\" onclick=\"".$js."return false;\" title=\"".$BL['TAKE_IMAGE']."\">";
-				echo "<img src=\"img/button/add_9x9a.gif\" border=\"0\" alt=\"\" hspace=\"5\" vspace=\"2\" /></a></td>\n";
-				echo "<td><img src=\"img/leer.gif\" alt=\"\" border=\"0\" /></td>\n</tr>\n";
-				echo "<tr><td colspan=\"4\"><img src=\"img/leer.gif\" width=\"1\" height=\"1\" alt=\"\" border=\"0\" /></td></tr>\n";
+				echo "<img src=\"include/img/button/add_9x9a.gif\" border=\"0\" alt=\"\" hspace=\"5\" vspace=\"2\" /></a></td>\n";
+				echo "<td><img src=\"include/img/leer.gif\" alt=\"\" border=\"0\" /></td>\n</tr>\n";
+				echo "<tr><td colspan=\"4\"><img src=\"include/img/leer.gif\" width=\"1\" height=\"1\" alt=\"\" border=\"0\" /></td></tr>\n";
 				if(!empty($thumb_image[0]) && in_array( $js_aktion, array(0, 1, 3, 5, 6, 7, 8, 10, 11, 17, 18) ) ) {
 					echo "<tr><td>&nbsp;</td>\n<td colspan=\"3\"><a href=\"#\" onclick=\"".$js;
 					echo "tmt_winControl('self','close()');\">";
 					echo '<img src="'.PHPWCMS_IMAGES . $thumb_image[0] .'" border="0" '.$thumb_image[3].' alt="" />';
 					echo "</a></td>\n</tr>\n";
 				}
-				echo "<tr><td colspan=\"4\"><img src=\"img/leer.gif\" width=\"1\" height=\"2\" alt=\"\" border=\"0\" /></td></tr>\n";
-				echo "<tr><td colspan=\"4\" bgcolor=\"#CDDEE4\"><img src=\"img/leer.gif\" width=\"1\" height=\"1\" alt=\"\" border=\"0\" /></td></tr>\n";
+				echo "<tr><td colspan=\"4\"><img src=\"include/img/leer.gif\" width=\"1\" height=\"2\" alt=\"\" border=\"0\" /></td></tr>\n";
+				echo "<tr><td colspan=\"4\" bgcolor=\"#CDDEE4\"><img src=\"include/img/leer.gif\" width=\"1\" height=\"1\" alt=\"\" border=\"0\" /></td></tr>\n";
 				$file_durchlauf++;
 			}
 
 		}
 		if(!$file_durchlauf) { //Abschluss der Filelisten-Tabelle
-			echo "<tr><td colspan=\"4\"><img src=\"img/leer.gif\" width=\"3\" height=\"2\" alt=\"\" border=\"0\" /></td></tr>\n";
+			echo "<tr><td colspan=\"4\"><img src=\"include/img/leer.gif\" width=\"3\" height=\"2\" alt=\"\" border=\"0\" /></td></tr>\n";
 			echo "<tr><td colspan=\"4\" class=\"msglist\">&nbsp;".$BL['NO_FILE']."&nbsp;&nbsp;</td></tr>\n";
-			echo "<tr><td colspan=\"4\"><img src=\"img/leer.gif\" width=\"3\" height=\"2\" alt=\"\" border=\"0\" /></td></tr>\n";
+			echo "<tr><td colspan=\"4\"><img src=\"include/img/leer.gif\" width=\"3\" height=\"2\" alt=\"\" border=\"0\" /></td></tr>\n";
 		}
 	} //Ende Liste Dateien
 	
@@ -491,7 +491,7 @@ function folder_list($pid, $dbcon, $vor, $zieldatei) {
 					 "(f_public=1 OR f_uid=".$userID.") LIMIT 1";
 		if($count_result = mysql_query($count_sql, $dbcon)) {
 			if($count_row = mysql_fetch_row($count_result)) {
-				$count = '<img src="img/leer.gif" height="1" width="2" alt="" border="0" /><a href="'.$zieldatei."folder=".$row["f_id"].
+				$count = '<img src="include/img/leer.gif" height="1" width="2" alt="" border="0" /><a href="'.$zieldatei."folder=".$row["f_id"].
 						 '%7C'.$folder_status.'">'.on_off($folder_status, $dirname, 0).'</a>';
 				$count_wert = $count_row[0];
 			}
@@ -508,13 +508,13 @@ function folder_list($pid, $dbcon, $vor, $zieldatei) {
 		}
 		
 		//Aufbau der Zeile
-		echo "<tr".$bgcol."><td colspan=\"2\"><img src=\"img/leer.gif\" height=\"2\" width=\"1\" alt=\"\" border=\"0\" /></td></tr>\n"; //Abstand vor
+		echo "<tr".$bgcol."><td colspan=\"2\"><img src=\"include/img/leer.gif\" height=\"2\" width=\"1\" alt=\"\" border=\"0\" /></td></tr>\n"; //Abstand vor
 		echo "<tr".$bgcol."><td class=\"msglist\" nowrap=\"nowrap\">";
-		echo $count."<img src=\"img/leer.gif\" height=\"1\" width=\"".($vor+6)."\" border=\"0\" alt=\"\" /><img src=\"img/icons/folder_zu.gif\" border=\"0\" alt=\"\" />"; //Zellinhalt 1. Spalte
-		echo "<img src=\"img/leer.gif\" height=\"1\" width=\"5\" alt=\"\" border=\"0\" />".$dirname."</td><td><img src=\"img/leer.gif\" height=\"1\" width=\"5\" alt=\"\" border=\"0\" /></td></tr>\n";
+		echo $count."<img src=\"include/img/leer.gif\" height=\"1\" width=\"".($vor+6)."\" border=\"0\" alt=\"\" /><img src=\"include/img/icons/folder_zu.gif\" border=\"0\" alt=\"\" />"; //Zellinhalt 1. Spalte
+		echo "<img src=\"include/img/leer.gif\" height=\"1\" width=\"5\" alt=\"\" border=\"0\" />".$dirname."</td><td><img src=\"include/img/leer.gif\" height=\"1\" width=\"5\" alt=\"\" border=\"0\" /></td></tr>\n";
 		//Aufbau trennende Tabellen-Zeile
-		echo "<tr".$bgcol."><td colspan=\"2\"><img src=\"img/leer.gif\" height=\"1\" width=\"1\" alt=\"\" border=\"0\" /></td></tr>\n"; //Abstand nach
-		echo "<tr bgcolor=\"#CDDEE4\"><td colspan=\"2\"><img src=\"img/leer.gif\" height=\"1\" width=\"1\" alt=\"\" border=\"0\" /></td></tr>\n"; //Trennlinie<img src='img/lines/line-lightgrey-dotted-538.gif'>
+		echo "<tr".$bgcol."><td colspan=\"2\"><img src=\"include/img/leer.gif\" height=\"1\" width=\"1\" alt=\"\" border=\"0\" /></td></tr>\n"; //Abstand nach
+		echo "<tr bgcolor=\"#CDDEE4\"><td colspan=\"2\"><img src=\"include/img/leer.gif\" height=\"1\" width=\"1\" alt=\"\" border=\"0\" /></td></tr>\n"; //Trennlinie<img src='include/img/lines/line-lightgrey-dotted-538.gif'>
 		
 		//Weiter, wenn Unterstruktur
 		if(!$folder_status && $count_wert) {
@@ -534,13 +534,13 @@ function on_off($wert, $string, $art = 1) {
 		if($art == 1) {
 			return "+";
 		} else {
-			return "<img src=\"img/symbols/klapp_zu.gif\" border=\"0\" alt=\"\" title=\"".$GLOBALS['BL']['OPEN_DIR'].": ".$string."\" />";
+			return "<img src=\"include/img/symbols/klapp_zu.gif\" border=\"0\" alt=\"\" title=\"".$GLOBALS['BL']['OPEN_DIR'].": ".$string."\" />";
 		}
 	} else {
 		if($art == 1) {
 			return "-";
 		} else {
-			return "<img src=\"img/symbols/klapp_auf.gif\" border=\"0\" alt=\"\" title=\"".$GLOBALS['BL']['CLOSE_DIR'].": ".$string."\" />";
+			return "<img src=\"include/img/symbols/klapp_auf.gif\" border=\"0\" alt=\"\" title=\"".$GLOBALS['BL']['CLOSE_DIR'].": ".$string."\" />";
 		}
 	}
 }

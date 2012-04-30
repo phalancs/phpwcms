@@ -30,8 +30,8 @@ if (!defined('PHPWCMS_ROOT')) {
 // Module/Plug-in Ads/Banner Management
 
 
-$BE['HEADER']['date.js']			= getJavaScriptSourceLink('include/inc_js/date.js');
-$BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/inc_js/dynCalendar.js');
+$BE['HEADER']['date.js']			= getJavaScriptSourceLink('include/js/date.js');
+$BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/js/dynCalendar.js');
 
 ?>
 <h1 class="title" style="margin-bottom:10px"><?php echo $BLM['form_title'] ?></h1>
@@ -54,7 +54,7 @@ $BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/inc_js/dynCa
 	
 	<?php } ?>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['campaign_entry'] ?>:&nbsp;</td>
@@ -66,7 +66,7 @@ $BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/inc_js/dynCa
 		?>" style="width:400px;" value="<?php echo html_specialchars($plugin['data']['adcampaign_title']) ?>" size="30" maxlength="200" /></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist" valign="top" style="padding-top:18px"><?php echo $BLM['calendar_start'] ?>:&nbsp;</td>
@@ -97,7 +97,7 @@ $BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/inc_js/dynCa
 				timestart.value = '00:00';
 			}
 		}
-		calStart = new dynCalendar('calStart', 'aStart', 'img/dynCal/');
+		calStart = new dynCalendar('calStart', 'aStart', 'include/img/dynCal/');
 		calStart.setMonthCombo(false);
 		calStart.setYearCombo(false);
 		</script></td>
@@ -107,7 +107,7 @@ $BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/inc_js/dynCa
 		
 	</tr>	
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist" valign="top" style="padding-top:18px"><?php echo $BLM['calendar_end'] ?>:&nbsp;</td>
@@ -136,7 +136,7 @@ $BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/inc_js/dynCa
 				timeend.value = '23:59';
 			}
 		}
-		calEnd = new dynCalendar('calEnd', 'aEnd', 'img/dynCal/');
+		calEnd = new dynCalendar('calEnd', 'aEnd', 'include/img/dynCal/');
 		calEnd.setMonthCombo(false);
 		calEnd.setYearCombo(false);
 		</script></td>
@@ -146,7 +146,7 @@ $BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/inc_js/dynCa
 		
 	</tr>		
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>	
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>	
 
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['ad_format'] ?>:&nbsp;</td>
@@ -182,7 +182,7 @@ $BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/inc_js/dynCa
 				
 				</select></td>				
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	<tr>
 	
 		<td>&nbsp;</td>
@@ -210,7 +210,7 @@ $BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/inc_js/dynCa
 	
 	</tr>
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 	
 	<tr>
 	
@@ -226,7 +226,7 @@ $BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/inc_js/dynCa
 	
 	</tr>	
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 
 	
 	<tr>
@@ -236,7 +236,7 @@ $BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/inc_js/dynCa
 	
 	</tr>	
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	
 	<tr>
 	
@@ -253,14 +253,14 @@ $BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/inc_js/dynCa
 	
 	
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist" style="padding-top:4px;vertical-align:top;"><?php echo $BLM['comment'] ?>:&nbsp;</td>
 		<td colspan="2"><textarea name="adcampaign_comment" id="adcampaign_comment" style="width:400px" rows="5" class="v12"><?php echo html_specialchars($plugin['data']['adcampaign_comment']) ?></textarea></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15" /></td></tr>	
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15" /></td></tr>	
 	
 	<tr>
 		<td align="right" class="chatlist"><?php echo $BL['be_ftptakeover_status'] ?>:&nbsp;</td>
@@ -272,7 +272,7 @@ $BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/inc_js/dynCa
 		</table></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td>
 	</tr>
 	<tr> 
 		<td>&nbsp;</td>

@@ -50,7 +50,7 @@ if (!defined('PHPWCMS_ROOT')) {
 	
 	<?php } ?>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['glossary_title'] ?>:&nbsp;</td>
@@ -62,7 +62,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		?>" style="width:400px;" value="<?php echo html_specialchars($glossary['data']['glossary_title']) ?>" size="30" maxlength="1000" /></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['glossary_keyword'] ?>:&nbsp;</td>
@@ -74,14 +74,14 @@ if (!defined('PHPWCMS_ROOT')) {
 		?>" style="width:400px;" value="<?php echo html_specialchars($glossary['data']['glossary_keyword']) ?>" size="30" maxlength="200" /></td>
 	</tr>	
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['glossary_token'] ?>:&nbsp;</td>
 		<td><input name="glossary_tag" type="text" id="glossary_tag" class="f11" style="width:400px;" value="<?php echo html_specialchars($glossary['data']['glossary_tag']) ?>" size="30" maxlength="220" /></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 	
 	<tr> 
 		<td class="chatlist" colspan="2" style="padding-bottom:4px"><?php echo $BLM['glossary_text'] ?>:&nbsp;</td>
@@ -106,7 +106,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		?></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15" /></td></tr>	
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15" /></td></tr>	
 	
 	<tr>
 		<td align="right" class="chatlist"><?php echo $BLM['highlight'] ?>:&nbsp;</td>
@@ -118,7 +118,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		</table></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>	
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>	
 	
 	<tr>
 		<td align="right" class="chatlist"><?php echo $BL['be_ftptakeover_status'] ?>:&nbsp;</td>
@@ -130,7 +130,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		</table></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td>
 	</tr>
 	<tr> 
 		<td>&nbsp;</td>

@@ -172,7 +172,7 @@ class phpwcmsNews {
 				$next_page = $max_page - 1;
 			}
 			
-			$paginate .= '<img src="img/famfamfam/action_back.gif" alt="" border="0"';	
+			$paginate .= '<img src="include/img/famfamfam/action_back.gif" alt="" border="0"';	
 			if($current_page == 1) {
 				$paginate .= ' class="inactive"';
 			} else {
@@ -182,7 +182,7 @@ class phpwcmsNews {
 			
 			$paginate .= '&nbsp;<b>' . $current_page . '</b>/' . $max_page . '&nbsp;';
 			
-			$paginate .= '</td><td><img src="img/famfamfam/action_forward.gif" alt="" border="0"';
+			$paginate .= '</td><td><img src="include/img/famfamfam/action_forward.gif" alt="" border="0"';
 			if($current_page == $max_page) {
 				$paginate .= ' class="inactive"';
 			} else {
@@ -322,16 +322,16 @@ class phpwcmsNews {
 				$list[] = '<td class="column collast">
 				
 					<a href="'.$this->base_url.'&amp;cntid='.$news['cnt_id'].'&amp;action=edit">'.	
-					'<img src="img/button/edit_22x13.gif" border="0" alt="" /></a>'.
+					'<img src="include/img/button/edit_22x13.gif" border="0" alt="" /></a>'.
 	
 					'<a href="'.$this->base_url.'&amp;cntid='.$news['cnt_id'].'&amp;status='.
 					($news['cnt_status'] ? '0' : '1').'">'.
-					'<img src="img/button/aktiv_12x13_'.$news['cnt_status'].'.gif" border="0" alt="" /></a>'.
+					'<img src="include/img/button/aktiv_12x13_'.$news['cnt_status'].'.gif" border="0" alt="" /></a>'.
 	
 					'<a href="'.$this->base_url.'&amp;cntid='.$news['cnt_id'].'&amp;status=9'.
 					'" title="'.$this->BL['be_delete_dataset'].' '.html_specialchars($news['cnt_name']).'" onclick="return confirm(\''.
 					$this->BL['be_delete_dataset'].' \n'.js_singlequote($news['cnt_name']).'\');">'.
-					'<img src="img/button/trash_13x13_1.gif" border="0" alt=""></a>	
+					'<img src="include/img/button/trash_13x13_1.gif" border="0" alt=""></a>	
 				
 				</td>';
 			

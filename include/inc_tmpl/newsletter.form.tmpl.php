@@ -34,28 +34,28 @@ if (!defined('PHPWCMS_ROOT')) {
 <div class="title" style="margin-bottom:10px"><?php echo $BL['be_newsletter_titleeditnl'] ?></div>
 <form action="phpwcms.php?do=messages&amp;p=3&amp;s=<?php echo $newsletter["newsletter_id"] ?>&amp;edit=1" method="post" name="newsletter" target="_self" id="newsletter" onsubmit="hideLayer('newsletterButtons');enableStatusMessage('statusMessage', true, false);">
 <table border="0" cellpadding="0" cellspacing="0" summary="" width="100%">
-	<tr><td colspan="2" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
-	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="9" /></td></tr>
+	<tr><td colspan="2" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="9" /></td></tr>
 	<tr bgcolor="#F3F5F8">
 		<td align="right" class="chatlist"><?php 
 		
 		echo $BL['be_msg_subject'];
 		if(!empty($newsletter['error']['subject'])) {
-			echo '<img src="img/symbole/error_9x9.gif" width="9" height="9" alt="" />';
+			echo '<img src="include/img/symbole/error_9x9.gif" width="9" height="9" alt="" />';
 		}
 		
 		
 	?>:&nbsp;</td>
 		<td><input name="newsletter_subject" type="text" class="f11b" id="newsletter_subject" style="width:400px" value="<?php echo html_specialchars($newsletter["newsletter_subject"]) ?>" size="50" maxlength="250" onchange="hideLayer('messagesend');" /></td>
 	</tr>
-	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 
 <?php
 	if(!empty($newsletter["newsletter_created"])) {
 		echo '<tr bgcolor="#F3F5F8"><td align="right" class="chatlist">' .$BL['be_fprivedit_created']. ':&nbsp;</td><td><strong>';
 		echo @date($BL['be_fprivedit_dateformat'], strtotime($newsletter["newsletter_created"]));		
 		echo '</strong></td></tr>';
-		echo '<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>';
+		echo '<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>';
 	}
 
 	
@@ -69,40 +69,40 @@ if (!defined('PHPWCMS_ROOT')) {
 		
 		?></strong></td>
 	</tr>	
-	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
-	<tr><td colspan="2" bgcolor="#d9dee3"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
+	<tr><td colspan="2" bgcolor="#d9dee3"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 	<tr>
 		<td align="right" class="chatlist"><?php echo $BL['be_newsletter_fromname'] ?>:&nbsp;</td>
 		<td><input name="newsletter_fromname" type="text" class="f11" id="newsletter_fromname" style="width:400px" value="<?php echo html_specialchars($newsletter["newsletter_vars"]['from_name']) ?>" size="50" maxlength="250" /></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td></tr>
 	<tr>
 		<td align="right" class="chatlist"><?php 
 		
 		echo $BL['be_newsletter_fromemail'];
 		if(isset($newsletter['error']) && isset($newsletter['error']['from_email'])) {
-			echo '<img src="img/symbole/error_9x9.gif" width="9" height="9" alt="" />';
+			echo '<img src="include/img/symbole/error_9x9.gif" width="9" height="9" alt="" />';
 		}
 		
 		?>:&nbsp;</td>
 		<td><input name="newsletter_fromemail" type="text" class="f11" id="newsletter_fromemail" style="width:400px" value="<?php echo html_specialchars($newsletter["newsletter_vars"]['from_email']) ?>" size="50" maxlength="250" /></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td></tr>
 	<tr>
 		<td align="right" class="chatlist"><?php 
 		
 		echo $BL['be_newsletter_replyto'];
 		if(isset($newsletter['error']) && isset($newsletter['error']['replyto'])) {
-			echo '<img src="img/symbole/error_9x9.gif" width="9" height="9" alt="" />';
+			echo '<img src="include/img/symbole/error_9x9.gif" width="9" height="9" alt="" />';
 		}
 		
 		?>:&nbsp;</td>
 		<td><input name="newsletter_replyto" type="text" class="f11" id="newsletter_replyto" style="width:400px" value="<?php echo html_specialchars($newsletter["newsletter_vars"]['replyto']) ?>" size="50" maxlength="250" /></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	<tr>
-		<td align="right" class="chatlist" valign="top"><img src="img/leer.gif" alt="" width="1" height="14" /><?php echo $BL['be_cnt_subscription'] ?>:&nbsp;</td>
+		<td align="right" class="chatlist" valign="top"><img src="include/img/leer.gif" alt="" width="1" height="14" /><?php echo $BL['be_cnt_subscription'] ?>:&nbsp;</td>
 		<td valign="top"><table border="0" cellpadding="0" cellspacing="0" summary="">
 		
 		<tr>
@@ -137,13 +137,13 @@ if (!defined('PHPWCMS_ROOT')) {
 		</table></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 
 <?php
 
 	// newsletter templates
 	
-	$BE['HEADER']['newsletter.form.js']		= getJavaScriptSourceLink('include/inc_js/newsletter.form.js');
+	$BE['HEADER']['newsletter.form.js']		= getJavaScriptSourceLink('include/js/newsletter.form.js');
 	
 	
 	$tmpllist		= returnSubdirListAsArray(PHPWCMS_TEMPLATE.'inc_newsletter');
@@ -206,13 +206,13 @@ if (!defined('PHPWCMS_ROOT')) {
 	</tr>
 	
 	<tr>
-		<td><img src="img/leer.gif" alt="" width="1" height="3" /></td>
-		<td id="newsletterTemplateInfo" style="padding:4px 0 4px 0"><img src="img/leer.gif" alt="" width="1" height="3" /></td>
+		<td><img src="include/img/leer.gif" alt="" width="1" height="3" /></td>
+		<td id="newsletterTemplateInfo" style="padding:4px 0 4px 0"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4" /></td></tr>
-	<tr><td colspan="2" bgcolor="#d9dee3"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
+	<tr><td colspan="2" bgcolor="#d9dee3"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 
 	<tr><td colspan="2" style="padding-left:2px">
 <script language="javascript" type="text/javascript">
@@ -228,17 +228,17 @@ if (!defined('PHPWCMS_ROOT')) {
 </script>
 <!--
 <div id="messageclose" class="chatlist">
-	<a href="#" onclick="hideLayer('messageclose');showLayer('messageopen'); return false;"><img src="img/symbols/icon_minicategory_12x9_1.gif" alt="<?php echo $BL['be_func_struct_open'] ?>" name="switchit" border="0" id="switchit" /><strong style="margin-left:5px"><?php echo $BL['be_newsletter_open'] ?></strong></a> <?php echo $BL['be_newsletter_open1'] ?>
+	<a href="#" onclick="hideLayer('messageclose');showLayer('messageopen'); return false;"><img src="include/img/symbols/icon_minicategory_12x9_1.gif" alt="<?php echo $BL['be_func_struct_open'] ?>" name="switchit" border="0" id="switchit" /><strong style="margin-left:5px"><?php echo $BL['be_newsletter_open'] ?></strong></a> <?php echo $BL['be_newsletter_open1'] ?>
 </div>
 	
 <div id="messageopen" style="display:none">
 	<div class="chatlist">
-		<a href="#" onclick="hideLayer('messageopen');showLayer('messageclose');return false;"><img src="img/symbols/icon_minicategory_12x9_2.gif" alt="<?php echo $BL['be_func_struct_close'] ?>" name="switchit" border="0" id="switchit" /><strong style="margin-left:5px"><?php echo $BL['be_newsletter_open'] ?></strong></a> <?php echo $BL['be_newsletter_open1'] ?>
+		<a href="#" onclick="hideLayer('messageopen');showLayer('messageclose');return false;"><img src="include/img/symbols/icon_minicategory_12x9_2.gif" alt="<?php echo $BL['be_func_struct_close'] ?>" name="switchit" border="0" id="switchit" /><strong style="margin-left:5px"><?php echo $BL['be_newsletter_open'] ?></strong></a> <?php echo $BL['be_newsletter_open1'] ?>
 	</div>
 //-->
 <table width="100%" border="0" cellpadding="0" cellspacing="0" summary="">
 	<tr><td class="chatlist"><?php echo $BL['be_newsletter_htmlpart'] ?>:</td></tr>
-	<tr><td><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr><td><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 	<tr>
 		<td><?php
 
@@ -255,17 +255,17 @@ include(PHPWCMS_ROOT.'/include/inc_lib/wysiwyg.editor.inc.php');
 
 ?></td></tr>
 
-	<tr><td><img src="img/leer.gif" alt="" width="1" height="5" /></td>
+	<tr><td><img src="include/img/leer.gif" alt="" width="1" height="5" /></td>
 	</tr>
 	<tr><td class="chatlist"><?php echo $BL['be_newsletter_textpart'] ?>:</td></tr>
-	<tr><td><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr><td><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 	<tr><td><textarea name="newsletter_text" rows="25" wrap="off" class="code" style="width:536px;height:200px;background-color:#ffffff;"><?php echo html_specialchars($newsletter["newsletter_vars"]['text']) ?></textarea></td></tr>
 
 	</table>
 	<!-- </div> --></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
 	<tr>
 		<td colspan="2" class="v10"><span class="chatlist"><?php echo $BL['be_newsletter_placeholder'] ?>:</span> 
 			###RECIPIENT_NAME###, 
@@ -276,9 +276,9 @@ include(PHPWCMS_ROOT.'/include/inc_lib/wysiwyg.editor.inc.php');
 		</td>
 	</tr>
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
-	<tr><td colspan="2" bgcolor="#d9dee3"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2" bgcolor="#d9dee3"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 	
 	<tr>
 		<td align="right" class="chatlist" valign="top" style="padding-top: 3px;"><?php echo $BL['be_ftptakeover_status'] ?>:&nbsp;</td>
@@ -294,7 +294,7 @@ include(PHPWCMS_ROOT.'/include/inc_lib/wysiwyg.editor.inc.php');
 
 
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15" /></td></tr>
 	<tr>
 		<td>&nbsp;</td>
 		<td>
@@ -306,8 +306,8 @@ include(PHPWCMS_ROOT.'/include/inc_lib/wysiwyg.editor.inc.php');
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<input type="button" class="button10" value="<?php echo $BL['be_newsletter_button_cancel'] ?>" onclick="location.href='phpwcms.php?do=messages&amp;p=3';" />
 		</div>
-		<div id="statusMessage"><img src="img/indicator/indicator_arrows_green.gif" alt="Indicator" width="16" height="16" class="icon" /><p><?php echo $BL['be_cnt_newsletter_prepare2'] ?></p></div></td></tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td>
+		<div id="statusMessage"><img src="include/img/indicator/indicator_arrows_green.gif" alt="Indicator" width="16" height="16" class="icon" /><p><?php echo $BL['be_cnt_newsletter_prepare2'] ?></p></div></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td>
 	</tr>
 
 

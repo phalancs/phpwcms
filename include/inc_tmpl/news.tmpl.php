@@ -50,7 +50,7 @@ $news = new phpwcmsNews();
 ?>
 	<div class="navBarLeft imgButton chatlist">
 		&nbsp;&nbsp;
-		<a href="<?php echo $news->base_url ?>&amp;cntid=0&amp;action=edit" title="<?php echo $BL['be_news_create'] ?>"><img src="img/famfamfam/page_white_add.gif" alt="New" border="0" /><span><?php echo $BL['be_news_create'] ?></span></a>
+		<a href="<?php echo $news->base_url ?>&amp;cntid=0&amp;action=edit" title="<?php echo $BL['be_news_create'] ?>"><img src="include/img/famfamfam/page_white_add.gif" alt="New" border="0" /><span><?php echo $BL['be_news_create'] ?></span></a>
 	</div>
 	
 <form action="<?php echo $news->base_url ?>" method="post" name="paginate" id="paginate">
@@ -61,11 +61,11 @@ $news = new phpwcmsNews();
 			<tr>
 				
 				<td><input type="checkbox" name="showactive" id="showactive" value="1" onclick="this.form.submit();"<?php is_checked(1, ( $news->filter_status == 0 || $news->filter_status == 1 ) ? 1 : 0 ) ?> /></td>
-				<td><label for="showactive"><img src="img/button/aktiv_12x13_1.gif" alt="" /></label></td>
+				<td><label for="showactive"><img src="include/img/button/aktiv_12x13_1.gif" alt="" /></label></td>
 				<td><input type="checkbox" name="showinactive" id="showinactive" value="1" onclick="this.form.submit();"<?php  is_checked(1, ( $news->filter_status == 0 || $news->filter_status == 2 ) ? 1 : 0 ) ?> /></td>
-				<td><label for="showinactive"><img src="img/button/aktiv_12x13_0.gif" alt="" /></label></td>
+				<td><label for="showinactive"><img src="include/img/button/aktiv_12x13_0.gif" alt="" /></label></td>
 				<td><input type="text" name="filter" id="filter" size="10" value="<?php echo html_specialchars($news->filter) ?>" /></td>
-				<td><input type="image" name="gofilter" src="img/famfamfam/action_go.gif" /></td>
+				<td><input type="image" name="gofilter" src="include/img/famfamfam/action_go.gif" /></td>
 				
 				<td>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $news->getPagination(); ?></td>
 				
@@ -114,7 +114,7 @@ function showImage() {
 	var id	= parseInt($('cnt_image_id').value);
 	var img	= $('cnt_image');
 	if(id > 0) {
-		img.innerHTML = '<img src="<?php echo PHPWCMS_URL.'img/cmsimage.php/'.$phpwcms['img_list_width'].'x'.$phpwcms['img_list_height'] ?>/'+id+'" alt="" border="0" />';
+		img.innerHTML = '<img src="<?php echo PHPWCMS_URL.'include/img/cmsimage.php/'.$phpwcms['img_list_width'].'x'.$phpwcms['img_list_height'] ?>/'+id+'" alt="" border="0" />';
 		img.style.display = '';
 	} else {
 		img.style.display = 'none';
@@ -289,7 +289,7 @@ window.addEvent('domready', function(){
 <!--
 	
 		// Calendar start
-	var calStart = new dynCalendar('calStart', 'aStart', 'img/dynCal/');
+	var calStart = new dynCalendar('calStart', 'aStart', 'include/img/dynCal/');
 	calStart.setMonthCombo(true);
 	calStart.setYearCombo(true);
 
@@ -313,7 +313,7 @@ window.addEvent('domready', function(){
 		<td><script type="text/javascript">
 <!--
 
-	var calEnd = new dynCalendar('calEnd', 'aEnd', 'img/dynCal/');
+	var calEnd = new dynCalendar('calEnd', 'aEnd', 'include/img/dynCal/');
 	calEnd.setMonthCombo(true);
 	calEnd.setYearCombo(true);
 	
@@ -340,7 +340,7 @@ window.addEvent('domready', function(){
 				<td><input name="sort_date" type="text" id="sort_date" class="v12" style="width:100px;" value="<?php echo $news->data['cnt_sort_date'] ?>" size="30" /></td>
 		<td><script type="text/javascript">
 <!--
-	var calSort = new dynCalendar('calSort', 'aSort', 'img/dynCal/');
+	var calSort = new dynCalendar('calSort', 'aSort', 'include/img/dynCal/');
 	calSort.setMonthCombo(true);
 	calSort.setYearCombo(true);
 
@@ -394,8 +394,8 @@ window.addEvent('domready', function(){
 				<td><label><?php echo $BL['be_cnt_image'] ?></label></td>
 				<td><input type="text" name="cnt_image_name" id="cnt_image_name" value="<?php echo html_specialchars($news->data['cnt_image']['name']) ?>" class="file" maxlength="250" /></td>
 				<td style="padding:2px 0 0 5px" width="100">
-					<a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=7');return false;"><img src="img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a>
-					<a href="#" title="<?php echo $BL['be_cnt_delimage'] ?>" onclick="setImgIdName();return false;"><img src="img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a>
+					<a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=7');return false;"><img src="include/img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a>
+					<a href="#" title="<?php echo $BL['be_cnt_delimage'] ?>" onclick="setImgIdName();return false;"><img src="include/img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a>
 					<input name="cnt_image_id" id="cnt_image_id" type="hidden" value="<?php echo $news->data['cnt_image']['id'] ?>" />
 				</td>
 			</tr>
@@ -448,9 +448,9 @@ window.addEvent('domready', function(){
 ?>
 		</select></td>
 		<td valign="top" width="20">
-		<a href="#" title="<?php echo $BL['be_cnt_openfilebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=9');return false"><img src="img/button/open_image_button.gif" alt="" width="20" height="15" border="0" vspace="2" /></a>
-		<a href="#" title="<?php echo $BL['be_cnt_sortup'] ?>" onclick="moveOptionUp(getObjectById('cfile_list'));return false;"><img src="img/button/image_pos_up.gif" alt="" width="10" height="9" border="0" /></a><a href="#" title="<?php echo $BL['be_cnt_sortdown'] ?>" onclick="moveOptionDown(getObjectById('cfile_list'));return false;"><img src="img/button/image_pos_down.gif" alt="" width="10" height="9" border="0" /></a>
-		<a href="#" onclick="removeSelectedOptions(getObjectById('cfile_list'));return false;" title="<?php echo $BL['be_cnt_delfile'] ?>"><img src="img/button/del_image_button1.gif" alt="" width="20" height="15" border="0" vspace="2" /></a>
+		<a href="#" title="<?php echo $BL['be_cnt_openfilebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=9');return false"><img src="include/img/button/open_image_button.gif" alt="" width="20" height="15" border="0" vspace="2" /></a>
+		<a href="#" title="<?php echo $BL['be_cnt_sortup'] ?>" onclick="moveOptionUp(getObjectById('cfile_list'));return false;"><img src="include/img/button/image_pos_up.gif" alt="" width="10" height="9" border="0" /></a><a href="#" title="<?php echo $BL['be_cnt_sortdown'] ?>" onclick="moveOptionDown(getObjectById('cfile_list'));return false;"><img src="include/img/button/image_pos_down.gif" alt="" width="10" height="9" border="0" /></a>
+		<a href="#" onclick="removeSelectedOptions(getObjectById('cfile_list'));return false;" title="<?php echo $BL['be_cnt_delfile'] ?>"><img src="include/img/button/del_image_button1.gif" alt="" width="20" height="15" border="0" vspace="2" /></a>
 		</td>
 	</tr>
 	

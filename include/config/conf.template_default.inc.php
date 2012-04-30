@@ -46,9 +46,9 @@ $template_default['nav_table_struct']['cell_active_class']		= 'nav_table_active'
 $template_default['nav_table_struct']['js_over_effects']		= 1;
 $template_default['nav_table_struct']['all_nodes_active']		= 1;
 //	
-$template_default['nav_table_struct']['linkimage_norm']			= '<img src="img/article/nav_link_0.gif" alt="" border="0" />';
-$template_default['nav_table_struct']['linkimage_over']			= '<img src="img/article/nav_link_1.gif" alt="" border="0" />';
-$template_default['nav_table_struct']['linkimage_active']		= '<img src="img/article/nav_link_2.gif" alt="" border="0" />';
+$template_default['nav_table_struct']['linkimage_norm']			= '<img src="include/img/article/nav_link_0.gif" alt="" border="0" />';
+$template_default['nav_table_struct']['linkimage_over']			= '<img src="include/img/article/nav_link_1.gif" alt="" border="0" />';
+$template_default['nav_table_struct']['linkimage_active']		= '<img src="include/img/article/nav_link_2.gif" alt="" border="0" />';
 //
 $template_default['nav_table_struct']['link_before']			= '';
 $template_default['nav_table_struct']['link_after']				= '';
@@ -72,9 +72,9 @@ $template_default['nav_table_struct']['row_space_bgcolor']		= '#4A5966';
  * ['array_struct'][1] => the number represents level ID
  * so root level is [0] and so on...  
  
-$template_default['nav_table_struct']['array_struct'][1]['linkimage_norm']		= '<img src="img/article/nav_link_0.gif" alt="" border="0" />';
-$template_default['nav_table_struct']['array_struct'][1]['linkimage_over']		= '<img src="img/article/nav_link_1.gif" alt="" border="0" />';
-$template_default['nav_table_struct']['array_struct'][1]['linkimage_active']	= '<img src="img/article/nav_link_2.gif" alt="" border="0" />';
+$template_default['nav_table_struct']['array_struct'][1]['linkimage_norm']		= '<img src="include/img/article/nav_link_0.gif" alt="" border="0" />';
+$template_default['nav_table_struct']['array_struct'][1]['linkimage_over']		= '<img src="include/img/article/nav_link_1.gif" alt="" border="0" />';
+$template_default['nav_table_struct']['array_struct'][1]['linkimage_active']	= '<img src="include/img/article/nav_link_2.gif" alt="" border="0" />';
 
 $template_default['nav_table_struct']['array_struct'][1]['link_before']			= '';
 $template_default['nav_table_struct']['array_struct'][1]['link_after']			= '';
@@ -124,7 +124,7 @@ $template_default['article_paginate_show']	= 'top bottom rt{RT}'; //where should
 $template_default['article_render_anchor']	= false; // render article jumpID anchor true||false
 
 //
-$template_default['list_startimage']		= '<img src="img/article/list_startimage.gif" width="11" height="7" border="0" alt="" />';
+$template_default['list_startimage']		= '<img src="include/img/article/list_startimage.gif" width="11" height="7" border="0" alt="" />';
 $template_default['list_headline_before']   = '<div class="articleListListhead">';
 $template_default['list_headline_after']    = '</div>';
 
@@ -153,13 +153,13 @@ $template_default['article']['content_subhead_after']	= '</h4>';
 $template_default['article']['text_class']				= 'articleText';
 $template_default['article']['code_class']				= 'articleCode';
 
-$template_default['article']['link_email_before']		= '<div class="linkEmail"><img src="img/article/extlink_1.gif" alt="" /><img src="img/leer.gif" width="1" height="11" alt="" />';
+$template_default['article']['link_email_before']		= '<div class="linkEmail"><img src="include/img/article/extlink_1.gif" alt="" /><img src="include/img/leer.gif" width="1" height="11" alt="" />';
 $template_default['article']['link_email_after']		= '</div>';
 
-$template_default['article']['bullet_sign']				= '<img src="img/article/bullet_1.gif" alt="" /><img src="img/leer.gif" width="1" height="1" alt="" />';
-$template_default['article']['link_sign']				= '<img src="img/article/extlink_1.gif" alt="" /><img src="img/leer.gif" width="1" height="11" alt="" />';
-$template_default['article']['back_sign']				= '<img src="img/article/back_link_0.gif" border="0" alt="" />';
-$template_default['article']['top_sign']				= '<img src="img/article/top_link_0.gif" border="0" alt="" />';
+$template_default['article']['bullet_sign']				= '<img src="include/img/article/bullet_1.gif" alt="" /><img src="include/img/leer.gif" width="1" height="1" alt="" />';
+$template_default['article']['link_sign']				= '<img src="include/img/article/extlink_1.gif" alt="" /><img src="include/img/leer.gif" width="1" height="11" alt="" />';
+$template_default['article']['back_sign']				= '<img src="include/img/article/back_link_0.gif" border="0" alt="" />';
+$template_default['article']['top_sign']				= '<img src="include/img/article/top_link_0.gif" border="0" alt="" />';
 $template_default['article']['top_sign_before']			= '<div align="right">';
 $template_default['article']['top_sign_after']			= '</div>';
 
@@ -169,7 +169,7 @@ $template_default['article']['file_size_info_class']	= 'v09';
 
 $template_default['article']['form_align']              = '';
 
-$template_default['article']['link_article_sign']		= '<img src="img/article/intlink_1.gif" alt="" /><img src="img/leer.gif" width="1" height="11" alt="" />';
+$template_default['article']['link_article_sign']		= '<img src="include/img/article/intlink_1.gif" alt="" /><img src="include/img/leer.gif" width="1" height="11" alt="" />';
 $template_default['article']['link_article_class']		= 'articleLinkInternal';
 
 $template_default['article']['image_table_class']		= '';
@@ -230,7 +230,7 @@ $template_default['time']['long']			= 'H:i:s';      // 15:25:45
 $template_default['time']['short']			= 'H:i';        // 15:25
 
 // rss image
-$template_default['rss']['image']	= '<img src="img/article/rss_valid.gif" width="64" height="13" border="0" alt="Valid RSS" />';
+$template_default['rss']['image']	= '<img src="include/img/article/rss_valid.gif" width="64" height="13" border="0" alt="Valid RSS" />';
 
 // related articles based on keywords
 $template_default['related']['before']			= '<div class="related">';

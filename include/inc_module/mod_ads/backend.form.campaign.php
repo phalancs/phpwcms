@@ -30,8 +30,8 @@ if (!defined('PHPWCMS_ROOT')) {
 // Module/Plug-in Ads/Banner Management
 
 
-$BE['HEADER']['date.js']			= getJavaScriptSourceLink('include/inc_js/date.js');
-$BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/inc_js/dynCalendar.js');
+$BE['HEADER']['date.js']			= getJavaScriptSourceLink('include/js/date.js');
+$BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/js/dynCalendar.js');
 $BE['HEADER']['ads.js']				= getJavaScriptSourceLink($phpwcms['modules'][$module]['dir'].'template/js/ads.js');
 
 ?>
@@ -59,7 +59,7 @@ $BE['HEADER']['ads.js']				= getJavaScriptSourceLink($phpwcms['modules'][$module
 		</td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['campaign_entry'] ?>:&nbsp;</td>
@@ -72,7 +72,7 @@ $BE['HEADER']['ads.js']				= getJavaScriptSourceLink($phpwcms['modules'][$module
 	</tr>
 
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>	
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>	
 
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['adplace'] ?>:&nbsp;</td>
@@ -113,7 +113,7 @@ $BE['HEADER']['ads.js']				= getJavaScriptSourceLink($phpwcms['modules'][$module
 				</select></td>				
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	
 	<tr>
@@ -156,7 +156,7 @@ if(!empty($plugin['data']['adcampaign_id'])) {
 	</tr>
 
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 
 	
 	<tr>
@@ -188,7 +188,7 @@ if(!empty($plugin['data']['adcampaign_id'])) {
 
 
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist" valign="top" style="padding-top:18px"><?php echo $BLM['calendar_start'] ?>:&nbsp;</td>
@@ -219,7 +219,7 @@ if(!empty($plugin['data']['adcampaign_id'])) {
 				timestart.value = '00:00';
 			}
 		}
-		calStart = new dynCalendar('calStart', 'aStart', 'img/dynCal/');
+		calStart = new dynCalendar('calStart', 'aStart', 'include/img/dynCal/');
 		calStart.setMonthCombo(false);
 		calStart.setYearCombo(false);
 		</script></td>
@@ -229,7 +229,7 @@ if(!empty($plugin['data']['adcampaign_id'])) {
 		
 	</tr>	
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist" valign="top" style="padding-top:18px"><?php echo $BLM['calendar_end'] ?>:&nbsp;</td>
@@ -258,7 +258,7 @@ if(!empty($plugin['data']['adcampaign_id'])) {
 				timeend.value = '23:59';
 			}
 		}
-		calEnd = new dynCalendar('calEnd', 'aEnd', 'img/dynCal/');
+		calEnd = new dynCalendar('calEnd', 'aEnd', 'include/img/dynCal/');
 		calEnd.setMonthCombo(false);
 		calEnd.setYearCombo(false);
 		</script></td>
@@ -269,7 +269,7 @@ if(!empty($plugin['data']['adcampaign_id'])) {
 	</tr>		
 
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	
 	<tr>
 	
@@ -296,7 +296,7 @@ if(!empty($plugin['data']['adcampaign_id'])) {
 	
 
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15" /></td></tr>
 	
 	
 	
@@ -314,7 +314,7 @@ if(!empty($plugin['data']['adcampaign_id'])) {
 	
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 
 <?php
 
@@ -389,7 +389,7 @@ if(isset($plugin['error']['image'])) {
 ?>
 	<tr>
 	
-		<td align="right" class="chatlist"><a href="#" onclick="showImageAds();return false;" title="Preview"><?php echo $BLM['ad_type_0'] ?><img src="img/symbole/redirect.gif" alt="" border="0" style="margin:0 1px 0 4px;position:relative;top:1px;" /></a>:&nbsp;</td>
+		<td align="right" class="chatlist"><a href="#" onclick="showImageAds();return false;" title="Preview"><?php echo $BLM['ad_type_0'] ?><img src="include/img/symbole/redirect.gif" alt="" border="0" style="margin:0 1px 0 4px;position:relative;top:1px;" /></a>:&nbsp;</td>
 		<td><table summary="" cellpadding="0" cellspacing="0" border="0">
 			<tr>
 				<td><select name="adcampaign_image" id="adcampaign_image" class="v12 width175">
@@ -403,7 +403,7 @@ if(isset($plugin['error']['image'])) {
 	
 	</tr>
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 <?php
 if(isset($plugin['error']['flash'])) {
 
@@ -413,7 +413,7 @@ if(isset($plugin['error']['flash'])) {
 
 	<tr>
 	
-		<td align="right" class="chatlist"><a href="#" onclick="showFlashAds();return false;" title="Preview"><?php echo $BLM['ad_type_1'] ?><img src="img/symbole/redirect.gif" alt="" border="0" style="margin:0 1px 0 4px;position:relative;top:1px;" /></a>:&nbsp;</td>
+		<td align="right" class="chatlist"><a href="#" onclick="showFlashAds();return false;" title="Preview"><?php echo $BLM['ad_type_1'] ?><img src="include/img/symbole/redirect.gif" alt="" border="0" style="margin:0 1px 0 4px;position:relative;top:1px;" /></a>:&nbsp;</td>
 		<td><table summary="" cellpadding="0" cellspacing="0" border="0">
 			<tr>
 				<td><select name="adcampaign_flash" id="adcampaign_flash" class="v12 width175">
@@ -427,7 +427,7 @@ if(isset($plugin['error']['flash'])) {
 	
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 <?php
 if(isset($plugin['error']['css'])) {
 
@@ -451,7 +451,7 @@ if(isset($plugin['error']['css'])) {
 	
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 <?php
 // as long as no ID defined hide upload content
@@ -465,26 +465,26 @@ if(empty($plugin['data']['adcampaign_id'])) {
 
 	<tr>
 	
-		<td align="right" class="chatlist tdtop3"><a href="#" onclick="showHtmlAds();return false;" title="Preview"><?php echo $BLM['ad_type_2'] ?><img src="img/symbole/redirect.gif" alt="" border="0" style="margin:0 1px 0 4px;position:relative;top:1px;" /></a>:&nbsp;</td>
+		<td align="right" class="chatlist tdtop3"><a href="#" onclick="showHtmlAds();return false;" title="Preview"><?php echo $BLM['ad_type_2'] ?><img src="include/img/symbole/redirect.gif" alt="" border="0" style="margin:0 1px 0 4px;position:relative;top:1px;" /></a>:&nbsp;</td>
 		<td><textarea name="adcampaign_html" id="adcampaign_html" rows="5" class="v12 width400 code"><?php echo html_entities($plugin['data']['adcampaign_data']['html']) ?></textarea></td>
 	
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['ad_alt_text'] ?>:&nbsp;</td>
 		<td><input name="adcampaign_alt_text" type="text" id="adcampaign_alt_text" class="v12" style="width:400px;" value="<?php echo html_specialchars($plugin['data']['adcampaign_data']['alt_text']) ?>" size="30" maxlength="200" /></td>
 	</tr>
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['ad_title_text'] ?>:&nbsp;</td>
 		<td><input name="adcampaign_title_text" type="text" id="adcampaign_title_text" class="v12" style="width:400px;" value="<?php echo html_specialchars($plugin['data']['adcampaign_data']['title_text']) ?>" size="30" maxlength="200" /></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 	
 	<tr>
 	
@@ -511,14 +511,14 @@ if(empty($plugin['data']['adcampaign_id'])) {
 	</tr>
 	
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="25" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="25" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist tdtop4"><?php echo $BLM['comment'] ?>:&nbsp;</td>
 		<td colspan="2"><textarea name="adcampaign_comment" id="adcampaign_comment" rows="5" class="v12 width400"><?php echo html_specialchars($plugin['data']['adcampaign_comment']) ?></textarea></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15" /></td></tr>	
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15" /></td></tr>	
 	
 	<tr>
 		<td align="right" class="chatlist"><?php echo $BL['be_ftptakeover_status'] ?>:&nbsp;</td>
@@ -552,7 +552,7 @@ if(empty($plugin['data']['adcampaign_id'])) {
 	}
 ?>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td>
 	</tr>
 	<tr> 
 		<td>&nbsp;</td>

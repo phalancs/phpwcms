@@ -99,13 +99,13 @@ if($err) {
 <body bgcolor="#FFFFFF" text="#000000" link="#FF9900" vlink="#FF9900" alink="#FF9900" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 <table border="0" cellpadding="0" cellspacing="0" summary="">
   <tr>
-    <td width="9"><img src="../../img/leer.gif" alt="" width="9" height="1"></td>
-    <td width="250"><img src="../../img/leer.gif" alt="" width="1" height="15"><br />
+    <td width="9"><img src="../img/leer.gif" alt="" width="9" height="1"></td>
+    <td width="250"><img src="../img/leer.gif" alt="" width="1" height="15"><br />
       An error (ID:<?php echo $err ?>) occured while trying to download a file of your directory.<br />
-      <img src="../../img/leer.gif" alt="" width="1" height="10"><br />
+      <img src="../img/leer.gif" alt="" width="1" height="10"><br />
       Please <a href="<?php echo PHPWCMS_URL.get_login_file() ?>"><strong>login</strong></a> again<br />
       and try another file.<br />
-      <img src="../../img/leer.gif" alt="" width="1" height="10"><br />
+      <img src="../img/leer.gif" alt="" width="1" height="10"><br />
       If you think that this might be a technical problem send an email to the webmaster.</td>
   </tr>
 </table>

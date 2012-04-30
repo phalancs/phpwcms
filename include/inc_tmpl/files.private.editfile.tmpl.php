@@ -164,7 +164,7 @@ if($file_id) {
 }
 
 if(!$othumb) {
-	$file_thumb_small = '<img src="img/icons/small_'.extimg($file_ext).'" border="0">';
+	$file_thumb_small = '<img src="include/img/icons/small_'.extimg($file_ext).'" border="0">';
 }
 				
 if($ja) {
@@ -172,33 +172,33 @@ if($ja) {
 <form action="phpwcms.php?do=files&f=0" method="post" enctype="multipart/form-data" name="editfileinfo">
 <table border="0" cellpadding="0" cellspacing="0" bgcolor='#EBF2F4' summary="">
 	<tr>
-		<td rowspan="2" valign="top"><a href="phpwcms.php?do=files&f=0"><img src="img/button/close_reiter.gif" alt="" width="45" height="12" border="0"></a></td>
-		<td><img src="img/leer.gif" alt="" width="1" height="6"></td>
+		<td rowspan="2" valign="top"><a href="phpwcms.php?do=files&f=0"><img src="include/img/button/close_reiter.gif" alt="" width="45" height="12" border="0"></a></td>
+		<td><img src="include/img/leer.gif" alt="" width="1" height="6"></td>
 	</tr>
 	<tr><td class="title"><?php echo $BL['be_fprivedit_title'] ?></td></tr>
 	<tr>
-	  <td colspan="2" valign="top"><img src="img/leer.gif" alt="" width="1" height="5"></td>
+	  <td colspan="2" valign="top"><img src="include/img/leer.gif" alt="" width="1" height="5"></td>
 	  </tr>
 	<tr>
       <td align="right" class="v09"><?php echo $BL['be_fprivedit_filename'] ?>:&nbsp;</td>
       <td class="v10"><table border="0" cellpadding="0" cellspacing="0" summary="">
         <tr>
           <td><?php echo $file_thumb_small ?></td>
-          <td><img src="img/leer.gif" alt="" width="4" height="1"></td>
+          <td><img src="include/img/leer.gif" alt="" width="4" height="1"></td>
           <td><strong><?php echo $file_oldname ?></strong></td>
         </tr>
       </table></td>
 	  </tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 	<tr>
-      <td><img src="img/leer.gif" alt="" width="1" height="1"></td>
+      <td><img src="include/img/leer.gif" alt="" width="1" height="1"></td>
       <td class="v09"><?php 
 	  	echo $BL['be_fprivedit_created'].': '.date($BL['be_fprivedit_dateformat'], $file_created);
 		echo '&nbsp;&nbsp;&nbsp;&nbsp;'.$BL['be_fprivedit_size'].': '.fsizelong($file_size);
 		echo '&nbsp;&nbsp;&nbsp;&nbsp;EXT: '.strtoupper($file_ext); 
 	  ?></td>
 	</tr>
-	<tr><td colspan="2" valign="top"><img src="img/leer.gif" alt="" width="1" height="5"></td></tr>
+	<tr><td colspan="2" valign="top"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>
 	<tr>
 		<td align="right" class="v09"><?php echo $BL['be_ftptakeover_directory'] ?>:&nbsp;</td>
 		<td class="v10"><select name="file_pid" id="file_pid" class="width400">
@@ -206,25 +206,25 @@ if($ja) {
 <?php dir_menu(0, $file_pid, $db, "+", $_SESSION["wcs_user_id"], "+") ?>
 	</select></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
-	<tr><td colspan="2"><img src="img/lines/line-bluelight.gif" alt="" width="538" height="1"></td></tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/line-bluelight.gif" alt="" width="538" height="1"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
 	<?php if(isset($file_error["name"])) { 
 			$file_name = $file_oldname;
 	?>
 	<tr>
-	  <td align="right" class="v09"><img src="img/leer.gif" alt="" width="1" height="1"></td>
+	  <td align="right" class="v09"><img src="include/img/leer.gif" alt="" width="1" height="1"></td>
 	  <td class="v10"><strong style="color:#FF3300"><?php echo $BL['be_fprivedit_err1'] ?></strong></td>
 	</tr>
-	<tr><td colspan="2" valign="top"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
+	<tr><td colspan="2" valign="top"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 	<?php } ?>
 	<tr>
       <td align="right" class="v09"><?php echo $BL['be_fpriv_name'] ?>:&nbsp;</td>
       <td><input name="file_name" type="text" class="width400" id="file_name" value="<?php echo html_specialchars($file_name) ?>" size="40" maxlength="230"></td>
 	</tr>
-	<tr><td colspan="2" valign="top"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
-	<tr><td colspan="2" valign="top"><img src="img/lines/line-bluelight.gif" alt="" width="538" height="1"></td></tr>
-	<tr bgcolor="#F5F8F9"><td colspan="2" valign="top"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
+	<tr><td colspan="2" valign="top"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
+	<tr><td colspan="2" valign="top"><img src="include/img/lines/line-bluelight.gif" alt="" width="538" height="1"></td></tr>
+	<tr bgcolor="#F5F8F9"><td colspan="2" valign="top"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
 	<?php 
 	
 	//Auswahlliste vordefinierte Keywörter
@@ -234,7 +234,7 @@ if($ja) {
 		while($row = mysql_fetch_array($result)) {
 			if(get_filecat_childcount ($row["fcat_id"], $db)) {
 			
-				$ke = isset($file_error["keywords"][$row["fcat_id"]]) ? '<img src="img/symbole/error.gif" width="8" height="9" alt="" />&nbsp;' : '';
+				$ke = isset($file_error["keywords"][$row["fcat_id"]]) ? '<img src="include/img/symbole/error.gif" width="8" height="9" alt="" />&nbsp;' : '';
 				$k .= "<tr>\n<td class=\"f10b\">".$ke.html_specialchars($row["fcat_name"]).":&nbsp;</td>\n";
 				$k .= "<td><select name=\"file_keywords[".$row["fcat_id"]."]\" class=\"width300\">\n";
 				$k .= "<option value=\"".(($row["fcat_needed"])?"0_".$row["fcat_needed"]."\">".$BL['be_ftptakeover_needed']:'0">'.$BL['be_ftptakeover_optional'])."</option>\n";
@@ -250,7 +250,7 @@ if($ja) {
 				}
 				
 				$k .= "</select></td>\n</tr>\n";
-				$k .= "<tr>\n<td colspan=\"2\"><img src=\"img/leer.gif\" width=\"1\" height=\"2\"></td>\n</tr>\n";			
+				$k .= "<tr>\n<td colspan=\"2\"><img src=\"include/img/leer.gif\" width=\"1\" height=\"2\"></td>\n</tr>\n";			
 			
 			}
 		}
@@ -259,7 +259,7 @@ if($ja) {
 
 	?>
 	<tr bgcolor="#F5F8F9">
-		<td align="right" valign="top" class="v09"><img src="img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_ftptakeover_keywords'] ?>:&nbsp;</td>
+		<td align="right" valign="top" class="v09"><img src="include/img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_ftptakeover_keywords'] ?>:&nbsp;</td>
 		<td><table border="0" cellpadding="0" cellspacing="0" summary="">
 		<?php if($k) echo $k; ?>
 		<tr>
@@ -268,14 +268,14 @@ if($ja) {
 		</tr>		
 		</table></td>
 	</tr>
-	<tr bgcolor="#F5F8F9"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
-	<tr><td colspan="2"><img src="img/lines/line-bluelight.gif" alt="" width="538" height="1"></td></tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
+	<tr bgcolor="#F5F8F9"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/line-bluelight.gif" alt="" width="538" height="1"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
 	<tr>
-		<td align="right" valign="top" class="v09"><img src="img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_ftptakeover_longinfo'] ?>:&nbsp;</td>
+		<td align="right" valign="top" class="v09"><img src="include/img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_ftptakeover_longinfo'] ?>:&nbsp;</td>
 		<td valign="top"><textarea name="file_longinfo" cols="40" rows="6" class="v12 width400" id="file_longinfo"><?php echo html_specialchars($file_longinfo) ?></textarea></td>
 	</tr>	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
 	
 
 	<tr>
@@ -283,7 +283,7 @@ if($ja) {
 		<td><input name="file_copyright" type="text" id="file_copyright" size="40" class="width400" maxlength="255" value="<?php echo html_specialchars($file_copyright) ?>" /></td>
 	</tr>	
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	
 	<tr>
 		<td align="right" class="v09">&nbsp;<?php echo $BL['be_tags'] ?>:&nbsp;</td>
@@ -291,14 +291,14 @@ if($ja) {
 	</tr>
 	
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 	
 	<tr>
 		<td align="right" class="v09">&nbsp;<?php echo $BL['be_cnt_sorting'] ?>:&nbsp;</td>
 		<td><input name="file_sort" type="text" id="file_sort" size="10" class="width50" maxlength="10" value="<?php echo intval($file_sort) ?>" /></td>
 	</tr>	
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 
 	<tr>
 		<td align="right" class="v09 tdtop3"><?php echo $BL['be_ftptakeover_status'] ?>:&nbsp;</td>
@@ -321,13 +321,13 @@ if($ja) {
 	</tr>	
 	
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>
 	<tr>
 		<td valign="top"><input name="file_id" type="hidden" id="file_id" value="<?php echo $file_id ?>"><input name="file_aktion" type="hidden" id="file_aktion" value="2"><input name="file_ext" type="hidden" id="file_ext" value="<?php echo strtolower($file_ext) ?>"></td>
 		<td><input name="Submit" type="submit" class="button10" value="<?php echo $BL['be_fprivedit_button'] ?>"></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
-	<tr><td colspan="2" bgcolor="#9BBECA"><img src="img/leer.gif" alt="" width="1" height="4" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
+	<tr><td colspan="2" bgcolor="#9BBECA"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
 </table>
 </form>
 <script type="text/javascript">

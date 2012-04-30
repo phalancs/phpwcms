@@ -119,7 +119,7 @@ if($_SESSION['glossary_page'] > $_entry['pages_total']) {
 
 <div class="navBarLeft imgButton chatlist">
 	&nbsp;&nbsp;
-	<a href="<?php echo GLOSSARY_HREF ?>&amp;edit=0" title="<?php echo $BLM['create_new'] ?>"><img src="img/famfamfam/tag_blue_add.gif" alt="Add" border="0" /><span><?php echo $BLM['create_new'] ?></span></a>
+	<a href="<?php echo GLOSSARY_HREF ?>&amp;edit=0" title="<?php echo $BLM['create_new'] ?>"><img src="include/img/famfamfam/tag_blue_add.gif" alt="Add" border="0" /><span><?php echo $BLM['create_new'] ?></span></a>
 </div>
 
 
@@ -130,9 +130,9 @@ if($_SESSION['glossary_page'] > $_entry['pages_total']) {
 			<tr>
 				
 				<td><input type="checkbox" name="showactive" id="showactive" value="1" onclick="this.form.submit();"<?php is_checked(1, $_entry['list_active'], 1) ?> /></td>
-				<td><label for="showactive"><img src="img/button/aktiv_12x13_1.gif" alt="" style="margin:1px 1px 0 1px;" /></label></td>
+				<td><label for="showactive"><img src="include/img/button/aktiv_12x13_1.gif" alt="" style="margin:1px 1px 0 1px;" /></label></td>
 				<td><input type="checkbox" name="showinactive" id="showinactive" value="1" onclick="this.form.submit();"<?php is_checked(1, $_entry['list_inactive'], 1) ?> /></td>
-				<td><label for="showinactive"><img src="img/button/aktiv_12x13_0.gif" alt="" style="margin:1px 1px 0 1px;" /></label></td>
+				<td><label for="showinactive"><img src="include/img/button/aktiv_12x13_0.gif" alt="" style="margin:1px 1px 0 1px;" /></label></td>
 
 <?php 
 if($_entry['pages_total'] > 1) {
@@ -141,9 +141,9 @@ if($_entry['pages_total'] > 1) {
 	echo '<td>';
 	if($_SESSION['glossary_page'] > 1) {
 		echo '<a href="'.GLOSSARY_HREF.'&amp;page='.($_SESSION['glossary_page']-1).'">';
-		echo '<img src="img/famfamfam/action_back.gif" alt="" border="0" /></a>';
+		echo '<img src="include/img/famfamfam/action_back.gif" alt="" border="0" /></a>';
 	} else {
-		echo '<img src="img/famfamfam/action_back.gif" alt="" border="0" class="inactive" />';
+		echo '<img src="include/img/famfamfam/action_back.gif" alt="" border="0" class="inactive" />';
 	}
 	echo '</td>';
 	echo '<td><input type="text" name="page" id="page" maxlength="4" size="4" value="'.$_SESSION['glossary_page'];
@@ -152,9 +152,9 @@ if($_entry['pages_total'] > 1) {
 	echo '<td>';
 	if($_SESSION['glossary_page'] < $_entry['pages_total']) {
 		echo '<a href="'.GLOSSARY_HREF.'&amp;page='.($_SESSION['glossary_page']+1).'">';
-		echo '<img src="img/famfamfam/action_forward.gif" alt="" border="0" /></a>';
+		echo '<img src="include/img/famfamfam/action_forward.gif" alt="" border="0" /></a>';
 	} else {
-		echo '<img src="img/famfamfam/action_forward.gif" alt="" border="0" class="inactive" />';
+		echo '<img src="include/img/famfamfam/action_forward.gif" alt="" border="0" class="inactive" />';
 	}
 	echo '</td><td class="chatlist">&nbsp;|&nbsp;</td>';
 
@@ -171,7 +171,7 @@ if($_entry['pages_total'] > 1) {
 				}
 				
 				?>" class="textinput" style="margin:0 2px 0 0;width:110px;text-align:left;" title="filter results by username, name or email" /></td>
-				<td><input type="image" name="gofilter" src="img/famfamfam/action_go.gif" style="margin-right:3px;" /></td>
+				<td><input type="image" name="gofilter" src="include/img/famfamfam/action_go.gif" style="margin-right:3px;" /></td>
 			
 			</tr>
 		</table></td>
@@ -191,8 +191,8 @@ if($_entry['pages_total'] > 1) {
 
 <table width="100%" border="0" cellpadding="0" cellspacing="0" summary="">
 		
-	<tr><td colspan="5"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
-	<tr><td colspan="5" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>
+	<tr><td colspan="5"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
+	<tr><td colspan="5" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>
 	
 <?php
 // loop listing available newsletters
@@ -205,7 +205,7 @@ $data = _dbQuery($sql);
 foreach($data as $row) {
 
 	echo '<tr'.( ($row_count % 2) ? ' bgcolor="#F3F5F8"' : '' ).'>'.LF.'<td width="20" style="width:20px;padding:2px 1px 2px 3px;">';
-	echo '<img src="img/famfamfam/';
+	echo '<img src="include/img/famfamfam/';
 	echo $row["glossary_highlight"] ? 'tag_blue_key.gif' : 'tag_blue.gif';
 	echo '" alt="'.$BLM['glossary_entry'].'" /></td>'.LF;
 	echo '<td class="dir" width="50%">'.html_specialchars($row["glossary_title"])."&nbsp;</td>\n";
@@ -217,16 +217,16 @@ foreach($data as $row) {
 	echo '<td align="right" nowrap="nowrap" class="button_td">';
 	
 	echo '<a href="'.GLOSSARY_HREF.'&amp;edit='.$row["glossary_id"].'">';		
-	echo '<img src="img/button/edit_22x13.gif" border="0" alt="" /></a>';
+	echo '<img src="include/img/button/edit_22x13.gif" border="0" alt="" /></a>';
 	
 	echo '<a href="'.GLOSSARY_HREF.'&amp;editid='.$row["glossary_id"].'&amp;verify=';
 	echo (($row["glossary_status"]) ? '0' : '1').'">';		
-	echo '<img src="img/button/aktiv_12x13_'.$row["glossary_status"].'.gif" border="0" alt="" /></a>';
+	echo '<img src="include/img/button/aktiv_12x13_'.$row["glossary_status"].'.gif" border="0" alt="" /></a>';
 	
 	echo '<a href="'.GLOSSARY_HREF.'&amp;delete='.$row["glossary_id"];
 	echo '" title="delete: '.html_specialchars($row["glossary_title"]).'"';
 	echo ' onclick="return confirm(\''.$BLM['delete_entry'].' '.js_singlequote($row["glossary_title"]).'\');">';
-	echo '<img src="img/button/trash_13x13_1.gif" border="0" alt=""></a>';
+	echo '<img src="include/img/button/trash_13x13_1.gif" border="0" alt=""></a>';
 
 	echo "</td>\n</tr>\n";
 
@@ -234,10 +234,10 @@ foreach($data as $row) {
 }
 
 if($row_count) {
-	echo '<tr><td colspan="5" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>';
+	echo '<tr><td colspan="5" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>';
 }
 
 ?>	
 
-	<tr><td colspan="5"><img src="img/leer.gif" alt="" width="1" height="15"></td></tr>
+	<tr><td colspan="5"><img src="include/img/leer.gif" alt="" width="1" height="15"></td></tr>
 </table>

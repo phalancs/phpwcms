@@ -124,7 +124,7 @@ if($content['files_sql']) {
 		
 		$_files_settings				= get_tmpl_section('FILE_SETTINGS', $crow["acontent_template"]);
 		$_files_settings				= parse_ini_str($_files_settings, false);
-		$_files_settings				= array_merge(	array(	'icon_path' => 'img/icons/', 
+		$_files_settings				= array_merge(	array(	'icon_path' => 'include/img/icons/', 
 																'icon_name' => 'small_icon_{FILE_EXT}.gif',
 																'thumbnail'	=> 0,
 																'thumbnail_width' => 50,

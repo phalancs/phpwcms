@@ -27,15 +27,15 @@ function struct_list ($struct_id, $dbcon, $counter=0) {
 	$sql  = "SELECT * FROM ".DB_PREPEND."phpwcms_articlecat WHERE acat_struct=".$struct_id." ORDER BY acat_sort;";
 	if($result = mysql_query($sql, $dbcon)) {
 		while($row = mysql_fetch_array($result)) {
-			echo "<tr>\n<td nowrap=\"nowrap\"><img src=\"img/leer.gif\" width=\"15\" height=\"11\"></td>\n";
+			echo "<tr>\n<td nowrap=\"nowrap\"><img src=\"include/img/leer.gif\" width=\"15\" height=\"11\"></td>\n";
 			echo "<td class=\"dir\">".html_specialchars($row["acat_name"])."</td>\n";
-			echo "<td><img src=\"img/button/add_11x11.gif\" width=\"11\" height=\"11\">";
-			echo "<img src=\"img/button/edit_22x11.gif\" width=\"22\" height=\"11\">";
-			echo "<img src=\"img/button/sort_0_1.gif\" width=\"11\" height=\"11\">";
-			echo "<img src=\"img/button/sort_1_1.gif\" width=\"11\" height=\"11\">";
-			echo "<img src=\"img/button/sort_2_1.gif\" width=\"11\" height=\"11\">";
-			echo "<img src=\"img/button/sort_3_1.gif\" width=\"11\" height=\"11\">";
-			echo "<img src=\"img/button/del_11x11.gif\" width=\"11\" height=\"11\">";
+			echo "<td><img src=\"include/img/button/add_11x11.gif\" width=\"11\" height=\"11\">";
+			echo "<img src=\"include/img/button/edit_22x11.gif\" width=\"22\" height=\"11\">";
+			echo "<img src=\"include/img/button/sort_0_1.gif\" width=\"11\" height=\"11\">";
+			echo "<img src=\"include/img/button/sort_1_1.gif\" width=\"11\" height=\"11\">";
+			echo "<img src=\"include/img/button/sort_2_1.gif\" width=\"11\" height=\"11\">";
+			echo "<img src=\"include/img/button/sort_3_1.gif\" width=\"11\" height=\"11\">";
+			echo "<img src=\"include/img/button/del_11x11.gif\" width=\"11\" height=\"11\">";
 			echo "</td>\n</tr>\n";
 			struct_list ($row["acat_name"], $dbcon, $counter);
 		}

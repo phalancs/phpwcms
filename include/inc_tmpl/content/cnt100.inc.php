@@ -33,8 +33,8 @@ if (!defined('PHPWCMS_ROOT')) {
 if(empty($content['bulletlist']["list_type"])) $content['bulletlist']["list_type"] = 0;
 
 ?>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8"></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8"></td></tr>
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_cnt_ullist'] ?>:&nbsp;</td>
 	<td><table border="0" cellpadding="1" cellspacing="0" summary="">
@@ -48,7 +48,7 @@ if(empty($content['bulletlist']["list_type"])) $content['bulletlist']["list_type
 			</tr>
 	</table></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
 <tr>
 	<td>&nbsp;</td>
 	<td class="chatlist"><?php echo $BL['be_cnt_ullist_desc'] ?></td>

@@ -156,13 +156,13 @@ class phpwcmsImageGallery {
 		
 		$this->setAlias( $this->alias );
 	
-		$this->image_src = PHPWCMS_URL.'img/cmsimage.php'.$this->query_separator;
+		$this->image_src = PHPWCMS_URL.'include/img/cmsimage.php'.$this->query_separator;
 	
 	}
 	
 	function setQuerySeparator($query_separator) {
 	
-		$this->image_src = PHPWCMS_URL.'img/cmsimage.php'.$query_separator;
+		$this->image_src = PHPWCMS_URL.'include/img/cmsimage.php'.$query_separator;
 	
 	}
 	

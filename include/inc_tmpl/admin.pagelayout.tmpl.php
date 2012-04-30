@@ -33,8 +33,8 @@ if(!isset($_GET["s"])) {
 // check if pagelayout should be edited or list should be shown
 ?><table width="100%" border="0" cellpadding="0" cellspacing="0" summary="">
 	<tr><td colspan="3" class="title"><?php echo $BL['be_admin_page_title'] ?></td></tr>
-	<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
-	<tr><td colspan="3" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>
+	<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
+	<tr><td colspan="3" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>
 <?php
 	// loop listing available pagelayouts 
 	$sql = "SELECT * FROM ".DB_PREPEND."phpwcms_pagelayout WHERE pagelayout_trash=0 ORDER BY pagelayout_default DESC;";
@@ -44,7 +44,7 @@ if(!isset($_GET["s"])) {
 	
 			echo "<tr".( ($row_count % 2) ? " bgcolor=\"#F3F5F8\"" : "" ).">\n<td width=\"1%\" style=\"padding:2px 5px 2px 3px\">";
 			
-			echo '<img src="img/famfamfam/layout.gif" alt="" border="0" /></td>'."\n";
+			echo '<img src="include/img/famfamfam/layout.gif" alt="" border="0" /></td>'."\n";
 			
 			echo '<td class="dir"><a href="phpwcms.php?do=admin&amp;p=8&amp;s='.$row["pagelayout_id"];
 			echo '"><strong>'.html_specialchars($row["pagelayout_name"])."</strong>";
@@ -54,12 +54,12 @@ if(!isset($_GET["s"])) {
 			echo "</a></td>\n".'<td align="right" nowarp="nowrap" style="padding:2px 3px 0 5px">';
 			
 			echo '<a href="phpwcms.php?do=admin&amp;p=8&amp;s='.$row["pagelayout_id"].'" title="'.$BL['be_admin_page_edit'].'">';
-			echo '<img src="img/button/edit_22x13.gif" alt="" border="0" /></a>';
+			echo '<img src="include/img/button/edit_22x13.gif" alt="" border="0" /></a>';
 			
 			echo '<a href="include/inc_act/act_frontendsetup.php?do=1|'.$row["pagelayout_id"].'" ';
 			echo 'title="delete pagelayout: '.html_specialchars($row["pagelayout_name"]);
 			echo '" style="margin-left:3px" onclick="return confirm(\''.$BL['be_cnt_delete'].': '.js_singlequote(html_specialchars($row["pagelayout_name"])).'?  \')">';
-			echo '<img src="img/button/trash_13x13_1.gif" border="0" alt="" /></a>';
+			echo '<img src="include/img/button/trash_13x13_1.gif" border="0" alt="" /></a>';
 			
 			echo "</td>\n</tr>\n";
 			$row_count++;
@@ -68,8 +68,8 @@ if(!isset($_GET["s"])) {
 	} // end listing
 		
 ?>
-	<tr><td colspan="3" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>
-	<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="8"></td>
+	<tr><td colspan="3" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>
+	<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="8"></td>
 	</tr>
 	<tr><td colspan="3"><form action="phpwcms.php?do=admin&p=8&s=0" method="post"><input type="submit" value="<?php echo $BL['be_admin_page_add'] ?>" class="button10" title="<?php echo $BL['be_admin_page_add'] ?>"></form></td>
 	</tr>
@@ -308,11 +308,11 @@ if(!isset($_GET["s"])) {
 ?><form action="phpwcms.php?do=admin&p=8&s=<?php echo $pagelayout["id"] ?>" method="post" name="pagelayout" target="_self"><table width="538" border="0" cellpadding="0" cellspacing="0" summary="">
        		<tr><td colspan="2" class="title"><?php echo $BL['be_admin_page_title'] ?></td></tr>
 			<tr>
-				<td width="90"><img src="img/leer.gif" alt="" width="35" height="6"></td>
-				<td width="448"><img src="img/leer.gif" alt="" width="1" height="1"></td>
+				<td width="90"><img src="include/img/leer.gif" alt="" width="35" height="6"></td>
+				<td width="448"><img src="include/img/leer.gif" alt="" width="1" height="1"></td>
 			</tr>
-			<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-			<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
+			<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+			<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
 			<tr bgcolor="#F3F5F8">
               <td align="right" class="chatlist"><?php echo $BL['be_admin_page_name'] ?>:&nbsp;</td>
 			  <td><table border="0" cellpadding="0" cellspacing="0" summary="">
@@ -324,10 +324,10 @@ if(!isset($_GET["s"])) {
 				 </tr>
 			  </table></td>
 			</tr>
-			<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
+			<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
 		
-			<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10"></td></tr>
+			<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10"></td></tr>
 
 			
 			
@@ -346,7 +346,7 @@ if(!isset($_GET["s"])) {
 				</table></td>
 			</tr>
 
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 			
 			<tr>
               <td align="right" class="chatlist"><?php echo $BL['be_admin_page_blocks'].', '.$BL['be_admin_page_customblocks'] ?>:&nbsp;</td>
@@ -355,13 +355,13 @@ if(!isset($_GET["s"])) {
 				</td>
 			</tr>		
 			
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10"></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10"></td></tr>
 
 		<tr>
 			  <td align="right" class="chatlist"><?php echo $BL['be_admin_page_pagetitle'] ?>:&nbsp;</td>
 			  <td><input name="layout_title" type="text" class="f11b" id="layout_title" style="width: 400px;" value="<?php echo html_specialchars($pagelayout["layout_title"]); ?>" size="20" maxlength="100"></td>
 			</tr>
-			<tr><td colspan="2" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
+			<tr><td colspan="2" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 			<tr>
 			  <td align="right" class="chatlist"><?php echo $BL['be_admin_page_addtotitle'] ?>:&nbsp;</td>
 			<td><table border="0" cellpadding="0" cellspacing="0" summary="">
@@ -403,23 +403,23 @@ if(!isset($_GET["s"])) {
 			</tr>
 		
 			
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10"></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10"></td></tr>
 
 
 			<tr>
               <td align="right" valign="top" class="chatlist tdtop3"><?php echo $BL['be_admin_page_align']  ?>:&nbsp;</td>
               <td bgcolor="#E6EAED"><table border="0" cellpadding="0" cellspacing="0" summary="">
-                  <tr><td colspan="9"><img src="img/leer.gif" alt="" width="1" height="7"></td></tr>
+                  <tr><td colspan="9"><img src="include/img/leer.gif" alt="" width="1" height="7"></td></tr>
 				  <tr>
-                    <td rowspan="2"><img src="img/leer.gif" alt="" width="7" height="50"></td>
-                    <td valign="top"><img src="img/leer.gif" alt="" width="25" height="1"></td>
-                    <td rowspan="2" valign="top"><label for="layout_align_0"><img src="img/symbole/layout_left.gif" alt="<?php echo $BL['be_admin_page_align_left'] ?>" width="56" height="44" border="0"></label></td>
-                    <td rowspan="2"><img src="img/leer.gif" alt="" width="15" height="1"></td>
-                    <td valign="top"><img src="img/leer.gif" alt="" width="25" height="1"></td>
-                    <td rowspan="2" valign="top"><label for="layout_align_1"><img src="img/symbole/layout_center.gif" alt="<?php echo $BL['be_admin_page_align_center'] ?>" width="56" height="44" border="0"></label></td>
-                    <td rowspan="2"><img src="img/leer.gif" alt="" width="15" height="1"></td>
-                    <td><img src="img/leer.gif" alt="" width="25" height="1"></td>
-                    <td rowspan="2" valign="top"><label for="layout_align_2"><img src="img/symbole/layout_right.gif" alt="<?php echo $BL['be_admin_page_align_right'] ?>" width="56" height="44" border="0"></label></td>
+                    <td rowspan="2"><img src="include/img/leer.gif" alt="" width="7" height="50"></td>
+                    <td valign="top"><img src="include/img/leer.gif" alt="" width="25" height="1"></td>
+                    <td rowspan="2" valign="top"><label for="layout_align_0"><img src="include/img/symbole/layout_left.gif" alt="<?php echo $BL['be_admin_page_align_left'] ?>" width="56" height="44" border="0"></label></td>
+                    <td rowspan="2"><img src="include/img/leer.gif" alt="" width="15" height="1"></td>
+                    <td valign="top"><img src="include/img/leer.gif" alt="" width="25" height="1"></td>
+                    <td rowspan="2" valign="top"><label for="layout_align_1"><img src="include/img/symbole/layout_center.gif" alt="<?php echo $BL['be_admin_page_align_center'] ?>" width="56" height="44" border="0"></label></td>
+                    <td rowspan="2"><img src="include/img/leer.gif" alt="" width="15" height="1"></td>
+                    <td><img src="include/img/leer.gif" alt="" width="25" height="1"></td>
+                    <td rowspan="2" valign="top"><label for="layout_align_2"><img src="include/img/symbole/layout_right.gif" alt="<?php echo $BL['be_admin_page_align_right'] ?>" width="56" height="44" border="0"></label></td>
                   </tr>
                   <tr>
                     <td align="center" valign="top"><input name="layout_align" type="radio" id="layout_align_0" value="0" <?php is_checked(0, $pagelayout["layout_align"]); ?>></td>
@@ -428,8 +428,8 @@ if(!isset($_GET["s"])) {
                   </tr>
                 </table></td>
 			  </tr>
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10"></td></tr>
-			<tr><td><img src="img/leer.gif" alt="" width="1" height="1"></td><td bgcolor="#E6EAED"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10"></td></tr>
+			<tr><td><img src="include/img/leer.gif" alt="" width="1" height="1"></td><td bgcolor="#E6EAED"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 			<tr>
 			  <td align="right" class="chatlist"><?php echo $BL['be_admin_page_margin']  ?>:&nbsp;</td>
 			  <td bgcolor="#E6EAED"><table border="0" cellpadding="0" cellspacing="0" summary="">
@@ -456,7 +456,7 @@ if(!isset($_GET["s"])) {
                   <td><input name="layout_bgcolor" type="text" class="f10" id="layout_bgcolor2" style="width: 55px;" value="<?php echo html_specialchars($pagelayout["layout_bgcolor"]); ?>" size="7" maxlength="7"></td>
                   <td class="v10">&nbsp;&nbsp;<?php echo $BL['be_admin_page_image'] ?>:&nbsp;</td>
                   <td><input name="layout_bgimage" type="text" class="f10" id="layout_bgimage" style="width: 270px;" value="<?php echo html_specialchars($pagelayout["layout_bgimage"]); ?>" size="20"></td>
-                  <td><img src="img/leer.gif" alt="" width="1" height="20"></td>
+                  <td><img src="include/img/leer.gif" alt="" width="1" height="20"></td>
                 </tr>
               </table></td>
 			</tr>
@@ -472,7 +472,7 @@ if(!isset($_GET["s"])) {
                   <td><input name="layout_vcolor" type="text" class="f10" id="layout_vcolor" style="width: 55px;" value="<?php echo html_specialchars($pagelayout["layout_vcolor"]); ?>" size="7" maxlength="7"></td>
                   <td class="v10">&nbsp;&nbsp;<?php echo $BL['be_ftptakeover_active'] ?>:&nbsp;</td>
                   <td><input name="layout_acolor" type="text" class="f10" id="layout_acolor" style="width: 55px;" value="<?php echo html_specialchars($pagelayout["layout_acolor"]); ?>" size="7" maxlength="7"></td>
-                  <td><img src="img/leer.gif" alt="" width="1" height="20"></td>
+                  <td><img src="include/img/leer.gif" alt="" width="1" height="20"></td>
 				</tr>
               </table></td>
 			 </tr>
@@ -482,30 +482,30 @@ if(!isset($_GET["s"])) {
   				<tr>
     				<td class="v10">&nbsp;&nbsp;onload:&nbsp;</td>
    					<td><input name="layout_jsonload" type="text" class="f10" id="layout_jsonload" style="width: 382px;" value="<?php echo html_specialchars($pagelayout["layout_jsonload"]); ?>" size="20"></td>
-  				    <td><img src="img/leer.gif" alt="" width="1" height="20"></td>
+  				    <td><img src="include/img/leer.gif" alt="" width="1" height="20"></td>
 				</tr>
 			   </table></td>
 			 </tr>
-			 <tr><td><img src="img/leer.gif" alt="" width="1" height="1"></td><td bgcolor="#E6EAED"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
-			<tr><td colspan="2" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
+			 <tr><td><img src="include/img/leer.gif" alt="" width="1" height="1"></td><td bgcolor="#E6EAED"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
+			<tr><td colspan="2" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 	
 			<tr>
               <td align="right" valign="top" class="chatlist tdtop3"><?php echo $BL['be_admin_page_blocks'] ?>:&nbsp;</td>
               <td bgcolor="#E6EAED"><table border="0" cellpadding="0" cellspacing="0" summary="">
-                  <tr><td colspan="12"><img src="img/leer.gif" alt="" width="1" height="7"></td></tr>
+                  <tr><td colspan="12"><img src="include/img/leer.gif" alt="" width="1" height="7"></td></tr>
                   <tr>
-                    <td rowspan="2"><img src="img/leer.gif" alt="" width="7" height="50"></td>
-                    <td valign="top"><img src="img/leer.gif" alt="" width="25" height="1"></td>
-                    <td rowspan="2" valign="top"><label for="layout_type_0"><img src="img/symbole/3_column_layout.gif" alt="<?php echo $BL['be_admin_page_col1'] ?>" width="39" height="44" border="0"></label></td>
-                    <td rowspan="2"><img src="img/leer.gif" alt="" width="32" height="1"></td>
-                    <td valign="top"><img src="img/leer.gif" alt="" width="25" height="1"></td>
-                    <td rowspan="2" valign="top"><label for="layout_type_1"><img src="img/symbole/2_column_layout.gif" alt="<?php echo $BL['be_admin_page_col2'] ?>" width="39" height="44" border="0"></label></td>
-                    <td rowspan="2"><img src="img/leer.gif" alt="" width="32" height="1"></td>
-                    <td><img src="img/leer.gif" alt="" width="25" height="1"></td>
-                    <td rowspan="2" valign="top"><label for="layout_type_2"><img src="img/symbole/4_column_layout.gif" alt="<?php echo $BL['be_admin_page_col3'] ?>" width="39" height="44" border="0"></label></td>
-                    <td rowspan="2"><img src="img/leer.gif" alt="" width="32" height="1"></td>
-                    <td valign="top"><img src="img/leer.gif" alt="" width="25" height="1"></td>
-                    <td rowspan="2" valign="top"><label for="layout_type_3"><img src="img/symbole/1_column_layout.gif" alt="<?php echo $BL['be_admin_page_col4'] ?>" width="39" height="44" border="0"></label></td>
+                    <td rowspan="2"><img src="include/img/leer.gif" alt="" width="7" height="50"></td>
+                    <td valign="top"><img src="include/img/leer.gif" alt="" width="25" height="1"></td>
+                    <td rowspan="2" valign="top"><label for="layout_type_0"><img src="include/img/symbole/3_column_layout.gif" alt="<?php echo $BL['be_admin_page_col1'] ?>" width="39" height="44" border="0"></label></td>
+                    <td rowspan="2"><img src="include/img/leer.gif" alt="" width="32" height="1"></td>
+                    <td valign="top"><img src="include/img/leer.gif" alt="" width="25" height="1"></td>
+                    <td rowspan="2" valign="top"><label for="layout_type_1"><img src="include/img/symbole/2_column_layout.gif" alt="<?php echo $BL['be_admin_page_col2'] ?>" width="39" height="44" border="0"></label></td>
+                    <td rowspan="2"><img src="include/img/leer.gif" alt="" width="32" height="1"></td>
+                    <td><img src="include/img/leer.gif" alt="" width="25" height="1"></td>
+                    <td rowspan="2" valign="top"><label for="layout_type_2"><img src="include/img/symbole/4_column_layout.gif" alt="<?php echo $BL['be_admin_page_col3'] ?>" width="39" height="44" border="0"></label></td>
+                    <td rowspan="2"><img src="include/img/leer.gif" alt="" width="32" height="1"></td>
+                    <td valign="top"><img src="include/img/leer.gif" alt="" width="25" height="1"></td>
+                    <td rowspan="2" valign="top"><label for="layout_type_3"><img src="include/img/symbole/1_column_layout.gif" alt="<?php echo $BL['be_admin_page_col4'] ?>" width="39" height="44" border="0"></label></td>
                   </tr>
                   <tr>
                     <td align="center" valign="top"><input name="layout_type" type="radio" id="layout_type_0" value="0" <?php is_checked(0, $pagelayout["layout_type"]); ?>></td>
@@ -516,9 +516,9 @@ if(!isset($_GET["s"])) {
                 </table></td>
 			</tr>
 			
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 
-			<tr><td><img src="img/leer.gif" alt="" width="1" height="1"></td><td bgcolor="#E6EAED"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
+			<tr><td><img src="include/img/leer.gif" alt="" width="1" height="1"></td><td bgcolor="#E6EAED"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 			<tr>
               <td align="right" class="chatlist"><?php echo $BL['be_admin_page_allblocks'] ?>:&nbsp;</td>
               <td bgcolor="#E6EAED"><table width="440" border="0" cellpadding="0" cellspacing="0" summary="">
@@ -531,7 +531,7 @@ if(!isset($_GET["s"])) {
                     <td width="100"><input name="layout_all_bgimage" type="text" class="f10" id="layout_all_bgimage" style="width: 100px;" value="<?php echo html_specialchars($pagelayout["layout_all_bgimage"]); ?>" size="7"></td>
                     <td width="45" class="v10">&nbsp;&nbsp;<?php echo $BL['be_admin_page_class'] ?>:&nbsp;</td>
                     <td width="55"><input name="layout_all_class" type="text" class="f10" id="layout_all_class" style="width: 55px;" value="<?php echo html_specialchars($pagelayout["layout_all_class"]); ?>" size="7"></td>
-                    <td width="1"><img src="img/leer.gif" alt="" width="1" height="20"></td>
+                    <td width="1"><img src="include/img/leer.gif" alt="" width="1" height="20"></td>
                   </tr>
                 </table></td>
 			  </tr>
@@ -547,7 +547,7 @@ if(!isset($_GET["s"])) {
                   <td width="100"><input name="layout_left_bgimage" type="text" class="f10" id="layout_left_bgimage" style="width: 100px;" value="<?php echo html_specialchars($pagelayout["layout_left_bgimage"]); ?>" size="7"></td>
                   <td width="45" class="v10">&nbsp;&nbsp;<?php echo $BL['be_admin_page_class'] ?>:&nbsp;</td>
                   <td width="55"><input name="layout_left_class" type="text" class="f10" id="layout_left_class" style="width: 55px;" value="<?php echo html_specialchars($pagelayout["layout_left_class"]); ?>" size="7"></td>
-                  <td width="1"><img src="img/leer.gif" alt="" width="1" height="20"></td>
+                  <td width="1"><img src="include/img/leer.gif" alt="" width="1" height="20"></td>
                 </tr>
               </table></td>
 			  </tr>
@@ -563,7 +563,7 @@ if(!isset($_GET["s"])) {
                   <td width="100"><input name="layout_leftspace_bgimage" type="text" class="f10" id="layout_leftspace_bgimage" style="width: 100px;" value="<?php echo html_specialchars($pagelayout["layout_leftspace_bgimage"]); ?>" size="7"></td>
                   <td width="45" class="v10">&nbsp;&nbsp;<?php echo $BL['be_admin_page_class'] ?>:&nbsp;</td>
                   <td width="55"><input name="layout_leftspace_class" type="text" class="f10" id="layout_leftspace_class" style="width: 55px;" value="<?php echo html_specialchars($pagelayout["layout_leftspace_class"]); ?>" size="7"></td>
-                  <td width="1"><img src="img/leer.gif" alt="" width="1" height="20"></td>
+                  <td width="1"><img src="include/img/leer.gif" alt="" width="1" height="20"></td>
                 </tr>
               </table></td>
 			  </tr>
@@ -579,7 +579,7 @@ if(!isset($_GET["s"])) {
                   <td width="100"><input name="layout_content_bgimage" type="text" class="f10" id="layout_content_bgimage" style="width: 100px;" value="<?php echo html_specialchars($pagelayout["layout_content_bgimage"]); ?>" size="7"></td>
                   <td width="45" class="v10">&nbsp;&nbsp;<?php echo $BL['be_admin_page_class'] ?>:&nbsp;</td>
                   <td width="55"><input name="layout_content_class" type="text" class="f10" id="layout_content_class" style="width: 55px;" value="<?php echo html_specialchars($pagelayout["layout_content_class"]); ?>" size="7"></td>
-                  <td width="1"><img src="img/leer.gif" alt="" width="1" height="20"></td>
+                  <td width="1"><img src="include/img/leer.gif" alt="" width="1" height="20"></td>
                 </tr>
               </table></td>
 			  </tr>
@@ -595,7 +595,7 @@ if(!isset($_GET["s"])) {
                   <td width="100"><input name="layout_rightspace_bgimage" type="text" class="f10" id="layout_rightspace_bgimage" style="width: 100px;" value="<?php echo html_specialchars($pagelayout["layout_rightspace_bgimage"]); ?>" size="7"></td>
                   <td width="45" class="v10">&nbsp;&nbsp;<?php echo $BL['be_admin_page_class'] ?>:&nbsp;</td>
                   <td width="55"><input name="layout_rightspace_class" type="text" class="f10" id="layout_rightspace_class" style="width: 55px;" value="<?php echo html_specialchars($pagelayout["layout_rightspace_class"]); ?>" size="7"></td>
-                  <td width="1"><img src="img/leer.gif" alt="" width="1" height="20"></td>
+                  <td width="1"><img src="include/img/leer.gif" alt="" width="1" height="20"></td>
                 </tr>
               </table></td>
 			  </tr>
@@ -611,13 +611,13 @@ if(!isset($_GET["s"])) {
                   <td width="100"><input name="layout_right_bgimage" type="text" class="f10" id="layout_right_bgimage" style="width: 100px;" value="<?php echo html_specialchars($pagelayout["layout_right_bgimage"]); ?>" size="7"></td>
                   <td width="45" class="v10">&nbsp;&nbsp;<?php echo $BL['be_admin_page_class'] ?>:&nbsp;</td>
                   <td width="55"><input name="layout_right_class" type="text" class="f10" id="layout_right_class" style="width: 55px;" value="<?php echo html_specialchars($pagelayout["layout_right_class"]); ?>" size="7"></td>
-                  <td width="1"><img src="img/leer.gif" alt="" width="1" height="20"></td>
+                  <td width="1"><img src="include/img/leer.gif" alt="" width="1" height="20"></td>
                 </tr>
               </table></td>
 			  </tr>
-			<tr><td><img src="img/leer.gif" alt="" width="1" height="1"></td><td bgcolor="#E6EAED"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
-			<tr><td><img src="img/leer.gif" alt="" width="1" height="1"></td><td bgcolor="#E6EAED"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
+			<tr><td><img src="include/img/leer.gif" alt="" width="1" height="1"></td><td bgcolor="#E6EAED"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
+			<tr><td><img src="include/img/leer.gif" alt="" width="1" height="1"></td><td bgcolor="#E6EAED"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 			<tr>
               <td align="right" class="chatlist"><?php echo $BL['be_admin_page_header'] ?>:&nbsp;</td>
               <td bgcolor="#E6EAED"><table width="440" border="0" cellpadding="0" cellspacing="0" summary="">
@@ -630,7 +630,7 @@ if(!isset($_GET["s"])) {
                     <td width="100"><input name="layout_header_bgimage" type="text" class="f10" id="layout_header_bgimage" style="width: 100px;" value="<?php echo html_specialchars($pagelayout["layout_header_bgimage"]); ?>" size="7"></td>
                     <td width="45" class="v10">&nbsp;&nbsp;<?php echo $BL['be_admin_page_class'] ?>:&nbsp;</td>
                     <td width="55"><input name="layout_header_class" type="text" class="f10" id="layout_header_class" style="width: 55px;" value="<?php echo html_specialchars($pagelayout["layout_header_class"]); ?>" size="7"></td>
-                    <td width="1"><img src="img/leer.gif" alt="" width="1" height="20"></td>
+                    <td width="1"><img src="include/img/leer.gif" alt="" width="1" height="20"></td>
                   </tr>
                 </table></td>
 			</tr>
@@ -646,7 +646,7 @@ if(!isset($_GET["s"])) {
                     <td width="100"><input name="layout_topspace_bgimage" type="text" class="f10" id="layout_topspace_bgimage" style="width: 100px;" value="<?php echo html_specialchars($pagelayout["layout_topspace_bgimage"]); ?>" size="7"></td>
                     <td width="45" class="v10">&nbsp;&nbsp;<?php echo $BL['be_admin_page_class'] ?>:&nbsp;</td>
                     <td width="55"><input name="layout_topspace_class" type="text" class="f10" id="layout_topspace_class" style="width: 55px;" value="<?php echo html_specialchars($pagelayout["layout_topspace_class"]); ?>" size="7"></td>
-                    <td width="1"><img src="img/leer.gif" alt="" width="1" height="20"></td>
+                    <td width="1"><img src="include/img/leer.gif" alt="" width="1" height="20"></td>
                   </tr>
                 </table></td>
 			  </tr>
@@ -662,7 +662,7 @@ if(!isset($_GET["s"])) {
                     <td width="100"><input name="layout_bottomspace_bgimage" type="text" class="f10" id="layout_bottomspace_bgimage" style="width: 100px;" value="<?php echo html_specialchars($pagelayout["layout_bottomspace_bgimage"]); ?>" size="7"></td>
                     <td width="45" class="v10">&nbsp;&nbsp;<?php echo $BL['be_admin_page_class'] ?>:&nbsp;</td>
                     <td width="55"><input name="layout_bottomspace_class" type="text" class="f10" id="layout_bottomspace_class" style="width: 55px;" value="<?php echo html_specialchars($pagelayout["layout_bottomspace_class"]); ?>" size="7"></td>
-                    <td width="1"><img src="img/leer.gif" alt="" width="1" height="20"></td>
+                    <td width="1"><img src="include/img/leer.gif" alt="" width="1" height="20"></td>
                   </tr>
                 </table></td>
 			</tr>
@@ -678,18 +678,18 @@ if(!isset($_GET["s"])) {
                     <td width="100"><input name="layout_footer_bgimage" type="text" class="f10" id="layout_footer_bgimage" style="width: 100px;" value="<?php echo html_specialchars($pagelayout["layout_footer_bgimage"]); ?>" size="7"></td>
                     <td width="45" class="v10">&nbsp;&nbsp;<?php echo $BL['be_admin_page_class'] ?>:&nbsp;</td>
                     <td width="55"><input name="layout_footer_class" type="text" class="f10" id="layout_footer_class" style="width: 55px;" value="<?php echo html_specialchars($pagelayout["layout_footer_class"]); ?>" size="7"></td>
-                    <td width="1"><img src="img/leer.gif" alt="" width="1" height="20"></td>
+                    <td width="1"><img src="include/img/leer.gif" alt="" width="1" height="20"></td>
                   </tr>
                 </table></td>
 			</tr>
-			<tr><td><img src="img/leer.gif" alt="" width="1" height="1"></td><td bgcolor="#E6EAED"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
+			<tr><td><img src="include/img/leer.gif" alt="" width="1" height="1"></td><td bgcolor="#E6EAED"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="20"></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="20"></td></tr>
 			<tr>
-				<td><img src="img/leer.gif" alt="" width="90" height="1"><input name="layout_id" type="hidden" value="<?php echo $pagelayout["id"] ?>"></td>
+				<td><img src="include/img/leer.gif" alt="" width="90" height="1"><input name="layout_id" type="hidden" value="<?php echo $pagelayout["id"] ?>"></td>
 				<td><input name="Submit" type="submit" class="button10" value="<?php echo $BL['be_admin_page_button'] ?>">&nbsp;&nbsp;<input type="button" class="button10" value="<?php echo $BL['be_admin_struct_close'] ?>" onclick="location.href='phpwcms.php?do=admin&p=8';"></td>
 			</tr>
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15"></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15"></td></tr>
 </table></form><?php
 }
 ?>

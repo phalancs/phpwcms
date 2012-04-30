@@ -66,7 +66,7 @@ $fmp_data['fmp_player'] = empty($fmp_data['fmp_player']) ? 0 : 1;
 
 
 ?>
-<tr><td colspan="2" class="rowspacer0x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer0x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_admin_struct_template']; ?>:&nbsp;</td>
@@ -124,7 +124,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 		
 </tr>
 
-<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist" valign="top"><strong><?php echo $BL['be_html5_media'] ?></strong>:&nbsp;</td>
@@ -141,10 +141,10 @@ if(is_array($tmpllist) && count($tmpllist)) {
 			<td bgcolor="#E7E8EB" class="v10"><label for="fmp_int_ext0_h264"><?php echo $BL['be_cnt_internal'] ?>&nbsp;</label></td>
 			<td>&nbsp;<input name="fmp_internal_id_h264" type="hidden" id="fmp_internal_id_h264" value="<?php echo $fmp_data['fmp_internal_id_h264'] ?>" /></td>
 			<td><input name="fmp_internal_name_h264" type="text" id="fmp_internal_name_h264" class="width300 greyed" value="<?php echo html_specialchars($fmp_data['fmp_internal_name_h264']) ?>" size="40" onfocus="this.blur()" onclick="openFileBrowser('filebrowser.php?opt=12');" /></td>
-			<td><a href="#" title="<?php echo $BL['be_cnt_openmediabrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=12');return false;"><img src="img/button/open_image_button.gif" alt="" border="0" hspace="3" /></a></td>
-			<td><a href="#" title="<?php echo $BL['be_cnt_delmedia'] ?>" onclick="getObjectById('fmp_internal_name_h264').value='';getObjectById('fmp_internal_id_h264').value='0';this.blur();return false;"><img src="img/button/del_image_button.gif" alt="" border="0" /></a></td>
+			<td><a href="#" title="<?php echo $BL['be_cnt_openmediabrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=12');return false;"><img src="include/img/button/open_image_button.gif" alt="" border="0" hspace="3" /></a></td>
+			<td><a href="#" title="<?php echo $BL['be_cnt_delmedia'] ?>" onclick="getObjectById('fmp_internal_name_h264').value='';getObjectById('fmp_internal_id_h264').value='0';this.blur();return false;"><img src="include/img/button/del_image_button.gif" alt="" border="0" /></a></td>
 		</tr>
-		<tr><td colspan="6"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+		<tr><td colspan="6"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 		<tr>
 			<td bgcolor="#E7E8EB"><input name="fmp_int_ext_h264" id="fmp_int_ext1_h264" type="radio" value="1" <?php is_checked(1, $fmp_data['fmp_int_ext_h264']); ?> /></td>
 			<td bgcolor="#E7E8EB" class="v10"><label for="fmp_int_ext1_h264"><?php echo $BL['be_cnt_external'] ?>&nbsp;</label></td>
@@ -152,7 +152,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 			<td colspan="3"><input name="fmp_external_file_h264" type="text" id="fmp_external_file_h264" class="width300" value="<?php echo html_specialchars($fmp_data['fmp_external_file_h264']) ?>" size="40" /></td>
 		</tr>
 		
-		<tr><td colspan="6"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+		<tr><td colspan="6"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 		
 		<!-- HTML5 Media WebM -->
 		<tr>
@@ -164,10 +164,10 @@ if(is_array($tmpllist) && count($tmpllist)) {
 			<td bgcolor="#E7E8EB" class="v10"><label for="fmp_int_ext0_webm"><?php echo $BL['be_cnt_internal'] ?>&nbsp;</label></td>
 			<td>&nbsp;<input name="fmp_internal_id_webm" type="hidden" id="fmp_internal_id_webm" value="<?php echo $fmp_data['fmp_internal_id_webm'] ?>" /></td>
 			<td><input name="fmp_internal_name_webm" type="text" id="fmp_internal_name_webm" class="width300 greyed" value="<?php echo html_specialchars($fmp_data['fmp_internal_name_webm']) ?>" size="40" onfocus="this.blur()" onclick="openFileBrowser('filebrowser.php?opt=13');" /></td>
-			<td><a href="#" title="<?php echo $BL['be_cnt_openmediabrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=13');return false;"><img src="img/button/open_image_button.gif" alt="" border="0" hspace="3" /></a></td>
-			<td><a href="#" title="<?php echo $BL['be_cnt_delmedia'] ?>" onclick="getObjectById('fmp_internal_name_webm').value='';getObjectById('fmp_internal_id_webm').value='0';this.blur();return false;"><img src="img/button/del_image_button.gif" alt="" border="0" /></a></td>
+			<td><a href="#" title="<?php echo $BL['be_cnt_openmediabrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=13');return false;"><img src="include/img/button/open_image_button.gif" alt="" border="0" hspace="3" /></a></td>
+			<td><a href="#" title="<?php echo $BL['be_cnt_delmedia'] ?>" onclick="getObjectById('fmp_internal_name_webm').value='';getObjectById('fmp_internal_id_webm').value='0';this.blur();return false;"><img src="include/img/button/del_image_button.gif" alt="" border="0" /></a></td>
 		</tr>
-		<tr><td colspan="6"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+		<tr><td colspan="6"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 		<tr>
 			<td bgcolor="#E7E8EB"><input name="fmp_int_ext_webm" id="fmp_int_ext1_webm" type="radio" value="1" <?php is_checked(1, $fmp_data['fmp_int_ext_webm']); ?> /></td>
 			<td bgcolor="#E7E8EB" class="v10"><label for="fmp_int_ext1_webm"><?php echo $BL['be_cnt_external'] ?>&nbsp;</label></td>
@@ -175,7 +175,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 			<td colspan="3"><input name="fmp_external_file_webm" type="text" id="fmp_external_file_webm" class="width300" value="<?php echo html_specialchars($fmp_data['fmp_external_file_webm']) ?>" size="40" /></td>
 		</tr>
 		
-		<tr><td colspan="6"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+		<tr><td colspan="6"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 	
 		<!-- HTML5 Media Ogg -->
 		<tr>
@@ -187,10 +187,10 @@ if(is_array($tmpllist) && count($tmpllist)) {
 			<td bgcolor="#E7E8EB" class="v10"><label for="fmp_int_ext0_ogg"><?php echo $BL['be_cnt_internal'] ?>&nbsp;</label></td>
 			<td>&nbsp;<input name="fmp_internal_id_ogg" type="hidden" id="fmp_internal_id_ogg" value="<?php echo $fmp_data['fmp_internal_id_ogg'] ?>" /></td>
 			<td><input name="fmp_internal_name_ogg" type="text" id="fmp_internal_name_ogg" class="width300 greyed" value="<?php echo html_specialchars($fmp_data['fmp_internal_name_ogg']) ?>" size="40" onfocus="this.blur()" onclick="openFileBrowser('filebrowser.php?opt=14');" /></td>
-			<td><a href="#" title="<?php echo $BL['be_cnt_openmediabrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=14');return false;"><img src="img/button/open_image_button.gif" alt="" border="0" hspace="3" /></a></td>
-			<td><a href="#" title="<?php echo $BL['be_cnt_delmedia'] ?>" onclick="getObjectById('fmp_internal_name_ogg').value='';getObjectById('fmp_internal_id_ogg').value='0';this.blur();return false;"><img src="img/button/del_image_button.gif" alt="" border="0" /></a></td>
+			<td><a href="#" title="<?php echo $BL['be_cnt_openmediabrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=14');return false;"><img src="include/img/button/open_image_button.gif" alt="" border="0" hspace="3" /></a></td>
+			<td><a href="#" title="<?php echo $BL['be_cnt_delmedia'] ?>" onclick="getObjectById('fmp_internal_name_ogg').value='';getObjectById('fmp_internal_id_ogg').value='0';this.blur();return false;"><img src="include/img/button/del_image_button.gif" alt="" border="0" /></a></td>
 		</tr>
-		<tr><td colspan="6"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+		<tr><td colspan="6"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 		<tr>
 			<td bgcolor="#E7E8EB"><input name="fmp_int_ext_ogg" id="fmp_int_ext1_ogg" type="radio" value="1" <?php is_checked(1, $fmp_data['fmp_int_ext_ogg']); ?> /></td>
 			<td bgcolor="#E7E8EB" class="v10"><label for="fmp_int_ext1_ogg"><?php echo $BL['be_cnt_external'] ?>&nbsp;</label></td>
@@ -201,8 +201,8 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	</table></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="12" /></td></tr>
-<tr><td colspan="2" class="rowspacer0x7" bgcolor="#e7e8eb"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="12" /></td></tr>
+<tr><td colspan="2" class="rowspacer0x7" bgcolor="#e7e8eb"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist" bgcolor="#e7e8eb">&nbsp;</td>
@@ -241,8 +241,8 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	</table></td>
 </tr>
 
-<tr><td colspan="2" class="rowspacer7x0" bgcolor="#e7e8eb"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="7" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x0" bgcolor="#e7e8eb"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="7" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist" valign="top"><strong><?php echo $BL['be_flash_media'] ?></strong>:&nbsp;</td>
@@ -259,10 +259,10 @@ if(is_array($tmpllist) && count($tmpllist)) {
 			<td bgcolor="#E7E8EB" class="v10"><label for="fmp_int_ext0"><?php echo $BL['be_cnt_internal'] ?>&nbsp;</label></td>
 			<td>&nbsp;<input name="fmp_internal_id" type="hidden" id="fmp_internal_id" value="<?php echo $fmp_data['fmp_internal_id'] ?>" /></td>
 			<td><input name="fmp_internal_name" type="text" id="fmp_internal_name" class="width300 greyed" value="<?php echo html_specialchars($fmp_data['fmp_internal_name']) ?>" size="40" onfocus="this.blur()" onclick="openFileBrowser('filebrowser.php?opt=6');" /></td>
-			<td><a href="#" title="<?php echo $BL['be_cnt_openmediabrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=6');return false;"><img src="img/button/open_image_button.gif" alt="" border="0" hspace="3" /></a></td>
-			<td><a href="#" title="<?php echo $BL['be_cnt_delmedia'] ?>" onclick="getObjectById('fmp_internal_name').value='';getObjectById('fmp_internal_id').value='0';this.blur();return false;"><img src="img/button/del_image_button.gif" alt="" border="0" /></a></td>
+			<td><a href="#" title="<?php echo $BL['be_cnt_openmediabrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=6');return false;"><img src="include/img/button/open_image_button.gif" alt="" border="0" hspace="3" /></a></td>
+			<td><a href="#" title="<?php echo $BL['be_cnt_delmedia'] ?>" onclick="getObjectById('fmp_internal_name').value='';getObjectById('fmp_internal_id').value='0';this.blur();return false;"><img src="include/img/button/del_image_button.gif" alt="" border="0" /></a></td>
 		</tr>
-		<tr><td colspan="6"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+		<tr><td colspan="6"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 		<tr>
 			<td bgcolor="#E7E8EB"><input name="fmp_int_ext" id="fmp_int_ext1" type="radio" value="1" <?php is_checked(1, $fmp_data['fmp_int_ext']); ?> /></td>
 			<td bgcolor="#E7E8EB" class="v10"><label for="fmp_int_ext1"><?php echo $BL['be_cnt_external'] ?>&nbsp;</label></td>
@@ -273,21 +273,21 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	</table></td>
 </tr>
 
-<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist tdtop3"><?php echo $BL['be_flashplayer_caption'] ?>:&nbsp;</td>
 	<td><textarea name="fmp_caption" cols="40" rows="2" class="width440" id="fmp_caption"><?php echo html_specialchars($fmp_data['fmp_caption']) ?></textarea></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
 
 <tr>
 	<td align="right" class="chatlist tdtop3"><?php echo $BL['be_admin_page_link'] ?>:&nbsp;</td>
 	<td><input name="fmp_link" type="text" id="fmp_link" class="width440" value="<?php echo html_specialchars($fmp_data['fmp_link']) ?>" size="40" /></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
 
 
 <tr>
@@ -297,8 +297,8 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	
 		<tr>
 			<td><input name="fmp_img_name" type="text" id="fmp_img_name" class="width300 greyed" value="<?php echo html_specialchars($fmp_data['fmp_img_name']) ?>" size="40" onfocus="this.blur()" onclick="openFileBrowser('filebrowser.php?opt=7');" /></td>
-			<td><a href="#" title="<?php echo $BL['be_cnt_openmediabrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=7');return false;"><img src="img/button/open_image_button.gif" alt="" border="0" hspace="3" /></a></td>
-			<td><a href="#" title="<?php echo $BL['be_cnt_delmedia'] ?>" onclick="getObjectById('fmp_img_name').value='';getObjectById('fmp_img_id').value='0';this.blur();return false;"><img src="img/button/del_image_button.gif" alt="" border="0" /></a>
+			<td><a href="#" title="<?php echo $BL['be_cnt_openmediabrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=7');return false;"><img src="include/img/button/open_image_button.gif" alt="" border="0" hspace="3" /></a></td>
+			<td><a href="#" title="<?php echo $BL['be_cnt_delmedia'] ?>" onclick="getObjectById('fmp_img_name').value='';getObjectById('fmp_img_id').value='0';this.blur();return false;"><img src="include/img/button/del_image_button.gif" alt="" border="0" /></a>
 			<input name="fmp_img_id" type="hidden" id="fmp_img_id" value="<?php echo $fmp_data['fmp_img_id'] ?>" />			
 			</td>
 		</tr>
@@ -307,7 +307,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 </tr>
 
 
-<tr><td colspan="2" class="rowspacer10x10"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer10x10"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 
 <tr>

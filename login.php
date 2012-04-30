@@ -208,9 +208,9 @@ if(isset($_POST['form_aktion']) && $_POST['form_aktion'] == 'login' && isset($_P
 	<title><?php echo $BL['be_page_title'] . ' - ' . PHPWCMS_HOST ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=<?php echo PHPWCMS_CHARSET ?>" />
 	<meta name="robots" content="noindex, nofollow" />
-	<link href="include/inc_css/login.css" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="include/inc_js/phpwcms.js"></script>
-	<script type="text/javascript" src="include/inc_js/md5.js"></script>
+	<link href="include/css/login.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="include/js/phpwcms.js"></script>
+	<script type="text/javascript" src="include/js/md5.js"></script>
 <?php
 
 if((isset($_SESSION["wcs_user_lang"]) && $_SESSION["wcs_user_lang"] == 'ar') || strtolower($phpwcms['default_lang']) == 'ar') {
@@ -223,37 +223,37 @@ if((isset($_SESSION["wcs_user_lang"]) && $_SESSION["wcs_user_lang"] == 'ar') || 
 <body>
 <table width="504" border="0" align="center" cellpadding="0" cellspacing="0" summary="Login Screen">
   <tr>
-    <td colspan="3"><img src="img/leer.gif" alt="" width="1" height="12" /></td>
+    <td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="12" /></td>
   </tr>
   <tr>
-    <td colspan="3"><a href="index.php" target="_top"><img src="img/backend/preinfo2.jpg" alt="phpwcms" width="122" height="31" border="0" hspace="18" /></a></td>
+    <td colspan="3"><a href="index.php" target="_top"><img src="include/img/backend/preinfo2.jpg" alt="phpwcms" width="122" height="31" border="0" hspace="18" /></a></td>
   </tr>
   <tr>
-    <td colspan="3"><img src="img/leer.gif" alt="" width="1" height="7" /></td>
+    <td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="7" /></td>
   </tr>
   <tr>
-    <td colspan="3"><a href="index.php" target="_top"><img src="img/backend/preinfo2_r4_c2.jpg" alt="phpwcms" width="504" height="154" border="0" /></a></td>
+    <td colspan="3"><a href="index.php" target="_top"><img src="include/img/backend/preinfo2_r4_c2.jpg" alt="phpwcms" width="504" height="154" border="0" /></a></td>
   </tr>
   <tr>
-    <td colspan="3"><img src="img/leer.gif" alt="" width="1" height="11" /></td>
+    <td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="11" /></td>
   </tr>
   <tr>
-    <td width="15" style="width:15px;"><img src="img/backend/preinfo2_r6_c2.gif" alt="" width="15" height="15" border="0" /></td>
-    <td width="474" bgcolor="#FFFFFF" style="width:474px;"><img src="img/backend/preinfo2_r6_c3.gif" alt="" width="474" height="15" border="0" /></td>
-    <td width="15" style="width:15px;"><img src="img/backend/preinfo2_r6_c7.gif" alt="" width="15" height="15" border="0" /></td>
+    <td width="15" style="width:15px;"><img src="include/img/backend/preinfo2_r6_c2.gif" alt="" width="15" height="15" border="0" /></td>
+    <td width="474" bgcolor="#FFFFFF" style="width:474px;"><img src="include/img/backend/preinfo2_r6_c3.gif" alt="" width="474" height="15" border="0" /></td>
+    <td width="15" style="width:15px;"><img src="include/img/backend/preinfo2_r6_c7.gif" alt="" width="15" height="15" border="0" /></td>
   </tr>
   <tr>
-    <td style="background-image:url(img/backend/preinfo2_r7_c2.gif);background-repeat:repeat-y;" bgcolor="#FFFFFF">&nbsp;</td>
+    <td style="background-image:url(include/img/backend/preinfo2_r7_c2.gif);background-repeat:repeat-y;" bgcolor="#FFFFFF">&nbsp;</td>
     <td bgcolor="#FFFFFF" style="padding-left:3px;padding-right:3px;" id="loginFormArea">
 		<div class="error" style="font-weight:bold;padding:0 0 15px 0;font-size:12px;text-align:center"><?php
 	
 			echo $BL['be_login_jsinfo'];
 	
 		?></div></td>
-    <td style="background-image:url(img/backend/preinfo2_r7_c7.gif);background-repeat:repeat-y;background-position:right;" bgcolor="#FFFFFF">&nbsp;</td>
+    <td style="background-image:url(include/img/backend/preinfo2_r7_c7.gif);background-repeat:repeat-y;background-position:right;" bgcolor="#FFFFFF">&nbsp;</td>
   </tr>
   <tr>
-    <td style="background-image:url(img/backend/preinfo2_r7_c2.gif);background-repeat:repeat-y;" bgcolor="#FFFFFF">&nbsp;</td>
+    <td style="background-image:url(include/img/backend/preinfo2_r7_c2.gif);background-repeat:repeat-y;" bgcolor="#FFFFFF">&nbsp;</td>
     <td bgcolor="#FFFFFF" style="padding: 0 3px 5px 3px;">
 		<strong><a href="http://www.phpwcms.de" target="_blank" style="text-decoration:none;">phpwcms</a></strong> 
 		Copyright &copy; 2003&#8212;<?php echo date('Y'); ?>
@@ -262,12 +262,12 @@ if((isset($_SESSION["wcs_user_lang"]) && $_SESSION["wcs_user_lang"] == 'ar') || 
         details. phpwcms is free software released under <a href="http://www.fsf.org/licensing/licenses/gpl.html" target="_blank">GPL</a> 
 		and comes WITHOUT ANY WARRANTY. Obstructing the appearance of this notice is prohibited  by law. 
     </td>
-    <td style="background-image:url(img/backend/preinfo2_r7_c7.gif);background-repeat:repeat-y;background-position:right;" bgcolor="#FFFFFF">&nbsp;</td>
+    <td style="background-image:url(include/img/backend/preinfo2_r7_c7.gif);background-repeat:repeat-y;background-position:right;" bgcolor="#FFFFFF">&nbsp;</td>
   </tr>
   <tr>
-    <td><img src="img/backend/preinfo2_r9_c2.gif" alt="" width="15" height="15" border="0" /></td>
-    <td bgcolor="#FFFFFF"><img src="img/backend/preinfo2_r9_c3.gif" alt="" width="474" height="15" border="0" /></td>
-    <td><img src="img/backend/preinfo2_r9_c7.gif" alt="" width="15" height="15" border="0" /></td>
+    <td><img src="include/img/backend/preinfo2_r9_c2.gif" alt="" width="15" height="15" border="0" /></td>
+    <td bgcolor="#FFFFFF"><img src="include/img/backend/preinfo2_r9_c3.gif" alt="" width="474" height="15" border="0" /></td>
+    <td><img src="include/img/backend/preinfo2_r9_c7.gif" alt="" width="15" height="15" border="0" /></td>
   </tr>
 </table>
 <?php
@@ -307,12 +307,12 @@ ob_start();
           <td align="right" nowrap="nowrap" class="v10"><?php echo $BL["login_username"] ?>:&nbsp;</td>
           <td class="v10"><input name="form_loginname" type="text" id="form_loginname" style="width:250px;" size="30" maxlength="30" value="<?php echo html_specialchars($wcs_user); ?>" /></td>
           </tr>
-        <tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+        <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
         <tr>
           <td align="right" nowrap="nowrap" class="v10"><?php echo $BL["login_userpass"] ?>:&nbsp;</td>
           <td class="v10"><input name="form_password" type="password" id="form_password" style="width:250px;" size="30" maxlength="40" /></td>
           </tr>
-        <tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4" /></td></tr>
+        <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
         <tr>
           <td align="right" nowrap="nowrap" class="v10"><?php echo $BL["login_lang"] ?>:&nbsp;</td>
           <td class="v10"><select name="form_lang" id="form_lang" style="width:250px;" onchange="getObjectById('json').value='2';login(this.form);">
@@ -337,7 +337,7 @@ echo implode(LF, $lang_code);
 ?>
           </select></td>
           </tr>
-        <tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+        <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
         <tr>
           <td>&nbsp;</td>
           <td><input name="submit_form" type="submit" value="<?php echo $BL["login_button"] ?>" /></td>

@@ -29,6 +29,6 @@ if (!defined('PHPWCMS_ROOT')) {
 
 
 ?><table width="538" border="0" cellpadding="0" cellspacing="0" summary="">
-<tr><td bgcolor="#9BBECA"><img src="img/leer.gif" alt="" width="1" height="4" /></td></tr>
-<tr><td><img src="img/leer.gif" alt="" width="1" height="15" /></td></tr>
+<tr><td bgcolor="#9BBECA"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
+<tr><td><img src="include/img/leer.gif" alt="" width="1" height="15" /></td></tr>
 </table>

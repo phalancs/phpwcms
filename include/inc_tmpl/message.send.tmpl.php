@@ -107,7 +107,7 @@ if(isset($_POST['msg_send_aktion']) && intval($_POST['msg_send_aktion'])) {
 }
 
 if($msg_send_ok) {
-	echo "<span class=\"title\">".$BL['be_msg_sent']."</span><br /><img src='img/leer.gif' width=1 height=6><br />";
+	echo "<span class=\"title\">".$BL['be_msg_sent']."</span><br /><img src='include/img/leer.gif' width=1 height=6><br />";
 	echo $BL['be_msg_fwd']." <br /><a href='phpwcms.php?do=messages&p=1'>".$BL['be_msg_create']."</a>.";
 	$forward_to_message_center = 1;
 } else { //Mitteilungszusammenstellung
@@ -116,24 +116,24 @@ if($msg_send_ok) {
 <form name="sendmsg" action="phpwcms.php?do=messages&p=1" method="post">
 <table width="538" border="0" cellpadding="0" cellspacing="0" summary="">
 	<tr><td colspan="3" class="title"><?php echo $BL['be_msg_newmsgtitle'] ?></td></tr>
-	<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
-	<tr><td colspan="3"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-	<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
+	<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
+	<tr><td colspan="3"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+	<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
 <?php
 	//Errormeldung wenn Fehler beim Nachrichtenversand
 	if(!empty($msg_err)) {
 ?>
-	<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>
+	<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>
 	<tr><td colspan="3"><strong style="color:#FF6600"><?php echo $BL['be_msg_err'].":<br />".nl2br(chop($msg_err)) ?></strong></td></tr>
-	<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
-	<tr><td colspan="3"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-	<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
+	<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
+	<tr><td colspan="3"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+	<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
 <?php
   } //Ende Fehler Nachrichtenversand
 ?>
 	<tr>
 		<td width="253" class="v09"><?php echo $BL['be_msg_sendto'] ?>:</td>
-        <td width="30"><img src="img/leer.gif" alt="" width="30" height="1"></td>
+        <td width="30"><img src="include/img/leer.gif" alt="" width="30" height="1"></td>
 		<td width="255" class="v09"><?php echo $BL['be_msg_available'] ?>:</td>
 	</tr>
 	<tr valign="top">
@@ -160,7 +160,7 @@ if($msg_send_ok) {
 	} 
 ?>
 		</select></td>
-	<td class="v09"><a href="javascript: opt.transferRight();"><img src="img/icons/trash.gif" alt="" width="15" height="15" border="0"></a><input name="msg_send_receiver" type="hidden" id="msg_send_receiver2"><input name="msg_send_aktion" type="hidden" id="msg_send_aktion" value="1"><input name="msg_send_pid" type="hidden" value="<?php echo intval($msg) ?>"></td>
+	<td class="v09"><a href="javascript: opt.transferRight();"><img src="include/img/icons/trash.gif" alt="" width="15" height="15" border="0"></a><input name="msg_send_receiver" type="hidden" id="msg_send_receiver2"><input name="msg_send_aktion" type="hidden" id="msg_send_aktion" value="1"><input name="msg_send_pid" type="hidden" value="<?php echo intval($msg) ?>"></td>
 	<td class="v09"><select name="msg_send_list" size="10" multiple id="msg_send_list" style="width: 253px" class="f10" onChange="opt.transferLeft()">
 <?php
 	//Create the list of possible recipients
@@ -173,13 +173,13 @@ if($msg_send_ok) {
 ?>
 		</select></td>
 	</tr>
-	<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
+	<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 	<tr><td colspan="3" class="v09"><?php echo $BL['be_msg_subject'] ?>:</td></tr>
 	<tr><td colspan="3"><input name="msg_send_subject" type="text" id="msg_send_subject" style="font-family: Monaco, 'Courier New', Courier, monospace; font-size: 9pt; font-weight: bold; width: 537px" value="<?php echo html_specialchars($msg_subject); ?>" size="40" maxlength="125"></td></tr>
 	<tr><td colspan="3" class="v09"><?php echo $BL['be_msg_msg'] ?>:</td></tr>
 	<tr><td colspan="3"><textarea name="msg_send_msg" cols="40" rows="15" id="msg_send_msg" style="font-family: Monaco, 'Courier New', Courier, monospace; font-size: 9pt; width: 537px"><?php echo html_specialchars($msg_message); ?></textarea></td></tr>
-	<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
-	<tr><td colspan="3"><input name="submit" type="image" id="submit" src="img/button/send_message.gif" alt="<?php echo $BL['be_msg_all'] ?>" width="87" height="17" border="0"></td></tr>
+	<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
+	<tr><td colspan="3"><input name="submit" type="image" id="submit" src="include/img/button/send_message.gif" alt="<?php echo $BL['be_msg_all'] ?>" width="87" height="17" border="0"></td></tr>
 	<tr><td colspan="3">&nbsp;</td></tr>
 </table>
 </form>

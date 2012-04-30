@@ -83,7 +83,7 @@ $_last10_article = _dbQuery($_asql_1);
 		<th>&nbsp;</th>
 	</tr>
 	
-	<tr><td colspan="4" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr><td colspan="4" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <?php
 	$row_count = 0;
@@ -91,18 +91,18 @@ $_last10_article = _dbQuery($_asql_1);
 	foreach($_last10_article as $value) {
 	
 		if($row_count) {
-			echo '<tr><td colspan="4" bgcolor="#D9DEE3"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>'.LF;
+			echo '<tr><td colspan="4" bgcolor="#D9DEE3"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>'.LF;
 		}
 	
 		echo '<tr'.( ($row_count % 2) ? ' bgcolor="#F3F5F8"' : '' ).' class="listrow" style="cursor:pointer" ';
 		echo 'onclick="document.location.href=\'phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;id='.$value['article_id'].'\'" title="'.$BL['be_func_struct_edit'].'">'.LF;
-		echo '	<td style="padding:1px 4px 1px 2px;"><img src="img/symbole/text_1.gif" alt="" /></td>'.LF;
+		echo '	<td style="padding:1px 4px 1px 2px;"><img src="include/img/symbole/text_1.gif" alt="" /></td>'.LF;
 		echo '	<td width="80%"><strong>'.html_specialchars($value['article_title']).'</strong></td>'.LF;
 		echo '	<td align="center" nowrap="nowrap">&nbsp;'.$value['article_date'].'&nbsp;</td>'.LF;
 		echo '	<td style="padding:3px;" nowrap="nowrap">';
-		echo '<img src="img/button/visible_12x13_'.$value["article_aktiv"].'.gif" alt="" border="0" style="margin-right:2px;" />';
+		echo '<img src="include/img/button/visible_12x13_'.$value["article_aktiv"].'.gif" alt="" border="0" style="margin-right:2px;" />';
 		echo '<a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;id='.$value['article_id'];
-		echo '"><img src="img/button/edit_22x13.gif" alt="Edit" border="0" /></a>';
+		echo '"><img src="include/img/button/edit_22x13.gif" alt="Edit" border="0" /></a>';
 		echo '</td>'.LF;
 		echo '</tr>'.LF;
 	
@@ -111,7 +111,7 @@ $_last10_article = _dbQuery($_asql_1);
 	}
 	
 	if($row_count) {
-		echo '<tr><td colspan="4" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>'.LF;
+		echo '<tr><td colspan="4" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>'.LF;
 	}
 
 
@@ -141,7 +141,7 @@ $_last10_article = _dbQuery($_asql_1);
 		<th>&nbsp;</th>
 	</tr>
 	
-	<tr><td colspan="5" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr><td colspan="5" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 	
 
 <?php
@@ -154,14 +154,14 @@ $_last10_article = _dbQuery($_asql_1);
 		}
 	
 		if($row_count) {
-			echo '<tr><td colspan="5" bgcolor="#D9DEE3"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>'.LF;
+			echo '<tr><td colspan="5" bgcolor="#D9DEE3"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>'.LF;
 		}
 	
 		echo '<tr'.( ($row_count % 2) ? ' bgcolor="#F3F5F8"' : '' ).' class="listrow" style="cursor:pointer" ';
 		echo 'onclick="document.location.href=\'phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=2&amp;';
 		echo 'id='.$value['acontent_aid'].'&amp;acid='.$value['acontent_id'].'\'" title="'.$BL['be_func_content_edit'].'">'.LF;
 		
-		echo '	<td style="padding:1px 4px 1px 2px;"><img src="img/symbole/add_content.gif" alt="" /></td>'.LF;
+		echo '	<td style="padding:1px 4px 1px 2px;"><img src="include/img/symbole/add_content.gif" alt="" /></td>'.LF;
 		
 		echo '	<td nowrap="nowrap">'.$wcs_content_type[$value["acontent_type"]];
 		if($value["acontent_type"] == 30) {
@@ -175,10 +175,10 @@ $_last10_article = _dbQuery($_asql_1);
 		echo '	<td align="center" nowrap="nowrap">&nbsp;'.$value['acontent_changed'].'&nbsp;</td>'.LF;
 		
 		echo '	<td style="padding:3px;" nowrap="nowrap">';
-		echo '<img src="img/button/visible_12x13_'.$value["acontent_visible"].'.gif" alt="" border="0" style="margin-right:2px;" />';
+		echo '<img src="include/img/button/visible_12x13_'.$value["acontent_visible"].'.gif" alt="" border="0" style="margin-right:2px;" />';
 		echo '<a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=2&amp;';
 		echo 'id='.$value['acontent_aid'].'&amp;acid='.$value['acontent_id'];
-		echo '"><img src="img/button/edit_22x13.gif" alt="Edit" border="0" /></a>';
+		echo '"><img src="include/img/button/edit_22x13.gif" alt="Edit" border="0" /></a>';
 		echo '</td>'.LF;
 		echo '</tr>'.LF;
 
@@ -187,11 +187,11 @@ $_last10_article = _dbQuery($_asql_1);
 	}
 	
 	if($row_count) {
-		echo '<tr><td colspan="5" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>'.LF;
+		echo '<tr><td colspan="5" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>'.LF;
 	}
 
 
 ?>
-	<tr><td colspan="5"><img src="img/leer.gif" alt="" width="1" height="25" /></td></tr>
+	<tr><td colspan="5"><img src="include/img/leer.gif" alt="" width="1" height="25" /></td></tr>
 </table>
 <?php echo phpwcmsversionCheck(); ?>

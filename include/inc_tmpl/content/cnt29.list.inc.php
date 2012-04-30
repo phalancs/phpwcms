@@ -55,11 +55,11 @@ if(isset($image_list['images']) && is_array($image_list['images']) && count($ima
 
 		if($thumb_image != false) {
 			if($imgx == 4) {
-				$cinfo_img .= '<br /><img src="img/leer.gif" alt="" border="0" width="1" height="2" /><br />';
+				$cinfo_img .= '<br /><img src="include/img/leer.gif" alt="" border="0" width="1" height="2" /><br />';
 				$imgx = 0;
 			}
 			if($imgx) {
-				$cinfo_img .= '<img src="img/leer.gif" alt="" border="0" width="2" height="1" />';
+				$cinfo_img .= '<img src="include/img/leer.gif" alt="" border="0" width="2" height="1" />';
 			}
 			$cinfo_img .= '<img src="'.PHPWCMS_IMAGES . $thumb_image[0] .'" border="0" '.$thumb_image[3].' alt="'.html_specialchars($image_list['images'][$key][1]).'" />';
 			$imgx++;

@@ -28,7 +28,7 @@ if (!defined('PHPWCMS_ROOT')) {
 // ----------------------------------------------------------------
 
 
-$BE['HEADER']['optionselect.js']		= getJavaScriptSourceLink('include/inc_js/optionselect.js');
+$BE['HEADER']['optionselect.js']		= getJavaScriptSourceLink('include/js/optionselect.js');
 
 if(!isset($plugin['data']['shopprod_duplicate'])) {
 	$plugin['data']['shopprod_duplicate'] = 0;
@@ -64,7 +64,7 @@ if(!isset($plugin['data']['shopprod_duplicate'])) {
 		?></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['shopprod_ordernumber'] ?>:&nbsp;</td>
@@ -85,7 +85,7 @@ if(!isset($plugin['data']['shopprod_duplicate'])) {
 			</table></td>
 	</tr>
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>	
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>	
 
 <?php if(SHOP_FELANG_SUPPORT): ?>
 
@@ -100,14 +100,14 @@ if(!isset($plugin['data']['shopprod_duplicate'])) {
 			$lang = strtolower($lang);
 ?>
 		<td><input type="radio" name="shopprod_lang" id="shopprod_lang_<?php echo $lang ?>" value="<?php echo $lang ?>"<?php is_checked(strtolower($plugin['data']['shopprod_lang']), $lang) ?> /></td>
-		<td><label for="shopprod_lang_<?php echo $lang ?>"><img src="img/famfamfam/lang/<?php echo $lang; $lang = strtoupper($lang); ?>.png" alt="<?php echo $lang ?>" title="<?php echo $lang ?>" /></label>&nbsp;&nbsp;</td>
+		<td><label for="shopprod_lang_<?php echo $lang ?>"><img src="include/img/famfamfam/lang/<?php echo $lang; $lang = strtoupper($lang); ?>.png" alt="<?php echo $lang ?>" title="<?php echo $lang ?>" /></label>&nbsp;&nbsp;</td>
 
 <?php	endforeach;	?>
 			</tr>
 		</table></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 
 <?php endif; ?>
 	
@@ -122,14 +122,14 @@ if(!isset($plugin['data']['shopprod_duplicate'])) {
 		?>" value="<?php echo html_specialchars($plugin['data']['shopprod_name1']) ?>" size="30" maxlength="200" /></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['shopprod_name2'] ?>:&nbsp;</td>
 		<td><input name="shopprod_name2" type="text" id="shopprod_name2" class="v12 width400" value="<?php echo html_specialchars($plugin['data']['shopprod_name2']) ?>" size="30" maxlength="200" /></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['shopprod_weight'] ?>:&nbsp;</td>
@@ -158,7 +158,7 @@ if(!isset($plugin['data']['shopprod_duplicate'])) {
 
 	</tr>
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>	
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>	
 	
 	
 	<tr> 
@@ -229,7 +229,7 @@ if(!isset($plugin['data']['shopprod_duplicate'])) {
 	</tr>
 	
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist tdtop4"><?php echo $BLM['shopprod_size'] ?>:&nbsp;</td>
@@ -249,7 +249,7 @@ if(!isset($plugin['data']['shopprod_duplicate'])) {
 	
 	
 
-<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 
 	<tr> 
@@ -307,7 +307,7 @@ if(!isset($plugin['data']['shopprod_duplicate'])) {
 	</tr>
 	
 
-<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr>
 	<td align="right" valign="top" class="chatlist tdtop4"><?php echo $BL['be_cnt_image'] ?>:&nbsp;</td>
@@ -352,11 +352,11 @@ if($img_count) {
 			echo $img_name . '</option>'.LF;
 
 			if($imgx == 4) {
-				$img_thumbs .= '<br /><img src="img/leer.gif" alt="" border="0" width="1" height="2" /><br />';
+				$img_thumbs .= '<br /><img src="include/img/leer.gif" alt="" border="0" width="1" height="2" /><br />';
 				$imgx = 0;
 			}
 			if($imgx) {
-				$img_thumbs .= '<img src="img/leer.gif" alt="" border="0" width="2" height="1" />';
+				$img_thumbs .= '<img src="include/img/leer.gif" alt="" border="0" width="2" height="1" />';
 			}
 			$img_thumbs .= '<img src="'.PHPWCMS_IMAGES . $thumb_image[0] .'" border="0" '.$thumb_image[3].' alt="'.$img_name.'" title="'.$img_name.'" />';
 
@@ -371,11 +371,11 @@ if($img_count) {
 
 ?>
 		  </select></td>
-			      <td valign="top"><img src="img/leer.gif" alt="" width="5" height="1" /></td>
+			      <td valign="top"><img src="include/img/leer.gif" alt="" width="5" height="1" /></td>
 			      <td valign="top">
-				  <a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=5&amp;target=nolist');return false;"><img src="img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a>
-				  <br /><img src="img/leer.gif" alt="" width="1" height="4" /><br /><a href="#" title="<?php echo $BL['be_cnt_sortup'] ?>" onclick="moveOptionUp(img_field);return false;"><img src="img/button/image_pos_up.gif" alt="" width="10" height="9" border="0" /></a><a href="#" title="<?php echo $BL['be_cnt_sortdown'] ?>" onclick="moveOptionDown(img_field);return false;"><img src="img/button/image_pos_down.gif" alt="" width="10" height="9" border="0" /></a>
-				  <br /><img src="img/leer.gif" alt="" width="1" height="4" /><br /><a href="#" onclick="removeSelectedOptions(img_field);return false;" title="<?php echo $BL['be_cnt_delimage'] ?>"><img src="img/button/del_image_button1.gif" alt="" width="20" height="15" border="0" /></a></td>
+				  <a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=5&amp;target=nolist');return false;"><img src="include/img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a>
+				  <br /><img src="include/img/leer.gif" alt="" width="1" height="4" /><br /><a href="#" title="<?php echo $BL['be_cnt_sortup'] ?>" onclick="moveOptionUp(img_field);return false;"><img src="include/img/button/image_pos_up.gif" alt="" width="10" height="9" border="0" /></a><a href="#" title="<?php echo $BL['be_cnt_sortdown'] ?>" onclick="moveOptionDown(img_field);return false;"><img src="include/img/button/image_pos_down.gif" alt="" width="10" height="9" border="0" /></a>
+				  <br /><img src="include/img/leer.gif" alt="" width="1" height="4" /><br /><a href="#" onclick="removeSelectedOptions(img_field);return false;" title="<?php echo $BL['be_cnt_delimage'] ?>"><img src="include/img/button/del_image_button1.gif" alt="" width="20" height="15" border="0" /></a></td>
       </tr>
 		      </table>
 <?php
@@ -397,7 +397,7 @@ if($img_count) {
 		<td valign="top"><textarea name="shopprod_caption" cols="40" rows="<?php echo $img_count+5 ?>" wrap="off" class="f11 width400" id="shopprod_caption"><?php echo implode(' '.LF, $plugin['data']['shopprod_caption']) ?></textarea></td>
 	</tr>
 	
-	<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 
 	<!-- Attachments -->
@@ -433,11 +433,11 @@ if(count($plugin['data']['shopprod_files'])) {
 ?>
 		</select></td>
 	
-		<td valign="top"><img src="img/leer.gif" alt="" width="5" height="1" /></td>
+		<td valign="top"><img src="include/img/leer.gif" alt="" width="5" height="1" /></td>
 		<td valign="top">
-	  	<a href="#" title="<?php echo $BL['be_cnt_openfilebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=9&amp;target=nolist');return false;"><img src="img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a>
-	  	<br /><img src="img/leer.gif" alt="" width="1" height="4" /><br /><a href="#" title="<?php echo $BL['be_cnt_sortup'] ?>" onclick="moveOptionUp(files_field);return false;"><img src="img/button/image_pos_up.gif" alt="" width="10" height="9" border="0" /></a><a href="#" title="<?php echo $BL['be_cnt_sortdown'] ?>" onclick="moveOptionDown(files_field);return false;"><img src="img/button/image_pos_down.gif" alt="" width="10" height="9" border="0" /></a>
-	  	<br /><img src="img/leer.gif" alt="" width="1" height="4" /><br /><a href="#" onclick="removeSelectedOptions(files_field);return false;" title="<?php echo $BL['be_cnt_delfile'] ?>"><img src="img/button/del_image_button1.gif" alt="" width="20" height="15" border="0" /></a></td> 
+	  	<a href="#" title="<?php echo $BL['be_cnt_openfilebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=9&amp;target=nolist');return false;"><img src="include/img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a>
+	  	<br /><img src="include/img/leer.gif" alt="" width="1" height="4" /><br /><a href="#" title="<?php echo $BL['be_cnt_sortup'] ?>" onclick="moveOptionUp(files_field);return false;"><img src="include/img/button/image_pos_up.gif" alt="" width="10" height="9" border="0" /></a><a href="#" title="<?php echo $BL['be_cnt_sortdown'] ?>" onclick="moveOptionDown(files_field);return false;"><img src="include/img/button/image_pos_down.gif" alt="" width="10" height="9" border="0" /></a>
+	  	<br /><img src="include/img/leer.gif" alt="" width="1" height="4" /><br /><a href="#" onclick="removeSelectedOptions(files_field);return false;" title="<?php echo $BL['be_cnt_delfile'] ?>"><img src="include/img/button/del_image_button1.gif" alt="" width="20" height="15" border="0" /></a></td> 
       </tr>
 	</table>
 		</td>
@@ -449,14 +449,14 @@ if(count($plugin['data']['shopprod_files'])) {
 	</tr>
 	<!-- End Attachments -->
 	
-	<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['shopprod_url'] ?>:&nbsp;</td>
 		<td><input name="shopprod_url" type="text" id="shopprod_url" class="v12 width400" value="<?php echo html_specialchars($plugin['data']['shopprod_url']) ?>" size="30" maxlength="250" /></td>
 	</tr>
 
-	<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 	
 	
 	<tr>
@@ -498,7 +498,7 @@ if(count($plugin['data']['shopprod_files'])) {
 		
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 	
 	
 	<tr> 
@@ -507,7 +507,7 @@ if(count($plugin['data']['shopprod_files'])) {
 	</tr>
 	
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="18" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="18" /></td></tr>
 	
 	<tr>
 		<td align="right" class="chatlist tdtop4"><?php echo $BL['be_ftptakeover_status'] ?>:&nbsp;</td>
@@ -529,7 +529,7 @@ if(count($plugin['data']['shopprod_files'])) {
 		</table></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td>
 	</tr>
 	<tr> 
 		<td>&nbsp;</td>

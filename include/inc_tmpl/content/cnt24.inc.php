@@ -67,9 +67,9 @@ $content["alias"]['alias_toplink']	= empty($content["alias"]['alias_toplink']) ?
 </tr>
 </table></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" width="1" height="5" alt=""></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" width="1" height="5" alt=""></td></tr>
 <tr>
-<td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_cnt_setting'] ?>:&nbsp;</td>
+<td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_cnt_setting'] ?>:&nbsp;</td>
 <td valign="top"><table border="0" cellpadding="0" cellspacing="0" summary="">
 <tr>
 	<td><input type="checkbox" name="cablock" id="cablock" value="1" <?php is_checked(1, $content["alias"]['alias_block']); ?>></td>
@@ -88,4 +88,4 @@ $content["alias"]['alias_toplink']	= empty($content["alias"]['alias_toplink']) ?
 	<td><label for="catop">&nbsp;<?php echo $BL['be_cnt_toplink'] ?></label></td>
 </tr>
 </table></td>
-<tr><td colspan="2"><img src="img/leer.gif" width="1" height="5" alt=""></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" width="1" height="5" alt=""></td></tr>

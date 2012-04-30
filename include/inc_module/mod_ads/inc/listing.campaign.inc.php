@@ -119,9 +119,9 @@ if($_SESSION['ads_page'] > $_entry['pages_total']) {
 			<tr>
 				
 				<td><input type="checkbox" name="showactive" id="showactive" value="1" onclick="this.form.submit();"<?php is_checked(1, $_entry['list_active'], 1) ?> /></td>
-				<td><label for="showactive"><img src="img/button/aktiv_12x13_1.gif" alt="" style="margin:1px 1px 0 1px;" /></label></td>
+				<td><label for="showactive"><img src="include/img/button/aktiv_12x13_1.gif" alt="" style="margin:1px 1px 0 1px;" /></label></td>
 				<td><input type="checkbox" name="showinactive" id="showinactive" value="1" onclick="this.form.submit();"<?php is_checked(1, $_entry['list_inactive'], 1) ?> /></td>
-				<td><label for="showinactive"><img src="img/button/aktiv_12x13_0.gif" alt="" style="margin:1px 1px 0 1px;" /></label></td>
+				<td><label for="showinactive"><img src="include/img/button/aktiv_12x13_0.gif" alt="" style="margin:1px 1px 0 1px;" /></label></td>
 
 <?php 
 if($_entry['pages_total'] > 1) {
@@ -130,9 +130,9 @@ if($_entry['pages_total'] > 1) {
 	echo '<td>';
 	if($_SESSION['ads_page'] > 1) {
 		echo '<a href="'.MODULE_HREF.'&amp;listcampaign=1&amp;page='.($_SESSION['ads_page']-1).'">';
-		echo '<img src="img/famfamfam/action_back.gif" alt="" border="0" /></a>';
+		echo '<img src="include/img/famfamfam/action_back.gif" alt="" border="0" /></a>';
 	} else {
-		echo '<img src="img/famfamfam/action_back.gif" alt="" border="0" class="inactive" />';
+		echo '<img src="include/img/famfamfam/action_back.gif" alt="" border="0" class="inactive" />';
 	}
 	echo '</td>';
 	echo '<td><input type="text" name="page" id="page" maxlength="4" size="4" value="'.$_SESSION['ads_page'];
@@ -141,9 +141,9 @@ if($_entry['pages_total'] > 1) {
 	echo '<td>';
 	if($_SESSION['ads_page'] < $_entry['pages_total']) {
 		echo '<a href="'.MODULE_HREF.'&amp;listcampaign=1&amp;page='.($_SESSION['ads_page']+1).'">';
-		echo '<img src="img/famfamfam/action_forward.gif" alt="" border="0" /></a>';
+		echo '<img src="include/img/famfamfam/action_forward.gif" alt="" border="0" /></a>';
 	} else {
-		echo '<img src="img/famfamfam/action_forward.gif" alt="" border="0" class="inactive" />';
+		echo '<img src="include/img/famfamfam/action_forward.gif" alt="" border="0" class="inactive" />';
 	}
 	echo '</td><td class="chatlist">&nbsp;|&nbsp;</td>';
 
@@ -160,7 +160,7 @@ if($_entry['pages_total'] > 1) {
 				}
 				
 				?>" class="textinput" style="margin:0 2px 0 0;width:110px;text-align:left;" title="filter results by username, name or email" /></td>
-				<td><input type="image" name="gofilter" src="img/famfamfam/action_go.gif" style="margin-right:3px;" /></td>
+				<td><input type="image" name="gofilter" src="include/img/famfamfam/action_go.gif" style="margin-right:3px;" /></td>
 			
 			</tr>
 		</table></td>
@@ -207,7 +207,7 @@ $data = _dbQuery($sql);
 foreach($data as $row) {
 
 	echo '<tr'.( ($row_count % 2) ? ' class="adsAltRow"' : '' ).'>'.LF;
-	echo '	<td width="25" style="padding:2px 3px 2px 4px;"><img src="img/famfamfam/transmit.gif" alt="'.$BLM['campaign_entry'].'" /></td>'.LF;
+	echo '	<td width="25" style="padding:2px 3px 2px 4px;"><img src="include/img/famfamfam/transmit.gif" alt="'.$BLM['campaign_entry'].'" /></td>'.LF;
 	echo '	<td width="50%">'.html_specialchars($row["adcampaign_title"])."</td>\n";
 	
 	echo '	<td class="listFormat">'.html_specialchars(date($BLM['list_date_format'], $row["adcampaign_start"]).'&#8211;'.date($BLM['list_date_format'], $row["adcampaign_end"]))."</td>\n";
@@ -217,20 +217,20 @@ foreach($data as $row) {
 	echo '	<td align="right" nowrap="nowrap" class="button_td">';
 	
 	echo '<a href="'.MODULE_HREF.'&amp;campaign=1&amp;edit='.$row["adcampaign_id"].'">';		
-	echo '<img src="img/button/edit_22x13.gif" border="0" alt="" /></a>';
+	echo '<img src="include/img/button/edit_22x13.gif" border="0" alt="" /></a>';
 
 	echo '<a href="'.MODULE_HREF.'&amp;campaign=1&amp;duplicate='.$row["adcampaign_id"].'" ';
 	echo 'title="'.$BLM['duplicate_title'].'" onclick="return confirm(\''.js_singlequote($BLM['duplicate_campaign']).' \n'.js_singlequote($BLM['campaign_title'].': '.html_specialchars('"'.$row["adcampaign_title"].'"')).'\');"';
-	echo '><img src="img/button/copy_13x13.gif" border="0" alt="" /></a>';
+	echo '><img src="include/img/button/copy_13x13.gif" border="0" alt="" /></a>';
 	
 	echo '<a href="'.MODULE_HREF.'&amp;campaign=1&amp;editid='.$row["adcampaign_id"].'&amp;verify=';
 	echo (($row["adcampaign_status"]) ? '0' : '1').'">';		
-	echo '<img src="img/button/aktiv_12x13_'.$row["adcampaign_status"].'.gif" border="0" alt="" /></a>';
+	echo '<img src="include/img/button/aktiv_12x13_'.$row["adcampaign_status"].'.gif" border="0" alt="" /></a>';
 	
 	echo '<a href="'.MODULE_HREF.'&amp;campaign=1&amp;delete='.$row["adcampaign_id"];
 	echo '" title="delete: '.html_specialchars($row["adcampaign_title"]).'"';
 	echo ' onclick="return confirm(\''.$BLM['delete_entry'].js_singlequote($row["adcampaign_title"]).'\');">';
-	echo '<img src="img/button/trash_13x13_1.gif" border="0" alt=""></a>';
+	echo '<img src="include/img/button/trash_13x13_1.gif" border="0" alt=""></a>';
 
 	echo "</td>\n</tr>\n";
 
@@ -239,7 +239,7 @@ foreach($data as $row) {
 
 
 if($row_count) {
-	echo '<tr><td colspan="5" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>';
+	echo '<tr><td colspan="5" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>';
 }
 
 ?>	

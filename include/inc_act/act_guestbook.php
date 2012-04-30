@@ -143,7 +143,7 @@ if($result = mysql_query($sql, $db)) {
 ?>
   <tr bgcolor="#E7E8EB">
     <td><strong><?php echo date('Y-m-d H:i', intval($row['guestbook_created'])).' | IP: <a href="http://www.dnsstuff.com/tools/ptr.ch?ip='.$row['guestbook_ip'].'" target="_blank">'.$row['guestbook_ip'].'</a> | <a href="http://www.dnsstuff.com/tools/whois.ch?ip='.$row['guestbook_ip'].'" target="_blank">WHOIS</a>' ?></strong></td>
-    <td align="right"><a href="act_guestbook.php?<?php echo 'cid='.$row['guestbook_cid'].'&amp;edit='.$row['guestbook_id'] ?>" target="_self"><img src="../../img/button/edit_22x13.gif" width="22" height="13" border="0" alt="edit guestbook entry" /></a><img src="../../img/leer.gif" alt="" width="2" height="1" /><a href="act_guestbook.php?<?php echo 'cid='.$row['guestbook_cid'].'&amp;del='.$row['guestbook_id'] ?>" target="_self" onclick="return confirm('Do you really want to \ndelete this guestbook entry?');"><img src="../../img/button/trash_13x13_1.gif" alt="delete entry" width="13" height="13" border="0" /></a></td>
+    <td align="right"><a href="act_guestbook.php?<?php echo 'cid='.$row['guestbook_cid'].'&amp;edit='.$row['guestbook_id'] ?>" target="_self"><img src="../img/button/edit_22x13.gif" width="22" height="13" border="0" alt="edit guestbook entry" /></a><img src="../img/leer.gif" alt="" width="2" height="1" /><a href="act_guestbook.php?<?php echo 'cid='.$row['guestbook_cid'].'&amp;del='.$row['guestbook_id'] ?>" target="_self" onclick="return confirm('Do you really want to \ndelete this guestbook entry?');"><img src="../img/button/trash_13x13_1.gif" alt="delete entry" width="13" height="13" border="0" /></a></td>
   </tr>
   <tr>
     <td colspan="2"><?php
@@ -162,7 +162,7 @@ if($result = mysql_query($sql, $db)) {
 	?></td>
   </tr>
   <tr>
-    <td colspan="2"><img src="../../img/leer.gif" alt="" width="1" height="1" /></td>
+    <td colspan="2"><img src="../img/leer.gif" alt="" width="1" height="1" /></td>
   </tr>
 <?php
 		$c++;
@@ -173,10 +173,10 @@ if($result = mysql_query($sql, $db)) {
 		while($row = mysql_fetch_assoc($result)) {
 ?>
   <tr bgcolor="#E7E8EB">
-  	<td>[<a href="act_guestbook.php?cid=<?php echo $row['guestbook_cid'] ?>" target="_self">close</a>]<br /><img src="../../img/leer.gif" alt="" width="1" height="2" /></td>
+  	<td>[<a href="act_guestbook.php?cid=<?php echo $row['guestbook_cid'] ?>" target="_self">close</a>]<br /><img src="../img/leer.gif" alt="" width="1" height="2" /></td>
 	<td><strong><?php echo date('Y-m-d H:i', intval($row['guestbook_created'])).' | IP: <a href="http://www.dnsstuff.com/tools/ptr.ch?ip='.$row['guestbook_ip'].'" target="_blank">'.$row['guestbook_ip'].'</a> | <a href="http://www.dnsstuff.com/tools/whois.ch?ip='.$row['guestbook_ip'].'" target="_blank">WHOIS</a>' ?></strong></td>
   </tr>
-  <tr><td colspan="2"><img src="../../img/leer.gif" alt="" width="1" height="1" /></td></tr>
+  <tr><td colspan="2"><img src="../img/leer.gif" alt="" width="1" height="1" /></td></tr>
   <?php
   
   if($gberror) {
@@ -202,17 +202,17 @@ if($result = mysql_query($sql, $db)) {
   <td><input name="gburl" type="text" id="gburl" style="width:350px;" value="<?php echo htmlspecialchars($row['guestbook_url']) ?>" /></td>
   </tr>
   <tr>
-  <td valign="top">msg:<img src="../../img/leer.gif" alt="" width="1" height="15" />&nbsp;</td>
+  <td valign="top">msg:<img src="../img/leer.gif" alt="" width="1" height="15" />&nbsp;</td>
   <td><textarea name="gbmsg" rows="10" id="gbmsg" style="width:350px;"><?php echo htmlspecialchars($row['guestbook_msg']) ?></textarea></td>
   </tr>
   <tr>
-    <td valign="top" class="v10">display:<img src="../../img/leer.gif" alt="" width="1" height="15" />&nbsp;</td>
+    <td valign="top" class="v10">display:<img src="../img/leer.gif" alt="" width="1" height="15" />&nbsp;</td>
     <td><input name="gbshow" type="radio" value="0"<?php is_checked(0, intval($row['guestbook_show']), 1); ?> />
     show email&nbsp;&nbsp;    <input name="gbshow" type="radio" value="1"<?php is_checked(1, intval($row['guestbook_show']), 1); ?> />hide email<br />
      <input type="radio" name="gbshow" value="2"<?php is_checked(2, intval($row['guestbook_show']), 1); ?> />show email as &quot;info at mail dot com&quot;</td>
   </tr>
   <tr>
-  <td><img src="../../img/leer.gif" alt="" width="1" height="30" /><input name="gbcid" type="hidden" value="<?php echo intval($row['guestbook_cid']) ?>" /><input name="gbid" type="hidden" value="<?php echo intval($row['guestbook_id']) ?>" /></td>
+  <td><img src="../img/leer.gif" alt="" width="1" height="30" /><input name="gbcid" type="hidden" value="<?php echo intval($row['guestbook_cid']) ?>" /><input name="gbid" type="hidden" value="<?php echo intval($row['guestbook_id']) ?>" /></td>
   <td valign="bottom">
   	<input name="gbsubmit" type="submit" id="gbsubmit" value="submit changes" style="font-size:10px;" />
     <input name="gbcancel" type="button" id="gbcancel" value="close" style="font-size:10px;" onclick="location.href='act_guestbook.php?cid=<?php echo $row['guestbook_cid'] ?>';" /></td>

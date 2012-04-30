@@ -66,7 +66,7 @@ $map['tmpl_location']	= get_tmpl_section('LOCATION', $map['template']);
 
 $map['map_img'] = '';
 if(file_exists(PHPWCMS_TEMPLATE.'inc_cntpart/map/map_img/'.$map['image'])) {
-	$map['map_img'] .= '<img src="img/mapimage.php?';
+	$map['map_img'] .= '<img src="include/img/mapimage.php?';
 	$map['map_img'] .= 'i='.rawurlencode($map['image']).'&amp;xy='.rawurlencode(implode(',', $map['p']));
 	$map['map_img'] .= '&amp;v='.rawurlencode(($map['tmpl_var']) ? $map['tmpl_var'] : '1,7,7,FFFFFF,FF4000');
 	$map['map_img'] .= '" hspace="0" vspace="0" border="0" alt="" usemap="#locations" />';

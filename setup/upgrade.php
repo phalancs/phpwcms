@@ -45,7 +45,7 @@ require_once (PHPWCMS_ROOT.'/setup/inc/upgrade.func.inc.php');
 <head >
 <title>Upgrade phpwcms</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link href="../include/inc_css/install.css" rel="stylesheet" type="text/css" />
+<link href="../include/css/install.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 <!--
 body {

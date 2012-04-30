@@ -51,7 +51,7 @@ switch($media["media_player"]) {
 }
 $media["media_src"] =  $media["media_id"] ? "INTERNAL SOURCE" : "EXTERNAL SOURCE";
 if($media["media_cnt"]) {
-	$cinfo["media"]  = '<img src="img/symbole/'.$media["media_player"].'" border="0" alt="" align="left" style="margin-right:5px" />';
+	$cinfo["media"]  = '<img src="include/img/symbole/'.$media["media_player"].'" border="0" alt="" align="left" style="margin-right:5px" />';
 	$cinfo["media"] .= ($cinfo[1] || $cinfo[2]) ? '<br />' : '';
 	$cinfo["media"] .= "<strong>".$media["media_src"]."<br />".$media["media_type"]."</strong>";
 }

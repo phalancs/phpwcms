@@ -63,7 +63,7 @@ foreach($data as $row) {
 	echo '<td width="25" style="padding:2px 3px 2px 4px;">';
 	
 	echo '<a href="'.$_controller_link.'&amp;show='.$row["order_id"].'">';
-	echo '<img src="img/famfamfam/cart_go.gif" alt="'.$BLM['shop_order'].'" border="0" />';
+	echo '<img src="include/img/famfamfam/cart_go.gif" alt="'.$BLM['shop_order'].'" border="0" />';
 	echo '</a></td>'.LF;
 
 	echo '<td class="dir" width="13%">';
@@ -71,7 +71,7 @@ foreach($data as $row) {
 	if(SHOP_FELANG_SUPPORT) {
 		$row['order_data']		= @unserialize($row['order_data']);
 		$row['shopprod_lang']	= empty($row['order_data']['lang']) ? '' : html_specialchars(strtolower($row['order_data']['lang']));
-		echo '<img src="img/famfamfam/lang/'.($row['shopprod_lang'] ? $row['shopprod_lang'] : 'all').'.png" alt="'.$row['shopprod_lang'].'" style="position:relative;top:1px;margin:0 3px 0 3px;" />';
+		echo '<img src="include/img/famfamfam/lang/'.($row['shopprod_lang'] ? $row['shopprod_lang'] : 'all').'.png" alt="'.$row['shopprod_lang'].'" style="position:relative;top:1px;margin:0 3px 0 3px;" />';
 	}
 	
 	echo html_specialchars($row['order_number'])."&nbsp;</td>\n";
@@ -89,7 +89,7 @@ foreach($data as $row) {
 		echo '<a href="'.$_controller_link.'&amp;delete='.$row["order_id"];
 		echo '" title="delete: '.html_specialchars($row['order_number']).'"';
 		echo ' onclick="return confirm(\''.$BLM['delete_order'].js_singlequote($row['order_number']).'\');">';
-		echo '<img src="img/button/trash_13x13_1.gif" border="0" alt="" /></a>';
+		echo '<img src="include/img/button/trash_13x13_1.gif" border="0" alt="" /></a>';
 	
 	echo '</td>'.LF;
 	
@@ -99,7 +99,7 @@ foreach($data as $row) {
 }
 
 if($row_count) {
-	echo '<tr><td colspan="8" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>';
+	echo '<tr><td colspan="8" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>';
 }
 
 ?>	

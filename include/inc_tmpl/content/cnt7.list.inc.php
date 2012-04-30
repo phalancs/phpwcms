@@ -68,8 +68,8 @@ if($row["acontent_files"]) {
 				continue;
 			}
 			if($fx) $cinfo_files .= "<br />";
-			$cinfo_files .= "<img src=\"img/icons/small_".extimg($fxb[$key]["fext"])."\" border=\"0\">";
-			$cinfo_files .= "<img src=\"img/leer.gif\" width=\"3\" height=\"1\" border=\"0\">";
+			$cinfo_files .= "<img src=\"include/img/icons/small_".extimg($fxb[$key]["fext"])."\" border=\"0\">";
+			$cinfo_files .= "<img src=\"include/img/leer.gif\" width=\"3\" height=\"1\" border=\"0\">";
 			$cinfo_files .= $fxb[$key]["fname"];
 			$fx++;
 		}

@@ -56,7 +56,7 @@ $sql  = 'SELECT COUNT(*) FROM '.DB_PREPEND.'phpwcms_ads_campaign WHERE adcampaig
 foreach($data as $row) {
 
 	echo '<tr'.( ($row_count % 2) ? ' class="adsAltRow"' : '' ).'>'.LF;
-	echo '	<td width="25" style="padding:2px 3px 2px 4px;"><img src="img/famfamfam/layout.gif" alt="'.$BLM['adplace'].'" /></td>'.LF;
+	echo '	<td width="25" style="padding:2px 3px 2px 4px;"><img src="include/img/famfamfam/layout.gif" alt="'.$BLM['adplace'].'" /></td>'.LF;
 
 	echo '	<td width="50%">'.html_specialchars($row["adplace_title"])."</td>\n";
 	
@@ -68,20 +68,20 @@ foreach($data as $row) {
 	echo '	<td align="right" nowrap="nowrap" class="button_td">';
 	
 	echo '<a href="'.MODULE_HREF.'&amp;adplace=1&amp;edit='.$row["adplace_id"].'">';		
-	echo '<img src="img/button/edit_22x13.gif" border="0" alt="" /></a>';
+	echo '<img src="include/img/button/edit_22x13.gif" border="0" alt="" /></a>';
 	
 	echo '<a href="'.MODULE_HREF.'&amp;adplace=1&amp;editid='.$row["adplace_id"].'&amp;verify=';
 	echo (($row["adplace_status"]) ? '0' : '1').'">';		
-	echo '<img src="img/button/aktiv_12x13_'.$row["adplace_status"].'.gif" border="0" alt="" /></a>';
+	echo '<img src="include/img/button/aktiv_12x13_'.$row["adplace_status"].'.gif" border="0" alt="" /></a>';
 	
 	// check if campaign for place is available - then it's not possible t delete place
 	if(_dbQuery($sql.$row['adplace_id'], 'COUNT')) {
-		echo '<img src="img/button/trash_13x13_1.gif" border="0" alt="" class="inactive" />';
+		echo '<img src="include/img/button/trash_13x13_1.gif" border="0" alt="" class="inactive" />';
 	} else {
 		echo '<a href="'.MODULE_HREF.'&amp;adplace=1&amp;delete='.$row["adplace_id"];
 		echo '" title="delete: '.html_specialchars($row["adplace_title"]).'"';
 		echo ' onclick="return confirm(\''.$BLM['delete_adplace'].js_singlequote($row["adplace_title"]).'\');">';
-		echo '<img src="img/button/trash_13x13_1.gif" border="0" alt="" /></a>';
+		echo '<img src="include/img/button/trash_13x13_1.gif" border="0" alt="" /></a>';
 	}
 
 	echo "</td>\n</tr>\n";
@@ -91,7 +91,7 @@ foreach($data as $row) {
 
 
 if($row_count) {
-	echo '<tr><td colspan="6" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>';
+	echo '<tr><td colspan="6" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>';
 }
 
 ?>	

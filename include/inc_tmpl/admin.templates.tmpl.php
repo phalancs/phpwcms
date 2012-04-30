@@ -39,9 +39,9 @@ if(!isset($_GET["s"])) {
 ?>
 <table width="538" border="0" cellpadding="0" cellspacing="0" summary="">
 	<tr><td colspan="3" class="title"><?php echo $BL['be_admin_tmpl_title'] ?></td></tr>
-	<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="6" /></td>
+	<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td>
 	</tr>
-	<tr><td colspan="3" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1" /></td>
+	<tr><td colspan="3" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td>
 	</tr>
 <?php
 // loop listing available templates 
@@ -53,34 +53,34 @@ if($result = mysql_query($sql, $db) or die("error while listing templates")) {
 		$edit_link = 'do=admin&amp;p=11&amp;s='.$row["template_id"].'&amp;t='.$row["template_type"];
 	
 		echo "<tr".( ($row_count % 2) ? " bgcolor=\"#F3F5F8\"" : "" ).">\n<td width=\"28\">"; //#F9FAFB
-		echo '<img src="img/symbole/template_list_icon.gif" width="28" height="18"></td>'."\n";
+		echo '<img src="include/img/symbole/template_list_icon.gif" width="28" height="18"></td>'."\n";
 		echo '<td width="470" class="dir"><a href="phpwcms.php?'.$edit_link;
 		echo '"><strong>'.html_specialchars($row["template_name"])."</strong>";
 		echo ($row["template_default"]) ? " (".$BL['be_admin_tmpl_default'].")" : "";
 		echo "</a></td>\n".'<td width="60" align="right">';
 		echo '<a href="phpwcms.php?'.$edit_link;
-		echo '"><img src="img/button/edit_22x11.gif" width="22" height="11" border="0"></a>';
-		echo '<img src="img/leer.gif" width="2" height="1">';
+		echo '"><img src="include/img/button/edit_22x11.gif" width="22" height="11" border="0"></a>';
+		echo '<img src="include/img/leer.gif" width="2" height="1">';
 
                // ERICH COPY TEMPLATE 7.6.2005
 		echo '<a href="phpwcms.php?'.$edit_link.'&amp;c=1'; // c=1 -> do copy
-		echo '" title="copy template"><img src="img/button/copy_11x11_0.gif" width="11" height="11" border="0"></a>';
-		echo '<img src="img/leer.gif" width="2" height="1">';
+		echo '" title="copy template"><img src="include/img/button/copy_11x11_0.gif" width="11" height="11" border="0"></a>';
+		echo '<img src="include/img/leer.gif" width="2" height="1">';
                 // ERICH COPY TEMPLATE END 7.6.2005
 
 		echo '<a href="include/inc_act/act_frontendsetup.php?do=2|'.$row["template_id"].'" ';
 		echo 'title="delete template: '.html_specialchars($row["template_name"]).'">';
-		echo '<img src="img/button/del_11x11.gif" width="11" height="11" border="0"></a>';
-		echo '<img src="img/leer.gif" width="2" height="1">'."</td>\n</tr>\n";
+		echo '<img src="include/img/button/del_11x11.gif" width="11" height="11" border="0"></a>';
+		echo '<img src="include/img/leer.gif" width="2" height="1">'."</td>\n</tr>\n";
 		$row_count++;
 	}
 	mysql_free_result($result);
 } // end listing
 		
 ?>
-	<tr><td colspan="3" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1" /></td>
+	<tr><td colspan="3" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td>
 	</tr>
-	<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="8" /></td>
+	<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td>
 	</tr>
 	<tr><td colspan="3"><form action="phpwcms.php?do=admin&amp;p=11&amp;s=0" method="post">
 	  <input type="submit" value="<?php echo $BL['be_admin_tmpl_add'] ?>" class="button10" title="<?php echo $BL['be_admin_tmpl_add'] ?>" />
@@ -223,9 +223,9 @@ function doPageLayoutChange() {
 	
 	<tr><td colspan="2" class="title"><?php echo (empty($createcopy) ? $BL['be_admin_tmpl_edit'] : $BL['be_admin_tmpl_copy']) ?>: <?php echo ($template["id"]) ? html_specialchars($template["name"]) : $BL['be_admin_tmpl_new']; ?>
 	    <input type="hidden" name="c" value="<?php echo $createcopy; ?>" /></td></tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td>
 	</tr>
-	<tr bgcolor="#E6EAED"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td>
+	<tr bgcolor="#E6EAED"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td>
 	</tr>
 	<tr bgcolor="#E6EAED">
 		<td align="right" class="chatlist"><?php echo $BL['be_admin_tmpl_name'] ?>:&nbsp;</td>
@@ -236,7 +236,7 @@ function doPageLayoutChange() {
 if(empty($createcopy)) {
 	echo '<input name="template_name" type="text" class="f11b width350" id="template_name" value="'.html_specialchars($template["name"]).'" size="50" maxlength="150">';
 } else {    
-	echo '<img src="img/symbole/achtung.gif" width="13" height="11" alt="" border="0" style="margin-right:2px;" /><input name="template_name" type="text" class="f11b width350" id="template_name" style="color:FF3300" value="'.html_specialchars($template["name"]).'_'.randpassword(2).'" size="50" maxlength="150">';
+	echo '<img src="include/img/symbole/achtung.gif" width="13" height="11" alt="" border="0" style="margin-right:2px;" /><input name="template_name" type="text" class="f11b width350" id="template_name" style="color:FF3300" value="'.html_specialchars($template["name"]).'_'.randpassword(2).'" size="50" maxlength="150">';
 }
 ?></td>
 		    <td>&nbsp;</td>
@@ -245,7 +245,7 @@ if(empty($createcopy)) {
 	      </tr>
 		  </table></td>
 	</tr>
-	<tr bgcolor="#E6EAED"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	<tr bgcolor="#E6EAED"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	<tr bgcolor="#E6EAED">
 		<td align="right" class="chatlist"><?php echo $BL['be_admin_tmpl_layout'] ?>:&nbsp;</td>
 		<td><?php
@@ -286,7 +286,7 @@ if($opt) {
 	</tr>
 
 	
-	<tr bgcolor="#E6EAED"><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr bgcolor="#E6EAED"><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 	<tr bgcolor="#E6EAED">
 		<td>&nbsp;</td>
@@ -316,13 +316,13 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	</tr>
 
 
-	<tr bgcolor="#E6EAED"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+	<tr bgcolor="#E6EAED"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 	
 	
 	<tr bgcolor="#F3F5F8">
-		<td align="right" class="chatlist" valign="top"><?php echo $BL['be_admin_tmpl_css'] ?>:<img src="img/leer.gif" alt="" width="4" height="14" /></td>
+		<td align="right" class="chatlist" valign="top"><?php echo $BL['be_admin_tmpl_css'] ?>:<img src="include/img/leer.gif" alt="" width="4" height="14" /></td>
 		<td><table border="0" cellpadding="0" cellspacing="0" summary="">
 			<tr>
 			<td valign="top"><select name="template_css[]" size="6" multiple="multiple" class="code" id="template_css">
@@ -364,22 +364,22 @@ foreach($unselected_css as $value) {
 		    </select></td>
 		  
 		  <td valign="top" align="center">
-		<img src="img/button/list_pos_up.gif" alt="" width="15" height="15" border="0" onclick="moveOptionUp(document.blocks.template_css);" /><br />
-		<img src="img/leer.gif" width="23" height="3" alt="" /><br />
-		<img src="img/button/list_pos_down.gif" alt="" width="15" height="15" border="0" onclick="moveOptionDown(document.blocks.template_css);" /></td>
+		<img src="include/img/button/list_pos_up.gif" alt="" width="15" height="15" border="0" onclick="moveOptionUp(document.blocks.template_css);" /><br />
+		<img src="include/img/leer.gif" width="23" height="3" alt="" /><br />
+		<img src="include/img/button/list_pos_down.gif" alt="" width="15" height="15" border="0" onclick="moveOptionDown(document.blocks.template_css);" /></td>
 		  <td valign="top">&nbsp;</td>
 		  
 		  </tr>
 		  </table></td>
 	</tr>
 
-	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4" /></td></tr>
+	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
 	
 	<tr bgcolor="#F3F5F8">
 		<td align="right" valign="top" class="chatlist tdtop4"><?php echo $BL['be_admin_tmpl_head'] ?>:&nbsp;<br />&lt;head&gt; &nbsp;</td>
 		<td><textarea name="template_htmlhead" cols="35" rows="5" class="code width440" id="template_htmlhead"><?php echo html_entities($template["htmlhead"]); ?></textarea></td>
 	</tr>
-	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	
 	
 	<tr bgcolor="#F3F5F8">
@@ -408,7 +408,7 @@ foreach($phpwcms['js_lib'] as $key => $value) {
 	</table></td>
 	</tr>
 	
-	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	
 	<tr bgcolor="#F3F5F8">
       <td align="right" class="chatlist">&nbsp;</td>
@@ -422,7 +422,7 @@ foreach($phpwcms['js_lib'] as $key => $value) {
 	</tr>	
 	
 	
-	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	
 	<tr bgcolor="#F3F5F8">
       <td align="right" class="chatlist"><?php echo $BL['be_admin_tmpl_js'] ?>:&nbsp;</td>
@@ -430,16 +430,16 @@ foreach($phpwcms['js_lib'] as $key => $value) {
 	</tr>
 	
 	
-	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	
 	
 	<tr bgcolor="#F3F5F8">
       <td align="right" class="chatlist" nowrap="nowrap">&nbsp;<?php echo $BL['be_fe_login_url'] ?>:&nbsp;</td>
       <td><input name="template_felogin_url" type="text" class="code width440" id="template_felogin_url" value="<?php echo empty($template["feloginurl"]) ? '' : html_entities($template["feloginurl"]) ?>" size="50" /></td>
 	</tr>
-	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td>
+	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
 	
 	<tr>
 		<td>&nbsp;</td>
@@ -449,47 +449,47 @@ foreach($phpwcms['js_lib'] as $key => $value) {
 			<input type="button" class="button10" value="<?php echo $BL['be_admin_struct_close'] ?>" onclick="location.href='phpwcms.php?do=admin&amp;p=11';" />
 		</td>
 	</tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td>
 	</tr>
 	<tr>
 		<td align="right" valign="top" class="chatlist tdtop4"><?php echo $BL['be_admin_page_header'] ?>:&nbsp;</td>
 		<td><textarea name="template_block_header" cols="35" rows="8" class="code width440" id="template_block_header"><?php echo html_entities($template["headertext"]); ?></textarea></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td>
 	</tr>
 	<tr>
 		<td align="right" valign="top" class="chatlist tdtop4"><?php echo $BL['be_admin_page_main'] ?>:&nbsp;</td>
 		<td><textarea name="template_block_main" cols="35" rows="20" class="code width440" id="template_block_main"><?php echo html_entities($template["maintext"]); ?></textarea></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td>
 	</tr>
 	<tr>
 		<td align="right" valign="top" class="chatlist tdtop4"><?php echo $BL['be_admin_page_footer'] ?>:&nbsp;</td>
 		<td><textarea name="template_block_footer" cols="35" rows="8" class="code width440" id="template_block_footer"><?php echo html_entities($template["footertext"]); ?></textarea></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td>
 	</tr>
 	<tr>
 		<td align="right" valign="top" class="chatlist tdtop4"><?php echo $BL['be_admin_page_left'] ?>:&nbsp;</td>
 		<td><textarea name="template_block_left" cols="35" rows="8" class="code" id="template_block_left" style="width:440px"><?php echo html_entities($template["lefttext"]); ?></textarea></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td>
 	</tr>
 	<tr>
 		<td align="right" valign="top" class="chatlist tdtop4"><?php echo $BL['be_admin_page_right'] ?>:&nbsp;</td>
 		<td><textarea name="template_block_right" cols="35" rows="8" class="code width440" id="template_block_right"><?php echo html_entities($template["righttext"]); ?></textarea></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td>
 	</tr>
 	
 <?php	
 if(!empty($jsOnChange))  {
 
-	echo '<tr><td colspan="2"><img src="img/leer.gif" width="1" height="5" alt="" /></td></tr>';
-	echo '<tr><td colspan="2"><img src="img/lines/l538_70.gif" width="538" height="1" alt="" /></td></tr>';	
-	echo '<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" width="1" height="8" alt="" />';
+	echo '<tr><td colspan="2"><img src="include/img/leer.gif" width="1" height="5" alt="" /></td></tr>';
+	echo '<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" width="538" height="1" alt="" /></td></tr>';	
+	echo '<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" width="1" height="8" alt="" />';
 	echo '<input type="hidden" name="customblock" value="'.html_specialchars(implode(',', $custom_blocks)).'" />';
 	echo "</td></tr>\n";
 	// list custom blocks	
@@ -497,20 +497,20 @@ if(!empty($jsOnChange))  {
 	
 		$custom_block = html_specialchars($value);
 		
-		echo '<tr bgcolor="#F3F5F8"><td><img src="img/leer.gif" width="1" height="14" alt="" /></td>';
+		echo '<tr bgcolor="#F3F5F8"><td><img src="include/img/leer.gif" width="1" height="14" alt="" /></td>';
 		echo '<td class="chatlist" valign="top">'.$custom_block." {".$custom_block."}</td>\n</tr>\n";
 		echo '<tr bgcolor="#F3F5F8"><td>&nbsp;</td>';
 		echo '<td><textarea name="template_customblock_'.$custom_block;
 		echo '" cols="35" rows="8" class="code width440">';
 		echo isset($template['customblock_'.$value]) ? html_entities($template['customblock_'.$value]) : '';
 		echo "</textarea></td>\n</tr>\n";
-		echo '<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" width="1" height="3" alt="" /></td></tr>'."\n";
+		echo '<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" width="1" height="3" alt="" /></td></tr>'."\n";
 
 	}
 	
-	echo '<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" width="1" height="5" alt="" /></td></tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" width="538" height="1" alt="" /></td></tr>
-	<tr><td colspan="2"><img src="img/leer.gif" width="1" height="8" alt="" /></td></tr>';
+	echo '<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" width="1" height="5" alt="" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" width="538" height="1" alt="" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" width="1" height="8" alt="" /></td></tr>';
 	
 } 
 ?>
@@ -519,7 +519,7 @@ if(!empty($jsOnChange))  {
       <td><textarea name="template_block_error" cols="35" rows="5" class="code width440" id="template_block_error"><?php echo html_entities($template["errortext"]); ?></textarea></td>
 	</tr>
 	
-	<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 	
 	<tr>
 		<td>&nbsp;<input name="template_id" type="hidden" value="<?php echo $template["id"] ?>" /></td>

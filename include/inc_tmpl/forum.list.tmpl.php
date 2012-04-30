@@ -39,8 +39,8 @@ if(!isset($_GET["s"])) {
 // check if subscription should be edited
 ?><table width="538" border="0" cellpadding="0" cellspacing="0" summary="">
 	<tr><td colspan="3" class="title"><?php echo $BL['be_subnav_msg_forum'] ?></td></tr>
-	<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="4"></td></tr>
-	<tr><td colspan="3" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>
+	<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="4"></td></tr>
+	<tr><td colspan="3" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>
 <?php
 // loop listing available subscriptions                                           
 $sql = "SELECT * FROM ".DB_PREPEND."phpwcms_forum WHERE forum_entry=0 AND forum_deleted=0 ORDER BY forum_changed DESC;";
@@ -48,25 +48,25 @@ if($result = mysql_query($sql, $db) or die("error while listing forums")) {
 	while($row = mysql_fetch_assoc($result)) {
 	
 		echo "<tr".( ($row_count % 2) ? " bgcolor=\"#F3F5F8\"" : "" ).">\n<td width=\"25\">";
-		echo '<img src="img/symbols/icon_minicategory1.gif" width="14" height="14" alt="" style="margin:4px;margin-left:5px;"></td>'."\n";
+		echo '<img src="include/img/symbols/icon_minicategory1.gif" width="14" height="14" alt="" style="margin:4px;margin-left:5px;"></td>'."\n";
 		echo '<td width="473" class="dir"><a href="phpwcms.php?';
 		$tempQuery = build_QueryString('&amp;', 'do=messages', 'p=6', 's='.$row["forum_id"]);
 		echo $tempQuery;
 		echo '"><strong>'.html_specialchars($row["forum_title"])."</strong></a></td>\n".'<td width="40" align="right">';
 		echo '<a href="phpwcms.php?';
 		echo $tempQuery;
-		echo '"><img src="img/button/edit_22x11.gif" width="22" height="11" border="0"></a>';
-		echo '<img src="img/leer.gif" width="2" height="1">';
-		echo '<img src="img/button/del_11x11.gif" width="11" height="11">';
-		echo '<img src="img/leer.gif" width="2" height="1">'."</td>\n</tr>\n";
+		echo '"><img src="include/img/button/edit_22x11.gif" width="22" height="11" border="0"></a>';
+		echo '<img src="include/img/leer.gif" width="2" height="1">';
+		echo '<img src="include/img/button/del_11x11.gif" width="11" height="11">';
+		echo '<img src="include/img/leer.gif" width="2" height="1">'."</td>\n</tr>\n";
 		$row_count++;
 	}
 	mysql_free_result($result);
 } // end listing
 		
 ?>
-	<tr><td colspan="3" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>
-	<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="8"></td>
+	<tr><td colspan="3" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>
+	<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="8"></td>
 	</tr>
 	<tr><td colspan="3"><form action="phpwcms.php?do=messages&amp;p=6&amp;s=0" method="post"><input name="addforum" type="submit" class="button10" value="<?php echo $BL['be_forum_add'] ?>"></form></td>
 	</tr>
@@ -133,28 +133,28 @@ if($result = mysql_query($sql, $db) or die("error while listing forums")) {
 	  <td colspan="2" class="title"><?php echo  $BL['be_forum_titleedit'].": ".( $forum["id"] ? $forum["title"] : $BL['be_newsletter_new']); ?></td>
 	</tr>
 	<tr>
-		<td width="73"><img src="img/leer.gif" alt="" width="73" height="6"></td>
-		<td width="465"><img src="img/leer.gif" alt="" width="1" height="1"></td>
+		<td width="73"><img src="include/img/leer.gif" alt="" width="73" height="6"></td>
+		<td width="465"><img src="include/img/leer.gif" alt="" width="1" height="1"></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-	<tr bgcolor="#E6EAED"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="12"></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+	<tr bgcolor="#E6EAED"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="12"></td></tr>
 	<tr bgcolor="#E6EAED">
 		<td align="right" class="chatlist">&nbsp;<?php echo  $BL['be_forum_title'] ?>:&nbsp;</td>
 		<td><input name="forum_title" type="text" class="f11b" id="forum_title" style="width:440px" value="<?php echo $forum["title"] ?>" size="50" maxlength="250"></td>
 	</tr>
-	<tr bgcolor="#E6EAED"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5"></td></tr>
+	<tr bgcolor="#E6EAED"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>
 	<tr bgcolor="#E6EAED">
-		<td align="right" valign="top" bgcolor="#E6EAED" class="chatlist"><img src="img/leer.gif" alt="" width="5" height="16"><?php echo  $BL['be_cnt_description'] ?>:&nbsp;</td>
+		<td align="right" valign="top" bgcolor="#E6EAED" class="chatlist"><img src="include/img/leer.gif" alt="" width="5" height="16"><?php echo  $BL['be_cnt_description'] ?>:&nbsp;</td>
 		<td><textarea name="forum_text" cols="35" rows="6" class="f11" id="forum_text" style="width:440px"><?php echo $forum["text"]; ?></textarea></td>
 	</tr>
-	<tr bgcolor="#E6EAED"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8"></td></tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15"></td></tr>
+	<tr bgcolor="#E6EAED"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8"></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15"></td></tr>
 	<tr>
 		<td>&nbsp;<input name="forum_id" type="hidden" value="<?php echo $forum["id"] ?>"></td>
 		<td><input name="Submit" type="submit" class="button10" value="<?php echo $BL['be_save_btn'] ?>">&nbsp;&nbsp;<input type="button" class="button10" value="<?php echo $BL['be_newsletter_button_cancel'] ?>" onclick="location.href='phpwcms.php?do=messages&p=6';"></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15"></td></tr>
 </table>
 </form>
 <?php	

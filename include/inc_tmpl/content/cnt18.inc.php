@@ -31,8 +31,8 @@ if (!defined('PHPWCMS_ROOT')) {
 //guestbook/comments
 
 ?>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 
 
 <tr>
@@ -53,7 +53,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 ?>				  
 		</select></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 <tr>
   <td align="right" class="chatlist"><?php echo $BL['be_alias_ID'] ?>:&nbsp;</td>
   <td><table border="0" cellpadding="0" cellspacing="0" summary="">
@@ -99,9 +99,9 @@ if(is_array($tmpllist) && count($tmpllist)) {
 
 
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 
 
 <tr>
@@ -121,14 +121,14 @@ if(is_array($tmpllist) && count($tmpllist)) {
         <td class="v10" bgcolor="#E7E8EB"><label for="cguestbook_listing1"><?php echo $BL['be_cnt_guestbook_list'] ?>&nbsp;</label></td>
         <td bgcolor="#E7E8EB"><input name="cguestbook_listcount" type="text" class="f11b" id="cguestbook_listcount" style="width: 40px;" size="10" maxlength="10" onkeyup="if(!parseInt(this.value*1))this.value='';" value="<?php echo  isset($content["guestbook"]["listcount"]) ? $content["guestbook"]["listcount"] : '' ?>" /></td>
         <td class="v10" bgcolor="#E7E8EB">&nbsp;<?php echo $BL['be_cnt_guestbook_perpage'] ?>&nbsp;</td>
-        <td><img src="img/leer.gif" alt="" width="1" height="22" /></td>		
+        <td><img src="include/img/leer.gif" alt="" width="1" height="22" /></td>		
       </tr>
     </table></td>
 </tr>
 
 
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 
 
@@ -152,7 +152,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	   <td class="v10"><label for="cguestbook_login_show">&nbsp;<?php echo $BL['be_gb_show_login'] ?>&nbsp;&nbsp;</label></td>
 	 </tr>
 	 
-	 <tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2" /></td></tr>
+	 <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td></tr>
 	 
 	 <tr bgcolor="#E7E8EB">
 	   <td><input name="cguestbook_login_post" id="cguestbook_login_post" type="checkbox" value="1" <?php is_checked(1, $content["guestbook"]["gb_login_post"]); ?> /></td>
@@ -165,7 +165,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 
 
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 <tr>
   <td align="right" class="chatlist"><?php echo $BL['be_cnt_imgupload'] ?>:&nbsp;</td>
@@ -194,12 +194,12 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	   <td class="chatlist">&nbsp;&nbsp;<?php echo $BL['be_cnt_filesize'] ?>:&nbsp;</td>
 	   <td ><input name="cguestbook_maximgsize" type="text" class="f11b" id="cguestbook_maximgsize" style="width: 100px;" size="20" maxlength="20" value="<?php echo $content["guestbook"]["max_image_filesize"] ?>" /></td>
 	   <td class="chatlist">&nbsp;(<?php echo return_bytes($content["guestbook"]["max_image_filesize"]) ?> Byte)</td>
-	   <td><img src="img/leer.gif" alt="" width="1" height="22" /></td>	
+	   <td><img src="include/img/leer.gif" alt="" width="1" height="22" /></td>	
 	  </tr>
 	  </table></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 <tr>
   <td align="right" class="chatlist"><?php echo $BL['be_cnt_sorting'] ?>:&nbsp;</td>
@@ -216,13 +216,13 @@ if(is_array($tmpllist) && count($tmpllist)) {
         <td class="v10"><label for="cguestbook_sorting0"><?php echo $BL['be_msg_date'].' '.$BL['be_admin_struct_orderdesc'] ?></label>&nbsp;</td>
         <td><input name="cguestbook_sorting" id="cguestbook_sorting1" type="radio" value="1" <?php is_checked(1, $content["guestbook"]["sorting"]); ?> /></td>
         <td class="v10"><label for="cguestbook_sorting1"><?php echo $BL['be_msg_date'].' '.$BL['be_admin_struct_orderasc'] ?></label>&nbsp;</td>
-        <td><img src="img/leer.gif" alt="" width="1" height="22" /></td>
+        <td><img src="include/img/leer.gif" alt="" width="1" height="22" /></td>
       </tr>
     </table></td>
 </tr>
 
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 
 <tr>
@@ -246,13 +246,13 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	   <td class="chatlist">&nbsp;&nbsp;<?php echo $BL['be_cnt_captchalength'] ?>:&nbsp;</td>
 	   <td><input name="cguestbook_captchamaxchar" type="text" class="f11b" id="cguestbook_captchamaxchar" style="width: 25px;" size="3" maxlength="2" value="<?php echo $content["guestbook"]["captcha_maxchar"] ?>" /></td>
 	   <td class="chatlist">&nbsp;<?php echo $BL['be_cnt_chars'] ?></td>
-	   <td><img src="img/leer.gif" alt="" width="1" height="22" /></td>	
+	   <td><img src="include/img/leer.gif" alt="" width="1" height="22" /></td>	
 	  </tr>
 	  </table></td>
 </tr>
 
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 
 <tr>
@@ -274,15 +274,15 @@ if(is_array($tmpllist) && count($tmpllist)) {
 
 
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 
 
 <tr>
-  <td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="13" /><?php echo $BL['be_cnt_guestbook_banned'] ?>:&nbsp;</td>
+  <td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="13" /><?php echo $BL['be_cnt_guestbook_banned'] ?>:&nbsp;</td>
   <td valign="top"><textarea name="cguestbook_banned" cols="40" rows="3" class="f11" style="width:440px"><?php echo  isset($content["guestbook"]["banned"]) ? html_specialchars($content["guestbook"]["banned"]) : '' ?></textarea></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td>
 </tr>
 <tr>
   <td align="right" class="chatlist"><?php echo $BL['be_cnt_guestbook_flooding'] ?>:&nbsp;</td>
@@ -305,11 +305,11 @@ if(is_array($tmpllist) && count($tmpllist)) {
 		
 		?>" /></td>
 	    <td class="v10">&nbsp;<?php echo $BL['be_cnt_guestbook_seconds'] ?></td>
-	    <td><img src="img/leer.gif" alt="" width="10" height="22" /></td>
+	    <td><img src="include/img/leer.gif" alt="" width="10" height="22" /></td>
       </tr>
 	</table></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 <?php
 
 if(!isset($content["guestbook"]["notify"])) {
@@ -338,16 +338,16 @@ if(!isset($content["guestbook"]["notify_email"])) {
 // if content part is created
 if($content["id"]) {
 ?>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
 <tr>
-  <td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="15" /><?php echo $BL['be_cnt_guestbook_edit'] ?>:&nbsp;</td>
+  <td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="15" /><?php echo $BL['be_cnt_guestbook_edit'] ?>:&nbsp;</td>
   <td><iframe height="350" width="440" frameborder="0" scrolling="Auto" src="include/inc_act/act_guestbook.php?cid=<?php echo empty($content["guestbook"]["aliasID"]) ? $content["id"] : $content["guestbook"]["aliasID"]; ?>"></iframe></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4" /></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
 
 <?php
 }

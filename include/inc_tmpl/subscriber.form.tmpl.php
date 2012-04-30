@@ -37,7 +37,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		<td class="v10"><?php echo html_specialchars($_userInfo['subscriber_data']['address_tstamp']) ?></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td>
 	</tr>
 
 	<tr> 
@@ -50,7 +50,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		?>" style="width:300px;" value="<?php echo html_specialchars($_userInfo['subscriber_data']['address_email']) ?>" size="30" /></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2" /></td>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td>
 	</tr>
 	
 	<tr> 
@@ -58,7 +58,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		<td><input name="subscribe_name" type="text" id="subscribe_name" class="f11b" style="width:300px;" value="<?php echo html_specialchars($_userInfo['subscriber_data']['address_name']) ?>" size="30" /></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr>
 		<td align="right" class="chatlist" valign="top" style="padding-top: 4px;"><?php 
@@ -109,7 +109,7 @@ if (!defined('PHPWCMS_ROOT')) {
 	
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr>
 		<td align="right" class="chatlist"><?php echo $BL['be_ftptakeover_status'] ?>:&nbsp;</td>
@@ -121,7 +121,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		</table></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td>
 	</tr>
 	<tr> 
 		<td>&nbsp;</td>

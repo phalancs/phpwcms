@@ -43,7 +43,7 @@ if(!isset($content['rssfeed'])) {
 
 ?>
 
-<tr><td colspan="2" class="rowspacer0x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer0x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
  
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_admin_struct_template'] ?>:&nbsp;</td>
@@ -66,15 +66,15 @@ if(is_array($tmpllist) && count($tmpllist)) {
   
 ?>				  
 	  </select></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10"></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="7"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10"></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="7"></td></tr>
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_cnt_rssfeed_url'] ?>:&nbsp;</td>
 	<td valign="top"><input name="crss_url" type="text" id="crss_url" class="f11b" style="width:440px" value="<?php echo html_specialchars($content['rssfeed']["rssurl"]) ?>" size="40"></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>
 
 <tr>
   <td align="right" class="chatlist"><?php echo  $BL['be_cnt_rssfeed_item'] ?>:&nbsp;</td>
@@ -107,13 +107,13 @@ if(empty($content["rssfeed"]['content_type'])) {
 	<td class="chatlist"><label for="crss_cut1st"><?php echo  $BL['be_cnt_rssfeed_cut'] ?></label>:&nbsp;</td>
 	<td bgcolor="#E7E8EB"><input name="crss_cut1st" type="checkbox" id="crss_cut1st" value="1"<?php echo  is_checked(1, $content['rssfeed']["cut1st"]) ?>></td>
 	
-	<td bgcolor="#E7E8EB"><img src="img/leer.gif" alt="" width="1" height="1"></td>
+	<td bgcolor="#E7E8EB"><img src="include/img/leer.gif" alt="" width="1" height="1"></td>
 	//-->
 	</tr>
 	</table></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>
 
 <tr>
   <td align="right" class="chatlist"><?php echo  $BL['be_cache'] ?>:&nbsp;</td>
@@ -144,4 +144,4 @@ echo '<option value="2592000"'.is_selected($content['rssfeed']["timeout"], '2592
 	</table></td>
 </tr>
 
-<tr><td colspan="2" class="rowspacer7x0"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x0"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>

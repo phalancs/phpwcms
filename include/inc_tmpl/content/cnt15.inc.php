@@ -72,7 +72,7 @@ if(empty($content["alist"]["label"])) {
 
 
 ?>
-<tr><td colspan="2" class="rowspacer0x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer0x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 <tr>
 <td align="right" valign="top" class="chatlist tdtop3"><?php echo $BL['be_cnt_sitelevel'] ?>:&nbsp;</td>
 <td valign="top"><table border="0" cellpadding="0" cellspacing="0" summary="">
@@ -94,7 +94,7 @@ if(empty($content["alist"]["label"])) {
 </table></td>
 </tr>
 
-<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr>
 <td class="chatlist tdtop4" align="right" valign="top"><?php echo $BL['be_show_content'] ?>:&nbsp;</td>
@@ -199,5 +199,5 @@ if(empty($content["alist"]["label"])) {
 	</td>
 </tr>
 
-<tr><td colspan="2" class="rowspacer7x0"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x0"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 

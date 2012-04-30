@@ -103,8 +103,8 @@ if(empty($content['article']['acat_id'])) { // Root structure
 	
 	
 	?></td></tr>
-	<tr><td colspan="2" class="rowspacer5x0"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
-	<tr bgcolor="#D9DEE3"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4" /></td></tr>
+	<tr><td colspan="2" class="rowspacer5x0"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr bgcolor="#D9DEE3"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
 	
 	<tr bgcolor="#D9DEE3">
 		<td align="right" class="chatlist" nowrap="nowrap"><a href="phpwcms.php?do=admin&amp;p=6&amp;struct=<?php
@@ -120,10 +120,10 @@ if(empty($content['article']['acat_id'])) { // Root structure
 		?>" onclick="return confirm('<?php echo $BL['be_dialog_warn_nosave']; 
 		?>');"><?php echo $BL['be_article_cat'];
 		
-		?><img src="img/symbole/redirect.gif" alt="" border="0" style="margin:0 0 0 2px;position:relative;top:1px;" /></a>:&nbsp;</td>
+		?><img src="include/img/symbole/redirect.gif" alt="" border="0" style="margin:0 0 0 2px;position:relative;top:1px;" /></a>:&nbsp;</td>
 		<td><strong><?php echo html_specialchars($content["article"]['acat_name']).' [ID:'.$content['article']['acat_id'].']' ?></strong></td>
 	</tr>
-	<tr bgcolor="#D9DEE3"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2" /></td>
+	<tr bgcolor="#D9DEE3"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td>
 	</tr>
 	<tr bgcolor="#D9DEE3">
 		<td align="right" class="chatlist" nowrap="nowrap"><a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=1&amp;id=<?php
@@ -132,12 +132,12 @@ if(empty($content['article']['acat_id'])) { // Root structure
 		?>" onclick="return confirm('<?php echo $BL['be_dialog_warn_nosave']; 
 		?>');"><?php echo $BL['be_article_atitle'];
 		
-		?><img src="img/symbole/redirect.gif" alt="" border="0" style="margin:0 0 0 2px;position:relative;top:1px;" /></a>:&nbsp;</td>
+		?><img src="include/img/symbole/redirect.gif" alt="" border="0" style="margin:0 0 0 2px;position:relative;top:1px;" /></a>:&nbsp;</td>
 		<td onclick="showEditArticleID(this);" onmouseover="this.ttOffsetY=0;Tip('<?php echo $BL['be_change_articleID'].'<br />'.$BL['be_cnt_default'].': '.$content["aid"] ?>')" class="linkcursor"><strong><?php echo html_specialchars($content["article"]['article_title']) ?></strong></td>
 	</tr>
 	
 	
-	<tr bgcolor="#D9DEE3"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4" /><script language="javascript" type="text/javascript">
+	<tr bgcolor="#D9DEE3"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4" /><script language="javascript" type="text/javascript">
 	<!--
 	var istuff_done = false;
 	function showEditArticleID(istuff) {
@@ -147,8 +147,8 @@ if(empty($content['article']['acat_id'])) { // Root structure
 	}	
 	//-->
 	</script></td></tr>
-	<tr><td colspan="2" class="rowspacer"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
-	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+	<tr><td colspan="2" class="rowspacer"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 	
 	<tr bgcolor="#F3F5F8">
 	  <td align="right" class="chatlist"><?php 
@@ -208,8 +208,8 @@ if(empty($content['article']['acat_id'])) { // Root structure
                 </table></td>
    	 </tr>
 
-	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>  
-	<tr><td colspan="2" class="rowspacer0x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>  
+	<tr><td colspan="2" class="rowspacer0x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 			
 	<tr>
 		<td align="right" class="chatlist"><?php echo $BL['be_show_content'] ?>:&nbsp;</td>
@@ -248,7 +248,7 @@ if(isset($result[0]['template_var'])) {
 			</tr>
 		</table></td>
     </tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
 	
 	<tr>
 	  <td align="right" class="chatlist"><?php echo $BL['be_article_cnt_space'] ?>:&nbsp;</td>
@@ -325,8 +325,8 @@ if(isset($result[0]['template_var'])) {
     </tr>
 	
 	<!-- ctab section -->
-	<tr id="ctab1"<?php echo $content["tab_style"] ?>><td colspan="2" class="rowspacer7x0"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
-	<tr id="ctab2"<?php echo $content["tab_style"] ?>><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+	<tr id="ctab1"<?php echo $content["tab_style"] ?>><td colspan="2" class="rowspacer7x0"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr id="ctab2"<?php echo $content["tab_style"] ?>><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 	<tr id="ctab3"<?php echo $content["tab_style"] ?>>
 	  <td align="right" class="chatlist"><?php echo $BL['be_tab_name'] ?>:&nbsp;</td>
 	  <td><table summary="" border="0" cellspacing="0" cellpadding="0">
@@ -340,8 +340,8 @@ if(isset($result[0]['template_var'])) {
 	<!-- ctab section end -->
 	
 
-	<tr><td colspan="2" class="rowspacer7x0"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
-	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+	<tr><td colspan="2" class="rowspacer7x0"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 	
    		  <?php
@@ -360,7 +360,7 @@ if(isset($result[0]['template_var'])) {
 		
 		?></strong></td>
 	</tr>
-	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 		  <?php
 		  }
 		  ?>
@@ -368,7 +368,7 @@ if(isset($result[0]['template_var'])) {
 	  <td align="right" class="chatlist"><?php echo $BL['be_article_cnt_ctitle'] ?>:&nbsp;</td>
 	  <td><input name="ctitle" type="text" id="ctitle" class="width440p5" value="<?php echo html_specialchars($content["title"]) ?>" size="40" maxlength="250" /></td>
 	</tr>
-	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2" /></td></tr>
+	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td></tr>
 	<tr bgcolor="#F3F5F8">
 	  <td align="right" class="chatlist"><?php echo $BL['be_article_asubtitle'] ?>:&nbsp;</td>
 	  <td><input name="csubtitle" type="text" id="csubtitle" class="width440p5" value="<?php echo html_specialchars($content["subtitle"]) ?>" size="40" maxlength="250" /></td>
@@ -383,7 +383,7 @@ if(isset($result[0]['template_var'])) {
 
 	if(empty($content['article']['article_paginate'])) {
 	
-		echo '<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="7" />';
+		echo '<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="7" />';
 		echo '<input name="cpaginate_title" type="hidden" id="cpaginate_title" value="'.html_specialchars($content["paginate_title"]).'" />';
 		echo '<input name="cpaginate_page" type="hidden" id="cpaginate_page" value="'.$content["paginate_page"].'" />';
 		echo '</td></tr>';
@@ -392,8 +392,8 @@ if(isset($result[0]['template_var'])) {
 
 ?>
 
-	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
-	<tr><td colspan="2" class="rowspacer0x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
+	<tr><td colspan="2" class="rowspacer0x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 	<tr>
 	  <td align="right" class="chatlist"><?php echo $BL['be_cnt_paginate_subsection'] ?>:&nbsp;</td>
@@ -427,7 +427,7 @@ if(isset($result[0]['template_var'])) {
 		</script></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="7" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="7" /></td></tr>
 
 <?php
 
@@ -436,7 +436,7 @@ if(isset($result[0]['template_var'])) {
 
 ?>
 
-	<tr><td colspan="2" class="rowspacer"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr><td colspan="2" class="rowspacer"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 	
 	<tr bgcolor="#F3F5F8">
 		<td>&nbsp;</td>
@@ -498,7 +498,7 @@ echo $_save_close_buttons;
 
 ?>
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 
 	<tr>
 		<td align="right" class="chatlist"><?php echo $BL['be_ftptakeover_status'] ?>:&nbsp;</td>
@@ -529,7 +529,7 @@ echo $_save_close_buttons;
 		</td>
 	</tr>
 	
-	<tr><td colspan="2" class="rowspacer0x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr><td colspan="2" class="rowspacer0x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 	
 	<tr>
 	  <td align="right" class="chatlist tdtop3"><?php echo $BL['be_profile_label_notes'] ?>:&nbsp;</td>

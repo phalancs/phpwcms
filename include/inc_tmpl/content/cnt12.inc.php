@@ -31,12 +31,12 @@ if (!defined('PHPWCMS_ROOT')) {
 //newsletter subscription
 
 ?>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td>
 </tr>
 <tr>
-  <td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="13" /><?php echo $BL['be_cnt_subscription'] ?>:&nbsp;</td>
+  <td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="13" /><?php echo $BL['be_cnt_subscription'] ?>:&nbsp;</td>
   <td valign="top"><?php
 
 	$content["newsletter"]['left']	= array();
@@ -68,9 +68,9 @@ if (!defined('PHPWCMS_ROOT')) {
 	?></td>
   <td>&nbsp;</td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_cnt_labelemail'] ?>:&nbsp;</td>
@@ -92,7 +92,7 @@ if (!defined('PHPWCMS_ROOT')) {
 	  </tr>
 	</table></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_cnt_labelname'] ?>:&nbsp;</td>
 	<td><table width="439" border="0" cellpadding="0" cellspacing="0" summary="">
@@ -103,7 +103,7 @@ if (!defined('PHPWCMS_ROOT')) {
 	  </tr>
 	</table></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_cnt_labelsubsc'] ?>:&nbsp;</td>
 	<td><table width="439" border="0" cellpadding="0" cellspacing="0" summary="">
@@ -114,29 +114,29 @@ if (!defined('PHPWCMS_ROOT')) {
 	  </tr>
 	</table></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
 <tr>
-	<td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_cnt_infotext'] ?>:&nbsp;</td>
+	<td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_cnt_infotext'] ?>:&nbsp;</td>
 	<td valign="top"><textarea name="cnewsletter_text" rows="8" class="f10" id="cnewsletter_text" style="width: 440px"><?php echo  isset($content["newsletter"]["text"]) ? $content["newsletter"]["text"] : '' ?></textarea></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
 <tr>
-	<td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="16"><?php echo $BL['be_cnt_successtext'] ?>:&nbsp;</td>
+	<td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="16"><?php echo $BL['be_cnt_successtext'] ?>:&nbsp;</td>
 	<td valign="top"><textarea name="cnewsletter_success_text" rows="5" class="f10" id="cnewsletter_success_text" style="width: 440px"><?php echo  isset($content["newsletter"]["success_text"]) ? $content["newsletter"]["success_text"] : '' ?></textarea></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
 <tr>
 	<td align="right" class="chatlist">URL 1:&nbsp;</td>
 	<td><input name="cnewsletter_url1" type="text" id="cnewsletter_url1" class="f11b" style="width: 440px" value="<?php echo isset($content["newsletter"]["url1"]) ? html_specialchars($content["newsletter"]["url1"]) : '' ?>" size="20" /></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
 <tr>
 	<td align="right" class="chatlist">URL 2:&nbsp;</td>
 	<td><input name="cnewsletter_url2" type="text" id="cnewsletter_url2" class="f11b" style="width: 440px" value="<?php echo isset($content["newsletter"]["url2"]) ? html_specialchars($content["newsletter"]["url2"]) : '' ?>" size="20" /></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
 
 <tr>
 	<td>&nbsp;</td>
@@ -144,19 +144,19 @@ if (!defined('PHPWCMS_ROOT')) {
 </tr>
 
   <tr>
-    <td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="16"><?php echo $BL['be_cnt_regmail'] ?>:&nbsp;</td>
+    <td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="16"><?php echo $BL['be_cnt_regmail'] ?>:&nbsp;</td>
     <td valign="top"><textarea name="cnewsletter_reg_text" rows="5" wrap="OFF" class="code" id="cnewsletter_reg_text" style="width: 440px"><?php echo  isset($content["newsletter"]["reg_text"]) ? $content["newsletter"]["reg_text"] : '' ?></textarea></td>
   </tr>
-  <tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
+  <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
   <tr>
-    <td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="16"><?php echo $BL['be_cnt_logoffmail'] ?>:&nbsp;</td>
+    <td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="16"><?php echo $BL['be_cnt_logoffmail'] ?>:&nbsp;</td>
     <td valign="top"><textarea name="cnewsletter_logoff_text" rows="5" wrap="OFF" class="code" id="cnewsletter_logoff_text" style="width: 440px"><?php echo  isset($content["newsletter"]["logoff_text"]) ? $content["newsletter"]["logoff_text"] : '' ?></textarea></td>
   </tr>
-  <tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
+  <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
   <tr>
-    <td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="16"><?php echo $BL['be_cnt_changemail'] ?>:&nbsp;</td>
+    <td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="16"><?php echo $BL['be_cnt_changemail'] ?>:&nbsp;</td>
     <td valign="top"><textarea name="cnewsletter_change_text" rows="5" wrap="OFF" class="code" id="cnewsletter_change_text" style="width: 440px"><?php echo  isset($content["newsletter"]["change_text"]) ? $content["newsletter"]["change_text"] : '' ?></textarea></td>
   </tr>
  
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>

@@ -32,41 +32,41 @@ if (!defined('PHPWCMS_ROOT')) {
 ?><form action="phpwcms.php?do=profile" method="post" name="formprofiledetail" id="formprofiledetail" autocomplete="off">
 	<table border="0" cellpadding="0" cellspacing="0" summary="">
 	<tr><td colspan="2" class="title"><?php echo $BL['be_profile_account_title'] ?></td></tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>
 	<tr><td colspan="2"><?php echo $BL['be_profile_account_text'] ?></td></tr>
 <?php
 	//if error during login occurs
 	if(!empty($err)) {
-		echo '<tr valign="top"><td  align="right" class="error"><img src="img/leer.gif" width="1" height="10"><br /><strong>';
+		echo '<tr valign="top"><td  align="right" class="error"><img src="include/img/leer.gif" width="1" height="10"><br /><strong>';
 		echo $BL['be_profile_label_err'];
-		echo ':</strong>&nbsp;</td><td class="error"><img src="img/leer.gif" width="1" height="10"><br />';
+		echo ':</strong>&nbsp;</td><td class="error"><img src="include/img/leer.gif" width="1" height="10"><br />';
 		echo nl2br(chop($err)).'</td></tr>';
 	}
 ?>
 	<tr> 
-		<td colspan="2"><img src="img/leer.gif" alt="" width="1" height="12"></td>
+		<td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="12"></td>
 	</tr>
 	<tr> 
 		<td align="right"><?php echo $BL['be_profile_label_username'] ?>:&nbsp;</td>
 		<td><input name="form_loginname" type="text" id="form_loginname" class="v12b width250" size="30" maxlength="30" value="<?php echo html_specialchars($_SESSION["wcs_user"]); ?>"></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 	<tr> 
 		<td align="right"><?php echo $BL['be_profile_label_newpass'] ?>:&nbsp;</td>
 		<td><input name="form_password" type="password" id="form_password" class="v12b width250" size="30" maxlength="20"></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 	<tr> 
 		<td align="right"><?php echo $BL['be_profile_label_repeatpass'] ?>:&nbsp;</td>
 		<td><input name="form_password2" type="password" id="form_password2" class="v12b width250" size="30" maxlength="20"></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 	<tr> 
 		<td align="right"><?php echo $BL['be_profile_label_email'] ?>:&nbsp;</td>
 		<td><input name="form_useremail" type="text" id="form_useremail" class="v12b width250" value="<?php echo html_specialchars($_SESSION["wcs_user_email"]); ?>" size="30" maxlength="150"></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10"></td></tr>
 	
 	<tr> 
 		<td align="right"><?php echo $BL['be_profile_label_lang'] ?>:&nbsp;</td>
@@ -92,7 +92,7 @@ $wysiwygTemplates['editor'] = empty($_SESSION["WYSIWYG_EDITOR"]) ? 0 : 1;
 ?>
         </select></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10"></td></tr>
 	<tr> 
 		<td align="right" valign="top" style="padding-top: 3px;"><?php echo $BL['be_WYSIWYG'] ?>:&nbsp;</td>
 		<td><select name="form_wysiwyg" id="form_wysiwyg" class="v12 width250" style="margin-bottom:2px;" onchange="setWYSIWYGtemplate();">
@@ -104,13 +104,13 @@ $wysiwygTemplates['editor'] = empty($_SESSION["WYSIWYG_EDITOR"]) ? 0 : 1;
 		</td>
 	</tr>
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="25"><input name="form_aktion" type="hidden" id="form_aktion" value="update_account"></td>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="25"><input name="form_aktion" type="hidden" id="form_aktion" value="update_account"></td>
 	</tr>
 	<tr> 
 		<td align="right">&nbsp;</td>
 		<td><input type="submit" name="Submit" value="<?php echo $BL['be_profile_account_button'] ?>" class="button12"></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="20"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="20"></td></tr>
 </table></form>
 <?php
 

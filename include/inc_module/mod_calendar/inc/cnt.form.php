@@ -33,10 +33,10 @@ if (!defined('PHPWCMS_ROOT')) {
 // it's typically implemented in a 2 column table
 
 // -> a spacer table row
-//	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+//	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
 
 // -> this can be used as spaceholfer
-//	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+//	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 // -> this is the tyical way to format rows with label and input 
 //	<tr>
@@ -70,7 +70,7 @@ if(empty($content['glossary']['glossary_noentry'])) {
 
 ?>
 <!-- top spacer - seperate from title/subtitle section -->
-<tr><td colspan="2" style="padding-bottom:8px"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2" style="padding-bottom:8px"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
 <!-- start custom fields here -->
 
 <!-- retrieve templates -->
@@ -98,7 +98,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 <!-- end templates -->
 
 <!-- little space -->
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15" /></td></tr>
 <!-- end space -->
 
 <!-- input field -->
@@ -112,7 +112,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 </tr>
 <!-- end field -->
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['modules'][$content["module"]]['listview'] ?>:&nbsp;</td>
@@ -124,14 +124,14 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	</table></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['modules'][$content["module"]]['glossary_token'] ?>:&nbsp;</td>
 	<td><input type="text" name="glossary_tag" id="glossary_tag" value="<?php echo html_specialchars($content['glossary']['glossary_tag']) ?>" class="f11b" style="width: 440px" maxlength="1000" /></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist" style="padding:3px 5px 0 0" valign="top"><?php echo $BL['modules'][$content["module"]]['no_entry'] ?>:</td>
@@ -140,4 +140,4 @@ if(is_array($tmpllist) && count($tmpllist)) {
 
 <!-- end custom fields -->
 <!-- bottom spacer - is followed by status "visible" checkbox -->
-<tr><td colspan="2" style="padding-top:8px"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2" style="padding-top:8px"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>

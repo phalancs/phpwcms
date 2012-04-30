@@ -79,13 +79,13 @@ echo '<div class="title" style="margin-bottom:10px">'.$BL['be_subnav_msg_subscri
 ?>
 
 <div class="navBar imgButton chatlist">
-	<a href="phpwcms.php?do=messages&amp;p=4&amp;s=0&amp;edit=1"><img src="img/famfamfam/vcard_add.gif" alt="Add" border="0" /><span><?php echo $BL['be_cnt_new_recipient'] ?></span></a>
+	<a href="phpwcms.php?do=messages&amp;p=4&amp;s=0&amp;edit=1"><img src="include/img/famfamfam/vcard_add.gif" alt="Add" border="0" /><span><?php echo $BL['be_cnt_new_recipient'] ?></span></a>
 	&nbsp;
-	<a href="phpwcms.php?do=messages&amp;p=4&amp;duplicate=remove" onclick="return confirm('Delete all duplicate subscribers?');"><img src="img/famfamfam/vcard_delete.gif" alt="Delete" border="0" /><span><?php echo $BL['be_cnt_delete_duplicates'] ?></span></a>
+	<a href="phpwcms.php?do=messages&amp;p=4&amp;duplicate=remove" onclick="return confirm('Delete all duplicate subscribers?');"><img src="include/img/famfamfam/vcard_delete.gif" alt="Delete" border="0" /><span><?php echo $BL['be_cnt_delete_duplicates'] ?></span></a>
 	&nbsp;
-	<a href="phpwcms.php?do=messages&amp;p=4&amp;import=1"><img src="img/famfamfam/table_add.gif" alt="Import" border="0" /><span><?php echo $BL['be_newsletter_newimport'] ?></span></a>
+	<a href="phpwcms.php?do=messages&amp;p=4&amp;import=1"><img src="include/img/famfamfam/table_add.gif" alt="Import" border="0" /><span><?php echo $BL['be_newsletter_newimport'] ?></span></a>
 	&nbsp;
-	<a href="include/inc_act/act_export.php?action=exportsubscriber" target="_blank" onclick="return confirm('Export all subscribers based on current selection?');"><img src="img/famfamfam/icon_download.gif" alt="Download" border="0" /><span><?php echo $BL['be_cnt_export_selection'] ?></span></a>
+	<a href="include/inc_act/act_export.php?action=exportsubscriber" target="_blank" onclick="return confirm('Export all subscribers based on current selection?');"><img src="include/img/famfamfam/icon_download.gif" alt="Download" border="0" /><span><?php echo $BL['be_cnt_export_selection'] ?></span></a>
 </div>
 
 
@@ -239,12 +239,12 @@ if($_SESSION['subscriber_page'] > $_userInfo['pages_total']) {
 				<tr>
 					
 					<td><input type="checkbox" name="showactive" id="showactive" value="1" onclick="this.form.submit();"<?php is_checked(1, $_userInfo['list_active'], 1) ?> /></td>
-					<td><label for="showactive"><img src="img/button/aktiv_12x13_1.gif" alt="" style="margin:1px 1px 0 1px;" /></label></td>
+					<td><label for="showactive"><img src="include/img/button/aktiv_12x13_1.gif" alt="" style="margin:1px 1px 0 1px;" /></label></td>
 					<td><input type="checkbox" name="showinactive" id="showinactive" value="1" onclick="this.form.submit();"<?php is_checked(1, $_userInfo['list_inactive'], 1) ?> /></td>
-					<td><label for="showinactive"><img src="img/button/aktiv_12x13_0.gif" alt="" style="margin:1px 1px 0 1px;" /></label></td>
+					<td><label for="showinactive"><img src="include/img/button/aktiv_12x13_0.gif" alt="" style="margin:1px 1px 0 1px;" /></label></td>
 					
 					<td<?php if($_userInfo['list_channel']) echo ' class="channelSelectTd"' ?>><input type="checkbox" name="showchannel" id="showchannel" value="1" onclick="this.form.submit();"<?php is_checked(1, $_userInfo['list_channel'], 1) ?> /></td>
-					<td<?php if($_userInfo['list_channel']) echo ' class="channelSelectTd"' ?>><label for="showchannel"><img src="img/symbole/newsletter_susbcription.gif" alt="Subscription" style="margin:1px 0 0 1px;" /></label></td>
+					<td<?php if($_userInfo['list_channel']) echo ' class="channelSelectTd"' ?>><label for="showchannel"><img src="include/img/symbole/newsletter_susbcription.gif" alt="Subscription" style="margin:1px 0 0 1px;" /></label></td>
 					
 					
 					
@@ -255,9 +255,9 @@ if($_userInfo['pages_total'] > 1) {
 	echo '<td>';
 	if($_SESSION['subscriber_page'] > 1) {
 		echo '<a href="phpwcms.php?do=messages&amp;p=4&amp;page='.($_SESSION['subscriber_page']-1).'">';
-		echo '<img src="img/famfamfam/action_back.gif" alt="" border="0" /></a>';
+		echo '<img src="include/img/famfamfam/action_back.gif" alt="" border="0" /></a>';
 	} else {
-		echo '<img src="img/famfamfam/action_back.gif" alt="" border="0" class="inactive" />';
+		echo '<img src="include/img/famfamfam/action_back.gif" alt="" border="0" class="inactive" />';
 	}
 	echo '</td>';
 	echo '<td><input type="text" name="page" id="page" maxlength="4" size="4" value="'.$_SESSION['subscriber_page'];
@@ -266,9 +266,9 @@ if($_userInfo['pages_total'] > 1) {
 	echo '<td>';
 	if($_SESSION['subscriber_page'] < $_userInfo['pages_total']) {
 		echo '<a href="phpwcms.php?do=messages&amp;p=4&amp;page='.($_SESSION['subscriber_page']+1).'">';
-		echo '<img src="img/famfamfam/action_forward.gif" alt="" border="0" /></a>';
+		echo '<img src="include/img/famfamfam/action_forward.gif" alt="" border="0" /></a>';
 	} else {
-		echo '<img src="img/famfamfam/action_forward.gif" alt="" border="0" class="inactive" />';
+		echo '<img src="include/img/famfamfam/action_forward.gif" alt="" border="0" class="inactive" />';
 	}
 	echo '</td><td class="chatlist">&nbsp;|&nbsp;</td>';
 
@@ -286,7 +286,7 @@ if($_userInfo['pages_total'] > 1) {
 	}
 	
 	?>" class="textinput" style="margin:0 2px 0 0;width:110px;text-align:left;" title="filter results by username, name or email" /></td>
-	<td><input type="image" name="gofilter" src="img/famfamfam/action_go.gif" style="margin-right:3px;" /></td>
+	<td><input type="image" name="gofilter" src="include/img/famfamfam/action_go.gif" style="margin-right:3px;" /></td>
 
 	</tr>
 	</table></td>
@@ -341,7 +341,7 @@ if($_userInfo['list_channel']) {
 			echo '<table cellpadding="0" cellspacing="0" border="0">'.LF;
 			echo $_userInfo['select_subscr'];
 			echo '</table>'.LF;
-			//echo '<input type="image" name="gofilter" src="img/famfamfam/action_go.gif" class="channelSelectSubmit" />';
+			//echo '<input type="image" name="gofilter" src="include/img/famfamfam/action_go.gif" class="channelSelectSubmit" />';
 			echo '</div>';
 
 		}
@@ -357,8 +357,8 @@ if($_userInfo['list_channel']) {
 </form>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" summary="">
 		
-	<tr><td colspan="4"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
-	<tr><td colspan="4" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>
+	<tr><td colspan="4"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
+	<tr><td colspan="4" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>
 
 <?php
 // loop listing available newsletters
@@ -397,23 +397,23 @@ foreach($data as $row) {
 
 	$row["address_email"] = html_specialchars($row["address_email"]);
 	echo '<tr'.( ($row_count % 2) ? ' bgcolor="#F3F5F8"' : '' ).$_userInfo['channel_select'].">\n<td width=\"25\" style=\"padding:1px 3px 3px 4px;\">";
-	echo '<img src="img/famfamfam/vcard.gif" alt="Recipient"></td>'."\n";
+	echo '<img src="include/img/famfamfam/vcard.gif" alt="Recipient"></td>'."\n";
 	echo '<td width="1%" class="dir">&nbsp;<strong>'.$row["address_email"]."</strong></td>\n";
 	echo '<td class="dir" width="95%">&nbsp;'.html_specialchars($row["address_name"])."</td>\n";
 	echo '<td align="right" nowrap="nowrap" class="button_td">';
 	
 	echo '<a href="phpwcms.php?do=messages&amp;p=4&amp;s='.$row["address_id"].'&amp;edit=1">';		
-	echo '<img src="img/button/edit_22x13.gif" border="0" alt=""></a>';
+	echo '<img src="include/img/button/edit_22x13.gif" border="0" alt=""></a>';
 	
 	echo '<a href="phpwcms.php?do=messages&amp;p=4&amp;s='.$row["address_id"].'&amp;verify=';
 	echo ($row["address_verified"]) ? '0' : '1';
 	echo '" title="set '.$row["address_email"].' verified/not verified">';		
-	echo '<img src="img/button/aktiv_12x13_'.$row["address_verified"].'.gif" border="0" alt=""></a>';
+	echo '<img src="include/img/button/aktiv_12x13_'.$row["address_verified"].'.gif" border="0" alt=""></a>';
 	
 	echo '<a href="phpwcms.php?do=messages&amp;p=4&amp;s='.$row["address_id"].'&amp;del='.$row["address_id"];
 	echo '" title="delete: '.$row["address_email"].'"';
 	echo ' onclick="return confirm(\'Delete subscriber '.js_singlequote($row["address_email"]).'\');">';
-	echo '<img src="img/button/trash_13x13_1.gif" border="0" alt=""></a>';
+	echo '<img src="include/img/button/trash_13x13_1.gif" border="0" alt=""></a>';
 
 	echo "</td>\n</tr>\n";
 
@@ -421,9 +421,9 @@ foreach($data as $row) {
 }
 
 if($row_count) {
-	echo '<tr><td colspan="4" bgcolor="#92A1AF"><img src="img/leer.gif" alt="" width="1" height="1"></td></tr>';
+	echo '<tr><td colspan="4" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>';
 }
 
 ?>
-	<tr><td colspan="4"><img src="img/leer.gif" alt="" width="1" height="15"></td></tr>
+	<tr><td colspan="4"><img src="include/img/leer.gif" alt="" width="1" height="15"></td></tr>
 </table>

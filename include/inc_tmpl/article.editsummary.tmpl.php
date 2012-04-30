@@ -42,11 +42,11 @@ $template_default['article']['imagelist_default_height'] = isset($template_defau
 <table width="538" border="0" cellpadding="0" cellspacing="0" summary="">
       		<tr><td colspan="2" class="title"><?php echo $BL['be_article_estitle'] ?></td></tr>
 			<tr>
-				<td width="88"><img src="img/leer.gif" alt="" width="88" height="4" /></td>
-				<td width="450"><img src="img/leer.gif" alt="" width="450" height="1" /></td>
+				<td width="88"><img src="include/img/leer.gif" alt="" width="88" height="4" /></td>
+				<td width="450"><img src="include/img/leer.gif" alt="" width="450" height="1" /></td>
 			</tr>
-			<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-      		<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+			<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+      		<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 
 		  	<tr>
 				<td align="right" class="chatlist"><?php echo $BL['be_article_cat'] ?>:&nbsp;</td>
@@ -60,7 +60,7 @@ $template_default['article']['imagelist_default_height'] = isset($template_defau
 			</tr>
 			
 			
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 
 			<tr>
 				<td align="right" class="chatlist"><?php echo $BL['be_article_atitle'] ?>:&nbsp;</td>
@@ -77,15 +77,15 @@ $template_default['article']['imagelist_default_height'] = isset($template_defau
               <td align="right" class="chatlist"><?php echo $BL['be_article_asubtitle'] ?>:&nbsp;</td>
               <td><input name="article_subtitle" type="text" class="f11b width440" id="article_subtitle" value="<?php echo html_specialchars($article["article_subtitle"]) ?>" size="40" maxlength="1000" /></td>
 			</tr>
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 			<tr>
 				<td colspan="2"><table border="0" cellpadding="2" cellspacing="0" summary="">
 					<tr>
-						<td width="84"><img src="img/leer.gif" alt="" width="84" height="1" /></td>
-						<td colspan="7"><img src="img/leer.gif" alt="" width="1" height="1" /></td>
+						<td width="84"><img src="include/img/leer.gif" alt="" width="84" height="1" /></td>
+						<td colspan="7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td>
 					</tr>
 					<tr bgcolor="#E7E8EB">
-					  <td width="84" align="right" bgcolor="#FFFFFF" class="chatlist" style="width:84px;">&nbsp;<br /><?php echo $BL['be_article_abegin'] ?>:<img src="img/leer.gif" alt="" width="2" height="1" /></td>
+					  <td width="84" align="right" bgcolor="#FFFFFF" class="chatlist" style="width:84px;">&nbsp;<br /><?php echo $BL['be_article_abegin'] ?>:<img src="include/img/leer.gif" alt="" width="2" height="1" /></td>
 						<td class="chatlist">&nbsp;<br />
 						  <input name="set_begin" type="checkbox" id="set_begin" value="1"<?php is_checked(1, $set_begin) ?> onclick="if(!this.checked) {document.article.article_begin.value='';}else{document.article.article_begin.value='<?php echo $article["article_begin"] ?>';}" /></td>
 						<td class="chatlist" nowrap="nowrap">YYYY-MM-DD HH:MM:SS<br />
@@ -95,10 +95,10 @@ function aBegin(date, month, year) {
 	document.article.article_begin.value = year + '-' + subrstr('00' + month, 2) + '-' + subrstr('00' + date, 2) + ' 00:00:00';
 	document.article.set_begin.checked = true;
 }
-calBegin = new dynCalendar('calBegin', 'aBegin', 'img/dynCal/');
+calBegin = new dynCalendar('calBegin', 'aBegin', 'include/img/dynCal/');
 calBegin.setMonthCombo(false);
 calBegin.setYearCombo(false);
-</script><img src="img/leer.gif" alt="" width="3" height="1" /></td>
+</script><img src="include/img/leer.gif" alt="" width="3" height="1" /></td>
 						<td align="right" bgcolor="#FFFFFF" class="chatlist">&nbsp;<br />&nbsp;&nbsp;<?php echo $BL['be_article_aend'] ?>:</td>
 						<td class="chatlist">&nbsp;<br />
 						  <input name="set_end" type="checkbox" id="set_end" value="1"<?php is_checked(1, $set_end) ?> onclick="if(!this.checked) {document.article.article_end.value='';}else{document.article.article_end.value='<?php echo $article["article_end"] ?>';}" /></td>
@@ -109,16 +109,16 @@ function aEnd(date, month, year) {
 	document.article.article_end.value = year + '-' + subrstr('00' + month, 2) + '-' + subrstr('00' + date, 2) + ' 23:59:59';
 	document.article.set_end.checked = true;
 }
-calEnd = new dynCalendar('calEnd', 'aEnd', 'img/dynCal/');
+calEnd = new dynCalendar('calEnd', 'aEnd', 'include/img/dynCal/');
 calEnd.setMonthCombo(false);
 calEnd.setYearCombo(false);
-</script><img src="img/leer.gif" alt="" width="3" height="1" /></td>
+</script><img src="include/img/leer.gif" alt="" width="3" height="1" /></td>
 					</tr>
 				</table></td>
 			</tr>
 			
 			
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="7" /></td>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="7" /></td>
 			</tr>
 			
 			<tr>
@@ -145,7 +145,7 @@ calEnd.setYearCombo(false);
 			  </table></td>
 			</tr>
 			
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	
 	<tr>
 		<td align="right" class="chatlist"><?php echo $BL['be_alias_articleID'] ?>:&nbsp;</td>
@@ -159,50 +159,50 @@ calEnd.setYearCombo(false);
 	  </table></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	
 	<tr>
 	  <td align="right" class="chatlist"><?php echo $BL['be_article_aredirect'] ?>:&nbsp;</td>
 	  <td><input name="article_redirect" type="text" id="article_redirect" class="f11" style="width: 440px" value="<?php echo html_specialchars($article["article_redirect"]) ?>" size="40" /></td>
 	</tr>
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	<tr>
 		<td align="right" class="chatlist"><a href="#" onclick="return set_article_alias();"><?php echo $BL['be_article_urlalias'] ?></a>:&nbsp;</td>
 		<td><input name="article_alias" type="text" class="f11b" id="article_alias" style="width: 440px" value="<?php echo html_specialchars($article["article_alias"]) ?>" size="40" maxlength="200" onfocus="set_article_alias(true);" onchange="this.value=create_alias(this.value);" /></td>
 	</tr>		
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 			<tr>
               <td align="right" class="chatlist"><?php echo $BL['be_admin_page_pagetitle'] ?>:&nbsp;</td>
               <td><input name="article_pagetitle" type="text" id="article_pagetitle" class="f11 width440" value="<?php echo html_specialchars($article['article_pagetitle']) ?>" size="40" maxlength="125" /></td>
 			</tr>
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	
 	<tr>
 	  <td align="right" class="chatlist"><?php echo $BL['article_menu_title'] ?>:&nbsp;</td>
 	  <td><input name="article_menutitle" type="text" id="article_menutitle" class="f11 width440" value="<?php echo html_specialchars($article["article_menutitle"]) ?>" size="40" /></td>
 	</tr>			
 		
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 			<tr>
 				<td align="right" class="chatlist tdtop3"><?php echo $BL['be_article_akeywords'] ?>:&nbsp;</td>
 				<td><textarea name="article_keyword" rows="2" class="f10 width440" id="article_keyword"><?php echo html_specialchars($article["article_keyword"]) ?></textarea></td>
 			</tr>
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 			<tr>
 				<td align="right" class="chatlist tdtop3"><?php echo $BL['be_cnt_description'] ?>:&nbsp;</td>
 				<td><textarea name="article_description" rows="2" class="f10 width440" id="article_description"><?php echo html_specialchars($article["article_description"]) ?></textarea></td>
 			</tr>
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>		
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>		
 			<tr>
 				<td align="right" class="chatlist" valign="top"><?php echo $BL['be_admin_struct_template'] ?>:&nbsp;</td>
 				<td valign="top"><table width="440" border="0" cellpadding="0" cellspacing="0" summary="">
 				<tr>
 					<td width="215" class="chatlist"><?php echo $BL['be_article_forlist'] ?>:&nbsp;</td>
-					<td width="10"><img src="img/leer.gif" alt="" width="10" height="1" /></td>
+					<td width="10"><img src="include/img/leer.gif" alt="" width="10" height="1" /></td>
 					<td width="215" class="chatlist"><?php echo $BL['be_article_forfull'] ?>:&nbsp;</td></tr>
-				<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="2" /></td></tr>
+				<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td></tr>
 				<tr>
 				  <td><select name="article_tmpllist" id="article_tmpllist" style="width: 215px" class="f11">
 <?php
@@ -246,7 +246,7 @@ if(count($tmpllist)) {
 				  </tr>
 				  
 	<tr>
-	<td colspan="3"><img src="img/leer.gif" alt="" width="1" height="2" /></td>
+	<td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td>
 	</tr>
 	<tr>
 		<td valign="top"><table border="0" cellpadding="0" cellspacing="0" summary="">
@@ -263,7 +263,7 @@ if(count($tmpllist)) {
           </tr>
         </table></td>
 	</tr>
-	<tr><td colspan="3"><img src="img/leer.gif" alt="" width="1" height="2" /></td>
+	<tr><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td>
 	</tr>
 	<tr>
 	  <td><table border="0" cellpadding="0" cellspacing="0" summary="">
@@ -285,7 +285,7 @@ if(count($tmpllist)) {
 			</tr>
 			
 			
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td>
 			</tr>
 
 			<tr>
@@ -305,30 +305,30 @@ include(PHPWCMS_ROOT.'/include/inc_lib/wysiwyg.editor.inc.php');
 
 ?></td>
     </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td>
 </tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" /></td>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" /></td>
 </tr>
-<tr bgcolor="#F3F6F9"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td>
+<tr bgcolor="#F3F6F9"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td>
 </tr>
 <tr bgcolor="#F3F6F9">
 	<td align="right" class="chatlist"><?php echo $BL['be_cnt_image'] ?>:&nbsp;</td>
 	<td class="chatlist"><?php echo $BL['be_article_forfull'] ?></td>
 </tr>
-<tr bgcolor="#F3F6F9"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+<tr bgcolor="#F3F6F9"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 <tr bgcolor="#F3F6F9">
 	<td align="right" class="chatlist">&nbsp;</td>
 	<td valign="top"><table border="0" cellpadding="0" cellspacing="0" summary="">
 		<tr>
 			<td><input name="cimage_name" type="text" id="cimage_name" class="f11b" style="width: 300px; color: #727889;" value="<?php echo html_specialchars($article['image']['name']) ?>" size="40" maxlength="250" onfocus="this.blur()" /></td>
 			                                                                                                                                              <!-- browser_image.php //-->
-			<td><img src="img/leer.gif" alt="" width="3" height="1" /><a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=0&amp;target=summary');return false;"><img src="img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a></td>
-			<td><img src="img/leer.gif" alt="" width="3" height="1" /><a href="#" title="<?php echo $BL['be_cnt_delimage'] ?>" onclick="document.article.cimage_name.value='';document.article.cimage_id.value='0';this.blur();return false;"><img src="img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a>
+			<td><img src="include/img/leer.gif" alt="" width="3" height="1" /><a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=0&amp;target=summary');return false;"><img src="include/img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a></td>
+			<td><img src="include/img/leer.gif" alt="" width="3" height="1" /><a href="#" title="<?php echo $BL['be_cnt_delimage'] ?>" onclick="document.article.cimage_name.value='';document.article.cimage_id.value='0';this.blur();return false;"><img src="include/img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a>
 		      <input name="cimage_id" type="hidden" value="<?php echo $article['image']['id'] ?>" /></td>
 		</tr>
 	</table></td>
 </tr>
-<tr bgcolor="#F3F6F9"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+<tr bgcolor="#F3F6F9"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	<tr bgcolor="#F3F6F9">
 			  <td align="right" class="chatlist"><?php echo $BL['be_cnt_maxw'] ?>:&nbsp;</td>
 			  <td valign="top"><table border="0" cellpadding="0" cellspacing="0" summary="">
@@ -349,14 +349,14 @@ include(PHPWCMS_ROOT.'/include/inc_lib/wysiwyg.editor.inc.php');
 		        </tr>
 		      </table></td>
 	</tr>
-			<tr bgcolor="#F3F6F9"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td>
+			<tr bgcolor="#F3F6F9"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td>
 			</tr>
 			<tr bgcolor="#F3F6F9">
-			  <td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="13" /><?php echo $BL['be_cnt_caption'] ?>:&nbsp;</td>
+			  <td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="13" /><?php echo $BL['be_cnt_caption'] ?>:&nbsp;</td>
 			  <td valign="top"><table border="0" cellpadding="0" cellspacing="0" summary="">
 			      <tr>
 			        <td valign="top"><textarea name="cimage_caption" cols="30" rows="3" class="f11" id="cimage_caption" style="width: 300px;"><?php echo html_specialchars($article['image']['caption']) ?></textarea></td>
-			        <td valign="top"><img src="img/leer.gif" alt="" width="15" height="1" /></td>
+			        <td valign="top"><img src="include/img/leer.gif" alt="" width="15" height="1" /></td>
 			        <td valign="top"><?php
 					
 					$_SESSION['image_browser_article'] = 1;
@@ -381,14 +381,14 @@ include(PHPWCMS_ROOT.'/include/inc_lib/wysiwyg.editor.inc.php');
 	          </table></td>
 			</tr>
 			
-			<tr bgcolor="#F3F6F9"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
-			<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" /></td></tr>
-			<tr bgcolor="#F3F6F9"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+			<tr bgcolor="#F3F6F9"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
+			<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" /></td></tr>
+			<tr bgcolor="#F3F6F9"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 <tr bgcolor="#F3F6F9">
 	<td align="right" class="chatlist"><?php echo $BL['be_cnt_image'] ?>:&nbsp;</td>
 	<td class="chatlist"><?php echo $BL['be_article_forlist'] ?></td>
 </tr>
-<tr bgcolor="#F3F6F9"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td>
+<tr bgcolor="#F3F6F9"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td>
 </tr>		
 <tr bgcolor="#F3F6F9">
 	<td align="right" class="chatlist">&nbsp;</td>
@@ -413,21 +413,21 @@ if(!isset($article['image']['list_usesummary'])) {
 		</tr>
 	</table></td>
 </tr>
-<tr bgcolor="#F3F6F9"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td>
+<tr bgcolor="#F3F6F9"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td>
 </tr>	
 <tr bgcolor="#F3F6F9">
 	<td align="right" class="chatlist">&nbsp;</td>
 	<td valign="top"><table border="0" cellpadding="0" cellspacing="0" summary="">
 		<tr>
 			<td><input name="cimage_list_name" type="text" id="cimage_list_name" class="f11b" style="width: 300px; color: #727889;" value="<?php echo html_specialchars($article['image']['list_name']) ?>" size="40" maxlength="250" onfocus="this.blur()" /></td>
-			<td><img src="img/leer.gif" alt="" width="3" height="1" /><a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=0&amp;target=list');return false;"><img src="img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a></td>
-			<td><img src="img/leer.gif" alt="" width="3" height="1" /><a href="#" title="<?php echo $BL['be_cnt_delimage'] ?>" onclick="document.article.cimage_list_name.value='';document.article.cimage_list_id.value='0';this.blur();return false;"><img src="img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a>
+			<td><img src="include/img/leer.gif" alt="" width="3" height="1" /><a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=0&amp;target=list');return false;"><img src="include/img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a></td>
+			<td><img src="include/img/leer.gif" alt="" width="3" height="1" /><a href="#" title="<?php echo $BL['be_cnt_delimage'] ?>" onclick="document.article.cimage_list_name.value='';document.article.cimage_list_id.value='0';this.blur();return false;"><img src="include/img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a>
 		      <input name="cimage_list_id" type="hidden" value="<?php echo $article['image']['list_id'] ?>" /></td>
 		</tr>
 	</table></td>
 </tr>
 
-<tr bgcolor="#F3F6F9"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td>
+<tr bgcolor="#F3F6F9"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td>
 </tr>		
 
 <tr bgcolor="#F3F6F9">
@@ -449,14 +449,14 @@ if(!isset($article['image']['list_usesummary'])) {
 	</tr>
 	</table></td>
 </tr>
-<tr bgcolor="#F3F6F9"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td>
+<tr bgcolor="#F3F6F9"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td>
 </tr>
 <tr bgcolor="#F3F6F9">
-	<td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="13" /><?php echo $BL['be_cnt_caption'] ?>:&nbsp;</td>
+	<td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="13" /><?php echo $BL['be_cnt_caption'] ?>:&nbsp;</td>
 	<td valign="top"><table border="0" cellpadding="0" cellspacing="0" summary="">
 	<tr>
 	<td valign="top"><textarea name="cimage_list_caption" cols="30" rows="3" class="f11" id="cimage_list_caption" style="width: 300px;"><?php echo html_specialchars($article['image']['list_caption']) ?></textarea></td>
-	<td valign="top"><img src="img/leer.gif" alt="" width="15" height="1" /></td>
+	<td valign="top"><img src="include/img/leer.gif" alt="" width="15" height="1" /></td>
 	<td valign="top"><?php
 	
 	$_SESSION['image_browser_article'] = 1;
@@ -482,11 +482,11 @@ if(!isset($article['image']['list_usesummary'])) {
 </tr>
 	
 
-			<tr bgcolor="#F3F6F9"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td>
+			<tr bgcolor="#F3F6F9"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td>
 			</tr>
-			<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" /></td>
+			<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" /></td>
 			</tr>
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td>
 			</tr>
 			<?php 
 			if($_SESSION["wcs_user_admin"]) {
@@ -512,11 +512,11 @@ if(!isset($article['image']['list_usesummary'])) {
 				?>
 				    </select></td>
 				<td>&nbsp;&nbsp;&nbsp;</td>
-				<td bgcolor="#FFC299"><img src="img/leer.gif" alt="" width="15" height="10" /></td>
+				<td bgcolor="#FFC299"><img src="include/img/leer.gif" alt="" width="15" height="10" /></td>
 				<td class="chatlist">&nbsp;<?php echo $BL['be_article_adminuser'] ?></td>
 				</tr></table></td>
 			</tr>
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td>
 			</tr>
 			<?php
 			}
@@ -525,7 +525,7 @@ if(!isset($article['image']['list_usesummary'])) {
               <td align="right" class="chatlist"><?php echo $BL['be_article_username'] ?>:&nbsp;</td>
               <td><input name="article_username" type="text" id="article_username" class="f11" style="width: 300px" value="<?php echo html_specialchars($article["article_username"]) ?>" size="40" maxlength="100" /></td>
 			</tr>
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15" /></td>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15" /></td>
 			</tr>
 			
 	
@@ -559,7 +559,7 @@ echo '<option value="2592000"'.is_selected($article["article_timeout"], '2592000
 				</table></td>
 			</tr>
 
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 			
 			<tr>
 				<td align="right" class="chatlist tdtop4"><?php echo $BL['be_ftptakeover_status'] ?>:&nbsp;</td>
@@ -578,7 +578,7 @@ echo '<option value="2592000"'.is_selected($article["article_timeout"], '2592000
 						<td colspan="2" style="background-color:#FFFFFF" width="200">&nbsp;</td>
 					</tr>
 					
-					<tr><td colspan="8" style="background-color:#FFFFFF"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+					<tr><td colspan="8" style="background-color:#FFFFFF"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 					
 					<tr>
 						<td style="padding:1px 0 1px 0;"><input name="article_aktiv" type="checkbox" id="article_aktiv" value="1"<?php is_checked(1, $article["article_aktiv"]); ?> /></td>
@@ -596,7 +596,7 @@ echo '<option value="2592000"'.is_selected($article["article_timeout"], '2592000
 
 
 <?php if(isset($article["article_date"])) { ?>				
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 	
 			<tr>
 			<td align="right" class="chatlist"><?php echo $BL['be_article_eslastedit'] ?>:&nbsp;</td>
@@ -606,7 +606,7 @@ echo '<option value="2592000"'.is_selected($article["article_timeout"], '2592000
 			</tr>
 <?php } ?>
 			
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15" /></td>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15" /></td>
 			</tr>
 			<tr>
 				<td><input name="article_update" type="hidden" id="article_update" value="1" /></td>
@@ -619,8 +619,8 @@ echo '<option value="2592000"'.is_selected($article["article_timeout"], '2592000
 					<td><input name="donotsubmit" type="submit" class="button10" value="<?php echo $BL['be_newsletter_button_cancel'] ?>" onclick="return cancelEdit();" /></td>
 					</tr></table></td>
 			</tr>
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
-			<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
+			<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
 </table>
 </form>
 <script type="text/javascript">

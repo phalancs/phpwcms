@@ -61,7 +61,7 @@ if(strpos($content["all"],'{DELUXE_MENU') !== false) {
 	var itemCursor="pointer";
 	var itemTarget="_self";
 	var statusString="link";
-	var blankImage="img/leer.gif";
+	var blankImage="include/img/leer.gif";
 	
 	//--- Dimensions
 	var menuWidth="400px";

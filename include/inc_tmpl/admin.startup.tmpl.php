@@ -37,21 +37,21 @@ $startup_default = ($startup_default) ? html_specialchars($startup_default) : ""
 	  <td colspan="2" class="title"><?php echo $BL['be_admin_startup_title'] ?></td>
 	</tr>
 	<tr>
-		<td width="35"><img src="img/leer.gif" alt="" width="35" height="4"></td>
-		<td width="503"><img src="img/leer.gif" alt="" width="1" height="1"></td>
+		<td width="35"><img src="include/img/leer.gif" alt="" width="35" height="4"></td>
+		<td width="503"><img src="include/img/leer.gif" alt="" width="1" height="1"></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10"></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10"></td></tr>
 	<tr><td colspan="2" class="chatlist"><?php echo $BL['be_admin_startup_text'] ?>:&nbsp;</td></tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 	<tr>
 		<td colspan="2"><textarea name="startup_default" cols="35" rows="25" wrap="OFF" class="msgtext" id="startup_default" style="width:538px"><?php echo $startup_default; ?></textarea></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15"></td></tr>
 	<tr>
 		<td>&nbsp;</td>
 		<td><input name="Submit" type="submit" class="button10" value="<?php echo $BL['be_admin_startup_button'] ?>"></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15"></td></tr>
 	
 </table></form>

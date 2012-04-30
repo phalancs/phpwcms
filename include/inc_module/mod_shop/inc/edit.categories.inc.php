@@ -59,7 +59,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		?></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BL['be_admin_page_category'] ?>:&nbsp;</td>
@@ -71,7 +71,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		?>" style="width:400px;" value="<?php echo html_specialchars($plugin['data']['cat_name']) ?>" size="30" maxlength="200" /></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['shopprod_subcategory'] ?>:&nbsp;</td>
@@ -99,14 +99,14 @@ if (!defined('PHPWCMS_ROOT')) {
 		</select></td>
 	</tr>	
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 
 	<tr> 
 		<td align="right" class="chatlist" style="padding-top:4px;vertical-align:top;"><?php echo $BL['be_cnt_infotext'] ?>:&nbsp;</td>
 		<td colspan="2"><textarea name="cat_info" id="cat_info" rows="10" class="v12 width400"><?php echo html_specialchars($plugin['data']['cat_info']) ?></textarea></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15" /></td></tr>
 	
 	<tr>
 		<td align="right" class="chatlist"><?php echo $BL['be_ftptakeover_status'] ?>:&nbsp;</td>
@@ -120,7 +120,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		</table></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15" /></td>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15" /></td>
 	</tr>
 	<tr> 
 		<td>&nbsp;</td>

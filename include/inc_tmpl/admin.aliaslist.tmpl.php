@@ -62,7 +62,7 @@ foreach($result as $data) {
 	echo '		<td align="right">'.$data["article_id"]."&nbsp;</td>" . LF;
 	echo '		<td>&nbsp;'.$data["article_timestamp"]."</td>" . LF;
 	echo '		<td align="right" width="30"><a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=1&amp;id='.$data["article_id"].'">';
-	echo '<img src="img/button/edit_22x13.gif" alt="" border="0" height="13" width="22" /></a>';
+	echo '<img src="include/img/button/edit_22x13.gif" alt="" border="0" height="13" width="22" /></a>';
 	echo '</td>' . LF . '	</tr>' . LF;  
 	
 	$x++;

@@ -37,24 +37,24 @@ $frontend_css = ($frontend_css) ? html_specialchars($frontend_css) : "";
 	  <td colspan="2" class="title"><?php echo $BL['be_admin_css_title'] ?></td>
 	</tr>
 	<tr>
-		<td width="35"><img src="img/leer.gif" alt="" width="35" height="4"></td>
-		<td width="503"><img src="img/leer.gif" alt="" width="1" height="1"></td>
+		<td width="35"><img src="include/img/leer.gif" alt="" width="35" height="4"></td>
+		<td width="503"><img src="include/img/leer.gif" alt="" width="1" height="1"></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15"></td></tr>
+	<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15"></td></tr>
 	<tr>
-		<td align="right" valign="top" class="chatlist"><a name="frontend_css"></a><img src="img/leer.gif" alt="" width="1" height="16"><?php echo $BL['be_admin_css_css'] ?>:&nbsp;
+		<td align="right" valign="top" class="chatlist"><a name="frontend_css"></a><img src="include/img/leer.gif" alt="" width="1" height="16"><?php echo $BL['be_admin_css_css'] ?>:&nbsp;
 		<div style="text-align:right;padding:2px;padding-right:5px;padding-top:10px;">
-		<a href="#frontend_css" onclick="contractField('frontend_css', 'V')"><img src="img/button/minus_11x11.gif" border="0" alt="-" width="11" height="11"></a><a href="#frontend_css" onclick="growField('frontend_css', 'V')"><img src="img/button/add_11x11.gif" border="0" alt="+" width="11" height="11"></a>
+		<a href="#frontend_css" onclick="contractField('frontend_css', 'V')"><img src="include/img/button/minus_11x11.gif" border="0" alt="-" width="11" height="11"></a><a href="#frontend_css" onclick="growField('frontend_css', 'V')"><img src="include/img/button/add_11x11.gif" border="0" alt="+" width="11" height="11"></a>
 		</div>
 		</td>
 		<td><textarea name="frontend_css" cols="35" rows="25" wrap="OFF" class="msgtext" id="frontend_css" style="width:500px"><?php echo $frontend_css; ?></textarea></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15"></td></tr>
 	<tr>
 		<td>&nbsp;</td>
 		<td><input name="Submit" type="submit" class="button10" value="<?php echo $BL['be_admin_css_button'] ?>"></td>
 	</tr>
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15"></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15"></td></tr>
 	
 </table></form>

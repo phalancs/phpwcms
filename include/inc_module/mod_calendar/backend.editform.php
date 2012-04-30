@@ -51,7 +51,7 @@ initMootoolsAutocompleter();
 	
 	<?php } ?>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15" /></td></tr>
 
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['calendar_title'] ?>:&nbsp;</td>
@@ -63,7 +63,7 @@ initMootoolsAutocompleter();
 		?>" value="<?php echo html_specialchars($plugin['data']['calendar_title']) ?>" size="30" maxlength="250" /></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 
 
 	<tr> 
@@ -88,7 +88,7 @@ initMootoolsAutocompleter();
 		function aStart(date, month, year) {
 			getFieldById('calendar_start_date').value = subrstr('00' + date, 2) + '<?php echo $BLM['date_delimiter'] ?>' + subrstr('00' + month, 2) + '<?php echo $BLM['date_delimiter'] ?>' + year;
 		}
-		calStart = new dynCalendar('calStart', 'aStart', 'img/dynCal/');
+		calStart = new dynCalendar('calStart', 'aStart', 'include/img/dynCal/');
 		calStart.setMonthCombo(false);
 		calStart.setYearCombo(false);
 		</script>&nbsp;</td>
@@ -103,7 +103,7 @@ initMootoolsAutocompleter();
 		
 	</tr>	
 	
-	<tr id="endDate4"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+	<tr id="endDate4"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	
 	<tr id="endDate5"> 
 		<td align="right" class="chatlist" valign="top" style="padding-top:17px"><?php echo $BLM['calendar_end'] ?>:&nbsp;</td>
@@ -126,7 +126,7 @@ initMootoolsAutocompleter();
 		function aEnd(date, month, year) {
 			getFieldById('calendar_end_date').value = subrstr('00' + date, 2) + '<?php echo $BLM['date_delimiter'] ?>' + subrstr('00' + month, 2) + '<?php echo $BLM['date_delimiter'] ?>' + year;
 		}
-		calEnd = new dynCalendar('calEnd', 'aEnd', 'img/dynCal/');
+		calEnd = new dynCalendar('calEnd', 'aEnd', 'include/img/dynCal/');
 		calEnd.setMonthCombo(false);
 		calEnd.setYearCombo(false);
 		</script>&nbsp;</td>
@@ -137,7 +137,7 @@ initMootoolsAutocompleter();
 		
 	</tr>	
 	
-	<tr id="endDate0"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+	<tr id="endDate0"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 	
 	
 	<tr> 
@@ -156,7 +156,7 @@ initMootoolsAutocompleter();
 		</select></td>
 	</tr>
 	
-	<tr id="rDate0"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr id="rDate0"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr id="rDate1"> 
 		<td align="right" class="chatlist" valign="top" style="padding-top:17px"><?php echo $BLM['repeat_till'] ?>:&nbsp;</td>
@@ -174,7 +174,7 @@ initMootoolsAutocompleter();
 					function rStart(date, month, year) {
 						getFieldById('calendar_range_start').value = subrstr('00' + date, 2) + '<?php echo $BLM['date_delimiter'] ?>' + subrstr('00' + month, 2) + '<?php echo $BLM['date_delimiter'] ?>' + year;
 					}
-					rangeStart = new dynCalendar('rangeStart', 'rStart', 'img/dynCal/');
+					rangeStart = new dynCalendar('rangeStart', 'rStart', 'include/img/dynCal/');
 					rangeStart.setMonthCombo(false);
 					rangeStart.setYearCombo(false);
 					</script>&nbsp;</td>
@@ -184,7 +184,7 @@ initMootoolsAutocompleter();
 					function rEnd(date, month, year) {
 						getFieldById('calendar_range_end').value = subrstr('00' + date, 2) + '<?php echo $BLM['date_delimiter'] ?>' + subrstr('00' + month, 2) + '<?php echo $BLM['date_delimiter'] ?>' + year;
 					}
-					rangeEnd = new dynCalendar('rangeEnd', 'rEnd', 'img/dynCal/');
+					rangeEnd = new dynCalendar('rangeEnd', 'rEnd', 'include/img/dynCal/');
 					rangeEnd.setMonthCombo(false);
 					rangeEnd.setYearCombo(false);
 					</script>&nbsp;</td>
@@ -194,28 +194,28 @@ initMootoolsAutocompleter();
 		</table></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['where'] ?>:&nbsp;</td>
 		<td><input name="calendar_where" type="text" id="calendar_where" class="v12" style="width:375px;" value="<?php echo html_specialchars($plugin['data']['calendar_where']) ?>" size="30" maxlength="220" /></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['calendar_token'] ?>:&nbsp;</td>
 		<td><input name="calendar_tag" type="text" id="calendar_tag" class="v12" style="width:375px;" value="<?php echo html_specialchars(trim($plugin['data']['calendar_tag'])) ?>" size="30" maxlength="255" /></td>
 	</tr>
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BL['be_profile_label_lang'] ?>:&nbsp;</td>
 		<td><input name="calendar_lang" type="text" id="calendar_lang" class="v12" style="width:100px;" value="<?php echo html_specialchars(trim($plugin['data']['calendar_lang'])) ?>" size="30" maxlength="50" /></td>
 	</tr>
 
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['article_link'] ?>:&nbsp;</td>
@@ -226,14 +226,14 @@ initMootoolsAutocompleter();
 		<td><input name="calendar_refid" type="text" id="calendar_refid" class="v12" style="width:375px;margin-top:3px;" value="<?php echo empty($plugin['data']['calendar_refid']) ? '' : html_specialchars($plugin['data']['calendar_refid']) ?>" size="30" maxlength="255" /></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist tdtop4"><?php echo $BLM['calendar_teasertext'] ?>:&nbsp;</td>
 		<td><textarea name="calendar_teaser" id="calendar_teaser" class="v12 width375" rows="5"><?php echo html_specialchars($plugin['data']['calendar_teaser']) ?></textarea></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15" /></td></tr>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15" /></td></tr>
 	
 	<tr> 
 		<td class="chatlist" colspan="2" style="padding-bottom:4px"><?php echo $BLM['calendar_text'] ?>:&nbsp;</td>
@@ -258,7 +258,7 @@ initMootoolsAutocompleter();
 		?></td>
 	</tr>
 	
-	<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 	
 	
 	<tr>
@@ -268,8 +268,8 @@ initMootoolsAutocompleter();
 			<tr>
 				<td><input type="text" name="cnt_image_name" id="cnt_image_name" value="<?php echo html_specialchars($plugin['data']['calendar_image']['name']) ?>" class="v12 width300" maxlength="250" /></td>
 				<td style="padding:2px 0 0 5px" width="100">
-					<a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=7');return false;"><img src="img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a>
-					<a href="#" title="<?php echo $BL['be_cnt_delimage'] ?>" onclick="setImgIdName();return false;"><img src="img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a>
+					<a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=7');return false;"><img src="include/img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a>
+					<a href="#" title="<?php echo $BL['be_cnt_delimage'] ?>" onclick="setImgIdName();return false;"><img src="include/img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a>
 					<input name="cnt_image_id" id="cnt_image_id" type="hidden" value="<?php echo $plugin['data']['calendar_image']['id'] ?>" />
 				</td>
 			</tr>
@@ -310,9 +310,9 @@ initMootoolsAutocompleter();
 		<td><input type="text" name="cnt_image_link" id="cnt_image_link" class="v12 width350" maxlength="500" value="<?php echo html_specialchars($plugin['data']['calendar_image']['link']) ?>" /></td>
 	</tr>
 
-	<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+	<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>	
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>	
 	
 
 	
@@ -335,7 +335,7 @@ initMootoolsAutocompleter();
 		</table></td>
 	</tr>
 	
-	<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td>
+	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td>
 	</tr>
 	<tr> 
 		<td>&nbsp;</td>
@@ -457,7 +457,7 @@ function showImage() {
 	id	= parseInt(getObjectById('cnt_image_id').value);
 	img	= getObjectById('cnt_image');
 	if(id > 0) {
-		img.innerHTML = '<img src="<?php echo PHPWCMS_URL.'img/cmsimage.php/'.$phpwcms['img_list_width'].'x'.$phpwcms['img_list_height'] ?>/'+id+'" alt="" border="0" />';
+		img.innerHTML = '<img src="<?php echo PHPWCMS_URL.'include/img/cmsimage.php/'.$phpwcms['img_list_width'].'x'.$phpwcms['img_list_height'] ?>/'+id+'" alt="" border="0" />';
 		img.style.display = '';
 	} else {
 		img.style.display = 'none';

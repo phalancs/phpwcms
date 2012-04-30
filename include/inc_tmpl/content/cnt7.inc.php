@@ -60,9 +60,9 @@ if(is_array($tmpllist) && count($tmpllist)) {
 ?>				  
 		</select></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8"></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt=""></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8"></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt=""></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8"></td></tr>
 
 <tr>
   <td align="right" class="chatlist"><?php echo $BL['be_cnt_download'] ?>:&nbsp;</td>
@@ -70,15 +70,15 @@ if(is_array($tmpllist) && count($tmpllist)) {
       <tr>
 	   <td><input name="cfile_direct" id="cfile_direct" type="checkbox" value="1" <?php is_checked(1, $content['file']['direct_download']); ?>></td>
 	   <td class="v10"><label for="cfile_direct">&nbsp;<?php echo $BL['be_cnt_download_direct'] ?></label>&nbsp;&nbsp;</td>
-	   <td><img src="img/leer.gif" alt="" width="1" height="22"></td>	
+	   <td><img src="include/img/leer.gif" alt="" width="1" height="22"></td>	
 	  </tr>
 	  </table></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8"></td></tr>
 
 <tr>
-  <td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_cnt_files'] ?>:&nbsp;</td>
+  <td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_cnt_files'] ?>:&nbsp;</td>
   <td valign="top"><table border="0" cellpadding="0" cellspacing="0" summary="">
 	<tr>
 	  <td valign="top"><select name="cfile_list[]" size="8" multiple class="f11" id="cfile_list" style="width: 300px;">
@@ -117,18 +117,18 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	  
 	  ?>
 	  </select></td>
-	  <td valign="top"><img src="img/leer.gif" alt="" width="5" height="1"></td>                                           <!-- browser_file.php //-->
-	  <td valign="top"><a href="javascript:;" title="<?php echo $BL['be_cnt_openfilebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=4&amp;target=nolist')"><img src="img/button/open_image_button.gif" alt="" width="20" height="15" border="0"></a><br />
-	  <img src="img/leer.gif" alt="" width="1" height="4"><br />
-	  <a href="javascript:;" title="<?php echo $BL['be_cnt_sortup'] ?>" onclick="moveOptionUp(document.articlecontent.cfile_list);"><img src="img/button/image_pos_up.gif" alt="" width="10" height="9" border="0"></a><a href="javascript:;" title="<?php echo $BL['be_cnt_sortdown'] ?>" onclick="moveOptionDown(document.articlecontent.cfile_list);"><img src="img/button/image_pos_down.gif" alt="" width="10" height="9" border="0"></a><br />
-	  <img src="img/leer.gif" alt="" width="1" height="4"><br />
-	  <a href="javascript:;" onclick="removeSelectedOptions(document.articlecontent.cfile_list);" title="<?php echo $BL['be_cnt_delfile'] ?>"><img src="img/button/del_image_button1.gif" alt="" width="20" height="15" border="0"></a></td>
+	  <td valign="top"><img src="include/img/leer.gif" alt="" width="5" height="1"></td>                                           <!-- browser_file.php //-->
+	  <td valign="top"><a href="javascript:;" title="<?php echo $BL['be_cnt_openfilebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=4&amp;target=nolist')"><img src="include/img/button/open_image_button.gif" alt="" width="20" height="15" border="0"></a><br />
+	  <img src="include/img/leer.gif" alt="" width="1" height="4"><br />
+	  <a href="javascript:;" title="<?php echo $BL['be_cnt_sortup'] ?>" onclick="moveOptionUp(document.articlecontent.cfile_list);"><img src="include/img/button/image_pos_up.gif" alt="" width="10" height="9" border="0"></a><a href="javascript:;" title="<?php echo $BL['be_cnt_sortdown'] ?>" onclick="moveOptionDown(document.articlecontent.cfile_list);"><img src="include/img/button/image_pos_down.gif" alt="" width="10" height="9" border="0"></a><br />
+	  <img src="include/img/leer.gif" alt="" width="1" height="4"><br />
+	  <a href="javascript:;" onclick="removeSelectedOptions(document.articlecontent.cfile_list);" title="<?php echo $BL['be_cnt_delfile'] ?>"><img src="include/img/button/del_image_button1.gif" alt="" width="20" height="15" border="0"></a></td>
 	</tr>
   </table></td>
   </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>
 <tr>
-  <td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_cnt_description'] ?>:&nbsp;</td>
+  <td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_cnt_description'] ?>:&nbsp;</td>
   <td valign="top"><textarea name="cfile_descr" cols="40" rows="8" class="f11" id="cfile_descr" style="width: 440px;"><?php 
   
 	if(!empty($content["file_descr"]) && ($content["file_descr"]{0} == "\r" || $content["file_descr"]{0} == "\n")) {
@@ -140,7 +140,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 </tr>
 
 
-<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr><td colspan="2" align="center"><?php
 
@@ -159,4 +159,4 @@ include(PHPWCMS_ROOT.'/include/inc_lib/wysiwyg.editor.inc.php');
 
 ?></td></tr>
 
-<tr><td colspan="2" class="rowspacer7x7"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>

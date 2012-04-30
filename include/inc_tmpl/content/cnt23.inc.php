@@ -32,7 +32,7 @@ if (!defined('PHPWCMS_ROOT')) {
 
 $field_counter = 0;
 initMootools();
-$BE['HEADER']['contentpart.js'] = getJavaScriptSourceLink('include/inc_js/contentpart.js');
+$BE['HEADER']['contentpart.js'] = getJavaScriptSourceLink('include/js/contentpart.js');
 $BE['HEADER']['custom_js'] = '<script type="text/javascript">
 <!--
 function initMathSpam() {
@@ -200,8 +200,8 @@ initMootools();
 $BE['BODY_CLOSE'][] = '<script language="javascript" type="text/javascript">document.getElementById("target_ctype").disabled = true;</script>';
 
 ?>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /><input type="hidden" name="target_ctype" value="23" /></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /><input type="hidden" name="target_ctype" value="23" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 <tr>
 <td align="right" class="chatlist"><?php echo $BL['be_msg_subject'] ?>:&nbsp;</td>
 <td><table summary="" cellpadding="0" cellspacing="0" border="0">
@@ -338,7 +338,7 @@ echo $subject_option;
   </tr>
   </table></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 <tr>
 <td align="right" class="chatlist"><?php echo $BL['be_cnt_recipient'] ?>:&nbsp;</td>
 <td><table summary="" cellpadding="0" cellspacing="0" border="0">
@@ -356,7 +356,7 @@ echo $subject_option;
   </tr>
 </table></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 <tr>
 <td align="right" class="chatlist"><?php echo $BL['be_newsletter_fromemail'] ?>:&nbsp;</td>
 <td><table summary="" cellpadding="0" cellspacing="0" border="0">
@@ -375,7 +375,7 @@ echo $subject_option;
 </table></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 <tr>
 <td align="right" class="chatlist"><?php echo $BL['be_newsletter_fromname'] ?>:&nbsp;</td>
 <td><table summary="" cellpadding="0" cellspacing="0" border="0">
@@ -394,7 +394,7 @@ echo $subject_option;
 </table></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
 
 <tr>
 <td align="right" class="chatlist"><?php echo $BL['be_cnt_send_copy_to']?>:&nbsp;</td>
@@ -410,7 +410,7 @@ echo $subject_option;
 </table></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
 
 <tr>
 	<td align="right">&nbsp;</td>
@@ -423,7 +423,7 @@ echo $subject_option;
 	</td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td></tr>
 
 <tr>
 	<td  align="right">&nbsp;</td>
@@ -436,9 +436,9 @@ echo $subject_option;
 	</td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 
 
 <tr>
@@ -456,7 +456,7 @@ if($content["id"]) {
 		echo '<div style="float:right;padding-right:10px;">';
 		echo "<button onclick=\"window.open('include/inc_act/act_export.php?action=exportformresult&amp;fid=";
 		echo $content['id']."', 'Zweitfenster');\" class=\"f11b\" style=\"padding: 2px 6px 2px 4px\">";
-		echo '<img src="img/icons/small_icon_xls.gif" alt="Excel Sheet" style="position: relative; top:1;" />&nbsp;';
+		echo '<img src="include/img/icons/small_icon_xls.gif" alt="Excel Sheet" style="position: relative; top:1;" />&nbsp;';
 		echo $BL['be_cnt_download'].'<span style="font-weight:normal;">&nbsp;('.$entries.')</span></button></div>';
 		
 	}
@@ -468,14 +468,14 @@ if($content["id"]) {
   			<td class="v10" bgcolor="#E7E8EB"><label for="cform_savedb">&nbsp;<?php echo $BL['be_cnt_formsave_in_db'] ?></label>&nbsp;</td>
 		</tr>
   		<tr>
-  		  <td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2" /></td>
+  		  <td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td>
 	  </tr>
   		<tr>
   		  <td bgcolor="#E7E8EB"><input type="checkbox" name="cform_saveprofile" id="cform_saveprofile" value="1" <?php echo is_checked(1, $content['form']["saveprofile"], 0, 0) ?> onchange="this.form.submit();" /></td>
   		  <td class="v10" bgcolor="#E7E8EB"><label for="cform_saveprofile">&nbsp;<?php echo $BL['be_cnt_formsave_profile'] ?></label>&nbsp;</td>
 	  </tr>
   		<tr>
-  		  <td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2" /></td>
+  		  <td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td>
 	  </tr>
   		<tr>
   		  <td bgcolor="#E7E8EB"><input type="checkbox" name="cform_tracking_off" id="cform_tracking_off" value="1" <?php echo is_checked(1, $content['form']["formtracking_off"], 0, 0) ?> /></td>
@@ -487,12 +487,12 @@ if($content["id"]) {
 
 
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 
 <tr>
-	<td align="right" class="chatlist" valign="top"><img src="img/leer.gif" alt="" width="1" height="15" /><?php echo $BL['be_admin_tmpl_default'] ?>:&nbsp;</td>
+	<td align="right" class="chatlist" valign="top"><img src="include/img/leer.gif" alt="" width="1" height="15" /><?php echo $BL['be_admin_tmpl_default'] ?>:&nbsp;</td>
 <td>
 	<table summary="" cellpadding="1" cellspacing="0" border="0">
 	<tr bgcolor="#E7E8EB">
@@ -505,10 +505,10 @@ if($content["id"]) {
 	<textarea name="cform_startup" id="cform_startup" rows="5" class="f11" style="width:440px;"><?php echo  html_entities($content['form']["startup"]) ?></textarea></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 
 <tr>
-<td align="right" class="chatlist" valign="top"><img src="img/leer.gif" alt="" width="1" height="15" /><?php echo $BL['be_cnt_onsuccess'] ?>:&nbsp;</td>
+<td align="right" class="chatlist" valign="top"><img src="include/img/leer.gif" alt="" width="1" height="15" /><?php echo $BL['be_cnt_onsuccess'] ?>:&nbsp;</td>
 <td><table summary="" cellpadding="0" cellspacing="0" border="0">
 	<tr bgcolor="#E7E8EB">
 		<td><input type="radio" name="cform_onsuccess_redirect" id="cform_onsuccess_redirect0" value="0"<?php echo is_checked('0', $content['form']["onsuccess_redirect"], 0, 0) ?> title="redirect on success" /></td>
@@ -523,7 +523,7 @@ if($content["id"]) {
 			echo $for_select;
 			echo '<option value="{REMOTE_IP}">{REMOTE_IP}</option>'.LF;
 			echo '</select></td>';
-			echo '<td style="padding-right:3px;"><img src="img/button/go04.gif" alt="" width="15" height="15" title="insert field placeholder" border="0" ';
+			echo '<td style="padding-right:3px;"><img src="include/img/button/go04.gif" alt="" width="15" height="15" title="insert field placeholder" border="0" ';
 			echo 'onclick="insertAtCursorPos(document.articlecontent.cform_onsuccess, ';
 			echo 'document.articlecontent.successInfo.options[document.articlecontent.successInfo.selectedIndex].value);" style="margin:3px;" /></td>';
 		}
@@ -539,9 +539,9 @@ if($content["id"]) {
 <textarea name="cform_onsuccess" id="cform_onsuccess" rows="3" class="f11" style="font-size:11px;width:440px;"><?php echo  html_entities($content['form']["onsuccess"]) ?></textarea>
 </td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td></tr>
 <tr>
-<td align="right" class="chatlist" valign="top"><img src="img/leer.gif" alt="" width="1" height="15" /><?php echo $BL['be_cnt_onerror'] ?>:&nbsp;</td>
+<td align="right" class="chatlist" valign="top"><img src="include/img/leer.gif" alt="" width="1" height="15" /><?php echo $BL['be_cnt_onerror'] ?>:&nbsp;</td>
 <td><table summary="" cellpadding="1" cellspacing="0" border="0">
 	<tr bgcolor="#E7E8EB">
 		<td><input type="radio" name="cform_onerror_redirect" id="cform_onerror_redirect0" value="0"<?php echo is_checked('0', $content['form']["onerror_redirect"], 0, 0) ?> title="redirect on success" /></td>
@@ -558,13 +558,13 @@ if($content["id"]) {
 </td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
 
 <tr><td colspan="2">
 
 <table summary="" cellpadding="0" cellspacing="1" border="0">
 
-<tr bgcolor="#DAE4ED"><td colspan="8"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr bgcolor="#DAE4ED"><td colspan="8"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 
 <tr bgcolor="#E7E8EB">
 <td colspan="2" class="chatlist" align="right"><?php echo $BL['be_cnt_reference_basis'] ?>:&nbsp;</td>
@@ -583,25 +583,25 @@ if($content["id"]) {
 	}
 	?>
 	<td><input type="radio" name="cform_labelpos" id="cform_labelpos3" value="3"<?php echo  is_checked(3, $content['form']["labelpos"], 0, 1) ?> /></td>
-	<td><label for="cform_labelpos3"><img src="img/symbole/label_3.gif" width="72" height="22" alt="" /></label></td>
+	<td><label for="cform_labelpos3"><img src="include/img/symbole/label_3.gif" width="72" height="22" alt="" /></label></td>
 
 	<td>&nbsp;&nbsp;</td>	
 	
 	<td><input type="radio" name="cform_labelpos" id="cform_labelpos0" value="0"<?php echo  is_checked(0, $content['form']["labelpos"], 0, 1) ?> /></td>
-	<td><label for="cform_labelpos0"><img src="img/symbole/label_0.gif" width="70" height="22" alt="" /></label></td>
+	<td><label for="cform_labelpos0"><img src="include/img/symbole/label_0.gif" width="70" height="22" alt="" /></label></td>
 
 	<td>&nbsp;&nbsp;</td>
 	<td><input type="radio" name="cform_labelpos" id="cform_labelpos1" value="1"<?php echo  is_checked(1, $content['form']["labelpos"], 0, 1) ?> /></td>
-	<td><label for="cform_labelpos1"><img src="img/symbole/label_1.gif" width="60" height="22" alt="" /></label></td>
+	<td><label for="cform_labelpos1"><img src="include/img/symbole/label_1.gif" width="60" height="22" alt="" /></label></td>
 
 	<td>&nbsp;&nbsp;</td>
 	<td><input type="radio" name="cform_labelpos" id="cform_labelpos2" value="2"<?php echo  is_checked(2, $content['form']["labelpos"], 0, 1) ?> /></td>
-	<td><label for="cform_labelpos2"><img src="img/symbole/label_2.gif" width="60" height="22" alt="" /></label></td>
+	<td><label for="cform_labelpos2"><img src="include/img/symbole/label_2.gif" width="60" height="22" alt="" /></label></td>
 	</tr>
 </table></td>
 </tr>
-<tr bgcolor="#DAE4ED"><td colspan="8"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
-<tr><td colspan="8"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+<tr bgcolor="#DAE4ED"><td colspan="8"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="8"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 
 
 <tr>
@@ -632,8 +632,8 @@ if($content["id"]) {
 
 
 
-<tr><td colspan="8"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
-<tr bgcolor="#DAE4ED"><td colspan="8"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="8"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
+<tr bgcolor="#DAE4ED"><td colspan="8"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 <tr bgcolor="#E6ECF2">
 	<td style="width:30px">&nbsp;</td>
 	<td class="chatlist" style="padding: 1px">&nbsp;<?php echo $BL['be_cnt_type'] ?>:</td>
@@ -641,8 +641,8 @@ if($content["id"]) {
 	<td class="chatlist" style="padding: 1px">&nbsp;<?php echo $BL['be_cnt_label'] ?>:</td>
 	<td class="chatlist" title="size/columns" style="padding: 1px">&nbsp;S/C:</td>
 	<td class="chatlist" title="maxlength/rows" style="padding: 1px">&nbsp;M/R:</td>
-	<td align="center" style="padding: 1px"><img src="img/article/fill_in_here.gif" alt="<?php echo $BL['be_cnt_needed'] ?>" title="<?php echo $BL['be_cnt_needed'] ?>" border="0" /></td>
-	<td align="center" style="padding: 1px"><img src="img/button/trash_13x13_1.gif" alt="<?php echo $BL['be_cnt_delete'] ?>" title="<?php echo $BL['be_cnt_delete'] ?>" border="0" /></td>
+	<td align="center" style="padding: 1px"><img src="include/img/article/fill_in_here.gif" alt="<?php echo $BL['be_cnt_needed'] ?>" title="<?php echo $BL['be_cnt_needed'] ?>" border="0" /></td>
+	<td align="center" style="padding: 1px"><img src="include/img/button/trash_13x13_1.gif" alt="<?php echo $BL['be_cnt_delete'] ?>" title="<?php echo $BL['be_cnt_delete'] ?>" border="0" /></td>
 </tr>
 <?php
 if(isset($content['form']["fields"]) && is_array($content['form']["fields"]) && count($content['form']["fields"])) {
@@ -671,7 +671,7 @@ if(isset($content['form']["fields"]) && is_array($content['form']["fields"]) && 
 									echo ', 4';
 									
 									$field_row4  = '<tr'.$field_bg.' id="formRow_'.$field_counter.'_4">'.LF;
-									$field_row4 .= '<td colspan="2" class="chatlist" align="right" valign="top">&nbsp;<img src="img/leer.gif" width="1" height="15" alt="" />';
+									$field_row4 .= '<td colspan="2" class="chatlist" align="right" valign="top">&nbsp;<img src="include/img/leer.gif" width="1" height="15" alt="" />';
 									$field_row4 .= $BL['be_cnt_bid_verifyemail'].':&nbsp;</td>'.LF;
 									$field_row4 .= '<td colspan="6"><textarea name="cform_field_verifyemail" ';
 									$field_row4 .= 'id="cform_field_verifyemail" rows="5" class="code" style="font-size:11px;width:323px;" wrap="off">';
@@ -768,7 +768,7 @@ if(isset($content['form']["fields"]) && is_array($content['form']["fields"]) && 
 								
 		}
 		
-		echo ')"><img src="img/button/arrow_opened.gif" alt="" border="0" /></a>';
+		echo ')"><img src="include/img/button/arrow_opened.gif" alt="" border="0" /></a>';
 		echo '</td>'.LF.'<td>';
 		echo '<select name="cform_field_type['.$field_counter.']" class="v10" style="width:140px">'.LF;
 		echo '<option value="text"'. 		is_selected('text', 		$content['form']["fields"][$key]['type'], 0, 0) .'>'.$BL['be_cnt_field']['text'].'</option>'.LF;
@@ -812,29 +812,29 @@ if(isset($content['form']["fields"]) && is_array($content['form']["fields"]) && 
 		
 		echo '<tr'.$field_bg.' id="formRow_'.$field_counter.'_1"><td>&nbsp;</td>';
 		echo '<td valign="top"><table summary="" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td valign="top">';
-		echo '<img src="img/leer.gif" width="3" height="17" alt="" />';
+		echo '<img src="include/img/leer.gif" width="3" height="17" alt="" />';
 		if($field_counter != 1) {
 			echo '<a href="#" onclick="document.articlecontent.cform_order_'.$field_counter.'.value=\'';
 			echo ($field_counter-1).'\';document.articlecontent.cform_order_'.($field_counter-1);
 			echo '.value=\''.$field_counter.'\';document.articlecontent.submit();return false;">';
-			echo '<img src="img/button/sort_top_1.gif" border="0" alt="" width="11" height="11" />';
+			echo '<img src="include/img/button/sort_top_1.gif" border="0" alt="" width="11" height="11" />';
 			echo '</a>';
 		} else {
-			echo '<img src="img/button/sort_top_0.gif" border="0" alt="" width="11" height="11" />';
+			echo '<img src="include/img/button/sort_top_0.gif" border="0" alt="" width="11" height="11" />';
 		} 
-		echo '<img src="img/leer.gif" width="1" height="1" alt="" />';
+		echo '<img src="include/img/leer.gif" width="1" height="1" alt="" />';
 		if($field_max != $field_counter) {
 			echo '<a href="#" onclick="document.articlecontent.cform_order_'.$field_counter.'.value=\'';
 			echo ($field_counter+1).'\';document.articlecontent.cform_order_'.($field_counter+1);
 			echo '.value=\''.$field_counter.'\';document.articlecontent.submit();return false;">';
-			echo '<img src="img/button/sort_bottom_1.gif" border="0" alt="" width="11" height="11" />';
+			echo '<img src="include/img/button/sort_bottom_1.gif" border="0" alt="" width="11" height="11" />';
 			echo '</a>';
 		} else {
-			echo '<img src="img/button/sort_bottom_0.gif" border="0" alt="" width="11" height="11" />';
+			echo '<img src="include/img/button/sort_bottom_0.gif" border="0" alt="" width="11" height="11" />';
 		} 
 		echo '<input type="hidden" name="cform_order['.$field_counter.']" id="cform_order_'.$field_counter.'" value="'.$field_counter.'">';
 		echo '</td><td class="chatlist" align="right" valign="top"><a name="field_value_'.$field_counter.'"></a>';
-		echo '<img src="img/leer.gif" width="1" height="15" alt="" />'.$BL['be_cnt_value'].':&nbsp;';
+		echo '<img src="include/img/leer.gif" width="1" height="15" alt="" />'.$BL['be_cnt_value'].':&nbsp;';
 		echo "</td></tr>";
 		// Show "sign up for reCAPCHA API key"
 		if($content['form']["fields"][$key]['type'] == 'recaptcha') {
@@ -850,10 +850,10 @@ if(isset($content['form']["fields"]) && is_array($content['form']["fields"]) && 
 		echo '</td>';
 		echo '<td colspan="2" valign="bottom"><div style="padding:2px"><a href="#field_value_'.$field_counter.'" ';
 		echo "onclick=\"contractField('cform_field_value_".$field_counter."', 'V')\">";
-		echo '<img src="img/button/minus_11x11.gif" border="0" alt="-" width="11" height="11"></a><br />';
+		echo '<img src="include/img/button/minus_11x11.gif" border="0" alt="-" width="11" height="11"></a><br />';
 		echo '<a href="#field_value_'.$field_counter.'" ';
 		echo "onclick=\"growField('cform_field_value_".$field_counter."', 'V')\">";
-		echo '<img src="img/button/add_11x11.gif" border="0" alt="+" width="11" height="11"></a></div></td>';		
+		echo '<img src="include/img/button/add_11x11.gif" border="0" alt="+" width="11" height="11"></a></div></td>';		
 		echo '</tr>'.LF;
 
 		echo '<tr'.$field_bg.' id="formRow_'.$field_counter.'_2">';
@@ -877,7 +877,7 @@ if(isset($content['form']["fields"]) && is_array($content['form']["fields"]) && 
 		// if field row 4 
 		echo $field_row4;
 		
-		echo '<tr bgcolor="#DAE4ED"><td colspan="8"><img src="img/leer.gif" width="1" height="1" alt="" /></td></tr>';
+		echo '<tr bgcolor="#DAE4ED"><td colspan="8"><img src="include/img/leer.gif" width="1" height="1" alt="" /></td></tr>';
 		
 		
 		// generate javascript code part 2
@@ -930,10 +930,10 @@ if(isset($content['form']["fields"]) && is_array($content['form']["fields"]) && 
 	  <input type="hidden" name="cform_order[0]" value="<?php echo $field_counter?>" /></td>
 </tr>
 <tr bgcolor="#E7E8EB">
-	<td colspan="2" class="chatlist" valign="top" align="right"><a name="field_value_0" id="field_value_0"></a>&nbsp;<img src="img/leer.gif" alt="" width="1" height="15" /><?php echo $BL['be_cnt_value'] ?>:&nbsp;</td>
+	<td colspan="2" class="chatlist" valign="top" align="right"><a name="field_value_0" id="field_value_0"></a>&nbsp;<img src="include/img/leer.gif" alt="" width="1" height="15" /><?php echo $BL['be_cnt_value'] ?>:&nbsp;</td>
 	<td colspan="4"><textarea name="cform_field_value[0]" id="cform_field_value_0" rows="5" class="code" style="font-size:11px;width:323px;"></textarea></td>
-	<td colspan="2" valign="bottom"><div style="padding:2px"><a href="#field_value_0" onclick="contractField('cform_field_value_0', 'V')"><img src="img/button/minus_11x11.gif" border="0" alt="-" width="11" height="11" /></a><br />
-	  <a href="#field_value_0" onclick="growField('cform_field_value_0', 'V')"><img src="img/button/add_11x11.gif" border="0" alt="+" width="11" height="11" /></a></div></td>
+	<td colspan="2" valign="bottom"><div style="padding:2px"><a href="#field_value_0" onclick="contractField('cform_field_value_0', 'V')"><img src="include/img/button/minus_11x11.gif" border="0" alt="-" width="11" height="11" /></a><br />
+	  <a href="#field_value_0" onclick="growField('cform_field_value_0', 'V')"><img src="include/img/button/add_11x11.gif" border="0" alt="+" width="11" height="11" /></a></div></td>
 </tr>
 <tr bgcolor="#E7E8EB">
 	<td colspan="2" class="chatlist" align="right">&nbsp;<?php echo $BL['be_cnt_error_text'] ?>:&nbsp;</td>
@@ -949,8 +949,8 @@ if(isset($content['form']["fields"]) && is_array($content['form']["fields"]) && 
 		</tr>
 	</table></td>
 </tr>
-<tr bgcolor="#DAE4ED"><td colspan="8"><img src="img/leer.gif" alt="" width="1" height="1" /></td></tr>
-<tr><td colspan="8"><img src="img/leer.gif" alt="" width="1" height="2" /></td></tr>
+<tr bgcolor="#DAE4ED"><td colspan="8"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
+<tr><td colspan="8"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td></tr>
 <tr><td colspan="2">&nbsp;</td><td colspan="6"><input type="submit" value="<?php echo $BL['be_article_cnt_button1'] ?>" class="v09" /></td></tr>
 
 </table><?php
@@ -1020,9 +1020,9 @@ if(!empty($field_counter) && $field_counter > 1) {
 ?></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 
 <tr><td class="chatlist" colspan="2">
 	<a name="anchor_template" id="anchor_template"></a>
@@ -1045,7 +1045,7 @@ if(!empty($field_counter) && $field_counter > 1) {
 			echo '<option value="{REMOTE_IP}">{REMOTE_IP}</option>'.LF;
 			echo '<option value="{DATE:y/m/d H:i:s}">{DATE:y/m/d H:i:s}</option>'.LF;
 			echo '</select></td>';
-			echo '<td><img src="img/button/go04.gif" width="15" height="15" title="insert field placeholder" border="0" ';
+			echo '<td><img src="include/img/button/go04.gif" width="15" height="15" title="insert field placeholder" border="0" ';
 			echo 'onclick="insertAtCursorPos(document.articlecontent.cform_template, ';
 			echo 'document.articlecontent.ph.options[document.articlecontent.ph.selectedIndex].value);" style="margin:3px;" alt="" /></td>';
 		}
@@ -1055,7 +1055,7 @@ if(!empty($field_counter) && $field_counter > 1) {
 </tr>
 
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td></tr>
 
 
 <tr>
@@ -1078,7 +1078,7 @@ if($content['form']["template_format"]) {
 	echo html_entities($content['form']["template"]).'</textarea>';
 	?>
 	<div style="text-align:right;padding:2px;padding-right:5px;">
-	<a href="#anchor_template" onclick="contractField('cform_template', 'V')"><img src="img/button/minus_11x11.gif" border="0" alt="-" width="11" height="11" /></a><a href="#anchor_template" onclick="growField('cform_template', 'V')"><img src="img/button/add_11x11.gif" border="0" alt="+" width="11" height="11" /></a>
+	<a href="#anchor_template" onclick="contractField('cform_template', 'V')"><img src="include/img/button/minus_11x11.gif" border="0" alt="-" width="11" height="11" /></a><a href="#anchor_template" onclick="growField('cform_template', 'V')"><img src="include/img/button/add_11x11.gif" border="0" alt="+" width="11" height="11" /></a>
 	</div>
 	<?php
 }
@@ -1086,7 +1086,7 @@ if($content['form']["template_format"]) {
 ?></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['php_function']?>:&nbsp;</td>
@@ -1095,9 +1095,9 @@ if($content['form']["template_format"]) {
 
 <!-- copy mail template //-->
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 
 <tr>
 	<td class="chatlist" colspan="2">
@@ -1162,7 +1162,7 @@ if($content['form']["template_format"]) {
 			echo '<option value="{REMOTE_IP}">{REMOTE_IP}</option>'.LF;
 			echo '<option value="{DATE:y/m/d H:i:s}">{DATE:y/m/d H:i:s}</option>'.LF;
 			echo '</select></td>';
-			echo '<td><img src="img/button/go04.gif" width="15" height="15" title="insert field placeholder" border="0" ';
+			echo '<td><img src="include/img/button/go04.gif" width="15" height="15" title="insert field placeholder" border="0" ';
 			echo 'onclick="insertAtCursorPos(document.articlecontent.cform_template_copy, ';
 			echo 'document.articlecontent.phc.options[document.articlecontent.phc.selectedIndex].value);" style="margin:3px;" alt="" /></td>';
 		}
@@ -1171,7 +1171,7 @@ if($content['form']["template_format"]) {
 	</table></td>
 </tr>
 
-<tr id="copytemplate2"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2" /></td></tr>
+<tr id="copytemplate2"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td></tr>
 
 <tr id="copytemplate3">
 	<td colspan="2"><?php
@@ -1193,7 +1193,7 @@ if($content['form']["template_format_copy"]) {
 	echo html_entities($content['form']["template_copy"]).'</textarea>';
 	?>
 	<div style="text-align:right;padding:2px;padding-right:5px;">
-	<a href="#anchor_template_copy" onclick="contractField('cform_template_copy', 'V')"><img src="img/button/minus_11x11.gif" border="0" alt="-" width="11" height="11" /></a><a href="#anchor_template_copy" onclick="growField('cform_template_copy', 'V')"><img src="img/button/add_11x11.gif" border="0" alt="+" width="11" height="11" /></a>
+	<a href="#anchor_template_copy" onclick="contractField('cform_template_copy', 'V')"><img src="include/img/button/minus_11x11.gif" border="0" alt="-" width="11" height="11" /></a><a href="#anchor_template_copy" onclick="growField('cform_template_copy', 'V')"><img src="include/img/button/add_11x11.gif" border="0" alt="+" width="11" height="11" /></a>
 	</div>
 	<?php
 }
@@ -1201,16 +1201,16 @@ if($content['form']["template_format_copy"]) {
 ?></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['php_function']?>:&nbsp;</td>
 	<td><input name="cform_function_cc" type="text" id="cform_function_cc" class="v11 width200" value="<?php echo html_entities($content['form']['function_cc']) ?>" size="40" /></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 
 <tr>
 	<td class="chatlist" colspan="2" style="padding-bottom:3px;"><a name="anchor_customform" id="anchor_customform"></a><?php echo $BL['be_admin_struct_template'] ?>:&nbsp;</td>
@@ -1223,7 +1223,7 @@ if($for_select_2 != '') {
 	echo 'onChange="insertAtCursorPos(document.articlecontent.cform_customform, ';
 	echo 'document.articlecontent.ph1.options[document.articlecontent.ph1.selectedIndex].value);">';
 	echo $for_select_2.'</select></td>';
-	echo '<td><img src="img/button/go04.gif" width="15" height="15" title="insert field placeholder" border="0" ';
+	echo '<td><img src="include/img/button/go04.gif" width="15" height="15" title="insert field placeholder" border="0" ';
 	echo 'onclick="insertAtCursorPos(document.articlecontent.cform_customform, ';
 	echo 'document.articlecontent.ph1.options[document.articlecontent.ph1.selectedIndex].value);" style="margin:3px;" alt="" />';
 	echo '</td></tr></table></td></tr>';
@@ -1235,11 +1235,11 @@ if($for_select_2 != '') {
 	<td colspan="2">
 	<textarea name="cform_customform" id="cform_customform" rows="5" class="code" style="width:536px;" onselect="setCursorPos(this);" onclick="setCursorPos(this);" onkeyup="setCursorPos(this);"><?php echo html_entities($content['form']["customform"]) ?></textarea>
 	<div style="text-align:right;padding:2px;padding-right:5px;">
-	<a href="#anchor_customform" onclick="contractField('cform_customform', 'V')"><img src="img/button/minus_11x11.gif" border="0" alt="-" width="11" height="11" /></a><a href="#anchor_customform" onclick="growField('cform_customform', 'V')"><img src="img/button/add_11x11.gif" border="0" alt="+" width="11" height="11" /></a>	</div>
+	<a href="#anchor_customform" onclick="contractField('cform_customform', 'V')"><img src="include/img/button/minus_11x11.gif" border="0" alt="-" width="11" height="11" /></a><a href="#anchor_customform" onclick="growField('cform_customform', 'V')"><img src="include/img/button/add_11x11.gif" border="0" alt="+" width="11" height="11" /></a>	</div>
 	</td>
 </tr>
 
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>

@@ -335,7 +335,7 @@ if($guestbook['visible']) {
 	} else {
 	
 		$guestbook['captcha_maxchar'] = empty($guestbook['captcha_maxchar']) ? 5 : $guestbook['captcha_maxchar'];
-		$guestbook['form'] = str_replace('{CAPTCHA}', '<img src="img/captcha.php?regen=y&amp;length='.$guestbook['captcha_maxchar'].'&amp;'.time().'" alt="Captcha" border="0" id="gbCaptchaImage" />', $guestbook['form']);
+		$guestbook['form'] = str_replace('{CAPTCHA}', '<img src="include/img/captcha.php?regen=y&amp;length='.$guestbook['captcha_maxchar'].'&amp;'.time().'" alt="Captcha" border="0" id="gbCaptchaImage" />', $guestbook['form']);
 	
 	}
 	

@@ -71,15 +71,15 @@ if(empty($content['alink']['alink_hidesummary'])) {
 	$content['alink']['alink_hidesummary'] = 0;
 }
 
-$BE['HEADER']['contentpart.js'] = getJavaScriptSourceLink('include/inc_js/contentpart.js');
+$BE['HEADER']['contentpart.js'] = getJavaScriptSourceLink('include/js/contentpart.js');
 
 // necessary JavaScript libraries
 initMootools();
 initMootoolsAutocompleter();
 
 ?>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_admin_struct_template'] ?>:&nbsp;</td>
@@ -103,7 +103,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	</select></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_article_rendering'] ?>:&nbsp;</td>
@@ -121,7 +121,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	</td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_article_morelink'] ?>:&nbsp;</td>
@@ -134,7 +134,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	</td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_article_asummary'] ?>:&nbsp;</td>
@@ -155,14 +155,14 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	</td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_allowed_tags'] ?>:&nbsp;</td>
 	<td><input name="calink_allowedtags" type="text" id="calink_allowedtags" class="f11b" style="width: 420px" value="<?php echo html_specialchars($content['alink']['alink_allowedtags']); ?>" size="20" /></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_cnt_image'] ?>:&nbsp;</td>
@@ -181,9 +181,9 @@ if(is_array($tmpllist) && count($tmpllist)) {
 		</table></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_cnt_ecardform_selector'] ?>:&nbsp;</td>
@@ -239,7 +239,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 		</table></td>
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
 
 <tr id="calink_manual_0"<?php if($content['alink']['alink_type']) echo ' style="display:none"'; ?>>
 <td align="right" valign="top" class="chatlist tdtop3"><?php echo $BL['be_selection'] ?>:&nbsp;</td>
@@ -296,12 +296,12 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	
 		<td rowspan="2">&nbsp;</td>
 		<td valign="top">
-		<a href="#" title="<?php echo $BL['be_cnt_sortup'] ?>" onclick="moveOptionUp(teaser_items);return false;"><img src="img/button/list_pos_up.gif" alt="" width="15" height="15" border="0" /></a>
+		<a href="#" title="<?php echo $BL['be_cnt_sortup'] ?>" onclick="moveOptionUp(teaser_items);return false;"><img src="include/img/button/list_pos_up.gif" alt="" width="15" height="15" border="0" /></a>
 		<br />
-		<a href="#" title="<?php echo $BL['be_cnt_sortdown'] ?>" onclick="moveOptionDown(teaser_items);return false;"><img src="img/button/list_pos_down.gif" alt="" width="15" height="15" border="0" /></a></td>
+		<a href="#" title="<?php echo $BL['be_cnt_sortdown'] ?>" onclick="moveOptionDown(teaser_items);return false;"><img src="include/img/button/list_pos_down.gif" alt="" width="15" height="15" border="0" /></a></td>
 	</tr>
 	<tr>
-	  <td valign="bottom"><a href="#" title="<?php echo $BL['be_cnt_removearticleto'] ?>" onclick="moveSelectedOptions(teaser_items,source_items,false);return false;"><img src="img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a></td>
+	  <td valign="bottom"><a href="#" title="<?php echo $BL['be_cnt_removearticleto'] ?>" onclick="moveSelectedOptions(teaser_items,source_items,false);return false;"><img src="include/img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a></td>
 	 </tr>
 	</table></td>
 </tr>
@@ -315,7 +315,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
       			</select></td>
 	  
 	  <td>&nbsp;</td>
-	  <td valign="top"><a href="#" title="<?php echo $BL['be_cnt_movearticleto'] ?>" onclick="moveSelectedOptions(source_items,teaser_items,false);return false"><img src="img/button/list_copy.gif" alt="" width="15" height="15" border="0" /></a></td>
+	  <td valign="top"><a href="#" title="<?php echo $BL['be_cnt_movearticleto'] ?>" onclick="moveSelectedOptions(source_items,teaser_items,false);return false"><img src="include/img/button/list_copy.gif" alt="" width="15" height="15" border="0" /></a></td>
 	</tr>
 	</table></td>
 </tr>
@@ -348,7 +348,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 </tr>
 
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6" /></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_tags'] ?>:&nbsp;</td>
@@ -367,7 +367,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 		</table></td>		
 </tr>
 
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8" /><script type="text/javascript">
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /><script type="text/javascript">
 <!--
 
 window.addEvent('domready', function(){
@@ -397,5 +397,5 @@ var source_items = $('calinklist');
 
 //-->
 </script></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>
 

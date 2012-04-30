@@ -159,9 +159,9 @@ if(isset($_SESSION['filter']) && is_array($_SESSION['filter']) && count($_SESSIO
 			
 			<!--
 				<td><input type="checkbox" name="showactive" id="showactive" value="1" onclick="this.form.submit();"<?php is_checked(1, $_entry['list_active'], 1) ?> /></td>
-				<td><label for="showactive"><img src="img/button/aktiv_12x13_1.gif" alt="" style="margin:1px 1px 0 1px;" /></label></td>
+				<td><label for="showactive"><img src="include/img/button/aktiv_12x13_1.gif" alt="" style="margin:1px 1px 0 1px;" /></label></td>
 				<td><input type="checkbox" name="showinactive" id="showinactive" value="1" onclick="this.form.submit();"<?php is_checked(1, $_entry['list_inactive'], 1) ?> /></td>
-				<td><label for="showinactive"><img src="img/button/aktiv_12x13_0.gif" alt="" style="margin:1px 1px 0 1px;" /></label></td>
+				<td><label for="showinactive"><img src="include/img/button/aktiv_12x13_0.gif" alt="" style="margin:1px 1px 0 1px;" /></label></td>
 
 				<td class="chatlist">|&nbsp;</td>
 			
@@ -172,7 +172,7 @@ if(isset($_SESSION['filter']) && is_array($_SESSION['filter']) && count($_SESSIO
 				}
 				
 				?>" class="textinput" style="margin:0 2px 0 0;width:110px;text-align:left;" title="filter results by username, name or email" /></td>
-				<td><input type="image" name="gofilter" src="img/famfamfam/action_go.gif" style="margin-right:3px;" /></td>
+				<td><input type="image" name="gofilter" src="include/img/famfamfam/action_go.gif" style="margin-right:3px;" /></td>
 				
 				<td class="chatlist">|&nbsp;</td>
 			// -->
@@ -307,7 +307,7 @@ $plugin['day_names'] = returnDayNameArray();
 
 echo '<tr>'.LF;
 echo '	<th class="calendarWeek">'.$BLM['weekNrTitle'].'</th>'.LF;
-echo '	<th><img src="img/famfamfam/calendar_view_month.gif" alt="" /></th>'.LF;
+echo '	<th><img src="include/img/famfamfam/calendar_view_month.gif" alt="" /></th>'.LF;
 echo '	<th width="95%" class="calendarMonth">';
 
 echo $plugin['this_date'];
@@ -398,10 +398,10 @@ for($_entry['x'] = 1, $_entry['timestamp']=$plugin['first_of_month']; $_entry['x
 			echo '<a href="'.MODULE_HREF.'&amp;delete='.$_entry['date']['calendar_id'].'" class="calendarDateDel"';
 			echo ' title="'.$BLM['delete'].': '. $_entry['link '] .'"';
 			echo ' onclick="return confirm(\''.$BLM['delete_entry'].' \n'.js_singlequote($_entry['date']['calendar_title']).'\');">';
-			echo '<img src="img/button/del_9x9.gif" alt="" border="0" /></a>';
+			echo '<img src="include/img/button/del_9x9.gif" alt="" border="0" /></a>';
 			
 			/*
-			echo '<img src="img/button/';
+			echo '<img src="include/img/button/';
 			if($_entry['date']['calendar_status'] == 0) echo 'in';
 			echo 'aktiv_mini1.gif" alt="" border="0" />';
 			*/
@@ -421,7 +421,7 @@ for($_entry['x'] = 1, $_entry['timestamp']=$plugin['first_of_month']; $_entry['x
 	echo '	<td class="calendarButton'.$_entry['class'].'">';
 	echo '<a href="'.MODULE_HREF.'&amp;edit=0&amp;defaultdate=';
 	echo $_entry['x'].'-'.$plugin['current_month'].'-'.$plugin['current_year'].'" title="'.$BLM['add_event'].'">';
-	echo '<img src="img/famfamfam/calendar_add.gif" alt="" border="0" />';
+	echo '<img src="include/img/famfamfam/calendar_add.gif" alt="" border="0" />';
 	echo '</a></td>'.LF;
 
 	echo '</tr>'.LF;

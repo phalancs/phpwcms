@@ -1503,7 +1503,7 @@ if ( !class_exists( 'FPDF' ) ) {
 						}
 						if($type == '') {
 						
-							$file = PHPWCMS_URL.'img/leer.gif';
+							$file = PHPWCMS_URL.'include/img/leer.gif';
 							$type = 'gif';
 						
 						}

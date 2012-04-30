@@ -61,8 +61,8 @@ $content['recipe']['all_keywords'] = convertStringToArray($content['recipe']['al
  
 //-->
 
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt=""></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8"></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt=""></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8"></td></tr>
 <?php
 
 if(count($content['recipe']['all_keywords'])) {
@@ -79,7 +79,7 @@ if(count($content['recipe']['all_keywords'])) {
 	}
 	
 	echo '</select></td>';
-	echo '<td><img src="img/button/go04.gif" width="15" height="15" title="Insert" border="0" ';
+	echo '<td><img src="include/img/button/go04.gif" width="15" height="15" title="Insert" border="0" ';
 	echo 'onclick="insertAtCursorPos(document.articlecontent.recipe_category, ';
 	echo '\', \'+document.articlecontent.ph1.options[document.articlecontent.ph1.selectedIndex].value);" style="margin:3px;">';
 	echo '</td></tr></table></td></tr>'.LF;
@@ -87,10 +87,10 @@ if(count($content['recipe']['all_keywords'])) {
 }
 ?>
 <tr>
-  <td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_ftptakeover_keywords'] ?>:&nbsp;</td>
+  <td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_ftptakeover_keywords'] ?>:&nbsp;</td>
   <td valign="top"><textarea name="recipe_category" id="recipe_category" cols="40" rows="2" class="f11" style="width:440px"><?php echo html_specialchars($content['recipe']['category']) ?></textarea></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="6"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6"></td></tr>
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_admin_struct_template'] ?>:&nbsp;</td>
 	<td><select name="recipe_template" id="recipe_template" class="f11b">
@@ -113,14 +113,14 @@ if(is_array($tmpllist) && count($tmpllist)) {
 ?>				  
 		</select></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8"></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt=""></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8"></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt=""></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8"></td></tr>
 <tr>
-  <td align="right" valign="top" class="chatlist"><img src="img/leer.gif" alt="" width="1" height="13">Zutaten:&nbsp;</td>
+  <td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="13">Zutaten:&nbsp;</td>
   <td valign="top"><textarea name="recipe_ingredients" id="recipe_ingredients" cols="40" rows="6" class="f11" style="width:440px"><?php echo html_specialchars($content['recipe']['ingredients']) ?></textarea></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4"></td></tr>
 <tr>
     <td align="right" class="chatlist">Zuber.Zeit:&nbsp;</td>
 	<td><table border="0" cellpadding="0" cellspacing="0" summary="">
@@ -132,7 +132,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 		</tr>
 	</table></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4"></td></tr>
 <tr>
     <td align="right" class="chatlist">N&auml;hrwert:&nbsp;</td>
 	<td><table border="0" cellpadding="0" cellspacing="0" summary="">
@@ -144,7 +144,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 		</tr>
 	</table></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4"></td></tr>
 <tr>
   <td align="right" class="chatlist">Schwierigkeit:&nbsp;</td>
   <td valign="top"><table border="0" cellpadding="0" cellspacing="0" bgcolor="#E7E8EB" summary="">
@@ -163,11 +163,11 @@ if(is_array($tmpllist) && count($tmpllist)) {
       </tr>
     </table></td>
 </tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="8"></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt=""></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8"></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt=""></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4"></td></tr>
 <tr><td colspan="2" class="chatlist">Zubereitung:&nbsp;</td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="2"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 <tr><td colspan="2" align="center"><?php
 
 $wysiwyg_editor = array(
@@ -183,7 +183,7 @@ $wysiwyg_editor = array(
 include(PHPWCMS_ROOT.'/include/inc_lib/wysiwyg.editor.inc.php');
 
 ?></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10"></td></tr>
-<tr><td colspan="2"><img src="img/lines/l538_70.gif" alt=""></td></tr>
-<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10"></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10"></td></tr>
+<tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt=""></td></tr>
+<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10"></td></tr>
 <!--  </table>-->

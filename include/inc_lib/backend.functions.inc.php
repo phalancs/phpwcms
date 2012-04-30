@@ -56,13 +56,13 @@ function subnavtext($text, $link, $is, $should, $getback=1, $js='') {
 	$id = "subnavid".randpassword(5);
 	$sn = '';
 	if($is == $should) {
-		$sn .= '<tr><td><img src="img/subnav/subnav_B.gif" width="15" height="13" border="0" alt="" /></td>';	
+		$sn .= '<tr><td><img src="include/img/subnav/subnav_B.gif" width="15" height="13" border="0" alt="" /></td>';	
 		$sn .= '<td class="subnavactive"><a href="'.$link.'">'.$text.'</a></td></tr>';
 	} else {
-		$sn .= "<tr><td><img name=\"".$id."\" src=\"img/subnav/subnav_A.gif\" width=\"15\" height=\"13\" border=\"0\" alt=\"\" /></td>";
+		$sn .= "<tr><td><img name=\"".$id."\" src=\"include/img/subnav/subnav_A.gif\" width=\"15\" height=\"13\" border=\"0\" alt=\"\" /></td>";
 		$sn .= "<td class=\"subnavinactive\"><a href=\"".$link."\" ".$js;
-		$sn .= "onMouseOver=\"".$id.".src='img/subnav/subnav_B.gif'\" onMouseOut=\"".$id;
-		$sn .= ".src='img/subnav/subnav_A.gif'\">".$text."</a></td></tr>";
+		$sn .= "onMouseOver=\"".$id.".src='include/img/subnav/subnav_B.gif'\" onMouseOut=\"".$id;
+		$sn .= ".src='include/img/subnav/subnav_A.gif'\">".$text."</a></td></tr>";
 	}
 	$sn .= "\n";
 	if(!$getback) { 
@@ -75,9 +75,9 @@ function subnavtext($text, $link, $is, $should, $getback=1, $js='') {
 function subnavtextext($text, $link, $target='_blank', $getback=1) {
 	//generate subnavigation based on text and links to new page
 	$id  = 'subnavid'.randpassword(5);
-	$sn  = '<tr><td><img src="img/subnav/subnav_A.gif" width="15" height="13" border="0" name="'.$id.'" alt="" /></td>';	
+	$sn  = '<tr><td><img src="include/img/subnav/subnav_A.gif" width="15" height="13" border="0" name="'.$id.'" alt="" /></td>';	
 	$sn .= '<td class="subnavinactive"><a href="'.$link.'" target="'.$target.'" ';
-	$sn .= "onMouseOver=\"".$id.".src='img/subnav/subnav_B.gif'\" onMouseOut=\"".$id.".src='img/subnav/subnav_A.gif'\"";
+	$sn .= "onMouseOver=\"".$id.".src='include/img/subnav/subnav_B.gif'\" onMouseOut=\"".$id.".src='include/img/subnav/subnav_A.gif'\"";
 	$sn .= '>'.$text.'</a></td></tr>';
 	$sn .= "\n";
 	if(!$getback) { return $sn; } else { echo $sn; }
@@ -86,13 +86,13 @@ function subnavtextext($text, $link, $target='_blank', $getback=1) {
 function subnavback($text, $link, $h_before=0, $h_after=0) {
 	$id = "subbackid".randpassword(5);
 	$sn  = "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n";
-	$sn .= (intval($h_before)) ? "<tr><td colspan=\"2\"><img src=\"img/leer.gif\" width=\"1\" height=\"".intval($h_before)."\" alt=\"\" /></td></tr>\n" : "";
+	$sn .= (intval($h_before)) ? "<tr><td colspan=\"2\"><img src=\"include/img/leer.gif\" width=\"1\" height=\"".intval($h_before)."\" alt=\"\" /></td></tr>\n" : "";
 	$sn .= "<tr>";
-	$sn .= "<td><img name=\"".$id."\" src=\"img/subnav/subnav_back_0.gif\" width=\"9\" height=\"9\" border=\"0\" alt=\"\" /></td>";
-	$sn .= "<td class=\"subnavinactive\">&nbsp;<a href=\"".$link."\" onMouseOver=\"".$id.".src='img/subnav/subnav_back_1.gif'\" ";
-	$sn .= "onMouseOut=\"".$id.".src='img/subnav/subnav_back_0.gif'\"><strong>".$text."</strong></a></td>";
+	$sn .= "<td><img name=\"".$id."\" src=\"include/img/subnav/subnav_back_0.gif\" width=\"9\" height=\"9\" border=\"0\" alt=\"\" /></td>";
+	$sn .= "<td class=\"subnavinactive\">&nbsp;<a href=\"".$link."\" onMouseOver=\"".$id.".src='include/img/subnav/subnav_back_1.gif'\" ";
+	$sn .= "onMouseOut=\"".$id.".src='include/img/subnav/subnav_back_0.gif'\"><strong>".$text."</strong></a></td>";
 	$sn .= "</tr>\n";
-	$sn .= (intval($h_after)) ? "<tr><td colspan=\"2\"><img src=\"img/leer.gif\" width=\"1\" height=\"".intval($h_after)."\" alt=\"\" /></td></tr>\n" : "";
+	$sn .= (intval($h_after)) ? "<tr><td colspan=\"2\"><img src=\"include/img/leer.gif\" width=\"1\" height=\"".intval($h_after)."\" alt=\"\" /></td></tr>\n" : "";
 	$sn .= "</table>\n";
 	echo $sn;
 }
@@ -337,7 +337,7 @@ function createOptionTransferSelectList($id='', $leftData, $rightData, $option =
 	$option['formname']		= empty($option['formname']) ? 'document.forms[0]' : 'document.getElementById(\''.$option['formname'].'\')';
 	
 	
-	$GLOBALS['BE']['HEADER']['optionselect.js'] = getJavaScriptSourceLink('include/inc_js/optionselect.js');
+	$GLOBALS['BE']['HEADER']['optionselect.js'] = getJavaScriptSourceLink('include/js/optionselect.js');
 	
 	$table .= '<table border="0" cellspacing="0" cellpadding="0">'.LF.'<tr>'.LF;
 	
@@ -352,7 +352,7 @@ function createOptionTransferSelectList($id='', $leftData, $rightData, $option =
 	
 	// left <-> right buttons
 	$table .= '<td'.$option['style'].$option['class'].'>';
-	$table .= '<img src="img/leer.gif" alt="" width="1" height="1" />'.LF;
+	$table .= '<img src="include/img/leer.gif" alt="" width="1" height="1" />'.LF;
 	$table .= '</td>'.LF;
 	
 	// right select list
@@ -367,21 +367,21 @@ function createOptionTransferSelectList($id='', $leftData, $rightData, $option =
 	$table .= '</tr>'.LF;
 	
 	$table .= '<tr>'.LF.'<td>';
-	$table .= '<img src="img/button/list_pos_up.gif" alt="" border="0" onclick="moveOptionUp('.$option['formname'].'.'.$id_left_box.');'.$option_object.'.update();">';
-	$table .= '<img src="img/leer.gif" width="2" height="2" alt="" />';
-	$table .= '<img src="img/button/list_pos_down.gif" alt="" border="0" onclick="moveOptionDown('.$option['formname'].'.'.$id_left_box.');'.$option_object.'.update();">';
-	$table .= '<img src="img/leer.gif" width="4" height="4" alt="" />';
-	$table .= '<img src="img/button/put_right_a.gif" alt="Move selected to right" border="0" onclick="'.$option_object.'.transferRight();" />';
-	$table .= '<img src="img/leer.gif" width="2" height="2" alt="" />';
-	$table .= '<img src="img/button/put_right.gif" alt="Move all to right" border="0" onclick="'.$option_object.'.transferAllRight();"/>';
+	$table .= '<img src="include/img/button/list_pos_up.gif" alt="" border="0" onclick="moveOptionUp('.$option['formname'].'.'.$id_left_box.');'.$option_object.'.update();">';
+	$table .= '<img src="include/img/leer.gif" width="2" height="2" alt="" />';
+	$table .= '<img src="include/img/button/list_pos_down.gif" alt="" border="0" onclick="moveOptionDown('.$option['formname'].'.'.$id_left_box.');'.$option_object.'.update();">';
+	$table .= '<img src="include/img/leer.gif" width="4" height="4" alt="" />';
+	$table .= '<img src="include/img/button/put_right_a.gif" alt="Move selected to right" border="0" onclick="'.$option_object.'.transferRight();" />';
+	$table .= '<img src="include/img/leer.gif" width="2" height="2" alt="" />';
+	$table .= '<img src="include/img/button/put_right.gif" alt="Move all to right" border="0" onclick="'.$option_object.'.transferAllRight();"/>';
 	$table .= '</td>'.LF;
 	
-	$table .= '<td><img src="img/leer.gif" alt="" width="1" height="1" /></td>'.LF;
+	$table .= '<td><img src="include/img/leer.gif" alt="" width="1" height="1" /></td>'.LF;
 	
 	$table .= '<td>';
-	$table .= '<img src="img/button/put_left_a.gif" alt="Move selected to left" border="0" onclick="'.$option_object.'.transferLeft();" />';
-	$table .= '<img src="img/leer.gif" width="2" height="2" alt="" />';
-	$table .= '<img src="img/button/put_left.gif" alt="Move all to left" border="0" onclick="'.$option_object.'.transferAllLeft();" />';
+	$table .= '<img src="include/img/button/put_left_a.gif" alt="Move selected to left" border="0" onclick="'.$option_object.'.transferLeft();" />';
+	$table .= '<img src="include/img/leer.gif" width="2" height="2" alt="" />';
+	$table .= '<img src="include/img/button/put_left.gif" alt="Move all to left" border="0" onclick="'.$option_object.'.transferAllLeft();" />';
 	$table .= '</td>'.LF;
 	
 	$table .= '</tr>'.LF.'</table>'.LF;
@@ -884,8 +884,8 @@ function getItemsPerPageMenu($base_url='', $steps=array(10,25,50,100,250,0), $se
 }
 
 function initJsCalendar() {
-	$GLOBALS['BE']['HEADER']['date.js']			= getJavaScriptSourceLink('include/inc_js/date.js');
-	$GLOBALS['BE']['HEADER']['dynCalendar.js']	= getJavaScriptSourceLink('include/inc_js/dynCalendar.js');
+	$GLOBALS['BE']['HEADER']['date.js']			= getJavaScriptSourceLink('include/js/date.js');
+	$GLOBALS['BE']['HEADER']['dynCalendar.js']	= getJavaScriptSourceLink('include/js/dynCalendar.js');
 }
 function initMootools($mode='1.1', $more=array()) {
 	switch($mode) {
@@ -913,27 +913,27 @@ function initMootools($mode='1.1', $more=array()) {
 }
 function initMootoolsAutocompleter($mode='1.1') {
 	initMootools($mode);
-	$GLOBALS['BE']['HEADER']['Autocompleter.js']		= getJavaScriptSourceLink('include/inc_js/mootools/cnet/Autocompleter.js');
-	$GLOBALS['BE']['HEADER']['Autocompleter.Remote.js']	= getJavaScriptSourceLink('include/inc_js/mootools/cnet/Autocompleter.Remote.js');
-	$GLOBALS['BE']['HEADER']['Observer.js']				= getJavaScriptSourceLink('include/inc_js/mootools/cnet/Observer.js');
+	$GLOBALS['BE']['HEADER']['Autocompleter.js']		= getJavaScriptSourceLink('include/js/mootools/cnet/Autocompleter.js');
+	$GLOBALS['BE']['HEADER']['Autocompleter.Remote.js']	= getJavaScriptSourceLink('include/js/mootools/cnet/Autocompleter.Remote.js');
+	$GLOBALS['BE']['HEADER']['Observer.js']				= getJavaScriptSourceLink('include/js/mootools/cnet/Observer.js');
 }
 function initJsOptionSelect() {
-	$GLOBALS['BE']['HEADER']['optionselect.js']	= getJavaScriptSourceLink('include/inc_js/optionselect.js');
+	$GLOBALS['BE']['HEADER']['optionselect.js']	= getJavaScriptSourceLink('include/js/optionselect.js');
 }
 function initMultipleUpload($mode='1.2') {
 	switch($mode) {
 		case '1.1':
 			initMootools('1.1');
-			$GLOBALS['BE']['HEADER']['Swiff.Base.js']		= getJavaScriptSourceLink('include/inc_js/mootools/FancyUpload/v1/Swiff.Base.js');
-			$GLOBALS['BE']['HEADER']['Swiff.Uploader.js']	= getJavaScriptSourceLink('include/inc_js/mootools/FancyUpload/v1/Swiff.Uploader.js');
-			$GLOBALS['BE']['HEADER']['FancyUpload.js']		= getJavaScriptSourceLink('include/inc_js/mootools/FancyUpload/v1/FancyUpload.js');
+			$GLOBALS['BE']['HEADER']['Swiff.Base.js']		= getJavaScriptSourceLink('include/js/mootools/FancyUpload/v1/Swiff.Base.js');
+			$GLOBALS['BE']['HEADER']['Swiff.Uploader.js']	= getJavaScriptSourceLink('include/js/mootools/FancyUpload/v1/Swiff.Uploader.js');
+			$GLOBALS['BE']['HEADER']['FancyUpload.js']		= getJavaScriptSourceLink('include/js/mootools/FancyUpload/v1/FancyUpload.js');
 			break;
 
 		default:
 			initMootools('1.2');
-			$GLOBALS['BE']['HEADER']['Swiff.Uploader.js']	= getJavaScriptSourceLink('include/inc_js/mootools/FancyUpload/Swiff.Uploader.js');
-			$GLOBALS['BE']['HEADER']['FX.ProgressBar.js']	= getJavaScriptSourceLink('include/inc_js/mootools/FancyUpload/Fx.ProgressBar.js');
-			$GLOBALS['BE']['HEADER']['FancyUpload2.js']		= getJavaScriptSourceLink('include/inc_js/mootools/FancyUpload/FancyUpload2.js');
+			$GLOBALS['BE']['HEADER']['Swiff.Uploader.js']	= getJavaScriptSourceLink('include/js/mootools/FancyUpload/Swiff.Uploader.js');
+			$GLOBALS['BE']['HEADER']['FX.ProgressBar.js']	= getJavaScriptSourceLink('include/js/mootools/FancyUpload/Fx.ProgressBar.js');
+			$GLOBALS['BE']['HEADER']['FancyUpload2.js']		= getJavaScriptSourceLink('include/js/mootools/FancyUpload/FancyUpload2.js');
 	}
 }
 
@@ -1070,7 +1070,7 @@ function backend_language_parser() {
 		$replace[$lang]	= '$1';
 		$lang_html		= preg_replace($regexp['search'], $replace, $html);
 		
-		$BE['HEADER']['be_parse_lang'] .= '	#be_lang a.be-lang-'.$lang.' {background-image:url(img/famfamfam/lang/'.$lang.'.png);}'.LF;
+		$BE['HEADER']['be_parse_lang'] .= '	#be_lang a.be-lang-'.$lang.' {background-image:url(include/img/famfamfam/lang/'.$lang.'.png);}'.LF;
 		
 		
 		$menu_item		= '<li><a href="#" class="be-lang be-lang-'.$lang;

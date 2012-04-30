@@ -47,10 +47,10 @@ initMultipleUpload();
 			<a href="#" id="upload-start" class="grey_button"><?php echo $BL['be_files_upload']; ?></a>
 		</p>
 		<div class="upload-title">
-			<strong class="overall-title">&nbsp;</strong><br /><img src="img/ajax/bar.gif" class="progress overall-progress" alt="" />
+			<strong class="overall-title">&nbsp;</strong><br /><img src="include/img/ajax/bar.gif" class="progress overall-progress" alt="" />
 		</div>
 		<div class="upload-title">
-			<strong class="current-title">&nbsp;</strong><br /><img src="img/ajax/bar.gif" class="progress current-progress" alt="" />
+			<strong class="current-title">&nbsp;</strong><br /><img src="include/img/ajax/bar.gif" class="progress current-progress" alt="" />
 		</div>
 		<div class="current-text"></div>
     </div>
@@ -71,7 +71,7 @@ window.addEvent('domready', function(){
 	var up = new FancyUpload2( $('upload-buttons'), $('upload-queue'), {
 									 
 		verbose: true,
-		path: '<?php echo PHPWCMS_URL; ?>include/inc_js/mootools/FancyUpload/Swiff.Uploader.swf',
+		path: '<?php echo PHPWCMS_URL; ?>include/js/mootools/FancyUpload/Swiff.Uploader.swf',
 		url: $('upload-form').action,
 		typeFilter: {
 			'<?php echo $BL['be_ctype_images']; ?> (*.jpg, *.jpeg, *.gif, *.png)': '*.jpg; *.jpeg; *.gif; *.png;',

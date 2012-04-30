@@ -160,7 +160,7 @@ if($content['reference']['ref_count']) {
 			if($ci && $content['reference']['space']) {
 			
 				$content['reference']['ref_list'] .= $content['reference']['x1'];
-				$content['reference']['ref_list'] .= '<td><img src="img/leer.gif" alt="" ';
+				$content['reference']['ref_list'] .= '<td><img src="include/img/leer.gif" alt="" ';
 				$content['reference']['ref_list'] .= 'width="'.$content['reference']['space'].'" height="';
 				$content['reference']['ref_list'] .= $content['reference']['space'].'" border="0" /></td>';
 				$content['reference']['ref_list'] .= $content['reference']['x2'];

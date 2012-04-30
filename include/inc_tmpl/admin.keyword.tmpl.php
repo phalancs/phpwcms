@@ -77,12 +77,12 @@ $keyword["id"] = 0;
 <!--
 <table width="538" border="0" cellpadding="0" cellspacing="0">
           <tr><td colspan="2" class="title"><?php echo $BL['be_admin_keywords'] ?></td></tr>
-		  <tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="4"></td></tr>
+		  <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4"></td></tr>
 		  <?php
 		  if(isset($_GET["keyid"])) {
 		  ?>
-		  <tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-          <tr bgcolor="#F0F2F4"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10"></td></tr>
+		  <tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+          <tr bgcolor="#F0F2F4"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10"></td></tr>
 		  <?php
 		  	$keyword["id"] = intval($_GET["keyid"]);
 			if($keyword["id"]) {	
@@ -134,26 +134,26 @@ $keyword["id"] = 0;
 		      <td align="right" class="chatlist"><font color="#FF3300"><?php echo $BL['be_admin_usr_err'] ?>:</font>&nbsp;</td>
 		      <td class="error"><strong><?php echo $BL['be_admin_keywords_err'] ?></strong></td>
 		    </tr>
-			<tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="3"></td></tr>
+			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
 			<?php } ?>
 		    <tr>
 		      <td align="right" class="chatlist"><?php echo $BL['be_admin_keywords_key'] ?>:&nbsp;</td>
 		      <td><input name="keyword_name" type="text" id="keyword_name" class="f11b" style="width: 430px" value="<?php echo empty($keyword["name"]) ? '' : html_specialchars($keyword["name"]) ?>" size="40" maxlength="250"></td>
 		    </tr>
-		    <tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="10"></td></tr>
+		    <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10"></td></tr>
 		    <tr>
 		      <td><input name="keyword_id" type="hidden" id="keyword_id" value="<?php echo intval($keyword["id"]) ?>"><input name="keyword_aktion" type="hidden" id="keyword_aktion" value="1"></td>
 		      <td><input name="Submit" type="submit" class="button10" style="width: 150px;" value="<?php echo $sendbutton ?>">&nbsp;&nbsp;<input name="donotsubmit" type="button" class="button10" style="width: 80px;" value="<?php echo $BL['be_admin_fcat_exit'] ?>" onclick="location.href='phpwcms.php?do=admin&p=5';"></td>
 		      </tr>
 		    </table></td>
 		  </tr>
-		  <tr bgcolor="#F0F2F4"><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="15"></td></tr>
+		  <tr bgcolor="#F0F2F4"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15"></td></tr>
 		  </form>
 		  <?php
 		  } //Ende Anzeige Category Name Formular
 	  ?>
-          <tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
-          <tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5"></td></tr>
+          <tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+          <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>
 		  <?php
 			$sql = "SELECT * FROM ".DB_PREPEND."phpwcms_keyword WHERE keyword_trash=0 ORDER BY keyword_name;";
 			if($result = mysql_query($sql, $db) or die("error while browsing keyword list")) {
@@ -163,18 +163,18 @@ $keyword["id"] = 0;
 					echo "<td width=\"483\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n<tr>\n";
 
 					echo "<td>";
-					echo "<img src=\"img/symbole/plus_empty.gif\" width=\"15\" height=\"15\" border=\"0\"></td>\n";
+					echo "<img src=\"include/img/symbole/plus_empty.gif\" width=\"15\" height=\"15\" border=\"0\"></td>\n";
 						
-              		echo "<td><img src=\"img/leer.gif\" width=\"2\" height=\"15\"></td>\n";
+              		echo "<td><img src=\"include/img/leer.gif\" width=\"2\" height=\"15\"></td>\n";
 					echo "<td class=\"dir\"><strong>".html_specialchars($row["keyword_name"])."</strong></td>\n";
               		echo "</tr>\n</table></td>\n<td width=\"55\" align=\"right\">";
 					
 					echo "<a href=\"phpwcms.php?do=admin&p=5&keyid=".$row["keyword_id"]."\" title =\"".$BL['be_admin_keyword_edit']."\">";
-					echo "<img src=\"img/button/edit_22x11.gif\" width=\"22\" height=\"11\" border=\"0\"></a>";
+					echo "<img src=\"include/img/button/edit_22x11.gif\" width=\"22\" height=\"11\" border=\"0\"></a>";
 					
 					echo "<a href=\"include/inc_act/act_filecat.php?do=8,".$row["keyword_id"]."\" title =\"".$BL['be_admin_keyword_del']."\" ";
 					echo "onclick=\"return confirm('".$BL['be_admin_keyword_delmsg']."\\n[".html_specialchars($row["keyword_name"])."] ');\">";
-					echo "<img src=\"img/button/del_11x11.gif\" width=\"11\" height=\"11\" border=\"0\"></a>";
+					echo "<img src=\"include/img/button/del_11x11.gif\" width=\"11\" height=\"11\" border=\"0\"></a>";
 					
 					echo "</td>\n</tr>\n";
 					
@@ -182,11 +182,11 @@ $keyword["id"] = 0;
 		  		mysql_free_result($result);
 			}
 		?>
-          <tr><td colspan="2"><img src="img/leer.gif" alt="" width="1" height="5"></td></tr>
-          <tr><td colspan="2"><img src="img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
+          <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>
+          <tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1"></td></tr>
           <tr>
-            <td><img src="img/leer.gif" alt="" width="483" height="1"></td>
-			<td><img src="img/leer.gif" alt="" width="55" height="5"></td>
+            <td><img src="include/img/leer.gif" alt="" width="483" height="1"></td>
+			<td><img src="include/img/leer.gif" alt="" width="55" height="5"></td>
           </tr>
           <tr><td colspan="2"><form action="phpwcms.php?do=admin&amp;p=5&amp;keyid=0" method="post"><input type="submit" value="<?php echo $BL['be_admin_keyword_add'] ?>" class="button10" title="<?php echo $BL['be_admin_keyword_add'] ?>"></form></td></tr>
 </table>

@@ -2,7 +2,7 @@
 /*
 
 	Use this to overwrite default "template_default" settings, wich are defined in
-	"config/phpwcms/conf.template_default.inc.php"
+	"include/config/conf.template_default.inc.php"
 	
 	Set only those values which shuld overwrite defaults.
 	Both arrays will be merged while frontend rendering process.

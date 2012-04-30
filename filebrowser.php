@@ -38,7 +38,7 @@ $phpwcms_root		= dirname(__FILE__);
 $js_files_all		= array();
 $js_files_select	= array();
 
-require($phpwcms_root.'/config/phpwcms/conf.inc.php');
+require($phpwcms_root.'/include/config/conf.inc.php');
 require($phpwcms_root.'/include/inc_lib/default.inc.php');
 
 if( empty($_SESSION["wcs_user_lang"]) ) {

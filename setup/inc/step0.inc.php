@@ -174,11 +174,11 @@ $_SESSION['admin_set'] = false;
 <?php
 
 // is the setup config file writable
-if(!is_writable($DOCROOT.'/setup/setup.conf.inc.php')) {
+if(!is_writable($DOCROOT.'/include/config')) {
 
-	if(!@chmod($DOCROOT.'/setup/setup.conf.inc.php', 0666)) {
+	if(!@chmod($DOCROOT.'/include/config', 0777)) {
 	
-	echo errorWarning('The file <i>setup.conf.inc.php</i> in which all values are stored is NOT writable.');
+		echo errorWarning('The folder <i>include/config</i> in which the config will be saved is NOT writable.');
 	
 	?><p>Please correct this problem before you can continue (connect to your account by FTP and permissions to chmod 777).</p>
 <?php

@@ -23,8 +23,8 @@
 $phpwcms = array();
 
 $_this_path = realpath(dirname(__FILE__).'/../');
-if(is_file($_this_path.'/config/phpwcms/conf.inc.php')) {
-	require_once ($_this_path.'/config/phpwcms/conf.inc.php');
+if(is_file($_this_path.'/include/config/conf.inc.php')) {
+	require_once ($_this_path.'/include/config/conf.inc.php');
 } else {
 	die('Please proof location of "conf.inc.php".');
 }

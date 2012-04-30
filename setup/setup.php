@@ -25,18 +25,31 @@ session_start();
 $phpwcms = array();
 
 require_once(dirname(__FILE__).'/inc/setup.func.inc.php');
-require_once($DOCROOT.'/setup/setup.conf.inc.php');
 
+if(!isset($_SESSION['phpwcms']) || !is_array($_SESSION['phpwcms'])) {
+	require_once($DOCROOT.'/include/config/dist.conf.inc.php');
+	$_SESSION['phpwcms'] = $phpwcms;
+} else {
+	$phpwcms = $_SESSION['phpwcms'];
+}
+
+ // fresh setup or existing installation
+if(is_file($DOCROOT.'/include/config/conf.inc.php')) {
+	@copy(SETUP_DOC_ROOT.'/include/config/conf.inc.php', SETUP_DOC_ROOT.'/include/config/conf.'.date('Ymd-His').'.inc.php');
+	$NO_ACCESS = true;
+} else {
+	$NO_ACCESS = false;
+}
 $step		= isset($_GET["step"]) ? intval($_GET["step"]) : 0;
 $do			= isset($_POST["do"]) ? intval($_POST["do"]) : 0;
 $err		= 0;
 $prepend	= $phpwcms["db_prepend"];
 
-if($do) require_once($DOCROOT.'/setup/inc/setup.check.inc.php');
+if($do) {
+	require_once(SETUP_DOC_ROOT.'/setup/inc/setup.check.inc.php');
+}
 
-
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $phpwcms['charset'] ?>" />
@@ -71,10 +84,13 @@ if($do) require_once($DOCROOT.'/setup/inc/setup.check.inc.php');
   </tr>
   <tr bgcolor="#FFFFFF">
     <td width="15" bgcolor="#FFFFFF" style="background-image:url(../img/backend/preinfo2_r7_c2.gif);background-repeat:repeat-y;"><img src="../img/leer.gif" alt="" width="15" height="1" /></td>
-    <td valign="top" bgcolor="#FFFFFF"><?php
+    <td valign="top" bgcolor="#FFFFFF">
+<?php if($NO_ACCESS): ?>
 		
-		if(empty($NO_ACCESS)) {
-		
+			<h1><img src="../img/famfamfam/action_stop.gif" alt="Setup STOP" class="icon" /> Setup stopped </h1>
+			<p>Accessing setup process is restricted. To re-enable setup rename conf.inc.php</p>
+<?php else:	
+
 			switch($step) {
 				case  1:	include $DOCROOT.'/setup/inc/step1.inc.php'; break;
 				case  2:	include $DOCROOT.'/setup/inc/step2.inc.php'; break;
@@ -83,22 +99,10 @@ if($do) require_once($DOCROOT.'/setup/inc/setup.check.inc.php');
 				case  5:	include $DOCROOT.'/setup/inc/step5.inc.php'; break;
 				default:	include $DOCROOT.'/setup/inc/step0.inc.php';
 			}
-			
-		} else {
-		
-			
-		
-			?>
-    <h1><img src="../img/famfamfam/action_stop.gif" alt="Setup STOP" class="icon" /> Setup
-      stopped </h1>
-			<p>Access on setup process is restricted if the setup config file is downloaded once. To re-enable setup remove the line</p>
-			<p class="code">$NO_ACCESS = true;</p>
-			<p>in setup.conf.inc.php.</p>
-			<?php
-		
-		}
-		
-		?></td>
+      
+	  endif; 
+
+?></td>
     <td width="15" bgcolor="#FFFFFF" style="background-image:url(../img/backend/preinfo2_r7_c7.gif);background-repeat:repeat-y;background-position:right;"><img src="../img/leer.gif" alt="" width="15" height="1" /></td>
   </tr>
   <tr>

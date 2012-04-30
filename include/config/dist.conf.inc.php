@@ -25,9 +25,9 @@
 
 // database values
 $phpwcms['db_host']           = 'localhost';
-$phpwcms['db_user']           = 'db_user';
-$phpwcms['db_pass']           = 'db_pass';
-$phpwcms['db_table']          = 'db_table';
+$phpwcms['db_user']           = '';
+$phpwcms['db_pass']           = '';
+$phpwcms['db_table']          = '';
 $phpwcms['db_prepend']        = '';
 $phpwcms['db_pers']           = 0;
 $phpwcms['db_charset']        = 'utf8';
@@ -36,10 +36,10 @@ $phpwcms['db_version']        = 0;
 $phpwcms['db_timezone']		  = ''; // set MySQL session time zone http://dev.mysql.com/doc/refman/5.5/en/time-zone-support.html
 
 // site values
-$phpwcms['site']              = 'http://'.$_SERVER['SERVER_NAME'].'/'; // recommend 'http://'.$_SERVER['SERVER_NAME'].'/'
+$phpwcms['site']              = 'http://'.$_SERVER['SERVER_NAME'].'/';
 $phpwcms['site_ssl_mode']     = 0; // turns the SSL Support of WCMS on (1) or off (0), default value 0
-$phpwcms['site_ssl_url']      = ''; // URL assigned to the SSL Certificate. Recommend 'https://'.$_SERVER['SERVER_NAME'].'/'
-$phpwcms['site_ssl_port']     = 443; // The Port on which you SSL Service serve the secure Sites, default SSL port is 443
+$phpwcms['site_ssl_url']      = '';  //URL assigned to the SSL Certificate. Recommend 'https://'.$_SERVER['SERVER_NAME'].'/'
+$phpwcms['site_ssl_port']     = 443; //The Port on which you SSL Service serve the secure Sites, default SSL port is 443
 
 $phpwcms['admin_name']        = 'Webmaster';
 $phpwcms['admin_user']        = 'admin';
@@ -47,30 +47,22 @@ $phpwcms['admin_pass']        = 'acf977c1cfa27a463246f6963055cb11'; //MD5
 $phpwcms['admin_email']       = 'noreply@'.str_replace(array('www.', 'WWW.', '/'), '', $_SERVER["HTTP_HOST"]);
 
 // paths
-$ptemp = dirname(dirname(__FILE__));
-$phpwcms['DOC_ROOT']          = empty($_SERVER['DOCUMENT_ROOT']) ? $ptemp : $_SERVER['DOCUMENT_ROOT'];
-
-$ptemp = dirname($_SERVER['SCRIPT_NAME']);
-$ptemp = preg_replace('/\/setup$/i','', $ptemp);
-$ptemp = str_replace("\\", '/', $ptemp);
-$ptemp = preg_replace('/^\//', '', $ptemp);
-$ptemp = preg_replace('/\/$/', '', $ptemp);
-
-$phpwcms['root']              = $ptemp;
-$phpwcms['file_path']         = 'filearchive';    //default: 'filearchive'
-$phpwcms['templates']         = 'template';    //default: 'template'
-$phpwcms['content_path']      = 'content'; //default: 'content'
-$phpwcms['cimage_path']       = 'images';  //default: 'images'
-$phpwcms['ftp_path']          = 'upload';     //default: 'upload'
+$phpwcms['DOC_ROOT']          = $_SERVER['DOCUMENT_ROOT'];
+$phpwcms['root']              = '';
+$phpwcms['file_path']         = 'content/files';
+$phpwcms['templates']         = 'template';
+$phpwcms['content_path']      = 'content';
+$phpwcms['cimage_path']       = 'images';
+$phpwcms['ftp_path']          = 'content/files/upload';
 
 // content values
-$phpwcms['file_maxsize']      = 52428800; //Bytes (50 x 1024 x 1024)
-$phpwcms['content_width']     = 538;      //max width of the article content column - important for rendering multi column images
-$phpwcms['img_list_width']    = 100;      //max with of the list thumbnail image
-$phpwcms['img_list_height']   = 75;       //max height of the list thumbnail image
-$phpwcms['img_prev_width']    = 538;      //max width of the large preview image
-$phpwcms['img_prev_height']   = 538;      //max height of the large preview image
-$phpwcms['max_time']          = 1800;     //logout after max_time/60 seconds
+$phpwcms['file_maxsize']      = 52428800; // Bytes (50 x 1024 x 1024)
+$phpwcms['content_width']     = 538; // max width of the article content column - important for rendering multi column images
+$phpwcms['img_list_width']    = 100; // max with of the list thumbnail image
+$phpwcms['img_list_height']   = 75; // max height of the list thumbnail image
+$phpwcms['img_prev_width']    = 538; // max width of the large preview image
+$phpwcms['img_prev_height']   = 538; // max height of the large preview image
+$phpwcms['max_time']          = 1800; // logout after max_time/60 seconds
 
 // other stuff
 $phpwcms['image_library']     = 'GD2'; // GD, GD2, ImageMagick, NetPBM
@@ -79,7 +71,6 @@ $phpwcms['rewrite_url']       = 0; // whether URL should be rewritable
 $phpwcms['rewrite_ext']	  	  = '.html'; // The file extension used while URL is rewritten
 $phpwcms['alias_allow_slash'] = 0; // Allow slashes / in ALIAS
 $phpwcms['wysiwyg_editor']    = 1; // 0 = no wysiwyg editor, 1 = CKEditor, 2 = FCKeditor
-$phpwcms['phpmyadmin']        = 0; // enable/disable phpmyadmin in Admin section
 $phpwcms['default_lang']      = 'en'; // default language
 $phpwcms['DOCTYPE_LANG']      = ''; // by default same as $phpwcms['default_lang'], but can be injected by whatever you like
 $phpwcms['allowed_lang']      = array('en', 'de', 'fr', 'es'); //array of allowed languages
@@ -126,13 +117,13 @@ $phpwcms['render_device']     = 0; // allow user agent specific rendering templa
 $phpwcms['detect_pixelratio'] = 0; // will inject the page with JavaScript to detect Retina devices
 
 // smtp values
-$phpwcms['SMTP_FROM_EMAIL']   = ''; // reply/from email address
-$phpwcms['SMTP_FROM_NAME']    = 'phpwcms webmaster'; // reply/from name
-$phpwcms['SMTP_HOST']         = ''; // SMTP server (host/IP)
+$phpwcms['SMTP_FROM_EMAIL']   = 'info@localhost'; // reply/from email address
+$phpwcms['SMTP_FROM_NAME']    = 'My Name'; // reply/from name
+$phpwcms['SMTP_HOST']         = 'localhost'; // SMTP server (host/IP)
 $phpwcms['SMTP_PORT']         = 25; // SMTP-Server port (default 25)
 $phpwcms['SMTP_MAILER']       = 'mail'; // default phpMailer: smtp, mail (default), sendmail
 $phpwcms['SMTP_AUTH']         = 0; // sets SMTP_AUTH to ON/OFF
-$phpwcms['SMTP_USER']         = ''; // default SMTP login (user) name
-$phpwcms['SMTP_PASS']         = ''; // default SMTP password
+$phpwcms['SMTP_USER']         = 'user'; // default SMTP login (user) name
+$phpwcms['SMTP_PASS']         = 'pass'; // default SMTP password
 
 ?>

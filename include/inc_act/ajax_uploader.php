@@ -31,7 +31,7 @@ if (isset($_POST[ session_name() ])) {
 
 session_start();
 $phpwcms = array();
-require('../../config/phpwcms/conf.inc.php');
+require('../../include/config/conf.inc.php');
 require('../inc_lib/default.inc.php');
 require(PHPWCMS_ROOT.'/include/inc_lib/dbcon.inc.php');
 require(PHPWCMS_ROOT.'/include/inc_lib/general.inc.php');

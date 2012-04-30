@@ -163,13 +163,12 @@ if(!empty($step)) {
 							
 							$_db_prepend = ($phpwcms["db_prepend"] ? $phpwcms["db_prepend"].'_' : '');
 				
-							$sql_data = 'default_sql/'.(($phpwcms['db_version'] > 40100) ? 'phpwcms_init_410.sql' : 'phpwcms_init_323.sql');
-							$sql_data = read_textfile($sql_data);
-							$sql_data = $sql_data . read_textfile('default_sql/phpwcms_inserts.sql');
-							$sql_data = preg_replace("/(#|--).*.\n/", '', $sql_data );
-							$sql_data = preg_replace('/ `phpwcms/', ' `'.$_db_prepend.'phpwcms', $sql_data );
-							$sql_data = str_replace("\r", '', $sql_data);
-							$sql_data = str_replace("\n\n", "\n", $sql_data);
+							$sql_data  = read_textfile(SETUP_DOC_ROOT.'/setup/default_sql/phpwcms_initial.sql');
+							$sql_data .= read_textfile(SETUP_DOC_ROOT.'/setup/default_sql/phpwcms_inserts.sql');
+							$sql_data  = preg_replace("/--.*?\n/", '', $sql_data );
+							$sql_data  = preg_replace("/#.*?\n/", '', $sql_data );
+							$sql_data  = preg_replace('/ `phpwcms/', ' `'.$_db_prepend.'phpwcms', $sql_data );
+							$sql_data  = str_replace(array("\r", "\n\n"), array('', "\n"), $sql_data);
 							$sql_data = trim($sql_data);
 							
 							// if True create initial database
@@ -297,7 +296,6 @@ if(!empty($step)) {
 		header("Location: setup.php?step=5");
 		exit();
 	}
-
 
 }
 

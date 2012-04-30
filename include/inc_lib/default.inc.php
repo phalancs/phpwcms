@@ -21,9 +21,8 @@
 *************************************************************************************/
 
 // ----------------------------------------------------------------
-// obligate check for phpwcms constants
-if (!defined('PHPWCMS_INCLUDE_CHECK')) {
-   die("You Cannot Access This Script Directly, Have a Nice Day.");
+if (!defined('PHPWCMS_INCLUDE_CHECK') && isset($phpwcms['root'])) {
+   define('PHPWCMS_INCLUDE_CHECK', true);
 }
 // ----------------------------------------------------------------
 

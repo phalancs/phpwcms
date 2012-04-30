@@ -26,7 +26,7 @@ This copyright notice MUST APPEAR in all copies of the script!
 // session_name('hashID');
 session_start();
 $phpwcms = array();
-require_once ('../../config/phpwcms/conf.inc.php');
+require_once ('../../include/config/conf.inc.php');
 require_once ('../inc_lib/default.inc.php');
 require_once (PHPWCMS_ROOT.'/include/inc_lib/dbcon.inc.php');
 
@@ -105,7 +105,7 @@ if($_SESSION["wcs_user_admin"] == 1) { //Wenn Benutzer Admin-Rechte hat
 		$sql .= "\$indexpage['acat_keywords']	= '".	str_replace("'", "\\'", $acat_keywords)."';\n";
 		$sql .= "\$indexpage['acat_cpdefault']	= ".	intval($_POST["acat_cpdefault"]).";\n";
 		$sql .= "?>";
-		write_textfile(PHPWCMS_ROOT.'/config/phpwcms/conf.indexpage.inc.php', $sql);
+		write_textfile(PHPWCMS_ROOT.'/include/config/conf.indexpage.inc.php', $sql);
 	}
 	
 	$acat_sort_fallback	= isset($_POST["acat_sort"]) ? intval(trim($_POST["acat_sort"])) : 0;

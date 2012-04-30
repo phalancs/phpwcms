@@ -20,14 +20,13 @@
    This copyright notice MUST APPEAR in all copies of the script!
 *************************************************************************************/
 
+// Write the final file
+write_conf_file($phpwcms, true);
 
 $_SERVER['DOCUMENT_ROOT'] = $phpwcms['DOC_ROOT'];
 $phpwcms["root"] = !empty($phpwcms["root"]) ? "/".$phpwcms["root"] : "";
 
 ?>
-
-
-
 <p><span class="title"><strong>Ready to start phpwcms?</strong> Some &quot;problems&quot;
     maybe OK - you can check by testing phpwcms installation.</span></p>
 <table border="0" cellpadding="0" cellspacing="0" summary="">
@@ -199,14 +198,14 @@ $phpwcms["root"] = !empty($phpwcms["root"]) ? "/".$phpwcms["root"] : "";
   
   <tr><td colspan="4" class="v10"><img src="../img/leer.gif" alt="" width="1" height="2"></td></tr>
   <tr><?php	
-  	$status = check_file_status($phpwcms["root"]."/config/phpwcms/conf.indexpage.inc.php");
+  	$status = check_file_status($phpwcms["root"]."/include/config/conf.indexpage.inc.php");
 	if($status != 2) {
-  		$status = set_chmod($phpwcms["root"]."/".$phpwcms["templates"]."/config/phpwcms/conf.indexpage.inc.php", 0666, $status, 1);
+  		$status = set_chmod($phpwcms["root"]."/".$phpwcms["templates"]."/include/config/conf.indexpage.inc.php", 0666, $status, 1);
   	}
 	
 	?>
     <td align="right" class="v10">index level settings:&nbsp;</td>
-    <td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<font color="#FFFFFF"><?php echo html_specialchars("config/phpwcms/conf.indexpage.inc.php") ?></font>&nbsp;</td>
+    <td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<font color="#FFFFFF"><?php echo html_specialchars("include/config/conf.indexpage.inc.php") ?></font>&nbsp;</td>
     <td><img src="../img/leer.gif" alt="" width="1" height="19"></td>
     <td><?php echo gib_status_text($status) ?></td>
   </tr>
@@ -227,16 +226,7 @@ $phpwcms["root"] = !empty($phpwcms["root"]) ? "/".$phpwcms["root"] : "";
   </tr>
 </table>
 
-<p><a href="get_conf_file.php"><strong>Download the created config file</strong></a>*
-  and copy it to ./config/phpwcms/<strong>conf.inc.php</strong> &#8212; you
-can also edit values manually. Maybe you have to rename the file if you download
-  using Internet Explorer (name is: <strong>conf.inc.php</strong>). Another possible way is to
-  connect to your account by ftp. Then place the file ./setup/<strong>setup.conf.inc.php</strong>  in ./config/phpwcms. There you have to delete or rename default conf.inc.php &#8212; then
-  rename setup.conf.inc.php to conf.inc.php. It's not possible to start the setup
-  process again as long the setup folder still exists and if you have downloaded
-  the created config file once.<br>
-  <br>
-  <strong style="color:#FF0000;">ATTENTION!!!<br>Delete
+<p> <strong style="color:#FF0000;">ATTENTION!!!<br>Delete
   the &quot;setup&quot; folder
 otherwise everybody might see your username, passwords and settings.</strong></p>
 <p>To makes changes again or proof your values:<br />

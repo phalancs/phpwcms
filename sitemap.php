@@ -23,14 +23,14 @@
 // build Google Sitemap based on available articles
 
 $phpwcms = array();
-require_once ('config/phpwcms/conf.inc.php');
+require_once ('include/config/conf.inc.php');
 
 // set neccessary charset
 $phpwcms["charset"] = 'utf-8';
 require_once ('include/inc_lib/default.inc.php');
 define('VISIBLE_MODE', 0);
 require_once (PHPWCMS_ROOT.'/include/inc_lib/dbcon.inc.php');
-require_once (PHPWCMS_ROOT.'/config/phpwcms/conf.indexpage.inc.php');
+require_once (PHPWCMS_ROOT.'/include/config/conf.indexpage.inc.php');
 require_once (PHPWCMS_ROOT.'/include/inc_lib/general.inc.php');
 require_once (PHPWCMS_ROOT.'/include/inc_front/front.func.inc.php');
 
@@ -86,7 +86,7 @@ if($result = mysql_query($sql, $db)) {
 }
 
 echo LF.'	<!-- try to add custom URLs from INI file... ';
-$_addURL = parse_ini_file (PHPWCMS_ROOT.'/config/phpwcms/sitemap.custom.ini', true);
+$_addURL = parse_ini_file (PHPWCMS_ROOT.'/include/config/sitemap.custom.ini', true);
 echo '-->'.LF;
 
 if(is_array($_addURL) && count($_addURL)) {

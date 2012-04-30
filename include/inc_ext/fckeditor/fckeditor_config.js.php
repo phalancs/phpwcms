@@ -9,7 +9,7 @@ $_root = rtrim( str_replace("\\", '/', dirname(dirname(dirname(dirname(__FILE__)
 // send correct content-type/mime-type
 define('CUSTOM_CONTENT_TYPE', 'Content-Type: application/x-javascript');
 
-require_once ($_root.'/config/phpwcms/conf.inc.php');
+require_once ($_root.'/include/config/conf.inc.php');
 require_once ($_root.'/include/inc_lib/default.inc.php');
 
 

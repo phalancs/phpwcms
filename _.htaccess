@@ -24,7 +24,7 @@
 #	RewriteBase /mysubdir
 
 # Ignore
-#	RewriteRule ^(include|img|template|picture|filearchive|content)/ - [L]
+#	RewriteRule ^(include|template|picture|content)/ - [L]
 
 # Rewrite 0.0.0.0.0.0.phtml => index.php?id=0.0.0.0.0.0
 #	RewriteRule ^([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)\.html$ index.php?id=$1,$2,$3,$4,$5,$6

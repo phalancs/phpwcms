@@ -23,15 +23,13 @@
 // creates feeds
 
 $phpwcms = array();
-
-require_once ('include/config/conf.inc.php');
-require_once ('include/inc_lib/default.inc.php');
-
-require_once (PHPWCMS_ROOT.'/include/inc_lib/dbcon.inc.php');
-
-require_once (PHPWCMS_ROOT.'/include/inc_lib/general.inc.php');
-require_once (PHPWCMS_ROOT.'/include/inc_front/front.func.inc.php');
-require_once (PHPWCMS_ROOT.'/include/inc_ext/feedcreator/feedcreator.class.php');
+$phpwcms_root = str_replace('\\', '/', dirname(__FILE__));
+require_once ($phpwcms_root.'/include/config/conf.inc.php');
+require_once ($phpwcms_root.'/include/lib/default.inc.php');
+require_once (PHPWCMS_ROOT.'/include/lib/dbcon.inc.php');
+require_once (PHPWCMS_ROOT.'/include/lib/general.inc.php');
+require_once (PHPWCMS_ROOT.'/include/frontend/front.func.inc.php');
+require_once (PHPWCMS_ROOT.'/include/ext/feedcreator/feedcreator.class.php');
 require_once (PHPWCMS_ROOT.'/include/config/conf.indexpage.inc.php');
 
 

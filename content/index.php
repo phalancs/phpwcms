@@ -1,0 +1,1 @@
+<?php /* There is a lot to talk about, but... */ ?>

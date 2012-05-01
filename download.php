@@ -20,17 +20,16 @@
    This copyright notice MUST APPEAR in all copies of the script!
 *************************************************************************************/
 
-$phpwcms = array();
-
-require_once ('include/config/conf.inc.php');
-
 if( !empty($phpwcms['SESSION_FEinit']) ) {
 	@session_start();
 }
 
-require_once ('include/inc_lib/default.inc.php');
-require_once (PHPWCMS_ROOT.'/include/inc_lib/dbcon.inc.php');
-require_once (PHPWCMS_ROOT.'/include/inc_lib/general.inc.php');
+$phpwcms = array();
+$phpwcms_root = str_replace('\\', '/', dirname(__FILE__));
+require_once ($phpwcms_root.'/include/config/conf.inc.php');
+require_once ($phpwcms_root.'/include/lib/default.inc.php');
+require_once (PHPWCMS_ROOT.'/include/lib/dbcon.inc.php');
+require_once (PHPWCMS_ROOT.'/include/lib/general.inc.php');
 
 // try to get hash for file download
 $success	= false;
@@ -46,8 +45,8 @@ if(isset($_GET['target'])) {
 
 if(!empty($hash) && strlen($hash) == 32) {
 	
-	require_once (PHPWCMS_ROOT.'/include/inc_lib/functions.file.inc.php');
-	require_once (PHPWCMS_ROOT.'/include/inc_front/front.func.inc.php');
+	require_once (PHPWCMS_ROOT.'/include/lib/functions.file.inc.php');
+	require_once (PHPWCMS_ROOT.'/include/frontend/front.func.inc.php');
 
 	_checkFrontendUserAutoLogin();
 	
@@ -117,7 +116,7 @@ if(!empty($hash) && strlen($hash) == 32) {
 		
 		if(BROWSER_OS == 'iOS') {
 			
-			require_once (PHPWCMS_ROOT.'/include/inc_lib/functions.file.inc.php');
+			require_once (PHPWCMS_ROOT.'/include/lib/functions.file.inc.php');
 			
 			rangeDownload($file);			
 			

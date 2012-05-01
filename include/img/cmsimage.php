@@ -24,9 +24,9 @@
 $phpwcms	= array();
 $DOC_ROOT	= rtrim(str_replace('\\', '/', dirname(dirname(__FILE__)) ), '/');
 require($DOC_ROOT.'/config/conf.inc.php');
-require($DOC_ROOT.'/inc_lib/default.inc.php');
-require(PHPWCMS_ROOT.'/include/inc_lib/general.inc.php');
-require(PHPWCMS_ROOT.'/include/inc_lib/imagick.convert.inc.php');
+require($DOC_ROOT.'/lib/default.inc.php');
+require(PHPWCMS_ROOT.'/include/lib/general.inc.php');
+require(PHPWCMS_ROOT.'/include/lib/imagick.convert.inc.php');
 
 // get segments: cmsimage.php/%WIDTH%x%HEIGHT%x%CROP%x%QUALITY%/%HASH%.%EXT%
 // by default this should be enough: cmsimage.php/%WIDTH%x%HEIGHT/%HASH%.%EXT%
@@ -63,7 +63,7 @@ if(isset($data[1]) && !preg_match('/[^a-fgijpnxA-FGIJPN0-9\/\.]/', $data[1])) {
 			@session_start();
 			$file_public = empty($_SESSION["wcs_user_id"]) ? 'f_public=1' : '(f_public=1 OR f_uid='.intval($_SESSION["wcs_user_id"]).')';
 			
-			require_once(PHPWCMS_ROOT.'/include/inc_lib/dbcon.inc.php');
+			require_once(PHPWCMS_ROOT.'/include/lib/dbcon.inc.php');
 		
 			$sql   = 'SELECT f_hash, f_ext FROM '.DB_PREPEND.'phpwcms_file WHERE ';
 			$sql  .= 'f_id='.intval($hash)." AND ";
@@ -85,7 +85,7 @@ if(isset($data[1]) && !preg_match('/[^a-fgijpnxA-FGIJPN0-9\/\.]/', $data[1])) {
 			@session_start();
 			$file_public = empty($_SESSION["wcs_user_id"]) ? 'f_public=1' : '(f_public=1 OR f_uid='.intval($_SESSION["wcs_user_id"]).')';
 			
-			require_once(PHPWCMS_ROOT.'/include/inc_lib/dbcon.inc.php');
+			require_once(PHPWCMS_ROOT.'/include/lib/dbcon.inc.php');
 		
 			$sql   = 'SELECT f_hash, f_ext FROM '.DB_PREPEND.'phpwcms_file WHERE ';
 			$sql  .= 'f_hash='._dbEscape($hash)." AND ";

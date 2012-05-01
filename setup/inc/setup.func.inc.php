@@ -24,7 +24,7 @@
 
 $DOCROOT = rtrim(str_replace('\\', '/', dirname(dirname(dirname(__FILE__)))), '/');
 define('SETUP_DOC_ROOT', $DOCROOT);
-include(SETUP_DOC_ROOT.'/include/inc_lib/revision/revision.php');
+include(SETUP_DOC_ROOT.'/include/lib/revision/revision.php');
 
 if(empty($_SERVER['DOCUMENT_ROOT'])) {
 	$_SERVER['DOCUMENT_ROOT'] = SETUP_DOC_ROOT;

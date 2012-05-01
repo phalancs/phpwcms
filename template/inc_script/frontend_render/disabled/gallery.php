@@ -1,7 +1,7 @@
 <?php
 
 // load phpwcmsImageGallery class
-include_once(PHPWCMS_ROOT.'/include/inc_lib/imagegallery.inc.php');
+include_once(PHPWCMS_ROOT.'/include/lib/imagegallery.inc.php');
 
 $gallery = new phpwcmsImageGallery();
 //$gallery->setQuerySeparator('?');

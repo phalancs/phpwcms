@@ -34,12 +34,11 @@
 session_start();
 
 $phpwcms			= array();
-$phpwcms_root		= dirname(__FILE__);
 $js_files_all		= array();
 $js_files_select	= array();
-
-require($phpwcms_root.'/include/config/conf.inc.php');
-require($phpwcms_root.'/include/inc_lib/default.inc.php');
+$phpwcms_root		= str_replace('\\', '/', dirname(__FILE__));
+require_once ($phpwcms_root.'/include/config/conf.inc.php');
+require_once ($phpwcms_root.'/include/lib/default.inc.php');
 
 if( empty($_SESSION["wcs_user_lang"]) ) {
 
@@ -48,8 +47,8 @@ if( empty($_SESSION["wcs_user_lang"]) ) {
 
 } else {
 
-	require(PHPWCMS_ROOT.'/include/inc_lang/backend/en/lang.ext.inc.php');
-	$cust_lang = PHPWCMS_ROOT.'/include/inc_lang/backend/' . strtolower(substr($_SESSION["wcs_user_lang"], 0, 2)) . '/lang.ext.inc.php';
+	require(PHPWCMS_ROOT.'/include/lang/backend/en/lang.ext.inc.php');
+	$cust_lang = PHPWCMS_ROOT.'/include/lang/backend/' . strtolower(substr($_SESSION["wcs_user_lang"], 0, 2)) . '/lang.ext.inc.php';
 	if(is_file($cust_lang)) {
 		include($cust_lang);
 	}
@@ -77,13 +76,13 @@ if(isset($_GET['entry_id'])) {
 	$_SESSION['filebrowser_image_entry_id'] = preg_replace('/[^a-z0-9_]/', '', $_GET['entry_id']);
 }
 
-require_once (PHPWCMS_ROOT.'/include/inc_lib/dbcon.inc.php');
-require_once (PHPWCMS_ROOT.'/include/inc_lib/general.inc.php');
+require_once (PHPWCMS_ROOT.'/include/lib/dbcon.inc.php');
+require_once (PHPWCMS_ROOT.'/include/lib/general.inc.php');
 
 checkLogin();
 
-require_once (PHPWCMS_ROOT.'/include/inc_lib/backend.functions.inc.php');
-require_once (PHPWCMS_ROOT.'/include/inc_lib/imagick.convert.inc.php');
+require_once (PHPWCMS_ROOT.'/include/lib/backend.functions.inc.php');
+require_once (PHPWCMS_ROOT.'/include/lib/imagick.convert.inc.php');
 
 $phpwcms_filestorage = PHPWCMS_FILES;
 

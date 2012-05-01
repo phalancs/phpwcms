@@ -20,29 +20,28 @@
    This copyright notice MUST APPEAR in all copies of the script!
 *************************************************************************************/
 
-// session_name('hashID');
 session_start();
-
 $phpwcms = array();
-require_once ('include/config/conf.inc.php');
+$phpwcms_root = str_replace('\\', '/',dirname(__FILE__));
+require_once ($phpwcms_root.'/include/config/conf.inc.php');
 
 if(empty($_SESSION["wcs_user_lang"])) {
 	session_destroy();
 	headerRedirect($phpwcms['site'].$phpwcms["root"]);
 
 } else {
-	require('include/inc_lang/backend/en/lang.ext.inc.php');
-	$cust_lang = 'include/inc_lang/backend/'.substr($_SESSION["wcs_user_lang"],0,2).'/lang.ext.inc.php';
+	require($phpwcms_root.'/include/lang/backend/en/lang.ext.inc.php');
+	$cust_lang = $phpwcms_root.'/include/lang/backend/'.substr($_SESSION["wcs_user_lang"],0,2).'/lang.ext.inc.php';
 	if(is_file($cust_lang)) include($cust_lang);
 }
-require_once ('include/inc_lib/default.inc.php');
-require_once (PHPWCMS_ROOT.'/include/inc_lib/dbcon.inc.php');
+require_once ($phpwcms_root.'/include/lib/default.inc.php');
+require_once (PHPWCMS_ROOT.'/include/lib/dbcon.inc.php');
 
-require_once ("include/inc_lib/general.inc.php");
+require_once ("include/lib/general.inc.php");
 checkLogin();
-require_once ("include/inc_lib/backend.functions.inc.php");
-require_once ("include/inc_lib/imagick.convert.inc.php");
-require_once ("include/inc_lib/autolink.inc.php");
+require_once ("include/lib/backend.functions.inc.php");
+require_once ("include/lib/imagick.convert.inc.php");
+require_once ("include/lib/autolink.inc.php");
 
 $file_id	= (isset($_GET["fid"])) ? intval($_GET["fid"]) : 0;
 $public		= (isset($_GET["public"])) ? true : false;
@@ -134,7 +133,7 @@ echo '
         <td width="422" class="v10"><?php echo $BL['CREATED'] ?>: <strong><?php echo date($BL['DATE_FORMAT'], intval($row["f_created"])) ?></strong>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $BL['SIZE'] ?>: <strong><?php echo fsizelong($row["f_size"]) ?></strong></td>
         <td width="96" align="right"><?php 
 		if(!$row["f_trash"]) {
-		?><a href="include/inc_act/act_download.php?dl=<?php 
+		?><a href="include/actions/act_download.php?dl=<?php 
 		
 		echo $row["f_id"];
 		//download public file too

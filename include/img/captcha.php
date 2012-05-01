@@ -3,10 +3,10 @@
 $phpwcms = array();
 $DOC_ROOT	= rtrim(str_replace('\\', '/', dirname(dirname(__FILE__)) ), '/');
 require_once ($DOC_ROOT.'/config/conf.inc.php');
-require_once ($DOC_ROOT.'inc_lib/default.inc.php');
+require_once ($DOC_ROOT.'lib/default.inc.php');
 
 // include FormValidator class
-include_once (PHPWCMS_ROOT.'/include/inc_ext/SOLMETRA_FormValidator/SPAF_FormValidator.class.php');
+include_once (PHPWCMS_ROOT.'/include/ext/SOLMETRA_FormValidator/SPAF_FormValidator.class.php');
 
 // start session
 // NOTICE: we have removed session_start() from this script since as of

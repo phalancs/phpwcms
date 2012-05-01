@@ -41,8 +41,8 @@ if(!is_file($basepath.'/include/config/conf.inc.php')) {
 	die('Error: Config file missing. Check your setup!');
 }
 require_once $basepath.'/include/config/conf.inc.php';
-require_once $basepath.'/include/inc_lib/default.inc.php';
-require_once PHPWCMS_ROOT.'/include/inc_lib/dbcon.inc.php';
+require_once $basepath.'/include/lib/default.inc.php';
+require_once PHPWCMS_ROOT.'/include/lib/dbcon.inc.php';
 
 // Get user Agent BOT check
 $IS_A_BOT = $phpwcms['USER_AGENT']['bot'];
@@ -69,14 +69,14 @@ $content['page_end'] = '';
 
 require_once PHPWCMS_ROOT.'/include/config/conf.template_default.inc.php';
 require_once PHPWCMS_ROOT.'/include/config/conf.indexpage.inc.php';
-require_once PHPWCMS_ROOT.'/include/inc_lib/general.inc.php';
-require_once PHPWCMS_ROOT.'/include/inc_front/cnt.lang.inc.php';
-require_once PHPWCMS_ROOT.'/include/inc_lib/modules.check.inc.php';
-require_once PHPWCMS_ROOT.'/include/inc_lib/article.contenttype.inc.php';
-require PHPWCMS_ROOT.'/include/inc_lib/imagick.convert.inc.php';
-require PHPWCMS_ROOT.'/include/inc_front/front.func.inc.php';
-require PHPWCMS_ROOT.'/include/inc_front/ext.func.inc.php';
-require PHPWCMS_ROOT.'/include/inc_front/content.func.inc.php';
+require_once PHPWCMS_ROOT.'/include/lib/general.inc.php';
+require_once PHPWCMS_ROOT.'/include/frontend/cnt.lang.inc.php';
+require_once PHPWCMS_ROOT.'/include/lib/modules.check.inc.php';
+require_once PHPWCMS_ROOT.'/include/lib/article.contenttype.inc.php';
+require PHPWCMS_ROOT.'/include/lib/imagick.convert.inc.php';
+require PHPWCMS_ROOT.'/include/frontend/front.func.inc.php';
+require PHPWCMS_ROOT.'/include/frontend/ext.func.inc.php';
+require PHPWCMS_ROOT.'/include/frontend/content.func.inc.php';
 
 
 // SEO logging
@@ -173,7 +173,7 @@ header('X-phpwcms-Page-Processed-In: ' . number_format(1000*($usec + $sec - $php
 
 // print PDF
 if($aktion[2] === 1 && defined('PRINT_PDF') && PRINT_PDF) {
-	require_once (PHPWCMS_ROOT.'/include/inc_front/pdf.inc.php');
+	require_once (PHPWCMS_ROOT.'/include/frontend/pdf.inc.php');
 
 // handle output action and section
 } elseif($phpwcms['output_action']) {

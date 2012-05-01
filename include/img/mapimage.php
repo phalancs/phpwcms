@@ -23,7 +23,7 @@
 $phpwcms	= array();
 $DOC_ROOT	= rtrim(str_replace('\\', '/', dirname(dirname(__FILE__)) ), '/');
 require_once($DOC_ROOT.'/config/conf.inc.php');
-require_once($DOC_ROOT.'/inc_lib/default.inc.php');
+require_once($DOC_ROOT.'/lib/default.inc.php');
 
 $img_file		= (isset($_GET['i'])) ? rawurldecode($_GET['i']) : '';
 $img_quality	= 87;

@@ -20,19 +20,17 @@
    This copyright notice MUST APPEAR in all copies of the script!
 *************************************************************************************/
 
-// session_name('hashID');
 session_start();
 
 $phpwcms	= array();
 $BL			= array();
-
-require_once ('./include/config/conf.inc.php');
-require_once ('./include/inc_lib/default.inc.php');
-require_once (PHPWCMS_ROOT.'/include/inc_lib/dbcon.inc.php');
-
-require_once (PHPWCMS_ROOT.'/include/inc_lib/general.inc.php');
-require_once (PHPWCMS_ROOT.'/include/inc_lib/backend.functions.inc.php');
-require_once (PHPWCMS_ROOT.'/include/inc_lang/code.lang.inc.php');
+$phpwcms_root = str_replace('\\', '/', dirname(__FILE__));
+require_once ($phpwcms_root.'/include/config/conf.inc.php');
+require_once ($phpwcms_root.'/include/lib/default.inc.php');
+require_once (PHPWCMS_ROOT.'/include/lib/dbcon.inc.php');
+require_once (PHPWCMS_ROOT.'/include/lib/general.inc.php');
+require_once (PHPWCMS_ROOT.'/include/lib/backend.functions.inc.php');
+require_once (PHPWCMS_ROOT.'/include/lang/code.lang.inc.php');
 
 $_SESSION['REFERER_URL'] = PHPWCMS_URL.get_login_file();
 
@@ -64,7 +62,7 @@ mysql_query($sql, $db);
 
 
 //load default language EN
-require_once (PHPWCMS_ROOT.'/include/inc_lang/backend/en/lang.inc.php');
+require_once (PHPWCMS_ROOT.'/include/lang/backend/en/lang.inc.php');
 
 //define language and check if language file is available
 if(isset($_COOKIE['phpwcmsBELang'])) {
@@ -84,7 +82,7 @@ if(empty($_SESSION["wcs_user_lang"])) {
 } else {
 	$_SESSION["wcs_user_lang"] = strtolower( substr($_SESSION["wcs_user_lang"], 0, 2 ) );
 }
-if(isset($BL[strtoupper($_SESSION["wcs_user_lang"])]) && is_file(PHPWCMS_ROOT.'/include/inc_lang/backend/'.$_SESSION["wcs_user_lang"].'/lang.inc.php')) {
+if(isset($BL[strtoupper($_SESSION["wcs_user_lang"])]) && is_file(PHPWCMS_ROOT.'/include/lang/backend/'.$_SESSION["wcs_user_lang"].'/lang.inc.php')) {
 	$_SESSION["wcs_user_lang_custom"] = 1;
 } else {
 	$_SESSION["wcs_user_lang"] 			= 'en'; //by ono
@@ -94,7 +92,7 @@ if(!empty($_SESSION["wcs_user_lang_custom"])) {
 	//use custom lang if available -> was set in login.php
 	$BL['merge_lang_array'][0] = $BL['be_admin_optgroup_label'];
 	$BL['merge_lang_array'][1] = $BL['be_cnt_field'];	
-	include_once (PHPWCMS_ROOT.'/include/inc_lang/backend/'.$_SESSION["wcs_user_lang"].'/lang.inc.php');
+	include_once (PHPWCMS_ROOT.'/include/lang/backend/'.$_SESSION["wcs_user_lang"].'/lang.inc.php');
 	$BL['be_admin_optgroup_label'] = array_merge($BL['merge_lang_array'][0], $BL['be_admin_optgroup_label']);
 	$BL['be_cnt_field'] = array_merge($BL['merge_lang_array'][1], $BL['be_cnt_field']);
 }
@@ -318,10 +316,10 @@ ob_start();
           <td class="v10"><select name="form_lang" id="form_lang" style="width:250px;" onchange="getObjectById('json').value='2';login(this.form);">
             <?php
 // check available languages installed and build language selector menu
-$lang_dirs = opendir(PHPWCMS_ROOT.'/include/inc_lang/backend');
+$lang_dirs = opendir(PHPWCMS_ROOT.'/include/lang/backend');
 $lang_code = array();
 while($lang_codes = readdir( $lang_dirs )) {
-	if( $lang_codes != "." && $lang_codes != ".." && is_file(PHPWCMS_ROOT.'/include/inc_lang/backend/'.$lang_codes."/lang.inc.php")) {
+	if( $lang_codes != "." && $lang_codes != ".." && is_file(PHPWCMS_ROOT.'/include/lang/backend/'.$lang_codes."/lang.inc.php")) {
 		$lang_code[$lang_codes]  = '<option value="'.$lang_codes.'"';
 		$lang_code[$lang_codes] .= ($lang_codes == $_SESSION["wcs_user_lang"]) ? ' selected="selected"' : '';
 		$lang_code[$lang_codes] .= '>';

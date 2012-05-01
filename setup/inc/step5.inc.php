@@ -45,22 +45,6 @@ $phpwcms["root"] = !empty($phpwcms["root"]) ? "/".$phpwcms["root"] : "";
   </tr>
   
   <tr><td colspan="4" class="v10"><img src="../img/leer.gif" alt="" width="1" height="2"></td></tr>
-    <tr><?php	
-  
-  $status = check_path_status($phpwcms["root"]."/".$phpwcms["file_path"].'/can_be_deleted');
-  if($status != 2) {
-  	$status = set_chmod($phpwcms["root"]."/".$phpwcms["file_path"].'/can_be_deleted', 0777, $status);
-  }
-  
-  
-  ?>
-	<td align="right" class="v10">deleted&nbsp;files:&nbsp;</td>
-	<td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html_specialchars($phpwcms["file_path"].'/can_be_deleted') ?></font></strong>&nbsp;</td>
-    <td><img src="../img/leer.gif" alt="" width="1" height="19"></td>
-    <td><?php echo gib_status_text($status) ?></td>
-  </tr>
-  
-  <tr><td colspan="4" class="v10"><img src="../img/leer.gif" alt="" width="1" height="2"></td></tr>
   <tr><?php	
   $status = check_path_status($phpwcms["root"]."/".$phpwcms["templates"]);
   

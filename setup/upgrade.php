@@ -33,10 +33,10 @@ if (!defined('PHPWCMS_INCLUDE_CHECK')) {
    define('PHPWCMS_INCLUDE_CHECK', true);
 }
 
-require_once ($_this_path.'/include/inc_lib/default.inc.php');
-require_once (PHPWCMS_ROOT.'/include/inc_lib/dbcon.inc.php');
-require_once (PHPWCMS_ROOT.'/include/inc_lib/general.inc.php');
-require_once (PHPWCMS_ROOT.'/include/inc_lib/backend.functions.inc.php');
+require_once ($_this_path.'/include/lib/default.inc.php');
+require_once (PHPWCMS_ROOT.'/include/lib/dbcon.inc.php');
+require_once (PHPWCMS_ROOT.'/include/lib/general.inc.php');
+require_once (PHPWCMS_ROOT.'/include/lib/backend.functions.inc.php');
 require_once (PHPWCMS_ROOT.'/setup/inc/upgrade.func.inc.php');
 
 ?>

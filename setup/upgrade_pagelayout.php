@@ -25,9 +25,9 @@
 $phpwcms = array();
 
 require_once ('../include/config/conf.inc.php');
-require_once ('../include/inc_lib/default.inc.php');
-require_once (PHPWCMS_ROOT.'/include/inc_lib/dbcon.inc.php');
-require_once (PHPWCMS_ROOT.'/include/inc_lib/general.inc.php');
+require_once ('../include/lib/default.inc.php');
+require_once (PHPWCMS_ROOT.'/include/lib/dbcon.inc.php');
+require_once (PHPWCMS_ROOT.'/include/lib/general.inc.php');
 
 echo '<html><body><pre>';
 

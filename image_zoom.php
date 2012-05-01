@@ -20,9 +20,10 @@
    This copyright notice MUST APPEAR in all copies of the script!
 *************************************************************************************/
 
-$phpwcms = array();
-require_once('include/config/conf.inc.php');
-require_once('include/inc_lib/default.inc.php');
+$phpwcms	= array();
+$basepath	= str_replace('\\', '/', dirname(__FILE__));
+require_once($basepath . '/include/config/conf.inc.php');
+require_once($basepath . '/include/lib/default.inc.php');
 
 if(empty($_GET["show"])) {
 
@@ -40,8 +41,7 @@ if(empty($_GET["show"])) {
 
 }
 
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>

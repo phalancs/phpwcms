@@ -233,7 +233,7 @@ if($_userInfo['pages_total'] > 1) {
 	echo $userlist["usr_name"];
 		  
 		  ?></a></td>
-          <td width="61" align="right"><a href="include/actions/act_user.php?aktiv=<?php 
+          <td width="61" align="right"><a href="include/actions/user.php?aktiv=<?php 
 		  	echo $userlist["usr_id"].":";
 			if($userlist["usr_aktiv"]) {
 				echo "0";
@@ -242,7 +242,7 @@ if($_userInfo['pages_total'] > 1) {
 			} 
 			?>"><img src="include/img/button/<?php 
 			if(!$userlist["usr_aktiv"]) echo "in";
-			?>aktiv_mini.gif" alt="" width="14" height="15" border="0"></a><a href="<?php echo $goto ?>"><img src="include/img/button/edit.gif" alt="" width="24" height="15" border="0" title="<?php echo $BL['be_admin_usr_editusr'].": ".html_specialchars($userlist["usr_login"]) ?>"></a><a href="include/actions/act_user.php?del=<?php 
+			?>aktiv_mini.gif" alt="" width="14" height="15" border="0"></a><a href="<?php echo $goto ?>"><img src="include/img/button/edit.gif" alt="" width="24" height="15" border="0" title="<?php echo $BL['be_admin_usr_editusr'].": ".html_specialchars($userlist["usr_login"]) ?>"></a><a href="include/actions/user.php?del=<?php 
 		  echo urlencode($userlist["usr_id"].":".$userlist["usr_email"]);
 		  ?>" onclick="return confirm('Delete user <?php echo js_singlequote($userlist["usr_name"]) ?>');"><img src="include/img/button/del_message_final.gif" alt="" width="22" height="15" border="0" title="<?php echo $BL['be_admin_usr_ldel']." ".html_specialchars($userlist["usr_login"]) ?>"></a></td>
         </tr>

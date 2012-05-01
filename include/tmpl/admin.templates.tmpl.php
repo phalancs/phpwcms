@@ -68,7 +68,7 @@ if($result = mysql_query($sql, $db) or die("error while listing templates")) {
 		echo '<img src="include/img/leer.gif" width="2" height="1">';
                 // ERICH COPY TEMPLATE END 7.6.2005
 
-		echo '<a href="include/actions/act_frontendsetup.php?do=2|'.$row["template_id"].'" ';
+		echo '<a href="include/actions/frontendsetup.php?do=2|'.$row["template_id"].'" ';
 		echo 'title="delete template: '.html_specialchars($row["template_name"]).'">';
 		echo '<img src="include/img/button/del_11x11.gif" width="11" height="11" border="0"></a>';
 		echo '<img src="include/img/leer.gif" width="2" height="1">'."</td>\n</tr>\n";

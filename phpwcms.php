@@ -181,11 +181,11 @@ switch ($do) {
 							$subnav .= subnavtext($BL['be_subnav_admin_starttext'], "phpwcms.php?do=admin&amp;p=12", $p, "12", 0);
 							$subnav .= subnavtext($BL['be_article_urlalias'].' ('.$BL['be_ftptakeover_active'].')', 'phpwcms.php?do=admin&amp;p=13', $p, "4", 0);
 							$subnav .= '<tr><td colspan="2"><img src="include/img/leer.gif" height="15" width="1" alt="" /></td></tr>'."\n";
-							//$subnav .= subnavtext($BL['be_cnt_cache_update'], 'include/actions/act_cache.php', 1, 0, 0);
-							//$subnav .= subnavtext($BL['be_cnt_cache_delete'], 'include/actions/act_cache.php?do=9', 1, 0, 0, 'onclick="return confirm(\''.$BL['be_cnt_cache_delete_msg'].'\');" ');
-							$subnav .= subnavtext($BL['be_cnt_move_deleted'], 'include/actions/act_file.php?movedeletedfiles='. $_SESSION["wcs_user_id"], 1, 0, 0, 'onclick="return confirm(\''.$BL['be_cnt_move_deleted_msg'].'\');" ');
+							//$subnav .= subnavtext($BL['be_cnt_cache_update'], 'include/actions/cache.php', 1, 0, 0);
+							//$subnav .= subnavtext($BL['be_cnt_cache_delete'], 'include/actions/cache.php?do=9', 1, 0, 0, 'onclick="return confirm(\''.$BL['be_cnt_cache_delete_msg'].'\');" ');
+							$subnav .= subnavtext($BL['be_cnt_move_deleted'], 'include/actions/file.php?movedeletedfiles='. $_SESSION["wcs_user_id"], 1, 0, 0, 'onclick="return confirm(\''.$BL['be_cnt_move_deleted_msg'].'\');" ');
 							$subnav .= '<tr><td colspan="2"><img src="include/img/leer.gif" height="15" width="1" alt="" /></td></tr>'."\n";
-							$subnav .= subnavtextext('phpinfo()', 'include/actions/act_phpinfo.php', '_blank', 0);
+							$subnav .= subnavtextext('phpinfo()', 'include/actions/phpinfo.php', '_blank', 0);
 						}
 						break;
 						
@@ -213,8 +213,7 @@ ob_start(); //without Compression
 // set correct content type for backend
 header('Content-Type: text/html; charset='.PHPWCMS_CHARSET);
 
-?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<title><?php echo $BL['be_page_title'].' - '.PHPWCMS_HOST ?></title>

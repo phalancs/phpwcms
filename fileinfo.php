@@ -74,8 +74,7 @@ if($file_id) {
         			)
 				);
 		
-?>
-<html>
+?><html>
 <head>
 <title><?php echo $BL['FILEINFO_TITLE'] ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo PHPWCMS_CHARSET ?>">
@@ -133,7 +132,7 @@ echo '
         <td width="422" class="v10"><?php echo $BL['CREATED'] ?>: <strong><?php echo date($BL['DATE_FORMAT'], intval($row["f_created"])) ?></strong>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $BL['SIZE'] ?>: <strong><?php echo fsizelong($row["f_size"]) ?></strong></td>
         <td width="96" align="right"><?php 
 		if(!$row["f_trash"]) {
-		?><a href="include/actions/act_download.php?dl=<?php 
+		?><a href="include/actions/download.php?dl=<?php 
 		
 		echo $row["f_id"];
 		//download public file too

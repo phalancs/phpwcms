@@ -301,10 +301,10 @@ if(isset($_GET["open"])) {
 					echo "<a href=\"phpwcms.php?do=admin&p=7&fcatid=".$row["fcat_id"]."\" title =\"".$BL['be_admin_fcat_editcat']."\">";
 					echo "<img src=\"include/img/button/edit_22x11.gif\" width=\"22\" height=\"11\" border=\"0\"></a>";
 					
-					echo "<a href=\"include/actions/act_filecat.php?do=1,".$row["fcat_id"].",".(($row["fcat_aktiv"])?0:1)."\" title =\"".$BL['be_fprivfunc_cactivefile']."\">";
+					echo "<a href=\"include/actions/filecat.php?do=1,".$row["fcat_id"].",".(($row["fcat_aktiv"])?0:1)."\" title =\"".$BL['be_fprivfunc_cactivefile']."\">";
 					echo "<img src=\"include/img/button/active_11x11_".$row["fcat_aktiv"].".gif\" width=\"11\" height=\"11\" border=\"0\"></a>";
 					
-					echo "<a href=\"include/actions/act_filecat.php?do=8,".$row["fcat_id"]."\" title =\"".$BL['be_admin_fcat_delcat']."\" ";
+					echo "<a href=\"include/actions/filecat.php?do=8,".$row["fcat_id"]."\" title =\"".$BL['be_admin_fcat_delcat']."\" ";
 					echo "onclick=\"return confirm('".$BL['be_admin_fcat_delcatmsg']."\\n[".html_specialchars($row["fcat_name"])."] ');\">";
 					echo "<img src=\"include/img/button/del_11x11.gif\" width=\"11\" height=\"11\" border=\"0\"></a>";
 					
@@ -328,10 +328,10 @@ if(isset($_GET["open"])) {
 								echo "<a href=\"phpwcms.php?do=admin&p=7&fkeyid=".$krow["fkey_id"]."&cid=".$row["fcat_id"]."\" title =\"".$BL['be_admin_fcat_editkey']."\">";
 								echo "<img src=\"include/img/button/edit_22x11.gif\" width=\"22\" height=\"11\" border=\"0\"></a>";
 							
-								echo "<a href=\"include/actions/act_filecat.php?do=2,".$krow["fkey_id"].",".(($krow["fkey_aktiv"])?0:1)."\" title =\"".$BL['be_fprivfunc_cactivefile']."\">";
+								echo "<a href=\"include/actions/filecat.php?do=2,".$krow["fkey_id"].",".(($krow["fkey_aktiv"])?0:1)."\" title =\"".$BL['be_fprivfunc_cactivefile']."\">";
 								echo "<img src=\"include/img/button/active_11x11_".$krow["fkey_aktiv"].".gif\" width=\"11\" height=\"11\" border=\"0\"></a>";
 								
-								echo "<a href=\"include/actions/act_filecat.php?do=9,".$krow["fkey_id"].",".($krow["fkey_cid"])."\" title =\"".$BL['be_admin_fcat_delkey']."\" ";
+								echo "<a href=\"include/actions/filecat.php?do=9,".$krow["fkey_id"].",".($krow["fkey_cid"])."\" title =\"".$BL['be_admin_fcat_delkey']."\" ";
 								echo "onclick=\"return confirm('".$BL['be_admin_fcat_delmsg']."\\n[".html_specialchars($krow["fkey_name"])."] ');\">";
 								echo "<img src=\"include/img/button/del_11x11.gif\" width=\"11\" height=\"11\" border=\"0\"></a>";
 								echo "</td>\n</tr>\n";

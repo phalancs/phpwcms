@@ -31,7 +31,7 @@ if (!defined('PHPWCMS_ROOT')) {
 $frontend_css = read_textfile(PHPWCMS_TEMPLATE."inc_css/frontend.css"); //reads the css template
 $frontend_css = ($frontend_css) ? html_specialchars($frontend_css) : "";
 		
-?><form action="include/actions/act_frontendcss.php" method="post" name="css" target="_self"><table width="538" border="0" cellpadding="0" cellspacing="0" summary="">
+?><form action="include/actions/frontendcss.php" method="post" name="css" target="_self"><table width="538" border="0" cellpadding="0" cellspacing="0" summary="">
 	
 	<tr>
 	  <td colspan="2" class="title"><?php echo $BL['be_admin_css_title'] ?></td>

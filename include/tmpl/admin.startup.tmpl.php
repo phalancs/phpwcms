@@ -31,7 +31,7 @@ if (!defined('PHPWCMS_ROOT')) {
 $startup_default = read_textfile(PHPWCMS_TEMPLATE."inc_default/startup.php"); //reads the css template
 $startup_default = ($startup_default) ? html_specialchars($startup_default) : "";
 		
-?><form action="include/actions/act_startuptext.php" method="post" name="startup" target="_self"><table width="538" border="0" cellpadding="0" cellspacing="0" summary="">
+?><form action="include/actions/startuptext.php" method="post" name="startup" target="_self"><table width="538" border="0" cellpadding="0" cellspacing="0" summary="">
 	
 	<tr>
 	  <td colspan="2" class="title"><?php echo $BL['be_admin_startup_title'] ?></td>

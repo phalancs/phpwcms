@@ -84,7 +84,7 @@ function list_private($pid, $dbcon, $vor, $zieldatei, $userID, $cutID=0, $show_t
 			echo "<a href=\"".$zieldatei."&amp;mkdir=".$row["f_id"]."\" title=\"".$GLOBALS['BL']['be_fprivfunc_makenew'].": ".$dirname."\">";
 			echo "<img src=\"include/img/button/add_13x13.gif\" border=\"0\" alt=\"\" /></a>";
 		} else {  //Button zum Einfügen der Clipboard-Datei in das Verzeichnis
-			echo "<a href=\"include/actions/act_file.php?paste=".$cutID.'%7C'.$row["f_id"].
+			echo "<a href=\"include/actions/file.php?paste=".$cutID.'%7C'.$row["f_id"].
 				 "\" title=\"".$GLOBALS['BL']['be_fprivfunc_paste'].": ".$dirname."\">";
 			echo "<img src=\"include/img/button/paste_13x13.gif\" border=\"0\" alt=\"\" /></a>";
 		}
@@ -92,17 +92,17 @@ function list_private($pid, $dbcon, $vor, $zieldatei, $userID, $cutID=0, $show_t
 		echo "<a href=\"".$zieldatei."&amp;editdir=".$row["f_id"]."\" title=\"".$GLOBALS['BL']['be_fprivfunc_edit'].": ".$dirname."\">";
 		echo "<img src=\"include/img/button/edit_22x13.gif\" border=\"0\" alt=\"\" /></a>";
 		//Button zum Umschalten zwischen Aktiv/Inaktiv
-		echo "<a href=\"include/actions/act_file.php?aktiv=".$row["f_id"].'%7C'.true_false($row["f_aktiv"]).
+		echo "<a href=\"include/actions/file.php?aktiv=".$row["f_id"].'%7C'.true_false($row["f_aktiv"]).
 			 "\" title=\"".$GLOBALS['BL']['be_fprivfunc_cactive'].": ".$dirname."\">";
 		echo "<img src=\"include/img/button/aktiv_12x13_".$row["f_aktiv"].".gif\" border=\"0\" alt=\"\" /></a>";
 		//Button zum Umschalten zwischen Public/Non-Public
-		echo "<a href=\"include/actions/act_file.php?public=".$row["f_id"].'%7C'.true_false($row["f_public"]).
+		echo "<a href=\"include/actions/file.php?public=".$row["f_id"].'%7C'.true_false($row["f_public"]).
 			 "\" title=\"".$GLOBALS['BL']['be_fprivfunc_cpublic'].": ".$dirname."\">";
 		echo "<img src=\"include/img/button/public_12x13_".$row["f_public"].".gif\" border=\"0\" alt=\"\" /></a>";
 		echo "<img src=\"include/img/leer.gif\" width=\"5\" height=\"1\">"; //Spacer
 		//Button zum Löschen des Verzeichnisses, wenn leer
 		if(!$count_wert) {
-			echo "<a href=\"include/actions/act_file.php?delete=".$row["f_id"].'%7C'."9".
+			echo "<a href=\"include/actions/file.php?delete=".$row["f_id"].'%7C'."9".
 				 "\" title=\"".$GLOBALS['BL']['be_fprivfunc_deldir'].": ".$dirname."\" onclick=\"return confirm('".
 				 $GLOBALS['BL']['be_fprivfunc_jsdeldir'] ." \\n[".$dirname."]? ');\">";
 			echo "<img src=\"include/img/button/trash_13x13_1.gif\" border=\"0\" alt=\"\" /></a>";
@@ -153,7 +153,7 @@ function list_private($pid, $dbcon, $vor, $zieldatei, $userID, $cutID=0, $show_t
 					//Aufbauen Buttonleiste für jeweilige Datei
 					echo "<td width=\"100\" align=\"right\" class=\"msglist\">";
 					//Button zum Downloaden der Datei
-					echo "<a href=\"include/actions/act_download.php?dl=".$file_row["f_id"].
+					echo "<a href=\"include/actions/download.php?dl=".$file_row["f_id"].
 						 "\"  target=\"_blank\" title=\"".$GLOBALS['BL']['be_fprivfunc_dlfile'].": ".$filename."\">".
 						 "<img src=\"include/img/button/download_disc.gif\" border=\"0\" alt=\"\" /></a>"; //target='_blank'
 					//Button zum Erzeugen eines Neuen Unterverzeichnisses
@@ -167,16 +167,16 @@ function list_private($pid, $dbcon, $vor, $zieldatei, $userID, $cutID=0, $show_t
 					echo "<a href=\"".$zieldatei."&amp;editfile=".$file_row["f_id"]."\" title=\"".$GLOBALS['BL']['be_fprivfunc_editfile'].": ".$filename."\">";
 					echo "<img src=\"include/img/button/edit_22x13.gif\" border=\"0\" alt=\"\" /></a>";					
 					//Button zum Umschalten zwischen Aktiv/Inaktiv
-					echo "<a href=\"include/actions/act_file.php?aktiv=".$file_row["f_id"].'%7C'.true_false($file_row["f_aktiv"]).
+					echo "<a href=\"include/actions/file.php?aktiv=".$file_row["f_id"].'%7C'.true_false($file_row["f_aktiv"]).
 			 			 "\" title=\"".$GLOBALS['BL']['be_fprivfunc_cactivefile'].": ".$filename."\">";
 					echo "<img src=\"include/img/button/aktiv_12x13_".$file_row["f_aktiv"].".gif\" border=\"0\" alt=\"\" /></a>";
 					//Button zum Umschalten zwischen Public/Non-Public
-					echo "<a href=\"include/actions/act_file.php?public=".$file_row["f_id"].'%7C'.true_false($file_row["f_public"]).
+					echo "<a href=\"include/actions/file.php?public=".$file_row["f_id"].'%7C'.true_false($file_row["f_public"]).
 			 			 "\" title=\"".$GLOBALS['BL']['be_fprivfunc_cpublicfile'].": ".$filename."\">";
 					echo "<img src=\"include/img/button/public_12x13_".$file_row["f_public"].".gif\" border=\"0\" alt=\"\" /></a>";
 					echo "<img src=\"include/img/leer.gif\" width=\"5\" height=\"1\">"; //Spacer					
 					//Button zum Löschen der Datei
-					echo "<a href=\"include/actions/act_file.php?trash=".$file_row["f_id"].'%7C'."1".
+					echo "<a href=\"include/actions/file.php?trash=".$file_row["f_id"].'%7C'."1".
 				 		 "\" title=\"".$GLOBALS['BL']['be_fprivfunc_movetrash'].": ".$filename."\" onclick=\"return confirm('".
 						 $GLOBALS['BL']['be_fprivfunc_jsmovetrash1']."\\n[".$filename."]\\n".$GLOBALS['BL']['be_fprivfunc_jsmovetrash2'].
 						 "');\">".

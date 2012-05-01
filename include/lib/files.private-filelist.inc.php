@@ -59,7 +59,7 @@ if($file_result = mysql_query($file_sql, $db) or die ("error while listing files
 		//Aufbauen Buttonleiste für jeweilige Datei
 		echo "<td width=\"100\" align=\"right\" class=\"msglist\">";
 		//Button zum Downloaden der Datei
-		echo "<a href=\"include/actions/act_download.php?dl=".$file_row["f_id"].
+		echo "<a href=\"include/actions/download.php?dl=".$file_row["f_id"].
 			 "\" target=\"_blank\" title=\"".$BL['be_fprivfunc_dlfile'].": ".$filename."\">".
 			 "<img src=\"include/img/button/download_disc.gif\" border=\"0\"></a>";
 		//Button zum Erzeugen eines Neuen Unterverzeichnisses
@@ -73,16 +73,16 @@ if($file_result = mysql_query($file_sql, $db) or die ("error while listing files
 		echo "<a href=\"".$zieldatei."&amp;editfile=".$file_row["f_id"]."\" title=\"".$BL['be_fprivfunc_editfile'].": ".$filename."\">";
 		echo "<img src=\"include/img/button/edit_22x13.gif\" border=\"0\"></a>";					
 		//Button zum Umschalten zwischen Aktiv/Inaktiv
-		echo "<a href=\"include/actions/act_file.php?aktiv=".$file_row["f_id"].'%7C'.true_false($file_row["f_aktiv"]).
+		echo "<a href=\"include/actions/file.php?aktiv=".$file_row["f_id"].'%7C'.true_false($file_row["f_aktiv"]).
 			 "\" title=\"".$BL['be_fprivfunc_cactivefile'].": ".$filename."\">";
 		echo "<img src=\"include/img/button/aktiv_12x13_".$file_row["f_aktiv"].".gif\" border=\"0\"></a>";
 		//Button zum Umschalten zwischen Public/Non-Public
-		echo "<a href=\"include/actions/act_file.php?public=".$file_row["f_id"].'%7C'.true_false($file_row["f_public"]).
+		echo "<a href=\"include/actions/file.php?public=".$file_row["f_id"].'%7C'.true_false($file_row["f_public"]).
 			 "\" title=\"".$BL['be_fprivfunc_cpublicfile'].": ".$filename."\">";
 		echo "<img src=\"include/img/button/public_12x13_".$file_row["f_public"].".gif\" border=\"0\"></a>";
 		echo "<img src=\"include/img/leer.gif\" width=\"5\" height=\"1\">"; //Spacer					
 		//Button zum Löschen der Datei
-		echo "<a href=\"include/actions/act_file.php?trash=".$file_row["f_id"].'%7C'."1".
+		echo "<a href=\"include/actions/file.php?trash=".$file_row["f_id"].'%7C'."1".
 	 		 "\" title=\"".$BL['be_fprivfunc_movetrash'].": ".$filename."\" onclick=\"return confirm('".$BL['be_fprivfunc_jsmovetrash1'].
 			 "\\n[".$filename."]  \\n".$BL['be_fprivfunc_jsmovetrash2']."');\">".
 			 "<img src=\"include/img/button/trash_13x13_1.gif\" border=\"0\"></a>";

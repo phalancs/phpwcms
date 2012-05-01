@@ -103,7 +103,7 @@ function list_public($pid, $dbcon, $vor, $zieldatei, $userID, $show_thumb=1, $ph
 					echo $filename."</a>";
 					echo "</td>\n";
 					echo "<td width=\"15\" align=\"right\" class=\"msglist\">";
-					echo "<a href=\"include/actions/act_download.php?pl=1&dl=".$file_row["f_id"];
+					echo "<a href=\"include/actions/download.php?pl=1&dl=".$file_row["f_id"];
 					echo "\" target=\"_blank\" title=\"".$GLOBALS['BL']['be_fprivfunc_dlfile'].": ".$filename."\">";
 					echo "<img src=\"include/img/button/download_disc.gif\" border=0></a>"; //target='_blank'
 					echo "<img src=\"include/img/leer.gif\" width=\"2\" height=\"1\">"; //Spacer

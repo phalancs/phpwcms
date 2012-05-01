@@ -77,11 +77,10 @@ if(isset($_GET['edit']) && intval($_GET['edit'])) {
 	$edit_ID = '';
 }
 
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo PHPWCMS_CHARSET ?>" />
 <title>phpwcms Backend Guestbook</title>
 <style type="text/css">
 <!--
@@ -127,7 +126,6 @@ input, textarea {
 <table width="100%" border="0" cellpadding="2" cellspacing="0" summary="">
 <?php
 
-
 $sql  = "SELECT * FROM ".DB_PREPEND."phpwcms_guestbook WHERE guestbook_cid=";
 $sql .= intval($_GET['cid']).$edit_ID." AND guestbook_trashed=0 ORDER BY guestbook_created DESC;";
 $c = 0;
@@ -140,7 +138,7 @@ if($result = mysql_query($sql, $db)) {
 ?>
   <tr bgcolor="#E7E8EB">
     <td><strong><?php echo date('Y-m-d H:i', intval($row['guestbook_created'])).' | IP: <a href="http://www.dnsstuff.com/tools/ptr.ch?ip='.$row['guestbook_ip'].'" target="_blank">'.$row['guestbook_ip'].'</a> | <a href="http://www.dnsstuff.com/tools/whois.ch?ip='.$row['guestbook_ip'].'" target="_blank">WHOIS</a>' ?></strong></td>
-    <td align="right"><a href="act_guestbook.php?<?php echo 'cid='.$row['guestbook_cid'].'&amp;edit='.$row['guestbook_id'] ?>" target="_self"><img src="../img/button/edit_22x13.gif" width="22" height="13" border="0" alt="edit guestbook entry" /></a><img src="../img/leer.gif" alt="" width="2" height="1" /><a href="act_guestbook.php?<?php echo 'cid='.$row['guestbook_cid'].'&amp;del='.$row['guestbook_id'] ?>" target="_self" onclick="return confirm('Do you really want to \ndelete this guestbook entry?');"><img src="../img/button/trash_13x13_1.gif" alt="delete entry" width="13" height="13" border="0" /></a></td>
+    <td align="right"><a href="<?php echo PHPWCMS_URL ?>include/actions/guestbook.php?<?php echo 'cid='.$row['guestbook_cid'].'&amp;edit='.$row['guestbook_id'] ?>" target="_self"><img src="../img/button/edit_22x13.gif" width="22" height="13" border="0" alt="edit guestbook entry" /></a><img src="../img/leer.gif" alt="" width="2" height="1" /><a href="<?php echo PHPWCMS_URL ?>include/actions/guestbook.php?<?php echo 'cid='.$row['guestbook_cid'].'&amp;del='.$row['guestbook_id'] ?>" target="_self" onclick="return confirm('Do you really want to \ndelete this guestbook entry?');"><img src="../img/button/trash_13x13_1.gif" alt="delete entry" width="13" height="13" border="0" /></a></td>
   </tr>
   <tr>
     <td colspan="2"><?php
@@ -170,7 +168,7 @@ if($result = mysql_query($sql, $db)) {
 		while($row = mysql_fetch_assoc($result)) {
 ?>
   <tr bgcolor="#E7E8EB">
-  	<td>[<a href="act_guestbook.php?cid=<?php echo $row['guestbook_cid'] ?>" target="_self">close</a>]<br /><img src="../img/leer.gif" alt="" width="1" height="2" /></td>
+  	<td>[<a href="<?php echo PHPWCMS_URL ?>include/actions/guestbook.php?cid=<?php echo $row['guestbook_cid'] ?>" target="_self">close</a>]<br /><img src="../img/leer.gif" alt="" width="1" height="2" /></td>
 	<td><strong><?php echo date('Y-m-d H:i', intval($row['guestbook_created'])).' | IP: <a href="http://www.dnsstuff.com/tools/ptr.ch?ip='.$row['guestbook_ip'].'" target="_blank">'.$row['guestbook_ip'].'</a> | <a href="http://www.dnsstuff.com/tools/whois.ch?ip='.$row['guestbook_ip'].'" target="_blank">WHOIS</a>' ?></strong></td>
   </tr>
   <tr><td colspan="2"><img src="../img/leer.gif" alt="" width="1" height="1" /></td></tr>
@@ -185,7 +183,7 @@ if($result = mysql_query($sql, $db)) {
   }
   
   ?>
-  <form name="editguestbook" action="act_guestbook.php?<?php echo 'cid='.$row['guestbook_cid'].'&amp;edit='.$row['guestbook_id'] ?>" target="_self" method="post">
+  <form name="editguestbook" action="<?php echo PHPWCMS_URL ?>include/actions/guestbook.php?<?php echo 'cid='.$row['guestbook_cid'].'&amp;edit='.$row['guestbook_id'] ?>" target="_self" method="post">
   <tr>
   <td>name:&nbsp;</td>
   <td><input name="gbname" type="text" id="gbname" style="width:350px;" value="<?php echo htmlspecialchars($row['guestbook_name']) ?>" /></td>
@@ -212,7 +210,7 @@ if($result = mysql_query($sql, $db)) {
   <td><img src="../img/leer.gif" alt="" width="1" height="30" /><input name="gbcid" type="hidden" value="<?php echo intval($row['guestbook_cid']) ?>" /><input name="gbid" type="hidden" value="<?php echo intval($row['guestbook_id']) ?>" /></td>
   <td valign="bottom">
   	<input name="gbsubmit" type="submit" id="gbsubmit" value="submit changes" style="font-size:10px;" />
-    <input name="gbcancel" type="button" id="gbcancel" value="close" style="font-size:10px;" onclick="location.href='act_guestbook.php?cid=<?php echo $row['guestbook_cid'] ?>';" /></td>
+    <input name="gbcancel" type="button" id="gbcancel" value="close" style="font-size:10px;" onclick="location.href='<?php echo PHPWCMS_URL ?>include/actions/guestbook.php?cid=<?php echo $row['guestbook_cid'] ?>';" /></td>
   </tr>
   </form>
 <?php

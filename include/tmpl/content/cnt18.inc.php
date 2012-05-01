@@ -343,7 +343,7 @@ if($content["id"]) {
 <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
 <tr>
   <td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="15" /><?php echo $BL['be_cnt_guestbook_edit'] ?>:&nbsp;</td>
-  <td><iframe height="350" width="440" frameborder="0" scrolling="Auto" src="include/actions/act_guestbook.php?cid=<?php echo empty($content["guestbook"]["aliasID"]) ? $content["id"] : $content["guestbook"]["aliasID"]; ?>"></iframe></td>
+  <td><iframe height="350" width="440" frameborder="0" scrolling="auto" src="include/actions/guestbook.php?cid=<?php echo empty($content["guestbook"]["aliasID"]) ? $content["id"] : $content["guestbook"]["aliasID"]; ?>"></iframe></td>
 </tr>
 <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
 <tr><td colspan="2"><img src="include/img/lines/l538_70.gif" alt="" width="538" height="1" /></td></tr>

@@ -172,7 +172,7 @@ $keyword["id"] = 0;
 					echo "<a href=\"phpwcms.php?do=admin&p=5&keyid=".$row["keyword_id"]."\" title =\"".$BL['be_admin_keyword_edit']."\">";
 					echo "<img src=\"include/img/button/edit_22x11.gif\" width=\"22\" height=\"11\" border=\"0\"></a>";
 					
-					echo "<a href=\"include/actions/act_filecat.php?do=8,".$row["keyword_id"]."\" title =\"".$BL['be_admin_keyword_del']."\" ";
+					echo "<a href=\"include/actions/filecat.php?do=8,".$row["keyword_id"]."\" title =\"".$BL['be_admin_keyword_del']."\" ";
 					echo "onclick=\"return confirm('".$BL['be_admin_keyword_delmsg']."\\n[".html_specialchars($row["keyword_name"])."] ');\">";
 					echo "<img src=\"include/img/button/del_11x11.gif\" width=\"11\" height=\"11\" border=\"0\"></a>";
 					

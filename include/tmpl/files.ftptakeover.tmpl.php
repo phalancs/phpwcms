@@ -33,7 +33,7 @@ initMootoolsAutocompleter();
 
 
 ?>
-<form action="include/actions/act_ftptakeover.php" method="post" name="ftptakeover" id="ftptakeover">
+<form action="include/actions/ftptakeover.php" method="post" name="ftptakeover" id="ftptakeover">
 <table width="538" border="0" cellpadding="0" cellspacing="0" summary="">
 		<tr><td colspan="6" class="title"><?php echo $BL['be_ftptakeover_title'] ?></td></tr>
 		<tr><td colspan="6" class="title"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td>

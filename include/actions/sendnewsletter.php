@@ -35,8 +35,7 @@ if($_SESSION["wcs_user_lang_custom"]) { //use custom lang if available -> was se
 	include(PHPWCMS_ROOT.'/include/lang/backend/'.substr($_SESSION["wcs_user_lang"],0,2).'/lang.inc.php');
 }
 
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>phpwcms: Send Newsletter</title>
@@ -232,7 +231,7 @@ if(!$newsletter) {
 				$mail->SmtpClose();
 				updateSentDate($newsletter["newsletter_id"]);
 				echo '<script type="text/javascript">'.LF.SCRIPT_CDATA_START.LF;
-				echo 'function loopIt() { self.location.href="act_sendnewsletter.php?';
+				echo 'function loopIt() { self.location.href="'.PHPWCMS_URL.'include/actions/sendnewsletter.php?';
 				echo 'newsletter_id='.$newsletter["newsletter_id"].'&';
 				echo 'send_confirm=confirmed&loop='.$loop.'&pause='.$pause.'"; }'.LF;
 				echo 'window.setTimeout("loopIt()", '. ($pause * 1000) .')'.LF;

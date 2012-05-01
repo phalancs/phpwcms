@@ -193,7 +193,7 @@ if(isset($search["result"])) {
 
 			echo "</td>\n";
 			echo "<td width=\"15\" align=\"right\" class=\"msglist\">";
-			echo "<a href=\"include/actions/act_download.php?pl=1&dl=".$file_row["f_id"].
+			echo "<a href=\"include/actions/download.php?pl=1&dl=".$file_row["f_id"].
 				 "\" target=\"_blank\" title=\"".$BL['be_fprivfunc_dlfile'].": ".$filename."\" target=\"_blank\">".
 				 "<img src=\"include/img/button/download_disc.gif\" border=\"0\" /></a>";
 			echo "<img src=\"include/img/leer.gif\" width=\"2\" height=\"1\" />"; //Spacer

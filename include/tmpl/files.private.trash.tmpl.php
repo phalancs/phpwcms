@@ -48,7 +48,7 @@ if(isset($count_user_files) && $count_user_files) {
 		<td width="19"><img src="include/img/leer.gif" width="6" height="1" alt=""><img src="include/img/button/trash_13x13_1.gif" width="13" height="13" alt=""></td>
 		<td width="519" class="msglist">&nbsp;<strong><?php
 		
-		echo "<a href=\"include/actions/act_file.php?trash=0|9".
+		echo "<a href=\"include/actions/file.php?trash=0|9".
 	 		 "\" title=\"".$BL['be_ftrash_delall']."\" onclick=\"return confirm('". str_replace("\n", "\\n", $BL['be_ftrash_delall'])."');\">".
 			 $BL['be_ftrash_delallfiles']."</a>";
 			 

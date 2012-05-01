@@ -57,7 +57,7 @@ $buttonAction .= '</tr></table>';
 	<tr bgcolor="#F3F5F8">
 		<td width="23" align="right"><img src="include/img/symbole/article_text.gif" alt="" width="9" height="11" border="0" /><img src="include/img/leer.gif" alt="" width="5" height="1" /></td>
 		<td width="453" class="dir"><a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=1&amp;id=<?php echo $article["article_id"] ?>"><strong><?php echo html_specialchars($article["article_title"]) ?></strong></a></td>
-		<td width="62" align="right" class="h13" style="padding-right:1px"><a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=1&amp;id=<?php echo $article["article_id"] ?>"><img src="include/img/button/edit_22x13.gif" alt="<?php echo $BL['be_article_cnt_ledit'] ?>" width="22" height="13" border="0" /></a><a href="include/actions/act_articlecontent.php?do=<?php echo "3,".$article["article_id"].",0,".switch_on_off($article["article_aktiv"]) ?>" title="<?php echo $BL['be_article_cnt_lvisible'] ?>"><img src="include/img/button/visible_12x13_<?php echo $article["article_aktiv"] ?>.gif" alt="" width="12" height="13" border="0" /></a><a href="include/actions/act_articlecontent.php?do=<?php echo "1,".$article["article_id"]; ?>" title="<?php echo $BL['be_article_cnt_ldel'] ?>" onclick="return confirm('<?php echo $BL['be_article_cnt_ldeljs'].'\n'.html_specialchars($article["article_title"]); ?>  \n ');"><img src="include/img/button/trash_13x13_1.gif" alt="" width="13" height="13" border="0" /></a></td>
+		<td width="62" align="right" class="h13" style="padding-right:1px"><a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=1&amp;id=<?php echo $article["article_id"] ?>"><img src="include/img/button/edit_22x13.gif" alt="<?php echo $BL['be_article_cnt_ledit'] ?>" width="22" height="13" border="0" /></a><a href="include/actions/articlecontent.php?do=<?php echo "3,".$article["article_id"].",0,".switch_on_off($article["article_aktiv"]) ?>" title="<?php echo $BL['be_article_cnt_lvisible'] ?>"><img src="include/img/button/visible_12x13_<?php echo $article["article_aktiv"] ?>.gif" alt="" width="12" height="13" border="0" /></a><a href="include/actions/articlecontent.php?do=<?php echo "1,".$article["article_id"]; ?>" title="<?php echo $BL['be_article_cnt_ldel'] ?>" onclick="return confirm('<?php echo $BL['be_article_cnt_ldeljs'].'\n'.html_specialchars($article["article_title"]); ?>  \n ');"><img src="include/img/button/trash_13x13_1.gif" alt="" width="13" height="13" border="0" /></a></td>
 	</tr>
 	<tr bgcolor="#F3F5F8"><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td>
 	</tr>
@@ -265,7 +265,7 @@ if(!$temp_count) {
 						$sbutton[$key]["top"] = '<img src="include/img/button/sort_top_0.gif" border="0" alt="" />';
 						
 					} else {
-						$sbutton[$key]["top"] = "<a href=\"include/actions/act_articlecontent.php?sort=".
+						$sbutton[$key]["top"] = "<a href=\"include/actions/articlecontent.php?sort=".
 						$sbutton[$key]["id"].":".$sbutton[$key-1]["sort"]."|".
 						$sbutton[$key-1]["id"].":".$sbutton[$key]["sort"].
 						"\" title=\"".$BL['be_article_cnt_up']."\"><img src=\"include/img/button/sort_top_1.gif\" border=\"0\" alt=\"\" /></a>";
@@ -279,7 +279,7 @@ if(!$temp_count) {
 						$sbutton[$key]["bottom"] = "<img src=\"include/img/button/sort_bottom_0.gif\" border=\"0\" alt=\"\" />";
 					
 					} else {
-						$sbutton[$key]["bottom"] = "<a href=\"include/actions/act_articlecontent.php?sort=".
+						$sbutton[$key]["bottom"] = "<a href=\"include/actions/articlecontent.php?sort=".
 						$sbutton[$key]["id"].":".$sbutton[$key+1]["sort"]."|".
 						$sbutton[$key+1]["id"].":".$sbutton[$key]["sort"].
 						"\" title=\"".$BL['be_article_cnt_down']."\"><img src=\"include/img/button/sort_bottom_1.gif\" border=\"0\" alt=\"\" /></a>";
@@ -441,18 +441,18 @@ if(!$temp_count) {
 	          echo $article["article_id"]."&amp;acid=".$row["acontent_id"];
 	          ?>" title="<?php echo $BL['be_article_cnt_edit'] ?>"><img src="include/img/button/edit_22x13.gif" alt="" border="0" /></a><?php
 				// duplicate content part
-			  	echo '<a href="include/actions/act_structure.php?do=8%7C'.$row["acontent_id"].'%7C'.$article["article_id"].'%7C'.($row["acontent_sorting"]+5).'" ';
+			  	echo '<a href="include/actions/structure.php?do=8%7C'.$row["acontent_id"].'%7C'.$article["article_id"].'%7C'.($row["acontent_sorting"]+5).'" ';
 				echo 'title="'.$BL['be_func_content_copy'].' [ID:'.$row["acontent_id"].']" ';
 				echo 'onclick="return confirm(\''.js_singlequote($BL['be_func_content_copy']).': \n'.js_singlequote($cntpart_title.' [ID:'.$row["acontent_id"].']').'\');">';
 				echo '<img src="include/img/button/copy_13x13.gif" border="0" alt="" width="13" height="13" /></a>';
 			  
-			  ?><a href="include/actions/act_articlecontent.php?do=<?php
+			  ?><a href="include/actions/articlecontent.php?do=<?php
 	          echo "2,".$article["article_id"].",".$row["acontent_id"].",".switch_on_off($row["acontent_visible"])
 	          ?>" title="<?php
 	          echo $BL['be_article_cnt_lvisible']
 	          ?>"><img src="include/img/button/visible_12x13_<?php
 	          echo $row["acontent_visible"]
-	          ?>.gif" alt="" width="12" height="13" border="0" /></a><a href="include/actions/act_articlecontent.php?do=<?php
+	          ?>.gif" alt="" width="12" height="13" border="0" /></a><a href="include/actions/articlecontent.php?do=<?php
 	          echo "9,".$article["article_id"].",".$row["acontent_id"]
 	          ?>" title="<?php echo $BL['be_article_cnt_delpart'] ?>" onclick="return confirm('<?php
 	          echo $BL['be_article_cnt_delpartjs'] ?> \n[ID: <?php echo $row["acontent_id"]

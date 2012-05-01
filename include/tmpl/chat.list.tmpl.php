@@ -33,7 +33,7 @@ if(!$chatlist) $chatlist = 15; //Standardanzahl Chatmitteilungen
 
 require_once(PHPWCMS_ROOT."/include/lib/autolink.inc.php");
 
-?><form action="include/actions/act_addchat.php" method="post" name="sendchatmessage" target="_top" onSubmit="window.document.cookie='chatstring=';"><table width="538" border="0" cellpadding="0" cellspacing="0" summary="">
+?><form action="include/actions/addchat.php" method="post" name="sendchatmessage" target="_top" onSubmit="window.document.cookie='chatstring=';"><table width="538" border="0" cellpadding="0" cellspacing="0" summary="">
 		 <tr>
             <td colspan="2" class="title"><table width="490" border="0" cellpadding="0" cellspacing="0" summary="">
                 <tr valign="bottom">

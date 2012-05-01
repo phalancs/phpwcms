@@ -85,7 +85,7 @@ echo '<div class="title" style="margin-bottom:10px">'.$BL['be_subnav_msg_subscri
 	&nbsp;
 	<a href="phpwcms.php?do=messages&amp;p=4&amp;import=1"><img src="include/img/famfamfam/table_add.gif" alt="Import" border="0" /><span><?php echo $BL['be_newsletter_newimport'] ?></span></a>
 	&nbsp;
-	<a href="include/actions/act_export.php?action=exportsubscriber" target="_blank" onclick="return confirm('Export all subscribers based on current selection?');"><img src="include/img/famfamfam/icon_download.gif" alt="Download" border="0" /><span><?php echo $BL['be_cnt_export_selection'] ?></span></a>
+	<a href="include/actions/export.php?action=exportsubscriber" target="_blank" onclick="return confirm('Export all subscribers based on current selection?');"><img src="include/img/famfamfam/icon_download.gif" alt="Download" border="0" /><span><?php echo $BL['be_cnt_export_selection'] ?></span></a>
 </div>
 
 

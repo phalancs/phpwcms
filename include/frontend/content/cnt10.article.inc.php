@@ -38,7 +38,7 @@ if(trim($cform[0])) {
 	$cform_fields	= explode("\n", base64_decode($cform[0]));
 	$form_hidden_field = '';
 
-	$CNT_TMP .= "<form action=\"include/actions/act_formmailer.php\" method=\"post\" name=\"";
+	$CNT_TMP .= "<form action=\"include/actions/formmailer.php\" method=\"post\" name=\"";
 	$CNT_TMP .= $form_name."\" target=\"_self\" id=\"".$form_name;
 	$CNT_TMP .= "\" style=\"margin:0px 0px 0px 0px; padding: 0px 0px 0px 0px;\">";																						
 	$CNT_TMP .= "<table border=\"0\" cellspacing=\"2\" cellpadding=\"0\"";

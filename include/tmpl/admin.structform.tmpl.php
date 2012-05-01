@@ -109,7 +109,7 @@ switch($acat_hidden) {
 
 // this -> document.editsitestructure
 ?>
-<form action="include/actions/act_structure.php" method="post" name="editsitestructure" id="editsitestructure" onsubmit="selectAllOptions(this.acat_access);selectAllOptions(this.acat_cp);var x = wordcount(this.acat_name.value);if(x&lt;1) {alert('Fill in a category title! \n\n('+x+' words total)');this.acat_name.focus();return false;}">
+<form action="include/actions/structure.php" method="post" name="editsitestructure" id="editsitestructure" onsubmit="selectAllOptions(this.acat_access);selectAllOptions(this.acat_cp);var x = wordcount(this.acat_name.value);if(x&lt;1) {alert('Fill in a category title! \n\n('+x+' words total)');this.acat_name.focus();return false;}">
 	<table width="538" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" summary="">
 		
           <tr><td width="538" class="title"><?php echo $BL['be_admin_struct_title'] ?> <span style="font-weight: normal;"><?php echo $BL['be_admin_struct_child'] ?></span>: <strong style="color: #FF3300"><?php

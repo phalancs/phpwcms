@@ -56,7 +56,7 @@ if(!isset($_GET["s"])) {
 			echo '<a href="phpwcms.php?do=admin&amp;p=8&amp;s='.$row["pagelayout_id"].'" title="'.$BL['be_admin_page_edit'].'">';
 			echo '<img src="include/img/button/edit_22x13.gif" alt="" border="0" /></a>';
 			
-			echo '<a href="include/actions/act_frontendsetup.php?do=1|'.$row["pagelayout_id"].'" ';
+			echo '<a href="include/actions/frontendsetup.php?do=1|'.$row["pagelayout_id"].'" ';
 			echo 'title="delete pagelayout: '.html_specialchars($row["pagelayout_name"]);
 			echo '" style="margin-left:3px" onclick="return confirm(\''.$BL['be_cnt_delete'].': '.js_singlequote(html_specialchars($row["pagelayout_name"])).'?  \')">';
 			echo '<img src="include/img/button/trash_13x13_1.gif" border="0" alt="" /></a>';

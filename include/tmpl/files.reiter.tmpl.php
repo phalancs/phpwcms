@@ -39,11 +39,11 @@ $add_paste_icon = '<a href="phpwcms.php?do=files&f=0&mkdir=0" title="'.$BL['be_f
 				  '"><img src="include/img/button/add_13x13.gif" border="0"></a>';
 if(isset($_GET["cut"])) { 
 	$cutID = intval($_GET["cut"]);
-	$add_paste_icon = '<a href="include/actions/act_file.php?paste='.$cutID.'|0" title="'.$BL['be_ftab_paste'].
+	$add_paste_icon = '<a href="include/actions/file.php?paste='.$cutID.'|0" title="'.$BL['be_ftab_paste'].
 					  '"><img src="include/img/button/paste_13x13.gif" border="0"></a>';
 } else { $cutID=0; }
 
-$change_thumbnail_icon = '<a href="include/actions/act_file.php?thumbnail=';
+$change_thumbnail_icon = '<a href="include/actions/file.php?thumbnail=';
 if($_SESSION["wcs_user_thumb"]) {
 	$change_thumbnail_icon .= '0" title="'.$BL['be_ftab_disablethumb'].'">';
 	$change_thumbnail_icon .= '<img src="include/img/button/thumbnail_13x13_0.gif" border="0"></a>';

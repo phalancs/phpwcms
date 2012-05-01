@@ -52,13 +52,13 @@ if($file_result = mysql_query($file_sql, $db) or die ("error while listing files
 		//Aufbauen Buttonleiste für jeweilige Datei
 		echo "<td width=\"100\" align=\"right\" class=\"msglist\">";
 		//Button zum Herausholen der Datei aus dem Papierkorb
-		echo "<a href=\"include/actions/act_file.php?trash=".$file_row["f_id"]."|0".
+		echo "<a href=\"include/actions/file.php?trash=".$file_row["f_id"]."|0".
 	 		 "\" title=\"".$BL['be_ftrash_undo'].": ".$filename."\" onclick=\"return confirm('".
 			 str_replace('{VAL}', $filename, $BL['be_ftrash_restore'])."');\">".
 			 "<img src=\"include/img/button/cancel_trash_13x13.gif\" border=\"0\"></a>";
 		echo "<img src=\"include/img/leer.gif\" width=\"5\" height=\"1\">"; //Spacer
 		//Button zum Löschen der Datei
-		echo "<a href=\"include/actions/act_file.php?trash=".$file_row["f_id"]."|9".
+		echo "<a href=\"include/actions/file.php?trash=".$file_row["f_id"]."|9".
 	 		 "\" title=\"".$BL['be_ftrash_delfinal'].": ".$filename."\" onclick=\"return confirm('".
 			 str_replace('{VAL}', $filename, $BL['be_ftrash_delete'])."');\">".
 			 "<img src=\"include/img/button/trash_13x13_1.gif\" border=\"0\"></a>";

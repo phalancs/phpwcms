@@ -36,6 +36,14 @@ $BL							= array();
 $BE							= array('HTML' => '', 'BODY_OPEN' => array(), 'BODY_CLOSE' => array(), 'HEADER' => array(), 'LANG' => 'en');
 $phpwcms_root				= str_replace('\\', '/', dirname(__FILE__));
 
+if(!is_file($phpwcms_root.'/include/config/conf.inc.php')) {
+	if(is_file($phpwcms_root.'/setup/index.php')) {
+		header('Location: setup/index.php');
+		exit();
+	}
+	die('Error: Config file missing. Check your setup!');
+}
+
 // check against user's language
 if(!empty($_SESSION["wcs_user_lang"]) && preg_match('/[a-z]{2}/i', $_SESSION["wcs_user_lang"])) {
 	$BE['LANG'] = $_SESSION["wcs_user_lang"];

@@ -58,19 +58,19 @@ body {
 <body>
 <table width="770" border="0" align="center" cellpadding="0" cellspacing="0" summary="">
   <tr>
-    <td colspan="3"><img src="../img/leer.gif" alt="[beliebiger Wert]" width="1" height="7" /></td>
+    <td colspan="3"><img src="../include/img/leer.gif" alt="[beliebiger Wert]" width="1" height="7" /></td>
   </tr>
   <tr>
-    <td colspan="3"><img src="../img/leer.gif" alt="" width="15" height="1" /><a href="http://www.phpwcms.de" target="_blank"><img src="../img/backend/backend_r1_c3.jpg" alt="phpwcms" width="95" height="24" border="0" /></a></td>
+    <td colspan="3"><img src="../include/img/leer.gif" alt="" width="15" height="1" /><a href="http://www.phpwcms.de" target="_blank"><img src="../include/img/backend/backend_r1_c3.jpg" alt="phpwcms" width="95" height="24" border="0" /></a></td>
   </tr>
   <tr>
-    <td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="7" /></td>
+    <td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="7" /></td>
   </tr>
   <tr bgcolor="#FFFFFF">
-    <td valign="top" style="background-image:url(../img/backend/backend_r3_c4.jpg); background-repeat:repeat-x; "><img src="../img/backend/backend_r3_c1.jpg" alt="" width="15" height="40" /></td>
-    <td valign="top" style="background-image:url(../img/backend/backend_r3_c4.jpg); background-repeat:repeat-x; "><table width="740" border="0" cellpadding="0" cellspacing="0" summary="">
+    <td valign="top" style="background-image:url(../include/img/backend/backend_r3_c4.jpg); background-repeat:repeat-x; "><img src="../include/img/backend/backend_r3_c1.jpg" alt="" width="15" height="40" /></td>
+    <td valign="top" style="background-image:url(../include/img/backend/backend_r3_c4.jpg); background-repeat:repeat-x; "><table width="740" border="0" cellpadding="0" cellspacing="0" summary="">
         <tr>
-          <td colspan="2"><img src="../img/leer.gif" alt="" width="1" height="9" /></td>
+          <td colspan="2"><img src="../include/img/leer.gif" alt="" width="1" height="9" /></td>
         </tr>
         <tr>
           <td valign="top" class="navtext">PHPWCMS UPGRADE VERSION&nbsp;<?php echo $phpwcms['release'].', RELEASE '.$phpwcms['release_date'] ?></td>
@@ -78,19 +78,19 @@ body {
             <a href="setup.php">SETUP</a> | <a href="index.php" target="_top">LICENCE</a> | <a href="<?php echo PHPWCMS_URL.get_login_file() ?>" target="_top">LOGIN</a></td>
         </tr>
     </table></td>
-    <td valign="top" style="background-image:url(../img/backend/backend_r3_c4.jpg); background-repeat:repeat-x; "><img src="../img/backend/backend_r3_c7.jpg" alt="" width="15" height="40" /></td>
+    <td valign="top" style="background-image:url(../include/img/backend/backend_r3_c4.jpg); background-repeat:repeat-x; "><img src="../include/img/backend/backend_r3_c7.jpg" alt="" width="15" height="40" /></td>
   </tr>
   <tr bgcolor="#FFFFFF">
-    <td width="15" bgcolor="#FFFFFF" style="background-image:url(../img/backend/preinfo2_r7_c2.gif);background-repeat:repeat-y;"><img src="../img/leer.gif" alt="" width="15" height="1" /></td>
+    <td width="15" bgcolor="#FFFFFF" style="background-image:url(../include/img/backend/preinfo2_r7_c2.gif);background-repeat:repeat-y;"><img src="../include/img/leer.gif" alt="" width="15" height="1" /></td>
     <td valign="top" bgcolor="#FFFFFF"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="border:1px dotted #7599BB;" summary="">
         <tr>
-          <td colspan="4"><img src="../img/leer.gif" alt="" width="1" height="6" /></td>
+          <td colspan="4"><img src="../include/img/leer.gif" alt="" width="1" height="6" /></td>
         </tr>
         <tr>
-          <td width="6" rowspan="10"><img src="../img/leer.gif" alt="" width="6" height="1" /></td>
+          <td width="6" rowspan="10"><img src="../include/img/leer.gif" alt="" width="6" height="1" /></td>
           <td align="right" class="chatlist">&nbsp;system:&nbsp;</td>
           <td class="chatlist" width="100%"><?php echo php_uname() ?></td>
-          <td width="6" rowspan="10"><img src="../img/leer.gif" alt="" width="6" height="1" /></td>
+          <td width="6" rowspan="10"><img src="../include/img/leer.gif" alt="" width="6" height="1" /></td>
         </tr>
         <tr>
           <td align="right" class="chatlist">server:&nbsp;</td>
@@ -151,7 +151,7 @@ body {
 		?></td>
         </tr>
         <tr>
-          <td colspan="2" class="chatlist"><img src="../img/leer.gif" alt="" width="1" height="6" /></td>
+          <td colspan="2" class="chatlist"><img src="../include/img/leer.gif" alt="" width="1" height="6" /></td>
         </tr>
         <tr>
           <td colspan="2" class="chatlist"><div id="warning">
@@ -163,7 +163,7 @@ body {
         </tr>
 		
         <tr>
-          <td colspan="4"><img src="../img/leer.gif" alt="" width="1" height="6" /></td>
+          <td colspan="4"><img src="../include/img/leer.gif" alt="" width="1" height="6" /></td>
         </tr>
     </table>      
 
@@ -321,20 +321,20 @@ if(is_dir($dir)) {
 
 		
 	</td>
-    <td width="15" bgcolor="#FFFFFF" style="background-image:url(../img/backend/preinfo2_r7_c7.gif);background-repeat:repeat-y;background-position:right;"><img src="../img/leer.gif" alt="" width="15" height="1" /></td>
+    <td width="15" bgcolor="#FFFFFF" style="background-image:url(../include/img/backend/preinfo2_r7_c7.gif);background-repeat:repeat-y;background-position:right;"><img src="../include/img/leer.gif" alt="" width="15" height="1" /></td>
   </tr>
   <tr>
-    <td><img src="../img/backend/backend_a_r1_c1.gif" alt="" width="15" height="15" border="0" /></td>
-    <td valign="bottom" bgcolor="#FFFFFF" class="navtext"><img src="../img/backend/backend_r6_c2.jpg" alt="" width="740" height="15" border="0" /></td>
-    <td valign="bottom" class="navtext"><img src="../img/backend/backend_a_r1_c7.gif" alt="" width="15" height="15" border="0" /></td>
+    <td><img src="../include/img/backend/backend_a_r1_c1.gif" alt="" width="15" height="15" border="0" /></td>
+    <td valign="bottom" bgcolor="#FFFFFF" class="navtext"><img src="../include/img/backend/backend_r6_c2.jpg" alt="" width="740" height="15" border="0" /></td>
+    <td valign="bottom" class="navtext"><img src="../include/img/backend/backend_a_r1_c7.gif" alt="" width="15" height="15" border="0" /></td>
   </tr>
   <tr>
-    <td width="15"><img src="../img/leer.gif" alt="" width="14" height="20" /></td>
+    <td width="15"><img src="../include/img/leer.gif" alt="" width="14" height="20" /></td>
     <td colspan="2" valign="bottom" class="navtext"><a href="http://www.phpwcms.de" target="_blank">phpwcms</a> &copy; 2003&#8212;<?php echo date('Y') ?>  <a title="oliver at phpwcms dot de" onclick="location.href='mailto:oliver'+'@'+'phpwcms'+'.'+'de';return false;" href="#">Oliver Georgi</a>. Licensed under <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GPL</a>.
         Extensions are copyright of their respective owners.</td>
   </tr>
   <tr>
-    <td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="8" /></td>
+    <td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="8" /></td>
   </tr>
 </table>
 </body>

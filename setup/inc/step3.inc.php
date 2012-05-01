@@ -32,7 +32,7 @@
       for default value<br><?php echo  html_specialchars($_SERVER['DOCUMENT_ROOT']) ?></td>
   </tr>
   <tr>
-    <td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="2"></td>
+    <td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="2"></td>
   </tr>
   <tr>
     <td align="right" class="v10">root path :&nbsp;</td>
@@ -40,7 +40,7 @@
     <td class="chatlist"><em>&nbsp;default: $_SERVER['DOCUMENT_ROOT'] </em></td>
   </tr>
   <tr>
-    <td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="4"></td>
+    <td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="4"></td>
   </tr>
   <tr>
     <td align="right" class="v10">&nbsp;</td>
@@ -51,7 +51,7 @@
       base URL like http://mysite.com/<strong>phpwcms_root</strong></td>
   </tr>
   <tr>
-    <td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="2"></td>
+    <td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="2"></td>
   </tr>
   <tr>
     <td align="right" class="v10">phpwcms root:&nbsp;</td>
@@ -60,7 +60,7 @@
     <td class="chatlist"><em>&nbsp;default: (empty)</em></td>
   </tr>
   <tr>
-    <td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="4"></td>
+    <td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="4"></td>
   </tr>
           <tr>
             <td align="right" class="v10">&nbsp;</td>
@@ -68,22 +68,22 @@
               put this directory outside a folder<br />
               available via web. you can use it like this ../filearchive</td>
           </tr>
-		  <tr><td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="2"></td></tr>
+		  <tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="2"></td></tr>
           <tr>
             <td align="right" class="v10">filestorage:&nbsp;</td>
             <td><input name="file_path" type="text" class="f11b" id="file_path" style="width:280px" value="<?php echo html_specialchars($phpwcms["file_path"]) ?>" size="30" maxlength="100"></td>
-            <td class="chatlist"><em>&nbsp;default: filearchive </em></td>
-          </tr><tr><td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="4"></td></tr>
+            <td class="chatlist"><em>&nbsp;default: content/files </em></td>
+          </tr><tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="4"></td></tr>
           <tr>
             <td align="right" class="v10">&nbsp;</td>
             <td colspan="2" class="chatlist">here are the template directories located where all<br />template stuff is stored</td>
           </tr>
-		  <tr><td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="2"></td></tr>
+		  <tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="2"></td></tr>
           <tr>
             <td align="right" class="v10">templates:&nbsp;</td>
             <td><input name="templates" type="text" class="f11b" id="templates" style="width:280px" value="<?php echo html_specialchars($phpwcms["templates"]) ?>" size="30" maxlength="100"></td>
             <td class="chatlist"><em>&nbsp;default: template</em></td>
-          </tr><tr><td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="4"></td></tr>
+          </tr><tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="4"></td></tr>
           <tr>
             <td align="right" class="v10">&nbsp;</td>
             <td colspan="2" class="chatlist">this is the directory in which you
@@ -93,13 +93,13 @@
               you can also use it like this: ../../myftpdir
             </td>
           </tr>
-		  <tr><td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="2"></td></tr>
+		  <tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="2"></td></tr>
           <tr>
             <td align="right" class="v10">ftp&nbsp;takeover:&nbsp;</td>
             <td><input name="ftp_path" type="text" class="f11b" id="ftp_path" style="width:280px" value="<?php echo html_specialchars($phpwcms["ftp_path"]) ?>" size="30" maxlength="100"></td>
-            <td class="chatlist"><em>&nbsp;default: upload </em></td>
+            <td class="chatlist"><em>&nbsp;default: content/files/upload </em></td>
           </tr>
-		  <tr><td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="15"></td></tr>
+		  <tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="15"></td></tr>
           <tr>
             <td align="right" class="v10">&nbsp;</td>
             <td colspan="2"><input name="Submit" type="submit" class="button10" value="send path values"></td>

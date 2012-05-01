@@ -35,28 +35,28 @@ if(isset($_POST["dbsavesubmit"]) && $err) {
             <td width="270"><input name="db_host" type="text" class="v12" id="db_host" value="<?php echo html_specialchars($phpwcms["db_host"]) ?>" size="30" style="width:250px" /></td>
             <td class="chatlist"><em>default: localhost</em></td>
           </tr>
-		   <tr><td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="4" /></td>
+		   <tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="4" /></td>
 		   </tr>
           <tr>
             <td align="right" class="v10">DB user:&nbsp;</td>
             <td><input name="db_user" type="text" class="v12" id="db_user" style="width:250px" value="<?php echo html_specialchars($phpwcms["db_user"]) ?>" size="30" /></td>
             <td class="chatlist">&nbsp;</td>
           </tr>
-		   <tr><td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="4" /></td>
+		   <tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="4" /></td>
 		   </tr>
           <tr>
             <td align="right" class="v10">DB password:&nbsp;</td>
             <td><input name="db_pass" type="text" class="v12" id="db_pass" style="width:250px" value="<?php echo html_specialchars($phpwcms["db_pass"]) ?>" size="30" /></td>
             <td class="chatlist">&nbsp;</td>
           </tr>
-		   <tr><td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="4" /></td>
+		   <tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="4" /></td>
 		   </tr>
           <tr>
             <td align="right" class="v10">DB database:&nbsp;</td>
             <td><input name="db_table" type="text" class="v12" id="db_table" style="width:250px" value="<?php echo html_specialchars($phpwcms["db_table"]) ?>" size="30" maxlength="255" /></td>
             <td class="chatlist"><em>you have to create it <strong>before</strong> setup!!!</em></td>
           </tr>
-		  <tr><td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="4" /></td>
+		  <tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="4" /></td>
 		  </tr>
           <tr>
             <td align="right" class="v10">DB table prefix:&nbsp;</td>
@@ -64,7 +64,7 @@ if(isset($_POST["dbsavesubmit"]) && $err) {
             <td class="chatlist"><em>default: none (&quot;&quot;), if filled
                 in it will be <strong>prefix</strong>+<strong>_</strong></em></td>
           </tr>
-          <tr><td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="6" /></td>
+          <tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="6" /></td>
           </tr>
           <tr>
             <td align="right" class="v10">&nbsp;</td>
@@ -82,9 +82,9 @@ if(!empty($db_additional)) {
 
 ?>
 	<tr><td colspan="3" style="padding: 10px 0 10px 0;"><h1><span class="number">4.</span> Charset &amp; MySQL <span class="v11">(v<?php echo html_specialchars($row[0]) ?>)</span> collation
-	      settings <a href="http://dev.mysql.com/doc/refman/4.1/en/charset.html" target="_blank" title="MySQL information"><img src="../img/famfamfam/icon_info.gif" alt="Info" border="0" class="icon" /></a></h1></td></tr>
+	      settings <a href="http://dev.mysql.com/doc/refman/4.1/en/charset.html" target="_blank" title="MySQL information"><img src="../include/img/famfamfam/icon_info.gif" alt="Info" border="0" class="icon" /></a></h1></td></tr>
 	<tr>
-            <td align="right" class="v10"><a href="http://www.w3.org/International/O-HTTP-charset" target="_blank" title="HTTP charset"><img src="../img/famfamfam/icon_info.gif" alt="Info" border="0" class="icon1" /></a>Charset (recommend: UTF8):&nbsp;</td>
+            <td align="right" class="v10"><a href="http://www.w3.org/International/O-HTTP-charset" target="_blank" title="HTTP charset"><img src="../include/img/famfamfam/icon_info.gif" alt="Info" border="0" class="icon1" /></a>Charset (recommend: UTF8):&nbsp;</td>
             <td colspan="2"><select name="charset">
 			
 			<?php
@@ -137,7 +137,7 @@ if(!empty($db_additional)) {
 		$_collation 			= array();
 		$_collation_selected	= false;
 		
-		echo '<tr><td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="6"></td></tr>';
+		echo '<tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="6"></td></tr>';
 		
 		
 		// make db connect
@@ -254,7 +254,7 @@ if(!empty($db_init)) {
 ?>
 	  <tr>
 		<td align="right" class="v10">&nbsp;</td>
-		<td colspan="2"><img src="../img/famfamfam/icon_accept.gif" alt="Juchu" class="icon1" /><strong>Fine!</strong> All initial phpwcms tables were created or still exists.<input type="hidden" name="db_sql_hidden" value="1" /></td>
+		<td colspan="2"><img src="../include/img/famfamfam/icon_accept.gif" alt="Juchu" class="icon1" /><strong>Fine!</strong> All initial phpwcms tables were created or still exists.<input type="hidden" name="db_sql_hidden" value="1" /></td>
 	  </tr>
 <?php
 	  
@@ -359,7 +359,7 @@ if(!empty($_SESSION['admin_set'])) {
 		<td class="chatlist"><em>&nbsp;default: Webmaster</em></td>
 	</tr>
 	
-	<tr><td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="4" /></td>
+	<tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="4" /></td>
 	</tr>	
 	
 	<tr>
@@ -368,7 +368,7 @@ if(!empty($_SESSION['admin_set'])) {
 		<td class="chatlist"><em>&nbsp;default: admin </em></td>
 	</tr>
 	
-	<tr><td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="4" /></td></tr>
+	<tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
 
 <?php
 	if(!empty($admin_err_pass)) {
@@ -384,7 +384,7 @@ if(!empty($_SESSION['admin_set'])) {
 		<td class="chatlist"><em>&nbsp;default: phpwcms </em></td>
 	</tr>
 	
-	<tr><td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="4" /></td>
+	<tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="4" /></td>
 	</tr>
 	
 	<tr>
@@ -393,7 +393,7 @@ if(!empty($_SESSION['admin_set'])) {
 		<td class="chatlist"><em>&nbsp;</em></td>
 	</tr>
 	
-	<tr><td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="4" /></td>
+	<tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="4" /></td>
 	</tr>
 	
 	<tr>
@@ -457,7 +457,7 @@ if(!empty($_SESSION['admin_set'])) {
 		if(!empty($create_user)) {
 		
 			// update
-			echo '<img src="../img/famfamfam/icon_accept.gif" alt="Juchu" class="icon1" />';
+			echo '<img src="../include/img/famfamfam/icon_accept.gif" alt="Juchu" class="icon1" />';
 			echo '<strong>Done!</strong> Account for user <b>'.html_specialchars($phpwcms['admin_user']).'</b> was created.';
 			echo '<input type="hidden" name="user_account" value="1" />';
 		
@@ -466,7 +466,7 @@ if(!empty($_SESSION['admin_set'])) {
 		if(!empty($update_user)) {
 		
 			// update
-			echo '<img src="../img/famfamfam/icon_accept.gif" alt="Juchu" class="icon1" />';
+			echo '<img src="../include/img/famfamfam/icon_accept.gif" alt="Juchu" class="icon1" />';
 			echo '<strong>Done!</strong> Account of user <b>'.html_specialchars($phpwcms['admin_user']).'</b> was updated.';
 			echo '<input type="hidden" name="user_account" value="1" />';
 		
@@ -492,7 +492,7 @@ if(!empty($_SESSION['admin_set'])) {
 
 
 ?>
-		  <tr><td colspan="3"><img src="../img/leer.gif" alt="" width="1" height="15" /></td>
+		  <tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="15" /></td>
 		  </tr>
           <tr>
             <td align="right" class="v10">&nbsp;</td>

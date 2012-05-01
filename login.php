@@ -25,6 +25,13 @@ session_start();
 $phpwcms	= array();
 $BL			= array();
 $phpwcms_root = str_replace('\\', '/', dirname(__FILE__));
+if(!is_file($phpwcms_root.'/include/config/conf.inc.php')) {
+	if(is_file($phpwcms_root.'/setup/index.php')) {
+		header('Location: setup/index.php');
+		exit();
+	}
+	die('Error: Config file missing. Check your setup!');
+}
 require_once ($phpwcms_root.'/include/config/conf.inc.php');
 require_once ($phpwcms_root.'/include/lib/default.inc.php');
 require_once (PHPWCMS_ROOT.'/include/lib/dbcon.inc.php');

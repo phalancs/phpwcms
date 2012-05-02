@@ -24,17 +24,16 @@
 
 $wcsnav = array();
 
-$wcsnav["articles"]		= '<a href="phpwcms.php?do=articles">'.$BL['be_nav_articles'].'</a>';
-$wcsnav["files"]		= '<a href="phpwcms.php?do=files">'.$BL['be_nav_files'].'</a>';
-$wcsnav["modules"]		= '<a href="phpwcms.php?do=modules">'.$BL['be_nav_modules'].'</a>';
-$wcsnav["messages"]		= '<a href="phpwcms.php?do=messages&amp;p=4">'.$BL['be_nav_messages'].'</a>';
+$wcsnav["articles"]		= '<li><a href="phpwcms.php?do=articles">'.$BL['be_nav_articles'].'</a></li>';
+$wcsnav["files"]		= '<li><a href="phpwcms.php?do=files">'.$BL['be_nav_files'].'</a></li>';
+$wcsnav["modules"]		= '<li><a href="phpwcms.php?do=modules">'.$BL['be_nav_modules'].'</a></li>';
+$wcsnav["messages"]		= '<li><a href="phpwcms.php?do=messages&amp;p=4">'.$BL['be_nav_messages'].'</a></li>';
 
 if(!empty($phpwcms['enable_chat'])) {
-	$wcsnav["chat"]			= '<a href="phpwcms.php?do=chat">'.$BL['be_nav_chat'].'</a>';
+	$wcsnav["chat"]		= '<li><a href="phpwcms.php?do=chat">'.$BL['be_nav_chat'].'</a></li>';
 }
 
-$wcsnav["profile"]		= '<a href="phpwcms.php?do=profile">'.$BL['be_nav_profile'].'</a>';
-$wcsnav["admin"]		= '<a href="phpwcms.php?do=admin&amp;p=6">'.$BL['be_nav_admin'].'</a>';
+$wcsnav["admin"]		= '<li><a href="phpwcms.php?do=admin&amp;p=6">'.$BL['be_nav_admin'].'</a></li>';
 $wcsnav["navspace1"]	= '';
 
 ?>

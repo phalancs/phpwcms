@@ -169,7 +169,7 @@ header('X-phpwcms-Release: ' . $phpwcms["generator"]);
 
 // retrieve complete processing time
 list($usec, $sec) = explode(' ', microtime());
-header('X-phpwcms-Page-Processed-In: ' . number_format(1000*($usec + $sec - $phpwcms_rendering_start), 3) .' ms');
+header('X-phpwcms-Page-Processed-In: ' . number_format(getMicrotimeDiff($phpwcms_rendering_start, 's'), 3) .' s');
 
 // print PDF
 if($aktion[2] === 1 && defined('PRINT_PDF') && PRINT_PDF) {
@@ -201,7 +201,6 @@ if($aktion[2] === 1 && defined('PRINT_PDF') && PRINT_PDF) {
 		$sections .= $section;
 	}
 	
-	// return preg_replace('/<!--(.|\s)*?-->/', '', $buffer);
 	echo trim($sections) == '' ? $content : $sections;
 	
 	exit();

@@ -819,8 +819,13 @@ function getMicrotime() {
     return ((float)$usec + (float)$sec);
 }
 
-function getMicrotimeDiff($start=0) {
-	return (getMicrotime() - $start);
+function getMicrotimeDiff($start=0, $format='ms') {
+	if($format === 'ms') {
+		return 1000 * (getMicrotime() - $start);
+	} elseif($format === 'min') {
+		return (getMicrotime() - $start) / 60;
+	}
+	return getMicrotime() - $start;
 }
 
 /**

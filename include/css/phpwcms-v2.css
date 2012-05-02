@@ -4434,6 +4434,13 @@ a.badge:hover {
 /*!
  * phpwcms custom CSS
  */
+body.backend {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+body .sidebar-nav {
+  padding: 9px 0;
+}
 .alert {
   margin-top: 9px;
 }

@@ -230,9 +230,10 @@ if(file_exists(PHPWCMS_ROOT.'/phpwcms_code_snippets')) {
 	<meta charset="UTF-8">
 	<meta name="robots" content="noindex, nofollow">
 	<link href="include/css/phpwcms-v2.css" rel="stylesheet" type="text/css">
-	<script type="text/javascript" src="include/js/jquery-1.7.2.js"></script>
-	<script type="text/javascript" src="include/js/bootstrap-alert.js"></script>
-	<script type="text/javascript" src="include/js/jquery.md5.js"></script>
+	<script src="include/js/jquery-1.7.2.js"></script>
+	<script src="include/js/bootstrap-alert.js"></script>
+	<script src="include/js/bootstrap-transition.js"></script>
+	<script src="include/js/jquery.md5.js"></script>
 <?php
 
 // get whole login form and keep in buffer

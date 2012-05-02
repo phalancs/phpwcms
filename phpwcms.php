@@ -93,7 +93,7 @@ switch ($do) {
 
 	case "articles":	//articles
 						include(PHPWCMS_ROOT.'/include/lib/admin.functions.inc.php');
-						$wcsnav["articles"] = "<strong class=\"navtexta\">".$wcsnav["articles"]."</strong>";
+						$wcsnav["articles"] = '<li class="active"><a href="phpwcms.php?do=articles">'.$BL['be_nav_articles'].'</a></li>';
 						include(PHPWCMS_ROOT.'/include/lib/article.contenttype.inc.php'); //load array with actual content types
 						include(PHPWCMS_ROOT.'/include/lib/article.functions.inc.php'); //load article funtions
 						$subnav .= subnavtext($BL['be_subnav_article_center'], "phpwcms.php?do=articles", $p, "", 0);
@@ -103,14 +103,14 @@ switch ($do) {
 						break;
 
 	case "files":		//files
-						$wcsnav["files"] = "<strong class=\"navtexta\">".$wcsnav["files"]."</strong>";
+						$wcsnav["files"] = '<li class="active"><a href="phpwcms.php?do=files">'.$BL['be_nav_files']."</a></li>";
 						$subnav .= subnavtext($BL['be_subnav_file_center'], "phpwcms.php?do=files", $p, "", 0);
 						$subnav .= subnavtext($BL['be_subnav_file_ftptakeover'], "phpwcms.php?do=files&amp;p=8", $p, "8", 0);
 						$subnav .= subnavtext($BL['be_file_multiple_upload'], "phpwcms.php?do=files&amp;p=9", $p, "9", 0);
 						break;
 
 	case "modules":		//modules
-						$wcsnav["modules"] = "<strong class=\"navtexta\">".$wcsnav["modules"]."</strong>";
+						$wcsnav["modules"] = '<li class="active"><a href="phpwcms.php?do=modules">'.$BL['be_nav_modules']."</a></li>";
 						
 						foreach($phpwcms['modules'] as $value) {
 						
@@ -121,7 +121,7 @@ switch ($do) {
 						break;
 
 	case "messages":	//messages
-						$wcsnav["messages"] = "<strong class=\"navtexta\">".$wcsnav["messages"]."</strong>";
+						$wcsnav["messages"] = '<li class="active"><a href="phpwcms.php?do=messages&amp;p=4">'.$BL['be_nav_messages']."</a></li>";
 						if(isset($_SESSION["wcs_user_admin"]) && $_SESSION["wcs_user_admin"] == 1) {
 							$subnav .= subnavtext($BL['be_subnav_msg_newslettersend'], "phpwcms.php?do=messages&amp;p=3", $p, "3", 0);
 							$subnav .= subnavtext($BL['be_subnav_msg_subscribers'], "phpwcms.php?do=messages&amp;p=4", $p, "4", 0);
@@ -138,17 +138,16 @@ switch ($do) {
 						break;
 
 	case "discuss":		//discuss
-						$wcsnav["discuss"] = "<strong class=\"navtexta\">".$wcsnav["discuss"]."</strong>";
+						$wcsnav["discuss"] = '<li class="active">'.$BL['be_nav_discuss']."</li>";
 						break;
 
 	case "chat":		//chat
-						$wcsnav["chat"] = "<strong class=\"navtexta\">".$wcsnav["chat"]."</strong>";
+						$wcsnav["chat"] = '<li class="active"><a href="phpwcms.php?do=chat">'.$BL['be_nav_chat']."</a></li>";
 						$subnav .= subnavtext($BL['be_subnav_chat_main'], "phpwcms.php?do=chat", $p, "", 0);
 						$subnav .= subnavtext($BL['be_subnav_chat_internal'], "phpwcms.php?do=chat&amp;p=1", $p, "1", 0);
 						break;
 
 	case "profile":		//profile
-						$wcsnav["profile"] = "<strong class=\"navtexta\">".$wcsnav["profile"]."</strong>";
 						if(!empty($_POST["form_aktion"])) {
 							switch($_POST["form_aktion"]) { //Aktualisieren der wcs account & profile Daten
 								case "update_account":	include(PHPWCMS_ROOT.'/include/lib/profile.updateaccount.inc.php');
@@ -212,7 +211,7 @@ if($subnav) {
 if(empty($_SESSION["wcs_user_admin"])) {
 	unset($wcsnav["admin"]);
 } elseif($do  == "admin") {
-	$wcsnav["admin"] = '<strong class="navtexta">'.$wcsnav["admin"].'</strong>';
+	$wcsnav["admin"] = '<li class="active"><a href="phpwcms.php?do=admin&amp;p=6">'.$BL['be_nav_admin'].'</a></li>';
 }
 
 //script chaching to allow header redirect
@@ -221,14 +220,13 @@ ob_start(); //without Compression
 // set correct content type for backend
 header('Content-Type: text/html; charset='.PHPWCMS_CHARSET);
 
-?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+?><!DOCTYPE html>
 <html>
 <head>
-	<title><?php echo $BL['be_page_title'].' - '.PHPWCMS_HOST ?></title>
-	<meta http-equiv="Content-Type" content="text/html; charset=<?php echo PHPWCMS_CHARSET ?>">
-	<link href="include/css/phpwcms.css" rel="stylesheet" type="text/css">
-	<link href="include/css/additional.css" rel="stylesheet" type="text/css">
+	<title><?php echo $BL['be_page_title'].' &mdash; '.PHPWCMS_HOST ?></title>
+	<meta charset="UTF-8">
 	<meta name="robots" content="noindex, nofollow">
+	<link rel="stylesheet" type="text/css" href="include/css/phpwcms-v2.css">
 <?php
 
 $BE['HEADER']['alias_slah_var'] = '	<script type="text/javascript"> ' . LF . '		var aliasAllowSlashes = ' . (PHPWCMS_ALIAS_WSLASH ? 'true' : 'false') . ';' . LF . '	</script>';
@@ -265,60 +263,52 @@ if($BE['LANG'] == 'ar') {
 <!-- phpwcms HEADER -->
 </head>
 
-<body<?php echo $body_onload ?>><!-- phpwcms BODY_OPEN -->
-<table width="770" border="0" align="center" cellpadding="0" cellspacing="0" summary="main layout structure">
-	<tr>
-	  <td colspan="6"><img src="include/img/leer.gif" alt="" width="1" height="7"></td>
-  </tr>
-	<tr>
-		<td colspan="6">
-		<div style="position:relative">
-	  		<a href="phpwcms.php" target="_top"><img src="include/img/backend/backend_r1_c3.jpg" alt="phpwcms v<?php echo  html_specialchars(PHPWCMS_VERSION); ?>" width="95" height="24" border="0" hspace="15"></a>
-			<a href="<?php echo PHPWCMS_URL ?>" class="v10" style="position:absolute;right:15px;bottom:4px;color:#FFFFFF" target="_blank"><?php echo PHPWCMS_HOST ?></a>
-		</div>
-		</td>
-    </tr>
-	<tr>
-	  <td colspan="6"><img src="include/img/leer.gif" alt="" width="1" height="7"></td>
-  </tr>
-	<tr bgcolor="#FFFFFF">
-	 <td valign="top" style="background-image:url(include/img/backend/backend_r3_c4.jpg); background-repeat:repeat-x; "><img src="include/img/backend/backend_r3_c1.jpg" alt="" width="15" height="40"></td>
-	  <td colspan="4" valign="top" style="background-image:url(include/img/backend/backend_r3_c4.jpg); background-repeat:repeat-x; "><table width="740" border="0" cellpadding="0" cellspacing="0" summary="sub structure">
-        <tr>
-          <td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="9"></td>
-        </tr>
-        <tr>
-          <td valign="top" class="navtext"><?php 
-		  
-		  // create backend main navigation
-		  if($do == 'default') {
-		  	echo '<strong class="navtexta"><a href="phpwcms.php">HOME</a></strong>&nbsp;&nbsp;&nbsp;';
-		  } else {
-		  	echo '<a href="phpwcms.php">HOME</a>&nbsp;&nbsp;&nbsp;';
-		  }
-		  echo implode('&nbsp;&nbsp;&nbsp;', $wcsnav);
+<body<?php echo $body_onload ?> class="backend"><!-- phpwcms BODY_OPEN -->
 
-
-				?></td>
-          <td align="right" valign="top" class="navtext"><a href="phpwcms.php?do=logout" target="_top"><?php echo $BL['be_nav_logout'] ?></a></td>
-        </tr>
-      </table></td>
-	  <td valign="top" style="background-image:url(include/img/backend/backend_r3_c4.jpg); background-repeat:repeat-x; "><img src="include/img/backend/backend_r3_c7.jpg" alt="" width="15" height="40"></td>
-  </tr>
-	<tr bgcolor="#FFFFFF">
-	  <td width="15" bgcolor="#FFFFFF" style="background-image:url(include/img/backend/preinfo2_r7_c2.gif);background-repeat:repeat-y;"><img src="include/img/leer.gif" alt="" width="15" height="1"></td>
-		<td width="175" valign="top" bgcolor="#FFFFFF"><?php 
-
-		echo $subnav . LF;
-		echo '<img src="include/img/leer.gif" width="1" height="5" alt="" /><br /><span class="title">';
-		echo $BL['usr_online'];
-		echo '</span><br /><img src="include/img/leer.gif" width="1" height="3" alt="" /><br />';
-		echo online_users($db, "<br />", "<span class=\"subnavinactive\">|</span>");
-
-		?><img src="include/img/leer.gif" alt="" width="175" height="1"></td>
-      <td width="10" bgcolor="#FFFFFF"><img src="include/img/leer.gif" alt="" width="10" height="1"></td>
-      <td width="15" bgcolor="#FFFFFF" style="background-image:url(include/img/backend/dividerA.gif);background-repeat:repeat-y;"><img src="include/img/leer.gif" alt="" width="15" height="200"></td>
-      <td width="540" valign="top" bgcolor="#FFFFFF" class="v11b width540" id="be_main_content">{STATUS_MESSAGE}{BE_PARSE_LANG}<!--BE_MAIN_CONTENT_START//-->
+	<div class="navbar navbar-fixed-top"><!-- 1 -->
+		<div class="navbar-inner"><!-- 2 -->
+			<div class="container-fluid"><!-- 3 -->
+				<a class="brand" href="phpwcms.php">phpwcms</a>
+				
+				
+				<div class="btn-group pull-right">
+            		<a class="btn dropdown-toggle" data-toggle="dropdown" href="phpwcms.php?do=profile" title="<?php echo html_specialchars($_SESSION["wcs_user_name"]) ?>">
+              			<i class="icon-user"></i>
+						<?php echo html_specialchars($_SESSION["wcs_user"]) ?>
+						<span class="caret"></span>
+					</a>
+            		<ul class="dropdown-menu">
+              			<li<?php if($do == 'profile'): ?> class="active"<?php endif; ?>><a href="phpwcms.php?do=profile"><?php echo $BL['be_nav_profile'] ?></a></li>
+              			<li class="divider"></li>
+             			<li><a href="phpwcms.php?do=logout"><?php echo $BL['be_nav_logout'] ?></a></li>
+            		</ul>
+          		</div>
+				
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li<?php if($do == 'default'): ?> class="active"<?php endif; ?>><a href="phpwcms.php">HOME</a></li>
+						<?php echo implode(LF.'						', $wcsnav); // create backend main navigation ?>
+						<li><a href="<?php echo PHPWCMS_URL ?>"><?php echo PHPWCMS_HOST ?></a></li>
+					</ul>
+				</div>
+				
+			</div><!-- 3 -->
+		</div><!-- 2 -->
+	</div><!-- 1 -->
+	
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span3">
+				<div class="well">
+					<?php echo $subnav ?>
+									
+					<h4><?php echo $BL['usr_online'] ?></h4>
+					<?php echo online_users($db, "<br />", "<span>|</span>");?>
+      			</div>
+	  		</div>
+	  		<div class="span9">
+				{STATUS_MESSAGE}{BE_PARSE_LANG}
+<!--BE_MAIN_CONTENT_START//-->
 <?php
 		 
       switch($do) {
@@ -524,23 +514,23 @@ if($BE['LANG'] == 'ar') {
 	}
 
 ?>
+<!--BE_MAIN_CONTENT_END//-->
+			</div>
+	 	</div>
+		
+		<hr>
+
+		<footer>
 	
-	<!--BE_MAIN_CONTENT_END//--></td>
-      <td width="15" bgcolor="#FFFFFF" style="background-image:url(include/img/backend/preinfo2_r7_c7.gif);background-repeat:repeat-y;background-position:right;"><img src="include/img/leer.gif" alt="" width="15" height="1"></td>
-	</tr>
-	<tr>
-	  <td><img src="include/img/backend/backend_a_r1_c1.gif" alt="" width="15" height="15" border="0"></td>
-	  <td colspan="4" valign="bottom" bgcolor="#FFFFFF" class="navtext"><img src="include/img/backend/backend_r6_c2.jpg" alt="" width="740" height="15" border="0"></td>
-      <td valign="bottom" class="navtext"><img src="include/img/backend/backend_a_r1_c7.gif" alt="" width="15" height="15" border="0"></td>
-  </tr>
-	<tr>
-	  <td width="15"><img src="include/img/leer.gif" alt="" width="14" height="17"></td>
-	  <td colspan="5" valign="bottom" class="navtext" style="padding: 8px 0 15px 0;">
-	  	<a href="phpwcms.php?do=about" title="<?php echo $BL['be_aboutlink_title'] ?>">phpwcms <?php echo PHPWCMS_VERSION ?> 
-			&copy; 2002&#8212;<?php echo date('Y'); ?> Oliver Georgi. Licensed under GPL. Extensions are copyright
-			of their respective owners.</a></td>
-  </tr>
-</table>
+			<p>
+				<a href="phpwcms.php?do=about" title="<?php echo $BL['be_aboutlink_title'] ?>">phpwcms <?php echo PHPWCMS_VERSION ?></a>
+				&copy; 2002&#8212;<?php echo date('Y'); ?> 
+				Oliver Georgi. Licensed under GPL.
+				Extensions are copyright of their respective owners.
+			</p>
+		</footer>
+	</div>
+
 <?php
 
 //Set Focus for chat insert filed
@@ -553,13 +543,25 @@ $BE['BODY_CLOSE']['wz_tooltip.js'] = getJavaScriptSourceLink('include/js/wz_tool
 
 ?>
 <!-- phpwcms BODY_CLOSE -->
+	
+	<script src="include/js/jquery-1.7.2.js"></script>
+	<script src="include/js/bootstrap-alert.js"></script>
+	<script src="include/js/bootstrap-transition.js"></script>
+	<script src="include/js/bootstrap-modal.js"></script>
+    <script src="include/js/bootstrap-dropdown.js"></script>
+    <script src="include/js/bootstrap-scrollspy.js"></script>
+    <script src="include/js/bootstrap-tab.js"></script>
+    <script src="include/js/bootstrap-tooltip.js"></script>
+    <script src="include/js/bootstrap-popover.js"></script>
+    <script src="include/js/bootstrap-button.js"></script>
+	
 </body>
 </html>
 <?php
 
 // retrieve complete processing time
 list($usec, $sec) = explode(' ', microtime());
-header('X-phpwcms-Page-Processed-In: ' . number_format(1000*($usec + $sec - $phpwcms_rendering_start), 3) .' ms');
+header('X-phpwcms-Page-Processed-In: ' . number_format(getMicrotimeDiff($phpwcms_rendering_start, 's'), 3) .' s');
 
 $BE['HTML'] = ob_get_clean();
 
@@ -575,8 +577,6 @@ backend_language_parser();
 if($body_onload) {
 	$BE['HTML'] = str_replace('<body>', '<body '.$body_onload.'>', $BE['HTML']);
 }
-
-$BE['HEADER'][] = '  <!--[if lte IE 7]><style type="text/css">body{behavior:url("'.TEMPLATE_PATH.'inc_css/specific/csshover3.htc");}</style><![endif]-->';
 
 // html head section
 $BE['HTML'] = str_replace('<!-- phpwcms HEADER -->', implode(LF, $BE['HEADER']), $BE['HTML']);

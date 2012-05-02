@@ -1,0 +1,33 @@
+/*!
+ * phpwcms custom CSS
+ */
+
+.alert {
+	margin-top: @baseLineHeight / 2;
+	& p {margin: 0;}
+	& p+p {margin-top: @baseLineHeight / 2;}
+}
+
+.box-login {
+	.makeCenteredColumn(6);
+	margin-top: @gridGutterWidth * 4;
+	& .page-header {
+		margin-top: 0;
+	}
+	
+	& h1 {
+		.clearfix();
+		& strong {
+			float: left;
+			width: 222px;
+			height: 60px;
+			background: transparent url(../img/phpwcms-signet-login.png) no-repeat 0 0;
+			overflow: hidden;
+			text-indent: -999px;
+		}
+	}
+	
+	& form {
+		margin-top: @baseLineHeight;
+	}
+}

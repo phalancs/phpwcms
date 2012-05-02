@@ -205,121 +205,66 @@ if(isset($_POST['form_aktion']) && $_POST['form_aktion'] == 'login' && isset($_P
 
 }
 
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+$error_msg = array();
 
-<head>
-	<title><?php echo $BL['be_page_title'] . ' - ' . PHPWCMS_HOST ?></title>
-	<meta http-equiv="Content-Type" content="text/html; charset=<?php echo PHPWCMS_CHARSET ?>" />
-	<meta name="robots" content="noindex, nofollow" />
-	<link href="include/css/login.css" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="include/js/phpwcms.js"></script>
-	<script type="text/javascript" src="include/js/md5.js"></script>
-<?php
-
-if((isset($_SESSION["wcs_user_lang"]) && $_SESSION["wcs_user_lang"] == 'ar') || strtolower($phpwcms['default_lang']) == 'ar') {
-	echo '	<style type="text/css">' . LF . '<!--' . LF . '* {direction: rtl;}' . LF . '// -->' . LF . '</style>';
+if(isset($_POST['json']) && $_POST['json'] == 2) {
+	$err = 0;
 }
 
-?>
-</head>
+if($err) {
+	$error_msg[] = '<h4>' . $BL["login_error"] . '</h4>';
+}
 
-<body>
-<table width="504" border="0" align="center" cellpadding="0" cellspacing="0" summary="Login Screen">
-  <tr>
-    <td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="12" /></td>
-  </tr>
-  <tr>
-    <td colspan="3"><a href="index.php" target="_top"><img src="include/img/backend/preinfo2.jpg" alt="phpwcms" width="122" height="31" border="0" hspace="18" /></a></td>
-  </tr>
-  <tr>
-    <td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="7" /></td>
-  </tr>
-  <tr>
-    <td colspan="3"><a href="index.php" target="_top"><img src="include/img/backend/preinfo2_r4_c2.jpg" alt="phpwcms" width="504" height="154" border="0" /></a></td>
-  </tr>
-  <tr>
-    <td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="11" /></td>
-  </tr>
-  <tr>
-    <td width="15" style="width:15px;"><img src="include/img/backend/preinfo2_r6_c2.gif" alt="" width="15" height="15" border="0" /></td>
-    <td width="474" bgcolor="#FFFFFF" style="width:474px;"><img src="include/img/backend/preinfo2_r6_c3.gif" alt="" width="474" height="15" border="0" /></td>
-    <td width="15" style="width:15px;"><img src="include/img/backend/preinfo2_r6_c7.gif" alt="" width="15" height="15" border="0" /></td>
-  </tr>
-  <tr>
-    <td style="background-image:url(include/img/backend/preinfo2_r7_c2.gif);background-repeat:repeat-y;" bgcolor="#FFFFFF">&nbsp;</td>
-    <td bgcolor="#FFFFFF" style="padding-left:3px;padding-right:3px;" id="loginFormArea">
-		<div class="error" style="font-weight:bold;padding:0 0 15px 0;font-size:12px;text-align:center"><?php
-	
-			echo $BL['be_login_jsinfo'];
-	
-		?></div></td>
-    <td style="background-image:url(include/img/backend/preinfo2_r7_c7.gif);background-repeat:repeat-y;background-position:right;" bgcolor="#FFFFFF">&nbsp;</td>
-  </tr>
-  <tr>
-    <td style="background-image:url(include/img/backend/preinfo2_r7_c2.gif);background-repeat:repeat-y;" bgcolor="#FFFFFF">&nbsp;</td>
-    <td bgcolor="#FFFFFF" style="padding: 0 3px 5px 3px;">
-		<strong><a href="http://www.phpwcms.de" target="_blank" style="text-decoration:none;">phpwcms</a></strong> 
-		Copyright &copy; 2003&#8212;<?php echo date('Y'); ?>
-        Oliver Georgi. Extensions are copyright of their respective owners.
-        Visit <a href="http://www.phpwcms.de" target="_blank">http://www.phpwcms.de</a> for
-        details. phpwcms is free software released under <a href="http://www.fsf.org/licensing/licenses/gpl.html" target="_blank">GPL</a> 
-		and comes WITHOUT ANY WARRANTY. Obstructing the appearance of this notice is prohibited  by law. 
-    </td>
-    <td style="background-image:url(include/img/backend/preinfo2_r7_c7.gif);background-repeat:repeat-y;background-position:right;" bgcolor="#FFFFFF">&nbsp;</td>
-  </tr>
-  <tr>
-    <td><img src="include/img/backend/preinfo2_r9_c2.gif" alt="" width="15" height="15" border="0" /></td>
-    <td bgcolor="#FFFFFF"><img src="include/img/backend/preinfo2_r9_c3.gif" alt="" width="474" height="15" border="0" /></td>
-    <td><img src="include/img/backend/preinfo2_r9_c7.gif" alt="" width="15" height="15" border="0" /></td>
-  </tr>
-</table>
+if(file_exists(PHPWCMS_ROOT.'/setup')) {
+	$error_msg[] = $BL["setup_dir_exists"];
+}
+if(file_exists(PHPWCMS_ROOT.'/phpwcms_code_snippets')) {
+	$error_msg[] = $BL["phpwcms_code_snippets_dir_exists"];
+}
+
+
+?><!DOCTYPE html>
+<html>
+<head>
+	<title><?php echo $BL['be_page_title'] . ' &mdash; ' . PHPWCMS_HOST ?></title>
+	<meta charset="UTF-8">
+	<meta name="robots" content="noindex, nofollow">
+	<link href="include/css/phpwcms-v2.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="include/js/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="include/js/bootstrap-alert.js"></script>
+	<script type="text/javascript" src="include/js/jquery.md5.js"></script>
 <?php
 
 // get whole login form and keep in buffer
 ob_start();
 
 ?>
-<form action="<?php echo PHPWCMS_URL.get_login_file() ?>" method="post" name="login_formular" id="login_formular" style="margin:0;padding:0;" onsubmit="return login(this);" autocomplete="off">
-<input type="hidden" name="json" id="json" value="0" />
-<input type="hidden" name="md5pass" id="md5pass" value="" autocomplete="off" />
-<input type="hidden" name="ref_url" value="<?php echo html_entities($ref_url) ?>" />
-<input name="form_aktion" type="hidden" id="form_aktion" value="login" />
-<?php 
-	  
-	echo '<h1>'.$BL["login_text"].'</h1>';
-	
-	if(file_exists(PHPWCMS_ROOT.'/setup')) {
-		echo '<div class="error" style="margin-top:10px;">'.$BL["setup_dir_exists"].'</div>';
-	}
-	if(file_exists(PHPWCMS_ROOT.'/phpwcms_code_snippets')) {
-		echo '<div class="error" style="margin-top:10px;">'.$BL["phpwcms_code_snippets_dir_exists"].'</div>';
-	}
-	
-	if(isset($_POST['json']) && $_POST['json'] == 2) $err = 0;
-	
-	if($err) {
-		echo '<div class="error" style="margin-top:10px;font-weight:bold;">'.$BL["login_error"].'</div>';
-	}
-	
-	echo '<div class="error" style="margin-top:10px;font-weight:bold;display:none;" id="jserr">'.$BL["login_error"].'</div>';	
-	
-	?>	
+<?php	if(count($error_msg)):	?>
+	<div class="alert alert-block alert-error fade in">
+		<button class="close" data-dismiss="alert">&times;</button>
+		<p><?php echo implode('</p><p>', $error_msg); ?></p>
+	</div>
+<?php	endif;	?>
 
-	<table border="0" cellpadding="0" cellspacing="0" summary="Login Form" style="margin:15px 0 20px 10px">
-        <tr>
-          <td align="right" nowrap="nowrap" class="v10"><?php echo $BL["login_username"] ?>:&nbsp;</td>
-          <td class="v10"><input name="form_loginname" type="text" id="form_loginname" style="width:250px;" size="30" maxlength="30" value="<?php echo html_specialchars($wcs_user); ?>" /></td>
-          </tr>
-        <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
-        <tr>
-          <td align="right" nowrap="nowrap" class="v10"><?php echo $BL["login_userpass"] ?>:&nbsp;</td>
-          <td class="v10"><input name="form_password" type="password" id="form_password" style="width:250px;" size="30" maxlength="40" /></td>
-          </tr>
-        <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="4" /></td></tr>
-        <tr>
-          <td align="right" nowrap="nowrap" class="v10"><?php echo $BL["login_lang"] ?>:&nbsp;</td>
-          <td class="v10"><select name="form_lang" id="form_lang" style="width:250px;" onchange="getObjectById('json').value='2';login(this.form);">
+
+<form action="<?php echo PHPWCMS_URL.get_login_file() ?>" method="post" id="login" autocomplete="off" class="form-horizontal">
+
+	<div class="control-group">
+		<label class="control-label" for="form_loginname"><?php echo $BL["login_username"] ?></label>
+		<div class="controls">
+			<input name="form_loginname" type="text" id="form_loginname" class="span3" value="<?php echo html_specialchars($wcs_user); ?>">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="form_password"><?php echo $BL["login_userpass"] ?></label>
+		<div class="controls">
+			<input name="form_password" type="password" id="form_password" class="span3">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="form_lang"><?php echo $BL["login_lang"] ?></label>
+		<div class="controls">
+		<select name="form_lang" id="form_lang" class="span3">
             <?php
 // check available languages installed and build language selector menu
 $lang_dirs = opendir(PHPWCMS_ROOT.'/include/lang/backend');
@@ -339,23 +284,84 @@ ksort($lang_code);
 echo implode(LF, $lang_code);
 
 ?>
-          </select></td>
-          </tr>
-        <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td><input name="submit_form" type="submit" value="<?php echo $BL["login_button"] ?>" /></td>
-          </tr>
-    </table>
-    </form>
+		</select>
+		</div>
+	</div>
+		
+	<div class="form-actions">		
+		<button type="submit" class="btn btn-primary"><?php echo $BL["login_button"] ?></button>
+		<input type="hidden" name="json" id="json" value="0">
+		<input type="hidden" name="md5pass" id="md5pass" value="" autocomplete="off">
+		<input type="hidden" name="ref_url" value="<?php echo html_entities($ref_url) ?>">
+		<input name="form_aktion" type="hidden" id="form_aktion" value="login">
+	</div>
+</form>
 <?php
 
-$formAll = str_replace( array("'", "\r", "\n", '<'), array("\'", '', " ", "<'+'"), ob_get_clean() );
+$formAll = str_replace( array("'", "\r", "\n", '<', '> <'), array("\'", '', " ", "<'+'", '><'), preg_replace('/\s+/s', ' ', ob_get_clean()) );
 
 ?>
-<script type="text/javascript">
-getObjectById('loginFormArea').innerHTML = '<?php echo $formAll ?>';
-getObjectById('form_loginname').focus();
-</script>
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+			$('#loginSection').html('<?php echo $formAll ?>');
+			var login	= $('#login');
+			var lang	= $('#json');
+			login.submit(function(event){
+				if(lang.val()=='2') {
+					return true;
+				}
+				event.preventDefault();
+				lang.val('1');
+				var password	= $('#form_password');
+				$('#md5pass').val( $.md5(password.val()) );
+				password.val('');
+				
+				(this).submit();
+				
+			});
+			$('#form_lang').change(function(){
+				lang.val('2');
+				login.submit();
+			})
+		});
+	</script>
+<?php	if((isset($_SESSION["wcs_user_lang"]) && $_SESSION["wcs_user_lang"] == 'ar') || strtolower($phpwcms['default_lang']) == 'ar'):	?>
+	<style type="text/css">
+		* {direction: rtl;}
+	</style>
+<?php	endif;	?>
+
+</head>
+<body>
+	
+	<div class="container-fluid">
+		<div class="box-login well">
+			
+			<div class="page-header">
+				<h1>
+					<strong>phpwcms</strong>
+					
+				</h1>
+			</div>
+			
+			<div id="loginSection">
+			
+				<p class="alert alert-error">
+					<strong><?php echo $BL['be_login_jsinfo']; ?></strong>
+				</p>
+			
+			</div>
+				
+			<p>
+				<strong><a href="http://www.phpwcms.de" target="_blank" style="text-decoration:none;">phpwcms</a></strong> 
+				Copyright &copy; 2003&#8212;<?php echo date('Y'); ?>
+				Oliver Georgi. Extensions are copyright of their respective owners.
+				Visit <a href="http://www.phpwcms.de">www.phpwcms.de</a> for
+				details. phpwcms is free software released under <a href="http://www.fsf.org/licensing/licenses/gpl.html" target="_blank">GPL</a> 
+				and comes WITHOUT ANY WARRANTY. Obstructing the appearance of this notice is prohibited  by law. 
+			</p>
+
+		</div>
+	</div>
 </body>
 </html>

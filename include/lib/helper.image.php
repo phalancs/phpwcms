@@ -371,7 +371,7 @@ class Phpwcms_Image_lib {
 		 * might not be in correct proportion with the source
 		 * image's width/height. We'll recalculate it here.
 		 */
-		if ($this->maintain_ratio === TRUE && ($this->width != 0 OR $this->height != 0))
+		if ($this->maintain_ratio === TRUE && ($this->width != 0 || $this->height != 0))
 		{
 			$this->image_reproportion();
 		}
@@ -394,14 +394,14 @@ class Phpwcms_Image_lib {
 		// Set the quality
 		$this->quality = trim(str_replace('%', '', $this->quality));
 
-		if ($this->quality == '' OR $this->quality == 0 OR ! preg_match('/^[0-9]+$/', $this->quality))
+		if ($this->quality == '' || $this->quality == 0 || ! preg_match('/^[0-9]+$/', $this->quality))
 		{
 			$this->quality = 90;
 		}
 
 		// Set the x/y coordinates
-		$this->x_axis = ($this->x_axis == '' OR ! preg_match('/^[0-9]+$/', $this->x_axis)) ? 0 : $this->x_axis;
-		$this->y_axis = ($this->y_axis == '' OR ! preg_match('/^[0-9]+$/', $this->y_axis)) ? 0 : $this->y_axis;
+		$this->x_axis = ($this->x_axis == '' || ! preg_match('/^[0-9]+$/', $this->x_axis)) ? 0 : $this->x_axis;
+		$this->y_axis = ($this->y_axis == '' || ! preg_match('/^[0-9]+$/', $this->y_axis)) ? 0 : $this->y_axis;
 
 		// Watermark-related Stuff...
 		if ($this->wm_overlay_path != '')
@@ -1376,9 +1376,9 @@ class Phpwcms_Image_lib {
 	 */
 	function image_reproportion()
 	{
-		if (($this->width == 0 && $this->height == 0) OR $this->orig_width == 0 OR $this->orig_height == 0
-			OR ( ! preg_match('/^[0-9]+$/', $this->width) && ! preg_match('/^[0-9]+$/', $this->height))
-			OR ! preg_match('/^[0-9]+$/', $this->orig_width) OR ! preg_match('/^[0-9]+$/', $this->orig_height))
+		if (($this->width == 0 && $this->height == 0) || $this->orig_width == 0 || $this->orig_height == 0
+			|| ( ! preg_match('/^[0-9]+$/', $this->width) && ! preg_match('/^[0-9]+$/', $this->height))
+			|| ! preg_match('/^[0-9]+$/', $this->orig_width) || ! preg_match('/^[0-9]+$/', $this->orig_height))
 		{
 			return;
 		}
@@ -1440,7 +1440,7 @@ class Phpwcms_Image_lib {
 			return FALSE;
 		}
 		
-		$cache	= md5($path);
+		$cache = md5($path);
 		
 		if (!isset($this->image_cache[$cache]))
 		{

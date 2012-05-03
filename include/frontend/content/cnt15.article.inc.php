@@ -63,9 +63,9 @@ if($result = mysql_query($alink_sql, $db) or die("error while getting link artic
 		$row[3]						= preg_replace('/<br[^>]*?>$/i', '', $row[3]);
 		$row['article_id']			= $row[0];
 		$row['article_alias']		= $row[4];
-		$row['article_title']		= html_specialchars($row[1]);
+		$row['article_title']		= html($row[1]);
 		$alinkmenu['count']++;
-		$row['article_menutitle']	= empty($alinkmenu["titleasnumber"]) ? html_specialchars(empty($row[5]) ? $row[1] : $row[5]) : $alinkmenu['count'];
+		$row['article_menutitle']	= empty($alinkmenu["titleasnumber"]) ? html(empty($row[5]) ? $row[1] : $row[5]) : $alinkmenu['count'];
 		
 		if($alinkmenu['headertext'] && !empty($row[3])) {
 		
@@ -81,7 +81,7 @@ if($result = mysql_query($alink_sql, $db) or die("error while getting link artic
 				$alinkmenu['sum']		= wordwrap($alinkmenu['sum'], $alinkmenu['maxchar'], "\n");
 				list($alinkmenu['sum'])	= explode("\n", $alinkmenu['sum']);
 				$alinkmenu['sum']		= trim($alinkmenu['sum']);
-				$alinkmenu['sum']		= html_specialchars($alinkmenu['sum']);
+				$alinkmenu['sum']		= html($alinkmenu['sum']);
 				
 				if(!empty($alinkmenu['morelink'])) {
 					
@@ -153,7 +153,7 @@ if($alinkmenu['link']) {
 		$alinkmenu['link'] = '<table border="0" cellspacing="0" cellpadding="0">' . LF . $alinkmenu['link'] . "</table>" . LF;
 		
 		if(!empty($alinkmenu['class'])) {
-			$alinkmenu['link'] = '<div class="' . html_specialchars($alinkmenu['class']) . "\">\n" . $alinkmenu['link'] . "</div>\n";
+			$alinkmenu['link'] = '<div class="' . html($alinkmenu['class']) . "\">\n" . $alinkmenu['link'] . "</div>\n";
 		}
 		
 	} else {

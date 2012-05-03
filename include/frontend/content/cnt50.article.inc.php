@@ -66,7 +66,7 @@ if($content['reference']['ref_count']) {
 	$ci = 0;
 	if(is_array($content['reference']['caption_list']) && count($content['reference']['caption_list'])) {
 		foreach($content['reference']['caption_list'] as $captkey => $captvalue) {
-			$content['reference']['caption_list'][$captkey] = html_specialchars(trim($captvalue));
+			$content['reference']['caption_list'][$captkey] = html(trim($captvalue));
 			$ci++;
 		}
 		if($content['reference']['caption_list'][0]) {
@@ -97,7 +97,7 @@ if($content['reference']['ref_count']) {
 	
 	if($thumb_image != false) {
 	
-		//$img_name = html_specialchars($content['reference']["list"][0][1]);
+		//$img_name = html($content['reference']["list"][0][1]);
 		$content['reference']['ref_image']  = '<img src="'.PHPWCMS_IMAGES . $thumb_image[0] ;
 		$content['reference']['ref_image'] .= '" border="'.$content['reference']['border'].'" '; //.$thumb_image[3]
 		$content['reference']['ref_image'] .= ' alt="" ';//title="'.$img_name.'" 
@@ -237,7 +237,7 @@ if($content['reference']['ref_count']) {
 				if(!empty($content['reference']['caption_list'][$captkey])) {
 					$img_name = $content['reference']['caption_list'][$captkey];
 				} else {
-					$img_name = html_specialchars($content['reference']["list"][$captkey][1]);
+					$img_name = html($content['reference']["list"][$captkey][1]);
 				}
 				$content['reference']['ref_list'] .= '<img src="'.PHPWCMS_IMAGES . $thumb_image[0] ;
 				$content['reference']['ref_list'] .= '" border="'.$content['reference']['border'].'" ';
@@ -274,8 +274,8 @@ if($content['reference']['ref_count']) {
 }
 
 
-$content['reference']["tmpl"] = render_cnt_template($content['reference']["tmpl"], 'TITLE', html_specialchars($crow["acontent_title"]));
-$content['reference']["tmpl"] = render_cnt_template($content['reference']["tmpl"], 'SUB', html_specialchars($crow["acontent_subtitle"]));
+$content['reference']["tmpl"] = render_cnt_template($content['reference']["tmpl"], 'TITLE', html($crow["acontent_title"]));
+$content['reference']["tmpl"] = render_cnt_template($content['reference']["tmpl"], 'SUB', html($crow["acontent_subtitle"]));
 $content['reference']["tmpl"] = render_cnt_template($content['reference']["tmpl"], 'TEXT', nl2br($content['reference']["text"]));
 $content['reference']["tmpl"] = render_cnt_template($content['reference']["tmpl"], 'CAPTION', $content['reference']['ref_caption']);
 $content['reference']["tmpl"] = render_cnt_template($content['reference']["tmpl"], 'LIST', $content['reference']['ref_list']);

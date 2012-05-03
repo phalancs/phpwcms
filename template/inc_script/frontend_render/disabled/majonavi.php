@@ -250,7 +250,7 @@ function buildNavi($start=0, $counter=0) {
 		}
 
 		$l  = str_repeat('	', $counter+1) . '<li'. $class . '>';
-		$l .= get_level_ahref($value['acat_id'], $enclose) . html_specialchars($value['acat_name']);
+		$l .= get_level_ahref($value['acat_id'], $enclose) . html($value['acat_name']);
 		$l .= $g;
 		
 		

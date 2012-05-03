@@ -197,13 +197,13 @@ if($image['template']) {
 			
 			// no ALT, no TITLE
 			if(empty($caption[1])) {
-				$capt_cur		= html_specialchars($caption[0]);
+				$capt_cur		= html($caption[0]);
 				$caption[1]		= $value['thumb_name'];
 				$caption[4]		= $capt_cur;
 			} else {
-				$capt_cur		= html_specialchars($caption[1]);
-				$caption[1] 	= html_specialchars(empty($caption[3]) ? $value['thumb_name'] : $caption[3]);
-				$caption[4]		= html_specialchars($caption[0]);
+				$capt_cur		= html($caption[1]);
+				$caption[1] 	= html(empty($caption[3]) ? $value['thumb_name'] : $caption[3]);
+				$caption[4]		= html($caption[0]);
 			}
 			$caption[2]			= explode(' ', $value['url']);
 			$caption[2][1]		= empty($caption[2][1]) ? '' : ' target="'.$caption[2][1].'"';
@@ -306,7 +306,7 @@ if($image['template']) {
 			
 			$img_a = str_replace('{IMAGE}', $img_a, $image['tmpl_entry']);
 			$img_a = str_replace('{IMGID}', $key, $img_a);
-			$img_a = str_replace('{IMGNAME}', html_specialchars($image['images'][$key]['thumb_name']), $img_a);
+			$img_a = str_replace('{IMGNAME}', html($image['images'][$key]['thumb_name']), $img_a);
 		
 			// replace thumbnail and zoom image information
 			$img_a = str_replace('{THUMB_ID}',			$value['thumb_id'], $img_a);
@@ -420,8 +420,8 @@ if($image['template']) {
 	$image['template']  = str_replace('{THUMB_WIDTH_MAX}', $image['tmpl_thumb_width_max'], $image['template']);
 	$image['template']  = str_replace('{THUMB_HEIGHT_MAX}', $image['tmpl_thumb_height_max'], $image['template']);
 	$image['template']  = str_replace('{THUMB_COLUMNS}', $image['col'], $image['template']);
-	$image['template']  = render_cnt_template($image['template'], 'TITLE', html_specialchars($crow['acontent_title']));
-	$image['template']  = render_cnt_template($image['template'], 'SUBTITLE', html_specialchars($crow['acontent_subtitle']));
+	$image['template']  = render_cnt_template($image['template'], 'TITLE', html($crow['acontent_title']));
+	$image['template']  = render_cnt_template($image['template'], 'SUBTITLE', html($crow['acontent_subtitle']));
 	$image['template']  = render_cnt_template($image['template'], 'TEXT', $crow['acontent_html']);
 	$image['template']  = render_cnt_template($image['template'], 'EFFECT_1', ($image['fx1'] ? '<!-- FX 1 -->' : '') );
 	$image['template']  = render_cnt_template($image['template'], 'EFFECT_2', ($image['fx2'] ? '<!-- FX 2 -->' : '') );

@@ -319,7 +319,7 @@ if(!empty($_POST["search_input_field"]) || !empty($_GET['searchwords'])) {
 					
 					if($content['search']['show_summary'] && $content['search']['wordlimit'] > 0) {
 						$s_list[$s_run]["text"]	= getCleanSubString($s_text, $content['search']['wordlimit'], $template_default['ellipse_sign'], 'word');
-						$s_list[$s_run]["text"]	= html_specialchars($s_list[$s_run]["text"]);
+						$s_list[$s_run]["text"]	= html($s_list[$s_run]["text"]);
 						if($content['search']['highlight_result']) {
 							$s_list[$s_run]["text"] = highlightSearchResult($s_list[$s_run]["text"], $content['highlight']);
 						}
@@ -378,7 +378,7 @@ if(!empty($_POST["search_input_field"]) || !empty($_GET['searchwords'])) {
 		
 		
 		if($s_run) {
-			$CNT_TMP .= $content['search']['text_html'] ? $content["search"]["text_result"] : nl2br(html_specialchars($content['search']['text_result']));
+			$CNT_TMP .= $content['search']['text_html'] ? $content["search"]["text_result"] : nl2br(html($content['search']['text_result']));
 	
 			// create search result listing
 			// ranking
@@ -581,22 +581,22 @@ if(!empty($_POST["search_input_field"]) || !empty($_GET['searchwords'])) {
 	
 		} else {
 			
-			$CNT_TMP .= $content['search']['text_html'] ? $content["search"]["text_noresult"] : nl2br(html_specialchars($content['search']['text_noresult']));
+			$CNT_TMP .= $content['search']['text_html'] ? $content["search"]["text_noresult"] : nl2br(html($content['search']['text_noresult']));
 		}
 		
 	} else {
 	
-		$CNT_TMP .= $content['search']['text_html'] ? $content["search"]["text_noresult"] : nl2br(html_specialchars($content['search']['text_noresult']));
+		$CNT_TMP .= $content['search']['text_html'] ? $content["search"]["text_noresult"] : nl2br(html($content['search']['text_noresult']));
 
 	}
 } else {
 
-	$CNT_TMP .= $content['search']['text_html'] ? $content["search"]["text_intro"] : nl2br(html_specialchars($content['search']['text_intro']));
+	$CNT_TMP .= $content['search']['text_html'] ? $content["search"]["text_intro"] : nl2br(html($content['search']['text_intro']));
 
 }
 
 if(count($content['highlight'])) {
-	$content["search_word"] = html_specialchars(implode(' ', $content['highlight']));
+	$content["search_word"] = html(implode(' ', $content['highlight']));
 } else {
 	$content["search_word"] = '';
 }

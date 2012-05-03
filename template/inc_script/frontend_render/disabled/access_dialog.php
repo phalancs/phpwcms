@@ -69,7 +69,7 @@ if(!empty($_SESSION['phpwcmsAgree']) || ( isset($_COOKIE['phpwcmsAgree']) && $_C
 		$ACCESS['source_data']  = render_cnt_template($ACCESS['source_data'], 'ERROR', $ACCESS['error'] ? '-' : '');
 	
 		$ACCESS['source_data']  = str_replace('{CURRENT_URL}', FE_CURRENT_URL, $ACCESS['source_data']);
-		$ACCESS['source_data']  = str_replace('{REDIRECT}', html_specialchars($redirect), $ACCESS['source_data']);
+		$ACCESS['source_data']  = str_replace('{REDIRECT}', html($redirect), $ACCESS['source_data']);
 
 		$ACCESS['dialog']  = '<div id="access_dialog">' . LF . $ACCESS['source_data'] . LF . '</div>' . LF ;
 		$ACCESS['dialog'] .= '<div id="access_save" style="display:none">';

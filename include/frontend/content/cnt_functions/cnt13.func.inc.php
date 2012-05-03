@@ -147,7 +147,7 @@ class search_News {
 			if(empty($this->search_target_url)) {
 				$this->search_target_url = 'index.php' . returnGlobalGET_QueryString('htmlentities', array(), array('newsdetail'));
 			} else {	
-				$this->search_target_url = html_specialchars($this->search_target_url);
+				$this->search_target_url = html($this->search_target_url);
 			}
 			
 			$cat_sql = array();
@@ -239,14 +239,14 @@ class search_News {
 			
 				$id = $this->search_result_entry;
 				
-				$s_title  = html_specialchars($value['cnt_title']);
+				$s_title  = html($value['cnt_title']);
 
 				$this->search_results[$id]["id"]	= $value['cnt_id'];
 				$this->search_results[$id]["cid"]	= 0;
 				$this->search_results[$id]["rank"]	= $s_count;
 				$this->search_results[$id]["title"]	= $this->search_highlight ? highlightSearchResult($s_title, $this->search_highlight_words) : $s_title;
 				$this->search_results[$id]["date"]	= $value['cnt_ts_livedate'];
-				$this->search_results[$id]["user"]	= html_specialchars($value['cnt_editor']);
+				$this->search_results[$id]["user"]	= html($value['cnt_editor']);
 				
 				
 				$value['detail_link']	= date('Ymd', $value['cnt_ts_livedate']) . '-' . $value['cnt_id'] . '_' ; //$crow['acontent_aid']
@@ -256,7 +256,7 @@ class search_News {
 				
 				$s_text   = trim(trim(str_replace(', ,', ',', $s_text)), ' ,');
 				$s_text   = getCleanSubString($s_text, $this->search_wordlimit, $this->ellipse_sign, 'word');
-				$s_text   = html_specialchars($s_text);
+				$s_text   = html($s_text);
 				
 				if($this->search_highlight) {
 					$s_text = highlightSearchResult($s_text, $this->search_highlight_words);

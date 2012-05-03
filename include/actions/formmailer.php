@@ -220,7 +220,7 @@ if(isset($form_error)) {
 		foreach($form_error as $key => $value) {
   			$table .= "<tr bgcolor=\"#F4F4F4\">";
     		$table .= "<td class=\"error\">[".$key."]</td>";
-    		$table .= "<td class=\"error\">".html_specialchars($value)."</td>";
+    		$table .= "<td class=\"error\">".html($value)."</td>";
   			$table .= "</tr>\n";
 		}
 		
@@ -298,7 +298,7 @@ if(isset($form_error)) {
 		$mail->AddAddress($send_copy_to);
 		
 		if(!$mail->Send()) {
-			$false .= '(1) '.html_specialchars($mail->ErrorInfo).'<br>';
+			$false .= '(1) '.html($mail->ErrorInfo).'<br>';
 		}
 		
 		$mail->From 		= $send_copy_to;
@@ -318,7 +318,7 @@ if(isset($form_error)) {
 	$mail->AddAddress($recipient);
 	
 	if(!$mail->Send()) {
-		$false .= '(2) '.html_specialchars($mail->ErrorInfo).'<br>';
+		$false .= '(2) '.html($mail->ErrorInfo).'<br>';
 	}
 	
 	$mail->SmtpClose();
@@ -338,8 +338,8 @@ if(isset($form_error)) {
 		
 		foreach($form as $key => $value) {
 			$table .= "<tr bgcolor=\"#F4F4F4\">";
-			$table .= "<td>".html_specialchars($key)."</td>";
-			$table .= "<td>".html_specialchars($value)."</td>";
+			$table .= "<td>".html($key)."</td>";
+			$table .= "<td>".html($value)."</td>";
 			$table .= "</tr>\n";
 		}
 		

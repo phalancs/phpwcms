@@ -220,7 +220,7 @@ if(strpos($content["all"],'{DELUXE_MENU') !== false) {
 					$link	= empty($link[0]) ? '#' : $link[0];
 					$target	= empty($link[1]) ? ''  :strtolower($link[1]);
 				}
-				$li .= html_specialchars($GLOBALS['content']['struct'][$key]['acat_name']);
+				$li .= html($GLOBALS['content']['struct'][$key]['acat_name']);
 				
 				$inorm = empty($param['icon'][$counter]['iconNormal']) ? '' : trim($param['icon'][$counter]['iconNormal']);
 				$iover = empty($param['icon'][$counter]['iconOver']) ? '' : trim($param['icon'][$counter]['iconOver']);

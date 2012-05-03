@@ -314,7 +314,7 @@ class phpwcmsNews {
 				$news['kill'] = phpwcms_strtotime($news['cnt_killdate'], $this->BL['be_shortdatetime'], $this->BL['be_func_struct_empty']);
 				$news['sort'] = $news['cnt_sortdate'] == false || $news['cnt_sortdate'] <= 0 ? $this->BL['be_func_struct_empty'] : date($this->BL['be_shortdatetime'], $news['cnt_sortdate']);
 				
-				$list[] = '<td class="column colfirst news">'.html_specialchars($news['cnt_name']).'</td>';
+				$list[] = '<td class="column colfirst news">'.html($news['cnt_name']).'</td>';
 				$list[] = '<td class="column">'.$news['live'].'</td>';
 				$list[] = '<td class="column">'.$news['kill'].'</td>';
 				$list[] = '<td class="column">'.$news['sort'].'</td>';
@@ -329,7 +329,7 @@ class phpwcmsNews {
 					'<img src="include/img/button/aktiv_12x13_'.$news['cnt_status'].'.gif" border="0" alt="" /></a>'.
 	
 					'<a href="'.$this->base_url.'&amp;cntid='.$news['cnt_id'].'&amp;status=9'.
-					'" title="'.$this->BL['be_delete_dataset'].' '.html_specialchars($news['cnt_name']).'" onclick="return confirm(\''.
+					'" title="'.$this->BL['be_delete_dataset'].' '.html($news['cnt_name']).'" onclick="return confirm(\''.
 					$this->BL['be_delete_dataset'].' \n'.js_singlequote($news['cnt_name']).'\');">'.
 					'<img src="include/img/button/trash_13x13_1.gif" border="0" alt=""></a>	
 				
@@ -538,7 +538,7 @@ class phpwcmsNews {
 				// error while storing data
 				} else {
 				
-					set_status_message($BL['be_error_while_save'].trim( html_specialchars(' '.mysql_errno().': '.mysql_error() ) ), 'warning');
+					set_status_message($BL['be_error_while_save'].trim( html(' '.mysql_errno().': '.mysql_error() ) ), 'warning');
 				
 				}
 			

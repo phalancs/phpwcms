@@ -37,15 +37,16 @@ $BL["login_button"]                     = 'Login';
 $BL["login_lang"]                       = 'backend language';
 
 // phpwcms.php
-$BL['be_nav_logout']                    = 'LOGOUT';
-$BL['be_nav_articles']                  = 'ARTICLE';
-$BL['be_nav_files']                     = 'FILE';
-$BL['be_nav_modules']                   = 'MODULES';
-$BL['be_nav_messages']                  = 'COMMUNICATION';
-$BL['be_nav_chat']                      = 'CHAT';
-$BL['be_nav_profile']                   = 'PROFILE';
-$BL['be_nav_admin']                     = 'ADMIN';
-$BL['be_nav_discuss']                   = 'DISCUSS';
+$BL['be_nav_home']                    	= 'Home';
+$BL['be_nav_logout']                    = 'Logout';
+$BL['be_nav_articles']                  = 'Article';
+$BL['be_nav_files']                     = 'File';
+$BL['be_nav_modules']                   = 'Modules';
+$BL['be_nav_messages']                  = 'Communication';
+$BL['be_nav_chat']                      = 'Chat';
+$BL['be_nav_profile']                   = 'Profile';
+$BL['be_nav_admin']                     = 'Admin';
+$BL['be_nav_discuss']                   = 'Discuss';
 
 $BL['be_page_title']                    = 'phpwcms backend (administration)';
 
@@ -1054,6 +1055,8 @@ $BL['Connect_socket_error']				= 'Unable to open connection to phpwcms Server, r
 $BL['Socket_functions_disabled']		= 'Unable to use socket functions.';
 $BL['Mailing_list_subscribe_reminder']	= 'For the latest information on updates to phpwcms, why not subscribe to our <a href="http://lists.phpwcms.de/mailman/listinfo/phpwcms-releaseinfo" target="_blank">mailing list</a>.';
 $BL['Version_information'] 				= 'phpwcms Version Information';
+$BL['version']							= 'version';
+$BL['licensed_under']					= 'Licensed under %s.';
 
 $BL['be_cnt_search_highlight']			= 'highlight';
 $BL['be_cnt_results_wordlimit']			= 'max. words for summary';

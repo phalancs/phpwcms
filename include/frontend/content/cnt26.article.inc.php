@@ -56,7 +56,7 @@ if(count($crow["acontent_form"]['ingredients'])) {
 	$crow["acontent_form"]['temp'] = array();
 	$ingrediens_counter = 0;
 	foreach($crow["acontent_form"]['ingredients'] as $temp_val) {
-		$temp_val = html_specialchars($temp_val);
+		$temp_val = html($temp_val);
 		
 		if($temp_val{0} == '*') {	//headline
 			if(isset($crow["acontent_form"]['temp'][$ingrediens_counter]['h'])) {
@@ -104,18 +104,18 @@ if(count($crow["acontent_form"]['ingredients'])) {
 }
 
 // now render whole recipe
-$crow["acontent_form"]['template'] = render_cnt_template($crow["acontent_form"]['template'], 'TITLE', html_specialchars($crow['acontent_title']));
-$crow["acontent_form"]['template'] = render_cnt_template($crow["acontent_form"]['template'], 'SUBTITLE', html_specialchars($crow['acontent_subtitle']));
+$crow["acontent_form"]['template'] = render_cnt_template($crow["acontent_form"]['template'], 'TITLE', html($crow['acontent_title']));
+$crow["acontent_form"]['template'] = render_cnt_template($crow["acontent_form"]['template'], 'SUBTITLE', html($crow['acontent_subtitle']));
 $crow["acontent_form"]['template'] = render_cnt_template($crow["acontent_form"]['template'], 'INGREDIENTS', $crow["acontent_form"]['ingredients']);
 $crow["acontent_form"]['template'] = render_cnt_template($crow["acontent_form"]['template'], 'INGREDIENTSTABLE', $crow["acontent_form"]['i_table']);
 $crow["acontent_form"]['template'] = render_cnt_template($crow["acontent_form"]['template'], 'CALORIES', $crow["acontent_form"]['calorificvalue']);
 $crow["acontent_form"]['template'] = render_cnt_template($crow["acontent_form"]['template'], 'KCAL', $crow["acontent_form"]['kcal']);
-$crow["acontent_form"]['template'] = render_cnt_template($crow["acontent_form"]['template'], 'CALORIESADD', html_specialchars($crow["acontent_form"]['calorificvalue_add']));
+$crow["acontent_form"]['template'] = render_cnt_template($crow["acontent_form"]['template'], 'CALORIESADD', html($crow["acontent_form"]['calorificvalue_add']));
 $crow["acontent_form"]['template'] = render_cnt_template($crow["acontent_form"]['template'], 'PREPARATION', $crow["acontent_form"]['preparation']);
-$crow["acontent_form"]['template'] = render_cnt_template($crow["acontent_form"]['template'], 'TIME', html_specialchars($crow["acontent_form"]['time']));
-$crow["acontent_form"]['template'] = render_cnt_template($crow["acontent_form"]['template'], 'TIMEADD', html_specialchars($crow["acontent_form"]['time_add']));
+$crow["acontent_form"]['template'] = render_cnt_template($crow["acontent_form"]['template'], 'TIME', html($crow["acontent_form"]['time']));
+$crow["acontent_form"]['template'] = render_cnt_template($crow["acontent_form"]['template'], 'TIMEADD', html($crow["acontent_form"]['time_add']));
 $crow["acontent_form"]['template'] = render_cnt_template($crow["acontent_form"]['template'], 'SEVERITY', $crow["acontent_form"]['severity']);
-$crow["acontent_form"]['template'] = render_cnt_template($crow["acontent_form"]['template'], 'CAT', html_specialchars($crow["acontent_form"]['category']));
+$crow["acontent_form"]['template'] = render_cnt_template($crow["acontent_form"]['template'], 'CAT', html($crow["acontent_form"]['category']));
 
 $CNT_TMP .= $crow["acontent_form"]['template'];
 									

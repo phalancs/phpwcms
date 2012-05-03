@@ -51,7 +51,7 @@ if($all = _dbQuery("SELECT article_id, article_alias, article_title FROM ".DB_PR
 	foreach($all as $key => $value) {
 
 			echo '<pre';
-			echo '>[ID:'.sprintf('%0'.(strlen(strval(count($all)))).'s', $value['article_id']).'] '.html_specialchars($value['article_title'].' (' . $value['article_alias'].')');
+			echo '>[ID:'.sprintf('%0'.(strlen(strval(count($all)))).'s', $value['article_id']).'] '.html($value['article_title'].' (' . $value['article_alias'].')');
 			echo '</pre>'.LF;
 
 	}

@@ -45,14 +45,14 @@ $BE['HEADER']['ads.js']				= getJavaScriptSourceLink($phpwcms['modules'][$module
 		<td align="right" class="chatlist" nowrap="nowrap"><?php echo $BL['be_cnt_last_edited']  ?>:&nbsp;</td>
 		<td class="v10"><?php 
 		
-		echo html_specialchars(date($BL['be_fprivedit_dateformat'], strtotime($plugin['data']['adcampaign_changed'])));
+		echo html(date($BL['be_fprivedit_dateformat'], strtotime($plugin['data']['adcampaign_changed'])));
 		
 		if(!empty($plugin['data']['adcampaign_created'])) {
 		
 		?>		
 		&nbsp;&nbsp;&nbsp;<span class="chatlist"><?php echo $BL['be_fprivedit_created']  ?>:</span> 
 		<?php 
-				echo html_specialchars(date($BL['be_fprivedit_dateformat'], strtotime($plugin['data']['adcampaign_created'])));
+				echo html(date($BL['be_fprivedit_dateformat'], strtotime($plugin['data']['adcampaign_created'])));
 		}
 		
 		?>
@@ -68,7 +68,7 @@ $BE['HEADER']['ads.js']				= getJavaScriptSourceLink($phpwcms['modules'][$module
 		//error class
 		if(!empty($plugin['error']['adcampaign_title'])) echo ' errorInputText';
 		
-		?>" style="width:400px;" value="<?php echo html_specialchars($plugin['data']['adcampaign_title']) ?>" size="30" maxlength="200" /></td>
+		?>" style="width:400px;" value="<?php echo html($plugin['data']['adcampaign_title']) ?>" size="30" maxlength="200" /></td>
 	</tr>
 
 
@@ -99,7 +99,7 @@ $BE['HEADER']['ads.js']				= getJavaScriptSourceLink($phpwcms['modules'][$module
 		
 		}
 		echo '>';
-		echo html_specialchars($_entry['value']['adplace_title'].' / '.$_entry['value']['adformat_title'].' '.$_entry['value']['adplace_width'].'x'.$_entry['value']['adplace_height']);
+		echo html($_entry['value']['adplace_title'].' / '.$_entry['value']['adformat_title'].' '.$_entry['value']['adplace_width'].'x'.$_entry['value']['adplace_height']);
 		echo '</option>'.LF;
 		
 		$plugin['ad_place_js'][ $_entry['value']['adplace_id'] ]  = '		ad_place['.$_entry['value']['adplace_id'].'] = ';
@@ -167,7 +167,7 @@ if(!empty($plugin['data']['adcampaign_id'])) {
 				<td><input type="text" name="adcampaign_url" id="adcampaign_url" value="<?php 
 				
 					if(!empty($plugin['data']['adcampaign_data']['url'])) {
-						$plugin['data']['adcampaign_data']['url_html'] = html_specialchars($plugin['data']['adcampaign_data']['url']);
+						$plugin['data']['adcampaign_data']['url_html'] = html($plugin['data']['adcampaign_data']['url']);
 						echo $plugin['data']['adcampaign_data']['url_html'];
 						echo '" title="'.$plugin['data']['adcampaign_data']['url_html'];
 					}
@@ -207,9 +207,9 @@ if(!empty($plugin['data']['adcampaign_id'])) {
 		//error class
 		if(!empty($plugin['error']['adcampaign_date_start'])) echo ' errorInputText';
 		
-		?>" value="<?php echo html_specialchars($plugin['data']['adcampaign_date_start']) ?>" size="30" /></td>
+		?>" value="<?php echo html($plugin['data']['adcampaign_date_start']) ?>" size="30" /></td>
 		<td>&nbsp;</td>
-		<td><input name="adcampaign_time_start" type="text" id="adcampaign_time_start" class="v12 width100" value="<?php echo html_specialchars($plugin['data']['adcampaign_time_start']) ?>" size="30" /></td>
+		<td><input name="adcampaign_time_start" type="text" id="adcampaign_time_start" class="v12 width100" value="<?php echo html($plugin['data']['adcampaign_time_start']) ?>" size="30" /></td>
 		<td>&nbsp;<script type="text/javascript">
 		function aStart(date, month, year) {
 			getFieldById('adcampaign_date_start').value = subrstr('00' + date, 2) + '<?php echo $BLM['date_delimiter'] ?>' + subrstr('00' + month, 2) + '<?php echo $BLM['date_delimiter'] ?>' + year;
@@ -247,9 +247,9 @@ if(!empty($plugin['data']['adcampaign_id'])) {
 		//error class
 		if(!empty($plugin['error']['adcampaign_date_end'])) echo ' errorInputText';
 		
-		?>" value="<?php echo html_specialchars($plugin['data']['adcampaign_date_end']) ?>" size="30" /></td>
+		?>" value="<?php echo html($plugin['data']['adcampaign_date_end']) ?>" size="30" /></td>
 		<td>&nbsp;</td>
-		<td><input name="adcampaign_time_end" type="text" id="adcampaign_time_end" class="v12 width100" value="<?php echo html_specialchars($plugin['data']['adcampaign_time_end']) ?>" size="30" /></td>
+		<td><input name="adcampaign_time_end" type="text" id="adcampaign_time_end" class="v12 width100" value="<?php echo html($plugin['data']['adcampaign_time_end']) ?>" size="30" /></td>
 		<td>&nbsp;<script type="text/javascript">
 		function aEnd(date, month, year) {
 			getFieldById('adcampaign_date_end').value = subrstr('00' + date, 2) + '<?php echo $BLM['date_delimiter'] ?>' + subrstr('00' + month, 2) + '<?php echo $BLM['date_delimiter'] ?>' + year;
@@ -327,7 +327,7 @@ if(is_array($plugin['data']['files']) && count($plugin['data']['files'])) {
 	
 	foreach($plugin['data']['files'] as $_entry['value']) {
 		
-		$c = html_specialchars($_entry['value']['filename']);
+		$c = html($_entry['value']['filename']);
 		$plugin['data']['image'] .= '			<option value="'.$c.'"';
 		if($_entry['value']['filename'] == $plugin['data']['adcampaign_data']['image']) {
 			$plugin['data']['image'] .= ' selected="selected"';
@@ -343,7 +343,7 @@ if(is_array($plugin['data']['files']) && count($plugin['data']['files'])) {
 	
 	foreach($plugin['data']['files'] as $_entry['value']) {
 		
-		$c = html_specialchars($_entry['value']['filename']);
+		$c = html($_entry['value']['filename']);
 		$plugin['data']['flash'] .= '			<option value="'.$c.'"';
 		if($_entry['value']['filename'] == $plugin['data']['adcampaign_data']['flash']) {
 			$plugin['data']['flash'] .= ' selected="selected"';
@@ -359,7 +359,7 @@ if(is_array($plugin['data']['files']) && count($plugin['data']['files'])) {
 	
 	foreach($plugin['data']['files'] as $_entry['value']) {
 		
-		$c = html_specialchars($_entry['value']['filename']);
+		$c = html($_entry['value']['filename']);
 		$plugin['data']['css'] .= '			<option value="'.$c.'"';
 		if($_entry['value']['filename'] == $plugin['data']['adcampaign_data']['css']) {
 			$plugin['data']['css'] .= ' selected="selected"';
@@ -466,7 +466,7 @@ if(empty($plugin['data']['adcampaign_id'])) {
 	<tr>
 	
 		<td align="right" class="chatlist tdtop3"><a href="#" onclick="showHtmlAds();return false;" title="Preview"><?php echo $BLM['ad_type_2'] ?><img src="include/img/symbole/redirect.gif" alt="" border="0" style="margin:0 1px 0 4px;position:relative;top:1px;" /></a>:&nbsp;</td>
-		<td><textarea name="adcampaign_html" id="adcampaign_html" rows="5" class="v12 width400 code"><?php echo html_entities($plugin['data']['adcampaign_data']['html']) ?></textarea></td>
+		<td><textarea name="adcampaign_html" id="adcampaign_html" rows="5" class="v12 width400 code"><?php echo html($plugin['data']['adcampaign_data']['html']) ?></textarea></td>
 	
 	</tr>
 	
@@ -474,14 +474,14 @@ if(empty($plugin['data']['adcampaign_id'])) {
 
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['ad_alt_text'] ?>:&nbsp;</td>
-		<td><input name="adcampaign_alt_text" type="text" id="adcampaign_alt_text" class="v12" style="width:400px;" value="<?php echo html_specialchars($plugin['data']['adcampaign_data']['alt_text']) ?>" size="30" maxlength="200" /></td>
+		<td><input name="adcampaign_alt_text" type="text" id="adcampaign_alt_text" class="v12" style="width:400px;" value="<?php echo html($plugin['data']['adcampaign_data']['alt_text']) ?>" size="30" maxlength="200" /></td>
 	</tr>
 
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
 
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['ad_title_text'] ?>:&nbsp;</td>
-		<td><input name="adcampaign_title_text" type="text" id="adcampaign_title_text" class="v12" style="width:400px;" value="<?php echo html_specialchars($plugin['data']['adcampaign_data']['title_text']) ?>" size="30" maxlength="200" /></td>
+		<td><input name="adcampaign_title_text" type="text" id="adcampaign_title_text" class="v12" style="width:400px;" value="<?php echo html($plugin['data']['adcampaign_data']['title_text']) ?>" size="30" maxlength="200" /></td>
 	</tr>
 	
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
@@ -515,7 +515,7 @@ if(empty($plugin['data']['adcampaign_id'])) {
 	
 	<tr> 
 		<td align="right" class="chatlist tdtop4"><?php echo $BLM['comment'] ?>:&nbsp;</td>
-		<td colspan="2"><textarea name="adcampaign_comment" id="adcampaign_comment" rows="5" class="v12 width400"><?php echo html_specialchars($plugin['data']['adcampaign_comment']) ?></textarea></td>
+		<td colspan="2"><textarea name="adcampaign_comment" id="adcampaign_comment" rows="5" class="v12 width400"><?php echo html($plugin['data']['adcampaign_comment']) ?></textarea></td>
 	</tr>
 	
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15" /></td></tr>	

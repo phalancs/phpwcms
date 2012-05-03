@@ -29,6 +29,7 @@
 @orange:                #f89406;
 @pink:                  #c3325f;
 @purple:                #7a43b6;
+@phpwcmsColor:			#04589D;
 
 
 // Scaffolding
@@ -145,13 +146,13 @@
 // Navbar
 // -------------------------
 @navbarHeight:                    40px;
-@navbarBackground:                @grayDarker;
-@navbarBackgroundHighlight:       @grayDark;
+@navbarBackground:                @phpwcmsColor;
+@navbarBackgroundHighlight:       darken(@phpwcmsColor, 10%);
 
-@navbarText:                      @grayLight;
-@navbarLinkColor:                 @grayLight;
-@navbarLinkColorHover:            @white;
-@navbarLinkColorActive:           @navbarLinkColorHover;
+@navbarText:                      lighten(@phpwcmsColor, 60%);
+@navbarLinkColor:                 lighten(@phpwcmsColor, 60%);
+@navbarLinkColorHover:            lighten(@phpwcmsColor, 50%);
+@navbarLinkColorActive:           @white;
 @navbarLinkBackgroundHover:       transparent;
 @navbarLinkBackgroundActive:      @navbarBackground;
 

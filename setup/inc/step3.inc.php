@@ -29,14 +29,14 @@
   <tr>
     <td align="right" class="v10">&nbsp;</td>
     <td colspan="2" class="chatlist">document root of your web account; empty
-      for default value<br><?php echo  html_specialchars($_SERVER['DOCUMENT_ROOT']) ?></td>
+      for default value<br><?php echo  html($_SERVER['DOCUMENT_ROOT']) ?></td>
   </tr>
   <tr>
     <td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="2"></td>
   </tr>
   <tr>
     <td align="right" class="v10">root path :&nbsp;</td>
-    <td><input name="doc_root" type="text" class="f11b" id="doc_root" style="width:280px" value="<?php echo html_specialchars($phpwcms["DOC_ROOT"]) ?>" size="30" maxlength="100"></td>
+    <td><input name="doc_root" type="text" class="f11b" id="doc_root" style="width:280px" value="<?php echo html($phpwcms["DOC_ROOT"]) ?>" size="30" maxlength="100"></td>
     <td class="chatlist"><em>&nbsp;default: $_SERVER['DOCUMENT_ROOT'] </em></td>
   </tr>
   <tr>
@@ -55,7 +55,7 @@
   </tr>
   <tr>
     <td align="right" class="v10">phpwcms root:&nbsp;</td>
-    <td><input name="root" type="text" class="f11b" id="root" style="width:280px" value="<?php echo html_specialchars($phpwcms["root"]) ?>" size="30" maxlength="100">
+    <td><input name="root" type="text" class="f11b" id="root" style="width:280px" value="<?php echo html($phpwcms["root"]) ?>" size="30" maxlength="100">
     </td>
     <td class="chatlist"><em>&nbsp;default: (empty)</em></td>
   </tr>
@@ -71,7 +71,7 @@
 		  <tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="2"></td></tr>
           <tr>
             <td align="right" class="v10">filestorage:&nbsp;</td>
-            <td><input name="file_path" type="text" class="f11b" id="file_path" style="width:280px" value="<?php echo html_specialchars($phpwcms["file_path"]) ?>" size="30" maxlength="100"></td>
+            <td><input name="file_path" type="text" class="f11b" id="file_path" style="width:280px" value="<?php echo html($phpwcms["file_path"]) ?>" size="30" maxlength="100"></td>
             <td class="chatlist"><em>&nbsp;default: content/files </em></td>
           </tr><tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="4"></td></tr>
           <tr>
@@ -81,7 +81,7 @@
 		  <tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="2"></td></tr>
           <tr>
             <td align="right" class="v10">templates:&nbsp;</td>
-            <td><input name="templates" type="text" class="f11b" id="templates" style="width:280px" value="<?php echo html_specialchars($phpwcms["templates"]) ?>" size="30" maxlength="100"></td>
+            <td><input name="templates" type="text" class="f11b" id="templates" style="width:280px" value="<?php echo html($phpwcms["templates"]) ?>" size="30" maxlength="100"></td>
             <td class="chatlist"><em>&nbsp;default: template</em></td>
           </tr><tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="4"></td></tr>
           <tr>
@@ -96,7 +96,7 @@
 		  <tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="2"></td></tr>
           <tr>
             <td align="right" class="v10">ftp&nbsp;takeover:&nbsp;</td>
-            <td><input name="ftp_path" type="text" class="f11b" id="ftp_path" style="width:280px" value="<?php echo html_specialchars($phpwcms["ftp_path"]) ?>" size="30" maxlength="100"></td>
+            <td><input name="ftp_path" type="text" class="f11b" id="ftp_path" style="width:280px" value="<?php echo html($phpwcms["ftp_path"]) ?>" size="30" maxlength="100"></td>
             <td class="chatlist"><em>&nbsp;default: content/files/upload </em></td>
           </tr>
 		  <tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="15"></td></tr>

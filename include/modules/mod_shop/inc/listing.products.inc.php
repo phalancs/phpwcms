@@ -169,7 +169,7 @@ if($_entry['pages_total'] > 1) {
 				<td><input type="text" name="filter" id="filter" size="10" value="<?php 
 				
 				if(isset($_POST['filter']) && is_array($_POST['filter']) ) {
-					echo html_specialchars(implode(' ', $_POST['filter']));
+					echo html(implode(' ', $_POST['filter']));
 				}
 				
 				?>" class="textinput" style="margin:0 2px 0 0;width:110px;text-align:left;" title="filter results by username, name or email" /></td>
@@ -224,13 +224,13 @@ foreach($data as $row) {
 	
 	echo '<td class="dir">';
 	if(SHOP_FELANG_SUPPORT) {
-		$row['shopprod_lang'] = html_specialchars(strtolower($row['shopprod_lang']));
+		$row['shopprod_lang'] = html(strtolower($row['shopprod_lang']));
 		echo '<img src="include/img/famfamfam/lang/'.($row['shopprod_lang'] ? $row['shopprod_lang'] : 'all').'.png" alt="'.$row['shopprod_lang'].'" />';
 	}
-	echo '&nbsp;' . html_specialchars($row['shopprod_ordernumber']) . "</td>\n";
-	echo '<td class="dir">&nbsp;'.html_specialchars($row['shopprod_model'])."</td>\n";
-	echo '<td class="dir">&nbsp;'.html_specialchars($row['shopprod_name1'])."</td>\n";
-	echo '<td class="dir listNumber">&nbsp;'.html_specialchars( number_format( round($row['shopprod_price'], 2) , 2, $BLM['dec_point'], $BLM['thousands_sep'] ) )."&nbsp;</td>\n";
+	echo '&nbsp;' . html($row['shopprod_ordernumber']) . "</td>\n";
+	echo '<td class="dir">&nbsp;'.html($row['shopprod_model'])."</td>\n";
+	echo '<td class="dir">&nbsp;'.html($row['shopprod_name1'])."</td>\n";
+	echo '<td class="dir listNumber">&nbsp;'.html( number_format( round($row['shopprod_price'], 2) , 2, $BLM['dec_point'], $BLM['thousands_sep'] ) )."&nbsp;</td>\n";
 
 	echo '<td align="right" nowrap="nowrap" class="button_td">';
 	
@@ -241,7 +241,7 @@ foreach($data as $row) {
 		echo '<img src="include/img/button/aktiv_12x13_'.$row["shopprod_status"].'.gif" border="0" alt="" /></a>';
 	
 		echo '<a href="'.$_controller_link.'&amp;delete='.$row["shopprod_id"];
-		echo '" title="delete: '.html_specialchars($row['shopprod_ordernumber'].' / '.$row['shopprod_name1']).'"';
+		echo '" title="delete: '.html($row['shopprod_ordernumber'].' / '.$row['shopprod_name1']).'"';
 		echo ' onclick="return confirm(\''.$BLM['delete_product'].js_singlequote($row['shopprod_ordernumber'].' / '.$row['shopprod_name1']).'\');">';
 		echo '<img src="include/img/button/trash_13x13_1.gif" border="0" alt="" /></a>';
 	

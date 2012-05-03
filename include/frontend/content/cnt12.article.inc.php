@@ -169,7 +169,7 @@ if(isset($_POST["newsletter_send"]) && intval($_POST["newsletter_send"])) {
 		$mail->AddAddress($content["newsletter"]["email_address"]);
 
 		if(!$mail->Send()) {
-			$template_default["article"]["newsletter_error"] = html_specialchars($mail->ErrorInfo);
+			$template_default["article"]["newsletter_error"] = html($mail->ErrorInfo);
 			$content["newsletter"]["success"] = 0;
 			$content["newsletter"]["email_address_error"] = 1;
 		}
@@ -181,8 +181,8 @@ if(isset($_POST["newsletter_send"]) && intval($_POST["newsletter_send"])) {
 		$content["newsletter"]["email_address_error"] = 1;
 	}
 
-	$content["newsletter"]["email_address"] = html_specialchars($content["newsletter"]["email_address"]);
-	$content["newsletter"]["email_name"] = html_specialchars($content["newsletter"]["email_name"]);
+	$content["newsletter"]["email_address"] = html($content["newsletter"]["email_address"]);
+	$content["newsletter"]["email_name"] = html($content["newsletter"]["email_name"]);
 }
 
 if($content["newsletter"]["success"]) {
@@ -264,7 +264,7 @@ if($content["newsletter"]["success"]) {
 			if(isset($content["newsletter"]["email_subscription"][$nlkey])) $content["newsletter"]['t'] .= ' checked="checked"';
 			$content["newsletter"]['t'] .= ' id="email_subscription_'.$nlkey.'"/></td>'.LF;
 			$content["newsletter"]['t'] .= '<td><label for="email_subscription_'.$nlkey.'">';
-			$content["newsletter"]['t'] .= html_specialchars($nlvalue);
+			$content["newsletter"]['t'] .= html($nlvalue);
 			$content["newsletter"]['t'] .= '</label></td>'.LF.'</tr>'.LF;
 		
 			$content["newsletter"]['c']++;

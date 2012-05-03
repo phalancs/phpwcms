@@ -31,9 +31,9 @@ if (!defined('PHPWCMS_ROOT')) {
 // PHP variablen
 
 $cinfo = array();
-$cinfo[0] = html_specialchars(cut_string($row["acontent_title"],'&#8230;', 55));
-$cinfo[1] = html_specialchars(cut_string($row["acontent_subtitle"],'&#8230;', 55));
-$cinfo[2] = str_replace("\n", " ", '<span class="code">'.html_specialchars(cut_string($row["acontent_text"],'&#8230;', 150)).'</span>');	
+$cinfo[0] = html(cut_string($row["acontent_title"],'&#8230;', 55));
+$cinfo[1] = html(cut_string($row["acontent_subtitle"],'&#8230;', 55));
+$cinfo[2] = str_replace("\n", " ", '<span class="code">'.html(cut_string($row["acontent_text"],'&#8230;', 150)).'</span>');	
 				
 $cinfo = str_replace("\n", " / ", implode("\n", $cinfo));
 if($cinfo["result"]) { //Zeige Inhaltinfo

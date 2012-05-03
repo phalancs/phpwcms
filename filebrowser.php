@@ -293,7 +293,7 @@ if(!empty($count_user_files)) { //Listing in case of user files/folders
 	$file_sql .= "(f_public=1 OR f_uid=".$_SESSION["wcs_user_id"].") ";
 	$file_sql .= "ORDER BY f_sort, f_name";
 	
-	if($file_result = mysql_query($file_sql, $db) or die ("error while listing files<br />".html_entities($file_sql))) {
+	if($file_result = mysql_query($file_sql, $db) or die ("error while listing files<br />".html($file_sql))) {
 		$file_durchlauf = 0;
 		
 		if(empty($_SESSION['image_browser_article'])) {
@@ -303,7 +303,7 @@ if(!empty($count_user_files)) { //Listing in case of user files/folders
 		}
 		
 		while($file_row = mysql_fetch_array($file_result)) {
-			$filename = html_specialchars($file_row["f_name"]);
+			$filename = html($file_row["f_name"]);
 			
 			$thumb_image = true;
 			if( !in_array($js_aktion, array(2, 4, 9, 10, 16, 18)) ) {
@@ -478,7 +478,7 @@ function folder_list($pid, $dbcon, $vor, $zieldatei) {
 	$result = mysql_query($sql, $dbcon);
 	while($row = mysql_fetch_array($result)) {
 	
-		$dirname = html_specialchars($row["f_name"]);
+		$dirname = html($row["f_name"]);
 		
 		//Ermitteln des Aufolderwertes
 		if(!isset($folder[$row["f_id"]])) $folder[$row["f_id"]] = 0;

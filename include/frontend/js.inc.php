@@ -131,7 +131,7 @@ function renderHeadJS($js) {
 			
 			// replace {TEMPLATE}
 			$js		= str_replace('{TEMPLATE}', TEMPLATE_PATH, $js);
-			$GLOBALS['block']['custom_htmlhead'][md5($js)] = getJavaScriptSourceLink(html_specialchars($js));
+			$GLOBALS['block']['custom_htmlhead'][md5($js)] = getJavaScriptSourceLink(html($js));
 			
 		} else {
 			

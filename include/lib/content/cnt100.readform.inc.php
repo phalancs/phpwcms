@@ -29,7 +29,7 @@ if (!defined('PHPWCMS_ROOT')) {
 // ----------------------------------------------------------------
 
 // Content Type List
-$content["text"] = html_specialchars(slweg($_POST["ctext"], 65500));
+$content["text"] = html(slweg($_POST["ctext"], 65500));
 
 // check if minimum of 1 delimeter '~' available
 if(substr($content['text'], 0, 1) != '~') $content['text'] = '~'.$content['text'];

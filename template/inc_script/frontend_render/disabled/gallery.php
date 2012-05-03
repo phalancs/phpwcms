@@ -58,11 +58,11 @@ if( strpos($content['all'], '{GALLERY}') !== FALSE ) {
 		
 			// check if parent directory exists
 			if(!empty($subgallery['f_root_id'])) {
-				$gallery_breadcrumb[]	= '<a href="'.$gallery_breadcrumb_url.'" class="root">'.html_specialchars($subgallery['f_root_name']).'</a>';
+				$gallery_breadcrumb[]	= '<a href="'.$gallery_breadcrumb_url.'" class="root">'.html($subgallery['f_root_name']).'</a>';
 				$subgallery_get			= '&amp;subgallery='.$_getVar['subgallery'];
 				$subgallery_class		= 'sub';
 			}
-			$gallery_breadcrumb[] = '<a href="'.$gallery_breadcrumb_url.$subgallery_get.'" class="'.$subgallery_class.'">'.html_specialchars($subgallery['f_name']).'</a>';	
+			$gallery_breadcrumb[] = '<a href="'.$gallery_breadcrumb_url.$subgallery_get.'" class="'.$subgallery_class.'">'.html($subgallery['f_name']).'</a>';	
 		
 		}
 		
@@ -89,7 +89,7 @@ if( strpos($content['all'], '{GALLERY}') !== FALSE ) {
 			
 			// show title of selected gallery
 			if(isset($gallery->gallery['f_name'])) {
-				$gallery_breadcrumb[] = '<span class="active">'.html_specialchars($gallery->gallery['f_name']).'</span>';	
+				$gallery_breadcrumb[] = '<span class="active">'.html($gallery->gallery['f_name']).'</span>';	
 			}
 
 		} else {
@@ -126,7 +126,7 @@ if( strpos($content['all'], '{GALLERY}') !== FALSE ) {
 					
 					$subgallery .= '			<li class="sub">' . LF;
 					$subgallery .= '				<h3><a href="'.$gallery->url.'&amp;subgallery='.$sub['f_id'].'">';
-					$subgallery .=					html_specialchars($sub['f_name']).'</a></h3>' . LF;
+					$subgallery .=					html($sub['f_name']).'</a></h3>' . LF;
 					if($row['f_longinfo'] != '') {
 						$subgallery .= '		' . plaintext_htmlencode($sub['f_longinfo']) . LF;
 					}
@@ -140,9 +140,9 @@ if( strpos($content['all'], '{GALLERY}') !== FALSE ) {
 			$galleries[$g] .= '		<h2>';
 			
 			if($subgallery != '') {
-				$galleries[$g] .= html_specialchars($row['f_name']);
+				$galleries[$g] .= html($row['f_name']);
 			} else {
-				$galleries[$g] .= '<a href="'.$gallery->url.'&amp;subgallery='.$row['f_id'].'">' . html_specialchars($row['f_name']) . '</a>';
+				$galleries[$g] .= '<a href="'.$gallery->url.'&amp;subgallery='.$row['f_id'].'">' . html($row['f_name']) . '</a>';
 			}
 			
 			$galleries[$g] .= '</h2>' . LF;

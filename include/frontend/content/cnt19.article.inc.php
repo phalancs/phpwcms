@@ -66,7 +66,7 @@ if($content['struct'][ $sitemap['startid'] ]['acat_nositemap']) {
 	} else {
 		$CNT_TMP .= 'id='.$sitemap['startid'].',0,0,1,0,0';
 	}
-	$CNT_TMP .= '">'.html_specialchars($content['struct'][ $sitemap['startid'] ]['acat_name']).'</a>';
+	$CNT_TMP .= '">'.html($content['struct'][ $sitemap['startid'] ]['acat_name']).'</a>';
 	if($sitemap["display"]) {
 		$CNT_TMP .= build_sitemap_articlelist( $sitemap['startid'] , 0);
 	}

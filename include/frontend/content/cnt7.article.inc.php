@@ -244,15 +244,15 @@ if($content['files_sql']) {
 					
 					
 					if($_file_info[1]) {
-						$_files_entries[$fkey]  = str_replace('{FILE_NAME}', html_specialchars($_file_info[1]), $_files_entries[$fkey]);
+						$_files_entries[$fkey]  = str_replace('{FILE_NAME}', html($_file_info[1]), $_files_entries[$fkey]);
 					} else {
-						$_files_entries[$fkey]  = str_replace('{FILE_NAME}', html_specialchars($content['files_result'][ $_files_x ]['f_name']), $_files_entries[$fkey]);
+						$_files_entries[$fkey]  = str_replace('{FILE_NAME}', html($content['files_result'][ $_files_x ]['f_name']), $_files_entries[$fkey]);
 					}
 					
-					$_files_entries[$fkey]  = render_cnt_template($_files_entries[$fkey], 'FILE_TITLE', html_specialchars($_file_info[2]));
-					$_files_entries[$fkey]  = render_cnt_template($_files_entries[$fkey], 'FILE_DESCRIPTION', html_specialchars($_file_info[0]));
+					$_files_entries[$fkey]  = render_cnt_template($_files_entries[$fkey], 'FILE_TITLE', html($_file_info[2]));
+					$_files_entries[$fkey]  = render_cnt_template($_files_entries[$fkey], 'FILE_DESCRIPTION', html($_file_info[0]));
 					$_files_entries[$fkey]  = render_cnt_template($_files_entries[$fkey], 'FILE_LONGINFO', empty($content['files_result'][ $_files_x ]['f_longinfo']) ? '' : plaintext_htmlencode($content['files_result'][ $_files_x ]['f_longinfo']));
-					$_files_entries[$fkey]  = render_cnt_template($_files_entries[$fkey], 'FILE_COPYRIGHT', html_specialchars($_file_info[5]));
+					$_files_entries[$fkey]  = render_cnt_template($_files_entries[$fkey], 'FILE_COPYRIGHT', html($_file_info[5]));
 					
 					// now check file for possible thumbnail image
 					$_files_image = false;
@@ -342,8 +342,8 @@ if($content['files_sql']) {
 		}
 
 		$crow["acontent_template"] = replace_tmpl_section('FILE_ENTRY', $crow["acontent_template"], implode(LF, $_files_entries));
-		$crow["acontent_template"] = render_cnt_template($crow["acontent_template"], 'TITLE', html_specialchars($crow['file_cp_title']));
-		$crow["acontent_template"] = render_cnt_template($crow["acontent_template"], 'SUBTITLE', html_specialchars($crow['file_cp_subtitle']));
+		$crow["acontent_template"] = render_cnt_template($crow["acontent_template"], 'TITLE', html($crow['file_cp_title']));
+		$crow["acontent_template"] = render_cnt_template($crow["acontent_template"], 'SUBTITLE', html($crow['file_cp_subtitle']));
 		$crow["acontent_template"] = render_cnt_template($crow["acontent_template"], 'TEXT', $crow["acontent_html"]);
 		
 		// cleanup left over FILE_IMAGE sections

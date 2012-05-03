@@ -349,9 +349,9 @@ if((is_array($content['alink']['alink_id']) && count($content['alink']['alink_id
 					$content['alink']['tr'][$key]	= str_replace('{COLUMN}', $content['alink']['column']-$content['alink']['column_minus'], $content['alink']['tr'][$key]);
 					$content['alink']['tr'][$key]	= str_replace('{ROW}', $content['alink']['row']-$content['alink']['row_minus'], $content['alink']['tr'][$key]);
 					
-					$content['alink']['tr'][$key]	= render_cnt_template($content['alink']['tr'][$key], 'MENUTITLE', html_specialchars($row['article_menutitle']));
-					$content['alink']['tr'][$key]	= render_cnt_template($content['alink']['tr'][$key], 'TITLE', html_specialchars($row['article_title']));
-					$content['alink']['tr'][$key]	= render_cnt_template($content['alink']['tr'][$key], 'SUBTITLE', html_specialchars($row['article_subtitle']));
+					$content['alink']['tr'][$key]	= render_cnt_template($content['alink']['tr'][$key], 'MENUTITLE', html($row['article_menutitle']));
+					$content['alink']['tr'][$key]	= render_cnt_template($content['alink']['tr'][$key], 'TITLE', html($row['article_title']));
+					$content['alink']['tr'][$key]	= render_cnt_template($content['alink']['tr'][$key], 'SUBTITLE', html($row['article_subtitle']));
 					$content['alink']['tr'][$key]	= render_cnt_date($content['alink']['tr'][$key], $row[ $content['alink']['date_basis'] ], phpwcms_strtotime($row['article_begin']), phpwcms_strtotime($row['article_end']));
 					$content['alink']['tr'][$key]	= render_cnt_template($content['alink']['tr'][$key], 'PRIO', empty($row['article_priorize']) ? '' : $row['article_priorize']);
 
@@ -414,8 +414,8 @@ if((is_array($content['alink']['alink_id']) && count($content['alink']['alink_id
 
 								if($thumb_image != false) {
 				
-									$content['alink']['caption'][3] = empty($content['alink']['caption'][3]) ? '' : ' title="'.html_specialchars($content['alink']['caption'][3]).'"';
-									$content['alink']['caption'][1] = html_specialchars($content['alink']['caption'][1]);
+									$content['alink']['caption'][3] = empty($content['alink']['caption'][3]) ? '' : ' title="'.html($content['alink']['caption'][3]).'"';
+									$content['alink']['caption'][1] = html($content['alink']['caption'][1]);
 				
 									$thumb_img = '<img src="'.PHPWCMS_IMAGES . $thumb_image[0] .'" border="0" '.$thumb_image[3].' alt="'.$content['alink']['caption'][1].'"'.$content['alink']['caption'][3].' />';
 				
@@ -443,7 +443,7 @@ if((is_array($content['alink']['alink_id']) && count($content['alink']['alink_id
 						);
 						
 						// Image Caption
-						$content['alink']['tr'][$key]	= render_cnt_template($content['alink']['tr'][$key], 'CAPTION', empty($row['article_image']['list_caption']) ? '' : html_specialchars($row['article_image']['list_caption']));
+						$content['alink']['tr'][$key]	= render_cnt_template($content['alink']['tr'][$key], 'CAPTION', empty($row['article_image']['list_caption']) ? '' : html($row['article_image']['list_caption']));
 					
 					}
 					
@@ -483,7 +483,7 @@ if((is_array($content['alink']['alink_id']) && count($content['alink']['alink_id
 					$content['alink']['tr'][$key]	= render_cnt_template($content['alink']['tr'][$key], 'ARTICLELINK', $row['article_morelink'] ? 'index.php?'.setGetArticleAid($row) : '');
 					
 					// article category
-					$content['alink']['tr'][$key]	= render_cnt_template($content['alink']['tr'][$key], 'CATEGORY', html_specialchars($content['struct'][ $row['article_cid'] ]['acat_name']));
+					$content['alink']['tr'][$key]	= render_cnt_template($content['alink']['tr'][$key], 'CATEGORY', html($content['struct'][ $row['article_cid'] ]['acat_name']));
 					
 					// article class based on keyword *CSS-classname*
 					$row['article_class'] = '';
@@ -517,8 +517,8 @@ if((is_array($content['alink']['alink_id']) && count($content['alink']['alink_id
 	$content['alink'] = render_cnt_template($content['alink']['alink_template'], 'TEASER', $content['alink']['teaser']);
 	
 	// render title
-	$content['alink'] = render_cnt_template($content['alink'], 'TITLE', html_specialchars($crow['acontent_title']));
-	$content['alink'] = render_cnt_template($content['alink'], 'SUBTITLE', html_specialchars($crow['acontent_subtitle']));
+	$content['alink'] = render_cnt_template($content['alink'], 'TITLE', html($crow['acontent_title']));
+	$content['alink'] = render_cnt_template($content['alink'], 'SUBTITLE', html($crow['acontent_subtitle']));
 	
 	$CNT_TMP .= $content['alink'];
 	

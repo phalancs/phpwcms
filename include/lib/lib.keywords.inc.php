@@ -33,7 +33,7 @@ $BE['HEADER'][]  = getJavaScriptSourceLink('include/js/lib.keyword.js');
 
 function backend_list_keywords() {
 
-	$list		 = '<form name="keywordListing" action="'.html_specialchars(BE_CURRENT_URL).'" method="post">' . LF;
+	$list		 = '<form name="keywordListing" action="'.html(BE_CURRENT_URL).'" method="post">' . LF;
 	$list		.= LF . '<table cellspacing="0" cellpadding="0" border="0" class="listingTable">' . LF;
 	$list		.= '	<tr>' . LF;
 	$list		.= '		<th class="checkbox">All</th>' . LF;
@@ -53,7 +53,7 @@ function backend_list_keywords() {
 	
 		$list	.= '	<tr'.$aclass.'>' . LF;
 		$list	.= '		<td class="checkbox"><input type="checkbox" value="1" name="check['.$value['keyword_id'].']" id="check_'.$value['keyword_id'].'" /></td>' . LF;
-		$list	.= '		<td class="entry">' . html_specialchars($value['keyword_name']) . '</td>' . LF;
+		$list	.= '		<td class="entry">' . html($value['keyword_name']) . '</td>' . LF;
 		$list	.= '		<td class="actions"><button type="button" onclick="keyword_submit_edit(this, '.$value['keyword_id'].');">Edit</button></td>' .LF;
 		$list	.= '	</tr>' . LF;
 		
@@ -131,12 +131,12 @@ function backend_edit_keywords() {
 	
 	if(!$keyword) return '<p>No keyword could be found for the given ID</p>';
 	
-	$list		.= '<form name="keywordEditing" action="'.html_specialchars(BE_CURRENT_URL).'" method="post">' . LF;
+	$list		.= '<form name="keywordEditing" action="'.html(BE_CURRENT_URL).'" method="post">' . LF;
 	
 	// edit values
 	$list		.= '<div class="inputText">';
 	$list		.= '<label for="keyword_name">Keyword name:</label>';
-	$list		.= '<input type="text" name="keyword_name" id="keyword_name" value="'.html_specialchars($keyword[0]['keyword_name']).'" />';
+	$list		.= '<input type="text" name="keyword_name" id="keyword_name" value="'.html($keyword[0]['keyword_name']).'" />';
 	$list		.= '</div>' . LF;
 
 	$list		.= '<div class="inputButton">';

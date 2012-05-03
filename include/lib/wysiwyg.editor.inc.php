@@ -62,7 +62,7 @@ if($wysiwyg_editor['editor'] == 2) {
 	
 	// simple textarea - no WYSIWYG editor
 	echo '<textarea name="'.$wysiwyg_editor['field'].'" rows="'.$wysiwyg_editor['rows'].'" id="'.$wysiwyg_editor['field'].'">';
-	echo html_specialchars($wysiwyg_editor['value']).'</textarea>';
+	echo html($wysiwyg_editor['value']).'</textarea>';
 	echo '<script type="text/javascript">
 		var phpwcms_ckeditor_config = "'.PHPWCMS_URL.TEMPLATE_PATH.'config/ckeditor/";
 		CKEDITOR.replace("'.$wysiwyg_editor['field'].'", {
@@ -85,7 +85,7 @@ if($wysiwyg_editor['editor'] == 2) {
 	echo '<textarea name="'.$wysiwyg_editor['field'].'" rows="'.$wysiwyg_editor['rows'];
 	echo '" class="v12" id="'.$wysiwyg_editor['field'].'" ';
 	echo 'style="width:'.$wysiwyg_editor['width'].';height:'.$wysiwyg_editor['height'].';">';
-	echo html_specialchars($wysiwyg_editor['value']).'</textarea>';
+	echo html($wysiwyg_editor['value']).'</textarea>';
 
 }
 

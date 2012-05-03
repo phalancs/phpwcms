@@ -141,7 +141,7 @@ if($_entry['pages_total'] > 1) {
 				<td><input type="text" name="filter" id="filter" size="10" value="<?php 
 				
 				if(isset($_POST['filter']) && is_array($_POST['filter']) ) {
-					echo html_specialchars(implode(' ', $_POST['filter']));
+					echo html(implode(' ', $_POST['filter']));
 				}
 				
 				?>" class="textinput" style="margin:0 2px 0 0;width:110px;text-align:left;" title="filter results" /></td>
@@ -187,7 +187,7 @@ foreach($data as $row) {
 	echo '&nbsp;</td>';
 		
 	echo '<td class="tdbottom3 tdtop3"><a href="';
-	echo html_specialchars($row['referrer']).'" target="_blank">'.html_specialchars($row['domain']);
+	echo html($row['referrer']).'" target="_blank">'.html($row['domain']);
 	echo '</a></td>';
 	
 	echo '<td class="tdbottom3 tdtop3" align="center">&nbsp;';
@@ -196,7 +196,7 @@ foreach($data as $row) {
 
 	
 	echo '<td class="tdbottom3 tdtop3">';
-	echo html_specialchars(PHPWCMS_CHARSET != 'utf-8' && phpwcms_seems_utf8($row['query']) ? makeCharsetConversion($row['query'], 'utf-8', PHPWCMS_CHARSET, false) : $row['query']);
+	echo html(PHPWCMS_CHARSET != 'utf-8' && phpwcms_seems_utf8($row['query']) ? makeCharsetConversion($row['query'], 'utf-8', PHPWCMS_CHARSET, false) : $row['query']);
 	echo '</td>';
 
 	echo "</tr>\n";

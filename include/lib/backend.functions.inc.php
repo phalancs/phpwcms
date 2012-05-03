@@ -51,36 +51,14 @@ function forward_to($to, $link, $time=2500) { //Javascript forwarding
 	if($to) echo "<script type=\"text/javascript\">\n setTimeout(\"document.location.href='".$link."'\", ".(intval($time))."); \n</script>\n";
 }
 
-function subnavtext($text, $link, $is, $should, $getback=1, $js='') {
+function subnavtext($text='', $link='', $is='', $should='', $attribute='') {
 	//generate subnavigation based on text
-	$id = "subnavid".randpassword(5);
-	$sn = '';
+	$sn  = '					<li';
 	if($is == $should) {
-		$sn .= '<tr><td><img src="include/img/subnav/subnav_B.gif" width="15" height="13" border="0" alt="" /></td>';	
-		$sn .= '<td class="subnavactive"><a href="'.$link.'">'.$text.'</a></td></tr>';
-	} else {
-		$sn .= "<tr><td><img name=\"".$id."\" src=\"include/img/subnav/subnav_A.gif\" width=\"15\" height=\"13\" border=\"0\" alt=\"\" /></td>";
-		$sn .= "<td class=\"subnavinactive\"><a href=\"".$link."\" ".$js;
-		$sn .= "onMouseOver=\"".$id.".src='include/img/subnav/subnav_B.gif'\" onMouseOut=\"".$id;
-		$sn .= ".src='include/img/subnav/subnav_A.gif'\">".$text."</a></td></tr>";
+		$sn .= ' class="active"';
 	}
-	$sn .= "\n";
-	if(!$getback) { 
-		return $sn; 
-	} else {
-		echo $sn;
-	}
-}
-
-function subnavtextext($text, $link, $target='_blank', $getback=1) {
-	//generate subnavigation based on text and links to new page
-	$id  = 'subnavid'.randpassword(5);
-	$sn  = '<tr><td><img src="include/img/subnav/subnav_A.gif" width="15" height="13" border="0" name="'.$id.'" alt="" /></td>';	
-	$sn .= '<td class="subnavinactive"><a href="'.$link.'" target="'.$target.'" ';
-	$sn .= "onMouseOver=\"".$id.".src='include/img/subnav/subnav_B.gif'\" onMouseOut=\"".$id.".src='include/img/subnav/subnav_A.gif'\"";
-	$sn .= '>'.$text.'</a></td></tr>';
-	$sn .= "\n";
-	if(!$getback) { return $sn; } else { echo $sn; }
+	$sn .= '><a href="'.$link.'" title="'.$text.'"' . $attribute . '>'.$text.'</a></li>' . LF;
+	return $sn;
 }
 
 function subnavback($text, $link, $h_before=0, $h_after=0) {
@@ -514,7 +492,7 @@ function show_status_message($return_status=false) {
 		$status = '';
 	} else {
 		$status  = '<div class="status_message_' . $_SESSION['system_status']['type'] .'">';
-		$status .= nl2br( trim( html_specialchars($_SESSION['system_status']['msg']) ) ) . '</div>';
+		$status .= nl2br( trim( html($_SESSION['system_status']['msg']) ) ) . '</div>';
 		$_SESSION['system_status']['msg'] = '';
 	}
 	if($return_status) {

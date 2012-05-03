@@ -221,7 +221,7 @@ if(!empty($crow["acontent_template"]) && is_file(PHPWCMS_TEMPLATE.'inc_cntpart/f
 		} else {
 		
 			$_loginData['template']	= $_loginData['logged_in'];
-			$_loginData['template']	= str_replace('{LOGIN}', html_specialchars( $_SESSION[ $_loginData['session_key'] ] ), $_loginData['template']);
+			$_loginData['template']	= str_replace('{LOGIN}', html( $_SESSION[ $_loginData['session_key'] ] ), $_loginData['template']);
 	
 		}
 	
@@ -235,12 +235,12 @@ if(!empty($crow["acontent_template"]) && is_file(PHPWCMS_TEMPLATE.'inc_cntpart/f
 	} elseif(isset($_POST['feReminder']) || isset($_getVar['profile_reminder'])) {
 		
 		$_loginData['template'] = render_cnt_template($_loginData['reminder'], 'ERROR', ($_loginData['error'] ? 'login/email wrong' : '') );
-		$_loginData['template'] = render_cnt_template($_loginData['template'], 'REMINDER', html_specialchars($_loginData['remind_data']) );
+		$_loginData['template'] = render_cnt_template($_loginData['template'], 'REMINDER', html($_loginData['remind_data']) );
 	
 	} else {
 	
 		$_loginData['template'] = render_cnt_template($_loginData['template'], 'ERROR', ($_loginData['error'] ? 'login/pass wrong' : '') );
-		$_loginData['template'] = render_cnt_template($_loginData['template'], 'LOGIN', html_specialchars($_loginData['login']));
+		$_loginData['template'] = render_cnt_template($_loginData['template'], 'LOGIN', html($_loginData['login']));
 		$_loginData['template'] = render_cnt_template($_loginData['template'], 'PASSWORD', '');
 		$_loginData['template'] = render_cnt_template($_loginData['template'], 'REMEMBER', ($_loginData['remember'] ? ' checked="checked"' : '') );
 	

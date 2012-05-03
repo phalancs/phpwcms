@@ -20,8 +20,8 @@
    This copyright notice MUST APPEAR in all copies of the script!
 *************************************************************************************/
 
-define('PHPWCMS_VERSION',		'2.0.0');
-define('PHPWCMS_RELEASE_DATE',	'2012/05/02');
-define('PHPWCMS_REVISION',		'482');
+define('PHPWCMS_VERSION',		'2.0.0-dev');
+define('PHPWCMS_RELEASE_DATE',	'2012/05/04');
+define('PHPWCMS_REVISION',		'483');
 
 ?>

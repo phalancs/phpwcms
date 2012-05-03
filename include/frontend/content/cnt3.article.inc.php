@@ -35,7 +35,7 @@ $CNT_TMP .= headline($crow["acontent_title"], $crow["acontent_subtitle"], $templ
 list($link["link"], $link["target"]) = explode(" ", $crow["acontent_redirect"]);
 $CNT_TMP .= $template_default["article"]["link_email_before"];
 $CNT_TMP .= "<a href=\"".$link["link"]."\"".(($link["target"])?" target=\"".$link["target"]."\"":"").">";
-$CNT_TMP .= html_specialchars(trim(str_replace("mailto:", "", $link["link"])))."</a>";
+$CNT_TMP .= html(trim(str_replace("mailto:", "", $link["link"])))."</a>";
 $CNT_TMP .= $template_default["article"]["link_email_after"];
 									
 ?>

@@ -38,14 +38,14 @@ if (!defined('PHPWCMS_ROOT')) {
 
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BL['be_cnt_last_edited']  ?>:&nbsp;</td>
-		<td class="v10"><?php echo html_specialchars(date($BL['be_fprivedit_dateformat'], strtotime($glossary['data']['glossary_changed']))) ?></td>
+		<td class="v10"><?php echo html(date($BL['be_fprivedit_dateformat'], strtotime($glossary['data']['glossary_changed']))) ?></td>
 	</tr>
 	
 	<?php if(!empty($glossary['data']['glossary_created'])) { ?>
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BL['be_fprivedit_created']  ?>:&nbsp;</td>
-		<td class="v10"><?php echo html_specialchars(date($BL['be_fprivedit_dateformat'], strtotime($glossary['data']['glossary_created']))) ?></td>
+		<td class="v10"><?php echo html(date($BL['be_fprivedit_dateformat'], strtotime($glossary['data']['glossary_created']))) ?></td>
 	</tr>
 	
 	<?php } ?>
@@ -59,7 +59,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		//error class
 		if(!empty($glossary['error']['glossary_title'])) echo ' errorInputText';
 		
-		?>" style="width:400px;" value="<?php echo html_specialchars($glossary['data']['glossary_title']) ?>" size="30" maxlength="1000" /></td>
+		?>" style="width:400px;" value="<?php echo html($glossary['data']['glossary_title']) ?>" size="30" maxlength="1000" /></td>
 	</tr>
 	
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
@@ -71,14 +71,14 @@ if (!defined('PHPWCMS_ROOT')) {
 		//error class
 		if(!empty($glossary['error']['glossary_keyword'])) echo ' errorInputText';
 		
-		?>" style="width:400px;" value="<?php echo html_specialchars($glossary['data']['glossary_keyword']) ?>" size="30" maxlength="200" /></td>
+		?>" style="width:400px;" value="<?php echo html($glossary['data']['glossary_keyword']) ?>" size="30" maxlength="200" /></td>
 	</tr>	
 	
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['glossary_token'] ?>:&nbsp;</td>
-		<td><input name="glossary_tag" type="text" id="glossary_tag" class="f11" style="width:400px;" value="<?php echo html_specialchars($glossary['data']['glossary_tag']) ?>" size="30" maxlength="220" /></td>
+		<td><input name="glossary_tag" type="text" id="glossary_tag" class="f11" style="width:400px;" value="<?php echo html($glossary['data']['glossary_tag']) ?>" size="30" maxlength="220" /></td>
 	</tr>
 	
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>

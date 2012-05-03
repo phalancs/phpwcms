@@ -275,7 +275,7 @@ function aporeplace($string_to_convert="") {
 	return $string_to_convert;
 }
 
-function html_specialchars($h="") {
+function html($h="") {
 	//used to replace the htmlspecialchars original php function
 	//not compatible with many internation chars like turkish, polish
 	$h = preg_replace("/&(?!#[0-9]+;)/s", '&amp;', $h );

@@ -166,9 +166,9 @@ if($image['template']) {
 			// now try to build caption and if neccessary add alt to image or set external link for image
 			$caption	= getImageCaption($image['images'][$key][6]);
 			// set caption and ALT Image Text for imagelist
-			$capt_cur	= html_specialchars($caption[0]);
-			$caption[3] = empty($caption[3]) ? '' : ' title="'.html_specialchars($caption[3]).'"'; //title
-			$caption[1] = html_specialchars(empty($caption[1]) ? $image['images'][$key][1] : $caption[1]);
+			$capt_cur	= html($caption[0]);
+			$caption[3] = empty($caption[3]) ? '' : ' title="'.html($caption[3]).'"'; //title
+			$caption[1] = html(empty($caption[1]) ? $image['images'][$key][1] : $caption[1]);
 
 			$list_img_temp  = '<img src="'.PHPWCMS_IMAGES.$thumb_image[0].'" ';
 			
@@ -272,7 +272,7 @@ if($image['template']) {
 			$img_a = str_replace('{IMGID}', $key, $img_a);
 			$img_a = str_replace('{IMAGE_ID}', $image['images'][$key][0], $img_a);
 			$img_a = str_replace('{IMAGE_HASH}', $image['images'][$key][2], $img_a);
-			$img_a = str_replace('{IMGNAME}', html_specialchars($image['images'][$key][1]), $img_a);
+			$img_a = str_replace('{IMGNAME}', html($image['images'][$key][1]), $img_a);
 			
 			// replace thumbnail and zoom image information
 			$img_a = str_replace('{THUMB_NAME}',	$img_thumb_name, $img_a);
@@ -340,8 +340,8 @@ if($image['template']) {
 	$image['template']  = str_replace('{THUMB_WIDTH_MAX}', $image['tmpl_thumb_width_max'], $image['template']);
 	$image['template']  = str_replace('{THUMB_HEIGHT_MAX}', $image['tmpl_thumb_height_max'], $image['template']);
 	$image['template']  = str_replace('{THUMB_COLUMNS}', $image['col'], $image['template']);
-	$image['template']  = render_cnt_template($image['template'], 'TITLE', html_specialchars($crow['acontent_title']));
-	$image['template']  = render_cnt_template($image['template'], 'SUBTITLE', html_specialchars($crow['acontent_subtitle']));
+	$image['template']  = render_cnt_template($image['template'], 'TITLE', html($crow['acontent_title']));
+	$image['template']  = render_cnt_template($image['template'], 'SUBTITLE', html($crow['acontent_subtitle']));
 	$image['template']  = render_cnt_template($image['template'], 'TEXT', $crow['acontent_text']);
 	
 	$CNT_TMP .= $image['template'];

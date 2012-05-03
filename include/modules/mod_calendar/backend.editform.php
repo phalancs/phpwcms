@@ -39,14 +39,14 @@ initMootoolsAutocompleter();
 
 	<tr> 
 		<td align="right" class="chatlist" nowrap="nowrap"><?php echo $BL['be_cnt_last_edited']  ?>:&nbsp;</td>
-		<td class="v10"><?php echo html_specialchars(date($BL['be_fprivedit_dateformat'], strtotime($plugin['data']['calendar_changed']))) ?></td>
+		<td class="v10"><?php echo html(date($BL['be_fprivedit_dateformat'], strtotime($plugin['data']['calendar_changed']))) ?></td>
 	</tr>
 	
 	<?php if(!empty($plugin['data']['calendar_created'])) { ?>
 	
 	<tr> 
 		<td align="right" class="chatlist" nowrap="nowrap"><?php echo $BL['be_fprivedit_created']  ?>:&nbsp;</td>
-		<td class="v10"><?php echo html_specialchars(date($BL['be_fprivedit_dateformat'], strtotime($plugin['data']['calendar_created']))) ?></td>
+		<td class="v10"><?php echo html(date($BL['be_fprivedit_dateformat'], strtotime($plugin['data']['calendar_created']))) ?></td>
 	</tr>
 	
 	<?php } ?>
@@ -60,7 +60,7 @@ initMootoolsAutocompleter();
 		//error class
 		if(!empty($plugin['error']['calendar_title'])) echo ' errorInputText';
 		
-		?>" value="<?php echo html_specialchars($plugin['data']['calendar_title']) ?>" size="30" maxlength="250" /></td>
+		?>" value="<?php echo html($plugin['data']['calendar_title']) ?>" size="30" maxlength="250" /></td>
 	</tr>
 	
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="8" /></td></tr>
@@ -83,7 +83,7 @@ initMootoolsAutocompleter();
 		//error class
 		if(!empty($plugin['error']['calendar_start'])) echo ' errorInputText';
 		
-		?>" style="width:100px;" value="<?php echo html_specialchars($plugin['data']['calendar_start_date']) ?>" size="30" /></td>
+		?>" style="width:100px;" value="<?php echo html($plugin['data']['calendar_start_date']) ?>" size="30" /></td>
 		<td><script type="text/javascript">
 		function aStart(date, month, year) {
 			getFieldById('calendar_start_date').value = subrstr('00' + date, 2) + '<?php echo $BLM['date_delimiter'] ?>' + subrstr('00' + month, 2) + '<?php echo $BLM['date_delimiter'] ?>' + year;
@@ -92,7 +92,7 @@ initMootoolsAutocompleter();
 		calStart.setMonthCombo(false);
 		calStart.setYearCombo(false);
 		</script>&nbsp;</td>
-		<td id="endDate2"><input name="calendar_start_time" type="text" id="calendar_start_time" class="v12" style="width:80px;" value="<?php echo html_specialchars($plugin['data']['calendar_start_time']) ?>" size="30" /></td>
+		<td id="endDate2"><input name="calendar_start_time" type="text" id="calendar_start_time" class="v12" style="width:80px;" value="<?php echo html($plugin['data']['calendar_start_time']) ?>" size="30" /></td>
 		
 		<td id="endDate3">&nbsp;</td>
 		<td><input type="checkbox" name="calendar_allday" id="calendar_allday" value="1"<?php is_checked(1, $plugin['data']['calendar_allday']) ?> onchange="setCalendarAllDay();" /></td>
@@ -121,7 +121,7 @@ initMootoolsAutocompleter();
 		//error class
 		if(!empty($plugin['error']['calendar_end'])) echo ' errorInputText';
 		
-		?>" style="width:100px;" value="<?php echo html_specialchars($plugin['data']['calendar_end_date']) ?>" size="30" /></td>
+		?>" style="width:100px;" value="<?php echo html($plugin['data']['calendar_end_date']) ?>" size="30" /></td>
 		<td><script type="text/javascript">
 		function aEnd(date, month, year) {
 			getFieldById('calendar_end_date').value = subrstr('00' + date, 2) + '<?php echo $BLM['date_delimiter'] ?>' + subrstr('00' + month, 2) + '<?php echo $BLM['date_delimiter'] ?>' + year;
@@ -130,7 +130,7 @@ initMootoolsAutocompleter();
 		calEnd.setMonthCombo(false);
 		calEnd.setYearCombo(false);
 		</script>&nbsp;</td>
-		<td><input name="calendar_end_time" type="text" id="calendar_end_time" class="v12" style="width:80px;" value="<?php echo html_specialchars($plugin['data']['calendar_end_time']) ?>" size="30" /></td>
+		<td><input name="calendar_end_time" type="text" id="calendar_end_time" class="v12" style="width:80px;" value="<?php echo html($plugin['data']['calendar_end_time']) ?>" size="30" /></td>
 		
 			</tr>
 		</table></td>
@@ -169,7 +169,7 @@ initMootoolsAutocompleter();
 			</tr>
 		
 			<tr>
-				<td><input name="calendar_range_start" type="text" id="calendar_range_start" class="v12" style="width:100px;" value="<?php echo html_specialchars($plugin['data']['calendar_rangestart']) ?>" size="30" /></td>
+				<td><input name="calendar_range_start" type="text" id="calendar_range_start" class="v12" style="width:100px;" value="<?php echo html($plugin['data']['calendar_rangestart']) ?>" size="30" /></td>
 				<td><script type="text/javascript">
 					function rStart(date, month, year) {
 						getFieldById('calendar_range_start').value = subrstr('00' + date, 2) + '<?php echo $BLM['date_delimiter'] ?>' + subrstr('00' + month, 2) + '<?php echo $BLM['date_delimiter'] ?>' + year;
@@ -179,7 +179,7 @@ initMootoolsAutocompleter();
 					rangeStart.setYearCombo(false);
 					</script>&nbsp;</td>
 				<td class="chatlist">&nbsp;<?php echo $BLM['till'] ?>:&nbsp;</td>
-				<td><input name="calendar_range_end" type="text" id="calendar_range_end" class="v12" style="width:100px;" value="<?php echo html_specialchars($plugin['data']['calendar_rangeend']) ?>" size="30" /></td>
+				<td><input name="calendar_range_end" type="text" id="calendar_range_end" class="v12" style="width:100px;" value="<?php echo html($plugin['data']['calendar_rangeend']) ?>" size="30" /></td>
 				<td><script type="text/javascript">
 					function rEnd(date, month, year) {
 						getFieldById('calendar_range_end').value = subrstr('00' + date, 2) + '<?php echo $BLM['date_delimiter'] ?>' + subrstr('00' + month, 2) + '<?php echo $BLM['date_delimiter'] ?>' + year;
@@ -198,21 +198,21 @@ initMootoolsAutocompleter();
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['where'] ?>:&nbsp;</td>
-		<td><input name="calendar_where" type="text" id="calendar_where" class="v12" style="width:375px;" value="<?php echo html_specialchars($plugin['data']['calendar_where']) ?>" size="30" maxlength="220" /></td>
+		<td><input name="calendar_where" type="text" id="calendar_where" class="v12" style="width:375px;" value="<?php echo html($plugin['data']['calendar_where']) ?>" size="30" maxlength="220" /></td>
 	</tr>
 	
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BLM['calendar_token'] ?>:&nbsp;</td>
-		<td><input name="calendar_tag" type="text" id="calendar_tag" class="v12" style="width:375px;" value="<?php echo html_specialchars(trim($plugin['data']['calendar_tag'])) ?>" size="30" maxlength="255" /></td>
+		<td><input name="calendar_tag" type="text" id="calendar_tag" class="v12" style="width:375px;" value="<?php echo html(trim($plugin['data']['calendar_tag'])) ?>" size="30" maxlength="255" /></td>
 	</tr>
 
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BL['be_profile_label_lang'] ?>:&nbsp;</td>
-		<td><input name="calendar_lang" type="text" id="calendar_lang" class="v12" style="width:100px;" value="<?php echo html_specialchars(trim($plugin['data']['calendar_lang'])) ?>" size="30" maxlength="50" /></td>
+		<td><input name="calendar_lang" type="text" id="calendar_lang" class="v12" style="width:100px;" value="<?php echo html(trim($plugin['data']['calendar_lang'])) ?>" size="30" maxlength="50" /></td>
 	</tr>
 
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
@@ -223,14 +223,14 @@ initMootoolsAutocompleter();
 	</tr>
 	<tr>
 		<td>&nbsp;</td>
-		<td><input name="calendar_refid" type="text" id="calendar_refid" class="v12" style="width:375px;margin-top:3px;" value="<?php echo empty($plugin['data']['calendar_refid']) ? '' : html_specialchars($plugin['data']['calendar_refid']) ?>" size="30" maxlength="255" /></td>
+		<td><input name="calendar_refid" type="text" id="calendar_refid" class="v12" style="width:375px;margin-top:3px;" value="<?php echo empty($plugin['data']['calendar_refid']) ? '' : html($plugin['data']['calendar_refid']) ?>" size="30" maxlength="255" /></td>
 	</tr>
 	
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist tdtop4"><?php echo $BLM['calendar_teasertext'] ?>:&nbsp;</td>
-		<td><textarea name="calendar_teaser" id="calendar_teaser" class="v12 width375" rows="5"><?php echo html_specialchars($plugin['data']['calendar_teaser']) ?></textarea></td>
+		<td><textarea name="calendar_teaser" id="calendar_teaser" class="v12 width375" rows="5"><?php echo html($plugin['data']['calendar_teaser']) ?></textarea></td>
 	</tr>
 	
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15" /></td></tr>
@@ -266,7 +266,7 @@ initMootoolsAutocompleter();
 		<td>
 		<table cellpadding="0" cellspacing="0" border="0" summary="">
 			<tr>
-				<td><input type="text" name="cnt_image_name" id="cnt_image_name" value="<?php echo html_specialchars($plugin['data']['calendar_image']['name']) ?>" class="v12 width300" maxlength="250" /></td>
+				<td><input type="text" name="cnt_image_name" id="cnt_image_name" value="<?php echo html($plugin['data']['calendar_image']['name']) ?>" class="v12 width300" maxlength="250" /></td>
 				<td style="padding:2px 0 0 5px" width="100">
 					<a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=7');return false;"><img src="include/img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a>
 					<a href="#" title="<?php echo $BL['be_cnt_delimage'] ?>" onclick="setImgIdName();return false;"><img src="include/img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a>
@@ -300,14 +300,14 @@ initMootoolsAutocompleter();
 	<tr>
 		<td align="right" class="chatlist tdtop4"><?php echo $BL['be_cnt_caption'] ?>:&nbsp;</td>
 		<td class="tdbottom4">
-		<textarea name="cnt_image_caption" id="cnt_image_caption" class="v12 width350" rows="2"><?php echo html_specialchars($plugin['data']['calendar_image']['caption']) ?></textarea>				
+		<textarea name="cnt_image_caption" id="cnt_image_caption" class="v12 width350" rows="2"><?php echo html($plugin['data']['calendar_image']['caption']) ?></textarea>				
 		</td>
 	</tr>
 	
 	
 	<tr>
 		<td align="right" class="chatlist"><?php echo $BL['be_profile_label_website'] ?>:&nbsp;</td>
-		<td><input type="text" name="cnt_image_link" id="cnt_image_link" class="v12 width350" maxlength="500" value="<?php echo html_specialchars($plugin['data']['calendar_image']['link']) ?>" /></td>
+		<td><input type="text" name="cnt_image_link" id="cnt_image_link" class="v12 width350" maxlength="500" value="<?php echo html($plugin['data']['calendar_image']['link']) ?>" /></td>
 	</tr>
 
 	<tr><td colspan="2" class="rowspacer7x7"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>

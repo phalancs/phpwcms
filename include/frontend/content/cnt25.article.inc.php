@@ -457,7 +457,7 @@ if(isset($fmp_data['fmp_template'])) {
 		$fmp_data['video_tag']['header'] .= 'preload="auto">';
 		
 		foreach($fmp_data['video'] as $param_name => $param_value) {		
-			$fmp_data['video_tag'][] = '	<source src="'.html_specialchars($param_value).'" type="'.$param_name.'" />';
+			$fmp_data['video_tag'][] = '	<source src="'.html($param_value).'" type="'.$param_name.'" />';
 		}
 		
 		$fmp_data['video_tag']['fallback'] = $fmp_data['fallback'];
@@ -488,8 +488,8 @@ if(isset($fmp_data['fmp_template'])) {
 	
 
 	// add rendering result to current listing
-	$fmp_data['fmp_template']  = render_cnt_template($fmp_data['fmp_template'], 'TITLE',    html_specialchars($crow['acontent_title']));
-	$fmp_data['fmp_template']  = render_cnt_template($fmp_data['fmp_template'], 'SUBTITLE', html_specialchars($crow['acontent_subtitle']));
+	$fmp_data['fmp_template']  = render_cnt_template($fmp_data['fmp_template'], 'TITLE',    html($crow['acontent_title']));
+	$fmp_data['fmp_template']  = render_cnt_template($fmp_data['fmp_template'], 'SUBTITLE', html($crow['acontent_subtitle']));
 	$CNT_TMP				  .= str_replace('{PLAYER}', '<div id="'.$fmp_data['id'].'" class="video-js-box'.$fmp_data['fmp_set_skin_html5'].'">'. LF . $fmp_data['fallback'] . LF . '</div>', $fmp_data['fmp_template']);
 
 }

@@ -40,7 +40,7 @@ if($_SESSION["wcs_user"] != "guest") { //Prüfung für Gastzugang
 		$sql = "SELECT COUNT(usr_login) FROM ".DB_PREPEND."phpwcms_user WHERE usr_login='".aporeplace($new_username)."';"; 
 		if($result = mysql_query($sql, $db)) {
 			if($row = mysql_fetch_row($result)) {
-				if($row[0])	$err = str_replace('{VAL}', html_specialchars($new_username), $BL['be_profile_account_err1'])."\n";
+				if($row[0])	$err = str_replace('{VAL}', html($new_username), $BL['be_profile_account_err1'])."\n";
 			}
 			mysql_free_result($result);
 		}
@@ -56,7 +56,7 @@ if($_SESSION["wcs_user"] != "guest") { //Prüfung für Gastzugang
 	$new_email = slweg(trim($_POST["form_useremail"]));
 	if ($new_email != $_SESSION["wcs_user_email"]) {
 		if( !is_valid_email($new_email) ) {
-			$err .= str_replace('{VAL}', html_specialchars($new_email), $BL['be_profile_account_err4'])."\n";
+			$err .= str_replace('{VAL}', html($new_email), $BL['be_profile_account_err4'])."\n";
 		}
 	}
 	

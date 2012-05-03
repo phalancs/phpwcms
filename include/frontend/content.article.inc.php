@@ -163,7 +163,7 @@ if($result = mysql_query($sql, $db) or die("error while reading article datas"))
 		
 
 		// only copy the catname to a special var for multiple for use in any block
-		$content["cat"]					= html_specialchars($article["cat"]);
+		$content["cat"]					= html($article["cat"]);
 		$content["cat_id"]				= $aktion[0] = $row["article_cid"]; //set category ID to actual category value
 		$content["article_id"] 			= $row["article_id"];
 		$content["summary"]				= '';
@@ -212,7 +212,7 @@ if($result = mysql_query($sql, $db) or die("error while reading article datas"))
 			if($thumb_image != false) {
 			
 				$thumb_img  = '<img src="'.PHPWCMS_IMAGES . $thumb_image[0] .'" border="0" '.$thumb_image[3];
-				$thumb_img .= ' alt="'.html_specialchars($caption[1]).'" title="'.html_specialchars($caption[3]).'" />';
+				$thumb_img .= ' alt="'.html($caption[1]).'" title="'.html($caption[3]).'" />';
 				
 				$img_thumb_name		= $thumb_image[0];
 				$img_thumb_rel		= PHPWCMS_IMAGES.$thumb_image[0];
@@ -401,12 +401,12 @@ if($result = mysql_query($sql, $db) or die("error while reading article datas"))
 			
 			// check if TITLE should be hidden
 			if(!$row["article_notitle"]) {
-				$row["article_image"]['tmplfull'] = render_cnt_template($row["article_image"]['tmplfull'], 'TITLE', html_specialchars($row["article_title"]));
+				$row["article_image"]['tmplfull'] = render_cnt_template($row["article_image"]['tmplfull'], 'TITLE', html($row["article_title"]));
 			} else {
 				$row["article_image"]['tmplfull'] = replace_cnt_template($row["article_image"]['tmplfull'], 'TITLE', '');
 			}
-			$row["article_image"]['tmplfull'] = render_cnt_template($row["article_image"]['tmplfull'], 'SUB', html_specialchars($row["article_subtitle"]));
-			$row["article_image"]['tmplfull'] = render_cnt_template($row["article_image"]['tmplfull'], 'EDITOR', html_specialchars($row["article_username"]));
+			$row["article_image"]['tmplfull'] = render_cnt_template($row["article_image"]['tmplfull'], 'SUB', html($row["article_subtitle"]));
+			$row["article_image"]['tmplfull'] = render_cnt_template($row["article_image"]['tmplfull'], 'EDITOR', html($row["article_username"]));
 			
 			// when "hide summary" is enabled replace everything between [SUMMARY][/SUMMARY]
 			if(!$row["article_hidesummary"]) {
@@ -416,8 +416,8 @@ if($result = mysql_query($sql, $db) or die("error while reading article datas"))
 			}
 			
 			$row["article_image"]['tmplfull'] = render_cnt_template($row["article_image"]['tmplfull'], 'IMAGE', $thumb_img);
-			$row["article_image"]['tmplfull'] = render_cnt_template($row["article_image"]['tmplfull'], 'CAPTION', nl2br(html_specialchars($row["article_image"]["caption"])));
-			$row["article_image"]['tmplfull'] = render_cnt_template($row["article_image"]['tmplfull'], 'COPYRIGHT', html_specialchars($row["article_image"]["copyright"]));
+			$row["article_image"]['tmplfull'] = render_cnt_template($row["article_image"]['tmplfull'], 'CAPTION', nl2br(html($row["article_image"]["caption"])));
+			$row["article_image"]['tmplfull'] = render_cnt_template($row["article_image"]['tmplfull'], 'COPYRIGHT', html($row["article_image"]["copyright"]));
 			$row["article_image"]['tmplfull'] = render_cnt_date($row["article_image"]['tmplfull'], $content["article_date"], $row['article_livedate'], $row['article_killdate']);
 			$row["article_image"]['tmplfull'] = render_cnt_template($row["article_image"]['tmplfull'], 'ZOOMIMAGE', $popup_img);
 			
@@ -602,7 +602,7 @@ if($result = mysql_query($sql, $db) or die("error while reading article datas"))
 			foreach($trow as $tabkey => $tabitem) {
 				
 				$tabitem['id']		= 'tab-' . uri_sanitize(strtolower($tabitem['title'])) . $tab_counter;
-				$tabitem['title']	= html_specialchars($tabitem['title']);
+				$tabitem['title']	= html($tabitem['title']);
 				$tabitem['class']	= '';
 				
 				if($g['counter'] === 1) {

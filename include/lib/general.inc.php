@@ -78,10 +78,6 @@ function html_despecialchars($h='') {
 	return $h;
 }
 
-function trimhtml($h='') {
-	return html_specialchars(trim($h));
-}
-
 function list_country($c, $lang='') {
 	//Create the country list menu for forms with the given value selected
 	//$c = selected value
@@ -91,11 +87,11 @@ function list_country($c, $lang='') {
 	$country_list = '';
 	$country = getCountry($lang);
 	foreach($country as $key => $value) {
-		$country_list .= '	<option value="'.html_specialchars($key).'"';
+		$country_list .= '	<option value="'.html($key).'"';
 		if($key == $c) {
 			$country_list .= ' selected="selected"';
 		}
-		$country_list .= '>'.html_specialchars($value).'</option>' . LF;
+		$country_list .= '>'.html($value).'</option>' . LF;
 	}
 	return $country_list;
 }
@@ -435,7 +431,7 @@ function online_users($dbcon, $spacer="<br />", $wrap="<span class=\"useronline\
 	if($o = mysql_query("SELECT logged_user FROM ".DB_PREPEND."phpwcms_userlog WHERE logged_in=1", $dbcon)) {
 		while($uo = mysql_fetch_row($o)) {
 			$xo .= ($x) ? $spacer : "";
-			$xo .= html_specialchars($uo[0]);
+			$xo .= html($uo[0]);
 			$x++;
 		}
 		mysql_free_result($o);
@@ -557,7 +553,7 @@ function get_list_of_file_keywords() {
 	//else it returns false
 	if($result = mysql_query("SELECT * FROM ".DB_PREPEND."phpwcms_filekey")) {
 		while($row = mysql_fetch_assoc($result)) {
-			$file_key[intval($row["fkey_id"])] = html_specialchars($row["fkey_name"]);
+			$file_key[intval($row["fkey_id"])] = html($row["fkey_name"]);
 		}
 		mysql_free_result($result);
 	}
@@ -1044,10 +1040,10 @@ function dumpVar($var, $commented=false) {
 					echo "\n//-->\n";
 					return NULL;
 					break;
-		case 2:		return '<pre>'.html_entities(print_r($var, true)).'</pre>';
+		case 2:		return '<pre>'.html(print_r($var, true)).'</pre>';
 					break;
 		default: 	echo '<pre>';
-					echo html_entities(print_r($var, true));
+					echo html(print_r($var, true));
 					echo '</pre>';
 					return NULL;
 	}
@@ -1525,7 +1521,7 @@ function makeCharsetConversion($string='', $in_charset='utf-8', $out_charset='ut
 
 function doHtmlEntityPHPCleanUp($string, $charset) {
 
-	$string = html_entities($string);
+	$string = html($string);
 	return decode_entities($string);
 
 }
@@ -1867,7 +1863,7 @@ function saveUploadedFile($file, $target, $exttype='', $imgtype='', $rename=0, $
 	@umask(0);
 	if(!@move_uploaded_file($_FILES[$file]['tmp_name'], $target.$file_status['rename'])) {
 		if(!copy($_FILES[$file]['tmp_name'], $target.$file_status['rename'])) {
-			$file_status['error'] = 'Saving uploaded file <b>'.html_entities($file_status['name']).'</b> to <b>'.html_entities(str_replace(PHPWCMS_ROOT, '', $target.$file_status['rename'])).'</b> failed';
+			$file_status['error'] = 'Saving uploaded file <b>'.html($file_status['name']).'</b> to <b>'.html(str_replace(PHPWCMS_ROOT, '', $target.$file_status['rename'])).'</b> failed';
 			$file_status['error_num'] = 412;
 			@unlink($_FILES[$file]['tmp_name']);
 			return $file_status;

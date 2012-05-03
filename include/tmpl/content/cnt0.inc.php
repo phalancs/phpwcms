@@ -52,7 +52,7 @@ $tmpllist = get_tmpl_files(PHPWCMS_TEMPLATE.'inc_cntpart/plaintext');
 if(is_array($tmpllist) && count($tmpllist)) {
 	foreach($tmpllist as $val) {
 		$selected_val = (isset($content["template"]) && $val == $content["template"]) ? ' selected="selected"' : '';
-		$val = html_specialchars($val);
+		$val = html($val);
 		echo '	<option value="' . $val . '"' . $selected_val . '>' . $val . '</option>' . LF;
 	}
 }
@@ -95,7 +95,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 		} else {
 			
 			if($content["text"]{0} == LF || $content["text"]{0} == "\r") echo ' '; // keep 1st linebreak;
-			echo html_specialchars($content["text"]);
+			echo html($content["text"]);
 			
 		}
 	

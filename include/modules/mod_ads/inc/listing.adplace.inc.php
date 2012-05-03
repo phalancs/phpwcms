@@ -58,9 +58,9 @@ foreach($data as $row) {
 	echo '<tr'.( ($row_count % 2) ? ' class="adsAltRow"' : '' ).'>'.LF;
 	echo '	<td width="25" style="padding:2px 3px 2px 4px;"><img src="include/img/famfamfam/layout.gif" alt="'.$BLM['adplace'].'" /></td>'.LF;
 
-	echo '	<td width="50%">'.html_specialchars($row["adplace_title"])."</td>\n";
+	echo '	<td width="50%">'.html($row["adplace_title"])."</td>\n";
 	
-	echo '	<td class="listFormat" nowrap="nowrap">'.html_specialchars($row["adformat_title"])."</td>\n";
+	echo '	<td class="listFormat" nowrap="nowrap">'.html($row["adformat_title"])."</td>\n";
 	echo '	<td class="listFormat">{ADS_'.$row["adplace_id"]."}</td>\n";
 	echo '	<td class="listFormat">'.$row["adplace_width"].'x'.$row["adplace_height"]."&nbsp;</td>\n";
 	
@@ -79,7 +79,7 @@ foreach($data as $row) {
 		echo '<img src="include/img/button/trash_13x13_1.gif" border="0" alt="" class="inactive" />';
 	} else {
 		echo '<a href="'.MODULE_HREF.'&amp;adplace=1&amp;delete='.$row["adplace_id"];
-		echo '" title="delete: '.html_specialchars($row["adplace_title"]).'"';
+		echo '" title="delete: '.html($row["adplace_title"]).'"';
 		echo ' onclick="return confirm(\''.$BLM['delete_adplace'].js_singlequote($row["adplace_title"]).'\');">';
 		echo '<img src="include/img/button/trash_13x13_1.gif" border="0" alt="" /></a>';
 	}

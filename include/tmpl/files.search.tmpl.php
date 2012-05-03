@@ -112,7 +112,7 @@ if(isset($_POST["file_aktion"]) && intval($_POST["file_aktion"]) == 1) {
 				  	$zz=0;
 	  				foreach($search["error"] as $value) {
 						if($zz) echo "<br />";
-	  					echo html_specialchars($value);
+	  					echo html($value);
 						$zz++;
 	  				}
 	  ?></td>
@@ -124,7 +124,7 @@ if(isset($_POST["file_aktion"]) && intval($_POST["file_aktion"]) == 1) {
 		<td><table border="0" cellpadding="0" cellspacing="0" summary="">
 		  <tr>
 		    <td>
-		    <input name="file_search" type="text" class="v10" id="file_search" style="font-weight: bold; width: 300px;" value="<?php if(isset($_POST["file_search"])) echo html_specialchars(trim($_POST["file_search"])); ?>" size="40" maxlength="250" /><script language="JavaScript" type="text/javascript">
+		    <input name="file_search" type="text" class="v10" id="file_search" style="font-weight: bold; width: 300px;" value="<?php if(isset($_POST["file_search"])) echo html(trim($_POST["file_search"])); ?>" size="40" maxlength="250" /><script language="JavaScript" type="text/javascript">
 			<!--
 			document.searchfile.file_search.focus();
 			//-->
@@ -175,7 +175,7 @@ if(isset($search["result"])) {
 	if($file_result = mysql_query($file_sql, $db) or die ("error while listing files")) {
 		$file_durchlauf = 0;
 		while($file_row = mysql_fetch_array($file_result)) {
-			$filename = html_specialchars($file_row["f_name"]);
+			$filename = html($file_row["f_name"]);
 			if(!$file_durchlauf) { //Aufbau der Zeile zum Einflieﬂen der Filelisten-Tavbelle
 				echo "<tr bgcolor=\"#F5F8F9\"><td colspan=\"2\"><table width=\"538\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n"; 
 			} else {

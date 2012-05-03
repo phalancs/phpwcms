@@ -44,8 +44,8 @@ foreach($pagelayout as $var) {
 	$sql .= "WHERE pagelayout_id = ".$var['pagelayout_id'];
 	$upgrade = _dbQuery($sql, 'UPDATE');
 
-	echo html_specialchars($var['pagelayout_name']).': ';
-	echo $upgrade['AFFECTED_ROWS'] ? $upgrade['AFFECTED_ROWS'] : html_specialchars($sql);
+	echo html($var['pagelayout_name']).': ';
+	echo $upgrade['AFFECTED_ROWS'] ? $upgrade['AFFECTED_ROWS'] : html($sql);
 	echo LF;
 
 	$c++;

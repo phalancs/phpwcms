@@ -81,7 +81,7 @@ if(strpos($content['all'], $_form_entries['RT']) !== false) {
 		foreach($_form_entries_value as $_form_entries_key => $_form_entries_value1) {
 	
 			if(isset($_form_entries['SELECT'][$_form_entries_key])) {
-				$_form_entries['ENTRIES'][$_fc] = str_replace('{'.$_form_entries_key.'}', html_specialchars($_form_entries_value1), $_form_entries['ENTRIES'][$_fc]);
+				$_form_entries['ENTRIES'][$_fc] = str_replace('{'.$_form_entries_key.'}', html($_form_entries_value1), $_form_entries['ENTRIES'][$_fc]);
 			}
 	
 		}

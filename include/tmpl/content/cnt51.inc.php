@@ -76,7 +76,7 @@ if(is_array($imglist) && count($imglist)) {
 			$map_name = $content["map"]['image'];
 			$map_info = getimagesize(PHPWCMS_TEMPLATE.'inc_cntpart/map/map_img/'.$map_name);
 		}
-		$val = html_specialchars($val);
+		$val = html($val);
 		$g .= '<tr><td>';		
 		$g .= '<input type="radio" name="cmap_image" value="'.$val.'"'.$vals.' />&nbsp;';
 		$g .= '</td><td class="f11b">'.$val.'&nbsp;&nbsp;</td><td>';
@@ -126,7 +126,7 @@ if($map_selected) {
 				$content["location"]['entry']	= $map_row['map_entry'];
 			
 			}
-			$map_row['map_x'] = html_specialchars($map_row['map_x']);
+			$map_row['map_x'] = html($map_row['map_x']);
 			$map_list .= '<tr'.(($ck % 2) ? ' bgcolor="#FBFCFC"' : '').">\n";
 			$map_list .= '<td class="v09">'.$map_row['map_x'].'x'.$map_row['map_y']."</td>\n";
 			$map_list .= '<td class="v09" width="90%"><strong>'.$map_row['map_title']."</strong></td>\n";
@@ -176,16 +176,16 @@ if($map_selected) {
 <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3"></td></tr>
 <tr>
   <td align="right" class="chatlist"><?php echo $BL['be_cnt_map_title'] ?>:&nbsp;</td>
-  <td><input name="cmap_location_title" type="text" class="f11" style="width: 440px" value="<?php echo  empty($content['location']["title"]) ? '' : html_specialchars($content['location']["title"]) ?>" size="40" onChange="doMapChange();"></td>
+  <td><input name="cmap_location_title" type="text" class="f11" style="width: 440px" value="<?php echo  empty($content['location']["title"]) ? '' : html($content['location']["title"]) ?>" size="40" onChange="doMapChange();"></td>
 </tr>
 <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 <tr>
   <td align="right" class="chatlist"><?php echo $BL['be_profile_label_zip'] ?>:&nbsp;</td>
   <td><table border="0" cellpadding="0" cellspacing="0" summary="">
   <tr>
-  <td style="width:55px;"><input name="cmap_location_zip" type="text" class="f11" style="width: 55px" value="<?php echo  empty($content['location']["zip"]) ? '' : html_specialchars($content['location']["zip"]) ?>" size="8" onChange="doMapChange();"></td>
+  <td style="width:55px;"><input name="cmap_location_zip" type="text" class="f11" style="width: 55px" value="<?php echo  empty($content['location']["zip"]) ? '' : html($content['location']["zip"]) ?>" size="8" onChange="doMapChange();"></td>
   <td class="chatlist" align="right">&nbsp;&nbsp;<?php echo $BL['be_profile_label_city'] ?>:&nbsp;</td>
-  <td style="width:300px;"><input name="cmap_location_city" type="text" class="f11" style="width: 300px" value="<?php echo  empty($content['location']["city"]) ? '' : html_specialchars($content['location']["city"]) ?>" size="30" onChange="doMapChange();"></td>
+  <td style="width:300px;"><input name="cmap_location_city" type="text" class="f11" style="width: 300px" value="<?php echo  empty($content['location']["city"]) ? '' : html($content['location']["city"]) ?>" size="30" onChange="doMapChange();"></td>
   </tr>
   </table></td>
 </tr>
@@ -235,5 +235,5 @@ include(PHPWCMS_ROOT.'/include/lib/wysiwyg.editor.inc.php');
 <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="7"></td></tr>
 <tr>
   <td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="13"><?php echo $BL['be_admin_page_text'] ?>:&nbsp;</td>
-  <td valign="top"><textarea name="cmap_text" cols="40" rows="8" class="f11" style="width:440px"><?php echo  empty($content["map"]["text"]) ? '' : html_specialchars($content["map"]["text"]) ?></textarea></td>
+  <td valign="top"><textarea name="cmap_text" cols="40" rows="8" class="f11" style="width:440px"><?php echo  empty($content["map"]["text"]) ? '' : html($content["map"]["text"]) ?></textarea></td>
 </tr>

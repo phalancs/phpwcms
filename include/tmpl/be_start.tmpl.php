@@ -97,7 +97,7 @@ $_last10_article = _dbQuery($_asql_1);
 		echo '<tr'.( ($row_count % 2) ? ' bgcolor="#F3F5F8"' : '' ).' class="listrow" style="cursor:pointer" ';
 		echo 'onclick="document.location.href=\'phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;id='.$value['article_id'].'\'" title="'.$BL['be_func_struct_edit'].'">'.LF;
 		echo '	<td style="padding:1px 4px 1px 2px;"><img src="include/img/symbole/text_1.gif" alt="" /></td>'.LF;
-		echo '	<td width="80%"><strong>'.html_specialchars($value['article_title']).'</strong></td>'.LF;
+		echo '	<td width="80%"><strong>'.html($value['article_title']).'</strong></td>'.LF;
 		echo '	<td align="center" nowrap="nowrap">&nbsp;'.$value['article_date'].'&nbsp;</td>'.LF;
 		echo '	<td style="padding:3px;" nowrap="nowrap">';
 		echo '<img src="include/img/button/visible_12x13_'.$value["article_aktiv"].'.gif" alt="" border="0" style="margin-right:2px;" />';
@@ -171,7 +171,7 @@ $_last10_article = _dbQuery($_asql_1);
 		
 		$trenner = ($value['acontent_title'] && $value['acontent_subtitle']) ? '/' : '';
 		
-		echo '	<td width="80%"><strong>'.html_specialchars(getCleanSubString($value['acontent_title'].$trenner.$value['acontent_subtitle'], 27, '&#8230;')).'&nbsp;</strong></td>'.LF;
+		echo '	<td width="80%"><strong>'.html(getCleanSubString($value['acontent_title'].$trenner.$value['acontent_subtitle'], 27, '&#8230;')).'&nbsp;</strong></td>'.LF;
 		echo '	<td align="center" nowrap="nowrap">&nbsp;'.$value['acontent_changed'].'&nbsp;</td>'.LF;
 		
 		echo '	<td style="padding:3px;" nowrap="nowrap">';

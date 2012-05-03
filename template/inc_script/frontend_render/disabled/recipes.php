@@ -92,7 +92,7 @@ function listRecipeCategories($option) {
 	foreach($cat_all as $temp) {
 
 		$cat .= '	<li><a href="'.$base_link.'&amp;recipecat='.rawurlencode($temp).'" ';
-		$temp = html_specialchars($temp);
+		$temp = html($temp);
 		$cat .= 'title="'.$temp.'">'.$temp.'</a></li>' . LF;
 
 	}

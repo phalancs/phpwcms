@@ -67,14 +67,14 @@ if(isset($_POST['ecard_chooser'])) {
 														)
         					  )
 						);
-		$list_img_temp  = '<img src="'.PHPWCMS_IMAGES.$thumb_image[0].'" '.$thumb_image[3].' alt="'.html_specialchars($ecard['images'][$ecard["chooser"]][1]).'" />';
+		$list_img_temp  = '<img src="'.PHPWCMS_IMAGES.$thumb_image[0].'" '.$thumb_image[3].' alt="'.html($ecard['images'][$ecard["chooser"]][1]).'" />';
 
-		$ecard["send"] = str_replace('###ECARD_TITLE###', html_specialchars(chop($ecard["capt"][$ecard["chooser"]])), $ecard["send"]);
+		$ecard["send"] = str_replace('###ECARD_TITLE###', html(chop($ecard["capt"][$ecard["chooser"]])), $ecard["send"]);
 		$ecard["send"] = str_replace('###ECARD_IMAGE###', $list_img_temp, $ecard["send"]);
-		$ecard["send"] = str_replace('###RECIPIENT_NAME###', ($ecard["recipient_name"]) ? html_specialchars($ecard["recipient_name"]) : html_specialchars($ecard["recipient_email"]), $ecard["send"]);
-		$ecard["send"] = str_replace('###RECIPIENT_EMAIL###', html_specialchars($ecard["recipient_email"]), $ecard["send"]);
-		$ecard["send"] = str_replace('###SENDER_MESSAGE###', nl2br(html_specialchars($ecard["sender_msg"])), $ecard["send"]);
-		$ecard["send"] = str_replace('###ECARD_SUBJECT###', html_specialchars($ecard["subject"]), $ecard["send"]);
+		$ecard["send"] = str_replace('###RECIPIENT_NAME###', ($ecard["recipient_name"]) ? html($ecard["recipient_name"]) : html($ecard["recipient_email"]), $ecard["send"]);
+		$ecard["send"] = str_replace('###RECIPIENT_EMAIL###', html($ecard["recipient_email"]), $ecard["send"]);
+		$ecard["send"] = str_replace('###SENDER_MESSAGE###', nl2br(html($ecard["sender_msg"])), $ecard["send"]);
+		$ecard["send"] = str_replace('###ECARD_SUBJECT###', html($ecard["subject"]), $ecard["send"]);
 
 		$ecard["mailer"] = new PHPMailer();
 		$ecard["mailer"]->Mailer = $phpwcms['SMTP_MAILER'];
@@ -95,23 +95,23 @@ if(isset($_POST['ecard_chooser'])) {
 														)
         					  )
 						);
-		$list_img_temp  = '<img src="'.PHPWCMS_URL.PHPWCMS_IMAGES.$thumb_image[0].'" '.$thumb_image[3].' alt="'.html_specialchars($ecard['images'][$ecard["chooser"]][1]).'" />';
+		$list_img_temp  = '<img src="'.PHPWCMS_URL.PHPWCMS_IMAGES.$thumb_image[0].'" '.$thumb_image[3].' alt="'.html($ecard['images'][$ecard["chooser"]][1]).'" />';
 		
 		if($ecard["mail"]) {
-			$ecard["mail"] = str_replace('###ECARD_TITLE###', html_specialchars(chop($ecard["capt"][$ecard["chooser"]])), $ecard["mail"]);
+			$ecard["mail"] = str_replace('###ECARD_TITLE###', html(chop($ecard["capt"][$ecard["chooser"]])), $ecard["mail"]);
 			$ecard["mail"] = str_replace('###ECARD_IMAGE###', $list_img_temp, $ecard["mail"]);
-			$ecard["mail"] = str_replace('###RECIPIENT_NAME###', ($ecard["recipient_name"]) ? html_specialchars($ecard["recipient_name"]) : html_specialchars($ecard["recipient_email"]), $ecard["mail"]);
-			$ecard["mail"] = str_replace('###RECIPIENT_EMAIL###', html_specialchars($ecard["recipient_email"]), $ecard["mail"]);
-			$ecard["mail"] = str_replace('###SENDER_MESSAGE###', nl2br(html_specialchars($ecard["sender_msg"])), $ecard["mail"]);
-			$ecard["mail"] = str_replace('###SENDER_NAME###', ($ecard["sender_name"]) ? html_specialchars($ecard["sender_name"]) : html_specialchars($ecard["sender_email"]), $ecard["mail"]);
-			$ecard["mail"] = str_replace('###SENDER_EMAIL###', html_specialchars($ecard["sender_email"]), $ecard["mail"]);
-			$ecard["mail"] = str_replace('###ECARD_SUBJECT###', html_specialchars($ecard["subject"]), $ecard["mail"]);
+			$ecard["mail"] = str_replace('###RECIPIENT_NAME###', ($ecard["recipient_name"]) ? html($ecard["recipient_name"]) : html($ecard["recipient_email"]), $ecard["mail"]);
+			$ecard["mail"] = str_replace('###RECIPIENT_EMAIL###', html($ecard["recipient_email"]), $ecard["mail"]);
+			$ecard["mail"] = str_replace('###SENDER_MESSAGE###', nl2br(html($ecard["sender_msg"])), $ecard["mail"]);
+			$ecard["mail"] = str_replace('###SENDER_NAME###', ($ecard["sender_name"]) ? html($ecard["sender_name"]) : html($ecard["sender_email"]), $ecard["mail"]);
+			$ecard["mail"] = str_replace('###SENDER_EMAIL###', html($ecard["sender_email"]), $ecard["mail"]);
+			$ecard["mail"] = str_replace('###ECARD_SUBJECT###', html($ecard["subject"]), $ecard["mail"]);
 			$ecard["mailer"]->Body = $ecard["mail"];
 		} else {
-			$ecard["mailer"]->Body = '<div align="center"><h3>E-Card &quot;'.html_specialchars(chop($ecard["capt"][$ecard["chooser"]])).'&quot;</h3>'.
-									 '<p><strong>sent to you from '.html_specialchars($ecard["sender_name"].(($ecard["sender_name"]) ? ' ('.$ecard["sender_email"].')': $ecard["sender_email"])).'</strong></p>'.
+			$ecard["mailer"]->Body = '<div align="center"><h3>E-Card &quot;'.html(chop($ecard["capt"][$ecard["chooser"]])).'&quot;</h3>'.
+									 '<p><strong>sent to you from '.html($ecard["sender_name"].(($ecard["sender_name"]) ? ' ('.$ecard["sender_email"].')': $ecard["sender_email"])).'</strong></p>'.
 									 '<p>'.$list_img_temp.'</p>'.
-									 '<p>'.nl2br(html_specialchars($ecard["sender_msg"])).'</p><hr /><a href="'.$phpwcms["site"].'" target="_blank">'.$phpwcms["site"].'</a></div>';
+									 '<p>'.nl2br(html($ecard["sender_msg"])).'</p><hr /><a href="'.$phpwcms["site"].'" target="_blank">'.$phpwcms["site"].'</a></div>';
 		}
 
 		if(strtolower($phpwcms['SMTP_MAILER']) == 'smtp') {
@@ -157,7 +157,7 @@ if(is_array($ecard['images']) && count($ecard['images']) && !$ecard["send_succes
 						$temp_cap .= ' checked="checked" ';
 					}
 					$temp_cap .= "/></td>\n<td ".$template_default["article"]["ecard_chooser_text"].">";
-					$temp_cap .= html_specialchars(trim($ecard['images'][$key][6]))."</td>\n</tr>\n</table>"; //Bildunterschrift
+					$temp_cap .= html(trim($ecard['images'][$key][6]))."</td>\n</tr>\n</table>"; //Bildunterschrift
 			
 				} else {
 			
@@ -172,14 +172,14 @@ if(is_array($ecard['images']) && count($ecard['images']) && !$ecard["send_succes
 					if($ecard["onout"]) {
 						$temp_cap .= ' onmouseout="'.$ecard["onout"].'"';
 					}
-					$temp_cap .= '>'.html_specialchars(trim($ecard['images'][$key][6])).'</td></tr></table>';
+					$temp_cap .= '>'.html(trim($ecard['images'][$key][6])).'</td></tr></table>';
 				
 				}
 				
 			} else {
 			
 				// show image caption only
-				$temp_cap = html_specialchars(substr($ecard['images'][$key][6], 1));
+				$temp_cap = html(substr($ecard['images'][$key][6], 1));
 			
 			}
 			
@@ -206,14 +206,14 @@ if(is_array($ecard['images']) && count($ecard['images']) && !$ecard["send_succes
 	$ecard["form"] = preg_replace("/name=[\'|\"]###RECIPIENT_EMAIL###[\'|\"]/i", 'name="ecard_recipient_email"', $ecard["form"]);
 	$ecard["form"] = preg_replace("/name=[\'|\"]###SENDER_MESSAGE###[\'|\"]/i", 'name="ecard_sender_msg"', $ecard["form"]);
 
-	$ecard["form"] = str_replace('###SENDER_NAME###', isset($ecard["sender_name"]) ? html_specialchars($ecard["sender_name"]) : '', $ecard["form"]);
-	$ecard["form"] = str_replace('###SENDER_EMAIL###', isset($ecard["sender_email"]) ? html_specialchars($ecard["sender_email"]) : '', $ecard["form"]);
-	$ecard["form"] = str_replace('###RECIPIENT_NAME###', isset($ecard["recipient_name"]) ? html_specialchars($ecard["recipient_name"]) : '', $ecard["form"]);
-	$ecard["form"] = str_replace('###RECIPIENT_EMAIL###', isset($ecard["recipient_email"]) ? html_specialchars($ecard["recipient_email"]) : '', $ecard["form"]);
-	$ecard["form"] = str_replace('###SENDER_MESSAGE###', isset($ecard["sender_msg"]) ? html_specialchars($ecard["sender_msg"]) : '', $ecard["form"]);
-	$ecard["form"] = str_replace('###ECARD_SUBJECT###', isset($ecard["subject"]) ? html_specialchars($ecard["subject"]) : '', $ecard["form"]);
+	$ecard["form"] = str_replace('###SENDER_NAME###', isset($ecard["sender_name"]) ? html($ecard["sender_name"]) : '', $ecard["form"]);
+	$ecard["form"] = str_replace('###SENDER_EMAIL###', isset($ecard["sender_email"]) ? html($ecard["sender_email"]) : '', $ecard["form"]);
+	$ecard["form"] = str_replace('###RECIPIENT_NAME###', isset($ecard["recipient_name"]) ? html($ecard["recipient_name"]) : '', $ecard["form"]);
+	$ecard["form"] = str_replace('###RECIPIENT_EMAIL###', isset($ecard["recipient_email"]) ? html($ecard["recipient_email"]) : '', $ecard["form"]);
+	$ecard["form"] = str_replace('###SENDER_MESSAGE###', isset($ecard["sender_msg"]) ? html($ecard["sender_msg"]) : '', $ecard["form"]);
+	$ecard["form"] = str_replace('###ECARD_SUBJECT###', isset($ecard["subject"]) ? html($ecard["subject"]) : '', $ecard["form"]);
 
-	$CNT_TMP .= '<form action="'.html_specialchars($_SERVER['REQUEST_URI']).'" method="post" name="send_ecard">';
+	$CNT_TMP .= '<form action="'.html($_SERVER['REQUEST_URI']).'" method="post" name="send_ecard">';
 	$CNT_TMP .= $ecard["form"];
 	if($ecard["selector"]) {
 		//add hidden form field ecard_chooser

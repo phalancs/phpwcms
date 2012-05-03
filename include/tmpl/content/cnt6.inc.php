@@ -48,7 +48,7 @@ $tmpllist = get_tmpl_files(PHPWCMS_TEMPLATE.'inc_cntpart/html');
 if(is_array($tmpllist) && count($tmpllist)) {
 	foreach($tmpllist as $val) {
 		$selected_val = (isset($content["template"]) && $val == $content["template"]) ? ' selected="selected"' : '';
-		$val = html_specialchars($val);
+		$val = html($val);
 		echo '	<option value="' . $val . '"' . $selected_val . '>' . $val . '</option>' . LF;
 	}
 }
@@ -61,5 +61,5 @@ if(is_array($tmpllist) && count($tmpllist)) {
 
 <tr>
 	<td align="right" valign="top" class="chatlist"><img src="include/img/leer.gif" alt="" width="1" height="13" /><?php echo $BL['be_cnt_plainhtml'] ?>:&nbsp;</td>
-	<td valign="top"><textarea name="chtml" rows="30" class="msgtext width440" id="chtml"><?php echo html_entities($content["html"]) ?></textarea></td>
+	<td valign="top"><textarea name="chtml" rows="30" class="msgtext width440" id="chtml"><?php echo html($content["html"]) ?></textarea></td>
 </tr>

@@ -253,7 +253,7 @@ ob_start();
 	<div class="control-group">
 		<label class="control-label" for="form_loginname"><?php echo $BL["login_username"] ?></label>
 		<div class="controls">
-			<input name="form_loginname" type="text" id="form_loginname" class="span3" value="<?php echo html_specialchars($wcs_user); ?>">
+			<input name="form_loginname" type="text" id="form_loginname" class="span3" value="<?php echo html($wcs_user); ?>">
 		</div>
 	</div>
 	<div class="control-group">
@@ -293,7 +293,7 @@ echo implode(LF, $lang_code);
 		<button type="submit" class="btn btn-primary"><?php echo $BL["login_button"] ?></button>
 		<input type="hidden" name="json" id="json" value="0">
 		<input type="hidden" name="md5pass" id="md5pass" value="" autocomplete="off">
-		<input type="hidden" name="ref_url" value="<?php echo html_entities($ref_url) ?>">
+		<input type="hidden" name="ref_url" value="<?php echo html($ref_url) ?>">
 		<input name="form_aktion" type="hidden" id="form_aktion" value="login">
 	</div>
 </form>
@@ -324,6 +324,7 @@ $formAll = str_replace( array("'", "\r", "\n", '<', '> <'), array("\'", '', " ",
 				lang.val('2');
 				login.submit();
 			})
+			$('#form_loginname').focus();
 		});
 	</script>
 <?php	if((isset($_SESSION["wcs_user_lang"]) && $_SESSION["wcs_user_lang"] == 'ar') || strtolower($phpwcms['default_lang']) == 'ar'):	?>
@@ -358,8 +359,8 @@ $formAll = str_replace( array("'", "\r", "\n", '<', '> <'), array("\'", '', " ",
 				Copyright &copy; 2003&#8212;<?php echo date('Y'); ?>
 				Oliver Georgi. Extensions are copyright of their respective owners.
 				Visit <a href="http://www.phpwcms.de">www.phpwcms.de</a> for
-				details. phpwcms is free software released under <a href="http://www.fsf.org/licensing/licenses/gpl.html" target="_blank">GPL</a> 
-				and comes WITHOUT ANY WARRANTY. Obstructing the appearance of this notice is prohibited  by law. 
+				details. phpwcms is free software released under <a href="http://www.fsf.org/licensing/licenses/gpl.html">GPL</a> 
+				and comes WITHOUT ANY WARRANTY. Obstructing the appearance of this notice is prohibited  by law.
 			</p>
 
 		</div>

@@ -178,7 +178,7 @@ if($_newsletter['pages_total'] > 1) {
 			
 			echo '</td>'.LF;
 						
-			echo '<td class="dir"><strong>'.html_specialchars($row["newsletter_subject"])."</strong></td>\n";
+			echo '<td class="dir"><strong>'.html($row["newsletter_subject"])."</strong></td>\n";
 			
 			// create date
 			echo '<td nowrap="nowrap" class="v10" align="center">&nbsp;';
@@ -212,8 +212,8 @@ if($_newsletter['pages_total'] > 1) {
 			
 			// delete
 			echo '<a href="phpwcms.php?do=messages&amp;p=3&amp;s='.$row["newsletter_id"].'&amp;del='.$row["newsletter_id"];
-			echo '" title="delete: '.html_specialchars($row["newsletter_subject"]);			
-			echo '" onclick="return confirm(\'Delete newsletter: '.js_singlequote(html_specialchars($row["newsletter_subject"])).'\');">';
+			echo '" title="delete: '.html($row["newsletter_subject"]);			
+			echo '" onclick="return confirm(\'Delete newsletter: '.js_singlequote(html($row["newsletter_subject"])).'\');">';
 			echo '<img src="include/img/button/trash_13x13_1.gif" border="0" alt="Delete" /></a>';
 			
 			echo "</td>\n</tr>\n";

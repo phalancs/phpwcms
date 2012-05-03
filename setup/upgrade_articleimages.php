@@ -77,7 +77,7 @@ while($row = mysql_fetch_assoc($result)) {
 				$usql .= "acontent_image='".aporeplace($newimage)."' ";
 				$usql .= "WHERE acontent_id=".$row['acontent_id']." LIMIT 1";
 				mysql_query($usql, $db);
-				echo 'Image '. sprintf('%05d: ', $linenumber) . html_specialchars($frow['f_name']) ."\n";
+				echo 'Image '. sprintf('%05d: ', $linenumber) . html($frow['f_name']) ."\n";
 			}
 	
 		}

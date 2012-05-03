@@ -46,7 +46,7 @@ $tmpllist = get_tmpl_files(PHPWCMS_TEMPLATE.'inc_cntpart/code');
 if(is_array($tmpllist) && count($tmpllist)) {
 	foreach($tmpllist as $val) {
 		$selected_val = (isset($content["template"]) && $val == $content["template"]) ? ' selected="selected"' : '';
-		$val = html_specialchars($val);
+		$val = html($val);
 		echo '	<option value="' . $val . '"' . $selected_val . '>' . $val . '</option>' . LF;
 	}
 }
@@ -68,7 +68,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 		if($firstchar == "\r" || $firstchar == "\n") {
 			$content["code"] = ' '.$content["code"];
 		}		
-		echo html_entities($content["code"]);
+		echo html($content["code"]);
 	}
 		
 	?></textarea></td>

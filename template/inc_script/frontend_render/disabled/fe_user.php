@@ -332,10 +332,10 @@ if($fe_action) {
 	$fe_reg[] = '<p>';
 	$fe_reg[] = '<label class="labelpos" for="user_login">@@Login@@</label>';
 	if($fe_action == '{FE_USER_REGISTER}') {
-		$fe_reg[] = '<input type="text" name="user_login" id="user_login" value="' .html_specialchars($udata['user_login']). '" class="textfield" maxlength="200" size="30" />';
+		$fe_reg[] = '<input type="text" name="user_login" id="user_login" value="' .html($udata['user_login']). '" class="textfield" maxlength="200" size="30" />';
 	} else {
-		$fe_reg[] = '<strong>' .html_specialchars($udata['user_login']). '</strong>';
-		$fe_reg[] = '<input type="hidden" name="user_login" value="' .html_specialchars($udata['user_login']). '" />';
+		$fe_reg[] = '<strong>' .html($udata['user_login']). '</strong>';
+		$fe_reg[] = '<input type="hidden" name="user_login" value="' .html($udata['user_login']). '" />';
 	}
 	$fe_reg[] = '</p>';
 	*/
@@ -384,8 +384,8 @@ if($fe_action) {
 			
 			$queryResult = _dbQuery($sql, 'INSERT');
 			if(!empty($queryResult['INSERT_ID'])) {
-				$fe_reg  = '<p class="success">Vielen Dank '.html_specialchars($udata['user_firstname'].' '.$udata['user_name']).'! Ihre Registrierungsanfrage wurden erfolgreich &uuml;bertragen.</p>';
-				$fe_reg .= '<p>Ihnen wird in wenigen Augenblicken eine Bestätigung an die E-Mail <b>'.html_specialchars($udata['user_email']).'</b> zugesendet.</p>';
+				$fe_reg  = '<p class="success">Vielen Dank '.html($udata['user_firstname'].' '.$udata['user_name']).'! Ihre Registrierungsanfrage wurden erfolgreich &uuml;bertragen.</p>';
+				$fe_reg .= '<p>Ihnen wird in wenigen Augenblicken eine Bestätigung an die E-Mail <b>'.html($udata['user_email']).'</b> zugesendet.</p>';
 				
 				$fe_text  = 'Hallo '.trim($udata['user_title'] . ' ' . trim( $udata['user_firstname'].' '.$udata['user_name']) ) . LF . LF;
 				$fe_text .= 'Ihre Registrierung haben wir erhalten.' . LF;

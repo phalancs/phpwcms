@@ -77,7 +77,7 @@ if(in_array($remoteIP, $poll_form["ip"])) {
 			$poll_do_br = '';
 			$poll_form["choice"][$key] = isset($poll_form["choice"][$key]) ? trim($poll_form["choice"][$key]) : '';
 			if(!empty($poll_form["choice"][$key])) {
-				$poll_html .= html_specialchars($poll_form["choice"][$key]);
+				$poll_html .= html($poll_form["choice"][$key]);
 				$poll_do_br = '<br />';
 			}
 			if(is_array($poll_image["images"][$key]) && count($poll_image["images"][$key]))
@@ -121,7 +121,7 @@ if(in_array($remoteIP, $poll_form["ip"])) {
 	}
 	$poll_html .= "</table>\n";
 	$poll_html .= '<input type="submit"';
-	$poll_html .= empty($poll_text['poll_buttontext']) ? '' : ' value="'.html_specialchars($poll_text['poll_buttontext']).'"';
+	$poll_html .= empty($poll_text['poll_buttontext']) ? '' : ' value="'.html($poll_text['poll_buttontext']).'"';
 	$poll_html .= ' class="pollSubmitButton" />';
 	$poll_html .= '<input type="hidden" value="'.$crow['acontent_id'].'" name="hidden_acontent_id" />';
 	$poll_html .= "</form>";

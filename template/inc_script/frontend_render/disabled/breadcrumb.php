@@ -53,7 +53,7 @@ if(strpos($content['all'], '{BREADCRUMB_ARTICLE}')) {
 	// Article
 	if($aktion[1]) {
 	
-		$_breadcrumb[] = html_specialchars( $content['article_title'] );
+		$_breadcrumb[] = html( $content['article_title'] );
 	
 	}
 	

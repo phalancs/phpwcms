@@ -29,16 +29,16 @@ if (!defined('PHPWCMS_ROOT')) {
 
 
 // Content Type Newsletter Subscription
-$content["newsletter"]["text"] 					= html_specialchars(clean_slweg($_POST["cnewsletter_text"]));
-$content["newsletter"]["label_email"]			= html_specialchars(clean_slweg($_POST["cnewsletter_label_email"]));
-$content["newsletter"]["label_name"]			= html_specialchars(clean_slweg($_POST["cnewsletter_label_name"]));
-$content["newsletter"]["label_subscriptions"]	= html_specialchars(clean_slweg($_POST["cnewsletter_label_subscriptions"]));
-$content["newsletter"]["all_subscriptions"]		= html_specialchars(clean_slweg($_POST["cnewsletter_all_subscriptions"]));
-$content["newsletter"]["button_text"]			= html_specialchars(clean_slweg($_POST["cnewsletter_button_text"]));
-$content["newsletter"]["success_text"]			= html_specialchars(clean_slweg($_POST["cnewsletter_success_text"]));
-$content["newsletter"]["reg_text"]				= html_specialchars(clean_slweg($_POST["cnewsletter_reg_text"]));
-$content["newsletter"]["logoff_text"]			= html_specialchars(clean_slweg($_POST["cnewsletter_logoff_text"]));
-$content["newsletter"]["change_text"]			= html_specialchars(clean_slweg($_POST["cnewsletter_change_text"]));
+$content["newsletter"]["text"] 					= html(clean_slweg($_POST["cnewsletter_text"]));
+$content["newsletter"]["label_email"]			= html(clean_slweg($_POST["cnewsletter_label_email"]));
+$content["newsletter"]["label_name"]			= html(clean_slweg($_POST["cnewsletter_label_name"]));
+$content["newsletter"]["label_subscriptions"]	= html(clean_slweg($_POST["cnewsletter_label_subscriptions"]));
+$content["newsletter"]["all_subscriptions"]		= html(clean_slweg($_POST["cnewsletter_all_subscriptions"]));
+$content["newsletter"]["button_text"]			= html(clean_slweg($_POST["cnewsletter_button_text"]));
+$content["newsletter"]["success_text"]			= html(clean_slweg($_POST["cnewsletter_success_text"]));
+$content["newsletter"]["reg_text"]				= html(clean_slweg($_POST["cnewsletter_reg_text"]));
+$content["newsletter"]["logoff_text"]			= html(clean_slweg($_POST["cnewsletter_logoff_text"]));
+$content["newsletter"]["change_text"]			= html(clean_slweg($_POST["cnewsletter_change_text"]));
 $content["newsletter"]["url1"]					= clean_slweg($_POST["cnewsletter_url1"]);
 $content["newsletter"]["url2"]					= clean_slweg($_POST["cnewsletter_url2"]);
 

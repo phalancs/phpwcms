@@ -40,13 +40,13 @@ if (!defined('PHPWCMS_ROOT')) {
 		<td align="right" class="chatlist"><?php echo $BL['be_cnt_last_edited']  ?>:&nbsp;</td>
 		<td class="v10" width="410"><?php 
 		
-		echo html_specialchars(date($BL['be_fprivedit_dateformat'], strtotime($plugin['data']['adplace_changed']))) ;
+		echo html(date($BL['be_fprivedit_dateformat'], strtotime($plugin['data']['adplace_changed']))) ;
 		
 		if(!empty($plugin['data']['adplace_created'])) {
 		?>		
 		&nbsp;&nbsp;&nbsp;<span class="chatlist"><?php echo $BL['be_fprivedit_created']  ?>:</span> 
 		<?php 
-				echo html_specialchars(date($BL['be_fprivedit_dateformat'], strtotime($plugin['data']['adplace_created'])));
+				echo html(date($BL['be_fprivedit_dateformat'], strtotime($plugin['data']['adplace_created'])));
 		}
 		
 		?></td>
@@ -61,7 +61,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		//error class
 		if(!empty($plugin['error']['adplace_title'])) echo ' errorInputText';
 		
-		?>" style="width:400px;" value="<?php echo html_specialchars($plugin['data']['adplace_title']) ?>" size="30" maxlength="200" /></td>
+		?>" style="width:400px;" value="<?php echo html($plugin['data']['adplace_title']) ?>" size="30" maxlength="200" /></td>
 	</tr>
 	
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>	
@@ -87,7 +87,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		
 		}
 		echo '>';
-		echo html_specialchars($_entry['value']['adformat_title'].' ('.$_entry['value']['adformat_width'].'x'.$_entry['value']['adformat_height'].')');
+		echo html($_entry['value']['adformat_title'].' ('.$_entry['value']['adformat_width'].'x'.$_entry['value']['adformat_height'].')');
 		echo '</option>'.LF;
 		
 		$plugin['ad_formats_js'][ $_entry['value']['adformat_id'] ]  = '		ad_formats['.$_entry['value']['adformat_id'].'] = ';
@@ -138,14 +138,14 @@ if(empty($plugin['data']['adplace_format']) && count($plugin['ad_formats_js'])) 
 	
 	<tr> 
 		<td align="right" class="chatlist" style="padding-top:4px;vertical-align:top;"><?php echo $BLM['adplace_prefix'] ?>:&nbsp;</td>
-		<td colspan="2"><textarea name="adplace_prefix" id="adplace_prefix" rows="3" class="code width400"><?php echo html_entities($plugin['data']['adplace_prefix']) ?></textarea></td>
+		<td colspan="2"><textarea name="adplace_prefix" id="adplace_prefix" rows="3" class="code width400"><?php echo html($plugin['data']['adplace_prefix']) ?></textarea></td>
 	</tr>
 	
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 	
 	<tr> 
 		<td align="right" class="chatlist" style="padding-top:4px;vertical-align:top;"><?php echo $BLM['adplace_suffix'] ?>:&nbsp;</td>
-		<td colspan="2"><textarea name="adplace_suffix" id="adplace_suffix" rows="3" class="code width400"><?php echo html_entities($plugin['data']['adplace_suffix']) ?></textarea></td>
+		<td colspan="2"><textarea name="adplace_suffix" id="adplace_suffix" rows="3" class="code width400"><?php echo html($plugin['data']['adplace_suffix']) ?></textarea></td>
 	</tr>
 	
 <?php 

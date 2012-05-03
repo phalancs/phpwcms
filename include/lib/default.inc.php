@@ -392,12 +392,12 @@ function returnGlobalGET_QueryString($format='', $add=array(), $remove=array(), 
 	switch($format) {
 	
 		case 'htmlentities':
-			$glue	= html_entities($glue);
+			$glue	= html($glue);
 			$funct	= 'getQueryString_htmlentities';
 			break;
 								
 		case 'htmlspecialchars':
-			$glue	= html_specialchars($glue);
+			$glue	= html($glue);
 			$funct	= 'getQueryString_htmlspecialchars';
 			break;
 								
@@ -425,20 +425,20 @@ function returnGlobalGET_QueryString($format='', $add=array(), $remove=array(), 
 
 function getQueryString_htmlentities($key='', $value='', $bind='=') {
 	if($value !== '') {
-		return html_entities(urlencode($key).$bind.str_replace('%2C', ',', urlencode($value)));
+		return html(urlencode($key).$bind.str_replace('%2C', ',', urlencode($value)));
 	} elseif(PHPWCMS_ALIAS_WSLASH) {
-		return html_entities(str_replace('%2F', '/', urlencode($key)));
+		return html(str_replace('%2F', '/', urlencode($key)));
 	}
-	return html_entities(urlencode($key));
+	return html(urlencode($key));
 }
 
 function getQueryString_htmlspecialchars($key='', $value='', $bind='=') {
 	if($value !== '') {
-		return html_specialchars(urlencode($key).$bind.str_replace('%2C', ',', urlencode($value)));
+		return html(urlencode($key).$bind.str_replace('%2C', ',', urlencode($value)));
 	} elseif(PHPWCMS_ALIAS_WSLASH) {
-		return html_specialchars(str_replace('%2F', '/', urlencode($key)));
+		return html(str_replace('%2F', '/', urlencode($key)));
 	}
-	return html_specialchars(urlencode($key));
+	return html(urlencode($key));
 }
 
 function getQueryString_urlencode($key='', $value='', $bind='=') {
@@ -797,21 +797,25 @@ function init_frontend_edit() {
 	define ('FE_EDIT_LINK', VISIBLE_MODE == 0 || empty($GLOBALS['phpwcms']['frontend_edit']) ? false : true);
 }
 
-function html_entities($string='', $quote_mode=ENT_QUOTES, $charset=PHPWCMS_CHARSET) {
-	return @htmlentities($string, $quote_mode, $charset);
+/**
+ * Wrapper function to return HTML encoded strings
+ */
+function html($string='', $mode='simple', $charset=PHPWCMS_CHARSET, $double_encode=true) {
+	if($mode === 'full') {
+		return htmlentities($string, ENT_QUOTES, $charset, $double_encode);
+	} else {
+		return htmlspecialchars($string, ENT_QUOTES, $charset, $double_encode);
+	}
 }
 
-function html_specialchars($h='') {
-	//used to replace the htmlspecialchars original php function
-	//not compatible with many internation chars like turkish, polish
-	$h = preg_replace('/&(?!((#[0-9]+)|[a-z]+);)/s', '&amp;', $h ); //works correct for "&#8230;" and/or "&ndash;"
-	//$h = preg_replace('/&(?!#[0-9]+;)/s', '&amp;', $h );
-	$h = str_replace( '<', '&lt;'  , $h );
-	$h = str_replace( '>', '&gt;'  , $h );
-	$h = str_replace( '"', '&quot;', $h );
-	$h = str_replace( "'", '&#039;', $h );
-	$h = str_replace( "\\", '&#92;', $h );
-	return $h;
+// Deprecated, just for compatibility
+function html___entities($string='', $quote_mode=ENT_QUOTES, $charset=PHPWCMS_CHARSET) {
+	return html($string, 'full', $charset);
+}
+
+// Deprecated, just for compatibility
+function html_specialchars($string='') {
+	return html($string, 'simple');
 }
 
 function getMicrotime() {

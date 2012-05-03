@@ -30,10 +30,10 @@ $_SESSION['admin_set'] = false;
 <h1><span class="number">2.</span> Now lets check your server settings</h1>
 <p>Please proof all information about your system (recommend PHP 5.1+, MySQL 4.1+).</p>
 <ol>
-  <li>WWW server: <strong><?php echo empty($_SERVER['SERVER_SOFTWARE']) ? 'unavailable' : html_specialchars($_SERVER['SERVER_SOFTWARE']) ?></strong></li>
+  <li>WWW server: <strong><?php echo empty($_SERVER['SERVER_SOFTWARE']) ? 'unavailable' : html($_SERVER['SERVER_SOFTWARE']) ?></strong></li>
   <li>PHP version: <?php 
   
-	echo '<strong>'.html_specialchars(phpversion()).'</strong>';
+	echo '<strong>'.html(phpversion()).'</strong>';
   
 	switch(version_compare('5.1.0', phpversion())) {
   
@@ -60,7 +60,7 @@ $_SESSION['admin_set'] = false;
    ?></li>
   <li>MySQL version: <?php  
   
-	echo '<strong>'.html_specialchars(mysql_get_client_info()) .'</strong>';
+	echo '<strong>'.html(mysql_get_client_info()) .'</strong>';
 
 	switch(version_compare('4.10.00', mysql_get_client_info())) {
   
@@ -113,7 +113,7 @@ $_SESSION['admin_set'] = false;
 	  
 	  			$_phpinfo = parsePHPModules();
 				if(isset($_phpinfo['gd']['GD Support']) && $_phpinfo['gd']['GD Support'] == 'enabled' && isset($_phpinfo['gd']['GD Version'])) {
-					$_phpinfo['gd_version'] = html_specialchars($_phpinfo['gd']['GD Version']);
+					$_phpinfo['gd_version'] = html($_phpinfo['gd']['GD Version']);
 				} else {
 					$_phpinfo['gd_version'] = 'n.a.';
 				}

@@ -53,10 +53,10 @@ if(isset($_POST['tabtitle']) && is_array($_POST['tabtitle']) && count($_POST['ta
 		$content['search'] .= strip_tags( trim( $content["tabs"][$x]['tabtitle'].' '.$content["tabs"][$x]['tabheadline'].' '.$content["tabs"][$x]['tabtext'] ) ).' ';
 		
 		
-		$content['html'][] = '	<dt>'.html_specialchars($content["tabs"][$x]['tabtitle']).'</dt>';
+		$content['html'][] = '	<dt>'.html($content["tabs"][$x]['tabtitle']).'</dt>';
 		$content['html'][] = '	<dd>';
 		if($content["tabs"][$x]['tabheadline']) {
-			$content['html'][] = '		<h3>'.html_specialchars($content["tabs"][$x]['tabheadline']).'</h3>';
+			$content['html'][] = '		<h3>'.html($content["tabs"][$x]['tabheadline']).'</h3>';
 		}
 		if(!$content['tabwysiwygoff'] && strpos($content["tabs"][$x]['tabtext'], '<') === false) {
 			$content["tabs"][$x]['tabtext'] = plaintext_htmlencode($content["tabs"][$x]['tabtext']);

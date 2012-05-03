@@ -1,0 +1,63 @@
+/*!
+ * phpwcms Layout
+ */
+html {
+	height: 100%;
+	width: 100%;
+}
+body {
+	height: 100%;
+	min-width: (@gridColumns * @gridColumnWidth) + ((@gridColumns - 1) * @gridGutterWidth);
+}
+.container-outer {
+	position: relative;
+	height: auto;
+	min-height: 100%;
+}
+.row-outer {
+	padding-top: @gridColumnWidth;
+	margin-bottom: @gridGutterWidth * 2.5;
+}
+
+.sidebar {
+	padding: @gridColumnWidth 0 @gridGutterWidth 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border-right: 1px solid #eee;
+  	border-right: 1px solid rgba(0,0,0,.1);
+	background-color: lighten(@phpwcmsColor, 65%);
+	.box-shadow(0 0 @gridGutterWidth rgba(0,0,0,.25));
+}
+
+.row-fluid .sidebar {
+    position: fixed;
+    width: (@gridColumnWidth * 4);
+	top: 0;
+	left: 0;
+	bottom: 0;
+}
+
+.fixed-fluid {
+    margin-left: @gridColumnWidth * 4;
+}
+.fluid-fixed {
+    margin-right: @gridColumnWidth * 4;
+    margin-left: auto !important;
+}
+.fixed-fixed {
+    margin: 0 @gridColumnWidth * 4;
+}
+
+footer.fixed-fluid {
+	border-top: 1px solid @hrBorder;
+	position: absolute;
+	padding-top: @baseLineHeight / 2;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin-right: @gridGutterWidth;
+	margin-left: (@gridColumnWidth * 4) + @gridGutterWidth;
+	color: @grayLight;
+}

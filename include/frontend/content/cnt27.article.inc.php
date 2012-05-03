@@ -63,9 +63,9 @@ $caption[0]		= '';
 if(!empty($crow["acontent_image"][2])) {
 
 	$caption = getImageCaption(base64_decode($crow["acontent_image"][6]));
-	$caption[0]	= html_specialchars($caption[0]);
-	$caption[3] = empty($caption[3]) ? '' : ' title="'.html_specialchars($caption[3]).'"'; //title
-	$caption[1] = empty($caption[1]) ? html_specialchars($crow["acontent_image"][1]) : html_specialchars($caption[1]);
+	$caption[0]	= html($caption[0]);
+	$caption[3] = empty($caption[3]) ? '' : ' title="'.html($caption[3]).'"'; //title
+	$caption[1] = empty($caption[1]) ? html($crow["acontent_image"][1]) : html($caption[1]);
 
 	$thumb_image = get_cached_image(
 	array(	"target_ext"	=>	$crow["acontent_image"][3],
@@ -121,9 +121,9 @@ if(!empty($crow["acontent_image"][2])) {
 
 
 // now render whole recipe
-$crow["acontent_form"]['faq_template'] = render_cnt_template($crow["acontent_form"]['faq_template'], 'TITLE', html_specialchars($crow['acontent_title']));
-$crow["acontent_form"]['faq_template'] = render_cnt_template($crow["acontent_form"]['faq_template'], 'SUBTITLE', html_specialchars($crow['acontent_subtitle']));
-$crow["acontent_form"]['faq_template'] = render_cnt_template($crow["acontent_form"]['faq_template'], 'FAQ_QUESTION', html_specialchars($crow["acontent_text"]));
+$crow["acontent_form"]['faq_template'] = render_cnt_template($crow["acontent_form"]['faq_template'], 'TITLE', html($crow['acontent_title']));
+$crow["acontent_form"]['faq_template'] = render_cnt_template($crow["acontent_form"]['faq_template'], 'SUBTITLE', html($crow['acontent_subtitle']));
+$crow["acontent_form"]['faq_template'] = render_cnt_template($crow["acontent_form"]['faq_template'], 'FAQ_QUESTION', html($crow["acontent_text"]));
 $crow["acontent_form"]['faq_template'] = render_cnt_template($crow["acontent_form"]['faq_template'], 'FAQ_ANSWER', $crow["acontent_html"]);
 $crow["acontent_form"]['faq_template'] = render_cnt_template($crow["acontent_form"]['faq_template'], 'FAQ_IMAGE', $thumb_img);
 $crow["acontent_form"]['faq_template'] = render_cnt_template($crow["acontent_form"]['faq_template'], 'FAQ_CAPTION', $caption[0]);

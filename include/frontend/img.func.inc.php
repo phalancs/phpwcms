@@ -97,9 +97,9 @@ function imagetable(& $phpwcms, & $image, $rand="0:0:0:0", $align=0) {
 		// image caption
 		//$caption	= explode('|', base64_decode($image[6]));
 		$caption = getImageCaption(base64_decode($image[6]));
-		$caption[0]	= html_specialchars($caption[0]);
-		$caption[3] = empty($caption[3]) ? '' : ' title="'.html_specialchars($caption[3]).'"'; //title
-		$caption[1] = empty($caption[1]) ? html_specialchars($image[1]) : html_specialchars($caption[1]);
+		$caption[0]	= html($caption[0]);
+		$caption[3] = empty($caption[3]) ? '' : ' title="'.html($caption[3]).'"'; //title
+		$caption[1] = empty($caption[1]) ? html($image[1]) : html($caption[1]);
 
 		// image source
 		$img  = '<img src="'.PHPWCMS_IMAGES.$thumb_image[0].'" '.$thumb_image[3];
@@ -176,7 +176,7 @@ function imagetable(& $phpwcms, & $image, $rand="0:0:0:0", $align=0) {
 			$table .= ($rand[2]) ? "<td>".spacer($rand[2],1)."</td>" : "";
 			$table .= '<td'.$caption_valign.$caption_align.$caption_bgcolor.$caption_class.'>'.$capt_before.$caption[0];
 			if($caption[4] !== '') {
-				$table .= ' <span class="copyright">'.html_specialchars($caption[4]).'</span>';
+				$table .= ' <span class="copyright">'.html($caption[4]).'</span>';
 			}
 			$table .= $capt_after."</td>";
 			$table .= ($rand[3]) ? "<td>".spacer($rand[3],1)."</td>" : "";
@@ -242,9 +242,9 @@ function imagediv(& $phpwcms, & $image, $classname='') {
 
 		// image caption
 		$caption = getImageCaption(base64_decode($image[6]));
-		$caption[0]	= html_specialchars($caption[0]);
-		$caption[3] = empty($caption[3]) ? '' : ' title="'.html_specialchars($caption[3]).'"'; //title
-		$caption[1] = empty($caption[1]) ? html_specialchars($image[1]) : html_specialchars($caption[1]);
+		$caption[0]	= html($caption[0]);
+		$caption[3] = empty($caption[3]) ? '' : ' title="'.html($caption[3]).'"'; //title
+		$caption[1] = empty($caption[1]) ? html($image[1]) : html($caption[1]);
 
 		// image source
 		$img  = '<img src="'.PHPWCMS_IMAGES.$thumb_image[0].'" '.$thumb_image[3];
@@ -297,7 +297,7 @@ function imagediv(& $phpwcms, & $image, $classname='') {
 		if($caption[0] && empty($image['nocaption'])) {
 			$image_block .= '<p'.$caption_class.'>'.$capt_before.$caption[0];
 			if($caption[4] !== '') {
-				$image_block .= ' <span class="copyright">'.html_specialchars($caption[4]).'</span>';
+				$image_block .= ' <span class="copyright">'.html($caption[4]).'</span>';
 			}
 			$image_block .= $capt_after."</p>";
 		}
@@ -460,9 +460,9 @@ function imagelisttable($imagelist, $rand="0:0:0:0", $align=0, $type=0) {
 			// now try to build caption and if neccessary add alt to image or set external link for image
 			$caption = getImageCaption($imagelist['images'][$key][6]);
 			// set caption and ALT Image Text for imagelist
-			$capt_cur	= !$type ? html_specialchars($caption[0]) : $caption[0];
-			$caption[3] = empty($caption[3]) ? '' : ' title="'.html_specialchars($caption[3]).'"'; //title
-			$caption[1] = empty($caption[1]) ? html_specialchars($imagelist['images'][$key][1]) : html_specialchars($caption[1]);
+			$capt_cur	= !$type ? html($caption[0]) : $caption[0];
+			$caption[3] = empty($caption[3]) ? '' : ' title="'.html($caption[3]).'"'; //title
+			$caption[1] = empty($caption[1]) ? html($imagelist['images'][$key][1]) : html($caption[1]);
 
 			$list_img_temp  = '<img src="'.PHPWCMS_IMAGES.$thumb_image[0].'" '.$thumb_image[3].$image_border.$image_imgclass;
 			$list_img_temp .= ' alt="'.$caption[1].'"'.$caption[3].' />';

@@ -87,7 +87,7 @@ if(empty($content['article']['acat_id'])) { // Root structure
 	}
 	
 	?>>
-<input type="hidden" name="ctype_module" value="<?php echo html_specialchars($content["module"]) ?>" />
+<input type="hidden" name="ctype_module" value="<?php echo html($content["module"]) ?>" />
 <table summary="" width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom:13px;">
 	
 	<tr><td colspan="2" class="title"><?php 
@@ -121,7 +121,7 @@ if(empty($content['article']['acat_id'])) { // Root structure
 		?>');"><?php echo $BL['be_article_cat'];
 		
 		?><img src="include/img/symbole/redirect.gif" alt="" border="0" style="margin:0 0 0 2px;position:relative;top:1px;" /></a>:&nbsp;</td>
-		<td><strong><?php echo html_specialchars($content["article"]['acat_name']).' [ID:'.$content['article']['acat_id'].']' ?></strong></td>
+		<td><strong><?php echo html($content["article"]['acat_name']).' [ID:'.$content['article']['acat_id'].']' ?></strong></td>
 	</tr>
 	<tr bgcolor="#D9DEE3"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td>
 	</tr>
@@ -133,7 +133,7 @@ if(empty($content['article']['acat_id'])) { // Root structure
 		?>');"><?php echo $BL['be_article_atitle'];
 		
 		?><img src="include/img/symbole/redirect.gif" alt="" border="0" style="margin:0 0 0 2px;position:relative;top:1px;" /></a>:&nbsp;</td>
-		<td onclick="showEditArticleID(this);" onmouseover="this.ttOffsetY=0;Tip('<?php echo $BL['be_change_articleID'].'<br />'.$BL['be_cnt_default'].': '.$content["aid"] ?>')" class="linkcursor"><strong><?php echo html_specialchars($content["article"]['article_title']) ?></strong></td>
+		<td onclick="showEditArticleID(this);" onmouseover="this.ttOffsetY=0;Tip('<?php echo $BL['be_change_articleID'].'<br />'.$BL['be_cnt_default'].': '.$content["aid"] ?>')" class="linkcursor"><strong><?php echo html($content["article"]['article_title']) ?></strong></td>
 	</tr>
 	
 	
@@ -232,7 +232,7 @@ if(isset($result[0]['template_var'])) {
 		foreach($result as $value) {
 			$value = trim($value);
 			if($value != '') {
-				$valhtml = html_specialchars($value);
+				$valhtml = html($value);
 				echo '				<option value="'.$valhtml.'"'.is_selected($value, $content["block"], 0, 0).'>'.$valhtml.'</option>'.LF;				
 			}
 		}
@@ -331,7 +331,7 @@ if(isset($result[0]['template_var'])) {
 	  <td align="right" class="chatlist"><?php echo $BL['be_tab_name'] ?>:&nbsp;</td>
 	  <td><table summary="" border="0" cellspacing="0" cellpadding="0">
 		  <tr>
-		  	<td><input name="ctab_title" type="text" id="ctab_title" class="f11b width225" value="<?php echo html_specialchars($content["tab_title"]) ?>" size="40" maxlength="100" /></td>
+		  	<td><input name="ctab_title" type="text" id="ctab_title" class="f11b width225" value="<?php echo html($content["tab_title"]) ?>" size="40" maxlength="100" /></td>
 			<td class="chatlist">&nbsp;&nbsp;<?php echo $BL['be_cnt_paginate_subsection'] ?>:&nbsp;</td>
 			<td><input name="ctab_number" type="text" id="ctab_number" class="v11 width25" value="<?php echo $content["tab_number"] ?>" size="3" maxlength="4" onkeyup="if(!parseInt(this.value))this.value='';" /></td>
 		  </tr>
@@ -355,7 +355,7 @@ if(isset($result[0]['template_var'])) {
 			foreach($content["error"] as $value) {
 				$content["error_result"] .= "> ".$value."\n";
 			}
-			echo nl2br(html_specialchars(chop($content["error_result"])));
+			echo nl2br(html(chop($content["error_result"])));
 			unset($content["error_result"]);
 		
 		?></strong></td>
@@ -366,12 +366,12 @@ if(isset($result[0]['template_var'])) {
 		  ?>
 	<tr bgcolor="#F3F5F8">
 	  <td align="right" class="chatlist"><?php echo $BL['be_article_cnt_ctitle'] ?>:&nbsp;</td>
-	  <td><input name="ctitle" type="text" id="ctitle" class="width440p5" value="<?php echo html_specialchars($content["title"]) ?>" size="40" maxlength="250" /></td>
+	  <td><input name="ctitle" type="text" id="ctitle" class="width440p5" value="<?php echo html($content["title"]) ?>" size="40" maxlength="250" /></td>
 	</tr>
 	<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2" /></td></tr>
 	<tr bgcolor="#F3F5F8">
 	  <td align="right" class="chatlist"><?php echo $BL['be_article_asubtitle'] ?>:&nbsp;</td>
-	  <td><input name="csubtitle" type="text" id="csubtitle" class="width440p5" value="<?php echo html_specialchars($content["subtitle"]) ?>" size="40" maxlength="250" /></td>
+	  <td><input name="csubtitle" type="text" id="csubtitle" class="width440p5" value="<?php echo html($content["subtitle"]) ?>" size="40" maxlength="250" /></td>
 	</tr>
 	
 <?php
@@ -384,7 +384,7 @@ if(isset($result[0]['template_var'])) {
 	if(empty($content['article']['article_paginate'])) {
 	
 		echo '<tr bgcolor="#F3F5F8"><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="7" />';
-		echo '<input name="cpaginate_title" type="hidden" id="cpaginate_title" value="'.html_specialchars($content["paginate_title"]).'" />';
+		echo '<input name="cpaginate_title" type="hidden" id="cpaginate_title" value="'.html($content["paginate_title"]).'" />';
 		echo '<input name="cpaginate_page" type="hidden" id="cpaginate_page" value="'.$content["paginate_page"].'" />';
 		echo '</td></tr>';
 	
@@ -401,7 +401,7 @@ if(isset($result[0]['template_var'])) {
 		  <tr>
 		  	<td><input name="cpaginate_page" type="text" id="cpaginate_page" class="v11 width25" value="<?php echo $content["paginate_page"] ?>" size="3" maxlength="3" onkeyup="if(!parseInt(this.value))this.value='0';" /></td>
 			<td align="right" class="chatlist">&nbsp;&nbsp;<?php echo $BL['be_cnt_subsection_tite'].' ('.$BL['be_pagination'].')' ?>:&nbsp;</td>
-			<td width="200"><input name="cpaginate_title" type="text" id="cpaginate_title" class="f11b width225" value="<?php echo html_specialchars($content["paginate_title"]) ?>" size="40" maxlength="200" /></td>
+			<td width="200"><input name="cpaginate_title" type="text" id="cpaginate_title" class="f11b width225" value="<?php echo html($content["paginate_title"]) ?>" size="40" maxlength="200" /></td>
 		  </tr>
 		</table><script language="javascript" type="text/javascript">
 
@@ -533,7 +533,7 @@ echo $_save_close_buttons;
 	
 	<tr>
 	  <td align="right" class="chatlist tdtop3"><?php echo $BL['be_profile_label_notes'] ?>:&nbsp;</td>
-	  <td><textarea name="ccomment" id="ccomment" class="v11 width440" rows="5"><?php echo html_specialchars($content["comment"]) ?></textarea></td>
+	  <td><textarea name="ccomment" id="ccomment" class="v11 width440" rows="5"><?php echo html($content["comment"]) ?></textarea></td>
 	</tr>
 	
 </table>

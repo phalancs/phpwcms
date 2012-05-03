@@ -38,10 +38,10 @@ if (!defined('PHPWCMS_ROOT')) {
 		<td class="chatlist"><?php echo $BLM['shopprod_order_date'] ?>:&nbsp;</td>
 		<td width="410" class="v12"><?php 
 		
-			echo html_specialchars(date($BLM['shopprod_date_long'], $plugin['data']['order_date_unix'])); 
+			echo html(date($BLM['shopprod_date_long'], $plugin['data']['order_date_unix'])); 
 		
 			if(SHOP_FELANG_SUPPORT) {
-				$plugin['data']['order_data']['lang'] = html_specialchars(strtolower($plugin['data']['order_data']['lang']));
+				$plugin['data']['order_data']['lang'] = html(strtolower($plugin['data']['order_data']['lang']));
 				echo '&nbsp;&nbsp;&nbsp;<span class="chatlist">'.$BL['be_profile_label_lang'].':</span> ';
 				echo '<img src="include/img/famfamfam/lang/';
 				echo $plugin['data']['order_data']['lang'] ? $plugin['data']['order_data']['lang'] : 'all';
@@ -55,11 +55,11 @@ if (!defined('PHPWCMS_ROOT')) {
 	
 	<tr> 
 		<td class="chatlist"><?php echo $BLM['shopprod_ordernumber'] ?>:&nbsp;</td>
-		<td class="v12b tdbottom5"><strong><?php echo html_specialchars($plugin['data']['order_number']) ?></strong></td>
+		<td class="v12b tdbottom5"><strong><?php echo html($plugin['data']['order_number']) ?></strong></td>
 	</tr>
 	<tr> 
 		<td class="chatlist"><?php echo $BLM['th_payment'] ?>:&nbsp;</td>
-		<td class="v12b tdbottom5"><strong><?php echo html_specialchars($BLM[ 'shopprod_payby_'.$plugin['data']['order_payment'] ]) ?></strong></td>
+		<td class="v12b tdbottom5"><strong><?php echo html($BLM[ 'shopprod_payby_'.$plugin['data']['order_payment'] ]) ?></strong></td>
 	</tr>
 	<tr> 
 		<td class="chatlist" style="padding-top:3px;"><?php echo $BL['be_ftptakeover_status'] ?>:&nbsp;</td>
@@ -88,31 +88,31 @@ if (!defined('PHPWCMS_ROOT')) {
 	
 	<tr> 
 		<td class="chatlist"><?php echo $BL['be_profile_label_firstname'] ?>:&nbsp;</td>
-		<td class="v12 tdbottom3"><?php echo html_specialchars($plugin['data']['order_firstname']) ?></td>
+		<td class="v12 tdbottom3"><?php echo html($plugin['data']['order_firstname']) ?></td>
 	</tr>
 	<tr> 
 		<td class="chatlist"><?php echo $BL['be_profile_label_name'] ?>:&nbsp;</td>
-		<td class="v12 tdbottom3"><strong><?php echo html_specialchars($plugin['data']['order_name']) ?></strong></td>
+		<td class="v12 tdbottom3"><strong><?php echo html($plugin['data']['order_name']) ?></strong></td>
 	</tr>
 	<tr> 
 		<td class="chatlist"><?php echo $BLM['shopprod_order_address'] ?>:&nbsp;</td>
-		<td class="v12 tdbottom3"><?php echo nl2br( html_specialchars($plugin['data']['order_data']['address']['INV_ADDRESS'])) ?></td>
+		<td class="v12 tdbottom3"><?php echo nl2br( html($plugin['data']['order_data']['address']['INV_ADDRESS'])) ?></td>
 	</tr>
 	<tr> 
 		<td class="chatlist"><?php echo $BL['be_profile_label_zip'] ?>:&nbsp;</td>
-		<td class="v12 tdbottom3"><?php echo html_specialchars($plugin['data']['order_data']['address']['INV_ZIP']) ?></td>
+		<td class="v12 tdbottom3"><?php echo html($plugin['data']['order_data']['address']['INV_ZIP']) ?></td>
 	</tr>
 	<tr> 
 		<td class="chatlist"><?php echo $BL['be_profile_label_city'] ?>:&nbsp;</td>
-		<td class="v12 tdbottom3"><?php echo html_specialchars($plugin['data']['order_data']['address']['INV_CITY']) ?></td>
+		<td class="v12 tdbottom3"><?php echo html($plugin['data']['order_data']['address']['INV_CITY']) ?></td>
 	</tr>
 	<tr> 
 		<td class="chatlist"><?php echo $BLM['shopprod_order_region'] ?>:&nbsp;</td>
-		<td class="v12 tdbottom3"><?php echo html_specialchars($plugin['data']['order_data']['address']['INV_REGION']) ?>&nbsp;</td>
+		<td class="v12 tdbottom3"><?php echo html($plugin['data']['order_data']['address']['INV_REGION']) ?>&nbsp;</td>
 	</tr>
 	<tr> 
 		<td class="chatlist"><?php echo $BL['be_profile_label_country'] ?>:&nbsp;</td>
-		<td class="v12 tdbottom3"><?php echo html_specialchars($plugin['data']['order_data']['address']['INV_COUNTRY']) ?>&nbsp;</td>
+		<td class="v12 tdbottom3"><?php echo html($plugin['data']['order_data']['address']['INV_COUNTRY']) ?>&nbsp;</td>
 	</tr>
 	
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
@@ -122,9 +122,9 @@ if (!defined('PHPWCMS_ROOT')) {
 		<td class="v12 tdbottom3"><?php 
 		
 		if(is_valid_email($plugin['data']['order_data']['address']['EMAIL'])) {
-			echo '<a href="mailto:'.html_specialchars($plugin['data']['order_data']['address']['EMAIL']);
+			echo '<a href="mailto:'.html($plugin['data']['order_data']['address']['EMAIL']);
 			echo '?subject='.rawurlencode($BLM['th_ordnr'].': '.$plugin['data']['order_number']).'"><u>';
-			echo html_specialchars($plugin['data']['order_data']['address']['EMAIL']).'</u></a>';
+			echo html($plugin['data']['order_data']['address']['EMAIL']).'</u></a>';
 		} else {
 			echo '&nbsp;';
 		}
@@ -132,7 +132,7 @@ if (!defined('PHPWCMS_ROOT')) {
 	</tr>
 	<tr> 
 		<td class="chatlist"><?php echo $BL['be_profile_label_phone'] ?>:&nbsp;</td>
-		<td class="v12 tdbottom3"><?php echo html_specialchars($plugin['data']['order_data']['address']['PHONE']) ?>&nbsp;</td>
+		<td class="v12 tdbottom3"><?php echo html($plugin['data']['order_data']['address']['PHONE']) ?>&nbsp;</td>
 	</tr>
 	
 <?php
@@ -158,15 +158,15 @@ if (!defined('PHPWCMS_ROOT')) {
 ?>
 	<tr> 
 		<td class="chatlist"><?php echo $BLM['shopprod_custom_field'].str_replace('shop_field_', ' ', $custom_key) ?>:&nbsp;</td>
-		<td class="v12 tdbottom3"><?php echo nl2br( html_specialchars($custom_field) ) ?>&nbsp;</td>
+		<td class="v12 tdbottom3"><?php echo nl2br( html($custom_field) ) ?>&nbsp;</td>
 	</tr>
 
 <?php		
 		}	
 	}
 	
-	$plugin['data']['currency'] = ' '.html_entities( _getConfig( 'shop_pref_currency' ) );
-	$plugin['data']['weight_unit'] = ' '.html_entities( _getConfig( 'shop_pref_unit_weight' ) );
+	$plugin['data']['currency'] = ' '.html( _getConfig( 'shop_pref_currency' ) );
+	$plugin['data']['weight_unit'] = ' '.html( _getConfig( 'shop_pref_unit_weight' ) );
 
 ?>
 
@@ -208,8 +208,8 @@ if (!defined('PHPWCMS_ROOT')) {
 ?>
 		<tr class="product">
 			<td><?php echo $plugin['product']['shopprod_quantity'] ?></td>
-			<td><?php echo html_specialchars($plugin['product']['shopprod_ordernumber']) ?></td>
-			<td><a href="<?php echo $_controller_link.'&amp;edit='.$plugin['product']["shopprod_id"] ?>" target="_blank"><?php echo html_specialchars($plugin['product']['shopprod_name1']) ?></a></td>
+			<td><?php echo html($plugin['product']['shopprod_ordernumber']) ?></td>
+			<td><a href="<?php echo $_controller_link.'&amp;edit='.$plugin['product']["shopprod_id"] ?>" target="_blank"><?php echo html($plugin['product']['shopprod_name1']) ?></a></td>
 			<td class="number"><?php echo number_format($plugin['price_net'], 2, $BLM['dec_point'], $BLM['thousands_sep']); ?></td>
 			<td class="number"><?php echo number_format($plugin['product']['shopprod_vat'], 2, $BLM['dec_point'], $BLM['thousands_sep']); ?></td>
 			<td class="number"><?php echo number_format($plugin['product']['shopprod_quantity'] * $plugin['price_net'], 2, $BLM['dec_point'], $BLM['thousands_sep']); ?></td>			
@@ -303,14 +303,14 @@ if (!defined('PHPWCMS_ROOT')) {
 	
 	<tr> 
 		<td class="chatlist" style="padding-top:7px;"><?php echo $BLM['shopprod_email_customer'] ?>:&nbsp;</td>
-		<td class="tdbottom5 email"><pre><?php echo html_specialchars($plugin['data']['order_data']['mail_customer']) ?></pre></td>
+		<td class="tdbottom5 email"><pre><?php echo html($plugin['data']['order_data']['mail_customer']) ?></pre></td>
 	</tr>
 
 <?php if(!empty($plugin['data']['order_data']['mail_self'])) { ?>
 
 	<tr> 
 		<td class="chatlist" style="padding-top:7px;"><?php echo $BLM['shopprod_email_shop'] ?>:&nbsp;</td>
-		<td class="email"><pre><?php echo html_specialchars($plugin['data']['order_data']['mail_self']) ?></pre></td>
+		<td class="email"><pre><?php echo html($plugin['data']['order_data']['mail_self']) ?></pre></td>
 	</tr>
 
 <?php } ?>

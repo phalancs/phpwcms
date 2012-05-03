@@ -167,7 +167,7 @@ if($_entry['pages_total'] > 1) {
 				<td><input type="text" name="filter" id="filter" size="10" value="<?php 
 				
 				if(isset($_POST['filter']) && is_array($_POST['filter']) ) {
-					echo html_specialchars(implode(' ', $_POST['filter']));
+					echo html(implode(' ', $_POST['filter']));
 				}
 				
 				?>" class="textinput" style="margin:0 2px 0 0;width:110px;text-align:left;" title="filter results by username, name or email" /></td>
@@ -228,7 +228,7 @@ foreach($data as $row) {
 	
 	echo '<td class="dir" width="85%">';
 	echo $row['cat_pid'] ? '&nbsp;&nbsp;&nbsp;&nbsp;' : '&nbsp;';
-	echo html_specialchars($row['category'])."</td>\n";
+	echo html($row['category'])."</td>\n";
 	
 	echo '<td class="dir" width="3%" align="center">&nbsp;' . $row['cat_sort'] . '&nbsp;</td>';
 
@@ -242,7 +242,7 @@ foreach($data as $row) {
 		echo '<img src="include/img/button/aktiv_12x13_'.$row["cat_status"].'.gif" border="0" alt="" /></a>';
 	
 		echo '<a href="'.$_controller_link.'&amp;delete='.$row["cat_id"];
-		echo '" title="delete: '.html_specialchars($row['cat_name']).'"';
+		echo '" title="delete: '.html($row['cat_name']).'"';
 		echo ' onclick="return confirm(\''.$BLM['delete_entry'].js_singlequote($row['cat_name']).'\');">';
 		echo '<img src="include/img/button/trash_13x13_1.gif" border="0" alt="" /></a>';
 	

@@ -167,7 +167,7 @@ if($_entry['pages_total'] > 1) {
 				<td><input type="text" name="filter" id="filter" size="10" value="<?php 
 				
 				if(isset($_POST['filter']) && is_array($_POST['filter']) ) {
-					echo html_specialchars(implode(' ', $_POST['filter']));
+					echo html(implode(' ', $_POST['filter']));
 				}
 				
 				?>" class="textinput" style="margin:0 2px 0 0;width:110px;text-align:left;" title="filter results by username, name or email" /></td>
@@ -208,11 +208,11 @@ foreach($data as $row) {
 	echo '<img src="include/img/famfamfam/';
 	echo $row["glossary_highlight"] ? 'tag_blue_key.gif' : 'tag_blue.gif';
 	echo '" alt="'.$BLM['glossary_entry'].'" /></td>'.LF;
-	echo '<td class="dir" width="50%">'.html_specialchars($row["glossary_title"])."&nbsp;</td>\n";
+	echo '<td class="dir" width="50%">'.html($row["glossary_title"])."&nbsp;</td>\n";
 	
-	echo '<td class="dir">'.html_specialchars($row["glossary_keyword"])."&nbsp;</td>\n";
+	echo '<td class="dir">'.html($row["glossary_keyword"])."&nbsp;</td>\n";
 	
-	echo '<td class="dir">'.html_specialchars($row["glossary_tag"])."&nbsp;</td>\n";
+	echo '<td class="dir">'.html($row["glossary_tag"])."&nbsp;</td>\n";
 	
 	echo '<td align="right" nowrap="nowrap" class="button_td">';
 	
@@ -224,7 +224,7 @@ foreach($data as $row) {
 	echo '<img src="include/img/button/aktiv_12x13_'.$row["glossary_status"].'.gif" border="0" alt="" /></a>';
 	
 	echo '<a href="'.GLOSSARY_HREF.'&amp;delete='.$row["glossary_id"];
-	echo '" title="delete: '.html_specialchars($row["glossary_title"]).'"';
+	echo '" title="delete: '.html($row["glossary_title"]).'"';
 	echo ' onclick="return confirm(\''.$BLM['delete_entry'].' '.js_singlequote($row["glossary_title"]).'\');">';
 	echo '<img src="include/img/button/trash_13x13_1.gif" border="0" alt=""></a>';
 

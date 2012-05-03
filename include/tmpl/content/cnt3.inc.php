@@ -46,7 +46,7 @@ $tmpllist = get_tmpl_files(PHPWCMS_TEMPLATE.'inc_cntpart/linkemail');
 if(is_array($tmpllist) && count($tmpllist)) {
 	foreach($tmpllist as $val) {
 		$selected_val = (isset($content["template"]) && $val == $content["template"]) ? ' selected="selected"' : '';
-		$val = html_specialchars($val);
+		$val = html($val);
 		echo '	<option value="' . $val . '"' . $selected_val . '>' . $val . '</option>' . LF;
 	}
 }
@@ -60,7 +60,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 
 <tr>
             	<td align="right" class="chatlist"><?php echo $BL['be_cnt_directlink'] ?>:&nbsp;</td>
-            	<td valign="top"><input name="clink" type="text" id="clink" class="f11b" style="width:440px" value="<?php echo  isset($content["link"]) ? html_specialchars($content["link"]) : '' ?>" size="40"></td>
+            	<td valign="top"><input name="clink" type="text" id="clink" class="f11b" style="width:440px" value="<?php echo  isset($content["link"]) ? html($content["link"]) : '' ?>" size="40"></td>
 			</tr>
 			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 			<tr>

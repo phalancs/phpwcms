@@ -32,35 +32,35 @@ if(isset($_POST["dbsavesubmit"]) && $err) {
         <table border="0" cellpadding="0" cellspacing="0" summary="">
           <tr>
             <td align="right" class="v10" width="120">MySQL host:&nbsp;</td>
-            <td width="270"><input name="db_host" type="text" class="v12" id="db_host" value="<?php echo html_specialchars($phpwcms["db_host"]) ?>" size="30" style="width:250px" /></td>
+            <td width="270"><input name="db_host" type="text" class="v12" id="db_host" value="<?php echo html($phpwcms["db_host"]) ?>" size="30" style="width:250px" /></td>
             <td class="chatlist"><em>default: localhost</em></td>
           </tr>
 		   <tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="4" /></td>
 		   </tr>
           <tr>
             <td align="right" class="v10">DB user:&nbsp;</td>
-            <td><input name="db_user" type="text" class="v12" id="db_user" style="width:250px" value="<?php echo html_specialchars($phpwcms["db_user"]) ?>" size="30" /></td>
+            <td><input name="db_user" type="text" class="v12" id="db_user" style="width:250px" value="<?php echo html($phpwcms["db_user"]) ?>" size="30" /></td>
             <td class="chatlist">&nbsp;</td>
           </tr>
 		   <tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="4" /></td>
 		   </tr>
           <tr>
             <td align="right" class="v10">DB password:&nbsp;</td>
-            <td><input name="db_pass" type="text" class="v12" id="db_pass" style="width:250px" value="<?php echo html_specialchars($phpwcms["db_pass"]) ?>" size="30" /></td>
+            <td><input name="db_pass" type="text" class="v12" id="db_pass" style="width:250px" value="<?php echo html($phpwcms["db_pass"]) ?>" size="30" /></td>
             <td class="chatlist">&nbsp;</td>
           </tr>
 		   <tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="4" /></td>
 		   </tr>
           <tr>
             <td align="right" class="v10">DB database:&nbsp;</td>
-            <td><input name="db_table" type="text" class="v12" id="db_table" style="width:250px" value="<?php echo html_specialchars($phpwcms["db_table"]) ?>" size="30" maxlength="255" /></td>
+            <td><input name="db_table" type="text" class="v12" id="db_table" style="width:250px" value="<?php echo html($phpwcms["db_table"]) ?>" size="30" maxlength="255" /></td>
             <td class="chatlist"><em>you have to create it <strong>before</strong> setup!!!</em></td>
           </tr>
 		  <tr><td colspan="3"><img src="../include/img/leer.gif" alt="" width="1" height="4" /></td>
 		  </tr>
           <tr>
             <td align="right" class="v10">DB table prefix:&nbsp;</td>
-            <td><input name="db_prepend" type="text" class="v12" id="db_prepend" style="width:250px" value="<?php echo html_specialchars($prepend) ?>" size="30" maxlength="10" /></td>
+            <td><input name="db_prepend" type="text" class="v12" id="db_prepend" style="width:250px" value="<?php echo html($prepend) ?>" size="30" maxlength="10" /></td>
             <td class="chatlist"><em>default: none (&quot;&quot;), if filled
                 in it will be <strong>prefix</strong>+<strong>_</strong></em></td>
           </tr>
@@ -81,7 +81,7 @@ if(isset($_POST["dbsavesubmit"]) && $err) {
 if(!empty($db_additional)) {
 
 ?>
-	<tr><td colspan="3" style="padding: 10px 0 10px 0;"><h1><span class="number">4.</span> Charset &amp; MySQL <span class="v11">(v<?php echo html_specialchars($row[0]) ?>)</span> collation
+	<tr><td colspan="3" style="padding: 10px 0 10px 0;"><h1><span class="number">4.</span> Charset &amp; MySQL <span class="v11">(v<?php echo html($row[0]) ?>)</span> collation
 	      settings <a href="http://dev.mysql.com/doc/refman/4.1/en/charset.html" target="_blank" title="MySQL information"><img src="../include/img/famfamfam/icon_info.gif" alt="Info" border="0" class="icon" /></a></h1></td></tr>
 	<tr>
             <td align="right" class="v10"><a href="http://www.w3.org/International/O-HTTP-charset" target="_blank" title="HTTP charset"><img src="../include/img/famfamfam/icon_info.gif" alt="Info" border="0" class="icon1" /></a>Charset (recommend: UTF8):&nbsp;</td>
@@ -232,7 +232,7 @@ if(!empty($db_init)) {
 	}
 	if(isset($db_create_err) && count($db_create_err)) {
 		echo '<tr><td>&nbsp;</td><td colspan="2">';
-		echo errorWarning('Errors while creating initial phpwcms tables. Solve it manually:</b></p><pre class="errorBox">'.html_specialchars(implode(";\n\n", $db_create_err).';').'</pre><p><b> ');
+		echo errorWarning('Errors while creating initial phpwcms tables. Solve it manually:</b></p><pre class="errorBox">'.html(implode(";\n\n", $db_create_err).';').'</pre><p><b> ');
 		echo "</td></tr>\n";
 		
 		$_SESSION['admin_set']	= false;
@@ -307,7 +307,7 @@ if(!empty($db_init)) {
 				continue;
 			}
 			
-			$value = html_specialchars($value);
+			$value = html($value);
 			$value = str_replace(' ', '&nbsp;', $value);
 			$value = nl2br($value);
 			
@@ -355,7 +355,7 @@ if(!empty($_SESSION['admin_set'])) {
 ?>
 	<tr>
 		<td align="right" class="v10">Name:&nbsp;</td>
-		<td><input name="admin_name" type="text" id="admin_name" class="v12" style="width:250px" value="<?php echo empty($phpwcms["admin_name"]) ? "Webmaster" : html_specialchars($phpwcms["admin_name"]) ?>" size="30" /></td>
+		<td><input name="admin_name" type="text" id="admin_name" class="v12" style="width:250px" value="<?php echo empty($phpwcms["admin_name"]) ? "Webmaster" : html($phpwcms["admin_name"]) ?>" size="30" /></td>
 		<td class="chatlist"><em>&nbsp;default: Webmaster</em></td>
 	</tr>
 	
@@ -364,7 +364,7 @@ if(!empty($_SESSION['admin_set'])) {
 	
 	<tr>
 		<td align="right" class="v10">Admin login:&nbsp;</td>
-		<td><input name="admin_user" type="text" id="admin_user" class="v12" style="width:250px" value="<?php echo empty($phpwcms["admin_user"]) ? "webmaster" : html_specialchars($phpwcms["admin_user"]) ?>" size="30" /></td>
+		<td><input name="admin_user" type="text" id="admin_user" class="v12" style="width:250px" value="<?php echo empty($phpwcms["admin_user"]) ? "webmaster" : html($phpwcms["admin_user"]) ?>" size="30" /></td>
 		<td class="chatlist"><em>&nbsp;default: admin </em></td>
 	</tr>
 	
@@ -398,7 +398,7 @@ if(!empty($_SESSION['admin_set'])) {
 	
 	<tr>
 		<td align="right" class="v10">Admin email:&nbsp;</td>
-		<td><input name="admin_email" type="text" id="admin_email" class="v12" style="width:250px" value="<?php echo html_specialchars($phpwcms["admin_email"]) ?>" size="30" /></td>
+		<td><input name="admin_email" type="text" id="admin_email" class="v12" style="width:250px" value="<?php echo html($phpwcms["admin_email"]) ?>" size="30" /></td>
 		<td class="chatlist"><em>&nbsp;is used site wide</em></td>
 	</tr>
 <?php
@@ -458,7 +458,7 @@ if(!empty($_SESSION['admin_set'])) {
 		
 			// update
 			echo '<img src="../include/img/famfamfam/icon_accept.gif" alt="Juchu" class="icon1" />';
-			echo '<strong>Done!</strong> Account for user <b>'.html_specialchars($phpwcms['admin_user']).'</b> was created.';
+			echo '<strong>Done!</strong> Account for user <b>'.html($phpwcms['admin_user']).'</b> was created.';
 			echo '<input type="hidden" name="user_account" value="1" />';
 		
 		}
@@ -467,7 +467,7 @@ if(!empty($_SESSION['admin_set'])) {
 		
 			// update
 			echo '<img src="../include/img/famfamfam/icon_accept.gif" alt="Juchu" class="icon1" />';
-			echo '<strong>Done!</strong> Account of user <b>'.html_specialchars($phpwcms['admin_user']).'</b> was updated.';
+			echo '<strong>Done!</strong> Account of user <b>'.html($phpwcms['admin_user']).'</b> was updated.';
 			echo '<input type="hidden" name="user_account" value="1" />';
 		
 		}		
@@ -476,7 +476,7 @@ if(!empty($_SESSION['admin_set'])) {
 		
 			// db error
 			echo errorWarning('There is a database problem!');
-			echo '<p>Account for user <b>'.html_specialchars($phpwcms['admin_user']).'</b> was not created or updated.<br />Click <b>continue</b> to try again.</p>';
+			echo '<p>Account for user <b>'.html($phpwcms['admin_user']).'</b> was not created or updated.<br />Click <b>continue</b> to try again.</p>';
 			$_SESSION['admin_save'] = false;
 			
 		}

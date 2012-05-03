@@ -82,7 +82,7 @@ if($action == 'exportformresult' && isset($_GET['fid']) && ($fid = intval($_GET[
 		foreach($export[0] as $key => $value) {
 	
 			$elements[$x] .= '		<td>';
-			$elements[$x] .= isset($export[$x][$key]) ? html_specialchars($export[$x][$key]) : '';
+			$elements[$x] .= isset($export[$x][$key]) ? html($export[$x][$key]) : '';
 			$elements[$x] .= '</td>'.LF;
 	
 		}
@@ -186,7 +186,7 @@ if($action == 'exportformresult' && isset($_GET['fid']) && ($fid = intval($_GET[
 				if(strpos($export[$x][$key], '/'.$phpwcms["content_path"].'form/')) {
 				
 					$ext = which_ext($export[$x][$key]);
-					$export[$x][$key] = html_specialchars($export[$x][$key]);
+					$export[$x][$key] = html($export[$x][$key]);
 					if($ext == 'jpg' || $ext == 'gif' || $ext == 'png') {
 						echo '<img src="'.$export[$x][$key].'" border="0" alt="" />';
 					} else {
@@ -194,7 +194,7 @@ if($action == 'exportformresult' && isset($_GET['fid']) && ($fid = intval($_GET[
 					}				
 				
 				} else {
-					echo html_specialchars($export[$x][$key]);
+					echo html($export[$x][$key]);
 				}
 			
 			} else {
@@ -284,7 +284,7 @@ if($action == 'exportformresult' && isset($_GET['fid']) && ($fid = intval($_GET[
 			foreach($_userInfo['subscriptions'] as $value) {
 			
 				// echo channel column name
-				echo '<th>'.html_specialchars($value['subscription_name']).'</th>'.LF;
+				echo '<th>'.html($value['subscription_name']).'</th>'.LF;
 				$_userInfo['channel'][$x] = $value['subscription_id'];
 				$x++;
 
@@ -315,9 +315,9 @@ if($action == 'exportformresult' && isset($_GET['fid']) && ($fid = intval($_GET[
 		
 			echo '<tr>'.LF;
 			echo '<td align="center">'.($value['address_verified'] ? 'X' : '').'</td>'.LF;
-			echo '<td>'.html_specialchars($value['address_email']).'</td>'.LF;
-			echo '<td>'.html_specialchars($value['address_name']).'</td>'.LF;
-			echo '<td>'.html_specialchars($value['addate']).'</td>'.LF;
+			echo '<td>'.html($value['address_email']).'</td>'.LF;
+			echo '<td>'.html($value['address_name']).'</td>'.LF;
+			echo '<td>'.html($value['addate']).'</td>'.LF;
 			echo '<td align="center">'.$value['all'].'</td>'.LF;
 		
 			// custom subscriptions

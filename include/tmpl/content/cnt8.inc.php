@@ -94,7 +94,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	foreach($tmpllist as $val) {
 		$vals = '';
 		if($val == $content['alink']['alink_template']) $vals= ' selected="selected"';
-		$val = html_specialchars($val);
+		$val = html($val);
 		echo '<option value="'.$val.'"'.$vals.'>'.$val."</option>\n";
 	}
 }
@@ -159,7 +159,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 
 <tr>
 	<td align="right" class="chatlist"><?php echo $BL['be_allowed_tags'] ?>:&nbsp;</td>
-	<td><input name="calink_allowedtags" type="text" id="calink_allowedtags" class="f11b" style="width: 420px" value="<?php echo html_specialchars($content['alink']['alink_allowedtags']); ?>" size="20" /></td>
+	<td><input name="calink_allowedtags" type="text" id="calink_allowedtags" class="f11b" style="width: 420px" value="<?php echo html($content['alink']['alink_allowedtags']); ?>" size="20" /></td>
 </tr>
 
 <tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="6" /></td></tr>
@@ -261,21 +261,21 @@ if(is_array($tmpllist) && count($tmpllist)) {
 		if($result = mysql_query($sql, $db) or die("error while reading complete article/articlecategory list")) {
 			while($row = mysql_fetch_row($result)) {
 				$k  = 0;
-				$k1 = $BL['be_cnt_sitelevel'].': '.html_specialchars($row[2]); //$BL['be_admin_page_articlename']
+				$k1 = $BL['be_cnt_sitelevel'].': '.html($row[2]); //$BL['be_admin_page_articlename']
 				if(empty($row[4])) {
 					$row[2] = $indexpage['acat_name'];
 					$row[3] = $indexpage['acat_alias'];
 				}
-				$alias_add  = ' ('.html_specialchars($row[2]);
+				$alias_add  = ' ('.html($row[2]);
 				if(!empty($row[3])) {
-					$alias_add .= '/'.html_specialchars($row[3]);
+					$alias_add .= '/'.html($row[3]);
 				}
 				$alias_add .= ')';
 				foreach($content['alink']['alink_id'] as $key => $value) {
 					
 					if($row[0] == $value) {
 						$carticle_link[$key]  = '	<option value="'.$row[0].'" title="'.$k1;
-						$carticle_link[$key] .= '">'.html_specialchars($row[1]).$alias_add.'</option>'.LF;
+						$carticle_link[$key] .= '">'.html($row[1]).$alias_add.'</option>'.LF;
 						unset($content['alink']['alink_id'][$key]);
 						$k = 1;
 					} 
@@ -284,7 +284,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 				
 				if(!$k) {
 					$carticle_list .= '	<option value="'.$row[0].'" title="'.$k1;
-					$carticle_list .= '">'.html_specialchars($row[1]).$alias_add.'</option>'.LF;
+					$carticle_list .= '">'.html($row[1]).$alias_add.'</option>'.LF;
 				}
 			}
 	  	}
@@ -341,7 +341,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 							
 				echo '<option value="0"';
 				if(in_array(0, $content['alink']['alink_level'])) echo ' selected="selected"';
-				echo '>'.html_specialchars($indexpage['acat_name']).'</option>'.LF;
+				echo '>'.html($indexpage['acat_name']).'</option>'.LF;
 				struct_select_list(0, 0, $content['alink']['alink_level']);
 ?>
 	</select></td>
@@ -354,7 +354,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	<td align="right" class="chatlist"><?php echo $BL['be_tags'] ?>:&nbsp;</td>
 	<td><table cellpadding="0" cellspacing="0" border="0" summary="">
 		<tr>
-			<td><input type="text" name="calink_category" id="calink_category" value="<?php echo html_specialchars(implode(', ', $content['alink']['alink_category'])) ?>" class="width350 bold" /></td>
+			<td><input type="text" name="calink_category" id="calink_category" value="<?php echo html(implode(', ', $content['alink']['alink_category'])) ?>" class="width350 bold" /></td>
 			<td>&nbsp;&nbsp;</td>
 			<td><select name="calink_andor" id="calink_andor">
 				

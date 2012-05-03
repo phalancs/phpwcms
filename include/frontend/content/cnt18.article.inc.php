@@ -176,7 +176,7 @@ if($guestbook['visible']) {
 	
 								if(!move_uploaded_file($_FILES['guestbook_image']['tmp_name'], $guestbook['image_dir'].'/'.$guestbook['image']['file'])) {
 								
-									$guestbook['error']['image']['move'] = 'Image '.html_specialchars($guestbook['image']['name']).' could not be stored. Try again!';
+									$guestbook['error']['image']['move'] = 'Image '.html($guestbook['image']['name']).' could not be stored. Try again!';
 									$guestbook['image']['name'] = '';
 									$guestbook['image']['hash'] = '';
 									$guestbook['image']['file'] = '';
@@ -515,10 +515,10 @@ if($guestbook['visible']) {
 			$guestbook['form'] = render_cnt_template($guestbook['form'], 'ERROR_URL',		empty($guestbook['error']['url'])      ? '' : $guestbook['error']['url']);
 			$guestbook['form'] = render_cnt_template($guestbook['form'], 'ERROR_CAPTCHA',	empty($guestbook['error']['captcha'])  ? '' : $guestbook['error']['captcha']);
 			
-			$guestbook['form'] = render_cnt_template($guestbook['form'], 'EMAIL',	html_specialchars($guestbook['post']['email']));
-			$guestbook['form'] = render_cnt_template($guestbook['form'], 'NAME',	html_specialchars($guestbook['post']['name']));
-			$guestbook['form'] = render_cnt_template($guestbook['form'], 'URL',		html_specialchars($guestbook['post']['url']));
-			$guestbook['form'] = render_cnt_template($guestbook['form'], 'MSG',		html_specialchars($guestbook['post']['msg']));
+			$guestbook['form'] = render_cnt_template($guestbook['form'], 'EMAIL',	html($guestbook['post']['email']));
+			$guestbook['form'] = render_cnt_template($guestbook['form'], 'NAME',	html($guestbook['post']['name']));
+			$guestbook['form'] = render_cnt_template($guestbook['form'], 'URL',		html($guestbook['post']['url']));
+			$guestbook['form'] = render_cnt_template($guestbook['form'], 'MSG',		html($guestbook['post']['msg']));
 			
 			$guestbook['GBSHOW_0'] = '';
 			$guestbook['GBSHOW_1'] = '';
@@ -548,10 +548,10 @@ if($guestbook['visible']) {
 			
 			if(!$guestbook['flooding']) {
 				// if successfully signed show signed info
-				$guestbook['signed'] = render_cnt_template($guestbook['signed'], 'EMAIL',	html_specialchars($guestbook['post']['email']));
-				$guestbook['signed'] = render_cnt_template($guestbook['signed'], 'NAME',	html_specialchars($guestbook['post']['name']));
-				$guestbook['signed'] = render_cnt_template($guestbook['signed'], 'URL',		html_specialchars($guestbook['post']['url']));
-				$guestbook['signed'] = render_cnt_template($guestbook['signed'], 'MSG',		html_specialchars($guestbook['post']['msg']));
+				$guestbook['signed'] = render_cnt_template($guestbook['signed'], 'EMAIL',	html($guestbook['post']['email']));
+				$guestbook['signed'] = render_cnt_template($guestbook['signed'], 'NAME',	html($guestbook['post']['name']));
+				$guestbook['signed'] = render_cnt_template($guestbook['signed'], 'URL',		html($guestbook['post']['url']));
+				$guestbook['signed'] = render_cnt_template($guestbook['signed'], 'MSG',		html($guestbook['post']['msg']));
 				$guestbook['form'] = $guestbook['signed'];
 			} else {
 				$guestbook['form'] = $guestbook['spamalert'];
@@ -610,8 +610,8 @@ if($guestbook['visible']) {
 			$guestbook['link_to'] .= 'id='.$aktion[0].','.$aktion[1].','.$aktion[2].','.$aktion[3].','.$aktion[4].',';
 			$guestbook['link_add'] = '';
 			if($guestbook['archivedate']) {
-				$guestbook['link_add'] .= '&amp;gbd='.html_specialchars(urlencode($guestbook['archivedate']));
-				$guestbook['link_add'] .= '&amp;gbs='.html_specialchars(urlencode($guestbook['archiveselect']));
+				$guestbook['link_add'] .= '&amp;gbd='.html(urlencode($guestbook['archivedate']));
+				$guestbook['link_add'] .= '&amp;gbs='.html(urlencode($guestbook['archiveselect']));
 			}
 			
 			
@@ -663,7 +663,7 @@ if($guestbook['visible']) {
 				
 					while($guestbook['row'] = mysql_fetch_row($guestbook['result'])) {
 				
-						$guestbook['row'][0] = html_specialchars($guestbook['row'][0]);
+						$guestbook['row'][0] = html($guestbook['row'][0]);
 						$guestbook['archive'] .= '<option value="'.$guestbook['row'][0].'"';
 						if($guestbook['archiveselect'] == $guestbook['row'][0]) {
 							$guestbook['archive'] .= ' selected="selected"';
@@ -676,7 +676,7 @@ if($guestbook['visible']) {
 				
 				}
 				$guestbook['archive'] .= '</select>';
-				$guestbook['archive'] .= '<input type="hidden" name="archivedate" value="'.html_specialchars($guestbook['archiveval'][0]).'" />';
+				$guestbook['archive'] .= '<input type="hidden" name="archivedate" value="'.html($guestbook['archiveval'][0]).'" />';
 				if(isset($guestbook['archiveval'][2]) && $guestbook['archiveval'][2]) {
 					$guestbook['archive'] .= (empty($guestbook['archiveval'][3])) ? '' : $guestbook['archiveval'][3];
 					// check if send button is image or text
@@ -706,8 +706,8 @@ if($guestbook['visible']) {
 				}
 				$guestbook['jump'] .= '</select>';
 				if($guestbook['archivedate']) {
-					$guestbook['jump'] .= '<input type="hidden" name="archivedate" value="'.html_specialchars($guestbook['archivedate']).'" />';
-					$guestbook['jump'] .= '<input type="hidden" name="showarchive" value="'.html_specialchars($guestbook['archiveselect']).'" />';
+					$guestbook['jump'] .= '<input type="hidden" name="archivedate" value="'.html($guestbook['archivedate']).'" />';
+					$guestbook['jump'] .= '<input type="hidden" name="showarchive" value="'.html($guestbook['archiveselect']).'" />';
 				}
 				if(isset($guestbook['jumpval'][1]) && $guestbook['jumpval'][1]) {
 					$guestbook['jump'] .= empty($guestbook['jumpval'][2]) ? '' : $guestbook['jumpval'][2];
@@ -745,12 +745,12 @@ if($guestbook['visible']) {
 				$guestbook['row']['guestbook_msg'] = preg_replace($guestbook['ban'], $guestbook['replace'], $guestbook['row']['guestbook_msg']);
 			}
 			*/
-			$guestbook['row']['guestbook_msg'] = html_specialchars($guestbook['row']['guestbook_msg']);
+			$guestbook['row']['guestbook_msg'] = html($guestbook['row']['guestbook_msg']);
 			
 			$guestbook['c'] = str_replace('{ID}', 	$guestbook['counter'], 				$guestbook['entry']);
 			$guestbook['c'] = str_replace('{DBID}', $guestbook['row']['guestbook_id'],	$guestbook['c']);
 			
-			$guestbook['c'] = render_cnt_template($guestbook['c'], 'URL',	empty($guestbook['row']['guestbook_url']) ? '' : html_specialchars('http://'.$guestbook['row']['guestbook_url']));
+			$guestbook['c'] = render_cnt_template($guestbook['c'], 'URL',	empty($guestbook['row']['guestbook_url']) ? '' : html('http://'.$guestbook['row']['guestbook_url']));
 			
 			switch($guestbook['row']['guestbook_show']) {
 				case 1:		$guestbook['row']['guestbook_email'] = '';
@@ -762,8 +762,8 @@ if($guestbook['visible']) {
 							
 			}
 			
-			$guestbook['c'] = render_cnt_template($guestbook['c'], 'EMAIL',	html_specialchars($guestbook['row']['guestbook_email']));
-			$guestbook['c'] = render_cnt_template($guestbook['c'], 'NAME',	html_specialchars($guestbook['row']['guestbook_name']));
+			$guestbook['c'] = render_cnt_template($guestbook['c'], 'EMAIL',	html($guestbook['row']['guestbook_email']));
+			$guestbook['c'] = render_cnt_template($guestbook['c'], 'NAME',	html($guestbook['row']['guestbook_name']));
 			$guestbook['c'] = render_cnt_template($guestbook['c'], 'MSG',	nl2br($guestbook['row']['guestbook_msg']));
 			
 			$guestbook['c'] = preg_replace('/{TIMESTAMP:(.*)}/e', "date('$1',\$guestbook['row']['guestbook_created'])", $guestbook['c']);
@@ -789,7 +789,7 @@ if($guestbook['visible']) {
 					if($thumb_image != false) {
 		
 						$guestbook['entry_image']  = '<img src="'.PHPWCMS_IMAGES . $thumb_image[0] .'" border="0" '.$thumb_image[3];
-						$guestbook['entry_image'] .= ' alt="'.html_specialchars($guestbook['row']['guestbook_imagename']).'" />';
+						$guestbook['entry_image'] .= ' alt="'.html($guestbook['row']['guestbook_imagename']).'" />';
 						
 						//zoom
 						if($guestbook['imgdata'][2]) {

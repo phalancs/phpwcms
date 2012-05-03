@@ -56,8 +56,8 @@ $buttonAction .= '</tr></table>';
 	</tr>
 	<tr bgcolor="#F3F5F8">
 		<td width="23" align="right"><img src="include/img/symbole/article_text.gif" alt="" width="9" height="11" border="0" /><img src="include/img/leer.gif" alt="" width="5" height="1" /></td>
-		<td width="453" class="dir"><a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=1&amp;id=<?php echo $article["article_id"] ?>"><strong><?php echo html_specialchars($article["article_title"]) ?></strong></a></td>
-		<td width="62" align="right" class="h13" style="padding-right:1px"><a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=1&amp;id=<?php echo $article["article_id"] ?>"><img src="include/img/button/edit_22x13.gif" alt="<?php echo $BL['be_article_cnt_ledit'] ?>" width="22" height="13" border="0" /></a><a href="include/actions/articlecontent.php?do=<?php echo "3,".$article["article_id"].",0,".switch_on_off($article["article_aktiv"]) ?>" title="<?php echo $BL['be_article_cnt_lvisible'] ?>"><img src="include/img/button/visible_12x13_<?php echo $article["article_aktiv"] ?>.gif" alt="" width="12" height="13" border="0" /></a><a href="include/actions/articlecontent.php?do=<?php echo "1,".$article["article_id"]; ?>" title="<?php echo $BL['be_article_cnt_ldel'] ?>" onclick="return confirm('<?php echo $BL['be_article_cnt_ldeljs'].'\n'.html_specialchars($article["article_title"]); ?>  \n ');"><img src="include/img/button/trash_13x13_1.gif" alt="" width="13" height="13" border="0" /></a></td>
+		<td width="453" class="dir"><a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=1&amp;id=<?php echo $article["article_id"] ?>"><strong><?php echo html($article["article_title"]) ?></strong></a></td>
+		<td width="62" align="right" class="h13" style="padding-right:1px"><a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=1&amp;id=<?php echo $article["article_id"] ?>"><img src="include/img/button/edit_22x13.gif" alt="<?php echo $BL['be_article_cnt_ledit'] ?>" width="22" height="13" border="0" /></a><a href="include/actions/articlecontent.php?do=<?php echo "3,".$article["article_id"].",0,".switch_on_off($article["article_aktiv"]) ?>" title="<?php echo $BL['be_article_cnt_lvisible'] ?>"><img src="include/img/button/visible_12x13_<?php echo $article["article_aktiv"] ?>.gif" alt="" width="12" height="13" border="0" /></a><a href="include/actions/articlecontent.php?do=<?php echo "1,".$article["article_id"]; ?>" title="<?php echo $BL['be_article_cnt_ldel'] ?>" onclick="return confirm('<?php echo $BL['be_article_cnt_ldeljs'].'\n'.html($article["article_title"]); ?>  \n ');"><img src="include/img/button/trash_13x13_1.gif" alt="" width="13" height="13" border="0" /></a></td>
 	</tr>
 	<tr bgcolor="#F3F5F8"><td colspan="3"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td>
 	</tr>
@@ -69,7 +69,7 @@ $buttonAction .= '</tr></table>';
 			<?php	if($article["article_subtitle"]) { ?>
 			<tr>
 			  <td valign="top" class="v10" style="color:#727889"><?php echo $BL['be_article_asubtitle'] ?>:&nbsp;</td>
-			  <td valign="top" class="v10"><strong><?php echo html_specialchars($article["article_subtitle"]); ?></strong></td>
+			  <td valign="top" class="v10"><strong><?php echo html($article["article_subtitle"]); ?></strong></td>
 			</tr>
 			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td>
 			</tr>
@@ -78,7 +78,7 @@ $buttonAction .= '</tr></table>';
 			<?php if(!empty($article["article_summary"])) { ?>
 			<tr>
 			  <td valign="top" class="v10" style="color:#727889"><?php echo $BL['be_article_asummary'] ?>:&nbsp;</td>
-			  <td valign="top" class="v10"><?php echo html_specialchars(getCleanSubString(strip_tags($article["article_summary"]), 250, '&#8230;')); ?></td>
+			  <td valign="top" class="v10"><?php echo html(getCleanSubString(strip_tags($article["article_summary"]), 250, '&#8230;')); ?></td>
 			</tr>
 			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td>
 			</tr>
@@ -86,13 +86,13 @@ $buttonAction .= '</tr></table>';
 
 			<tr>
 			  <td valign="top" class="v10" style="color:#727889"><?php echo $BL['be_article_cat'] ?>:&nbsp;</td>
-			  <td valign="top" class="v10"><?php echo html_specialchars($article["article_cat"]) ?></td>
+			  <td valign="top" class="v10"><?php echo html($article["article_cat"]) ?></td>
 			</tr>
 			<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td>
 			</tr>
 			<tr>
 			  <td valign="top" class="v10" style="color:#727889"><?php echo $BL['be_article_akeywords'] ?>:&nbsp;</td>
-			  <td valign="top" class="v10"><?php if($article["article_keyword"]) {echo html_specialchars($article["article_keyword"]);}else{echo "not defined/completed";} ?></td>
+			  <td valign="top" class="v10"><?php if($article["article_keyword"]) {echo html($article["article_keyword"]);}else{echo "not defined/completed";} ?></td>
 			</tr>
 			<?php 
 
@@ -102,7 +102,7 @@ $buttonAction .= '</tr></table>';
 			</tr>
 			<tr>
 			  <td valign="top" class="v10" style="color:#727889"><?php echo $BL['be_article_cnt_redirect'] ?>:&nbsp;</td>
-			  <td valign="top" class="v10"><?php echo html_specialchars($article["article_redirect"]); ?></td>
+			  <td valign="top" class="v10"><?php echo html($article["article_redirect"]); ?></td>
 			</tr>
 			<?php
 			}
@@ -311,7 +311,7 @@ if(!$temp_count) {
 					// now show current block name
 					if($contentpart_block != $row['acontent_block']) {
 						$contentpart_block = $row['acontent_block'];
-						$contentpart_block_name = html_specialchars(' {'.$row['acontent_block'].'}');
+						$contentpart_block_name = html(' {'.$row['acontent_block'].'}');
 						$contentpart_block_color = ' bgcolor="#E0D6EB"';
 						
 						switch($contentpart_block) {
@@ -363,7 +363,7 @@ if(!$temp_count) {
 			<tr<?php echo $contentpart_block_color ?>>
 				<td align="right" style="padding-right:5px;"><img src="include/img/symbole/tabbed.gif" alt="" width="9" height="11" border="0" /></td>
 				<td style="font-size:9px;"><?php 
-					echo html_specialchars($contentpart_tab_title);
+					echo html($contentpart_tab_title);
 					if(empty($contentpart_tab_title)) {
 						echo ' [' . $contentpart_tab_number . ']';
 					}

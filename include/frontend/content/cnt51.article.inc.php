@@ -47,8 +47,8 @@ if($map['result'] = mysql_query($map['sql'], $db)) {
 		$map['map'] .= '<area shape="rect" coords="'.($map['row']['map_x']-4).','.($map['row']['map_y']-4);
 		$map['map'] .= ','.($map['row']['map_x']+4).','.($map['row']['map_y']+4).'" href="index.php?id=';
 		$map['map'] .= implode(',', $aktion).'&amp;loc='.$map['row']['map_id'].'" title="';
-		$map['map'] .= html_specialchars($map['row']['map_title']).'" alt="';
-		$map['map'] .= html_specialchars($map['row']['map_title']).'" />';
+		$map['map'] .= html($map['row']['map_title']).'" alt="';
+		$map['map'] .= html($map['row']['map_title']).'" />';
 		$map['p'][]  = $map['row']['map_x'].'x'.$map['row']['map_y'];
 		
 		if($map['show'] == $map['row']['map_id']) {
@@ -79,14 +79,14 @@ if(!$map['tmpl_content']) {
 
 	if(!empty($map['text'])) $CNT_TMP .= nl2br(div_class($map['text'], $template_default["article"]["text_class"]));
 	if($map['loc']) {
-		$CNT_TMP .= '<h5>'.html_specialchars($map['loc']['map_title']).'</h5>';
+		$CNT_TMP .= '<h5>'.html($map['loc']['map_title']).'</h5>';
 		$map["location"] = '';
 		$map['loc']['map_zip'] = trim($map['loc']['map_zip'].' '.$map['loc']['map_city']);
 		if($map['loc']['map_zip']) {
-			$map["location"] .= '<strong>'.html_specialchars($map['loc']['map_zip'])."</strong>\n";
+			$map["location"] .= '<strong>'.html($map['loc']['map_zip'])."</strong>\n";
 		}
 		if($map['loc']['map_entry']) {
-			$map["location"] .= $map['loc']['map_entry']; //html_specialchars($map['loc']['map_entry'])
+			$map["location"] .= $map['loc']['map_entry']; //html($map['loc']['map_entry'])
 		}
 		$map["location"] = trim($map["location"]);
 		if($map["location"]) {
@@ -98,16 +98,16 @@ if(!$map['tmpl_content']) {
 
 	if($map['loc']) {
 		// build location entry
-		$map['tmpl_location'] = render_cnt_template($map['tmpl_location'], 'TITLE', html_specialchars($map['loc']['map_title']));
-		$map['tmpl_location'] = render_cnt_template($map['tmpl_location'], 'ZIP', html_specialchars($map['loc']['map_zip']));
-		$map['tmpl_location'] = render_cnt_template($map['tmpl_location'], 'CITY', html_specialchars($map['loc']['map_city']));
+		$map['tmpl_location'] = render_cnt_template($map['tmpl_location'], 'TITLE', html($map['loc']['map_title']));
+		$map['tmpl_location'] = render_cnt_template($map['tmpl_location'], 'ZIP', html($map['loc']['map_zip']));
+		$map['tmpl_location'] = render_cnt_template($map['tmpl_location'], 'CITY', html($map['loc']['map_city']));
 		$map['tmpl_location'] = render_cnt_template($map['tmpl_location'], 'ENTRY', $map['loc']['map_entry']);
 	} else {
 		$map['tmpl_location'] = '';
 	}
 
 	$map['tmpl_content'] = render_cnt_template($map['tmpl_content'], 'MAP', $map['map_img']);
-	$map['tmpl_content'] = render_cnt_template($map['tmpl_content'], 'TEXT', nl2br(html_specialchars($map['text'])));
+	$map['tmpl_content'] = render_cnt_template($map['tmpl_content'], 'TEXT', nl2br(html($map['text'])));
 	$map['tmpl_content'] = render_cnt_template($map['tmpl_content'], 'LOCATION', $map['tmpl_location']);
 
 	$CNT_TMP .= $map['tmpl_content'];

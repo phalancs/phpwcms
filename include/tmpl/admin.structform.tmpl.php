@@ -118,7 +118,7 @@ switch($acat_hidden) {
 		  	if($acat_struct) {
 			
 				$parentStructData = getParentStructArray($acat_struct);
-				echo html_specialchars($parentStructData["acat_name"]);
+				echo html($parentStructData["acat_name"]);
 
 			} else {
 				echo $BL['be_admin_struct_index'];
@@ -130,7 +130,7 @@ switch($acat_hidden) {
 		  <tr><td><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
          
 		  <tr><td class="v09"><?php echo $BL['be_admin_struct_cat'] ?>:</td></tr>
-          <tr><td><input name="acat_name" type="text" id="acat_name" class="f11b" style="width: 450px" onchange="this.value=Trim(this.value);" value="<?php echo html_specialchars($acat_title) ?>" size="50" maxlength="95" /></td></tr>
+          <tr><td><input name="acat_name" type="text" id="acat_name" class="f11b" style="width: 450px" onchange="this.value=Trim(this.value);" value="<?php echo html($acat_title) ?>" size="50" maxlength="95" /></td></tr>
 
 		  <tr><td><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 		  
@@ -144,9 +144,9 @@ switch($acat_hidden) {
 						<td class="v09"><?php echo $BL['be_cnt_css_class'] ?>:</td>
 					</tr>
 		 			<tr>
-						<td><input name="acat_alias" type="text" id="acat_alias" class="f11b width250" value="<?php echo html_specialchars($acat_alias) ?>" size="50" maxlength="150" onfocus="set_article_alias(true, 'struct');" onchange="this.value=create_alias(this.value);" /></td>
+						<td><input name="acat_alias" type="text" id="acat_alias" class="f11b width250" value="<?php echo html($acat_alias) ?>" size="50" maxlength="150" onfocus="set_article_alias(true, 'struct');" onchange="this.value=create_alias(this.value);" /></td>
 						<td>&nbsp;</td>
-						<td><input name="acat_class" type="text" id="acat_class" class="f11 width185" value="<?php echo html_specialchars($acat_class) ?>" size="50" maxlength="150" /></td>
+						<td><input name="acat_class" type="text" id="acat_class" class="f11 width185" value="<?php echo html($acat_class) ?>" size="50" maxlength="150" /></td>
 					</tr>
 				
 				</table>
@@ -157,21 +157,21 @@ switch($acat_hidden) {
 		  <tr><td><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 		  
 		  <tr><td class="v09"><?php echo $BL['be_admin_page_pagetitle'] ?>:</td></tr>
-		  <tr><td><input name="acat_pagetitle" type="text" id="acat_pagetitle" class="f11b" style="width: 450px" value="<?php echo html_specialchars($acat_pagetitle) ?>" size="50" maxlength="150" /></td></tr>
+		  <tr><td><input name="acat_pagetitle" type="text" id="acat_pagetitle" class="f11b" style="width: 450px" value="<?php echo html($acat_pagetitle) ?>" size="50" maxlength="150" /></td></tr>
  
 		  <tr><td><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 
 		  <tr><td class="v09"><?php echo $BL['be_article_aredirect'] ?>:</td></tr>
-		  <tr><td><input name="acat_redirect" type="text" id="acat_redirect" class="f11b" style="width: 450px" value="<?php echo html_specialchars($acat_redirect) ?>" size="50" maxlength="255" /></td></tr>
+		  <tr><td><input name="acat_redirect" type="text" id="acat_redirect" class="f11b" style="width: 450px" value="<?php echo html($acat_redirect) ?>" size="50" maxlength="255" /></td></tr>
 		  <tr><td><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 
 		<tr><td class="v09"><?php echo $BL['be_article_akeywords'] ?>:</td></tr>
-          <tr><td><textarea name="acat_keywords" cols="50" rows="3" id="acat_keywords" class="f11 width540"><?php echo html_specialchars($acat_keywords) ?></textarea></td></tr>
+          <tr><td><textarea name="acat_keywords" cols="50" rows="3" id="acat_keywords" class="f11 width540"><?php echo html($acat_keywords) ?></textarea></td></tr>
 		
 		<tr><td><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
 
 		  <tr><td class="v09"><?php echo $BL['be_admin_struct_info'] ?>:</td></tr>
-          <tr><td><textarea name="acat_info" cols="50" rows="4" id="acat_info" class="f11 width540"><?php echo html_specialchars($acat_info) ?></textarea></td></tr>
+          <tr><td><textarea name="acat_info" cols="50" rows="4" id="acat_info" class="f11 width540"><?php echo html($acat_info) ?></textarea></td></tr>
          
 		 
 		 
@@ -195,7 +195,7 @@ if($result = mysql_query($sql, $db) or die("error while listing templates")) {
 			$_temp_cat = @unserialize($row['template_var']);
 			$_temp_cat = empty($_temp_cat['overwrite']) ? '' : $_temp_cat['overwrite'];
 		}
-		echo ">".html_specialchars($row["template_name"]).( ($row["template_default"])?" (default)":" ");
+		echo ">".html($row["template_name"]).( ($row["template_default"])?" (default)":" ");
 		echo "</option>\n";
 	}
 	mysql_free_result($result);
@@ -220,7 +220,7 @@ $tmpllist = get_tmpl_files(PHPWCMS_TEMPLATE.'inc_settings/template_default', 'ph
 if(is_array($tmpllist) && count($tmpllist)) {
 	foreach($tmpllist as $val) {
 		$selected_val = (isset($acat_overwrite) && $val == $acat_overwrite) ? ' selected="selected"' : '';
-		$val = html_specialchars($val);
+		$val = html($val);
 		echo '	<option value="' . $val . '"' . $selected_val . '>' . $val . ($_temp_cat==$val ? ' ('.$BL['be_admin_struct_template'].')' : '') . '</option>' . LF;
 	}
 }

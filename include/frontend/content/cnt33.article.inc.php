@@ -448,16 +448,16 @@ if($news['template']) {
 			$value['cnt_teasertext'] = getCleanSubString($value['cnt_teasertext'], $news['config']['news_teaser_limit_words'], $news['config']['news_teaser_limit_ellipse'], 'word');
 		}
 		
-		$news['entries'][$key] = render_cnt_template($news['entries'][$key], 'NEWS_TITLE', html_specialchars($value['cnt_title']));
-		$news['entries'][$key] = render_cnt_template($news['entries'][$key], 'NEWS_TOPIC', html_specialchars($value['cnt_name']));
-		$news['entries'][$key] = render_cnt_template($news['entries'][$key], 'NEWS_SUBTITLE', html_specialchars($value['cnt_subtitle']));
+		$news['entries'][$key] = render_cnt_template($news['entries'][$key], 'NEWS_TITLE', html($value['cnt_title']));
+		$news['entries'][$key] = render_cnt_template($news['entries'][$key], 'NEWS_TOPIC', html($value['cnt_name']));
+		$news['entries'][$key] = render_cnt_template($news['entries'][$key], 'NEWS_SUBTITLE', html($value['cnt_subtitle']));
 		$news['entries'][$key] = render_cnt_template($news['entries'][$key], 'NEWS_TEASER', $news['config']['news_teaser_text']($value['cnt_teasertext']));
 		$news['entries'][$key] = render_cnt_template($news['entries'][$key], 'NEWS_TEXT', $value['cnt_text']);
-		$news['entries'][$key] = render_cnt_template($news['entries'][$key], 'AUTHOR', html_specialchars($value['cnt_editor']));
-		$news['entries'][$key] = render_cnt_template($news['entries'][$key], 'PLACE', html_specialchars($value['cnt_place']));
+		$news['entries'][$key] = render_cnt_template($news['entries'][$key], 'AUTHOR', html($value['cnt_editor']));
+		$news['entries'][$key] = render_cnt_template($news['entries'][$key], 'PLACE', html($value['cnt_place']));
 		$news['entries'][$key] = render_cnt_template($news['entries'][$key], 'PRIO', empty($value['cnt_prio']) ? '' : $value['cnt_prio'] );
 		$news['entries'][$key] = render_cnt_template($news['entries'][$key], 'FIRST', $news['row_count'] === 1 ? ' ' : '');
-		$news['entries'][$key] = render_cnt_template($news['entries'][$key], 'NEWS_TAGS', html_specialchars($value['cnt_object']['cnt_category']));
+		$news['entries'][$key] = render_cnt_template($news['entries'][$key], 'NEWS_TAGS', html($value['cnt_object']['cnt_category']));
 		
 		// news detail link (read)
 		if($news['list_mode']) {
@@ -480,7 +480,7 @@ if($news['template']) {
 			$news['entries'][$key]	= render_cnt_template($news['entries'][$key], 'IMAGE', '');
 			$news['entries'][$key]	= str_replace('{IMAGE_ID}', '', $news['entries'][$key]);
 		} else {
-			$news['entries'][$key]	= render_cnt_template($news['entries'][$key], 'IMAGE', html_specialchars($value['cnt_object']['cnt_image']['name']));
+			$news['entries'][$key]	= render_cnt_template($news['entries'][$key], 'IMAGE', html($value['cnt_object']['cnt_image']['name']));
 			$news['entries'][$key]	= str_replace('{IMAGE_ID}', $value['cnt_object']['cnt_image']['id'], $news['entries'][$key]);
 		}
 		
@@ -503,7 +503,7 @@ if($news['template']) {
 			$news['entries'][$key]	= render_cnt_template($news['entries'][$key], 'LIGHTBOX_CAPTION', '' );
 		} else {
 			$value['cnt_caption']	= getImageCaption($value['cnt_object']['cnt_image']['caption'], '');
-			$news['entries'][$key]	= render_cnt_template($news['entries'][$key], 'CAPTION', html_specialchars($value['cnt_caption']['caption_text']) );
+			$news['entries'][$key]	= render_cnt_template($news['entries'][$key], 'CAPTION', html($value['cnt_caption']['caption_text']) );
 			$news['entries'][$key]	= render_cnt_template($news['entries'][$key], 'LIGHTBOX_CAPTION', parseLightboxCaption($value['cnt_caption']['caption_text']) );
 		}
 		
@@ -514,7 +514,7 @@ if($news['template']) {
 		} else {
 			$value['image_url']		= get_redirect_link($value['cnt_object']['cnt_image']['link'], ' ', '');
 			$news['entries'][$key]	= str_replace('{IMAGE_URL_TARGET}', $value['image_url']['target'], $news['entries'][$key]);
-			$news['entries'][$key]	= render_cnt_template($news['entries'][$key], 'IMAGE_URL', html_specialchars($value['image_url']['link']) );
+			$news['entries'][$key]	= render_cnt_template($news['entries'][$key], 'IMAGE_URL', html($value['image_url']['link']) );
 		}
 		// Check for Zoom
 		$news['entries'][$key]	= render_cnt_template($news['entries'][$key], 'ZOOM', empty($value['cnt_object']['cnt_image']['zoom']) ? '' : 'zoom' );
@@ -525,8 +525,8 @@ if($news['template']) {
 		if(is_numeric($value['news_url']['link']) && intval($value['news_url']['link'])) {
 			$value['news_url']['link'] = 'index.php?aid='.intval($value['news_url']['link']);
 		}
-		$news['entries'][$key]	= render_cnt_template($news['entries'][$key], 'URL', html_specialchars($value['news_url']['link']) );
-		$news['entries'][$key]	= render_cnt_template($news['entries'][$key], 'URL_TEXT', html_specialchars($value['cnt_object']['cnt_linktext']) );
+		$news['entries'][$key]	= render_cnt_template($news['entries'][$key], 'URL', html($value['news_url']['link']) );
+		$news['entries'][$key]	= render_cnt_template($news['entries'][$key], 'URL_TEXT', html($value['cnt_object']['cnt_linktext']) );
 		
 		// Dates
 		$news['entries'][$key]	= render_cnt_date($news['entries'][$key], $value['cnt_changed'], $value['cnt_ts_livedate'], $value['cnt_ts_killdate']);
@@ -587,8 +587,8 @@ if($news['template']) {
 	}
 	
 	$news['tmpl_news']	= render_cnt_template($news['tmpl_news'], 'NEWS_ENTRIES', implode('', $news['entries']) );
-	$news['tmpl_news']	= render_cnt_template($news['tmpl_news'], 'TITLE', html_specialchars($crow['acontent_title']));
-	$news['tmpl_news']	= render_cnt_template($news['tmpl_news'], 'SUBTITLE', html_specialchars($crow['acontent_subtitle']));
+	$news['tmpl_news']	= render_cnt_template($news['tmpl_news'], 'TITLE', html($crow['acontent_title']));
+	$news['tmpl_news']	= render_cnt_template($news['tmpl_news'], 'SUBTITLE', html($crow['acontent_subtitle']));
 	
 	// render news pagination
 	if($news['list_mode']) {

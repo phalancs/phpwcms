@@ -160,10 +160,10 @@ function renderMediaBox($match) {
 			$size = '350 20';
 		}
 	
-		$lightbox  = '<a href="' . html_specialchars($url) . '" ';
+		$lightbox  = '<a href="' . html($url) . '" ';
 		$lightbox .= 'rel="lightbox[' . trim( $type . ' ' . $size ) . ']"';
-		$lightbox .= ' title="' . html_specialchars( $caption ? $caption : $linktext ) . '"';
-		$lightbox .= '>' . html_specialchars( $linktext ) . '</a>';
+		$lightbox .= ' title="' . html( $caption ? $caption : $linktext ) . '"';
+		$lightbox .= '>' . html( $linktext ) . '</a>';
 		
 	} else {
 		
@@ -171,8 +171,8 @@ function renderMediaBox($match) {
 	
 		$lightbox  = '<a href="#' . $id . '" ';
 		$lightbox .= 'rel="lightbox[' . trim( $type . ' ' . $size ) . ']"';
-		$lightbox .= ' title="' . html_specialchars( $caption ? $caption : $linktext ) . '"';
-		$lightbox .= '>' . html_specialchars( $linktext ) . '</a>';
+		$lightbox .= ' title="' . html( $caption ? $caption : $linktext ) . '"';
+		$lightbox .= '>' . html( $linktext ) . '</a>';
 		$lightbox .= LF . '<div id="' . $id . '" style="display:none;">';
 		$lightbox .= $html;
 		//$lightbox .= '<p><a href="#" onclick="Mediabox.close();return false;">@@close onClick@@</a></p>';

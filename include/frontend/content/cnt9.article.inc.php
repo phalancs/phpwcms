@@ -86,7 +86,7 @@ if(!empty($media["image_id"])) {
 
 	$media["alt"] .= '<div class="alt-image">';
 	$media["alt"] .= '<img src="include/img/cmsimage.php/' . $media["media_width"] . 'x' . $media["media_height"] . 'x1/' . $media["image_id"] . '" ';
-	$media["alt"] .= 'alt="'.html_specialchars($media["image_name"]).'" border="0" />';
+	$media["alt"] .= 'alt="'.html($media["image_name"]).'" border="0" />';
 	$media["alt"] .= '</div>';
 
 }
@@ -306,9 +306,9 @@ if($media["code"]) {
 				
 		case 3: $media["result"] .= "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"left\">\n";
 				$media["result"] .= "<tr><td colspan=\"2\">".spacer(1,3)."</td></tr>\n";
-				$media["result"] .= ($crow["acontent_title"]) ?	"<tr><td class=\"tableHead\">".html_specialchars($crow["acontent_title"])."</td><td>".
+				$media["result"] .= ($crow["acontent_title"]) ?	"<tr><td class=\"tableHead\">".html($crow["acontent_title"])."</td><td>".
 														spacer(5,1)."</td></tr>\n<tr><td colspan=\"2\">".spacer(1,3)."</td></tr>\n" : "";
-				$media["result"] .= ($crow["acontent_subtitle"]) ?	"<tr><td class=\"tableSubHead\">".html_specialchars($crow["acontent_subtitle"])."</td><td>".
+				$media["result"] .= ($crow["acontent_subtitle"]) ?	"<tr><td class=\"tableSubHead\">".html($crow["acontent_subtitle"])."</td><td>".
 															spacer(5,1)."</td></tr>\n<tr><td colspan=\"2\">".spacer(1,3)."</td></tr>\n" : "";
 				$media["result"] .= "<tr><td>".$media["code"]."</td><td>".spacer(5,1)."</td></tr>\n";
 				$media["result"] .= "<tr><td colspan=\"2\">".spacer(1,3)."</td></tr>\n";
@@ -317,8 +317,8 @@ if($media["code"]) {
 				
 		case 4: $media["result"] .= "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"right\">\n";
 				$media["result"] .= "<tr><td colspan=\"2\">".spacer(1,3)."</td></tr>\n";
-				$media["result"] .= ($crow["acontent_title"]) ?	"<tr><td>".spacer(5,1)."</td><td class=\"tableHead\">".html_specialchars($crow["acontent_title"])."</td></tr>\n<tr><td colspan=\"2\">".spacer(1,3)."</td></tr>\n" : "";
-				$media["result"] .= ($crow["acontent_subtitle"]) ?	"<tr><td>".spacer(5,1)."</td><td class=\"tableSubHead\">".html_specialchars($crow["acontent_subtitle"])."</td></tr>\n<tr><td colspan=\"2\">".spacer(1,3)."</td></tr>\n" : "";
+				$media["result"] .= ($crow["acontent_title"]) ?	"<tr><td>".spacer(5,1)."</td><td class=\"tableHead\">".html($crow["acontent_title"])."</td></tr>\n<tr><td colspan=\"2\">".spacer(1,3)."</td></tr>\n" : "";
+				$media["result"] .= ($crow["acontent_subtitle"]) ?	"<tr><td>".spacer(5,1)."</td><td class=\"tableSubHead\">".html($crow["acontent_subtitle"])."</td></tr>\n<tr><td colspan=\"2\">".spacer(1,3)."</td></tr>\n" : "";
 				$media["result"] .= "<tr><td>".spacer(5,1)."</td><td>".$media["code"]."</td></tr>\n";
 				$media["result"] .= "<tr><td colspan=\"2\">".spacer(1,3)."</td></tr>\n";
 				$media["result"] .= "</table>\n";

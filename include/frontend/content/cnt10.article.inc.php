@@ -56,12 +56,12 @@ if(trim($cform[0])) {
 		switch($cfield[0]) {
 						//INPUT TEXT
 			case "IT":	$CNT_TMP .= "<tr><td class=\"formLabel\" align=\"right\">".must_filled($cfield[2]).$cfield[3]."</td><td>";
-						$CNT_TMP .= "<input type=\"text\" name=\"".$cfield[1]."\" value=\"".trimhtml($cfield[5])."\" size=\"".$cfield_length."\" ";
+						$CNT_TMP .= "<input type=\"text\" name=\"".$cfield[1]."\" value=\"".html(trim($cfield[5]))."\" size=\"".$cfield_length."\" ";
 						$CNT_TMP .= ($cfield_max_height) ? "maxlength=\"".$cfield_max_height."\" " : "";
 						$CNT_TMP .= "id=\"".$cfield[1]."\" class=\"inputText\"".(($cfield[6])?" style=\"width:".$cfield[6]."px\"":"")." /></td></tr>\n";
 						break;
 			case "IN":	$CNT_TMP .= "<tr><td class=\"formLabel\" align=\"right\">".must_filled($cfield[2]).$cfield[3]."</td><td>";
-						$CNT_TMP .= "<input type=\"text\" name=\"".$cfield[1]."\" value=\"".trimhtml($cfield[5])."\" size=\"".$cfield_length."\" ";
+						$CNT_TMP .= "<input type=\"text\" name=\"".$cfield[1]."\" value=\"".html(trim($cfield[5]))."\" size=\"".$cfield_length."\" ";
 						$CNT_TMP .= "onKeyUp=\"if(!parseInt(this.value*1)) {var x=this.value; this.value=x.substr(0, x.length-1)}\" ";
 						$CNT_TMP .= ($cfield_max_height) ? "maxlength=\"".$cfield_max_height."\" " : "";
 						$CNT_TMP .= "id=\"".$cfield[1]."\" class=\"inputText\"".(($cfield[6])?" style=\"width:".$cfield[6]."px\"":"")." /></td></tr>\n";
@@ -74,13 +74,13 @@ if(trim($cform[0])) {
 						break;
 						//INPUT HIDDEN
 			case "IH":	$form_hidden_field .= "<input type=\"hidden\" name=\"".$cfield[1]."\" ";
-						$form_hidden_field .= "value=\"".trimhtml($cfield[5])."\" id=\"".$cfield[1]."\" />";
+						$form_hidden_field .= "value=\"".html(trim($cfield[5]))."\" id=\"".$cfield[1]."\" />";
 						break;
 						//TEXTAREA
 			case "TA":	$CNT_TMP .= "<tr><td class=\"formLabel\" align=\"right\" valign=\"top\">".spacer(1,14).must_filled($cfield[2]).$cfield[3]."</td><td>";
 						$CNT_TMP .= "<textarea name=\"".$cfield[1]."\" cols=\"".$cfield_length."\" rows=\"".$cfield_max_height."\" ";
 						$CNT_TMP .= "id=\"".$cfield[1]."\" class=\"formTextArea\"".(($cfield[6])?" style=\"width:".$cfield[6]."px\"":"").">";
-						$CNT_TMP .= trimhtml($cfield[5])."</textarea></td></tr>\n";
+						$CNT_TMP .= html(trim($cfield[5]))."</textarea></td></tr>\n";
 						break;
 						//SELECT MENU
 			case "SM":	$cfield_select = explode("#", $cfield[5]);
@@ -93,7 +93,7 @@ if(trim($cform[0])) {
 								$option_value	= trim($option[0]);
 								$option_text	= (!empty($option[1])) ? trim($option[1]) : $option_value;
 								if($option_value) {
-									$CNT_TMP .= "<option value=\"".html_specialchars($option_value)."\">".html_specialchars($option_text)."</option>\n";
+									$CNT_TMP .= "<option value=\"".html($option_value)."\">".html($option_text)."</option>\n";
 								}
 							}
 							$CNT_TMP .= "</select></td></tr>\n";
@@ -112,7 +112,7 @@ if(trim($cform[0])) {
 								$option_value	= trim($option[0]);
 								$option_text	= (!empty($option[1])) ? trim($option[1]) : $option_value;
 								if($option_value) {
-									$CNT_TMP .= "<option value=\"".html_specialchars($option_value)."\">".html_specialchars($option_text)."</option>\n";
+									$CNT_TMP .= "<option value=\"".html($option_value)."\">".html($option_text)."</option>\n";
 								}
 							}
 							$CNT_TMP .= "</select></td></tr>\n";
@@ -131,13 +131,13 @@ if(trim($cform[0])) {
 								$check = explode("%", $check_value);
 								//list($check_text, $check_marked, $check_val) = explode("%", $check_value);
 								$check_marked = (!empty($check[1]) && intval($check[1])) ? 1 : 0;
-								$check_val = (empty($check[2])) ? 1 : trimhtml($check[2]);
+								$check_val = (empty($check[2])) ? 1 : html(trim($check[2]));
 								
 								$CNT_TMP .= (!$count_cell) ? "<tr>" : "";
 								$CNT_TMP .= "<td><input type=\"checkbox\" name=\"".$cfield[1]."\" value=\"".$check_val."\"";
 								$CNT_TMP .= (($check_marked)?' checked="checked"':"")." /></td><td class=\"checkLabel\"";
 								$CNT_TMP .= (($cfield_length) ? " width=\"".$cfield_length."\"" : "").">";
-								$CNT_TMP .= html_specialchars($check[0])."</td>";
+								$CNT_TMP .= html($check[0])."</td>";
 								
 								$count_cell++;
 								
@@ -168,19 +168,13 @@ if(trim($cform[0])) {
 							
 								$radio = explode("%", $radio_value);
 								$radio_marked = (!empty($radio[1]) && intval($radio[1])) ? 1 : 0;
-								$radio_val = (empty($radio[2])) ? 1 : trimhtml($radio[2]);
-								
-								/*
-								list($radio_text, $radio_marked, $radio_val) = explode("%", $radio_value);
-								$radio_marked = (intval($radio_marked)) ? 1 : 0;
-								$radio_val = (isEmpty($radio_val)) ? 1 : trimhtml($radio_val);
-								*/
+								$radio_val = (empty($radio[2])) ? 1 : html(trim($radio[2]));
 								
 								$CNT_TMP .= (!$count_cell) ? "<tr>" : "";
 								$CNT_TMP .= "<td><input type=\"radio\" name=\"".$cfield[1]."\" value=\"".$radio_val."\"";
 								$CNT_TMP .= (($radio_marked)?' checked="checked"':"")." /></td><td class=\"radioLabel\"";
 								$CNT_TMP .= (($cfield_length) ? " width=\"".$cfield_length."\"" : "").">";
-								$CNT_TMP .= html_specialchars($radio[0])."</td>";
+								$CNT_TMP .= html($radio[0])."</td>";
 								
 								$count_cell++;
 								
@@ -212,7 +206,7 @@ if(trim($cform[0])) {
 						// Captcha Image	
 			case "CA":	$CNT_TMP .= "<tr><td class=\"formLabel\" align=\"right\">".must_filled($cfield[2]).$cfield[3]."</td><td>";
 						$CNT_TMP .= '<table cellpadding="0" cellspacing="0" border="0"><tr><td>';
-						$CNT_TMP .= "<input type=\"text\" name=\"".$cfield[1]."\" value=\"".trimhtml($cfield[5])."\" size=\"".$cfield_length."\" ";
+						$CNT_TMP .= "<input type=\"text\" name=\"".$cfield[1]."\" value=\"".html(trim($cfield[5]))."\" size=\"".$cfield_length."\" ";
 						$CNT_TMP .= ($cfield_max_height) ? "maxlength=\"".$cfield_max_height."\" " : "";
 						$CNT_TMP .= "id=\"".$cfield[1]."\" class=\"inputText\"".(($cfield[6])?" style=\"width:".$cfield[6]."px\"":"")." />";
 						$CNT_TMP .= "</td><td>&nbsp;&nbsp;</td><td>".'<img src="include/img/captcha.php?regen=y&amp;'.time().'" alt="Captcha" border="0" />'."</tr></table></td></tr>\n";
@@ -222,7 +216,7 @@ if(trim($cform[0])) {
 	
 	$CNT_TMP .= "<tr><td colspan=\"2\">".spacer(1,10)."</td></tr>\n";
 	$CNT_TMP .= "<tr><td>".spacer(1,1)."</td><td>".$form_hidden_field;
-	$CNT_TMP .= "<input type=\"submit\" name=\"submit\" value=\"".trimhtml($cform[3])."\" class=\"formButton\" />";
+	$CNT_TMP .= "<input type=\"submit\" name=\"submit\" value=\"".html(trim($cform[3]))."\" class=\"formButton\" />";
 	$CNT_TMP .= "<input type=\"hidden\" name=\"subject\" value=\"".$cform[1]."\" />";
 	$CNT_TMP .= "<input type=\"hidden\" name=\"recipient\" value=\"".$cform[2]."\" />";
 	$CNT_TMP .=	getFormTrackingValue();

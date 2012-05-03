@@ -156,7 +156,7 @@ if($_entry['pages_total'] > 1) {
 				<td><input type="text" name="filter" id="filter" size="10" value="<?php 
 				
 				if(isset($_POST['filter']) && is_array($_POST['filter']) ) {
-					echo html_specialchars(implode(' ', $_POST['filter']));
+					echo html(implode(' ', $_POST['filter']));
 				}
 				
 				?>" class="textinput" style="margin:0 2px 0 0;width:110px;text-align:left;" title="filter results by username, name or email" /></td>
@@ -208,9 +208,9 @@ foreach($data as $row) {
 
 	echo '<tr'.( ($row_count % 2) ? ' class="adsAltRow"' : '' ).'>'.LF;
 	echo '	<td width="25" style="padding:2px 3px 2px 4px;"><img src="include/img/famfamfam/transmit.gif" alt="'.$BLM['campaign_entry'].'" /></td>'.LF;
-	echo '	<td width="50%">'.html_specialchars($row["adcampaign_title"])."</td>\n";
+	echo '	<td width="50%">'.html($row["adcampaign_title"])."</td>\n";
 	
-	echo '	<td class="listFormat">'.html_specialchars(date($BLM['list_date_format'], $row["adcampaign_start"]).'&#8211;'.date($BLM['list_date_format'], $row["adcampaign_end"]))."</td>\n";
+	echo '	<td class="listFormat">'.html(date($BLM['list_date_format'], $row["adcampaign_start"]).'&#8211;'.date($BLM['list_date_format'], $row["adcampaign_end"]))."</td>\n";
 
 	echo '	<td class="listFormat" nowrap="nowrap">'.$row["adplace_width"].'x'.$row["adplace_height"].' {ADS_'.$row["adplace_id"]."}&nbsp;</td>\n";
 	
@@ -220,7 +220,7 @@ foreach($data as $row) {
 	echo '<img src="include/img/button/edit_22x13.gif" border="0" alt="" /></a>';
 
 	echo '<a href="'.MODULE_HREF.'&amp;campaign=1&amp;duplicate='.$row["adcampaign_id"].'" ';
-	echo 'title="'.$BLM['duplicate_title'].'" onclick="return confirm(\''.js_singlequote($BLM['duplicate_campaign']).' \n'.js_singlequote($BLM['campaign_title'].': '.html_specialchars('"'.$row["adcampaign_title"].'"')).'\');"';
+	echo 'title="'.$BLM['duplicate_title'].'" onclick="return confirm(\''.js_singlequote($BLM['duplicate_campaign']).' \n'.js_singlequote($BLM['campaign_title'].': '.html('"'.$row["adcampaign_title"].'"')).'\');"';
 	echo '><img src="include/img/button/copy_13x13.gif" border="0" alt="" /></a>';
 	
 	echo '<a href="'.MODULE_HREF.'&amp;campaign=1&amp;editid='.$row["adcampaign_id"].'&amp;verify=';
@@ -228,7 +228,7 @@ foreach($data as $row) {
 	echo '<img src="include/img/button/aktiv_12x13_'.$row["adcampaign_status"].'.gif" border="0" alt="" /></a>';
 	
 	echo '<a href="'.MODULE_HREF.'&amp;campaign=1&amp;delete='.$row["adcampaign_id"];
-	echo '" title="delete: '.html_specialchars($row["adcampaign_title"]).'"';
+	echo '" title="delete: '.html($row["adcampaign_title"]).'"';
 	echo ' onclick="return confirm(\''.$BLM['delete_entry'].js_singlequote($row["adcampaign_title"]).'\');">';
 	echo '<img src="include/img/button/trash_13x13_1.gif" border="0" alt=""></a>';
 

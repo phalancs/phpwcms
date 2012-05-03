@@ -460,7 +460,7 @@ class phpwcmsImageGallery {
 			
 			$gallery[]	= $this->detail_header;
 		
-			$gallery[]	= $this->detail_title_prefix . html_specialchars($this->gallery['f_name']) . $this->detail_title_suffix;
+			$gallery[]	= $this->detail_title_prefix . html($this->gallery['f_name']) . $this->detail_title_suffix;
 			
 			if( trim( $this->gallery['f_longinfo'] ) != '' ) {
 				$gallery[]	= $this->detail_descr_prefix . ( plaintext_htmlencode($this->gallery['f_longinfo']) ) . $this->detail_descr_suffix;
@@ -503,7 +503,7 @@ class phpwcmsImageGallery {
 
 		foreach($this->images as $image) {
 		
-			$name = html_specialchars( $image['f_name'] );
+			$name = html( $image['f_name'] );
 			$image['f_longinfo'] = trim($image['f_longinfo']);
  
 			$img  = '<img src="';
@@ -618,7 +618,7 @@ class phpwcmsImageGallery {
 
 		foreach($this->images as $image) {
 		
-			$name = html_specialchars( $image['f_name'] );
+			$name = html( $image['f_name'] );
 
 			$img  = '<img src="';
 			$img .= $this->image_src . $this->list_image_width . 'x' . $this->list_image_height;
@@ -660,7 +660,7 @@ class phpwcmsImageGallery {
 		
 			$entry	= $this->list_template;
 			
-			$name	= html_specialchars( $item['f_name'] );
+			$name	= html( $item['f_name'] );
 			$link	= $this->url . '&amp;gallery=' . $item['f_id'];
 			$title	= $this->list_title_prefix . $name . $this->list_title_suffix;
 			$descr	= trim( $item['f_longinfo'] );

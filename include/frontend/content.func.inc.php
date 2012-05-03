@@ -874,7 +874,7 @@ if(strpos($content["all"], '[PRINT_PDF]') !== false) {
 // some article related "global" replacement tags
 if(isset($content['article_livedate'])) {
 
-	$content['all'] = render_cnt_template($content['all'], 'AUTHOR', html_specialchars($content['article_username']));
+	$content['all'] = render_cnt_template($content['all'], 'AUTHOR', html($content['article_username']));
 	$content['all'] = render_cnt_date($content['all'], $content["article_date"], $content['article_livedate'], $content['article_killdate']);
 	$content['all'] = render_cnt_template($content['all'], 'CATEGORY', $content['cat']);
 
@@ -882,7 +882,7 @@ if(isset($content['article_livedate'])) {
 
 	$content['all'] = render_cnt_template($content['all'], 'AUTHOR', '');
 	$content['all'] = render_cnt_date($content['all'], now(), now(), now());
-	$content['all'] = render_cnt_template($content['all'], 'CATEGORY', html_specialchars($content['struct'][ $content['cat_id'] ]['acat_name']));
+	$content['all'] = render_cnt_template($content['all'], 'CATEGORY', html($content['struct'][ $content['cat_id'] ]['acat_name']));
 
 }
 
@@ -1044,7 +1044,7 @@ if(!empty($_CpPaginate)) {
 				
 			}
 
-			$content['CpItem'] .= '>'.html_specialchars($value).'</a>';
+			$content['CpItem'] .= '>'.html($value).'</a>';
 			$content['CpTitleMenu'][] = $content['CpTitleParams'][0] . $content['CpItem'] . $content['CpTitleParams'][1];
 		}
 		
@@ -1094,8 +1094,8 @@ if(strpos($content['all'], '--LOGGED_')) {
 
 }
 
-$content['all'] = preg_replace_callback('/\[HTML\](.*?)\[\/HTML\]/s', 'convert2html', $content['all'] );
-$content['all'] = preg_replace_callback('/\[HTML_SPECIAL\](.*?)\[\/HTML_SPECIAL\]/s', 'convert2htmlspecialchars' , $content['all'] );
+$content['all'] = preg_replace_callback('/\[HTML\](.*?)\[\/HTML\]/s', create_function('$m', 'return html($m[1], "full");'), $content['all']);
+$content['all'] = preg_replace_callback('/\[HTML_SPECIAL\](.*?)\[\/HTML_SPECIAL\]/s', create_function('$m', 'return html($m[1]);'), $content['all'] );
 
 parse_CKEDitor_resized_images();
 
@@ -1207,7 +1207,7 @@ if( isset($match[1]) && isset($match[2]) ) {
 	
 		foreach($match as $value) {
 	
-			$value['alias'] = html_specialchars($value['alias']);
+			$value['alias'] = html($value['alias']);
 
 			if($value['alias_type'] == 'id') { 
 			

@@ -46,8 +46,8 @@ if(empty($crow["acontent_template"]) && is_file(PHPWCMS_TEMPLATE.'inc_default/ht
 
 }
 
-$crow["acontent_template"]  = render_cnt_template($crow["acontent_template"], 'TITLE', html_specialchars($crow['acontent_title']));
-$crow["acontent_template"]  = render_cnt_template($crow["acontent_template"], 'SUBTITLE', html_specialchars($crow['acontent_subtitle']));
+$crow["acontent_template"]  = render_cnt_template($crow["acontent_template"], 'TITLE', html($crow['acontent_title']));
+$crow["acontent_template"]  = render_cnt_template($crow["acontent_template"], 'SUBTITLE', html($crow['acontent_subtitle']));
 $crow["acontent_template"]  = render_cnt_template($crow["acontent_template"], 'HTML', $crow['acontent_html']);
 
 $CNT_TMP .= LF.$crow["acontent_template"].LF;

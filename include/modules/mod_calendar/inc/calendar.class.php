@@ -102,9 +102,9 @@ class phpwcmsCalendar {
 			$items[$key] = render_cnt_template($items[$key], 'HREF', $href);
 			$items[$key] = render_cnt_template($items[$key], 'URL', $url);
 			$items[$key] = render_cnt_template($items[$key], 'TARGET', $target);
-			$items[$key] = render_cnt_template($items[$key], 'TITLE', html_specialchars($date['calendar_title']));
+			$items[$key] = render_cnt_template($items[$key], 'TITLE', html($date['calendar_title']));
 			$items[$key] = render_cnt_template($items[$key], 'TEXT', plaintext_htmlencode($date['calendar_teaser']));
-			$items[$key] = render_cnt_template($items[$key], 'PLACE', html_specialchars($date['calendar_where']));
+			$items[$key] = render_cnt_template($items[$key], 'PLACE', html($date['calendar_where']));
 			$items[$key] = render_cnt_date($items[$key], $date['calendar_start_date'], $date['calendar_start_date'], $date['calendar_end_date']);
 			
 		}

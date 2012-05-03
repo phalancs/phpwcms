@@ -30,7 +30,7 @@ function dir_menu($pid, $zid, & $dbcon, $vor, $userID, $vorzeichen = ":") {
 		   "f_kid=0 AND f_trash=0 ORDER BY f_name";
 	$result = mysql_query($sql, $dbcon);
 	while($row = mysql_fetch_row($result)) {
-		$dirname = html_specialchars($row["1"]);
+		$dirname = html($row["1"]);
 		echo "<option value='".$row[0]."'";
 		if(intval($zid) == $row[0]) echo " selected";
 		echo ">".$vor.$dirname."</option>\n";

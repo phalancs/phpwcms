@@ -82,7 +82,7 @@ if (!defined('PHPWCMS_ROOT')) {
 						   " AND f_uid=".$_SESSION["wcs_user_id"]." AND f_trash=0 AND f_kid=0 LIMIT 1";
 					if($result = mysql_query($sql, $db) or die("error while reading parent folder name")) {
 						if($row = mysql_fetch_row($result)) {
-							$dir_parent_name	= html_specialchars($row[1]);
+							$dir_parent_name	= html($row[1]);
 							$dir_pid			= intval($row[0]);
 						}
 					}
@@ -117,12 +117,12 @@ if (!defined('PHPWCMS_ROOT')) {
 	<?php } ?>
 	<tr>
 		<td align="right" class="v09"><?php echo $BL['be_fpriv_name'] ?>:&nbsp;</td>
-		<td><input name="dir_newname" type="text" class="width440" id="dir_newname" value="<?php echo html_specialchars($dir_newname) ?>" size="40" maxlength="250" /></td>
+		<td><input name="dir_newname" type="text" class="width440" id="dir_newname" value="<?php echo html($dir_newname) ?>" size="40" maxlength="250" /></td>
 	</tr>
 	<tr><td colspan="2" valign="top"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
 	<tr>
 		<td align="right" valign="top" class="v09 tdtop4"><?php echo $BL['be_ftptakeover_longinfo'] ?>:&nbsp;</td>
-		<td valign="top"><textarea name="dir_longinfo" cols="40" rows="6" class="v12 width440" id="dir_longinfo"><?php echo html_specialchars($dir_longinfo) ?></textarea></td>
+		<td valign="top"><textarea name="dir_longinfo" cols="40" rows="6" class="v12 width440" id="dir_longinfo"><?php echo html($dir_longinfo) ?></textarea></td>
 	</tr>
 	
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>

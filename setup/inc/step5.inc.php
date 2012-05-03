@@ -39,7 +39,7 @@ $phpwcms["root"] = !empty($phpwcms["root"]) ? "/".$phpwcms["root"] : "";
   
   ?>
     <td align="right" class="v10">filestorage:&nbsp;</td>
-	<td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html_specialchars($phpwcms["file_path"]) ?></font></strong>&nbsp;</td>
+	<td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html($phpwcms["file_path"]) ?></font></strong>&nbsp;</td>
     <td><img src="../include/img/leer.gif" alt="" width="1" height="19"></td>
     <td><?php echo gib_status_text($status) ?></td>
   </tr>
@@ -50,7 +50,7 @@ $phpwcms["root"] = !empty($phpwcms["root"]) ? "/".$phpwcms["root"] : "";
   
   ?>
     <td align="right" class="v10">templates:&nbsp;</td>
-    <td<?php echo gib_bg_color($status) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html_specialchars($phpwcms["templates"]) ?></font></strong>&nbsp;</td>
+    <td<?php echo gib_bg_color($status) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html($phpwcms["templates"]) ?></font></strong>&nbsp;</td>
     <td><img src="../include/img/leer.gif" alt="" width="1" height="19"></td>
     <td><?php echo gib_status_text($status==1 ? 3 : $status) ?></td>
   </tr>
@@ -63,7 +63,7 @@ $phpwcms["root"] = !empty($phpwcms["root"]) ? "/".$phpwcms["root"] : "";
   
   ?>
     <td align="right" class="v10">template&nbsp;languages:&nbsp;</td>
-    <td<?php echo gib_bg_color($status) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html_specialchars($template_lang_path) ?></font></strong>&nbsp;</td>
+    <td<?php echo gib_bg_color($status) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html($template_lang_path) ?></font></strong>&nbsp;</td>
     <td><img src="../include/img/leer.gif" alt="" width="1" height="19"></td>
     <td><?php echo gib_status_text($status==1 ? 3 : $status) ?></td>
   </tr>
@@ -77,7 +77,7 @@ $phpwcms["root"] = !empty($phpwcms["root"]) ? "/".$phpwcms["root"] : "";
   
   ?>
     <td align="right" class="v10">ftp&nbsp;takeover:&nbsp;</td>
-    <td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html_specialchars($phpwcms["ftp_path"]) ?></font></strong>&nbsp;</td>
+    <td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html($phpwcms["ftp_path"]) ?></font></strong>&nbsp;</td>
     <td><img src="../include/img/leer.gif" alt="" width="1" height="19"></td>
     <td><?php echo gib_status_text($status) ?></td>
   </tr>
@@ -85,7 +85,7 @@ $phpwcms["root"] = !empty($phpwcms["root"]) ? "/".$phpwcms["root"] : "";
   <tr><td colspan="4" class="v10"><img src="../include/img/leer.gif" alt="" width="1" height="8"></td></tr>
   <tr><?php	$status = check_path_status($phpwcms["root"]."/".$phpwcms["content_path"]);	?>
     <td align="right" class="v10">frontend&nbsp;content:&nbsp;</td>
-    <td<?php echo gib_bg_color($status) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html_specialchars($phpwcms["content_path"]) ?></font></strong>&nbsp;</td>
+    <td<?php echo gib_bg_color($status) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html($phpwcms["content_path"]) ?></font></strong>&nbsp;</td>
     <td><img src="../include/img/leer.gif" alt="" width="1" height="19"></td>
     <td><?php echo gib_status_text($status==1 ? 3 : $status) ?></td>
   </tr>
@@ -98,7 +98,7 @@ $phpwcms["root"] = !empty($phpwcms["root"]) ? "/".$phpwcms["root"] : "";
 	
 	?>
     <td align="right" class="v10">frontend&nbsp;images:&nbsp;</td>
-    <td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html_specialchars($phpwcms["content_path"]."/images") ?></font></strong>&nbsp;</td>
+    <td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html($phpwcms["content_path"]."/images") ?></font></strong>&nbsp;</td>
     <td><img src="../include/img/leer.gif" alt="" width="1" height="19"></td>
     <td><?php echo gib_status_text($status) ?></td>
   </tr>
@@ -111,7 +111,7 @@ $phpwcms["root"] = !empty($phpwcms["root"]) ? "/".$phpwcms["root"] : "";
   	} 
 	?>
     <td align="right" class="v10">frontend&nbsp;form:&nbsp;</td>
-    <td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html_specialchars($phpwcms["content_path"]."/form") ?></font></strong>&nbsp;</td>
+    <td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html($phpwcms["content_path"]."/form") ?></font></strong>&nbsp;</td>
     <td><img src="../include/img/leer.gif" alt="" width="1" height="19"></td>
     <td><?php echo gib_status_text($status) ?></td>
   </tr>
@@ -125,7 +125,7 @@ $phpwcms["root"] = !empty($phpwcms["root"]) ? "/".$phpwcms["root"] : "";
 	
 	?>
     <td align="right" class="v10">frontend&nbsp;tmp:&nbsp;</td>
-    <td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html_specialchars($phpwcms["content_path"]."/tmp") ?></font></strong>&nbsp;</td>
+    <td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html($phpwcms["content_path"]."/tmp") ?></font></strong>&nbsp;</td>
     <td><img src="../include/img/leer.gif" alt="" width="1" height="19"></td>
     <td><?php echo gib_status_text($status) ?></td>
   </tr>
@@ -138,7 +138,7 @@ $phpwcms["root"] = !empty($phpwcms["root"]) ? "/".$phpwcms["root"] : "";
   	} 
 	?>
     <td align="right" class="v10">frontend&nbsp;rss:&nbsp;</td>
-    <td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html_specialchars($phpwcms["content_path"]."/rss") ?></font></strong>&nbsp;</td>
+    <td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html($phpwcms["content_path"]."/rss") ?></font></strong>&nbsp;</td>
     <td><img src="../include/img/leer.gif" alt="" width="1" height="19"></td>
     <td><?php echo gib_status_text($status) ?></td>
   </tr>
@@ -148,7 +148,7 @@ $phpwcms["root"] = !empty($phpwcms["root"]) ? "/".$phpwcms["root"] : "";
   	$status = check_path_status($phpwcms["root"]."/".$phpwcms["content_path"]."/pages");
 	?>
     <td align="right" class="v10">frontend&nbsp;pages:&nbsp;</td>
-    <td<?php echo gib_bg_color($status) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html_specialchars($phpwcms["content_path"]."/pages") ?></font></strong>&nbsp;</td>
+    <td<?php echo gib_bg_color($status) ?>>&nbsp;<strong><font color="#FFFFFF"><?php echo html($phpwcms["content_path"]."/pages") ?></font></strong>&nbsp;</td>
     <td><img src="../include/img/leer.gif" alt="" width="1" height="19"></td>
     <td><?php echo gib_status_text($status==1 ? 3 : $status) ?></td>
   </tr>
@@ -161,7 +161,7 @@ $phpwcms["root"] = !empty($phpwcms["root"]) ? "/".$phpwcms["root"] : "";
   	} 
 	?>
     <td align="right" class="v10">startup text:&nbsp;</td>
-    <td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<font color="#FFFFFF"><?php echo html_specialchars($phpwcms["templates"]."/inc_default/startup.php") ?></font>&nbsp;</td>
+    <td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<font color="#FFFFFF"><?php echo html($phpwcms["templates"]."/inc_default/startup.php") ?></font>&nbsp;</td>
     <td><img src="../include/img/leer.gif" alt="" width="1" height="19"></td>
     <td><?php echo gib_status_text($status) ?></td>
   </tr>
@@ -175,7 +175,7 @@ $phpwcms["root"] = !empty($phpwcms["root"]) ? "/".$phpwcms["root"] : "";
 	
 	?>
     <td align="right" class="v10">main CSS file:&nbsp;</td>
-    <td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<font color="#FFFFFF"><?php echo html_specialchars($phpwcms["templates"]."/inc_css/frontend.css") ?></font>&nbsp;</td>
+    <td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<font color="#FFFFFF"><?php echo html($phpwcms["templates"]."/inc_css/frontend.css") ?></font>&nbsp;</td>
     <td><img src="../include/img/leer.gif" alt="" width="1" height="19"></td>
     <td><?php echo gib_status_text($status) ?></td>
   </tr>
@@ -189,7 +189,7 @@ $phpwcms["root"] = !empty($phpwcms["root"]) ? "/".$phpwcms["root"] : "";
 	
 	?>
     <td align="right" class="v10">index level settings:&nbsp;</td>
-    <td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<font color="#FFFFFF"><?php echo html_specialchars("include/config/conf.indexpage.inc.php") ?></font>&nbsp;</td>
+    <td<?php echo gib_bg_color($status==2?2:0) ?>>&nbsp;<font color="#FFFFFF"><?php echo html("include/config/conf.indexpage.inc.php") ?></font>&nbsp;</td>
     <td><img src="../include/img/leer.gif" alt="" width="1" height="19"></td>
     <td><?php echo gib_status_text($status) ?></td>
   </tr>

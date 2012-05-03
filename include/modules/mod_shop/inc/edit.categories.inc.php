@@ -47,13 +47,13 @@ if (!defined('PHPWCMS_ROOT')) {
 		<td align="right" class="chatlist"><?php echo $BL['be_cnt_last_edited']  ?>:&nbsp;</td>
 		<td class="v10" width="410"><?php 
 		
-		echo html_specialchars(date($BL['be_fprivedit_dateformat'], $plugin['data']['cat_changedate'])) ;
+		echo html(date($BL['be_fprivedit_dateformat'], $plugin['data']['cat_changedate'])) ;
 		
 		if(!empty($plugin['data']['cat_createdate'])) {
 		?>		
 		&nbsp;&nbsp;&nbsp;<span class="chatlist"><?php echo $BL['be_fprivedit_created']  ?>:</span> 
 		<?php 
-				echo html_specialchars(date($BL['be_fprivedit_dateformat'], strtotime($plugin['data']['cat_createdate'])));
+				echo html(date($BL['be_fprivedit_dateformat'], strtotime($plugin['data']['cat_createdate'])));
 		}
 		
 		?></td>
@@ -68,7 +68,7 @@ if (!defined('PHPWCMS_ROOT')) {
 		//error class
 		if(!empty($plugin['error']['cat_name'])) echo ' errorInputText';
 		
-		?>" style="width:400px;" value="<?php echo html_specialchars($plugin['data']['cat_name']) ?>" size="30" maxlength="200" /></td>
+		?>" style="width:400px;" value="<?php echo html($plugin['data']['cat_name']) ?>" size="30" maxlength="200" /></td>
 	</tr>
 	
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10" /></td></tr>
@@ -91,7 +91,7 @@ if (!defined('PHPWCMS_ROOT')) {
 			if($value['cat_status'] = 0) {
 				echo ' style="font-style:italic;"';
 			}
-			echo '>' . html_specialchars($value['cat_name']) . '</option>' . LF;
+			echo '>' . html($value['cat_name']) . '</option>' . LF;
 		
 		}
 		
@@ -103,7 +103,7 @@ if (!defined('PHPWCMS_ROOT')) {
 
 	<tr> 
 		<td align="right" class="chatlist" style="padding-top:4px;vertical-align:top;"><?php echo $BL['be_cnt_infotext'] ?>:&nbsp;</td>
-		<td colspan="2"><textarea name="cat_info" id="cat_info" rows="10" class="v12 width400"><?php echo html_specialchars($plugin['data']['cat_info']) ?></textarea></td>
+		<td colspan="2"><textarea name="cat_info" id="cat_info" rows="10" class="v12 width400"><?php echo html($plugin['data']['cat_info']) ?></textarea></td>
 	</tr>
 	
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15" /></td></tr>

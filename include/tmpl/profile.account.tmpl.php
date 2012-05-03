@@ -48,7 +48,7 @@ if (!defined('PHPWCMS_ROOT')) {
 	</tr>
 	<tr> 
 		<td align="right"><?php echo $BL['be_profile_label_username'] ?>:&nbsp;</td>
-		<td><input name="form_loginname" type="text" id="form_loginname" class="v12b width250" size="30" maxlength="30" value="<?php echo html_specialchars($_SESSION["wcs_user"]); ?>"></td>
+		<td><input name="form_loginname" type="text" id="form_loginname" class="v12b width250" size="30" maxlength="30" value="<?php echo html($_SESSION["wcs_user"]); ?>"></td>
 	</tr>
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 	<tr> 
@@ -63,7 +63,7 @@ if (!defined('PHPWCMS_ROOT')) {
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="2"></td></tr>
 	<tr> 
 		<td align="right"><?php echo $BL['be_profile_label_email'] ?>:&nbsp;</td>
-		<td><input name="form_useremail" type="text" id="form_useremail" class="v12b width250" value="<?php echo html_specialchars($_SESSION["wcs_user_email"]); ?>" size="30" maxlength="150"></td>
+		<td><input name="form_useremail" type="text" id="form_useremail" class="v12b width250" value="<?php echo html($_SESSION["wcs_user_email"]); ?>" size="30" maxlength="150"></td>
 	</tr>
 	
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="10"></td></tr>
@@ -133,7 +133,7 @@ $wysiwygTemplates['userTemplate']		= empty($_SESSION["WYSIWYG_TEMPLATE"]) ? '' :
 // FCKeditor
 $wysiwygTemplates['FCKeditor_options'] 	= '';
 foreach($wysiwygTemplates['FCKeditor'] as $value) {
-	$value = html_specialchars($value);
+	$value = html($value);
 	$wysiwygTemplates['FCKeditor_options'] .= '	<option value="'.$value.'"';
 	if($wysiwygTemplates['userTemplate'] == $value) {
 		$wysiwygTemplates['FCKeditor_options'] .= ' selected="selected"';
@@ -148,7 +148,7 @@ $wysiwygTemplates['FCKeditor_select'] .= '<\'+\'/select>';
 // CKEditor
 $wysiwygTemplates['CKEditor_options'] 	= '';
 foreach($wysiwygTemplates['CKEditor'] as $value) {
-	$value = html_specialchars($value);
+	$value = html($value);
 	$wysiwygTemplates['CKEditor_options'] .= '	<option value="'.$value.'"';
 	if($wysiwygTemplates['userTemplate'] == $value) {
 		$wysiwygTemplates['CKEditor_options'] .= ' selected="selected"';

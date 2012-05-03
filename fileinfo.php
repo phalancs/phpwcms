@@ -62,7 +62,7 @@ if($file_id) {
 	}
 	if($result = mysql_query($sql, $db) or die("error")) {
 		if($row = mysql_fetch_assoc($result)) {
-			$filename = html_specialchars($row["f_name"]);
+			$filename = html($row["f_name"]);
 			
 			
 			$thumb_image = get_cached_image(
@@ -153,7 +153,7 @@ echo '
   <tr>
     <td><img src="include/img/leer.gif" alt="" width="1" height="5"></td>
     <td><img src="include/img/leer.gif" alt="" width="1" height="5"></td>
-    <td class="v10"><?php echo $BL['KEYWORDS'].": ".html_specialchars($row["f_shortinfo"].add_keywords_to_search ($file_key, $row["f_keywords"])) ?></td>
+    <td class="v10"><?php echo $BL['KEYWORDS'].": ".html($row["f_shortinfo"].add_keywords_to_search ($file_key, $row["f_keywords"])) ?></td>
     <td><img src="include/img/leer.gif" alt="" width="1" height="5"></td>
   </tr>
   <tr><td colspan="4"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>
@@ -182,7 +182,7 @@ echo '
   <tr>
     <td><img src="include/img/leer.gif" alt="" width="1" height="5"></td>
     <td><img src="include/img/leer.gif" alt="" width="1" height="5"></td>
-    <td class="v10"><?php echo nl2br(auto_link(html_specialchars($row["f_longinfo"]))) ?></td>
+    <td class="v10"><?php echo nl2br(auto_link(html($row["f_longinfo"]))) ?></td>
     <td><img src="include/img/leer.gif" alt="" width="1" height="5"></td>
   </tr>
   <tr><td colspan="4"><img src="include/img/leer.gif" alt="" width="1" height="5"></td></tr>

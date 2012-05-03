@@ -72,7 +72,7 @@ if($all = _dbQuery("SELECT article_id, article_image, article_title, article_tst
 				if($result === false) {
 					echo ' style="color:#CC3300"';
 				}
-				echo '>[ID:'.sprintf('%04s', $all[$key]['article_id']).'] '.html_specialchars($all[$key]['article_title']);
+				echo '>[ID:'.sprintf('%04s', $all[$key]['article_id']).'] '.html($all[$key]['article_title']);
 				echo '</pre>'.LF;
 				
 			}

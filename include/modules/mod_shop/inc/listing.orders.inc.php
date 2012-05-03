@@ -70,24 +70,24 @@ foreach($data as $row) {
 
 	if(SHOP_FELANG_SUPPORT) {
 		$row['order_data']		= @unserialize($row['order_data']);
-		$row['shopprod_lang']	= empty($row['order_data']['lang']) ? '' : html_specialchars(strtolower($row['order_data']['lang']));
+		$row['shopprod_lang']	= empty($row['order_data']['lang']) ? '' : html(strtolower($row['order_data']['lang']));
 		echo '<img src="include/img/famfamfam/lang/'.($row['shopprod_lang'] ? $row['shopprod_lang'] : 'all').'.png" alt="'.$row['shopprod_lang'].'" style="position:relative;top:1px;margin:0 3px 0 3px;" />';
 	}
 	
-	echo html_specialchars($row['order_number'])."&nbsp;</td>\n";
-	echo '<td class="dir" width="13%">&nbsp;'.html_specialchars($row['order_fdate'])."&nbsp;</td>\n";
+	echo html($row['order_number'])."&nbsp;</td>\n";
+	echo '<td class="dir" width="13%">&nbsp;'.html($row['order_fdate'])."&nbsp;</td>\n";
 	echo '<td class="dir" width="50%">&nbsp;<a href="mailto:'.$row['order_email'].'?subject='.rawurlencode($BLM['shopprod_order_subject'].' #'.$row['order_number']).'">';
-	echo html_specialchars($row['order_firstname'].' '.$row['order_name'])."</a>&nbsp;</td>\n";
+	echo html($row['order_firstname'].' '.$row['order_name'])."</a>&nbsp;</td>\n";
 	
-	echo '<td class="dir listNumber" width="10%">'.html_specialchars( number_format( round($row['order_net'], 2) , 2, $BLM['dec_point'], $BLM['thousands_sep'] ) )."&nbsp;</td>\n";
-	echo '<td class="dir listNumber" width="10%">'.html_specialchars( number_format( round($row['order_gross'], 2) , 2, $BLM['dec_point'], $BLM['thousands_sep'] ) )."&nbsp;</td>\n";
+	echo '<td class="dir listNumber" width="10%">'.html( number_format( round($row['order_net'], 2) , 2, $BLM['dec_point'], $BLM['thousands_sep'] ) )."&nbsp;</td>\n";
+	echo '<td class="dir listNumber" width="10%">'.html( number_format( round($row['order_gross'], 2) , 2, $BLM['dec_point'], $BLM['thousands_sep'] ) )."&nbsp;</td>\n";
 
-	echo '<td class="dir" width="10%">'.html_specialchars($BLM[ 'shopprod_payby_'.$row['order_payment'] ])."&nbsp;&nbsp;</td>\n";
+	echo '<td class="dir" width="10%">'.html($BLM[ 'shopprod_payby_'.$row['order_payment'] ])."&nbsp;&nbsp;</td>\n";
 	
 	echo '<td width="5%" align="right" nowrap="nowrap" class="button_td">';
 	
 		echo '<a href="'.$_controller_link.'&amp;delete='.$row["order_id"];
-		echo '" title="delete: '.html_specialchars($row['order_number']).'"';
+		echo '" title="delete: '.html($row['order_number']).'"';
 		echo ' onclick="return confirm(\''.$BLM['delete_order'].js_singlequote($row['order_number']).'\');">';
 		echo '<img src="include/img/button/trash_13x13_1.gif" border="0" alt="" /></a>';
 	

@@ -35,7 +35,7 @@ if($file_result = mysql_query($file_sql, $db) or die ("error while listing files
 	$file_durchlauf = 0;
 	$zieldatei = "phpwcms.php?do=files&amp;f=0";
 	while($file_row = mysql_fetch_array($file_result)) {
-		$filename = html_specialchars($file_row["f_name"]);
+		$filename = html($file_row["f_name"]);
 		if(!$file_durchlauf) { //Aufbau der Zeile zum Einflieﬂen der Filelisten-Tavbelle
 			echo "<tr bgcolor=\"#F5F8F9\"><td colspan=\"2\"><table width=\"538\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n";
 		} else {
@@ -46,9 +46,9 @@ if($file_result = mysql_query($file_sql, $db) or die ("error while listing files
 		echo "<td width=\"13\" class=\"msglist\">";
 		echo "<img src=\"include/img/icons/small_".extimg($file_row["f_ext"])."\" border=\"0\" ";
 		echo 'onmouseover="Tip(\'ID: '.$file_row["f_id"].'&lt;br&gt;Sort: '.$file_row["f_sort"];
-		echo '&lt;br&gt;Name: '.html_specialchars($file_row["f_name"]);
+		echo '&lt;br&gt;Name: '.html($file_row["f_name"]);
 		if($file_row["f_copyright"]) {
-			echo '&lt;br&gt;&copy;: '.html_specialchars($file_row["f_copyright"]);
+			echo '&lt;br&gt;&copy;: '.html($file_row["f_copyright"]);
 		}
 		echo '\');" onmouseout="UnTip()" alt=""';
 		echo " /></td>\n";

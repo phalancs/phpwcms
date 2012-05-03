@@ -197,7 +197,7 @@ if(isset($_POST["file_aktion"]) && intval($_POST["file_aktion"]) == 1) {
 			if(get_filecat_childcount ($row["fcat_id"], $db)) {
 			
 				$ke = empty($file_error["keywords"][$row["fcat_id"]])? '' : "<img src=\"include/img/symbole/error.gif\" width=\"8\" height=\"9\">&nbsp;";
-				$k .= "<tr>\n<td class=\"f10b\">".$ke.html_specialchars($row["fcat_name"]).":&nbsp;</td>\n";
+				$k .= "<tr>\n<td class=\"f10b\">".$ke.html($row["fcat_name"]).":&nbsp;</td>\n";
 				$k .= "<td><select name=\"file_keywords[".$row["fcat_id"]."]\" class=\"width300\">\n";
 				$k .= "<option value=\"".(($row["fcat_needed"])?"0_".$row["fcat_needed"]."\">".$BL['be_ftptakeover_needed']:'0">'.$BL['be_ftptakeover_optional'])."</option>\n";
 				
@@ -206,7 +206,7 @@ if(isset($_POST["file_aktion"]) && intval($_POST["file_aktion"]) == 1) {
 					while($krow = mysql_fetch_array($kresult)) {
 						$k .= "<option value=\"".$krow["fkey_id"]."\"";
 						$k .= isset($file_keywords[$row["fcat_id"]]) && $file_keywords[$row["fcat_id"]] == $krow["fkey_id"] ? " selected" : "";
-						$k .= ">".html_specialchars($krow["fkey_name"])."</option>\n";
+						$k .= ">".html($krow["fkey_name"])."</option>\n";
 					}
 					mysql_free_result($kresult);
 				}
@@ -227,7 +227,7 @@ if(isset($_POST["file_aktion"]) && intval($_POST["file_aktion"]) == 1) {
 		<?php if($k) echo $k; ?>
 		<tr>
 			<td class="f10b"><?php echo $BL['be_ftptakeover_additional'] ?>:&nbsp;</td>
-			<td><input name="file_shortinfo" type="text" class="width300" id="file_shortinfo" value="<?php echo html_specialchars($file_shortinfo) ?>" size="40" maxlength="250" /></td>
+			<td><input name="file_shortinfo" type="text" class="width300" id="file_shortinfo" value="<?php echo html($file_shortinfo) ?>" size="40" maxlength="250" /></td>
 		</tr>		
 		</table></td>
 	</tr>
@@ -239,7 +239,7 @@ if(isset($_POST["file_aktion"]) && intval($_POST["file_aktion"]) == 1) {
 	</tr>
 	<tr>
 		<td align="right" valign="top" class="v09"><img src="include/img/leer.gif" alt="" width="1" height="13" /><?php echo $BL['be_ftptakeover_longinfo'] ?>:&nbsp;</td>
-		<td valign="top"><textarea name="file_longinfo" cols="40" rows="10" class="v12 width400" id="file_longinfo"><?php echo html_specialchars($file_longinfo) ?></textarea></td>
+		<td valign="top"><textarea name="file_longinfo" cols="40" rows="10" class="v12 width400" id="file_longinfo"><?php echo html($file_longinfo) ?></textarea></td>
 	</tr>	
 	
 
@@ -248,14 +248,14 @@ if(isset($_POST["file_aktion"]) && intval($_POST["file_aktion"]) == 1) {
 	
 	<tr>
 		<td align="right" class="v09"><?php echo $BL['be_copyright'] ?>:&nbsp;</td>
-		<td><input name="file_copyright" type="text" id="file_copyright" size="40" class="width400" maxlength="255" value="<?php echo html_specialchars($file_copyright) ?>" /></td>
+		<td><input name="file_copyright" type="text" id="file_copyright" size="40" class="width400" maxlength="255" value="<?php echo html($file_copyright) ?>" /></td>
 	</tr>	
 	
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="3" /></td></tr>
 	
 	<tr>
 		<td align="right" class="v09">&nbsp;<?php echo $BL['be_tags'] ?>:&nbsp;</td>
-		<td><input name="file_tags" type="text" id="file_tags" size="40" class="width400" maxlength="255" value="<?php echo html_specialchars($file_tags) ?>" /></td>
+		<td><input name="file_tags" type="text" id="file_tags" size="40" class="width400" maxlength="255" value="<?php echo html($file_tags) ?>" /></td>
 	</tr>
 	
 	

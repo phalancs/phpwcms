@@ -42,14 +42,14 @@ $BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/js/dynCalend
 
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BL['be_cnt_last_edited']  ?>:&nbsp;</td>
-		<td class="v10"><?php echo html_specialchars(phpwcms_strtotime($plugin['data']['adcampaign_changed'], $BL['be_fprivedit_dateformat'], '')) ?></td>
+		<td class="v10"><?php echo html(phpwcms_strtotime($plugin['data']['adcampaign_changed'], $BL['be_fprivedit_dateformat'], '')) ?></td>
 	</tr>
 	
 	<?php if(!empty($plugin['data']['adcampaign_created'])) { ?>
 	
 	<tr> 
 		<td align="right" class="chatlist"><?php echo $BL['be_fprivedit_created']  ?>:&nbsp;</td>
-		<td class="v10"><?php echo html_specialchars(phpwcms_strtotime($plugin['data']['adcampaign_created'], $BL['be_fprivedit_dateformat'], '')) ?></td>
+		<td class="v10"><?php echo html(phpwcms_strtotime($plugin['data']['adcampaign_created'], $BL['be_fprivedit_dateformat'], '')) ?></td>
 	</tr>
 	
 	<?php } ?>
@@ -63,7 +63,7 @@ $BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/js/dynCalend
 		//error class
 		if(!empty($plugin['error']['adcampaign_title'])) echo ' errorInputText';
 		
-		?>" style="width:400px;" value="<?php echo html_specialchars($plugin['data']['adcampaign_title']) ?>" size="30" maxlength="200" /></td>
+		?>" style="width:400px;" value="<?php echo html($plugin['data']['adcampaign_title']) ?>" size="30" maxlength="200" /></td>
 	</tr>
 	
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="5" /></td></tr>
@@ -85,9 +85,9 @@ $BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/js/dynCalend
 		//error class
 		if(!empty($plugin['error']['adcampaign_date_start'])) echo ' errorInputText';
 		
-		?>" style="width:100px;" value="<?php echo html_specialchars($plugin['data']['adcampaign_date_start']) ?>" size="30" /></td>
+		?>" style="width:100px;" value="<?php echo html($plugin['data']['adcampaign_date_start']) ?>" size="30" /></td>
 		<td>&nbsp;</td>
-		<td><input name="adcampaign_time_start" type="text" id="adcampaign_time_start" class="v12" style="width:80px;" value="<?php echo html_specialchars($plugin['data']['adcampaign_time_start']) ?>" size="30" /></td>
+		<td><input name="adcampaign_time_start" type="text" id="adcampaign_time_start" class="v12" style="width:80px;" value="<?php echo html($plugin['data']['adcampaign_time_start']) ?>" size="30" /></td>
 		<td>&nbsp;<script type="text/javascript">
 		function aStart(date, month, year) {
 			getFieldById('adcampaign_date_start').value = subrstr('00' + date, 2) + '<?php echo $BLM['date_delimiter'] ?>' + subrstr('00' + month, 2) + '<?php echo $BLM['date_delimiter'] ?>' + year;
@@ -125,9 +125,9 @@ $BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/js/dynCalend
 		//error class
 		if(!empty($plugin['error']['adcampaign_date_end'])) echo ' errorInputText';
 		
-		?>" style="width:100px;" value="<?php echo html_specialchars($plugin['data']['adcampaign_date_end']) ?>" size="30" /></td>
+		?>" style="width:100px;" value="<?php echo html($plugin['data']['adcampaign_date_end']) ?>" size="30" /></td>
 		<td>&nbsp;</td>
-		<td><input name="adcampaign_time_end" type="text" id="adcampaign_time_end" class="v12" style="width:80px;" value="<?php echo html_specialchars($plugin['data']['adcampaign_time_end']) ?>" size="30" /></td>
+		<td><input name="adcampaign_time_end" type="text" id="adcampaign_time_end" class="v12" style="width:80px;" value="<?php echo html($plugin['data']['adcampaign_time_end']) ?>" size="30" /></td>
 		<td>&nbsp;<script type="text/javascript">
 		function aEnd(date, month, year) {
 			getFieldById('adcampaign_date_end').value = subrstr('00' + date, 2) + '<?php echo $BLM['date_delimiter'] ?>' + subrstr('00' + month, 2) + '<?php echo $BLM['date_delimiter'] ?>' + year;
@@ -169,7 +169,7 @@ $BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/js/dynCalend
 		
 		}
 		echo '>';
-		echo html_specialchars($_entry['value']['adformat_title'].' ('.$_entry['value']['adformat_width'].'x'.$_entry['value']['adformat_height'].')');
+		echo html($_entry['value']['adformat_title'].' ('.$_entry['value']['adformat_width'].'x'.$_entry['value']['adformat_height'].')');
 		echo '</option>'.LF;
 		
 		$plugin['ad_formats_js'][ $_entry['value']['adformat_id'] ]  = '		ad_formats['.$_entry['value']['adformat_id'].'] = ';
@@ -257,7 +257,7 @@ $BE['HEADER']['dynCalendar.js']		= getJavaScriptSourceLink('include/js/dynCalend
 	
 	<tr> 
 		<td align="right" class="chatlist" style="padding-top:4px;vertical-align:top;"><?php echo $BLM['comment'] ?>:&nbsp;</td>
-		<td colspan="2"><textarea name="adcampaign_comment" id="adcampaign_comment" style="width:400px" rows="5" class="v12"><?php echo html_specialchars($plugin['data']['adcampaign_comment']) ?></textarea></td>
+		<td colspan="2"><textarea name="adcampaign_comment" id="adcampaign_comment" style="width:400px" rows="5" class="v12"><?php echo html($plugin['data']['adcampaign_comment']) ?></textarea></td>
 	</tr>
 	
 	<tr><td colspan="2"><img src="include/img/leer.gif" alt="" width="1" height="15" /></td></tr>	

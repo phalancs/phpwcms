@@ -262,7 +262,7 @@ function combinedParser($string, $charset='utf-8', $allowed_tags='') {
 	if(!empty($string) && PHPWCMS_CHARSET != $charset) {
 		$string = makeCharsetConversion($string, PHPWCMS_CHARSET, $charset);
 	} else {
-		$string = html_specialchars($string);
+		$string = html($string);
 	}
 	
 	return $string;

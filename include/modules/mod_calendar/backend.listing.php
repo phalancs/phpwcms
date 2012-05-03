@@ -71,7 +71,7 @@ $plugin['days_in_month']	= gmdate('t', $plugin['first_of_month']);
 $plugin['week_start']		= date('W', $plugin['first_of_month']);
 $plugin['first_day']		= 0;
 $plugin['weekday']			= (gmstrftime('%w', $plugin['first_of_month']) + 7 - $plugin['first_day']) % 7; //adjust for $first_day
-$plugin['this_date']		= html_entities(ucfirst(gmstrftime('%B %Y', $plugin['first_of_month'])));
+$plugin['this_date']		= html(ucfirst(gmstrftime('%B %Y', $plugin['first_of_month'])));
 
 $plugin['location']			= decode_entities(MODULE_HREF);
 $plugin['loc_this_month']	= $plugin['location'].'&calendardate='.date('m-Y');
@@ -168,7 +168,7 @@ if(isset($_SESSION['filter']) && is_array($_SESSION['filter']) && count($_SESSIO
 				<td><input type="text" name="filter" id="filter" size="10" value="<?php 
 				
 				if(isset($_POST['filter']) && is_array($_POST['filter']) ) {
-					echo html_specialchars(implode(' ', $_POST['filter']));
+					echo html(implode(' ', $_POST['filter']));
 				}
 				
 				?>" class="textinput" style="margin:0 2px 0 0;width:110px;text-align:left;" title="filter results by username, name or email" /></td>
@@ -366,7 +366,7 @@ for($_entry['x'] = 1, $_entry['timestamp']=$plugin['first_of_month']; $_entry['x
 	
 	$_entry['class'] = ($_entry['day_num'] == 7 || $_entry['x'] == $plugin['days_in_month']) ? ' calendarSunday' : '';
 
-	echo '	<td class="calendarDay'.$_entry['class'].'"><span>'.$_entry['x'].'</span><br />'.html_specialchars(gmstrftime('%a', $_entry['timestamp'])).'</td>'.LF;
+	echo '	<td class="calendarDay'.$_entry['class'].'"><span>'.$_entry['x'].'</span><br />'.html(gmstrftime('%a', $_entry['timestamp'])).'</td>'.LF;
 	echo '	<td class="calendarData'.$_entry['class'].'">';
 	
 	// run available dates for current day
@@ -389,7 +389,7 @@ for($_entry['x'] = 1, $_entry['timestamp']=$plugin['first_of_month']; $_entry['x
 			if($_entry['date']['calendar_range']) {
 				$_entry['link '] = $BLM['repeat_list'.$_entry['date']['calendar_range']].': '.$_entry['link '];
 			}
-			$_entry['link '] = html_specialchars($_entry['link ']);
+			$_entry['link '] = html($_entry['link ']);
 			
 			echo '<p><a href="'.MODULE_HREF.'&amp;edit='.$_entry['date']['calendar_id'].'"';
 			if($_entry['date']['calendar_status'] == 0) echo ' class="off"';

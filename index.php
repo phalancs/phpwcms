@@ -94,7 +94,7 @@ $content['page_start']  .= '<!--
 	created by Oliver Georgi (oliver at phpwcms dot de) and licensed under GNU/GPL.
 	phpwcms is copyright 2002-'.date('Y').' of Oliver Georgi. Extensions are copyright of
 	their respective owners. Visit project page for details: http://www.phpwcms.org/'.LF.'-->'.LF;
-$content['page_start']  .= '  <title>'.html_specialchars($content["pagetitle"]).'</title>'.LF;
+$content['page_start']  .= '  <title>'.html($content["pagetitle"]).'</title>'.LF;
 $content['page_start']  .= '  <meta http-equiv="content-type" content="'.$_use_content_type.'; charset='.PHPWCMS_CHARSET.'"'.HTML_TAG_CLOSE.LF;
 
 // HTML5 does not like content-style-type

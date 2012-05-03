@@ -64,7 +64,7 @@ initMootoolsAutocompleter();
 							$fxe = extimg(which_ext($file));
 							 // there is a big problem with special chars on Mac OS X and seems Windows too
 							$filename = (PHPWCMS_CHARSET != 'utf-8' && phpwcms_seems_utf8($file)) ? str_replace('?', '', utf8_decode($file)) : $file;
-							$filename = html_specialchars($filename);
+							$filename = html($filename);
 		  ?>
           <tr<?php echo $fxb ?>>
             <td align="center"><input name="ftp_mark[<?php echo $fx ?>]" type="checkbox" id="ftp_mark_<?php echo $fx ?>" value="1" class="ftp_mark" /></td>
@@ -150,7 +150,7 @@ initMootoolsAutocompleter();
 				if(!empty($file_error["keywords"][$row["fcat_id"]])) {
 					$ke = "<img src=\"include/img/symbole/error.gif\" width=\"8\" height=\"9\" alt=\"\" />&nbsp;";
 				}
-				$k .= "<tr>\n<td class=\"f10b\">".$ke.html_specialchars($row["fcat_name"]).":&nbsp;</td>\n";
+				$k .= "<tr>\n<td class=\"f10b\">".$ke.html($row["fcat_name"]).":&nbsp;</td>\n";
 				$k .= "<td><select name=\"file_keywords[".$row["fcat_id"]."]\" class=\"v11\">\n";
 				$k .= "<option value=\"".(($row["fcat_needed"])?"0_".$row["fcat_needed"]."\">".$BL['be_ftptakeover_needed']:'0">'.$BL['be_ftptakeover_optional'])."</option>\n";
 				
@@ -161,7 +161,7 @@ initMootoolsAutocompleter();
 						if(isset($file_keywords[$row["fcat_id"]]) && $file_keywords[$row["fcat_id"]] == $krow["fkey_id"]) {
 							$k .= " selected";
 						}
-						$k .= ">".html_specialchars($krow["fkey_name"])."</option>\n";
+						$k .= ">".html($krow["fkey_name"])."</option>\n";
 					}
 					mysql_free_result($kresult);
 				}

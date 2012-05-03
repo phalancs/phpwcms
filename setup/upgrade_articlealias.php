@@ -56,7 +56,7 @@ if($all = _dbQuery("SELECT article_id, article_alias, article_title FROM ".DB_PR
 			if($result === false) {
 				echo ' style="color:#CC3300"';
 			}
-			echo '>[ID:'.sprintf('%04s', $all[$key]['article_id']).'] '.html_specialchars($value['article_title'].' -> new: ' . $alias);
+			echo '>[ID:'.sprintf('%04s', $all[$key]['article_id']).'] '.html($value['article_title'].' -> new: ' . $alias);
 			echo '</pre>'.LF;
 		}
 

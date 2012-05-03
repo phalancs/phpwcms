@@ -106,7 +106,7 @@ body {
         </tr>
         <tr>
           <td align="right" class="chatlist">path:&nbsp;</td>
-          <td class="chatlist"><?php echo html_specialchars(str_replace("\\", '/', preg_replace('/\/setup$/','', dirname(__FILE__)))); ?></td>
+          <td class="chatlist"><?php echo html(str_replace("\\", '/', preg_replace('/\/setup$/','', dirname(__FILE__)))); ?></td>
         </tr>
         <tr>
           <td align="right" class="chatlist">php.ini:&nbsp;</td>
@@ -220,8 +220,8 @@ if($do) {
 				$value = utf8_encode($value);
 			}
 		
-			if(!mysql_query($value)) echo '<span class="error">ERROR: '.html_entities(@mysql_error())." -&gt; </span>";
-			echo html_specialchars($value).";\n";
+			if(!mysql_query($value)) echo '<span class="error">ERROR: '.html(@mysql_error())." -&gt; </span>";
+			echo html($value).";\n";
 		}
 	}
 	
@@ -288,7 +288,7 @@ if(is_dir($dir)) {
 	while($pf = readdir($ph)) {
    		if( $pf != '.' && $pf != '..' && !is_dir($dir.'/'.$pf) && preg_match('/(\.sql)$/', strtolower($pf)) ) 
 		{
-			$dir_sql[] = html_specialchars($pf);
+			$dir_sql[] = html($pf);
 		}
 	}
 	closedir($ph);

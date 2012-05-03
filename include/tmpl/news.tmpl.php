@@ -64,7 +64,7 @@ $news = new phpwcmsNews();
 				<td><label for="showactive"><img src="include/img/button/aktiv_12x13_1.gif" alt="" /></label></td>
 				<td><input type="checkbox" name="showinactive" id="showinactive" value="1" onclick="this.form.submit();"<?php  is_checked(1, ( $news->filter_status == 0 || $news->filter_status == 2 ) ? 1 : 0 ) ?> /></td>
 				<td><label for="showinactive"><img src="include/img/button/aktiv_12x13_0.gif" alt="" /></label></td>
-				<td><input type="text" name="filter" id="filter" size="10" value="<?php echo html_specialchars($news->filter) ?>" /></td>
+				<td><input type="text" name="filter" id="filter" size="10" value="<?php echo html($news->filter) ?>" /></td>
 				<td><input type="image" name="gofilter" src="include/img/famfamfam/action_go.gif" /></td>
 				
 				<td>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $news->getPagination(); ?></td>
@@ -259,17 +259,17 @@ window.addEvent('domready', function(){
 
 	<p class="break filled important">
 		<label><?php echo $BL['be_article_cnt_ctitle'] ?></label>
-		<input type="text" name="cnt_title" id="cnt_title" value="<?php echo html_specialchars($news->data['cnt_title']) ?>" class="text" maxlength="250" />
+		<input type="text" name="cnt_title" id="cnt_title" value="<?php echo html($news->data['cnt_title']) ?>" class="text" maxlength="250" />
 	</p>
 	
 	<p>	
 		<label><?php echo $BL['be_article_asubtitle'] ?></label>
-		<input type="text" name="cnt_subtitle" id="cnt_subtitle" value="<?php echo html_specialchars($news->data['cnt_subtitle']) ?>" class="text" maxlength="250" />
+		<input type="text" name="cnt_subtitle" id="cnt_subtitle" value="<?php echo html($news->data['cnt_subtitle']) ?>" class="text" maxlength="250" />
 	</p>
 	
 	<p>	
 		<label><?php echo $BL['be_teasertext'] ?></label>
-		<textarea name="cnt_teasertext" id="cnt_teasertext" class="text" rows="5"><?php echo html_specialchars($news->data['cnt_teasertext']) ?></textarea>
+		<textarea name="cnt_teasertext" id="cnt_teasertext" class="text" rows="5"><?php echo html($news->data['cnt_teasertext']) ?></textarea>
 	</p>
 
 	<div class="paragraph filled border_top border_bottom">
@@ -355,18 +355,18 @@ window.addEvent('domready', function(){
 
 	<p class="space_top">	
 		<label><a id="cnt_name_click"><?php echo $BL['be_title'] ?></a>/<a id="cnt_alias_click"><?php echo $BL['be_alias'] ?></a></label>
-		<input type="text" name="cnt_name" id="cnt_name" value="<?php echo html_specialchars($news->data['cnt_name']) ?>" class="text short" maxlength="200" title="<?php echo $BL['be_title'] ?>" />
-		<input type="text" name="cnt_alias" id="cnt_alias" value="<?php echo html_specialchars($news->data['cnt_alias']) ?>" class="text short" maxlength="200" title="<?php echo $BL['be_alias'] ?>" />
+		<input type="text" name="cnt_name" id="cnt_name" value="<?php echo html($news->data['cnt_name']) ?>" class="text short" maxlength="200" title="<?php echo $BL['be_title'] ?>" />
+		<input type="text" name="cnt_alias" id="cnt_alias" value="<?php echo html($news->data['cnt_alias']) ?>" class="text short" maxlength="200" title="<?php echo $BL['be_alias'] ?>" />
 	</p>
 	
 	<p>	
 		<label><?php echo $BL['be_tags'] ?></label>
-		<input type="text" name="cnt_category" id="cnt_category" value="<?php echo html_specialchars($news->data['cnt_category']) ?>" class="text" maxlength="250" />
+		<input type="text" name="cnt_category" id="cnt_category" value="<?php echo html($news->data['cnt_category']) ?>" class="text" maxlength="250" />
 	</p>
 
 	<p>	
 		<label><?php echo $BL['be_profile_label_lang'] ?></label>
-		<input type="text" name="cnt_lang" id="cnt_lang" value="<?php echo html_specialchars($news->data['cnt_lang']) ?>" class="text short" maxlength="10" title="<?php echo $BL['be_profile_label_lang'] ?>" />
+		<input type="text" name="cnt_lang" id="cnt_lang" value="<?php echo html($news->data['cnt_lang']) ?>" class="text short" maxlength="10" title="<?php echo $BL['be_profile_label_lang'] ?>" />
 	</p>
 	
 	<p>	
@@ -392,7 +392,7 @@ window.addEvent('domready', function(){
 	
 			<tr>
 				<td><label><?php echo $BL['be_cnt_image'] ?></label></td>
-				<td><input type="text" name="cnt_image_name" id="cnt_image_name" value="<?php echo html_specialchars($news->data['cnt_image']['name']) ?>" class="file" maxlength="250" /></td>
+				<td><input type="text" name="cnt_image_name" id="cnt_image_name" value="<?php echo html($news->data['cnt_image']['name']) ?>" class="file" maxlength="250" /></td>
 				<td style="padding:2px 0 0 5px" width="100">
 					<a href="#" title="<?php echo $BL['be_cnt_openimagebrowser'] ?>" onclick="openFileBrowser('filebrowser.php?opt=7');return false;"><img src="include/img/button/open_image_button.gif" alt="" width="20" height="15" border="0" /></a>
 					<a href="#" title="<?php echo $BL['be_cnt_delimage'] ?>" onclick="setImgIdName();return false;"><img src="include/img/button/del_image_button.gif" alt="" width="15" height="15" border="0" /></a>
@@ -422,13 +422,13 @@ window.addEvent('domready', function(){
 		<tr>
 				<td class="top"><label><?php echo $BL['be_cnt_caption'] ?></label></td>
 				<td colspan="2" class="tdbottom4">
-				<textarea name="cnt_image_caption" id="cnt_image_caption" class="text" rows="2"><?php echo html_specialchars($news->data['cnt_image']['caption']) ?></textarea>				
+				<textarea name="cnt_image_caption" id="cnt_image_caption" class="text" rows="2"><?php echo html($news->data['cnt_image']['caption']) ?></textarea>				
 				</td>
 			</tr>
 			
 			<tr>
 				<td><label><?php echo $BL['be_profile_label_website'] ?></label></td>
-				<td colspan="2"><input type="text" name="cnt_image_link" id="cnt_image_link" class="text" maxlength="500" value="<?php echo html_specialchars($news->data['cnt_image']['link']) ?>" /></td>
+				<td colspan="2"><input type="text" name="cnt_image_link" id="cnt_image_link" class="text" maxlength="500" value="<?php echo html($news->data['cnt_image']['link']) ?>" /></td>
 			</tr>
 	
 		</table>
@@ -442,7 +442,7 @@ window.addEvent('domready', function(){
 <?php
 		foreach( $news->getFiles() as $item ) {
 
-			echo '<option value="' . $item['f_id'] . '">' . html_specialchars($item['f_name']) . '</option>' . LF;
+			echo '<option value="' . $item['f_id'] . '">' . html($item['f_name']) . '</option>' . LF;
 
 		}
 ?>
@@ -456,7 +456,7 @@ window.addEvent('domready', function(){
 	
 	<tr>
  		<td class="top"><label><?php echo $BL['be_cnt_description'] ?></label></td>
-  		<td colspan="2"><textarea name="cnt_file_caption" cols="40" rows="5" class="text" id="cnt_file_caption"><?php echo html_specialchars($news->data['cnt_files']['caption']) ?></textarea></td>
+  		<td colspan="2"><textarea name="cnt_file_caption" cols="40" rows="5" class="text" id="cnt_file_caption"><?php echo html($news->data['cnt_files']['caption']) ?></textarea></td>
 	</tr>
 	
   </table>
@@ -484,18 +484,18 @@ window.addEvent('domready', function(){
 	
 	<p class="space_top border_top">	
 		<label><?php echo $BL['be_read_more_link'] ?></label>
-		<input type="text" name="cnt_link" id="cnt_link" value="<?php echo html_entities($news->data['cnt_link']) ?>" class="text" maxlength="250" title="<?php echo $BL['be_read_more_link'] ?>" />
+		<input type="text" name="cnt_link" id="cnt_link" value="<?php echo html($news->data['cnt_link']) ?>" class="text" maxlength="250" title="<?php echo $BL['be_read_more_link'] ?>" />
 	</p>
 	
 	<p>	
 		<label>URL <?php echo $BL['be_admin_page_text'] ?></label>
-		<input type="text" name="cnt_linktext" id="cnt_linktext" value="<?php echo html_entities($news->data['cnt_linktext']) ?>" class="text" maxlength="250" title="URL <?php echo $BL['be_admin_page_text'] ?>" />
+		<input type="text" name="cnt_linktext" id="cnt_linktext" value="<?php echo html($news->data['cnt_linktext']) ?>" class="text" maxlength="250" title="URL <?php echo $BL['be_admin_page_text'] ?>" />
 	</p>	
 	
 	<p class="space_top border_top">	
 		<label><?php echo $BL['be_article_username'] ?>/<?php echo $BL['be_place'] ?></label>
-		<input type="text" name="cnt_editor" id="cnt_editor" value="<?php echo html_specialchars($news->data['cnt_editor']) ?>" class="text short" maxlength="250" title="<?php echo $BL['be_article_username'] ?>" />
-		<input type="text" name="cnt_place" id="cnt_place" value="<?php echo html_specialchars($news->data['cnt_place']) ?>" class="text short" maxlength="250" title="<?php echo $BL['be_place'] ?>" />
+		<input type="text" name="cnt_editor" id="cnt_editor" value="<?php echo html($news->data['cnt_editor']) ?>" class="text short" maxlength="250" title="<?php echo $BL['be_article_username'] ?>" />
+		<input type="text" name="cnt_place" id="cnt_place" value="<?php echo html($news->data['cnt_place']) ?>" class="text short" maxlength="250" title="<?php echo $BL['be_place'] ?>" />
 	</p>
 	
 	

@@ -100,7 +100,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 				while($file_row = mysql_fetch_row($file_result)) {
 					foreach($fxb as $key => $value) {
 						if($fxb[$key]["fid"] == $file_row[0]) {
-							$fxb[$key]["fname"] = html_specialchars($file_row[1]);
+							$fxb[$key]["fname"] = html($file_row[1]);
 						}
 					}
 				}
@@ -134,7 +134,7 @@ if(is_array($tmpllist) && count($tmpllist)) {
 	if(!empty($content["file_descr"]) && ($content["file_descr"]{0} == "\r" || $content["file_descr"]{0} == "\n")) {
 		echo ' ';
 	}
-	echo html_specialchars($content["file_descr"]); 
+	echo html($content["file_descr"]); 
   
   ?></textarea></td>
 </tr>

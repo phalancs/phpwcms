@@ -49,149 +49,121 @@ if(!$_phpwcms_home['homeMaxCntParts']) $_phpwcms_home['homeMaxCntParts'] = 5;
 // set if user has admin rights
 $_usql = $_SESSION["wcs_user_admin"] ? '' : 'AND article_uid='.intval($_SESSION["wcs_user_id"]).' ';
 
-// first list last edited articles
-$_asql_1  = "SELECT *, DATE_FORMAT(acontent_tstamp, '%d/%m/%Y %H:%i') AS acontent_changed FROM ".DB_PREPEND."phpwcms_articlecontent ";
-$_asql_1 .= "LEFT JOIN ".DB_PREPEND."phpwcms_article ON ";
-$_asql_1 .= DB_PREPEND."phpwcms_articlecontent.acontent_aid = ".DB_PREPEND."phpwcms_article.article_id "; 
-$_asql_1 .= 'WHERE acontent_trash=0 AND article_deleted=0 ';
-$_asql_1 .= $_usql;
-$_asql_1 .= 'ORDER BY acontent_tstamp DESC LIMIT '.$_phpwcms_home['homeMaxCntParts'];
-$_last10_articlecontent = _dbQuery($_asql_1);
+// Get articles
+$sql  = "SELECT article_id, article_cid, article_title, article_public, article_aktiv, article_uid, ";
+$sql .= "UNIX_TIMESTAMP(article_tstamp) AS article_unixtime ";
+$sql .= "FROM ".DB_PREPEND."phpwcms_article ";
+$sql .= 'WHERE article_deleted=0 ';
+$sql .= $_usql;
+$sql .= 'ORDER BY article_tstamp DESC LIMIT '.$_phpwcms_home['homeMaxArticles'];
+$result = _dbQuery($sql);
 
-$_asql_1  = "SELECT article_id, article_cid, article_title, article_public, article_aktiv, article_uid, ";
-$_asql_1 .= "date_format(article_tstamp, '%d/%m/%Y %H:%i') AS article_date ";
-$_asql_1 .= "FROM ".DB_PREPEND."phpwcms_article ";
-$_asql_1 .= 'WHERE article_deleted=0 ';
-$_asql_1 .= $_usql;
-$_asql_1 .= 'ORDER BY article_tstamp DESC LIMIT '.$_phpwcms_home['homeMaxArticles'];
-$_last10_article = _dbQuery($_asql_1);
-
+// Get content parts
+$sql  = "SELECT *, UNIX_TIMESTAMP(acontent_tstamp) AS acontent_unixtime FROM ".DB_PREPEND."phpwcms_articlecontent ";
+$sql .= "LEFT JOIN ".DB_PREPEND."phpwcms_article ON ";
+$sql .= DB_PREPEND."phpwcms_articlecontent.acontent_aid = ".DB_PREPEND."phpwcms_article.article_id "; 
+$sql .= 'WHERE acontent_trash=0 AND article_deleted=0 ';
+$sql .= $_usql;
+$sql .= 'ORDER BY acontent_tstamp DESC LIMIT '.$_phpwcms_home['homeMaxCntParts'];
 
 ?>
-<div style="margin:0 0 10px 0;padding:0;">
-<form class="formRightInput" action="phpwcms.php" id="setHomeMaxArticles" name="setHomeMaxArticles" method="post">
-<input type="text" name="homeMaxArticles" id="homeMaxArticles" value="<?php echo $_phpwcms_home['homeMaxArticles'] ?>" class="smallInputField" onblur="this.form.submit();" />
-</form>
-<h1 class="title" style="margin-top:5px;"><?php echo $BL['be_cnt_articles'] .' <span class="v10">('.$BL['be_last_edited'].')</span>' ?></h1>
+<div class="row-fluid">
+	
+	<form action="phpwcms.php" method="post" class="pull-right form-inline">
+		<label><?php echo $BL['be_cnt_rssfeed_max'] ?></label>
+		<input type="text" name="homeMaxArticles" id="homeMaxArticles" value="<?php echo $_phpwcms_home['homeMaxArticles'] ?>" class="input-mini" onblur="this.form.submit();" />
+	</form>
+	
+	<h2><?php echo $BL['be_cnt_articles'] .' <small>('.$BL['be_last_edited'].')</small>' ?></h2>
+
+	<table class="table table-bordered-bottom table-condensed">
+	
+		<thead>
+			<tr>
+				<th><?php echo $BL['be_article_atitle'] ?></th>
+				<th class="nowrap"><?php echo $BL['be_cnt_last_edited'] ?></th>
+				<th>&nbsp;</th>
+			</tr>	
+		</thead>
+	
+		<tbody>
+<?php	foreach($result as $value):
+				
+				$value["button_type"] = $value["article_aktiv"] ? 'success' : 'danger';
+?>
+			
+			<tr>
+				<td style="width:85%;"><i class="icon-file"></i> <?php echo html($value['article_title']) ?></td>
+				<td class="nowrap"><?php echo date($BL['be_longdatetime'], $value['article_unixtime']) ?></td>
+				<td class="nowrap">
+					<a href="index.php?aid=<?php echo $value['article_id'] ?>" class="btn btn-mini target-blank" title="<?php echo $BL['be_cnt_sitemap_display'] ?>">
+						<i class="icon-zoom-in"></i>&nbsp;<?php echo $BL['be_cnt_sitemap_display'] ?>
+					</a>
+					<a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;id=<?php echo $value['article_id'] ?>" class="btn btn-mini btn-<?php echo $value["button_type"] ?>" title="<?php echo $BL['be_func_struct_edit'] ?>">
+						<i class="icon-edit icon-white"></i>&nbsp;<?php echo $BL['be_cnt_guestbook_edit'] ?>
+					</a>
+				</td>
+			</tr>
+	
+<?php	endforeach;	?>
+		
+		</tbody>
+	</table>
 </div>
-<table width="100%" border="0" cellpadding="0" cellspacing="0" summary="">
-	
-	<tr class="tableHeadRow">
-		<th>&nbsp;</th>
-		<th style="text-align:left"><?php echo $BL['be_article_atitle'] ?></th>
-		<th><?php echo $BL['be_cnt_last_edited'] ?></th>
-		<th>&nbsp;</th>
-	</tr>
-	
-	<tr><td colspan="4" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
-
-<?php
-	$row_count = 0;
-	
-	foreach($_last10_article as $value) {
-	
-		if($row_count) {
-			echo '<tr><td colspan="4" bgcolor="#D9DEE3"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>'.LF;
-		}
-	
-		echo '<tr'.( ($row_count % 2) ? ' bgcolor="#F3F5F8"' : '' ).' class="listrow" style="cursor:pointer" ';
-		echo 'onclick="document.location.href=\'phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;id='.$value['article_id'].'\'" title="'.$BL['be_func_struct_edit'].'">'.LF;
-		echo '	<td style="padding:1px 4px 1px 2px;"><img src="include/img/symbole/text_1.gif" alt="" /></td>'.LF;
-		echo '	<td width="80%"><strong>'.html($value['article_title']).'</strong></td>'.LF;
-		echo '	<td align="center" nowrap="nowrap">&nbsp;'.$value['article_date'].'&nbsp;</td>'.LF;
-		echo '	<td style="padding:3px;" nowrap="nowrap">';
-		echo '<img src="include/img/button/visible_12x13_'.$value["article_aktiv"].'.gif" alt="" border="0" style="margin-right:2px;" />';
-		echo '<a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;id='.$value['article_id'];
-		echo '"><img src="include/img/button/edit_22x13.gif" alt="Edit" border="0" /></a>';
-		echo '</td>'.LF;
-		echo '</tr>'.LF;
-	
-		$row_count++;
-
-	}
-	
-	if($row_count) {
-		echo '<tr><td colspan="4" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>'.LF;
-	}
 
 
+<div class="row-fluid btn-group">
+	<a href="phpwcms.php?do=articles" class="btn" title="<?php echo $BL['be_subnav_article_center'] ?>"><?php echo $BL['be_subnav_article_center'] ?></a>
+	<a href="phpwcms.php?do=articles&amp;p=1&amp;struct=0" class="btn" <?php echo $BL['be_subnav_article_new'] ?>><?php echo $BL['be_subnav_article_new'] ?></a>
+</div>
+
+<hr />
+
+<div class="row-fluid">
+	<form action="phpwcms.php" method="post" class="pull-right form-inline">
+		<label><?php echo $BL['be_cnt_rssfeed_max'] ?></label>
+		<input type="text" name="homeMaxCntParts" id="homeMaxCntParts" value="<?php echo $_phpwcms_home['homeMaxCntParts'] ?>" class="input-mini" onblur="this.form.submit();" />
+	</form>
+	<h2><?php echo $BL['be_ctype'] .' <small>('.$BL['be_last_edited'].')</small>' ?></h2>
+
+	<table class="table table-bordered-bottom table-condensed">
+	
+		<thead>
+			<tr>
+				<th><?php echo $BL['be_cnt_type'] ?></th>
+				<th><?php echo $BL['be_article_cnt_ctitle'] ?></th>
+				<th class="nowrap"><?php echo $BL['be_cnt_last_edited'] ?></th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+
+<?php	$result = _dbQuery($sql);
+
+		foreach($result as $value):
+	
+			if(($value["acontent_type"] == 30 && !isset($phpwcms['modules'][$value["acontent_module"] ])) || !isset($wcs_content_type[$value["acontent_type"]])) {
+				continue;
+			}
+			
+			$value["button_type"]	= $value["article_aktiv"] ? 'success' : 'danger';
+			$value['separator']		= $value['acontent_title'] && $value['acontent_subtitle'] ? ' / ' : '';
 ?>	
-	<tr>
-		<td colspan="4" style="padding: 6px 0 0 3px;">
-			<input type="button" value="<?php echo $BL['be_subnav_article_center'] ?>" class="button10" onclick="document.location.href='phpwcms.php?do=articles'" />
-			<input type="button" value="<?php echo $BL['be_subnav_article_new'] ?>" class="button10" onclick="document.location.href='phpwcms.php?do=articles&amp;p=1&amp;struct=0'" />
-		</td>
-	</tr>
+			<tr>
+				<td class="nowrap" style="width:25%;"><?php echo $wcs_content_type[$value["acontent_type"]]; if($value["acontent_type"] == 30) echo ': '.$BL['modules'][$value["acontent_module"]]['listing_title']; ?></td>
+				<td style="width:70%;"><?php echo html(getCleanSubString($value['acontent_title'].$value['separator'].$value['acontent_subtitle'], 27, '&#8230;')) ?></td>
+				<td class="nowrap"><?php echo date($BL['be_longdatetime'], $value['acontent_unixtime']) ?></td>
+				<td class="nowrap">
+					<a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=2&amp;id=<?php echo $value['acontent_aid'] ?>&amp;acid=<?php echo $value['acontent_id'] ?>" class="btn btn-mini btn-<?php echo $value["button_type"] ?>" title="<?php echo $BL['be_func_content_edit'] ?>">
+						<i class="icon-edit icon-white"></i>&nbsp;<?php echo $BL['be_cnt_guestbook_edit'] ?>
+					</a>			
+				</td>
+			</tr>
 
-</table>
-
-<div style="margin:25px 0 10px 0;padding:0;">
-<form class="formRightInput" action="phpwcms.php" id="setHomeMaxCntParts" name="setHomeMaxCntParts" method="post">
-<input type="text" name="homeMaxCntParts" id="homeMaxCntParts" value="<?php echo $_phpwcms_home['homeMaxCntParts'] ?>" class="smallInputField" onblur="this.form.submit();" />
-</form>
-<h1 class="title" style="margin:0;"><?php echo $BL['be_ctype'] .' <span class="v10">('.$BL['be_last_edited'].')</span>' ?></h1>
+<?php	endforeach;	?>
+		</tbody>
+	</table>
 </div>
-<table width="100%" border="0" cellpadding="0" cellspacing="0" summary="">
-	
-	<tr class="tableHeadRow">
-		<th width="20">&nbsp;</th>
-		<th style="text-align:left"><?php echo $BL['be_cnt_type'] ?>&nbsp;</th>
-		<th style="text-align:left"><?php echo $BL['be_article_cnt_ctitle'] ?></th>
-		<th><?php echo $BL['be_cnt_last_edited'] ?>&nbsp;</th>
-		<th>&nbsp;</th>
-	</tr>
-	
-	<tr><td colspan="5" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>
-	
 
-<?php
-	$row_count = 0;
-	
-	foreach($_last10_articlecontent as $value) {
-	
-		if(($value["acontent_type"] == 30 && !isset($phpwcms['modules'][$value["acontent_module"] ])) || !isset($wcs_content_type[$value["acontent_type"]])) {
-			continue;
-		}
-	
-		if($row_count) {
-			echo '<tr><td colspan="5" bgcolor="#D9DEE3"><img src="include/img/leer.gif" alt="" width="1" height="1"></td></tr>'.LF;
-		}
-	
-		echo '<tr'.( ($row_count % 2) ? ' bgcolor="#F3F5F8"' : '' ).' class="listrow" style="cursor:pointer" ';
-		echo 'onclick="document.location.href=\'phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=2&amp;';
-		echo 'id='.$value['acontent_aid'].'&amp;acid='.$value['acontent_id'].'\'" title="'.$BL['be_func_content_edit'].'">'.LF;
-		
-		echo '	<td style="padding:1px 4px 1px 2px;"><img src="include/img/symbole/add_content.gif" alt="" /></td>'.LF;
-		
-		echo '	<td nowrap="nowrap">'.$wcs_content_type[$value["acontent_type"]];
-		if($value["acontent_type"] == 30) {
-			echo ': '.$BL['modules'][$value["acontent_module"]]['listing_title'];
-		}
-		echo '&nbsp;</td>'.LF;
-		
-		$trenner = ($value['acontent_title'] && $value['acontent_subtitle']) ? '/' : '';
-		
-		echo '	<td width="80%"><strong>'.html(getCleanSubString($value['acontent_title'].$trenner.$value['acontent_subtitle'], 27, '&#8230;')).'&nbsp;</strong></td>'.LF;
-		echo '	<td align="center" nowrap="nowrap">&nbsp;'.$value['acontent_changed'].'&nbsp;</td>'.LF;
-		
-		echo '	<td style="padding:3px;" nowrap="nowrap">';
-		echo '<img src="include/img/button/visible_12x13_'.$value["acontent_visible"].'.gif" alt="" border="0" style="margin-right:2px;" />';
-		echo '<a href="phpwcms.php?do=articles&amp;p=2&amp;s=1&amp;aktion=2&amp;';
-		echo 'id='.$value['acontent_aid'].'&amp;acid='.$value['acontent_id'];
-		echo '"><img src="include/img/button/edit_22x13.gif" alt="Edit" border="0" /></a>';
-		echo '</td>'.LF;
-		echo '</tr>'.LF;
-
-		$row_count++;
-
-	}
-	
-	if($row_count) {
-		echo '<tr><td colspan="5" bgcolor="#92A1AF"><img src="include/img/leer.gif" alt="" width="1" height="1" /></td></tr>'.LF;
-	}
-
-
-?>
-	<tr><td colspan="5"><img src="include/img/leer.gif" alt="" width="1" height="25" /></td></tr>
-</table>
-<?php echo phpwcmsversionCheck(); ?>
+<?php	echo phpwcmsversionCheck();	?>

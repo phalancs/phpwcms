@@ -358,6 +358,9 @@ body {
   padding-top: 60px;
   margin-bottom: 50px;
 }
+.row-space-bottom {
+  margin-bottom: 18px;
+}
 .sidebar {
   padding: 60px 0 20px 0;
   margin-top: 0;
@@ -4543,6 +4546,12 @@ a.badge:hover {
 }
 .box-login form {
   margin-top: 18px;
+}
+.nowrap {
+  white-space: nowrap;
+}
+.table-bordered-bottom {
+  border-bottom: 1px solid #dddddd;
 }
 .pull-right {
   float: right;

@@ -226,20 +226,32 @@ function phpwcmsversionCheck() {
 
 	// Check for new version
 	
+	if(!empty($_SESSION['phpwcms_version_check'])) {
+		return $_SESSION['phpwcms_version_check'];
+	}
+	
 	global $phpwcms;
 	global $BL;
 	
-	if(empty($phpwcms['version_check'])) return '';
-
-	$errno 						= 0;
-	$errstr 					= '';
-	$version_info				= '';
+	if(empty($phpwcms['version_check'])) {
+		return '';
+	}
+	
+	$alert			= '';
+	$alert_type		= '';
+	$alert_text		= '';
+	$errno 			= 0;
+	$errstr 		= '';
+	$version_info	= '';
 
 	if ($fsock = @fsockopen('www.phpwcms.de', 80, $errno, $errstr, 10))	{
 
-		$identify = '?version='.rawurlencode(PHPWCMS_VERSION.'-'.str_replace('/', '', PHPWCMS_RELEASE_DATE)).'&hash='.md5($_SERVER['REQUEST_URI']);
-	
-		@fputs($fsock, "GET /versioncheck/phpwcms_releaseinfo.txt".$identify." HTTP/1.1\r\n");
+		$identify  = '?version='.rawurlencode(PHPWCMS_VERSION.' '.str_replace('/', '', PHPWCMS_RELEASE_DATE));
+		$identify .= '&hash='.md5($_SERVER['REQUEST_URI']);
+		$identify .= '&url='.rawurlencode(PHPWCMS_URL);
+		$identify .= '&revision='.rawurlencode(PHPWCMS_REVISION);
+		
+		@fputs($fsock, "GET /versioncheck/".$identify." HTTP/1.1\r\n");
 		@fputs($fsock, "HOST: www.phpwcms.de\r\n");
 		@fputs($fsock, "Connection: close\r\n\r\n");
 
@@ -247,50 +259,55 @@ function phpwcmsversionCheck() {
 		while (!@feof($fsock)) {
 			if ($get_info) {
 				$version_info .= @fread($fsock, 1024);
-			} else {
-				if (@fgets($fsock, 1024) == "\r\n") {
-					$get_info = true;
-				}
+			} elseif (@fgets($fsock, 1024) == "\r\n") {
+				$get_info = true;
 			}
 		}
 		@fclose($fsock);
-
-		$version_info		= explode("\n", $version_info);
 		
-		$latest_version		= trim($version_info[0]);
-		$latest_revdate		= trim($version_info[1]);
-		$latest_revision	= intval(trim($version_info[2]));
-
-		// do version check
-		$check = $latest_revision > $phpwcms['revision'] ? false : true;
+		if(preg_match('/.*BEGIN -->(.+)<!-- END.*/s', $version_info, $match)) {
+	
+			$version_info		= explode(LF, $match[1]);
+			$latest_version		= trim($version_info[0]);
+			$latest_revdate		= trim($version_info[1]);
+			$latest_revision	= intval(trim($version_info[2]));
 		
-		
-		if ($check)	{
-			$version_info  = '<p class="valid">' . $BL['Version_up_to_date'] . '</p>';
-			$version_info .= '<p class="valid">'.sprintf($BL['Latest_version_info'], $latest_version.' ('.$latest_revdate.', r'.$latest_revision.')'). ' ';
-			$version_info .= sprintf($BL['Current_version_info'], PHPWCMS_VERSION.' ('.PHPWCMS_RELEASE_DATE.', r'.PHPWCMS_REVISION.')') . '</p>';
+			if ($latest_revision > $phpwcms['revision'] || strpos(PHPWCMS_VERSION, '-dev'))	{
+				
+				$alert_type = ' alert-success';
+				$version_info  = '<p>' . $BL['Version_up_to_date'] . '</p>';
+				$version_info .= '<p>' . sprintf($BL['Latest_version_info'], $latest_version.' ('.$latest_revdate.', r'.$latest_revision.')'). '<br />';
+				$version_info .= sprintf($BL['Current_version_info'], PHPWCMS_VERSION.' ('.PHPWCMS_RELEASE_DATE.', r'.PHPWCMS_REVISION.')') . '</p>';
+			
+			} else {
+				
+				$version_info  = '<p>' . $BL['Version_not_up_to_date'] . '</p>';
+				$version_info .= '<p>'.sprintf($BL['Latest_version_info'], ' ' . $latest_version . ' ('.$latest_revdate.', r'.$latest_revision.')'). '<br />';
+				$version_info .= sprintf($BL['Current_version_info'], PHPWCMS_VERSION.' ('.PHPWCMS_RELEASE_DATE.', r'.PHPWCMS_REVISION.')') . '</p>';
+				
+			}
 		
 		} else {
-			$version_info  = '<p class="error">' . $BL['Version_not_up_to_date'] . '</p>';
-			$version_info .= '<p class="error">'.sprintf($BL['Latest_version_info'], ' ' . $latest_version . ' ('.$latest_revdate.', r'.$latest_revision.')'). ' ';
-			$version_info .= sprintf($BL['Current_version_info'], PHPWCMS_VERSION.' ('.PHPWCMS_RELEASE_DATE.', r'.PHPWCMS_REVISION.')') . '</p>';
-
+			
+			$version_info = '<p>' . $BL['Socket_functions_disabled'] . '</p>';
+			
 		}
 		
 
 	} else {
 	
 		if ($errstr) {
-			$version_info = '<p class="error">' . sprintf($BL['Connect_socket_error'], $errstr) . '</p>';
+			$alert_type = ' alert-error';
+			$version_info = '<p>' . sprintf($BL['Connect_socket_error'], $errstr) . '</p>';
 		} else {
 			$version_info = '<p>' . $BL['Socket_functions_disabled'] . '</p>';
 		}
 	}
 	
-	//$version_info .= '<p>' . $BL['Mailing_list_subscribe_reminder'] . '</p>';
+	$_SESSION['phpwcms_version_check']  = '<div class="alert'.$alert_type.' fade in"><button class="close" data-dismiss="alert">&times;</button><h3>';
+	$_SESSION['phpwcms_version_check'] .= $BL['Version_information'].'</h3> '.$version_info.'</div>';
 
-	return '<div class="versioncheck"><h1>'.$BL['Version_information'].'</h1> '.$version_info.'</div>';
-
+	return $_SESSION['phpwcms_version_check'];
 }
 
 

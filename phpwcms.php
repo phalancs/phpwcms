@@ -185,8 +185,8 @@ switch ($do) {
 							$subnav .= subnavtext($BL['be_subnav_admin_filecat'], "phpwcms.php?do=admin&amp;p=7", $p, "7");
 							$subnav .= subnavtext($BL['be_subnav_admin_starttext'], "phpwcms.php?do=admin&amp;p=12", $p, "12");
 							$subnav .= subnavtext($BL['be_article_urlalias'].' ('.$BL['be_ftptakeover_active'].')', 'phpwcms.php?do=admin&amp;p=13', $p, "13");
-							$subnav .= subnavtext($BL['be_cnt_move_deleted'], 'include/actions/file.php?movedeletedfiles='. $_SESSION["wcs_user_id"], 1, 0, ' id="move-deleted" rel="'.$BL['be_cnt_move_deleted_msg'].'"');
-							$subnav .= '<li><a href="include/actions/phpinfo.php" title="phpinfo()" class="blank">phpinfo()</a>';
+							$subnav .= subnavtext($BL['be_cnt_move_deleted'], 'include/actions/file.php?movedeletedfiles='. $_SESSION["wcs_user_id"], 1, 0, ' class="action-confirm" rel="'.$BL['be_cnt_move_deleted_msg'].'"');
+							$subnav .= '<li><a href="include/actions/phpinfo.php" title="phpinfo()" class="target-blank">phpinfo()</a>';
 						}
 						break;
 						
@@ -253,7 +253,7 @@ if($BE['LANG'] == 'ar') {
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container-fluid">
-				<a class="brand" href="phpwcms.php">phpwcms</a>
+				<a class="brand blank" href="http://www.phpwcms.de" title="phpwcms <?php echo $BL['version'] . ' ' . PHPWCMS_VERSION ?> — www.phpwcms.org">phpwcms</a>
 				
 				<div class="btn-group pull-right">
             		<a class="btn dropdown-toggle" data-toggle="dropdown" href="phpwcms.php?do=profile" title="<?php echo html($_SESSION["wcs_user_name"]) ?>">
@@ -269,12 +269,12 @@ if($BE['LANG'] == 'ar') {
           		</div>
 				
 				<ul class="nav pull-right">
-					<li><a href="<?php echo PHPWCMS_URL ?>"><?php echo PHPWCMS_HOST ?></a></li>
+					<li><a href="<?php echo PHPWCMS_URL ?>" class="target-blank"><?php echo PHPWCMS_HOST ?></a></li>
 				</ul>
 				
 				<div class="nav-collapse">
 					<ul class="nav">
-						<li<?php if($do == 'default'): ?> class="active"<?php endif; ?>><a href="phpwcms.php"><?php echo html($BL['be_nav_home']) ?></a></li>
+						<li<?php if($do == 'default'): ?> class="active"<?php endif; ?>><a href="phpwcms.php"><i class="icon-home icon-white"></i> <?php echo html($BL['be_nav_home']) ?></a></li>
 						<?php echo implode(LF.'						', $wcsnav); // create backend main navigation ?>
 					</ul>
 				</div>
@@ -505,9 +505,9 @@ if($BE['LANG'] == 'ar') {
 		
 		<footer class="fixed-fluid">
 			<p class="pull-left">
-				<a href="http://www.phpwcms.de" title="<?php echo $BL['be_aboutlink_title'] ?>" class="blank">phpwcms</a>
-				&copy; 2002&#8212;<?php echo date('Y'); ?> <a href="http://www.linkedin.com/in/olivergeorgi" class="blank">Oliver Georgi</a>.
-				<?php printf($BL['licensed_under'], '<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0" class="blank">GPLv2</a>'); ?>
+				<a href="http://www.phpwcms.de" title="<?php echo $BL['be_aboutlink_title'] ?>" class="target-blank">phpwcms</a>
+				&copy; 2002&#8212;<?php echo date('Y'); ?> <a href="http://www.linkedin.com/in/olivergeorgi" class="target-blank">Oliver Georgi</a>.
+				<?php printf($BL['licensed_under'], '<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0" class="target-blank">GPLv2</a>'); ?>
 			</p>
 			<p class="pull-right">
 				<?php echo $BL['version'] . ' ' . PHPWCMS_VERSION ?>
